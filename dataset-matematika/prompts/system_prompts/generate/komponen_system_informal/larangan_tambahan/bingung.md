@@ -1,0 +1,1 @@
+- DILARANG menjawab lebih dari satu lapis kebingungan dalam satu giliran.

@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Bunga | Target: MOTS\n\n--- MATERI ---\nDalam konteks keuangan seperti tabungan dan pinjaman, konsep barisan dan deret sangat berguna untuk menyelesaikan perhitungan suku bunga. Terdapat dua jenis perhitungan bunga yang paling umum, yaitu bunga tunggal dan bunga majemuk. Bunga tunggal adalah bunga yang dihitung secara eksklusif berdasarkan besaran modal awal atau pokok pinjaman saja. Oleh karena itu, nominal bunga yang diperoleh atau dibebankan pada setiap periodenya akan selalu tetap. Perhitungan persentase bunga tunggal ini sejalan dengan prinsip barisan aritmetika yang senantiasa memiliki nilai penambahan atau beda yang konstan. Sebaliknya, bunga majemuk adalah bunga yang dihitung berdasarkan modal awal ditambah dengan akumulasi bunga dari periode-periode sebelumnya, atau sering disebut oleh masyarakat umum sebagai 'bunga berbunga'. Karena nilai modal yang berbunga terus membesar secara eksponensial, pertumbuhan total dana pada bunga majemuk membentuk pola barisan geometri dengan rasio pengali yang konstan.\n\n[ATP_ALIGNMENT]\nMenghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Ibu Siti menabung di bank dengan setoran awal Rp5.000.000. Bank menawarkan dua pilihan produk tabungan: Produk A dengan bunga tunggal 5% per tahun, dan Produk B dengan bunga majemuk 4% per tahun yang dihitung setiap tahun. Ibu Siti berencana menabung selama 3 tahun.",
+      "question": "Bandingkan total tabungan Ibu Siti di akhir tahun ketiga jika ia memilih Produk A dibandingkan dengan Produk B, dan jelaskan perbedaan perhitungan yang mendasarinya.",
+      "rubric_points": [
+        "Menghitung total tabungan akhir untuk Produk A menggunakan rumus bunga tunggal.",
+        "Menghitung total tabungan akhir untuk Produk B menggunakan rumus bunga majemuk.",
+        "Membandingkan kedua hasil akhir dan menjelaskan perbedaan metode perhitungan bunga."
+      ],
+      "explanation": "**Perbandingan Bunga Tunggal dan Majemuk**\\nUntuk Produk A (bunga tunggal):\\nBunga per tahun = 5% \\times Rp5.000.000 = Rp250.000\\nTotal bunga selama 3 tahun = 3 \\times Rp250.000 = Rp750.000\\nTotal tabungan akhir = Rp5.000.000 + Rp750.000 = Rp5.750.000\\n\\nUntuk Produk B (bunga majemuk):\\nTahun 1: Rp5.000.000 \\times (1 + 0.04) = Rp5.200.000\\nTahun 2: Rp5.200.000 \\times (1 + 0.04) = Rp5.408.000\\nTahun 3: Rp5.408.000 \\times (1 + 0.04) = Rp5.624.320\\n\\nPerbedaan utama terletak pada dasar perhitungan bunga. Bunga tunggal hanya dihitung dari modal awal, sehingga pertumbuhannya linier. Bunga majemuk dihitung dari modal awal ditambah bunga yang sudah terakumulasi, menghasilkan pertumbuhan eksponensial yang lebih cepat.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Pak Budi, seorang pengusaha UMKM kerupuk udang, membutuhkan modal tambahan sebesar Rp10.000.000 untuk mengembangkan usahanya. Ia memiliki dua pilihan pinjaman dari dua lembaga keuangan yang berbeda. Lembaga X menawarkan pinjaman dengan bunga tunggal 12% per tahun, sedangkan Lembaga Y menawarkan pinjaman dengan bunga majemuk 10% per tahun yang dihitung setiap semester. Pak Budi berencana melunasi pinjaman dalam waktu 2 tahun.",
+      "question": "Hitunglah total pembayaran yang harus diselesaikan Pak Budi kepada kedua lembaga keuangan tersebut setelah 2 tahun dan tentukan pilihan mana yang lebih menguntungkan baginya.",
+      "rubric_points": [
+        "Menghitung total pembayaran pinjaman di Lembaga X menggunakan bunga tunggal.",
+        "Menghitung total pembayaran pinjaman di Lembaga Y menggunakan bunga majemuk dengan periode semester.",
+        "Membandingkan total pembayaran kedua lembaga dan menentukan pilihan yang lebih menguntungkan."
+      ],
+      "explanation": "**Perbandingan Total Pembayaran Pinjaman**\\nUntuk Lembaga X (bunga tunggal):\\nBunga per tahun = 12% \\times Rp10.000.000 = Rp1.200.000\\nTotal bunga selama 2 tahun = 2 \\times Rp1.200.000 = Rp2.400.000\\nTotal pembayaran = Rp10.000.000 + Rp2.400.000 = Rp12.400.000\\n\\nUntuk Lembaga Y (bunga majemuk per semester):\\nPeriode per tahun = 2 semester. Suku bunga per semester = 10% / 2 = 5% = 0.05. Jumlah periode = 2 tahun \\times 2 semester/tahun = 4 semester.\\nTotal pembayaran = Rp10.000.000 \\times (1 + 0.05)^4\\nTotal pembayaran = Rp10.000.000 \\times (1.05)^4\\nTotal pembayaran = Rp10.000.000 \\times 1.21550625 = Rp12.155.062,50\\n\\nLembaga Y lebih menguntungkan karena total pembayarannya lebih kecil.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa SMA bernama Rina ingin membeli sebuah laptop seharga Rp8.000.000. Ia memiliki uang tabungan Rp6.000.000 dan berencana menambah kekurangannya dari hasil kerja paruh waktu. Rina dapat memilih untuk menabung sisa uangnya di bank dengan bunga tunggal 6% per tahun atau menginvestasikannya di koperasi simpan pinjam yang menawarkan bunga majemuk 5% per tahun. Rina membutuhkan dana tersebut dalam waktu 1 tahun.",
+      "question": "Hitunglah berapa jumlah uang yang akan dimiliki Rina dari hasil tabungan/investasi setelah 1 tahun pada kedua pilihan tersebut, dan tentukan mana yang lebih efektif untuk mencapai targetnya.",
+      "rubric_points": [
+        "Menghitung jumlah dana yang akan dimiliki Rina jika memilih bunga tunggal.",
+        "Menghitung jumlah dana yang akan dimiliki Rina jika memilih bunga majemuk.",
+        "Membandingkan kedua hasil dan menentukan pilihan yang lebih efektif untuk mencapai target pembelian laptop."
+      ],
+      "explanation": "**Efektivitas Pilihan Tabungan/Investasi**\\nKekurangan dana yang dibutuhkan Rina = Rp8.000.000 - Rp6.000.000 = Rp2.000.000\\n\\nJika memilih bunga tunggal (6% per tahun):\\nBunga selama 1 tahun = 6% \\times Rp2.000.000 = Rp120.000\\nTotal dana setelah 1 tahun = Rp2.000.000 + Rp120.000 = Rp2.120.000\\n\\nJika memilih bunga majemuk (5% per tahun):\\nTotal dana setelah 1 tahun = Rp2.000.000 \\times (1 + 0.05)^1 = Rp2.000.000 \\times 1.05 = Rp2.100.000\\n\\nDalam kasus ini, bunga tunggal memberikan hasil yang sedikit lebih besar setelah 1 tahun karena periode waktunya yang singkat. Namun, untuk jangka waktu yang lebih panjang, bunga majemuk biasanya akan lebih unggul.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah koperasi simpan pinjam di lingkungan sekolah menawarkan dua skema peminjaman kepada anggota. Skema A menggunakan bunga tunggal sebesar 10% per tahun untuk pinjaman Rp1.000.000 selama 3 tahun. Skema B menggunakan bunga majemuk sebesar 8% per tahun, juga untuk pinjaman Rp1.000.000 selama 3 tahun. Anggota koperasi perlu memahami total pengembalian yang harus mereka bayarkan.",
+      "question": "Hitunglah total pengembalian pinjaman yang harus dibayarkan oleh anggota koperasi untuk Skema A dan Skema B setelah 3 tahun, serta jelaskan mengapa kedua skema tersebut menghasilkan total pengembalian yang berbeda.",
+      "rubric_points": [
+        "Menghitung total pengembalian pinjaman untuk Skema A (bunga tunggal).",
+        "Menghitung total pengembalian pinjaman untuk Skema B (bunga majemuk).",
+        "Menjelaskan perbedaan dasar perhitungan antara bunga tunggal dan bunga majemuk yang menyebabkan perbedaan total pengembalian."
+      ],
+      "explanation": "**Perbedaan Total Pengembalian Pinjaman**\\nUntuk Skema A (bunga tunggal):\\nBunga per tahun = 10% \\times Rp1.000.000 = Rp100.000\\nTotal bunga selama 3 tahun = 3 \\times Rp100.000 = Rp300.000\\nTotal pengembalian = Rp1.000.000 + Rp300.000 = Rp1.300.000\\n\\nUntuk Skema B (bunga majemuk):\\nTotal pengembalian = Rp1.000.000 \\times (1 + 0.08)^3\\nTotal pengembalian = Rp1.000.000 \\times (1.08)^3\\nTotal pengembalian = Rp1.000.000 \\times 1.259712 = Rp1.259.712\\n\\nPerbedaan timbul karena bunga tunggal hanya dihitung dari pokok pinjaman awal, sehingga jumlah bunga per tahun konstan. Bunga majemuk menghitung bunga dari pokok pinjaman ditambah akumulasi bunga periode sebelumnya, menyebabkan jumlah bunga yang dibebankan terus meningkat setiap periode.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Pasar tradisional di kota Anda mengalami fluktuasi harga beras. Pedagang beras A menjual beras dengan sistem harga tetap selama 1 bulan, dengan keuntungan Rp2.000 per kilogram. Pedagang beras B menerapkan sistem harga yang disesuaikan setiap minggu berdasarkan biaya operasional dan permintaan, yang menghasilkan keuntungan rata-rata Rp1.800 per kilogram di minggu pertama, Rp2.200 di minggu kedua, Rp2.000 di minggu ketiga, dan Rp2.400 di minggu keempat. Diasumsikan setiap pedagang menjual 100 kg beras per minggu.",
+      "question": "Hitunglah total keuntungan yang diperoleh Pedagang A dan Pedagang B selama satu bulan (4 minggu) dan analisis pola pertumbuhan keuntungan masing-masing pedagang.",
+      "rubric_points": [
+        "Menghitung total keuntungan Pedagang A selama satu bulan.",
+        "Menghitung total keuntungan Pedagang B selama satu bulan.",
+        "Menganalisis pola keuntungan Pedagang A (konstan) dan Pedagang B (bervariasi) serta mengaitkannya dengan konsep barisan aritmetika dan geometri."
+      ],
+      "explanation": "**Analisis Pola Keuntungan Pedagang**\\nUntuk Pedagang A (keuntungan tetap):\\nKeuntungan per minggu = 100 kg \\times Rp2.000/kg = Rp200.000\\nTotal keuntungan per bulan = 4 minggu \\times Rp200.000/minggu = Rp800.000\\nPola keuntungan Pedagang A mengikuti barisan aritmetika dengan beda 0, karena keuntungannya konstan setiap minggu.\\n\\nUntuk Pedagang B (keuntungan bervariasi):\\nKeuntungan minggu 1 = 100 kg \\times Rp1.800/kg = Rp180.000\\nKeuntungan minggu 2 = 100 kg \\times Rp2.200/kg = Rp220.000\\nKeuntungan minggu 3 = 100 kg \\times Rp2.000/kg = Rp200.000\\nKeuntungan minggu 4 = 100 kg \\times Rp2.400/kg = Rp240.000\\nTotal keuntungan per bulan = Rp180.000 + Rp220.000 + Rp200.000 + Rp240.000 = Rp840.000\\nPola keuntungan Pedagang B menunjukkan variasi yang tidak linier secara konstan, namun jika diasumsikan ada pola yang mendasarinya, ini bisa dianalisis lebih lanjut. Dalam konteks bunga, variasi ini mirip dengan bagaimana bunga majemuk dapat menghasilkan pertumbuhan yang tidak konstan per periode jika ada faktor lain yang mempengaruhinya.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "2c519840-c100-4228-8b26-807f24ff52b0",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:12:27Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Bunga",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1294,
+      "assistant": 2728,
+      "total": 4696,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

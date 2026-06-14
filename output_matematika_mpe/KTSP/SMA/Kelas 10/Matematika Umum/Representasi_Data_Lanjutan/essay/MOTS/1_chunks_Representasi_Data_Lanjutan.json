@@ -1,0 +1,105 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data Lanjutan | Target: MOTS\n\n--- MATERI ---\nDalam analisis data statistik lanjutan, pemahaman mengenai sebaran dan hubungan antarvariabel memegang peranan penting. Salah satu metode representasi visual yang digunakan untuk melihat persebaran data adalah diagram kotak garis (boxplot). Boxplot menyajikan ringkasan lima serangkai yang meliputi nilai minimum, kuartil bawah (Q1), median (Q2), kuartil atas (Q3), dan nilai maksimum. Melalui boxplot, kita dapat mengidentifikasi pemusatan data, rentang antarkuartil, serta mendeteksi adanya data pencilan (outlier). Selain untuk menganalisis satu variabel, visualisasi data juga digunakan untuk menganalisis hubungan antara dua variabel kuantitatif melalui diagram pencar (scatter plot). Pada scatter plot, data disajikan sebagai kumpulan titik pada bidang koordinat Kartesius, dengan sumbu mendatar mewakili variabel penjelas dan sumbu tegak mewakili variabel respon. Pola penyebaran titik-titik ini membantu kita menentukan tren dan jenis korelasi di antara kedua variabel tersebut.\n\n[ATP_ALIGNMENT]\nMerepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang guru Matematika ingin menunjukkan kepada siswanya bagaimana data nilai ujian akhir mata pelajaran dapat disajikan secara visual. Beliau mengumpulkan nilai dari 30 siswa di kelasnya dan memutuskan untuk membuat boxplot untuk menganalisis sebaran nilai tersebut. Data nilai mentah yang diperoleh adalah sebagai berikut: 55, 60, 65, 65, 70, 70, 70, 75, 75, 75, 75, 80, 80, 80, 80, 80, 85, 85, 85, 85, 90, 90, 90, 95, 95, 100, 100, 100, 100, 100.",
+      "question": "Berdasarkan data nilai ujian akhir tersebut, tentukan nilai minimum, Q1, median, Q3, dan maksimum untuk membuat boxplot yang akurat.",
+      "rubric_points": [
+        "Menentukan nilai minimum dari data.",
+        "Menghitung dan menentukan nilai Q1 (kuartil bawah).",
+        "Menghitung dan menentukan nilai median (Q2).",
+        "Menghitung dan menentukan nilai Q3 (kuartil atas).",
+        "Menentukan nilai maksimum dari data."
+      ],
+      "explanation": "**Perhitungan Lima Serangkai**\\nUntuk membuat boxplot, kita perlu menentukan lima nilai utama dari data: minimum, Q1, median, Q3, dan maksimum.\\n\\nNilai minimum adalah nilai terkecil dalam kumpulan data, yaitu 55.\\nNilai maksimum adalah nilai terbesar dalam kumpulan data, yaitu 100.\\n\\nUntuk mencari median (Q2), kita urutkan data dan cari nilai tengah. Karena ada 30 data (genap), median adalah rata-rata dari data ke-15 dan ke-16.\\nData ke-15 = 80, Data ke-16 = 80. Jadi, Median = (80 + 80) / 2 = 80.\\n\\nUntuk mencari Q1, kita ambil separuh data pertama (15 data) dan cari mediannya. Data ke-8 dari separuh pertama adalah Q1.\\nData ke-8 (dari 15 data pertama) = 75. Jadi, Q1 = 75.\\n\\nUntuk mencari Q3, kita ambil separuh data kedua (15 data) dan cari mediannya. Data ke-8 dari separuh kedua adalah Q3.\\nData ke-8 (dari 15 data terakhir) = 85. Jadi, Q3 = 85.\\n\\nLima serangkai adalah: Minimum = 55, Q1 = 75, Median = 80, Q3 = 85, Maksimum = 100.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong ingin mengetahui hubungan antara jumlah jam promosi di media sosial dan jumlah penjualan per minggu. Data selama 8 minggu terakhir disajikan dalam tabel berikut:\\n| Minggu | Jam Promosi (X) | Penjualan (Unit) (Y) |\\n|---|---|---|\\n| 1 | 2 | 50 |\\n| 2 | 3 | 65 |\\n| 3 | 4 | 80 |\\n| 4 | 5 | 95 |\\n| 5 | 6 | 110 |\\n| 6 | 7 | 125 |\\n| 7 | 8 | 140 |\\n| 8 | 9 | 155 |",
+      "question": "Buatlah scatter plot dari data jam promosi dan penjualan keripik singkong tersebut, lalu interpretasikan pola penyebaran titik-titik yang menunjukkan hubungan antara kedua variabel.",
+      "rubric_points": [
+        "Membuat scatter plot dengan sumbu X (Jam Promosi) dan sumbu Y (Penjualan).",
+        "Menempatkan setiap pasangan data (X, Y) sebagai titik pada scatter plot.",
+        "Menginterpretasikan pola penyebaran titik-titik pada scatter plot.",
+        "Menjelaskan jenis hubungan (korelasi) yang teramati antara jam promosi dan penjualan."
+      ],
+      "explanation": "**Interpretasi Scatter Plot**\\nScatter plot akan menampilkan titik-titik data yang merepresentasikan hubungan antara jam promosi (sumbu X) dan jumlah penjualan (sumbu Y).\\n\\nDalam kasus ini, ketika kita memplot data tersebut, kita akan melihat bahwa titik-titik cenderung membentuk pola naik dari kiri bawah ke kanan atas. Ini menunjukkan adanya hubungan positif antara jam promosi dan jumlah penjualan. Artinya, semakin banyak jam yang dihabiskan untuk promosi di media sosial, semakin tinggi pula jumlah penjualan keripik singkong yang dihasilkan oleh UMKM tersebut. Pola ini mengindikasikan korelasi positif yang kuat.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang peneliti lingkungan sedang menganalisis data curah hujan bulanan (dalam mm) dan jumlah kasus demam berdarah di suatu wilayah selama satu tahun. Data yang terkumpul adalah sebagai berikut: Curah Hujan (mm): [50, 75, 100, 120, 150, 180, 200, 190, 160, 130, 100, 80]. Kasus Demam Berdarah: [10, 15, 25, 35, 50, 65, 70, 68, 55, 40, 25, 18].",
+      "question": "Buatlah scatter plot dari data curah hujan dan kasus demam berdarah, kemudian analisis apakah ada korelasi antara kedua variabel tersebut berdasarkan pola penyebaran titiknya.",
+      "rubric_points": [
+        "Membuat scatter plot dengan sumbu X (Curah Hujan) dan sumbu Y (Kasus Demam Berdarah).",
+        "Menempatkan setiap pasangan data (Curah Hujan, Kasus Demam Berdarah) sebagai titik pada scatter plot.",
+        "Menganalisis pola penyebaran titik-titik pada scatter plot.",
+        "Menyimpulkan adanya korelasi (positif, negatif, atau tidak ada) antara curah hujan dan kasus demam berdarah."
+      ],
+      "explanation": "**Analisis Korelasi Curah Hujan dan Demam Berdarah**\\nScatter plot akan memvisualisasikan hubungan antara curah hujan (sumbu X) dan jumlah kasus demam berdarah (sumbu Y).\\n\\nBerdasarkan data yang diberikan, saat memplot titik-titik tersebut, akan terlihat bahwa seiring meningkatnya curah hujan hingga titik tertentu (sekitar 180-200 mm), jumlah kasus demam berdarah juga cenderung meningkat. Namun, setelah melewati puncak curah hujan, jumlah kasus demam berdarah mulai menurun meskipun curah hujan masih tinggi atau menurun. Pola ini menunjukkan adanya korelasi positif pada awal rentang curah hujan, namun mungkin tidak linier secara sempurna di seluruh rentang data. Hal ini mengindikasikan bahwa curah hujan yang tinggi dapat berkontribusi pada peningkatan kasus demam berdarah, namun faktor lain mungkin juga berperan.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah sekolah sedang melakukan survei terhadap tinggi badan (dalam cm) dan berat badan (dalam kg) siswa kelas XI. Data dari 10 siswa dipilih secara acak untuk dianalisis:\\n(165, 55), (170, 60), (155, 50), (175, 65), (160, 52), (172, 62), (158, 53), (178, 68), (162, 56), (173, 64).",
+      "question": "Gambarkan scatter plot dari data tinggi badan dan berat badan siswa tersebut, lalu jelaskan tren yang terlihat mengenai hubungan antara tinggi badan dan berat badan siswa.",
+      "rubric_points": [
+        "Membuat scatter plot dengan sumbu X (Tinggi Badan) dan sumbu Y (Berat Badan).",
+        "Menempatkan setiap pasangan data (Tinggi Badan, Berat Badan) sebagai titik pada scatter plot.",
+        "Menjelaskan tren umum yang terlihat dari penyebaran titik-titik.",
+        "Menyatakan jenis korelasi yang teramati antara tinggi badan dan berat badan."
+      ],
+      "explanation": "**Tren Hubungan Tinggi Badan dan Berat Badan**\\nScatter plot akan menampilkan titik-titik yang merepresentasikan hubungan antara tinggi badan siswa (sumbu X) dan berat badan mereka (sumbu Y).\\n\\nKetika data ini diplot, akan terlihat bahwa titik-titik cenderung bergerak naik dari kiri bawah ke kanan atas. Ini menunjukkan adanya korelasi positif antara tinggi badan dan berat badan. Secara umum, siswa yang lebih tinggi cenderung memiliki berat badan yang lebih besar, dan siswa yang lebih pendek cenderung memiliki berat badan yang lebih ringan. Pola ini konsisten dengan pemahaman umum tentang pertumbuhan fisik manusia.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani ingin membandingkan hasil panen padi (dalam ton per hektar) di dua lahan yang berbeda selama 5 musim tanam terakhir. Lahan A memiliki hasil panen: [6.5, 7.0, 6.8, 7.2, 7.5]. Lahan B memiliki hasil panen: [6.0, 6.5, 6.2, 6.8, 7.0].",
+      "question": "Buatlah boxplot terpisah untuk hasil panen Lahan A dan Lahan B, lalu bandingkan sebaran hasil panen kedua lahan tersebut berdasarkan visualisasi boxplot.",
+      "rubric_points": [
+        "Membuat boxplot yang benar untuk Lahan A, menunjukkan minimum, Q1, median, Q3, dan maksimum.",
+        "Membuat boxplot yang benar untuk Lahan B, menunjukkan minimum, Q1, median, Q3, dan maksimum.",
+        "Membandingkan posisi median kedua boxplot.",
+        "Membandingkan rentang antarkuartil (IQR) kedua boxplot.",
+        "Membandingkan rentang keseluruhan (minimum ke maksimum) kedua boxplot."
+      ],
+      "explanation": "**Perbandingan Sebaran Hasil Panen**\\nUntuk membuat boxplot, kita perlu menghitung lima serangkai untuk setiap lahan.\\n\\n**Lahan A:**\\nData: [6.5, 7.0, 6.8, 7.2, 7.5]\\nUrutkan: [6.5, 6.8, 7.0, 7.2, 7.5]\\nMinimum = 6.5, Q1 = 6.8, Median = 7.0, Q3 = 7.2, Maksimum = 7.5\\n\\n**Lahan B:**\\nData: [6.0, 6.5, 6.2, 6.8, 7.0]\\nUrutkan: [6.0, 6.2, 6.5, 6.8, 7.0]\\nMinimum = 6.0, Q1 = 6.2, Median = 6.5, Q3 = 6.8, Maksimum = 7.0\\n\\n**Perbandingan:**\\nBoxplot Lahan A akan menunjukkan median yang lebih tinggi (7.0) dibandingkan Lahan B (6.5), mengindikasikan rata-rata hasil panen yang lebih baik. Rentang antarkuartil (IQR) Lahan A (7.2 - 6.8 = 0.4) sedikit lebih kecil dari Lahan B (6.8 - 6.2 = 0.6), menunjukkan sebaran yang sedikit lebih terkonsentrasi di sekitar median untuk Lahan A. Rentang keseluruhan Lahan A (7.5 - 6.5 = 1.0) juga sedikit lebih besar dari Lahan B (7.0 - 6.0 = 1.0), namun perbedaannya kecil. Secara keseluruhan, Lahan A menunjukkan kinerja panen yang lebih konsisten dan sedikit lebih tinggi.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "f4a75da7-fd2e-441e-98e0-9dad014eae73",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:59:01Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data Lanjutan",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Merepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1313,
+      "assistant": 2730,
+      "total": 4717,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

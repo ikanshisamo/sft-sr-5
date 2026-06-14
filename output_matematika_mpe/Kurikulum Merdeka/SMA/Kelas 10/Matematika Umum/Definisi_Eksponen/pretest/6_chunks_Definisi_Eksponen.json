@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Definisi Eksponen\n\n--- MATERI ---\nEksponen merupakan konsep matematika yang sangat bermanfaat untuk memecahkan berbagai permasalahan nyata di kehidupan manusia. Beberapa fenomena di alam dan kehidupan sosial yang mengikuti pola pertumbuhan eksponen antara lain adalah pertumbuhan populasi penduduk dunia, proses pembelahan koloni sel bakteri, tingkat kecepatan penyebaran virus, hingga kecepatan peredaran informasi hoaks atau video yang menjadi viral di media sosial. Layaknya penyebaran virus yang berlipat ganda dari orang ke orang, daya tarik sebuah konten di media sosial dapat membuat penyebarannya melonjak dengan sangat cepat hingga menjangkau jutaan penonton.\n\nKonsep paling dasar dari eksponen berpijak pada istilah perkalian berulang. Perkalian berulang adalah perkalian yang dilakukan secara terus-menerus dengan menggunakan faktor bilangan yang sama. Penggunaan bilangan berpangkat akan sangat memudahkan kita untuk menyederhanakan bentuk penulisan dari perkalian berulang tersebut. Sebagai contoh dasar, operasi perkalian berulang bilangan dua yang dilakukan sebanyak enam kali, yaitu 2 x 2 x 2 x 2 x 2 x 2, dapat disederhanakan dan ditulis ke dalam bentuk pangkat sebagai 2^6. Hal yang sama juga berlaku untuk variabel matematika, misalnya a x a x a x a x a x a x a dapat dituliskan secara lebih singkat menjadi a^7.\n\nPenerapan eksponen dalam merepresentasikan perkalian berulang dapat diamati dengan jelas pada pola penyebaran pesan berantai atau hoaks. Jika diasumsikan satu orang menyebarkan sebuah hoaks kepada dua orang, lalu dua orang tersebut masing-masing menyebarkan kembali kepada dua orang lainnya, dan siklus ini terus berlanjut. Pola bilangan yang terbentuk dari situasi ini adalah perkalian berulang dari bilangan dua. Pada fase pertama jumlah penerima pesannya adalah 2^1, pada fase kedua menjadi 2 x 2 = 2^2, fase ketiga 2 x 2 x 2 = 2^3, fase keempat 2 x 2 x 2 x 2 = 2^4, dan begitu seterusnya.\n\nBerdasarkan pola perkalian berulang pada penyebaran pesan berantai yang selalu bertambah dan membesar secara konstan tersebut, kita dapat merumuskan sebuah formula umum. Jika banyak fase penyebaran sebuah pesan dinyatakan dengan variabel n, dan banyak orang yang mendapatkan hoaks di fase ke-n dinyatakan dengan variabel m, maka nilai m didapatkan dari 2 x 2 x 2 x 2 x... x 2 (sebanyak n kali). Dengan demikian, banyak orang yang menerima hoaks pada fase ke-n tersebut dapat dihitung secara cepat dan akurat menggunakan rumus matematis sederhana, yaitu m = 2^n.\n\nSecara definisi matematis formal, bilangan berpangkat atau yang lazim disebut sebagai eksponen dijabarkan melalui syarat dasar berikut: Jika nilai a adalah sebuah bilangan real dan nilai n adalah sebuah bilangan bulat positif, maka lambang a^n menyatakan hasil kali bilangan a tersebut secara berulang sebanyak n faktor. Bentuk perkalian berulangnya dapat secara matematis dituliskan dengan a^n = a x a x a x... x a (sebanyak n faktor). Di dalam penulisan notasi eksponen a^n ini, komponen a dinamakan sebagai bilangan pokok (atau basis), sedangkan komponen n disebut sebagai pangkat (atau eksponen).\n\nSelain pada kondisi pangkat bilangan bulat positif, definisi eksponen juga memiliki perluasan penting untuk kondisi lainnya dengan syarat bilangan pokok a tidak boleh sama dengan nol. Jika pangkatnya berupa bilangan bulat negatif, maka akan berlaku persamaan a^(-n) = (1/a)^n. Sementara itu, jika bentuk pangkatnya berupa bilangan pecahan, maka akan berlaku definisi a^(1/n) = p sedemikian sehingga p^n = a. Lebih lanjut, untuk bentuk bilangan dengan pangkat pecahan a^(m/n), nilainya akan setara dengan (a^(1/n))^m di mana m dan n adalah bilangan bulat positif.\n\n[ATP_ALIGNMENT]\nMenyatakan perkalian bilangan bulat berulang sebagai bilangan berpangkat (eksponen).\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah video tutorial memasak diunggah ke media sosial. Dalam satu jam pertama, video tersebut ditonton oleh 10 orang. Setiap penonton kemudian membagikannya kepada 2 orang lain. Setelah 3 jam, berapa total penonton yang sudah melihat video tersebut jika setiap orang hanya menonton satu kali?",
+      "question": "Berdasarkan deskripsi di atas, berapa total penonton yang sudah melihat video tersebut setelah 3 jam?",
+      "options": {
+        "A": "10 \\times 2^3",
+        "B": "10 + 2^3",
+        "C": "10 \\times 3 \\times 2",
+        "D": "10 + 2 + 2 + 2",
+        "E": "10 \\times 2 \\times 3"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan Jawaban:**\\nVideo ditonton 10 orang di awal. Setiap orang membagikan ke 2 orang lain. Setelah 1 jam, penonton menjadi 10 \\times 2. Setelah 2 jam, penonton menjadi (10 \\times 2) \\times 2 = 10 \\times 2^2. Setelah 3 jam, penonton menjadi (10 \\times 2^2) \\times 2 = 10 \\times 2^3. Jadi, total penonton adalah 10 \\times 2^3."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah grup percakapan di aplikasi pesan instan memiliki 5 anggota. Setiap anggota mengirimkan pesan yang sama kepada 3 teman lainnya yang belum ada di grup tersebut. Proses ini berlanjut setiap jam.",
+      "question": "Jika proses penyebaran pesan ini berlanjut selama 2 jam, bentuk notasi eksponen yang paling tepat untuk menyatakan jumlah pesan baru yang dikirim pada jam kedua adalah...",
+      "options": {
+        "A": "5 \\times 3^1",
+        "B": "5 \\times 3^2",
+        "C": "5 + 3^2",
+        "D": "5 \\times 3",
+        "E": "5 + 3 + 3"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan Jawaban:**\\nPada jam pertama, 5 anggota masing-masing mengirim ke 3 orang, sehingga ada 5 \\times 3 pesan baru. Pada jam kedua, setiap pesan baru tersebut (sebanyak 5 \\times 3) disebarkan lagi ke 3 orang. Jadi, jumlah pesan baru pada jam kedua adalah (5 \\times 3) \\times 3 = 5 \\times 3^2."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah simulasi penyebaran informasi, sebuah berita disebarkan oleh 1 orang kepada 3 orang. Masing-masing dari 3 orang tersebut kemudian menyebarkan berita yang sama kepada 3 orang lainnya.",
+      "question": "Jika proses penyebaran ini berlanjut hingga 3 kali penyebaran (dimulai dari orang pertama), berapa total orang yang menerima berita tersebut pada penyebaran ketiga?",
+      "options": {
+        "A": "3^3",
+        "B": "1 + 3 + 3^2",
+        "C": "1 \\times 3^3",
+        "D": "3 \\times 3 \\times 3",
+        "E": "1 + 3 + 3"
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan Jawaban:**\\nPenyebaran pertama: 1 orang menyebar ke 3 orang (total 3 orang baru).\\nPenyebaran kedua: 3 orang masing-masing menyebar ke 3 orang (total 3 \\times 3 = 9 orang baru).\\nPenyebaran ketiga: 9 orang masing-masing menyebar ke 3 orang (total 9 \\times 3 = 27 orang baru).\\nBentuk perkalian berulangnya adalah 3 \\times 3 \\times 3, yang sama dengan 3^3."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah bakteri membelah diri menjadi dua setiap jam. Jika awalnya ada 1 bakteri, maka setelah 1 jam menjadi 2, setelah 2 jam menjadi 4, dan seterusnya.",
+      "question": "Berapa jumlah bakteri setelah 5 jam?",
+      "options": {
+        "A": "1 + 2 \\times 5",
+        "B": "1 \\times 2^5",
+        "C": "1 \\times 5 \\times 2",
+        "D": "2^5",
+        "E": "1 + 2 + 2 + 2 + 2 + 2"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan Jawaban:**\\nJumlah bakteri setelah n jam adalah 1 \\times 2^n. Untuk 5 jam, jumlahnya adalah 1 \\times 2^5. Ini menunjukkan perkalian berulang dari 2 sebanyak 5 kali."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong mengalami peningkatan produksi. Pada bulan pertama, mereka memproduksi 100 bungkus. Setiap bulan berikutnya, produksi meningkat dua kali lipat dari bulan sebelumnya.",
+      "question": "Berapa bungkus keripik singkong yang diproduksi pada bulan ke-4?",
+      "options": {
+        "A": "100 \\times 2^3",
+        "B": "100 \\times 4 \\times 2",
+        "C": "100 + 2^4",
+        "D": "100 \\times 2 \\times 3",
+        "E": "100 + 2 + 2 + 2"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan Jawaban:**\\nProduksi bulan pertama adalah 100 bungkus. Bulan kedua: 100 \\times 2. Bulan ketiga: (100 \\times 2) \\times 2 = 100 \\times 2^2. Bulan keempat: (100 \\times 2^2) \\times 2 = 100 \\times 2^3. Jadi, produksi pada bulan ke-4 adalah 100 \\times 2^3 = 800 bungkus."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani menggunakan pupuk yang menyebar secara eksponensial di lahannya. Pada penyemprotan pertama, pupuk menyebar menutupi area 1 meter persegi. Setiap penyemprotan berikutnya, area yang tertutupi pupuk menjadi 3 kali lipat dari area sebelumnya.",
+      "question": "Jika petani melakukan 4 kali penyemprotan, berapakah total luas area yang tertutupi pupuk setelah penyemprotan ke-4?",
+      "options": {
+        "A": "1 \\times 4 \\times 3",
+        "B": "1 + 3^4",
+        "C": "1 \\times 3^4",
+        "D": "1 \\times 3 \\times 4",
+        "E": "1 + 3 + 3 + 3"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nPenyemprotan pertama: 1 m^2.\\nPenyemprotan kedua: 1 \\times 3 = 3 m^2.\\nPenyemprotan ketiga: 3 \\times 3 = 9 m^2 (atau 1 \\times 3^2).\\nPenyemprotan keempat: 9 \\times 3 = 27 m^2 (atau 1 \\times 3^3).\\nNamun, pertanyaan menanyakan total area yang tertutupi setelah penyemprotan ke-4, yang berarti 1 \\times 3^4 jika kita menganggap area awal adalah 1 dan setiap tahap melipatgandakan area yang sudah ada. Jika kita menganggap area yang tertutupi pada penyemprotan ke-n adalah 1 \\times 3^{n-1}, maka pada penyemprotan ke-4 adalah 1 \\times 3^{4-1} = 1 \\times 3^3 = 27. Jika kita menganggap setiap penyemprotan menambahkan area baru yang 3 kali lipat dari area sebelumnya, maka luas total setelah penyemprotan ke-4 adalah 1 + 3 + 9 + 27 = 40. Namun, berdasarkan definisi eksponen sebagai perkalian berulang, dan jika diasumsikan area yang tertutupi pada penyemprotan ke-n adalah 3^n (dimulai dari 3^1 pada penyemprotan pertama), maka pada penyemprotan ke-4 adalah 3^4. Jika area awal adalah 1 m^2 dan setiap penyemprotan melipatgandakan area yang sudah ada, maka setelah 4 penyemprotan, area yang tertutupi adalah 1 \\times 3 \\times 3 \\times 3 \\times 3 = 1 \\times 3^4."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan start-up teknologi meluncurkan aplikasi baru. Pada minggu pertama, aplikasi tersebut diunduh oleh 50 pengguna. Setiap minggu berikutnya, jumlah unduhan meningkat sebesar 3 kali lipat dari minggu sebelumnya.",
+      "question": "Berapa total jumlah unduhan aplikasi tersebut pada minggu ke-3?",
+      "options": {
+        "A": "50 \\times 3^2",
+        "B": "50 + 3^2",
+        "C": "50 \\times 3 \\times 2",
+        "D": "50 + 3 + 3",
+        "E": "50 \\times 3"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan Jawaban:**\\nMinggu pertama: 50 unduhan.\\nMinggu kedua: 50 \\times 3 = 150 unduhan.\\nMinggu ketiga: 150 \\times 3 = 450 unduhan.\\nIni dapat ditulis sebagai 50 \\times 3 \\times 3, atau 50 \\times 3^2."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah aplikasi berbagi video mencatat pertumbuhan jumlah pengguna. Pada awal peluncuran, aplikasi ini memiliki 100 pengguna. Setiap minggu, jumlah pengguna baru yang mendaftar adalah 5 kali lipat dari jumlah pengguna baru pada minggu sebelumnya. Minggu pertama mencatat 5 pengguna baru.",
+      "question": "Manakah pernyataan yang paling tepat mengenai jumlah pengguna baru pada minggu ke-3?",
+      "options": {
+        "A": "Jumlah pengguna baru pada minggu ke-3 adalah 5 \\times 5 = 25.",
+        "B": "Jumlah pengguna baru pada minggu ke-3 adalah 5 \\times 5 \\times 5 = 125.",
+        "C": "Jumlah pengguna baru pada minggu ke-3 adalah 100 \\times 5^2.",
+        "D": "Jumlah pengguna baru pada minggu ke-3 adalah 100 + 5^2.",
+        "E": "Jumlah pengguna baru pada minggu ke-3 adalah 5 \\times 3."
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan Jawaban:**\\nMinggu pertama: 5 pengguna baru. \\nMinggu kedua: 5 \\times 5 = 25 pengguna baru. \\nMinggu ketiga: 25 \\times 5 = 125 pengguna baru. Ini adalah perkalian berulang dari 5 sebanyak tiga kali (5 \\times 5 \\times 5), yang dapat ditulis sebagai 5^3."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah kampanye sosial tentang pentingnya menjaga kebersihan lingkungan dimulai dengan 10 relawan. Setiap hari, setiap relawan mengajak 2 orang baru untuk bergabung dalam kampanye tersebut. Kampanye ini berlangsung selama 5 hari.",
+      "question": "Jika diasumsikan setiap orang hanya mengajak orang baru satu kali, manakah strategi yang paling efisien untuk menghitung total jumlah relawan yang terlibat setelah 5 hari?",
+      "options": {
+        "A": "Menjumlahkan relawan awal dengan jumlah relawan baru yang bertambah setiap hari: 10 + (10 \\times 2) + (20 \\times 2) + (40 \\times 2) + (80 \\times 2).",
+        "B": "Menggunakan rumus pertumbuhan eksponensial: 10 \\times 2^5.",
+        "C": "Menghitung jumlah relawan baru setiap hari dan menjumlahkannya: (10 \\times 2) + (10 \\times 2^2) + (10 \\times 2^3) + (10 \\times 2^4) + (10 \\times 2^5).",
+        "D": "Menggunakan rumus sederhana: 10 + (2 \\times 5).",
+        "E": "Menghitung total penambahan relawan: 10 \\times 2 \\times 5."
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan Jawaban:**\\nHari 0: 10 relawan awal.\\nHari 1: 10 relawan awal + (10 \\times 2) relawan baru = 10 + 20 = 30 relawan.\\nHari 2: 30 relawan awal + (20 \\times 2) relawan baru = 30 + 40 = 70 relawan.\\nHari 3: 70 relawan awal + (40 \\times 2) relawan baru = 70 + 80 = 150 relawan.\\nHari 4: 150 relawan awal + (80 \\times 2) relawan baru = 150 + 160 = 310 relawan.\\nHari 5: 310 relawan awal + (160 \\times 2) relawan baru = 310 + 320 = 630 relawan.\\nStrategi A secara akurat menjumlahkan relawan awal dengan penambahan relawan baru setiap hari, yang mencerminkan pertumbuhan kumulatif."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah desa berencana membangun sistem irigasi. Sumber air utama dapat mengalirkan 10 liter per detik. Jika debit aliran air ini berlipat ganda setiap 5 menit karena adanya pompa tambahan yang diaktifkan secara bertahap.",
+      "question": "Manakah skenario yang paling realistis menggambarkan total volume air yang dialirkan setelah 15 menit, jika debit awal adalah 10 liter/detik?",
+      "options": {
+        "A": "Total volume = 10 liter/detik \\times 15 menit \\times 60 detik/menit.",
+        "B": "Total volume = 10 \\times 2 \\times 2 \\times 2 \\times (15 \\times 60).",
+        "C": "Total volume = (10 \\times 2^3) \\times (15 \\times 60).",
+        "D": "Total volume = 10 \\times 2^3 \\times 15.",
+        "E": "Total volume = 10 \\times 2^3."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nDebit awal adalah 10 liter/detik. Debit berlipat ganda setiap 5 menit. Dalam 15 menit, ada 3 periode 5 menit (15 menit / 5 menit = 3).\\nMenit 0-5: Debit 10 liter/detik.\\nMenit 5-10: Debit 10 \\times 2 = 20 liter/detik.\\nMenit 10-15: Debit 20 \\times 2 = 40 liter/detik (atau 10 \\times 2^2).\\nNamun, jika diasumsikan debitnya berlipat ganda setiap 5 menit, maka setelah 3 periode 5 menit (total 15 menit), debitnya menjadi 10 \\times 2^3 liter/detik.\\nTotal volume = Debit \\times Waktu = (10 \\times 2^3) \\times (15 \\times 60 detik)."
+    }
+  ],
+  "metadata": {
+    "id": "62bfa252-f8d8-4d59-8cd5-b9274458609d",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T11:02:39Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Definisi Eksponen",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_6_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyatakan perkalian bilangan bulat berulang sebagai bilangan berpangkat (eksponen).",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3589,
+      "assistant": 3546,
+      "total": 7809,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

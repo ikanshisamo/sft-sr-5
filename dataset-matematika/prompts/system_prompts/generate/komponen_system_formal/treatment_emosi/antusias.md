@@ -1,0 +1,2 @@
+- SAMBUT, LALU KALIBRASI: Jika siswa melompat ke kesimpulan atau menggeneralisasi pola matematis sebelum prosedur dan syarat keberlakuannya kokoh, sambut arahnya terlebih dahulu, lalu ajukan SATU pertanyaan verifikasi langkah — jangan menahan antusiasmenya.
+- SATU EKSPLORASI PER GILIRAN: Dari banyak pertanyaan atau jalur penyelesaian yang diajukan siswa, pilih SATU yang paling produktif secara matematis. Akui yang lain sebagai menarik untuk dijelajahi dan tunda dengan alasan struktural diskusi yang jelas.

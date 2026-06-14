@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Sistem Persamaan dan Pertidaksamaan Linear | Sub Bab: Sistem Pertidaksamaan Linear\n\n--- MATERI ---\nPertidaksamaan linear dua variabel merupakan suatu kalimat terbuka matematika yang memuat dua peubah atau variabel, di mana masing-masing variabelnya memiliki pangkat tertinggi satu. Kalimat terbuka ini dihubungkan oleh tanda ketidaksamaan seperti kurang dari (<), lebih dari (>), kurang dari atau sama dengan (≤), serta lebih dari atau sama dengan (≥). Secara umum, bentuk matematis dari pertidaksamaan ini dapat dinyatakan sebagai ax + by > c, ax + by < c, ax + by ≥ c, atau ax + by ≤ c, dengan a, b, dan c merupakan bilangan riil. Berbeda dengan persamaan linear yang himpunan penyelesaiannya berupa titik atau garis lurus, penyelesaian dari pertidaksamaan linear dua variabel berupa suatu daerah atau luasan pada bidang koordinat Kartesius yang memenuhi syarat ketidaksamaan tersebut.\n\nLangkah pertama dalam menentukan daerah penyelesaian pertidaksamaan linear dua variabel adalah menggambar garis batas pada bidang koordinat Kartesius. Garis batas ini diperoleh dengan cara mengubah tanda ketidaksamaan menjadi tanda sama dengan (=) untuk membentuk persamaan linear ax + by = c. Untuk mempermudah penggambaran, tentukan titik potong garis tersebut terhadap sumbu-X dengan mensubstitusikan y = 0, serta titik potong terhadap sumbu-Y dengan mensubstitusikan x = 0. Setelah kedua titik potong koordinat ditemukan, hubungkan kedua titik tersebut menjadi sebuah garis lurus. Garis lurus inilah yang bertindak sebagai batas pemisah antara daerah yang memenuhi pertidaksamaan dan daerah yang tidak memenuhinya.\n\nDalam menggambar garis batas ax + by = c, terdapat aturan penting yang berkaitan erat dengan tanda ketidaksamaan pada soal awal. Jika pertidaksamaan linear menggunakan tanda ketidaksamaan tegas, yaitu kurang dari (<) atau lebih dari (>), maka garis batas harus digambar secara putus-putus. Garis putus-putus ini bermakna bahwa titik-titik yang terletak tepat pada garis tersebut tidak termasuk ke dalam himpunan penyelesaian. Sebaliknya, jika pertidaksamaan menggunakan tanda ketidaksamaan tidak tegas atau bersyarat, yaitu kurang dari atau sama dengan (≤) maupun lebih dari atau sama dengan (≥), maka garis batas digambar utuh atau penuh tanpa putus. Garis utuh menunjukkan bahwa semua titik pada garis tersebut merupakan bagian dari himpunan daerah penyelesaian.\n\nSetelah garis batas berhasil digambar, bidang koordinat Kartesius akan terbagi menjadi dua luasan daerah. Langkah selanjutnya adalah menentukan daerah mana yang merupakan himpunan penyelesaian yang benar. Hal ini umumnya dilakukan secara analitik menggunakan metode uji titik. Pilihlah sebuah titik sembarang (x1, y1) yang posisinya jelas tidak terletak tepat pada garis batas tersebut. Titik pangkal pusat koordinat (0, 0) sangat direkomendasikan untuk dipilih sebagai titik uji karena akan menyederhanakan proses perhitungan substitusi aljabar. Substitusikan nilai absis dan ordinat dari titik uji tersebut secara langsung ke dalam pertidaksamaan linear awal untuk dievaluasi kebenarannya.\n\nBerdasarkan hasil substitusi titik uji ke dalam pertidaksamaan, kita dapat menetapkan letak daerah penyelesaian. Jika substitusi menghasilkan pernyataan matematika yang bernilai benar, maka luasan bidang yang memuat titik uji tersebut adalah daerah himpunan penyelesaian. Namun, jika hasil substitusi bernilai salah, maka daerah penyelesaiannya berada tepat di area seberang dari garis batas yang tidak memuat titik uji tersebut. Tahap terakhir dalam penyajian grafik adalah memberikan arsiran pada daerah yang teridentifikasi sebagai himpunan penyelesaian. Arsiran ini berfungsi sebagai indikator visual yang membedakan daerah penyelesaian dengan luasan yang bukan penyelesaian, sehingga grafik pertidaksamaan mudah diinterpretasikan.\n\n[ATP_ALIGNMENT]\nMenentukan daerah penyelesaian pertidaksamaan linear dua variabel dan menggambarkannya pada grafik.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"\n\n[INSTRUKSI KHUSUS]\nResponse WAJIB lebih ringkas dan padat. Batasi total panjang output. Prioritaskan kualitas substansi di atas kuantitas kata.",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional ingin menjual buah apel dan jeruk. Ia memiliki modal Rp1.000.000. Harga beli apel Rp5.000/kg dan jeruk Rp4.000/kg. Ia tidak bisa membeli lebih dari 250 kg total buah.",
+      "question": "Manakah dari pertidaksamaan berikut yang TIDAK menggambarkan batasan pembelian pedagang tersebut?",
+      "options": {
+        "A": "x + y \\le 250",
+        "B": "5000x + 4000y \\le 1000000",
+        "C": "x \\ge 0",
+        "D": "y \\ge 0",
+        "E": "5000x + 4000y > 1000000"
+      },
+      "answer": "E",
+      "explanation": "**Batasan Modal dan Kapasitas**\\nPertidaksamaan A, B, C, dan D secara berurutan merepresentasikan batasan total kuantitas buah, batasan modal, dan batasan non-negatif untuk jumlah apel (x) dan jeruk (y). Pilihan E, \\\"5000x + 4000y > 1000000\\\", menyatakan pengeluaran melebihi modal, yang bertentangan dengan batasan modal."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko kelontong menjual dua jenis minuman: teh kemasan (x) dan air mineral (y). Toko tersebut memiliki stok maksimal 100 botol minuman dan ingin menjualnya setidaknya 30 botol teh.",
+      "question": "Jika \\(x\\) adalah jumlah teh dan \\(y\\) adalah jumlah air mineral, pertidaksamaan mana yang paling tepat mewakili batasan stok dan keinginan penjualan teh?",
+      "options": {
+        "A": "x + y \\ge 100",
+        "B": "x \\ge 30",
+        "C": "x + y \\le 100 \\text{ dan } x \\ge 30",
+        "D": "x + y > 100 \\text{ atau } x < 30",
+        "E": "x \\le 100 \\text{ dan } y \\ge 30"
+      },
+      "answer": "C",
+      "explanation": "**Representasi Batasan Stok dan Penjualan**\\nPertidaksamaan \\(x + y \\le 100\\) menunjukkan total stok minuman tidak melebihi 100 botol. Pertidaksamaan \\(x \\ge 30\\) menunjukkan keinginan untuk menjual minimal 30 botol teh. Keduanya harus dipenuhi secara bersamaan."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Grafik menunjukkan daerah penyelesaian dari sistem pertidaksamaan linear. Garis batasnya adalah \\(x + y = 5\\) dan \\(2x - y = 4\\).",
+      "question": "Jika garis batas digambar penuh (tidak putus-putus), tanda ketidaksamaan yang digunakan pada kedua pertidaksamaan tersebut adalah:",
+      "options": {
+        "A": "< dan >",
+        "B": "\\le dan \\ge",
+        "C": "< dan \\ge",
+        "D": "\\le dan >",
+        "E": "> dan <"
+      },
+      "answer": "B",
+      "explanation": "**Makna Garis Batas Penuh**\\nGaris batas yang digambar penuh (utuh) menunjukkan bahwa titik-titik yang berada tepat pada garis tersebut termasuk dalam himpunan penyelesaian. Ini terjadi ketika tanda ketidaksamaan yang digunakan adalah kurang dari atau sama dengan (\\(\\le\\)) atau lebih dari atau sama dengan (\\(\\ge\\))."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko buku menjual buku pelajaran (x) dan buku novel (y). Toko tersebut memiliki stok 200 buku. Penjualan buku pelajaran harus kurang dari 100 unit.",
+      "question": "Manakah pertidaksamaan yang benar untuk jumlah buku pelajaran yang dijual?",
+      "options": {
+        "A": "x > 100",
+        "B": "x \\le 100",
+        "C": "x < 100",
+        "D": "x \\ge 100",
+        "E": "x = 100"
+      },
+      "answer": "C",
+      "explanation": "**Batasan Penjualan Buku Pelajaran**\\nPernyataan \\\"penjualan buku pelajaran harus kurang dari 100 unit\\\" secara langsung diterjemahkan menjadi pertidaksamaan \\(x < 100\\). Ini berarti jumlah buku pelajaran yang dijual bisa berapa saja di bawah 100, tetapi tidak termasuk 100 itu sendiri."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 10 hektar. Ia berencana menanam padi dan jagung. Biaya tanam padi adalah Rp2.000.000 per hektar dan jagung Rp1.500.000 per hektar. Total anggaran petani adalah Rp18.000.000.",
+      "question": "Jika \\(p\\) adalah luas lahan untuk padi dan \\(j\\) adalah luas lahan untuk jagung, manakah sistem pertidaksamaan yang menggambarkan situasi tersebut?",
+      "options": {
+        "A": "p + j \\le 10 \\text{; } 2000000p + 1500000j \\le 18000000 \\text{; } p \\ge 0 \\text{; } j \\ge 0",
+        "B": "p + j \\ge 10 \\text{; } 2000000p + 1500000j \\ge 18000000 \\text{; } p \\ge 0 \\text{; } j \\ge 0",
+        "C": "p + j = 10 \\text{; } 2000000p + 1500000j = 18000000 \\text{; } p \\ge 0 \\text{; } j \\ge 0",
+        "D": "p \\le 10 \\text{; } j \\le 10 \\text{; } 2000000p + 1500000j \\le 18000000",
+        "E": "p + j \\le 10 \\text{; } 2000000p + 1500000j \\ge 18000000 \\text{; } p \\ge 0 \\text{; } j \\ge 0"
+      },
+      "answer": "A",
+      "explanation": "**Sistem Pertidaksamaan Lahan Petani**\\nLuas lahan total tidak boleh melebihi 10 hektar (\\(p + j \\le 10\\)). Total biaya tanam tidak boleh melebihi anggaran Rp18.000.000 (\\(2000000p + 1500000j \\le 18000000\\)). Luas lahan tidak mungkin negatif (\\(p \\ge 0\\) dan \\(j \\ge 0\\))."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi dua jenis kue: kue cokelat (x) dan kue keju (y). Setiap kue cokelat membutuhkan 2 gram gula dan 3 gram tepung. Setiap kue keju membutuhkan 3 gram gula dan 2 gram tepung. Pabrik memiliki persediaan 120 gram gula dan 110 gram tepung.",
+      "question": "Manakah sistem pertidaksamaan yang tepat untuk menggambarkan batasan bahan baku yang tersedia?",
+      "options": {
+        "A": "2x + 3y \\le 120 \\text{; } 3x + 2y \\le 110 \\text{; } x \\ge 0 \\text{; } y \\ge 0",
+        "B": "2x + 3y \\ge 120 \\text{; } 3x + 2y \\ge 110 \\text{; } x \\ge 0 \\text{; } y \\ge 0",
+        "C": "3x + 2y \\le 120 \\text{; } 2x + 3y \\le 110 \\text{; } x \\ge 0 \\text{; } y \\ge 0",
+        "D": "2x + 2y \\le 120 \\text{; } 3y + 3x \\le 110 \\text{; } x \\ge 0 \\text{; } y \\ge 0",
+        "E": "2x + 3y \\le 120 \\text{; } 3x + 2y \\le 110 \\text{; } x \\le 0 \\text{; } y \\le 0"
+      },
+      "answer": "A",
+      "explanation": "**Batasan Bahan Baku Produksi Kue**\\nJumlah gula yang digunakan untuk kue cokelat (\\(2x\\)) ditambah gula untuk kue keju (\\(3y\\)) tidak boleh melebihi persediaan gula (\\(120\\) gram). Demikian pula, jumlah tepung yang digunakan (\\(3x + 2y\\)) tidak boleh melebihi persediaan tepung (\\(110\\) gram). Jumlah kue tidak bisa negatif (\\(x \\ge 0\\), \\(y \\ge 0\\))."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan transportasi memiliki dua jenis bus, bus besar (x) dan bus kecil (y). Setiap bus besar dapat mengangkut 50 penumpang, dan bus kecil 30 penumpang. Perusahaan harus mengangkut minimal 300 penumpang.",
+      "question": "Jika perusahaan ingin menggunakan busnya secara efisien, manakah pertidaksamaan yang mewakili batasan minimal jumlah penumpang yang harus diangkut?",
+      "options": {
+        "A": "50x + 30y \\le 300",
+        "B": "50x + 30y \\ge 300",
+        "C": "x + y \\ge 300",
+        "D": "50x + 30y < 300",
+        "E": "30x + 50y \\ge 300"
+      },
+      "answer": "B",
+      "explanation": "**Batasan Minimal Penumpang**\\nPertidaksamaan \\(50x\\) merepresentasikan total penumpang dari bus besar, dan \\(30y\\) dari bus kecil. Jumlah total penumpang (\\(50x + 30y\\)) harus mencapai atau melebihi target minimal 300 penumpang, sehingga menggunakan tanda \\(\\ge\\)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha UMKM ingin memproduksi dua jenis keripik: singkong (x) dan pisang (y). Setiap keripik singkong membutuhkan 1 jam mesin A dan 2 jam mesin B. Setiap keripik pisang membutuhkan 2 jam mesin A dan 1 jam mesin B. Mesin A tersedia 10 jam dan mesin B tersedia 11 jam.",
+      "question": "Jika pengusaha ingin memaksimalkan keuntungan dengan keuntungan Rp5.000 per keripik singkong dan Rp4.000 per keripik pisang, strategi produksi mana yang paling efisien dalam memanfaatkan jam mesin?",
+      "options": {
+        "A": "Memproduksi 3 unit keripik singkong dan 4 unit keripik pisang.",
+        "B": "Memproduksi 4 unit keripik singkong dan 3 unit keripik pisang.",
+        "C": "Memproduksi 5 unit keripik singkong dan 0 unit keripik pisang.",
+        "D": "Memproduksi 0 unit keripik singkong dan 5 unit keripik pisang.",
+        "E": "Memproduksi 2 unit keripik singkong dan 4 unit keripik pisang."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Efisiensi Produksi Berbasis Jam Mesin**\\nSistem pertidaksamaan yang relevan adalah \\(x + 2y \\le 10\\) (Mesin A), \\(2x + y \\le 11\\) (Mesin B), \\(x \\ge 0\\), \\(y \\ge 0\\). Titik-titik pojok daerah penyelesaian adalah (0,0), (5.5,0), (0,5), dan (3,4). Keuntungan untuk (3,4) adalah \\(5000(3) + 4000(4) = 15000 + 16000 = 31000\\). Keuntungan untuk (4,3) adalah \\(5000(4) + 4000(3) = 20000 + 12000 = 32000\\). Keuntungan untuk (5.5,0) adalah \\(5000(5.5) = 27500\\). Keuntungan untuk (0,5) adalah \\(4000(5) = 20000\\). Pilihan B memberikan keuntungan tertinggi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani ingin menanam dua jenis sayuran, tomat (x) dan cabai (y), di lahan seluas 12 hektar. Biaya tanam tomat Rp3.000.000/hektar dan cabai Rp2.000.000/hektar. Anggaran petani Rp30.000.000. Ia juga ingin menanam cabai setidaknya 2 hektar lebih banyak dari tomat.",
+      "question": "Jika petani ingin memaksimalkan luas lahan yang ditanami, manakah kombinasi luas tanam yang paling realistis dan memenuhi semua batasan?",
+      "options": {
+        "A": "Tomat 5 hektar, Cabai 7 hektar.",
+        "B": "Tomat 4 hektar, Cabai 8 hektar.",
+        "C": "Tomat 6 hektar, Cabai 6 hektar.",
+        "D": "Tomat 3 hektar, Cabai 9 hektar.",
+        "E": "Tomat 7 hektar, Cabai 5 hektar."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Realistis Kombinasi Lahan Tanam**\\nBatasan: \\(x + y \\le 12\\), \\(3x + 2y \\le 30\\), \\(y \\ge x + 2\\), \\(x \\ge 0\\), \\(y \\ge 0\\).\\nOpsi A: \\(5+7=12\\) (OK), \\(3(5)+2(7)=15+14=29 \\le 30\\) (OK), \\(7 \\ge 5+2\\) (OK). Keuntungan: 12 hektar.\\nOpsi B: \\(4+8=12\\) (OK), \\(3(4)+2(8)=12+16=28 \\le 30\\) (OK), \\(8 \\ge 4+2\\) (OK). Keuntungan: 12 hektar.\\nOpsi C: \\(6+6=12\\) (OK), \\(3(6)+2(6)=18+12=30 \\le 30\\) (OK), \\(6 \\ge 6+2\\) (SALAH, \\(6 < 8\\)).\\nOpsi D: \\(3+9=12\\) (OK), \\(3(3)+2(9)=9+18=27 \\le 30\\) (OK), \\(9 \\ge 3+2\\) (OK). Keuntungan: 12 hektar.\\nOpsi E: \\(7+5=12\\) (OK), \\(3(7)+2(5)=21+10=31 \\le 30\\) (SALAH).\\nAntara A, B, dan D yang memenuhi semua, B adalah pilihan yang paling seimbang dan realistis untuk memaksimalkan lahan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik memiliki dua jenis truk: truk A (x) dengan kapasitas 10 ton dan truk B (y) dengan kapasitas 15 ton. Perusahaan harus mengangkut setidaknya 150 ton barang. Biaya operasional truk A adalah Rp500.000 per perjalanan dan truk B Rp700.000 per perjalanan.",
+      "question": "Jika perusahaan ingin meminimalkan biaya operasional sambil memenuhi target pengangkutan, manakah kombinasi penggunaan truk yang paling efisien?",
+      "options": {
+        "A": "Truk A 15 unit, Truk B 0 unit.",
+        "B": "Truk A 0 unit, Truk B 10 unit.",
+        "C": "Truk A 5 unit, Truk B 7 unit.",
+        "D": "Truk A 10 unit, Truk B 3 unit.",
+        "E": "Truk A 8 unit, Truk B 5 unit."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Efisiensi Biaya Logistik**\\nBatasan: \\(10x + 15y \\ge 150\\), \\(x \\ge 0\\), \\(y \\ge 0\\).\\nBiaya: \\(C = 500000x + 700000y\\).\\nOpsi A: \\(10(15) + 15(0) = 150\\) (OK). Biaya: \\(500000(15) = 7.500.000\\).\\nOpsi B: \\(10(0) + 15(10) = 150\\) (OK). Biaya: \\(700000(10) = 7.000.000\\).\\nOpsi C: \\(10(5) + 15(7) = 50 + 105 = 155\\) (OK). Biaya: \\(500000(5) + 700000(7) = 2.500.000 + 4.900.000 = 7.400.000\\).\\nOpsi D: \\(10(10) + 15(3) = 100 + 45 = 145\\) (SALAH, < 150).\\nOpsi E: \\(10(8) + 15(5) = 80 + 75 = 155\\) (OK). Biaya: \\(500000(8) + 700000(5) = 4.000.000 + 3.500.000 = 7.500.000\\).\\nPilihan B memberikan biaya operasional terendah."
+    }
+  ],
+  "metadata": {
+    "id": "72f3e1dd-624d-492d-8eb7-33dde0011a53",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:23:14Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Sistem Persamaan dan Pertidaksamaan Linear",
+    "sub_bab": "Sistem Pertidaksamaan Linear",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_5_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan daerah penyelesaian pertidaksamaan linear dua variabel dan menggambarkannya pada grafik.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3679,
+      "assistant": 3828,
+      "total": 8181,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

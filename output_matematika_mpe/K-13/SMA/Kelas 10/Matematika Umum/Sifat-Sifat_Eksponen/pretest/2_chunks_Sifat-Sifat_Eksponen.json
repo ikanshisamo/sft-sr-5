@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Sifat-Sifat Eksponen\n\n--- MATERI ---\nDalam mempelajari eksponen, terdapat beberapa sifat dasar bilangan berpangkat bulat positif yang sangat penting untuk dipahami guna mempermudah penyederhanaan ekspresi matematika. Sifat pertama adalah operasi perkalian bilangan berpangkat. Jika kita mengalikan dua bilangan berpangkat yang memiliki bilangan pokok (basis) yang sama, maka pangkatnya dijumlahkan. Secara matematis sifat ini dirumuskan sebagai a^m × a^n = a^(m+n), dengan syarat a merupakan bilangan real dan tidak sama dengan nol, serta m dan n adalah bilangan bulat positif. Sifat kedua berkaitan dengan operasi pembagian bilangan berpangkat. Pada pembagian dua bilangan berpangkat dengan basis yang sama, pangkat pada pembilang dikurangkan dengan pangkat pada penyebut. Generalisasi sifat ini dirumuskan sebagai a^m / a^n = a^(m-n), dengan syarat a tidak boleh bernilai nol. Pemahaman terhadap sifat perkalian dan pembagian ini merupakan landasan utama dalam mengoperasikan bentuk aljabar yang lebih kompleks.\n\nSelain sifat perkalian dan pembagian, sifat-sifat eksponen juga dapat digeneralisasi untuk perpangkatan dari bilangan berpangkat dan pangkat nol atau negatif. Sifat ketiga menyatakan bahwa jika suatu bilangan berpangkat dipangkatkan lagi, maka kedua eksponen tersebut saling dikalikan. Rumusannya adalah (a^m)^n = a^(m×n). Selanjutnya, terdapat sifat pemangkatan dari perkalian dua bilangan, yaitu (a × b)^n = a^n × b^n. Perluasannya pada pembagian adalah (a / b)^n = a^n / b^n dengan syarat b tidak sama dengan nol. Selain pangkat positif, definisi eksponen diperluas untuk pangkat nol dan pangkat negatif. Setiap bilangan real a yang tidak nol jika dipangkatkan nol hasilnya adalah satu (a^0 = 1). Sementara itu, pangkat bulat negatif didefinisikan sebagai kebalikan dari pangkat positifnya, yaitu a^(-m) = 1 / a^m. Penguasaan menyeluruh terhadap generalisasi sifat-sifat ini sangat esensial untuk memecahkan berbagai permasalahan fungsi dan logaritma pada materi selanjutnya.\n\n[ATP_ALIGNMENT]\nMenggeneralisasi sifat-sifat bilangan berpangkat.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pengusaha UMKM kerupuk udang ingin menghitung stok bahan baku. Ia memiliki 5 karung tepung terigu, masing-masing berisi 10 kg. Jika setiap resep membutuhkan 2 kg tepung, berapakah total jumlah resep yang bisa dibuat?",
+      "question": "Berdasarkan informasi tersebut, berapakah total jumlah resep kerupuk udang yang dapat dibuat?",
+      "options": {
+        "A": "25 resep",
+        "B": "50 resep",
+        "C": "10 resep",
+        "D": "15 resep",
+        "E": "20 resep"
+      },
+      "answer": "A",
+      "explanation": "**Perhitungan Stok Bahan Baku**\\nTotal tepung terigu adalah 5 karung \\times 10 kg/karung = 50 kg. Jika setiap resep membutuhkan 2 kg tepung, maka jumlah resep yang bisa dibuat adalah 50 kg / 2 kg/resep = 25 resep."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah rapat desa membahas program penanaman pohon, disepakati bahwa setiap kepala keluarga akan menanam 3 pohon. Jika ada 120 kepala keluarga di desa tersebut, berapakah total pohon yang akan ditanam?",
+      "question": "Berapakah total pohon yang akan ditanam oleh seluruh kepala keluarga di desa tersebut?",
+      "options": {
+        "A": "360 pohon",
+        "B": "120 pohon",
+        "C": "40 pohon",
+        "D": "123 pohon",
+        "E": "30 pohon"
+      },
+      "answer": "A",
+      "explanation": "**Total Pohon yang Ditanam**\\nSetiap kepala keluarga menanam 3 pohon, dan terdapat 120 kepala keluarga. Maka, total pohon yang ditanam adalah 120 kepala keluarga \\times 3 pohon/kepala keluarga = 360 pohon."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 1 hektar. Ia berencana menanam padi varietas A yang menghasilkan 5 ton per hektar dan varietas B yang menghasilkan 6 ton per hektar. Jika ia membagi lahannya sama rata untuk kedua varietas, berapakah total hasil panennya?",
+      "question": "Berapakah total hasil panen padi jika lahan dibagi rata untuk kedua varietas?",
+      "options": {
+        "A": "11 ton",
+        "B": "5.5 ton",
+        "C": "10 ton",
+        "D": "5 ton",
+        "E": "6 ton"
+      },
+      "answer": "B",
+      "explanation": "**Perhitungan Hasil Panen**\\nLahan seluas 1 hektar dibagi rata untuk 2 varietas, sehingga masing-masing varietas ditanam di 0.5 hektar. Varietas A menghasilkan 0.5 ha \\times 5 ton/ha = 2.5 ton. Varietas B menghasilkan 0.5 ha \\times 6 ton/ha = 3 ton. Total hasil panen adalah 2.5 ton + 3 ton = 5.5 ton."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong mencatat penjualan gula pasir. Hari Senin terjual 15 kg, hari Selasa 20 kg, dan hari Rabu 18 kg. Jika harga gula pasir Rp15.000 per kg, berapakah total pendapatan dari penjualan gula pasir selama tiga hari tersebut?",
+      "question": "Berapakah total pendapatan toko dari penjualan gula pasir selama tiga hari?",
+      "options": {
+        "A": "Rp795.000",
+        "B": "Rp750.000",
+        "C": "Rp765.000",
+        "D": "Rp780.000",
+        "E": "Rp735.000"
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Total Pendapatan**\\nTotal penjualan gula pasir selama tiga hari adalah 15 kg + 20 kg + 18 kg = 53 kg. Dengan harga Rp15.000 per kg, total pendapatan adalah 53 kg \\times Rp15.000/kg = Rp795.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tahu memproduksi tahu dalam dua shift. Shift pagi menghasilkan 1000 buah tahu, dan shift sore menghasilkan 1200 buah tahu. Setiap 10 buah tahu dikemas dalam satu kotak. Jika harga jual per kotak adalah Rp25.000, berapakah strategi pengemasan yang paling efisien untuk memaksimalkan pendapatan jika ada sisa tahu yang tidak genap 10?",
+      "question": "Manakah strategi pengemasan yang paling efisien untuk memaksimalkan pendapatan jika terdapat sisa tahu yang tidak genap 10?",
+      "options": {
+        "A": "Mengemas sebanyak mungkin kotak utuh, sisa tahu dibiarkan saja.",
+        "B": "Mengemas kotak utuh dan menjual sisa tahu secara satuan dengan harga proporsional.",
+        "C": "Menambah tahu dari shift lain untuk melengkapi kotak yang kurang.",
+        "D": "Membuang sisa tahu agar semua kotak terisi penuh.",
+        "E": "Menjual semua tahu tanpa dikotakkan jika jumlahnya tidak genap 10."
+      },
+      "answer": "B",
+      "explanation": "**Strategi Pengemasan Efisien**\\nStrategi paling efisien adalah mengemas kotak utuh dan menjual sisa tahu secara satuan. Ini memaksimalkan pendapatan dengan menjual semua produk yang dihasilkan, tanpa membuang atau menunda penjualan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua pedagang buah, Pak Budi dan Bu Ani, menjual apel. Pak Budi menjual apel Rp20.000 per kg, namun memberikan diskon 10% untuk pembelian di atas 3 kg. Bu Ani menjual apel Rp22.000 per kg, tanpa diskon. Jika seorang pembeli ingin membeli 4 kg apel, manakah pilihan yang lebih menguntungkan baginya?",
+      "question": "Manakah pilihan pedagang yang lebih menguntungkan bagi pembeli yang ingin membeli 4 kg apel?",
+      "options": {
+        "A": "Pak Budi, karena diskonnya lebih besar.",
+        "B": "Bu Ani, karena harganya lebih stabil.",
+        "C": "Pak Budi, karena total harga setelah diskon lebih rendah.",
+        "D": "Bu Ani, karena tidak ada syarat pembelian.",
+        "E": "Keduanya sama menguntungkan karena jumlahnya sama."
+      },
+      "answer": "C",
+      "explanation": "**Perbandingan Keuntungan Pembeli**\\nHarga Pak Budi untuk 4 kg: 4 kg \\times Rp20.000/kg = Rp80.000. Diskon 10% dari Rp80.000 adalah Rp8.000. Jadi, harga akhir Rp72.000. Harga Bu Ani untuk 4 kg: 4 kg \\times Rp22.000/kg = Rp88.000. Pilihan Pak Budi lebih menguntungkan."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah koperasi sekolah menjual buku tulis. Harga satu buku adalah Rp5.000. Jika seorang siswa membeli 7 buku tulis, berapakah total biaya yang harus dibayarnya?",
+      "question": "Berapakah total biaya yang harus dibayarkan siswa untuk membeli 7 buku tulis?",
+      "options": {
+        "A": "Rp30.000",
+        "B": "Rp40.000",
+        "C": "Rp35.000",
+        "D": "Rp25.000",
+        "E": "Rp45.000"
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Total Biaya Buku**\\nSetiap buku tulis berharga Rp5.000. Jika siswa membeli 7 buku, total biaya adalah 7 buku \\times Rp5.000/buku = Rp35.000."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengrajin batik memiliki stok kain sutra sebanyak 20 meter. Untuk membuat satu potong baju batik, dibutuhkan 2.5 meter kain. Berapa potong baju batik yang dapat dibuat dari seluruh stok kain tersebut?",
+      "question": "Berapa potong baju batik yang dapat dihasilkan dari 20 meter kain sutra?",
+      "options": {
+        "A": "6 potong",
+        "B": "7 potong",
+        "C": "8 potong",
+        "D": "9 potong",
+        "E": "10 potong"
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Jumlah Baju Batik**\\nTotal kain sutra adalah 20 meter. Setiap baju membutuhkan 2.5 meter kain. Jumlah baju yang dapat dibuat adalah 20 meter / 2.5 meter/baju = 8 potong baju."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua warung makan, Warung A dan Warung B, menawarkan paket nasi goreng. Warung A menawarkan paket Rp20.000 berisi nasi goreng dan es teh. Warung B menawarkan paket Rp18.000 berisi nasi goreng dan kerupuk. Jika seorang pelanggan ingin kenyang dan puas dengan minumannya, manakah pilihan yang lebih baik dan mengapa?",
+      "question": "Manakah pilihan warung yang lebih baik bagi pelanggan yang menginginkan minuman dan rasa puas?",
+      "options": {
+        "A": "Warung A, karena es teh lebih memuaskan daripada kerupuk.",
+        "B": "Warung B, karena harganya lebih murah.",
+        "C": "Warung A, karena es teh memenuhi keinginan pelanggan akan minuman.",
+        "D": "Warung B, karena kerupuk memberikan rasa puas.",
+        "E": "Keduanya sama, tergantung selera pelanggan."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Kepuasan Pelanggan**\\nPelanggan menginginkan minuman dan rasa puas. Warung A secara eksplisit menawarkan minuman (es teh), yang secara langsung memenuhi salah satu kriteria pelanggan. Warung B menawarkan kerupuk, yang mungkin tidak dianggap sebagai minuman."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko roti menjual donat dalam kemasan. Satu kemasan berisi 6 donat. Jika Ibu membeli 4 kemasan donat untuk acara keluarga, berapakah total donat yang dibeli?",
+      "question": "Berapakah total donat yang dibeli Ibu?",
+      "options": {
+        "A": "10 donat",
+        "B": "24 donat",
+        "C": "18 donat",
+        "D": "30 donat",
+        "E": "6 donat"
+      },
+      "answer": "B",
+      "explanation": "**Perhitungan Total Donat**\\nSetiap kemasan berisi 6 donat. Ibu membeli 4 kemasan. Jadi, total donat yang dibeli adalah 4 kemasan \\times 6 donat/kemasan = 24 donat."
+    }
+  ],
+  "metadata": {
+    "id": "152eb426-20af-48db-a42b-a1a70f3c9467",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:19:07Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Sifat-Sifat Eksponen",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menggeneralisasi sifat-sifat bilangan berpangkat.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3059,
+      "assistant": 2490,
+      "total": 6222,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

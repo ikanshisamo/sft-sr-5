@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Barisan | Target: HOTS\n\n--- MATERI ---\nDalam kajian matematika, barisan bilangan didefinisikan sebagai suatu susunan atau urutan bilangan yang dibentuk dan disusun menurut aturan atau pola tertentu. Setiap bilangan tunggal yang menyusun barisan tersebut secara hierarkis dinamakan sebagai suku barisan. Secara notasi matematis, suku ke-n dari suatu barisan bilangan dilambangkan dengan simbol U_n, di mana n merupakan anggota himpunan bilangan asli yang menunjukkan letak atau nomor urutan bilangan tersebut. Sebagai contoh dasar, pada barisan bilangan genap 2, 4, 6, 8, dan seterusnya, angka 2 adalah suku pertama (U_1), angka 4 adalah suku kedua (U_2), dan pola ini terus berlanjut. Berdasarkan karakteristik pola perubahannya, terdapat dua jenis barisan dasar yang paling esensial untuk dipelajari di tingkat menengah, yaitu barisan aritmetika dan barisan geometri. Pemahaman mendasar mengenai pola susunan ini menjadi prasyarat sebelum peserta didik menganalisis nilai dari suku-suku pada urutan yang lebih besar.\n\nBarisan aritmetika memiliki karakteristik keteraturan yang sangat spesifik, yaitu selisih antara dua suku yang posisinya berurutan selalu bernilai tetap atau konstan di sepanjang barisan tersebut. Nilai selisih yang konstan inilah yang selanjutnya didefinisikan sebagai beda barisan, dan secara aljabar disimbolkan dengan huruf b kecil. Untuk menentukan nilai beda pada suatu barisan aritmetika, peserta didik dapat melakukan operasi pengurangan antara suku ke-n dengan suku tepat di sebelumnya. Secara matematis, hal ini dirumuskan sebagai b = U_n - U_(n-1). Sebagai ilustrasi, pada barisan bilangan 3, 7, 11, 15, nilai bedanya adalah 4, yang diperoleh dari hasil pengurangan 7 dikurangi 3, atau 11 dikurangi 7. Pola pertambahan atau pengurangan yang linier ini menjadi ciri mutlak dan syarat utama yang membedakan barisan aritmetika dengan jenis barisan lainnya.\n\nDalam memecahkan masalah barisan aritmetika, mencari nilai suatu suku pada urutan tertentu yang bernilai besar tentu tidak efisien jika dilakukan dengan mendaftar bilangan satu per satu. Oleh karena itu, digunakan suatu rumusan aljabar yang sistematis. Misalkan suku pertama dari sebuah barisan aritmetika dilambangkan dengan huruf a, dan beda antarsukunya adalah b. Suku pertama U_1 ekuivalen dengan a, suku kedua U_2 adalah a + b, suku ketiga U_3 adalah a + 2b, dan seterusnya. Berdasarkan pengamatan analitis terhadap pola penambahan beda yang terus berulang tersebut, dapat digeneralisasikan sebuah formula matematis untuk menentukan suku ke-n. Rumus umum suku ke-n pada barisan aritmetika secara eksak diformulasikan sebagai U_n = a + (n - 1)b. Melalui substitusi nilai suku awal dan beda ke dalam formula ini, peserta didik dapat dengan mudah menentukan nilai suku ke berapapun.\n\nBerbeda halnya dengan barisan aritmetika yang dibentuk melalui operasi penjumlahan atau pengurangan yang konstan, barisan geometri didefinisikan sebagai susunan bilangan yang pola perkembangannya didasarkan pada perkalian dengan bilangan yang tetap. Pada barisan geometri, perbandingan atau hasil bagi antara dua suku yang letaknya berurutan senantiasa memiliki nilai yang konstan di sepanjang barisan. Nilai perbandingan yang tetap tersebut diistilahkan sebagai rasio, dan secara universal disimbolkan dengan huruf r kecil. Secara matematis, besaran rasio diperoleh dengan membagi suku ke-n dengan suku tepat sebelumnya, yang diekspresikan dengan rumusan r = U_n / U_(n-1). Karakteristik perkalian berulang dengan rasio ini menyebabkan nilai suku-suku pada barisan geometri mengalami proses pertumbuhan atau peluruhan yang bersifat eksponensial, bukan lagi linear.\n\nSama seperti pada barisan aritmetika, menentukan suku ke-n pada barisan geometri juga memerlukan rumusan aljabar yang terstruktur. Apabila suku pertama dari sebuah barisan geometri dinotasikan dengan a, dan rasio perkaliannya adalah r, maka suku pertama U_1 adalah ekuivalen dengan a. Selanjutnya, suku kedua U_2 adalah a dikalikan r, suku ketiga U_3 adalah a dikalikan r kuadrat, dan siklus ini berulang mengikuti deret kepangkatan pada rasionya. Apabila dianalisis, pangkat dari rasio selalu bernilai kurang satu dari nomor indeks sukunya. Mengacu pada keteraturan eksponensial tersebut, rumus umum untuk menentukan nilai suku ke-n pada barisan geometri diformulasikan secara matematis sebagai U_n = a.r^(n - 1). Penerapan formula ini sangat esensial karena sering digunakan untuk memodelkan permasalahan nyata, seperti fenomena pembelahan sel dalam biologi.\n\nKompetensi akhir yang harus dikuasai peserta didik dalam materi barisan adalah kemampuan menganalisis dan membedakan pola barisan aritmetika dan barisan geometri secara kritis. Kunci utama pembedanya terletak pada sifat operasi perubahannya. Jika urutan bilangan bertambah atau berkurang dengan jumlah yang konstan, maka pendekatan penyelesaiannya wajib menggunakan konsep barisan aritmetika dengan mengevaluasi nilai beda (b). Sebaliknya, jika urutan bilangan tersebut berkembang biak secara kelipatan atau menyusut melalui pembagian yang proporsional, maka model yang tepat adalah barisan geometri dengan menitikberatkan pada pencarian nilai rasio (r). Kesalahan dalam mengidentifikasi pola awal barisan ini akan berakibat fatal pada pemilihan formula U_n yang berujung pada ketidakvalidan hasil perhitungan. Oleh karena itu, pengujian pola selisih dan rasio pada tiga suku pertama sangat direkomendasikan.\n\n[ATP_ALIGNMENT]\nMenentukan suku ke-n pada barisan aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"\n\n[INSTRUKSI KHUSUS]\nResponse WAJIB lebih ringkas dan padat. Batasi total panjang output. Prioritaskan kualitas substansi di atas kuantitas kata.",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha UMKM kerupuk udang ingin meningkatkan kapasitas produksinya. Ia mencatat bahwa pada minggu pertama, ia memproduksi 100 bungkus. Setiap minggu berikutnya, ia berhasil menambah produksi sebanyak 20 bungkus dibandingkan minggu sebelumnya. Jika tren ini berlanjut, strategi produksi mana yang paling efisien untuk mencapai target 500 bungkus dalam waktu sesingkat mungkin?",
+      "question": "Untuk mencapai target produksi 500 bungkus, pengusaha tersebut harus mengevaluasi efisiensi penambahan produksi mingguan. Strategi mana yang paling mencerminkan pencapaian target tersebut dengan mempertimbangkan pola peningkatan yang ada?",
+      "options": {
+        "A": "Terus menambah produksi 20 bungkus setiap minggu hingga target tercapai, tanpa mempertimbangkan batas waktu.",
+        "B": "Menganalisis berapa minggu yang dibutuhkan untuk mencapai 500 bungkus dengan peningkatan konstan 20 bungkus per minggu.",
+        "C": "Menghitung total produksi kumulatif setiap minggu dan menentukan kapan angka tersebut melampaui 500 bungkus.",
+        "D": "Memprediksi jumlah produksi pada minggu ke-25 untuk memastikan target 500 bungkus tercapai.",
+        "E": "Mengabaikan pola peningkatan dan fokus pada strategi pemasaran untuk menjual stok yang ada."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Efisiensi Produksi**\\nJawaban B paling tepat karena secara langsung menanyakan analisis waktu yang dibutuhkan untuk mencapai target produksi 500 bungkus dengan pola peningkatan 20 bungkus per minggu. Ini mencerminkan evaluasi strategi yang efisien."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah desa berencana membangun fasilitas umum. Pembangunan tahap pertama menelan biaya Rp 50.000.000. Setiap tahap pembangunan berikutnya, biaya meningkat sebesar 10% dari biaya tahap sebelumnya karena inflasi dan material yang lebih kompleks. Pengelolaan dana desa harus hati-hati.",
+      "question": "Jika desa tersebut memiliki anggaran maksimal Rp 120.000.000 untuk pembangunan fasilitas, strategi pengelolaan dana mana yang paling bijak untuk memastikan pembangunan dapat diselesaikan tanpa melebihi anggaran?",
+      "options": {
+        "A": "Melanjutkan pembangunan sebanyak mungkin tahap, mengabaikan batas anggaran.",
+        "B": "Menghitung biaya kumulatif setiap tahap dan menghentikan pembangunan tepat sebelum anggaran terlampaui.",
+        "C": "Memprediksi biaya tahap ke-5 untuk memastikan anggaran cukup.",
+        "D": "Menggunakan rumus barisan aritmetika untuk menghitung total biaya pembangunan.",
+        "E": "Mencari pinjaman tambahan jika biaya pembangunan melebihi anggaran yang tersedia."
+      },
+      "answer": "B",
+      "explanation": "**Pengelolaan Anggaran Pembangunan**\\nJawaban B paling mencerminkan pengambilan keputusan strategis dengan memantau biaya kumulatif dan menghentikan pembangunan sebelum anggaran Rp 120.000.000 terlampaui, sesuai prinsip kehati-hatian."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani menanam padi. Pada panen pertama, ia mendapatkan hasil 1 ton. Ia berharap hasil panennya meningkat setiap tahun. Jika hasil panen meningkat secara konstan sebesar 0.2 ton per tahun, petani tersebut ingin tahu kapan hasil panennya akan mencapai 2.5 ton.",
+      "question": "Petani tersebut ingin mencapai hasil panen 2.5 ton. Strategi identifikasi pola mana yang paling tepat untuk memprediksi kapan target tersebut tercapai?",
+      "options": {
+        "A": "Menghitung selisih hasil panen antara tahun ke-10 dan tahun ke-5.",
+        "B": "Menggunakan rumus suku ke-n barisan geometri untuk memprediksi hasil panen.",
+        "C": "Menganalisis berapa tahun yang dibutuhkan untuk mencapai 2.5 ton dengan peningkatan konstan 0.2 ton per tahun.",
+        "D": "Membandingkan hasil panen tahun ke-3 dengan tahun ke-4.",
+        "E": "Fokus pada peningkatan hasil panen sebesar 10% setiap tahun."
+      },
+      "answer": "C",
+      "explanation": "**Prediksi Hasil Panen**\\nJawaban C paling tepat karena secara langsung menanyakan analisis waktu yang dibutuhkan untuk mencapai target 2.5 ton dengan peningkatan konstan 0.2 ton per tahun, sesuai dengan pola barisan aritmetika."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik mencatat jumlah paket yang dikirim. Pada hari pertama, mereka mengirim 50 paket. Setiap hari berikutnya, jumlah paket yang dikirim meningkat dua kali lipat dari hari sebelumnya. Perusahaan ingin memprediksi beban kerja pada hari ke-7.",
+      "question": "Untuk memprediksi beban kerja pada hari ke-7, strategi analisis pola mana yang paling efisien dan akurat?",
+      "options": {
+        "A": "Menghitung total paket yang dikirim dari hari ke-1 hingga hari ke-7.",
+        "B": "Menggunakan rumus barisan aritmetika untuk memprediksi jumlah paket.",
+        "C": "Menganalisis peningkatan jumlah paket secara bertahap dengan mengalikan dua setiap hari hingga hari ke-7.",
+        "D": "Membandingkan jumlah paket hari ke-5 dan hari ke-6.",
+        "E": "Mengasumsikan peningkatan jumlah paket sebesar 50 paket setiap hari."
+      },
+      "answer": "C",
+      "explanation": "**Prediksi Beban Kerja Logistik**\\nJawaban C paling efisien karena secara langsung menganalisis pola perkalian dua setiap hari untuk memprediksi jumlah paket pada hari ke-7, sesuai dengan karakteristik barisan geometri."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa menabung uang jajan. Minggu pertama ia menabung Rp 10.000. Setiap minggu berikutnya, ia menabung Rp 2.000 lebih banyak dari minggu sebelumnya. Ia ingin tahu kapan tabungannya akan mencapai Rp 100.000.",
+      "question": "Untuk mengetahui kapan tabungannya mencapai Rp 100.000, strategi perencanaan keuangan mana yang paling efektif?",
+      "options": {
+        "A": "Menghitung total tabungan kumulatif setiap minggu dan menentukan kapan angka tersebut melampaui Rp 100.000.",
+        "B": "Menggunakan rumus barisan geometri untuk memprediksi total tabungan.",
+        "C": "Memprediksi jumlah tabungan pada minggu ke-10.",
+        "D": "Menganalisis selisih tabungan antara minggu ke-5 dan minggu ke-6.",
+        "E": "Menambah jumlah tabungan sebesar 20% setiap minggu."
+      },
+      "answer": "A",
+      "explanation": "**Perencanaan Keuangan Tabungan**\\nJawaban A paling efektif karena mengharuskan siswa menghitung total tabungan kumulatif setiap minggu dan mengidentifikasi titik waktu ketika target Rp 100.000 tercapai, sesuai dengan pola aritmetika."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tekstil memproduksi kain. Produksi awal adalah 500 meter. Setiap bulan, produksi meningkat sebesar 50 meter. Pabrik ingin mengevaluasi efisiensi produksi untuk mencapai target 1000 meter.",
+      "question": "Manakah strategi evaluasi produksi yang paling tepat untuk menentukan kapan target 1000 meter tercapai?",
+      "options": {
+        "A": "Menghitung total produksi kumulatif setiap bulan dan mengidentifikasi bulan saat target tercapai.",
+        "B": "Menggunakan rumus suku ke-n barisan geometri untuk memprediksi produksi.",
+        "C": "Memprediksi produksi pada bulan ke-10.",
+        "D": "Menganalisis selisih produksi antara bulan ke-5 dan bulan ke-6.",
+        "E": "Fokus pada peningkatan produksi sebesar 10% setiap bulan."
+      },
+      "answer": "A",
+      "explanation": "**Evaluasi Efisiensi Produksi**\\nJawaban A paling tepat karena mengharuskan pabrik menghitung total produksi kumulatif setiap bulan dan mengidentifikasi bulan saat target 1000 meter tercapai, sesuai dengan pola barisan aritmetika."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko buku mengalami peningkatan penjualan. Pada bulan pertama, terjual 80 eksemplar. Setiap bulan berikutnya, penjualan meningkat dua kali lipat dari bulan sebelumnya. Toko ingin memprediksi jumlah penjualan pada bulan ke-5.",
+      "question": "Untuk memprediksi jumlah penjualan pada bulan ke-5, strategi analisis pola mana yang paling akurat?",
+      "options": {
+        "A": "Menghitung total penjualan kumulatif dari bulan ke-1 hingga bulan ke-5.",
+        "B": "Menggunakan rumus barisan aritmetika untuk memprediksi jumlah penjualan.",
+        "C": "Menganalisis peningkatan jumlah penjualan secara bertahap dengan mengalikan dua setiap bulan hingga bulan ke-5.",
+        "D": "Membandingkan jumlah penjualan bulan ke-3 dan bulan ke-4.",
+        "E": "Mengasumsikan peningkatan penjualan sebesar 80 eksemplar setiap bulan."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Pola Penjualan**\\nJawaban C paling akurat karena secara langsung menganalisis pola perkalian dua setiap bulan untuk memprediksi jumlah penjualan pada bulan ke-5, sesuai dengan karakteristik barisan geometri."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengrajin gerabah membuat vas bunga. Minggu pertama ia membuat 15 vas. Setiap minggu berikutnya, ia membuat 3 vas lebih banyak dari minggu sebelumnya. Ia ingin tahu kapan ia bisa membuat total 100 vas.",
+      "question": "Strategi mana yang paling tepat untuk menentukan kapan pengrajin tersebut dapat membuat total 100 vas?",
+      "options": {
+        "A": "Menghitung total vas yang dibuat setiap minggu dan menentukan kapan angka tersebut melampaui 100 vas.",
+        "B": "Menggunakan rumus barisan geometri untuk memprediksi total vas.",
+        "C": "Memprediksi jumlah vas yang dibuat pada minggu ke-10.",
+        "D": "Menganalisis selisih produksi antara minggu ke-5 dan minggu ke-6.",
+        "E": "Fokus pada peningkatan produksi sebesar 20% setiap minggu."
+      },
+      "answer": "A",
+      "explanation": "**Perencanaan Produksi Gerabah**\\nJawaban A paling tepat karena mengharuskan pengrajin menghitung total vas yang dibuat setiap minggu dan mengidentifikasi titik waktu ketika target 100 vas tercapai, sesuai dengan pola barisan aritmetika."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah komunitas peduli lingkungan menanam pohon. Pada bulan pertama, mereka menanam 20 pohon. Setiap bulan berikutnya, jumlah pohon yang ditanam meningkat dua kali lipat dari bulan sebelumnya. Komunitas ingin memprediksi total pohon yang tertanam setelah 4 bulan.",
+      "question": "Untuk memprediksi total pohon yang tertanam setelah 4 bulan, strategi analisis pola mana yang paling efisien?",
+      "options": {
+        "A": "Menghitung jumlah pohon yang ditanam pada bulan ke-4 saja.",
+        "B": "Menggunakan rumus barisan aritmetika untuk memprediksi total pohon.",
+        "C": "Menganalisis peningkatan jumlah pohon secara bertahap dengan mengalikan dua setiap bulan dan menjumlahkannya hingga bulan ke-4.",
+        "D": "Membandingkan jumlah pohon bulan ke-2 dan bulan ke-3.",
+        "E": "Mengasumsikan peningkatan jumlah pohon sebesar 20 pohon setiap bulan."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Pertumbuhan Pohon**\\nJawaban C paling efisien karena menganalisis pola perkalian dua setiap bulan dan menjumlahkannya untuk mendapatkan total pohon yang tertanam setelah 4 bulan, sesuai dengan karakteristik barisan geometri."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pedagang pasar tradisional menjual buah-buahan. Pada hari pertama berjualan, ia menjual 30 kg. Setiap hari berikutnya, ia menjual 5 kg lebih banyak dari hari sebelumnya. Ia ingin mengetahui kapan ia akan menjual total 150 kg.",
+      "question": "Strategi mana yang paling tepat untuk menentukan kapan pedagang tersebut akan menjual total 150 kg?",
+      "options": {
+        "A": "Menghitung total penjualan kumulatif setiap hari dan menentukan hari saat target tercapai.",
+        "B": "Menggunakan rumus barisan geometri untuk memprediksi total penjualan.",
+        "C": "Memprediksi jumlah penjualan pada hari ke-10.",
+        "D": "Menganalisis selisih penjualan antara hari ke-5 dan hari ke-6.",
+        "E": "Fokus pada peningkatan penjualan sebesar 15% setiap hari."
+      },
+      "answer": "A",
+      "explanation": "**Perencanaan Penjualan Buah**\\nJawaban A paling tepat karena mengharuskan pedagang menghitung total penjualan kumulatif setiap hari dan mengidentifikasi hari saat target 150 kg tercapai, sesuai dengan pola barisan aritmetika."
+    }
+  ],
+  "metadata": {
+    "id": "a0cfabed-454c-49cb-9b62-30ce2cecefe4",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:06:03Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Barisan",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_6_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan suku ke-n pada barisan aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3676,
+      "assistant": 3549,
+      "total": 7899,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

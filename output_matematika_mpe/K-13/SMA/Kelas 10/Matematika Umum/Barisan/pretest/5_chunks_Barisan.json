@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Barisan\n\n--- MATERI ---\nDalam mempelajari matematika, khususnya terkait pola susunan bilangan, kita akan mengenal istilah barisan. Barisan suatu objek atau bilangan pada dasarnya membicarakan masalah urutannya yang diatur oleh suatu pola atau aturan tertentu. Setiap bilangan yang menyusun barisan tersebut menempati urutan tertentu dan secara matematis dinamakan sebagai suku barisan. Suku pertama pada suatu barisan lazim disimbolkan dengan u1 atau a, suku kedua dengan u2, suku ketiga dengan u3, dan pola penamaan ini berlanjut seterusnya hingga suku ke-n yang disimbolkan secara umum dengan un. Langkah awal yang paling krusial dalam menganalisis suatu barisan bilangan adalah kemampuan untuk mengamati dan menemukan pola perubahannya. Dengan mengidentifikasi aturan yang mendasari pembentukan barisan tersebut, kita dapat memprediksi dan menentukan nilai bilangan pada urutan keberapa pun secara terstruktur, tanpa harus mendaftarnya secara manual.\n\nSalah satu bentuk barisan bilangan yang paling fundamental untuk dipelajari adalah barisan aritmetika. Barisan aritmetika didefinisikan sebagai suatu barisan bilangan di mana selisih di antara dua suku yang saling berurutan selalu bernilai tetap atau konstan. Selisih yang konstan ini secara matematis dinamakan sebagai beda dan dinotasikan dengan huruf b. Sebagai ilustrasi, jika suku pertama dari suatu barisan disimbolkan dengan a, dan beda antar sukunya adalah b, maka susunan bilangan yang terbentuk akan berpola a, a + b, a + 2b, a + 3b, dan berlanjut seterusnya. Karakteristik utama dari barisan aritmetika ini adalah adanya penambahan atau pengurangan dengan bilangan yang sama pada setiap perpindahan dari satu suku ke suku berikutnya. Pemahaman mendalam mengenai pola penambahan konstan ini merupakan prasyarat penting sebelum merumuskan penyelesaian masalah yang melibatkan nilai suku pada urutan tertentu.\n\nBerdasarkan pola penambahan yang selalu konstan pada barisan aritmetika, kita dapat menarik suatu generalisasi untuk merumuskan bentuk umum suku ke-n (un). Rumus suku ke-n pada sebuah barisan aritmetika secara formal dinyatakan dengan persamaan un = a + (n - 1)b. Dalam formula tersebut, variabel a merepresentasikan nilai suku pertama (u1), variabel b merepresentasikan nilai beda atau selisih yang tetap, dan variabel n menunjukkan nomor urutan suku yang merupakan bilangan asli. Melalui pemanfaatan rumus umum ini, peserta didik dapat dengan mudah memecahkan berbagai permasalahan matematis dan kontekstual. Misalnya, memprediksi besaran keuntungan usaha yang peningkatannya konstan setiap bulan, atau memprediksi tinggi anak tangga ke-n, dengan melakukan substitusi nilai-nilai yang diketahui secara presisi ke dalam formula tanpa harus menghitung keseluruhan urutan sebelumnya.\n\nSelain barisan yang dibentuk berdasarkan operasi penjumlahan dengan beda yang konstan, terdapat pula barisan bilangan yang dikonstruksi berlandaskan pola operasi perkalian, yang dinamakan barisan geometri. Barisan geometri didefinisikan sebagai susunan bilangan yang memiliki nilai perbandingan atau hasil bagi yang senantiasa tetap antara dua suku yang posisinya saling berdekatan. Nilai perbandingan yang tetap antar suku yang berurutan tersebut dalam matematika dikenal dengan istilah rasio dan disimbolkan dengan huruf r. Sebagai contoh, apabila suku pertama suatu barisan geometri didefinisikan sebagai a, maka suku kedua adalah hasil kali suku pertama dengan rasio r, suku ketiga adalah hasil kali suku kedua dengan rasio r, dan pola pelipatgandaan eksponensial ini terus berulang. Karakteristik rasio yang tetap inilah yang menjadi ciri khas dan membedakannya dari pertumbuhan linear pada barisan aritmetika.\n\nMelalui pengamatan terhadap pola keteraturan pelipatgandaan secara konstan pada barisan geometri, kita dapat merumuskan formulasi umum untuk menentukan nilai suku ke-n (un). Mengingat bahwa setiap suku ke-n dibentuk dengan cara mengalikan rasio r sebanyak n dikurangi 1 kali dari suku awalnya, maka rumus suku ke-n untuk barisan geometri secara eksak dinyatakan sebagai un = a.r^(n-1). Dalam persamaan ini, a mewakili nilai dari suku pertama, r adalah besaran rasio pengali, dan n merujuk pada urutan suku yang hendak dicari. Penguasaan yang holistik terhadap formula barisan aritmetika dan geometri akan membekali siswa dengan instrumen analitis yang esensial. Dengan mengidentifikasi apakah pola perubahannya didasarkan pada selisih tetap (aritmetika) atau perbandingan rasio tetap (geometri), siswa dapat menerapkan strategi perhitungan yang presisi untuk menemukan nilai suku ke-n secara akurat.\n\n[ATP_ALIGNMENT]\nMenentukan suku ke-n pada barisan aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani menanam bibit padi di sawahnya. Hari pertama ia menanam 10 bibit, hari kedua 12 bibit, hari ketiga 14 bibit, dan seterusnya. Pola penanaman ini terus berlanjut setiap hari.",
+      "question": "Berapa jumlah bibit padi yang ditanam petani pada hari kelima?",
+      "options": {
+        "A": "16 bibit",
+        "B": "18 bibit",
+        "C": "20 bibit",
+        "D": "22 bibit",
+        "E": "24 bibit"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Barisan ini adalah barisan aritmetika dengan suku pertama (a) = 10 dan beda (b) = 2. Suku ke-n dirumuskan un = a + (n-1)b. Untuk hari kelima (n=5), maka u5 = 10 + (5-1) * 2 = 10 + 4 * 2 = 10 + 8 = 18 bibit."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM kerupuk udang memproduksi kerupuk. Produksi minggu pertama adalah 100 bungkus, minggu kedua 120 bungkus, minggu ketiga 140 bungkus. Produksi terus meningkat dengan pola yang sama setiap minggu.",
+      "question": "Manakah rumus yang tepat untuk menyatakan jumlah produksi kerupuk pada minggu ke-n?",
+      "options": {
+        "A": "un = 100 + (n - 1)20",
+        "B": "un = 100 + n * 20",
+        "C": "un = 100 * 20^(n-1)",
+        "D": "un = 100 * (n-1)",
+        "E": "un = 100 + (n + 1)20"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Ini adalah barisan aritmetika. Suku pertama (a) adalah 100 bungkus. Peningkatan produksi setiap minggu (beda, b) adalah 120 - 100 = 20 bungkus. Rumus suku ke-n barisan aritmetika adalah un = a + (n-1)b. Maka, un = 100 + (n-1)20."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang pakaian di pasar tradisional mencatat keuntungan penjualannya. Keuntungan hari pertama adalah Rp50.000, hari kedua Rp55.000, hari ketiga Rp60.000. Jika pola keuntungan ini berlanjut, berapa total keuntungan yang diperoleh pedagang tersebut selama 7 hari pertama?",
+      "question": "Berapa total keuntungan yang diperoleh pedagang tersebut selama 7 hari pertama?",
+      "options": {
+        "A": "Rp350.000",
+        "B": "Rp385.000",
+        "C": "Rp400.000",
+        "D": "Rp420.000",
+        "E": "Rp455.000"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Ini adalah barisan aritmetika dengan a = 50.000 dan b = 5.000. Total keuntungan selama 7 hari adalah jumlah 7 suku pertama (S7). Rumus jumlah n suku pertama barisan aritmetika adalah Sn = n/2 * (2a + (n-1)b). Maka, S7 = 7/2 * (2*50.000 + (7-1)*5.000) = 3.5 * (100.000 + 6*5.000) = 3.5 * (100.000 + 30.000) = 3.5 * 130.000 = 455.000."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah perusahaan percetakan memiliki mesin yang mencetak brosur. Mesin tersebut mencetak 500 brosur pada jam pertama, 450 brosur pada jam kedua, dan 400 brosur pada jam ketiga. Produksi menurun secara konstan setiap jam.",
+      "question": "Berapa banyak brosur yang dicetak mesin pada jam ke-4?",
+      "options": {
+        "A": "300 brosur",
+        "B": "350 brosur",
+        "C": "400 brosur",
+        "D": "425 brosur",
+        "E": "475 brosur"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Barisan ini adalah barisan aritmetika dengan suku pertama (a) = 500 dan beda (b) = 450 - 500 = -50. Rumus suku ke-n adalah un = a + (n-1)b. Untuk jam ke-4 (n=4), maka u4 = 500 + (4-1) * (-50) = 500 + 3 * (-50) = 500 - 150 = 350 brosur."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko roti membuat kue lapis. Kue lapis pertama memiliki 3 lapis, kue lapis kedua memiliki 6 lapis, kue lapis ketiga memiliki 12 lapis. Jumlah lapisan berlipat ganda setiap kali.",
+      "question": "Jika pola ini berlanjut, berapa jumlah lapisan pada kue lapis ke-5?",
+      "options": {
+        "A": "24 lapis",
+        "B": "30 lapis",
+        "C": "36 lapis",
+        "D": "48 lapis",
+        "E": "96 lapis"
+      },
+      "answer": "E",
+      "explanation": "**Penjelasan:** Ini adalah barisan geometri dengan suku pertama (a) = 3 dan rasio (r) = 6/3 = 2. Rumus suku ke-n barisan geometri adalah un = a * r^(n-1). Untuk kue lapis ke-5 (n=5), maka u5 = 3 * 2^(5-1) = 3 * 2^4 = 3 * 16 = 48 lapis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha kerajinan tangan berencana meningkatkan produksinya. Bulan pertama ia menghasilkan 50 unit. Ia menargetkan peningkatan produksi sebesar 10% setiap bulan. Jika target ini tercapai, berapa total unit kerajinan yang dihasilkan dalam 3 bulan pertama?",
+      "question": "Berapa total unit kerajinan yang dihasilkan dalam 3 bulan pertama jika target peningkatan 10% tercapai?",
+      "options": {
+        "A": "150 unit",
+        "B": "155 unit",
+        "C": "160 unit",
+        "D": "165 unit",
+        "E": "170 unit"
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan:** Ini adalah barisan geometri dengan suku pertama (a) = 50 unit dan rasio (r) = 1 + 10% = 1.1. Total unit dalam 3 bulan pertama adalah jumlah 3 suku pertama (S3). Rumus jumlah n suku pertama barisan geometri adalah Sn = a(r^n - 1) / (r - 1). Maka, S3 = 50 * (1.1^3 - 1) / (1.1 - 1) = 50 * (1.331 - 1) / 0.1 = 50 * 0.331 / 0.1 = 50 * 3.31 = 165.5 unit. Dibulatkan menjadi 165 unit karena tidak mungkin menghasilkan sebagian unit."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kompetisi lari estafet, setiap pelari harus menyelesaikan jarak tertentu. Pelari pertama menyelesaikan 2 km, pelari kedua 2.5 km, pelari ketiga 3 km. Jarak yang ditempuh setiap pelari bertambah secara konstan.",
+      "question": "Berapa jarak yang harus ditempuh oleh pelari kelima?",
+      "options": {
+        "A": "3.5 km",
+        "B": "4 km",
+        "C": "4.5 km",
+        "D": "5 km",
+        "E": "5.5 km"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Ini adalah barisan aritmetika dengan suku pertama (a) = 2 km dan beda (b) = 2.5 - 2 = 0.5 km. Rumus suku ke-n adalah un = a + (n-1)b. Untuk pelari kelima (n=5), maka u5 = 2 + (5-1) * 0.5 = 2 + 4 * 0.5 = 2 + 2 = 4 km."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa menabung uang di celengan. Hari pertama ia menabung Rp1.000, hari kedua Rp2.000, hari ketiga Rp4.000. Jika pola ini berlanjut, berapa total tabungan siswa tersebut setelah 5 hari?",
+      "question": "Berapa total tabungan siswa tersebut setelah 5 hari?",
+      "options": {
+        "A": "Rp15.000",
+        "B": "Rp31.000",
+        "C": "Rp32.000",
+        "D": "Rp62.000",
+        "E": "Rp63.000"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Ini adalah barisan geometri dengan suku pertama (a) = 1.000 dan rasio (r) = 2.000/1.000 = 2. Total tabungan setelah 5 hari adalah jumlah 5 suku pertama (S5). Rumus Sn = a(r^n - 1) / (r - 1). Maka, S5 = 1.000 * (2^5 - 1) / (2 - 1) = 1.000 * (32 - 1) / 1 = 1.000 * 31 = 31.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tahu memproduksi tahu setiap hari. Produksi hari pertama adalah 200 buah. Pabrik menargetkan peningkatan produksi sebesar 50 buah setiap hari. Namun, karena kendala bahan baku, produksi pada hari ke-4 hanya mencapai 300 buah, bukan sesuai target.",
+      "question": "Manakah pernyataan yang paling tepat mengenai produksi pabrik tahu tersebut?",
+      "options": {
+        "A": "Produksi pabrik mengikuti pola barisan aritmetika yang konsisten.",
+        "B": "Peningkatan produksi harian pabrik tidak stabil.",
+        "C": "Produksi hari ke-4 menunjukkan adanya penurunan dari target.",
+        "D": "Pola produksi pabrik adalah barisan geometri.",
+        "E": "Target produksi harian selalu tercapai."
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Target produksi hari ke-4 seharusnya adalah 200 + (4-1)*50 = 350 buah. Namun, produksi aktual hanya 300 buah. Ini menunjukkan bahwa peningkatan produksi tidak konsisten atau tidak stabil setiap hari, sehingga pola barisan aritmetika yang murni tidak terpenuhi secara keseluruhan."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah grup musik merilis lagu baru. Lagu pertama didengarkan 1.000 kali, lagu kedua 2.000 kali, lagu ketiga 4.000 kali. Jumlah pendengar berlipat ganda untuk setiap lagu berikutnya.",
+      "question": "Berapa kali lagu kelima grup musik tersebut didengarkan?",
+      "options": {
+        "A": "8.000 kali",
+        "B": "10.000 kali",
+        "C": "16.000 kali",
+        "D": "32.000 kali",
+        "E": "64.000 kali"
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan:** Ini adalah barisan geometri dengan suku pertama (a) = 1.000 dan rasio (r) = 2.000/1.000 = 2. Rumus suku ke-n adalah un = a * r^(n-1). Untuk lagu kelima (n=5), maka u5 = 1.000 * 2^(5-1) = 1.000 * 2^4 = 1.000 * 16 = 16.000 kali."
+    }
+  ],
+  "metadata": {
+    "id": "c7ab45a5-35e6-4e76-805b-f0a29227aa12",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:19:43Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Barisan",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_5_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan suku ke-n pada barisan aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3871,
+      "assistant": 2436,
+      "total": 6981,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

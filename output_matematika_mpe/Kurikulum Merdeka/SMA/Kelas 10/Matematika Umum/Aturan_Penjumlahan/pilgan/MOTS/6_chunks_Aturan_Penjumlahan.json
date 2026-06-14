@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: MOTS\n\n--- MATERI ---\nDalam teori peluang, kita sering dihadapkan pada situasi untuk menentukan kemungkinan terjadinya suatu kejadian gabungan, misalnya peluang terjadinya peristiwa A atau peristiwa B. Di dalam matematika, penggunaan kata 'atau' memiliki makna 'salah satu atau kedua-duanya'. Sebagai contoh, peluang seorang siswa menggunakan sepeda atau menggunakan motor ke sekolah mencakup kemungkinan siswa tersebut hanya menggunakan sepeda, hanya menggunakan motor, atau bisa juga menggunakan keduanya secara bergantian. Untuk menghitung peluang gabungan yang dihubungkan dengan kata 'atau' ini, kita menggunakan sebuah prinsip penting yang dinamakan aturan penjumlahan.\n\nSebelum mengaplikasikan aturan penjumlahan, langkah pertama yang sangat krusial adalah mengidentifikasi sifat dari kedua kejadian tersebut. Kita harus memeriksa apakah kedua kejadian itu merupakan kejadian saling lepas atau tidak saling lepas. Dua buah kejadian dikatakan sebagai kejadian saling lepas (atau disjoint) apabila sangat tidak mungkin bagi keduanya untuk terjadi pada hasil yang sama. Artinya, tidak ada daerah irisan atau titik sampel yang memenuhi kedua kejadian itu sekaligus dalam satu waktu percobaan.\n\nUntuk memberikan gambaran yang lebih konkret mengenai kejadian saling lepas, mari kita amati percobaan melempar sepasang dadu. Kejadian untuk mendapatkan jumlah mata dadu 7 dan kejadian untuk mendapatkan angka dadu yang sama pada saat yang sama adalah contoh nyata dari dua kejadian yang saling lepas. Mengapa demikian? Hal ini dikarenakan tidak ada satu pun kemungkinan kombinasi angka dadu kembar yang jika dijumlahkan akan menghasilkan angka 7. Karena kedua kejadian tersebut sangat mustahil untuk terjadi pada hasil yang sama, maka keduanya dipastikan saling lepas.\n\nUntuk menentukan nilai peluang pada dua kejadian yang terbukti saling lepas, kita dapat menggunakan bentuk dasar dari aturan penjumlahan. Ketika kejadian A dan kejadian B merupakan kejadian saling lepas, peluang bahwa kejadian A terjadi atau kejadian B terjadi (atau keduanya terjadi) dapat dihitung dengan menjumlahkan masing-masing peluang kejadiannya. Secara simbolis matematis, aturan penjumlahan untuk dua kejadian saling lepas ini diformulasikan sebagai P(A ∪ B) = P(A atau B) = P(A) + P(B).\n\nBerkebalikan dengan konsep sebelumnya, dua buah kejadian dikatakan sebagai kejadian tidak saling lepas apabila masih terdapat kemungkinan bagi keduanya untuk terjadi secara bersamaan pada hasil yang sama. Contoh kasus kejadian tidak saling lepas dapat diamati kembali pada pelemparan sepasang dadu, yakni antara kejadian mendapatkan jumlah mata dadu 8 dan kejadian mendapatkan angka dadu yang sama. Kedua kejadian ini dinyatakan tidak saling lepas karena terdapat kemungkinan yang memenuhi kedua syarat tersebut, yaitu munculnya kombinasi dadu 4 dan 4 yang jumlahnya 8.\n\nPerhitungan peluang untuk kejadian tidak saling lepas memerlukan modifikasi dari aturan penjumlahan dasar. Apabila kita sekadar menjumlahkan peluang A dan peluang B secara langsung, maka besaran peluang dari daerah irisan kedua kejadian tersebut (yakni peluang bahwa A dan B terjadi pada hasil yang sama) akan terhitung ganda di dalam persamaan. Untuk mencegah terjadinya perhitungan yang keliru ini, kita harus mengurangkan total hasil penjumlahan awal dengan besarnya peluang irisan tersebut. Oleh karena itu, aturan penjumlahan untuk kejadian tidak saling lepas dirumuskan dengan persamaan P(A ∪ B) = P(A) + P(B) - P(A ∩ B).\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong menjual 5 jenis minuman ringan dan 3 jenis makanan ringan. Pelanggan dapat memilih satu minuman ringan ATAU satu makanan ringan. Berapa banyak pilihan yang tersedia bagi pelanggan?",
+      "question": "Berapa total pilihan yang tersedia jika pelanggan hanya boleh memilih salah satu jenis produk?",
+      "options": {
+        "A": "8",
+        "B": "15",
+        "C": "5",
+        "D": "3",
+        "E": "2"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Ini adalah contoh kejadian saling lepas karena memilih minuman tidak mempengaruhi pilihan makanan. Menggunakan aturan penjumlahan untuk kejadian saling lepas: P(A atau B) = P(A) + P(B). Jumlah pilihan = 5 (minuman) + 3 (makanan) = 8 pilihan."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dalam sebuah kotak terdapat 10 bola merah dan 6 bola biru. Jika diambil satu bola secara acak, berapa peluang terambilnya bola merah ATAU bola biru?",
+      "question": "Hitunglah peluang terambilnya bola merah atau bola biru dari kotak tersebut.",
+      "options": {
+        "A": "10/16",
+        "B": "6/16",
+        "C": "1",
+        "D": "16/16",
+        "E": "4/16"
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan:** Kejadian terambilnya bola merah dan bola biru adalah saling lepas karena satu bola tidak bisa merah dan biru sekaligus. Total peluang = P(Merah) + P(Biru) = 10/16 + 6/16 = 16/16 = 1."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah kantong berisi 7 kelereng hijau dan 5 kelereng kuning. Jika diambil satu kelereng, berapa peluang terambilnya kelereng hijau ATAU kelereng kuning?",
+      "question": "Tentukan peluang terambilnya kelereng hijau atau kelereng kuning.",
+      "options": {
+        "A": "7/12",
+        "B": "5/12",
+        "C": "12/12",
+        "D": "35/144",
+        "E": "1"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Kejadian terambilnya kelereng hijau dan kelereng kuning adalah saling lepas. Peluang gabungan adalah jumlah peluang masing-masing kejadian. P(Hijau atau Kuning) = P(Hijau) + P(Kuning) = 7/12 + 5/12 = 12/12 = 1."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dalam sebuah kelas terdapat 20 siswa yang gemar sepak bola dan 15 siswa yang gemar basket. Jika ada 5 siswa yang gemar keduanya, berapa banyak siswa yang gemar sepak bola ATAU basket?",
+      "question": "Hitunglah jumlah siswa yang gemar sepak bola atau basket, dengan mempertimbangkan siswa yang gemar keduanya.",
+      "options": {
+        "A": "35",
+        "B": "30",
+        "C": "25",
+        "D": "20",
+        "E": "15"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Kejadian gemar sepak bola dan basket tidak saling lepas karena ada irisan (5 siswa). Gunakan aturan penjumlahan: P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Jumlah siswa = 20 + 15 - 5 = 30 siswa."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dari 30 siswa di kelas, 18 siswa suka membaca novel dan 12 siswa suka menonton film. Jika 6 siswa menyukai keduanya, berapa siswa yang suka membaca novel ATAU menonton film?",
+      "question": "Berapa total siswa yang menyukai setidaknya salah satu dari kedua aktivitas tersebut?",
+      "options": {
+        "A": "30",
+        "B": "24",
+        "C": "18",
+        "D": "12",
+        "E": "6"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Kejadian ini tidak saling lepas karena ada irisan (6 siswa). Peluang gabungan dihitung dengan P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Jumlah siswa = 18 + 12 - 6 = 24 siswa."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah kelompok terdiri dari 10 pria dan 15 wanita. Jika dipilih satu orang secara acak, berapa peluang terpilihnya seorang pria ATAU seorang wanita?",
+      "question": "Tentukan peluang terpilihnya pria atau wanita dari kelompok tersebut.",
+      "options": {
+        "A": "10/25",
+        "B": "15/25",
+        "C": "25/25",
+        "D": "150/625",
+        "E": "1"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Kejadian terpilihnya pria dan wanita adalah saling lepas. Peluang gabungan adalah jumlah peluang masing-masing. P(Pria atau Wanita) = P(Pria) + P(Wanita) = 10/25 + 15/25 = 25/25 = 1."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Di sebuah acara, terdapat 50 orang yang mengikuti undian berhadiah. 20 orang memilih kupon A dan 30 orang memilih kupon B. Jika 10 orang memilih kedua kupon, berapa orang yang memenangkan hadiah dari kupon A ATAU kupon B?",
+      "question": "Hitung jumlah total pemenang yang memilih kupon A atau kupon B.",
+      "options": {
+        "A": "50",
+        "B": "40",
+        "C": "30",
+        "D": "20",
+        "E": "10"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Kejadian memilih kupon A dan B tidak saling lepas karena ada irisan (10 orang). Gunakan aturan penjumlahan: Jumlah = 20 (kupon A) + 30 (kupon B) - 10 (keduanya) = 40 orang."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan memiliki 100 karyawan. 60 karyawan bekerja di departemen pemasaran dan 40 karyawan bekerja di departemen keuangan. Jika 20 karyawan bekerja di kedua departemen, berapa karyawan yang bekerja di departemen pemasaran ATAU departemen keuangan?",
+      "question": "Berapa jumlah karyawan yang bekerja di setidaknya satu dari kedua departemen tersebut?",
+      "options": {
+        "A": "100",
+        "B": "80",
+        "C": "60",
+        "D": "40",
+        "E": "20"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Kejadian bekerja di pemasaran dan keuangan tidak saling lepas karena ada irisan (20 karyawan). Gunakan aturan penjumlahan: Jumlah = 60 + 40 - 20 = 80 karyawan."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dalam sebuah tas terdapat 8 kartu bergambar apel dan 6 kartu bergambar jeruk. Jika diambil satu kartu, berapa peluang terambilnya kartu bergambar apel ATAU kartu bergambar jeruk?",
+      "question": "Tentukan peluang terambilnya kartu apel atau kartu jeruk.",
+      "options": {
+        "A": "8/14",
+        "B": "6/14",
+        "C": "14/14",
+        "D": "48/196",
+        "E": "1"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Kejadian terambilnya kartu apel dan kartu jeruk adalah saling lepas. Peluang gabungan adalah jumlah peluang masing-masing kejadian. P(Apel atau Jeruk) = P(Apel) + P(Jeruk) = 8/14 + 6/14 = 14/14 = 1."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah survei menunjukkan bahwa 25 siswa menyukai musik pop dan 20 siswa menyukai musik rock. Jika 10 siswa menyukai kedua jenis musik tersebut, berapa siswa yang menyukai musik pop ATAU musik rock?",
+      "question": "Hitung jumlah siswa yang menyukai setidaknya salah satu dari kedua genre musik tersebut.",
+      "options": {
+        "A": "45",
+        "B": "35",
+        "C": "25",
+        "D": "20",
+        "E": "10"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Kejadian menyukai musik pop dan rock tidak saling lepas karena ada irisan (10 siswa). Gunakan aturan penjumlahan: Jumlah = 25 + 20 - 10 = 35 siswa."
+    }
+  ],
+  "metadata": {
+    "id": "aa27e9c7-d3a5-4e74-9848-f85246a8535a",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T09:02:33Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "pilgan",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_6_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2967,
+      "assistant": 1945,
+      "total": 5585,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

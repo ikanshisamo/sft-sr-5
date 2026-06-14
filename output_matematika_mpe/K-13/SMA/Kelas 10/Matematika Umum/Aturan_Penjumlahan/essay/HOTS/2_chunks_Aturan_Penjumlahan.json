@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\",\n      \"expected_reasoning\": [\n        \"multi-step reasoning\",\n        \"contextual interpretation\",\n        \"tradeoff analysis\",\n        \"strategic judgment\",\n        \"real-world implication analysis\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: HOTS\n\n--- MATERI ---\nDalam teori peluang, aturan penjumlahan digunakan untuk menentukan peluang gabungan dua kejadian, yaitu peluang terjadinya kejadian A atau kejadian B yang dinotasikan dengan P(A ∪ B). Penggunaan rumus pada aturan penjumlahan bergantung pada karakteristik himpunan kedua kejadian tersebut, apakah bersifat saling lepas atau tidak saling lepas. Dua kejadian dikatakan saling lepas apabila kedua kejadian tersebut sama sekali tidak dapat terjadi secara bersamaan pada satu kali percobaan. Dengan kata lain, irisan dari himpunan kejadian A dan kejadian B adalah himpunan kosong (A ∩ B = ∅), sehingga nilai peluang irisannya adalah nol. Sebagai contoh, pada pelemparan sebuah dadu, kejadian munculnya mata dadu ganjil dan kejadian munculnya mata dadu genap adalah dua kejadian saling lepas. Untuk menghitung peluang gabungan dua kejadian saling lepas, kita dapat langsung menjumlahkan nilai peluang dari masing-masing kejadian tersebut, yang secara matematis dirumuskan dengan P(A ∪ B) = P(A) + P(B).\n\nBerbeda dengan kejadian saling lepas, dua kejadian dikatakan tidak saling lepas apabila kedua kejadian tersebut dapat terjadi secara bersamaan dalam satu kali percobaan. Pada kondisi ini, terdapat titik sampel yang menjadi anggota kejadian A sekaligus anggota kejadian B, sehingga irisan kedua himpunan kejadian tersebut bukan merupakan himpunan kosong (A ∩ B ≠ ∅). Misalnya, pada pengambilan sebuah kartu dari satu set kartu remi, kejadian terambilnya kartu As dan kejadian terambilnya kartu berwarna merah adalah kejadian tidak saling lepas, karena terdapat kartu As yang juga berwarna merah (beririsan). Saat menghitung peluang kejadian tidak saling lepas menggunakan aturan penjumlahan, kita harus mengurangkan hasil jumlah peluang masing-masing kejadian dengan peluang irisannya. Pengurangan ini diwajibkan untuk menghindari perhitungan ganda pada titik sampel yang beririsan. Secara matematis, rumus aturan penjumlahannya dituliskan secara lengkap sebagai P(A ∪ B) = P(A) + P(B) - P(A ∩ B).\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko kelontong di pasar tradisional menjual dua jenis kerupuk: kerupuk udang dan kerupuk ikan. Dari total 100 bungkus kerupuk yang tersedia, 60 bungkus adalah kerupuk udang dan 50 bungkus adalah kerupuk ikan. Terdapat 25 bungkus kerupuk yang merupakan campuran udang dan ikan. Pemilik toko ingin mengetahui peluang terambilnya kerupuk udang atau kerupuk ikan jika diambil satu bungkus secara acak.",
+      "question": "Berdasarkan skenario toko kelontong tersebut, bagaimana strategi pemilik toko untuk menentukan peluang terambilnya kerupuk udang atau kerupuk ikan, serta jelaskan mengapa strategi tersebut paling efektif?",
+      "rubric_points": [
+        "Mengidentifikasi kejadian saling lepas atau tidak saling lepas.",
+        "Menentukan rumus aturan penjumlahan yang tepat berdasarkan identifikasi kejadian.",
+        "Menganalisis dan membandingkan efektivitas strategi perhitungan peluang."
+      ],
+      "explanation": "**Analisis Strategi Peluang**\\n\\nUntuk menentukan peluang terambilnya kerupuk udang atau kerupuk ikan, pemilik toko perlu mengidentifikasi bahwa kejadian ini adalah kejadian tidak saling lepas karena ada kerupuk campuran. Rumus yang tepat adalah P(A \\cup B) = P(A) + P(B) - P(A \\cap B).\\n\\nPerhitungan:\\nP(Udang) = 60/100 = 0.6\\nP(Ikan) = 50/100 = 0.5\\nP(Udang \\cap Ikan) = 25/100 = 0.25\\nP(Udang \\cup Ikan) = 0.6 + 0.5 - 0.25 = 0.85\\n\\nStrategi ini efektif karena secara akurat memperhitungkan kerupuk campuran yang terhitung dua kali jika hanya dijumlahkan, sehingga memberikan hasil peluang yang tepat.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah panitia acara sekolah akan mengadakan undian berhadiah. Terdapat 50 kupon undian yang terdiri dari 20 kupon berhadiah buku, 15 kupon berhadiah alat tulis, dan 10 kupon berhadiah voucher. Beberapa kupon mungkin memiliki lebih dari satu jenis hadiah. Panitia perlu memutuskan cara terbaik untuk menghitung peluang siswa mendapatkan setidaknya satu hadiah.",
+      "question": "Jika panitia ingin memastikan perhitungan peluang siswa mendapatkan buku atau alat tulis adalah akurat, strategi perhitungan mana yang harus dipilih dan mengapa strategi tersebut lebih unggul dibandingkan pendekatan lain?",
+      "rubric_points": [
+        "Menganalisis apakah kejadian 'mendapat buku' dan 'mendapat alat tulis' saling lepas atau tidak.",
+        "Memilih dan menerapkan rumus aturan penjumlahan yang sesuai.",
+        "Mengevaluasi keunggulan strategi yang dipilih dalam konteks soal."
+      ],
+      "explanation": "**Evaluasi Strategi Undian**\\n\\nUntuk menghitung peluang siswa mendapatkan buku atau alat tulis, panitia harus mempertimbangkan kemungkinan adanya kupon yang memberikan kedua hadiah tersebut (tidak saling lepas). Rumus yang digunakan adalah P(Buku \\cup Alat Tulis) = P(Buku) + P(Alat Tulis) - P(Buku \\cap Alat Tulis).\\n\\nPerhitungan:\\nP(Buku) = 20/50\\nP(Alat Tulis) = 15/50\\nAsumsikan P(Buku \\cap Alat Tulis) = x/50 (nilai x perlu diketahui dari data spesifik kupon yang beririsan).\\nP(Buku \\cup Alat Tulis) = 20/50 + 15/50 - x/50 = (35-x)/50.\\n\\nStrategi ini unggul karena secara eksplisit mengurangi peluang irisan, mencegah penghitungan ganda pada kupon yang memiliki kedua jenis hadiah, sehingga memberikan hasil yang akurat.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah kantong terdapat 12 kelereng: 5 kelereng berwarna merah, 4 kelereng berwarna biru, dan 3 kelereng berwarna hijau. Panitia lomba akan mengambil dua kelereng secara acak tanpa pengembalian. Panitia perlu menganalisis peluang terambilnya kelereng merah atau kelereng biru.",
+      "question": "Bagaimana cara terbaik bagi panitia untuk menghitung peluang terambilnya kelereng merah atau kelereng biru, dan mengapa pendekatan ini penting untuk menghindari kesalahan perhitungan?",
+      "rubric_points": [
+        "Menentukan apakah kejadian terambilnya kelereng merah dan biru bersifat saling lepas atau tidak.",
+        "Menerapkan rumus aturan penjumlahan yang tepat untuk kejadian tidak saling lepas.",
+        "Menjelaskan pentingnya pengurangan irisan untuk akurasi hasil."
+      ],
+      "explanation": "**Analisis Pengambilan Kelereng**\\n\\nUntuk menghitung peluang terambilnya kelereng merah atau kelereng biru, panitia harus menyadari bahwa kedua kejadian ini tidak mungkin terjadi bersamaan dalam satu pengambilan (karena satu kelereng hanya memiliki satu warna). Oleh karena itu, kejadian ini saling lepas. Rumus yang digunakan adalah P(Merah \\cup Biru) = P(Merah) + P(Biru).\\n\\nPerhitungan:\\nP(Merah) = 5/12\\nP(Biru) = 4/12\\nP(Merah \\cup Biru) = 5/12 + 4/12 = 9/12 = 3/4.\\n\\nPendekatan ini penting karena kejadiannya saling lepas, sehingga tidak ada irisan yang perlu dikurangi. Menghitung langsung dengan menjumlahkan peluang masing-masing kejadian memberikan hasil yang akurat tanpa risiko penghitungan ganda.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah survei dilakukan di sebuah SMA mengenai preferensi siswa terhadap dua mata pelajaran pilihan: Fisika dan Biologi. Dari 200 siswa yang disurvei, 120 siswa menyukai Fisika, 100 siswa menyukai Biologi, dan 50 siswa menyukai keduanya. Pihak sekolah ingin mengetahui peluang seorang siswa menyukai Fisika atau Biologi.",
+      "question": "Strategi perhitungan peluang mana yang paling tepat digunakan oleh pihak sekolah untuk menentukan siswa yang menyukai Fisika atau Biologi, dan mengapa strategi tersebut memberikan hasil yang paling akurat?",
+      "rubric_points": [
+        "Mengidentifikasi bahwa menyukai Fisika dan Biologi adalah kejadian tidak saling lepas.",
+        "Menerapkan rumus aturan penjumlahan untuk kejadian tidak saling lepas.",
+        "Menjelaskan alasan mengapa pengurangan irisan diperlukan untuk akurasi."
+      ],
+      "explanation": "**Penentuan Peluang Preferensi Siswa**\\n\\nPihak sekolah harus menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena ada siswa yang menyukai kedua mata pelajaran. Rumusnya adalah P(Fisika \\cup Biologi) = P(Fisika) + P(Biologi) - P(Fisika \\cap Biologi).\\n\\nPerhitungan:\\nP(Fisika) = 120/200 = 0.6\\nP(Biologi) = 100/200 = 0.5\\nP(Fisika \\cap Biologi) = 50/200 = 0.25\\nP(Fisika \\cup Biologi) = 0.6 + 0.5 - 0.25 = 0.85.\\n\\nStrategi ini paling akurat karena secara tepat memperhitungkan siswa yang menyukai kedua mata pelajaran, sehingga menghindari penghitungan ganda dan memberikan representasi peluang yang benar.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Di sebuah desa terdapat dua kelompok petani: kelompok A yang menanam padi dan kelompok B yang menanam jagung. Dari total 150 petani di desa tersebut, 80 petani menanam padi, 70 petani menanam jagung, dan 30 petani menanam keduanya. Kepala desa ingin mengetahui peluang seorang petani menanam padi atau jagung.",
+      "question": "Bagaimana kepala desa dapat secara efektif menghitung peluang seorang petani menanam padi atau jagung, dan mengapa strategi yang dipilihnya merupakan pendekatan yang paling logis?",
+      "rubric_points": [
+        "Menganalisis sifat kejadian menanam padi dan menanam jagung (saling lepas atau tidak).",
+        "Memilih dan menerapkan rumus aturan penjumlahan yang sesuai.",
+        "Menjelaskan logika di balik pengurangan irisan untuk hasil yang valid."
+      ],
+      "explanation": "**Perhitungan Peluang Petani**\\n\\nKepala desa harus menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena ada petani yang menanam padi dan jagung. Rumus yang digunakan adalah P(Padi \\cup Jagung) = P(Padi) + P(Jagung) - P(Padi \\cap Jagung).\\n\\nPerhitungan:\\nP(Padi) = 80/150\\nP(Jagung) = 70/150\\nP(Padi \\cap Jagung) = 30/150\\nP(Padi \\cup Jagung) = 80/150 + 70/150 - 30/150 = (150 - 30)/150 = 120/150 = 4/5.\\n\\nPendekatan ini logis karena secara akurat memperhitungkan petani yang menanam kedua jenis tanaman, sehingga menghindari penghitungan ganda dan memberikan peluang yang tepat.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "e2a2d125-e1ce-4d5b-bc5a-02e52518e01e",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:18:29Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "essay",
+    "level": "HOTS",
+    "source_file": "Matematika_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1705,
+      "assistant": 2410,
+      "total": 4789,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

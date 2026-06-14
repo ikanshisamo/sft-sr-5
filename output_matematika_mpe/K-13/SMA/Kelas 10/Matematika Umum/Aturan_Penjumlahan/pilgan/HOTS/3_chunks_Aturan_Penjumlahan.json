@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: HOTS\n\n--- MATERI ---\nDalam teori peluang, aturan penjumlahan digunakan untuk menentukan peluang gabungan dua kejadian atau lebih, yang lazimnya dihubungkan dengan kata hubung 'atau'. Penggunaan rumus pada aturan penjumlahan sangat bergantung pada karakteristik himpunan kedua kejadian tersebut, apakah saling lepas atau tidak saling lepas. Dua buah kejadian dikatakan saling lepas apabila kedua kejadian tersebut sama sekali tidak dapat terjadi secara bersamaan pada satu kali percobaan. Secara matematis, hal ini berarti irisan dari himpunan kejadian A dan kejadian B adalah himpunan kosong, yang dinotasikan dengan A ∩ B = ∅, sehingga nilai peluang irisannya bernilai nol. Sebagai contoh ilustrasi pada pelemparan sebuah dadu bersisi enam, kejadian munculnya mata dadu ganjil dan kejadian munculnya mata dadu genap merupakan dua kejadian yang saling lepas karena tidak ada satu pun angka yang ganjil sekaligus genap pada mata dadu tersebut.\n\nUntuk menghitung peluang gabungan dari dua kejadian yang saling lepas, kita menerapkan prinsip dasar aturan penjumlahan. Karena kedua kejadian tersebut tidak memiliki irisan atau titik sampel yang bersekutu, kita dapat secara langsung menjumlahkan nilai peluang dari masing-masing kejadian tunggalnya. Secara matematis, rumus aturan penjumlahan untuk kejadian A dan B yang saling lepas dituliskan sebagai P(A ∪ B) = P(A) + P(B). Notasi ∪ menyatakan gabungan (union) yang bermakna kejadian A atau kejadian B. Pemahaman konsep ini sangat penting karena memfasilitasi perhitungan peluang kejadian majemuk secara lebih efisien tanpa harus mendaftar ulang seluruh titik sampel yang merupakan gabungan dari kedua kejadian tersebut. Rumus ini juga dapat diperluas untuk tiga atau lebih kejadian yang semuanya saling lepas satu sama lain.\n\nBerbeda dengan kondisi sebelumnya, dua kejadian dikatakan tidak saling lepas apabila kedua kejadian tersebut memungkinkan untuk terjadi secara bersamaan dalam satu kali percobaan. Pada situasi ini, terdapat setidaknya satu titik sampel yang menjadi anggota himpunan kejadian A sekaligus anggota himpunan kejadian B, sehingga irisan kedua himpunan tersebut bukan merupakan himpunan kosong (A ∩ B ≠ ∅). Saat menghitung peluang gabungan untuk kejadian tidak saling lepas, aturan penjumlahannya mensyaratkan kita untuk mengurangkan hasil jumlah peluang masing-masing kejadian dengan peluang irisannya. Pengurangan ini mutlak diperlukan guna menghindari perhitungan ganda pada titik sampel yang beririsan. Oleh karena itu, rumus aturan penjumlahan untuk kejadian tidak saling lepas dinyatakan secara lengkap sebagai P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Contoh aplikatifnya adalah peluang terambilnya kartu As atau kartu berwarna merah dari satu set kartu remi.\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional menjual dua jenis buah: mangga dan jeruk. Peluang mangga yang terjual habis dalam sehari adalah 0.7, dan peluang jeruk yang terjual habis adalah 0.6. Peluang kedua buah tersebut terjual habis bersamaan adalah 0.4.",
+      "question": "Jika pedagang tersebut ingin memaksimalkan peluang salah satu jenis buahnya terjual habis, strategi mana yang paling masuk akal untuk diterapkan pada hari berikutnya?",
+      "options": {
+        "A": "Menambah stok mangga dan jeruk secara proporsional untuk mengantisipasi permintaan.",
+        "B": "Fokus menjual mangga karena peluangnya lebih tinggi, dan mengurangi stok jeruk.",
+        "C": "Menganalisis faktor-faktor yang menyebabkan kedua buah terjual habis bersamaan dan mencoba menguranginya.",
+        "D": "Menambah stok jeruk dan mengurangi stok mangga karena ada potensi peningkatan penjualan jeruk.",
+        "E": "Menerapkan strategi promosi yang sama untuk kedua jenis buah tanpa perubahan stok."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Strategi Penjualan**\\nStrategi paling masuk akal adalah menganalisis penyebab kedua buah terjual habis bersamaan (P(M ∩ J) = 0.4). Dengan memahami faktor ini, pedagang dapat mengelola stok atau promosi untuk menghindari kondisi tersebut, yang secara tidak langsung meningkatkan peluang salah satu terjual habis tanpa mengorbankan yang lain."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM memproduksi dua jenis keripik: singkong dan pisang. Peluang keripik singkong laku di pasaran adalah 0.8, dan peluang keripik pisang laku adalah 0.7. Peluang kedua jenis keripik laku bersamaan adalah 0.6.",
+      "question": "Manajer UMKM ingin mengetahui apakah strategi pemasaran yang berbeda untuk masing-masing produk akan meningkatkan peluang salah satu produk laku. Berdasarkan data yang ada, apa kesimpulan paling logis mengenai efektivitas strategi pemasaran saat ini?",
+      "options": {
+        "A": "Strategi pemasaran saat ini sudah optimal karena kedua produk memiliki peluang laku yang tinggi.",
+        "B": "Perlu ada strategi pemasaran terpisah untuk keripik pisang karena peluang lakunya lebih rendah.",
+        "C": "Peluang gabungan (0.6) yang lebih rendah dari jumlah peluang masing-masing (0.8 + 0.7 = 1.5) menunjukkan adanya potensi peningkatan melalui strategi yang lebih terintegrasi.",
+        "D": "Strategi pemasaran saat ini perlu dievaluasi karena ada tumpang tindih yang signifikan dalam keberhasilan kedua produk.",
+        "E": "Fokus pada keripik singkong karena peluang lakunya paling tinggi."
+      },
+      "answer": "D",
+      "explanation": "**Evaluasi Strategi Pemasaran**\\nPeluang gabungan (0.6) lebih rendah dari jumlah peluang masing-masing (0.8 + 0.7 = 1.5). Ini menunjukkan bahwa ada tumpang tindih (irisan) yang signifikan (P(S ∩ P) = P(S) + P(P) - P(S ∪ P) = 0.8 + 0.7 - P(S ∪ P)). Jika P(S ∪ P) diasumsikan mendekati 1, maka P(S ∩ P) ≈ 0.5. Nilai irisan yang tinggi ini mengindikasikan bahwa strategi pemasaran saat ini mungkin kurang efisien atau perlu penyesuaian."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah acara sekolah, panitia menyediakan dua jenis hadiah undian: sepeda motor dan laptop. Peluang seorang siswa memenangkan sepeda motor adalah 1/100, dan peluang memenangkan laptop adalah 1/50. Karena hadiahnya berbeda, tidak mungkin satu siswa memenangkan kedua hadiah tersebut.",
+      "question": "Jika panitia ingin memastikan bahwa peluang total siswa memenangkan salah satu hadiah adalah yang terbesar, tindakan apa yang paling tepat?",
+      "options": {
+        "A": "Menambah jumlah sepeda motor yang diundi.",
+        "B": "Mengurangi jumlah laptop yang diundi.",
+        "C": "Memastikan kedua jenis hadiah tetap ada dan tidak ada siswa yang bisa memenangkan keduanya.",
+        "D": "Menggabungkan kedua undian menjadi satu undian besar.",
+        "E": "Menambah jumlah kupon undian untuk semua siswa."
+      },
+      "answer": "C",
+      "explanation": "**Optimalisasi Peluang Hadiah**\\nKarena kejadian memenangkan sepeda motor dan laptop adalah saling lepas (tidak mungkin terjadi bersamaan), peluang gabungannya adalah P(M ∪ L) = P(M) + P(L). Untuk memaksimalkan peluang gabungan, kondisi saling lepas ini harus dijaga. Menambah atau mengurangi jumlah hadiah hanya akan mengubah P(M) atau P(L) secara individual, bukan memaksimalkan peluang gabungan secara strategis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi lokal memiliki dua rute utama: Rute A (menuju pusat kota) dan Rute B (menuju bandara). Peluang bus terisi penuh di Rute A adalah 0.6, dan peluang bus terisi penuh di Rute B adalah 0.5. Peluang kedua rute terisi penuh pada waktu yang bersamaan adalah 0.3.",
+      "question": "Manajer operasional ingin meningkatkan efisiensi armada bus. Jika ia ingin fokus pada skenario di mana setidaknya satu rute terisi penuh, keputusan operasional mana yang paling strategis?",
+      "options": {
+        "A": "Menambah jumlah bus pada Rute A karena peluangnya lebih tinggi.",
+        "B": "Mengurangi jumlah bus pada Rute B untuk menghemat biaya operasional.",
+        "C": "Menganalisis penyebab kedua rute terisi penuh bersamaan (0.3) dan mencari cara untuk meningkatkannya.",
+        "D": "Mencari cara agar kedua rute tidak terisi penuh bersamaan untuk menghindari potensi kekurangan bus di rute lain.",
+        "E": "Meningkatkan frekuensi bus pada kedua rute secara merata."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Efisiensi Operasional**\\nPeluang setidaknya satu rute terisi penuh adalah P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 0.6 + 0.5 - 0.3 = 0.8. Untuk meningkatkan efisiensi, manajer harus fokus pada skenario yang paling diinginkan, yaitu kedua rute terisi penuh (P(A ∩ B) = 0.3). Dengan menganalisis dan meningkatkan faktor-faktor yang menyebabkan kedua rute terisi penuh bersamaan, peluang gabungan (0.8) dapat ditingkatkan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani memiliki dua jenis tanaman: padi dan jagung. Peluang panen padi melimpah adalah 0.7, dan peluang panen jagung melimpah adalah 0.5. Peluang kedua panen melimpah bersamaan adalah 0.4.",
+      "question": "Petani tersebut ingin memaksimalkan hasil panennya. Jika ia harus memilih strategi untuk meningkatkan peluang panen melimpah, strategi mana yang paling logis berdasarkan data ini?",
+      "options": {
+        "A": "Fokus pada penanaman padi karena peluangnya lebih tinggi.",
+        "B": "Mengurangi area tanam jagung karena peluangnya lebih rendah.",
+        "C": "Menganalisis faktor-faktor yang menyebabkan kedua panen melimpah bersamaan (0.4) dan mencoba mereplikasinya.",
+        "D": "Mencari cara agar kedua panen tidak melimpah bersamaan untuk diversifikasi risiko.",
+        "E": "Menggunakan pupuk yang sama untuk kedua jenis tanaman."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Peningkatan Panen**\\nPeluang gabungan panen melimpah adalah P(Padi ∪ Jagung) = P(Padi) + P(Jagung) - P(Padi ∩ Jagung) = 0.7 + 0.5 - 0.4 = 0.8. Untuk memaksimalkan hasil, petani harus fokus pada kondisi yang paling menguntungkan, yaitu ketika kedua panen melimpah bersamaan (P(Padi ∩ Jagung) = 0.4). Menganalisis dan mereplikasi faktor-faktor yang menyebabkan kondisi ini akan meningkatkan peluang gabungan secara keseluruhan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko buku memiliki dua kategori buku populer: novel fiksi dan buku pelajaran. Peluang novel fiksi terjual adalah 0.75, dan peluang buku pelajaran terjual adalah 0.60. Peluang kedua kategori buku terjual pada hari yang sama adalah 0.50.",
+      "question": "Pemilik toko ingin meningkatkan total penjualan. Jika ia ingin fokus pada skenario penjualan yang paling menguntungkan, tindakan apa yang paling strategis?",
+      "options": {
+        "A": "Menambah stok novel fiksi karena peluangnya lebih tinggi.",
+        "B": "Mengurangi stok buku pelajaran untuk fokus pada novel.",
+        "C": "Menganalisis faktor-faktor yang menyebabkan kedua kategori buku terjual bersamaan (0.50) dan mencoba meningkatkannya.",
+        "D": "Memisahkan rak buku novel dan buku pelajaran agar tidak saling mempengaruhi.",
+        "E": "Memberikan diskon khusus untuk buku pelajaran."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Strategi Penjualan Toko Buku**\\nPeluang setidaknya satu kategori buku terjual adalah P(Fiksi ∪ Pelajaran) = P(Fiksi) + P(Pelajaran) - P(Fiksi ∩ Pelajaran) = 0.75 + 0.60 - 0.50 = 0.85. Untuk memaksimalkan penjualan, pemilik harus fokus pada skenario di mana kedua kategori terjual bersamaan (P(Fiksi ∩ Pelajaran) = 0.50). Menganalisis dan mereplikasi faktor-faktor yang menyebabkan kedua kategori ini laris bersamaan akan meningkatkan peluang gabungan secara keseluruhan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik mengelola dua jenis pengiriman: paket kecil dan paket besar. Peluang paket kecil tiba tepat waktu adalah 0.85, dan peluang paket besar tiba tepat waktu adalah 0.70. Peluang kedua jenis paket tiba tepat waktu secara bersamaan adalah 0.60.",
+      "question": "Manajer logistik ingin meningkatkan kepuasan pelanggan. Jika ia ingin fokus pada skenario pengiriman yang paling efisien, keputusan operasional mana yang paling strategis?",
+      "options": {
+        "A": "Menambah jumlah armada untuk pengiriman paket kecil.",
+        "B": "Mengurangi frekuensi pengiriman paket besar.",
+        "C": "Menganalisis faktor-faktor yang menyebabkan kedua jenis paket tiba tepat waktu bersamaan (0.60) dan mencoba meningkatkannya.",
+        "D": "Memastikan kedua jenis paket tidak tiba tepat waktu bersamaan untuk menghindari penumpukan di gudang.",
+        "E": "Menerapkan sistem pelacakan yang sama untuk kedua jenis paket."
+      },
+      "answer": "C",
+      "explanation": "**Optimalisasi Logistik**\\nPeluang setidaknya satu jenis paket tiba tepat waktu adalah P(Kecil ∪ Besar) = P(Kecil) + P(Besar) - P(Kecil ∩ Besar) = 0.85 + 0.70 - 0.60 = 0.95. Untuk meningkatkan efisiensi, manajer harus fokus pada skenario di mana kedua jenis paket tiba tepat waktu bersamaan (P(Kecil ∩ Besar) = 0.60). Menganalisis dan mereplikasi faktor-faktor yang menyebabkan kedua jenis paket tiba tepat waktu bersamaan akan meningkatkan peluang gabungan secara keseluruhan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah survei di sekolah, ditemukan bahwa peluang siswa menyukai olahraga basket adalah 0.6, dan peluang menyukai olahraga sepak bola adalah 0.5. Peluang siswa menyukai kedua olahraga tersebut adalah 0.3.",
+      "question": "Kepala sekolah ingin meningkatkan partisipasi siswa dalam kegiatan olahraga. Jika ia ingin fokus pada skenario di mana siswa aktif berolahraga, strategi mana yang paling masuk akal?",
+      "options": {
+        "A": "Memprioritaskan pengembangan fasilitas basket.",
+        "B": "Mengurangi jadwal latihan sepak bola.",
+        "C": "Menganalisis faktor-faktor yang membuat siswa menyukai kedua olahraga (0.3) dan mencoba meningkatkannya.",
+        "D": "Membuat kegiatan olahraga yang terpisah untuk basket dan sepak bola.",
+        "E": "Mengadakan kompetisi antar kelas untuk kedua olahraga secara bergantian."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Peningkatan Partisipasi Olahraga**\\nPeluang siswa menyukai setidaknya satu olahraga adalah P(Basket ∪ Sepak Bola) = P(Basket) + P(Sepak Bola) - P(Basket ∩ Sepak Bola) = 0.6 + 0.5 - 0.3 = 0.8. Untuk meningkatkan partisipasi, kepala sekolah harus fokus pada skenario di mana siswa aktif dalam kedua olahraga (P(Basket ∩ Sepak Bola) = 0.3). Menganalisis dan mereplikasi faktor-faktor yang menyebabkan siswa menyukai kedua olahraga akan mendorong partisipasi yang lebih luas."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah kafe memiliki dua menu minuman favorit: kopi dan teh. Peluang kopi terjual adalah 0.7, dan peluang teh terjual adalah 0.6. Peluang kedua minuman terjual pada jam sibuk yang sama adalah 0.4.",
+      "question": "Manajer kafe ingin memaksimalkan pendapatan. Jika ia ingin fokus pada skenario penjualan yang paling menguntungkan, tindakan apa yang paling strategis?",
+      "options": {
+        "A": "Menambah stok kopi karena peluangnya lebih tinggi.",
+        "B": "Mengurangi stok teh untuk fokus pada kopi.",
+        "C": "Menganalisis faktor-faktor yang menyebabkan kedua minuman terjual bersamaan (0.4) dan mencoba meningkatkannya.",
+        "D": "Menawarkan paket bundling kopi dan teh.",
+        "E": "Memberikan diskon untuk minuman teh."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Pendapatan Kafe**\\nPeluang setidaknya satu minuman terjual adalah P(Kopi ∪ Teh) = P(Kopi) + P(Teh) - P(Kopi ∩ Teh) = 0.7 + 0.6 - 0.4 = 0.9. Untuk memaksimalkan pendapatan, manajer harus fokus pada skenario di mana kedua minuman terjual bersamaan (P(Kopi ∩ Teh) = 0.4). Menganalisis dan mereplikasi faktor-faktor yang menyebabkan kedua minuman ini laris bersamaan akan meningkatkan peluang gabungan secara keseluruhan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan manufaktur memproduksi dua komponen elektronik: chip A dan chip B. Peluang chip A berfungsi normal adalah 0.9, dan peluang chip B berfungsi normal adalah 0.8. Peluang kedua chip berfungsi normal secara bersamaan adalah 0.7.",
+      "question": "Manajer produksi ingin meningkatkan kualitas produk akhir. Jika ia ingin fokus pada skenario di mana kedua komponen bekerja optimal, keputusan operasional mana yang paling strategis?",
+      "options": {
+        "A": "Meningkatkan produksi chip A karena peluangnya lebih tinggi.",
+        "B": "Mengurangi produksi chip B untuk fokus pada chip A.",
+        "C": "Menganalisis faktor-faktor yang menyebabkan kedua chip berfungsi normal bersamaan (0.7) dan mencoba meningkatkannya.",
+        "D": "Memastikan kedua chip tidak berfungsi normal bersamaan untuk diversifikasi risiko cacat produk.",
+        "E": "Menggunakan material yang sama untuk kedua jenis chip."
+      },
+      "answer": "C",
+      "explanation": "**Optimalisasi Kualitas Manufaktur**\\nPeluang setidaknya satu chip berfungsi normal adalah P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 0.9 + 0.8 - 0.7 = 1.0. Untuk meningkatkan kualitas produk akhir, manajer harus fokus pada skenario di mana kedua chip berfungsi normal bersamaan (P(A ∩ B) = 0.7). Menganalisis dan mereplikasi faktor-faktor yang menyebabkan kedua chip ini berfungsi normal bersamaan akan meningkatkan keandalan produk secara keseluruhan."
+    }
+  ],
+  "metadata": {
+    "id": "10b19e1a-3497-462e-8598-5dd9e25baf72",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:07:45Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2811,
+      "assistant": 4280,
+      "total": 7765,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\",\n      \"expected_reasoning\": [\n        \"multi-step reasoning\",\n        \"contextual interpretation\",\n        \"tradeoff analysis\",\n        \"strategic judgment\",\n        \"real-world implication analysis\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Deret | Target: HOTS\n\n--- MATERI ---\nDeret aritmetika didefinisikan sebagai penjumlahan berurut dari suku-suku suatu barisan aritmetika. Jika suatu barisan aritmetika memiliki suku pertama a dan beda b, maka deret aritmetikanya dituliskan sebagai a + (a+b) + (a+2b) + ... + (a+(n-1)b). Jumlah n suku pertama dari deret aritmetika dilambangkan dengan Sn. Untuk menghitung nilai Sn, kita dapat menggunakan perumusan Sn = n/2 (a + Un), di mana Un adalah suku ke-n. Apabila nilai suku terakhir (Un) belum diketahui, rumus tersebut dapat dikembangkan dengan menyubstitusikan persamaan Un = a + (n-1)b sehingga menjadi Sn = n/2 (2a + (n-1)b). Penguasaan terhadap rumus ini sangat krusial dalam pemecahan masalah deret yang bersifat linear, seperti menghitung total hasil panen atau total produksi barang di pabrik yang mengalami peningkatan dengan kuantitas tetap setiap bulannya.\n\nBerbeda dengan deret aritmetika, deret geometri merupakan hasil penjumlahan suku-suku yang berurutan dari suatu barisan geometri yang memiliki rasio pengali. Bentuk umum deret geometri dengan suku pertama a dan rasio r adalah a + ar + ar^2 + ... + ar^(n-1). Perhitungan jumlah n suku pertama (Sn) pada deret geometri sangat bergantung pada interval nilai rasionya. Untuk deret geometri dengan rasio mutlak lebih dari satu (r > 1 atau r < -1), digunakan perumusan Sn = a(r^n - 1) / (r - 1). Sementara itu, untuk deret geometri dengan rasio berupa pecahan konvergen pada interval -1 < r < 1, rumusnya disesuaikan menjadi Sn = a(1 - r^n) / (1 - r). Konsep perhitungan deret geometri ini sangat esensial dan sering diaplikasikan dalam memodelkan permasalahan eksponensial di kehidupan nyata, seperti pada perhitungan sistem anuitas dan analisis peluruhan populasi.\n\n[ATP_ALIGNMENT]\nMenghitung jumlah n suku pertama pada deret aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong 'Rasa Nusantara' memproduksi keripik secara bertahap. Pada bulan pertama, mereka memproduksi 100 kg keripik. Setiap bulan berikutnya, produksi meningkat sebesar 20 kg dibandingkan bulan sebelumnya. Jika tren ini terus berlanjut, UMKM tersebut ingin memprediksi total produksi selama 12 bulan pertama untuk merencanakan kebutuhan bahan baku dan kapasitas produksi.",
+      "question": "Berdasarkan data produksi UMKM 'Rasa Nusantara', tentukan strategi terbaik untuk mengelola bahan baku dan kapasitas produksi dengan memprediksi total hasil keripik selama satu tahun ke depan.",
+      "rubric_points": [
+        "Menghitung total produksi keripik selama 12 bulan menggunakan rumus deret aritmetika.",
+        "Menganalisis implikasi total produksi terhadap kebutuhan bahan baku.",
+        "Mengevaluasi kesiapan kapasitas produksi berdasarkan prediksi total hasil."
+      ],
+      "explanation": "**Perhitungan dan Analisis Produksi UMKM**\\n\\nUntuk memprediksi total produksi, kita perlu menghitung jumlah 12 suku pertama dari deret aritmetika ini.\\nSuku pertama (a) = 100 kg\\nBeda (b) = 20 kg\\nJumlah suku (n) = 12 bulan\\n\\nRumus jumlah n suku pertama deret aritmetika adalah: Sn = \\\\frac{n}{2} (2a + (n-1)b)\\n\\nS12 = \\\\frac{12}{2} (2 \\times 100 + (12-1) \\times 20)\\\\nS12 = 6 (200 + 11 \\times 20)\\\\nS12 = 6 (200 + 220)\\\\nS12 = 6 (420)\\\\nS12 = 2520 kg\\n\\nUMKM tersebut akan memproduksi total 2520 kg keripik selama 12 bulan. Prediksi ini memungkinkan UMKM untuk merencanakan pembelian singkong dan memastikan mesin produksi mampu menangani volume tersebut. Strategi pengelolaan bahan baku harus mempertimbangkan peningkatan produksi bulanan, sementara kapasitas produksi perlu disesuaikan agar tidak terjadi kekurangan atau kelebihan stok.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan farmasi sedang mengembangkan obat baru yang efektivitasnya meningkat secara eksponensial setiap siklus pengujian. Pada siklus pertama, efektivitas obat adalah 5%. Setiap siklus berikutnya, efektivitasnya berlipat ganda dari siklus sebelumnya. Perusahaan ini memiliki target efektivitas minimal 80% sebelum obat dipasarkan.",
+      "question": "Evaluasi strategi pengembangan obat perusahaan farmasi tersebut dengan memprediksi berapa siklus pengujian yang dibutuhkan untuk mencapai target efektivitas minimal 80% dan analisis risiko jika target tidak tercapai.",
+      "rubric_points": [
+        "Menentukan jumlah siklus pengujian yang diperlukan untuk mencapai target efektivitas.",
+        "Menganalisis pola pertumbuhan efektivitas menggunakan konsep deret geometri.",
+        "Mengevaluasi risiko yang dihadapi jika target efektivitas tidak tercapai."
+      ],
+      "explanation": "**Analisis Siklus Pengujian Obat**\\n\\nEfektivitas obat mengikuti deret geometri dengan suku pertama (a) = 5% dan rasio (r) = 2 (karena berlipat ganda). Kita perlu mencari nilai n (jumlah siklus) sehingga Sn \\\\ge 80%.\n\nRumus jumlah n suku pertama deret geometri adalah: Sn = \\\\frac{a(r^n - 1)}{r - 1}\n\nKita perlu mencari n sehingga \\\\frac{5(2^n - 1)}{2 - 1} \\\\ge 80.\n\\\\frac{5(2^n - 1)}{1} \\\\ge 80\n5(2^n - 1) \\\\ge 80\n2^n - 1 \\\\ge 16\n2^n \\\\ge 17\n\nMencari nilai n:\n2^1 = 2\n2^2 = 4\n2^3 = 8\n2^4 = 16\n2^5 = 32\n\nJadi, dibutuhkan 5 siklus pengujian untuk mencapai efektivitas minimal 80% (efektivitas pada siklus ke-5 adalah 5 \\\\times 2^4 = 80%). Jika target tidak tercapai, risiko utama adalah penundaan peluncuran produk, peningkatan biaya riset, dan potensi kehilangan pangsa pasar kepada pesaing. Perusahaan harus mempertimbangkan alternatif strategi atau penyesuaian target.\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani di Jawa Barat memiliki lahan seluas 1 hektar yang ditanami padi. Pada panen pertama, ia mendapatkan hasil 5 ton. Ia berencana untuk meningkatkan hasil panennya setiap musim tanam dengan penambahan pupuk organik dan teknik irigasi yang lebih baik. Ia menargetkan peningkatan hasil sebesar 0.5 ton setiap musim tanam.",
+      "question": "Berdasarkan rencana peningkatan hasil panen, tentukan strategi pengelolaan lahan dan sumber daya petani untuk memaksimalkan keuntungan dalam 5 musim tanam ke depan.",
+      "rubric_points": [
+        "Menghitung total hasil panen padi selama 5 musim tanam menggunakan deret aritmetika.",
+        "Menganalisis kebutuhan pupuk dan air tambahan berdasarkan total hasil panen.",
+        "Mengevaluasi potensi keuntungan dengan mempertimbangkan biaya produksi dan harga jual gabah."
+      ],
+      "explanation": "**Strategi Pengelolaan Lahan Petani**\\n\\nUntuk menghitung total hasil panen selama 5 musim tanam, kita gunakan deret aritmetika.\\nSuku pertama (a) = 5 ton\\nBeda (b) = 0.5 ton\\nJumlah suku (n) = 5 musim\\n\\nRumus jumlah n suku pertama deret aritmetika: Sn = \\\\frac{n}{2} (2a + (n-1)b)\\n\\nS5 = \\\\frac{5}{2} (2 \\times 5 + (5-1) \\times 0.5)\\\\nS5 = 2.5 (10 + 4 \\times 0.5)\\\\nS5 = 2.5 (10 + 2)\\\\nS5 = 2.5 (12)\\\\nS5 = 30 ton\\n\\nTotal hasil panen selama 5 musim tanam adalah 30 ton. Petani perlu merencanakan pembelian pupuk dan memastikan ketersediaan air yang cukup untuk mendukung peningkatan hasil ini. Analisis keuntungan harus mencakup biaya pupuk, air, tenaga kerja, serta harga jual gabah yang fluktuatif. Strategi terbaik adalah mengoptimalkan penggunaan pupuk dan air agar tidak terjadi pemborosan, serta mencari pasar yang stabil untuk gabah.\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah desa wisata menawarkan paket tur dengan biaya awal Rp 5.000.000 untuk 2 orang. Setiap penambahan 1 orang, biaya paket bertambah Rp 1.500.000. Desa ini ingin mengetahui total biaya paket jika ada rombongan yang terdiri dari 10 orang untuk merencanakan anggaran promosi dan operasional.",
+      "question": "Berdasarkan struktur biaya paket tur, tentukan strategi penetapan harga yang paling efektif untuk menarik lebih banyak wisatawan sambil memastikan keuntungan desa wisata.",
+      "rubric_points": [
+        "Menghitung total biaya paket tur untuk 10 orang menggunakan konsep deret aritmetika.",
+        "Menganalisis struktur biaya per orang untuk mengidentifikasi potensi diskon.",
+        "Mengevaluasi strategi penetapan harga yang dapat meningkatkan daya tarik paket tur."
+      ],
+      "explanation": "**Analisis Biaya Paket Tur Desa Wisata**\\n\\nBiaya paket tur ini dapat dimodelkan sebagai deret aritmetika.\\nSuku pertama (a) untuk 2 orang = Rp 5.000.000\\nBeda (b) untuk setiap penambahan 1 orang = Rp 1.500.000\\nJumlah orang (n) = 10 orang.\\nUntuk 10 orang, ada 8 penambahan orang dari paket awal (10 - 2 = 8).\n\nTotal biaya = Biaya awal + (Jumlah penambahan orang \\\\times Beda)\\\\nTotal biaya = Rp 5.000.000 + (8 \\times Rp 1.500.000)\\\\nTotal biaya = Rp 5.000.000 + Rp 12.000.000\\\\nTotal biaya = Rp 17.000.000\\n\\nBiaya per orang untuk rombongan 10 orang adalah Rp 17.000.000 / 10 = Rp 1.700.000. Strategi penetapan harga yang efektif adalah menawarkan paket dengan harga yang sedikit lebih rendah dari total biaya per orang jika dihitung secara terpisah, misalnya Rp 1.600.000 per orang, untuk menarik lebih banyak wisatawan. Ini akan meningkatkan volume kunjungan dan pendapatan total desa wisata, meskipun margin per orang sedikit berkurang.\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM kerajinan tangan 'Kreasi Lokal' memproduksi tas rajut. Pada bulan pertama, mereka berhasil menjual 50 tas. Karena promosi yang efektif, jumlah penjualan meningkat dua kali lipat setiap bulan berikutnya. UMKM ini ingin memproyeksikan total penjualan selama 6 bulan pertama untuk perencanaan stok bahan baku.",
+      "question": "Berdasarkan data penjualan UMKM 'Kreasi Lokal', tentukan strategi pengelolaan stok bahan baku yang paling efisien untuk memenuhi permintaan selama 6 bulan ke depan.",
+      "rubric_points": [
+        "Menghitung total penjualan tas rajut selama 6 bulan menggunakan deret geometri.",
+        "Menganalisis kebutuhan bahan baku berdasarkan total unit yang terjual.",
+        "Mengevaluasi strategi pengelolaan stok untuk menghindari kekurangan atau kelebihan bahan baku."
+      ],
+      "explanation": "**Strategi Pengelolaan Stok UMKM 'Kreasi Lokal'**\\n\\nJumlah penjualan tas rajut mengikuti deret geometri.\\nSuku pertama (a) = 50 tas\\nRasio (r) = 2 (karena meningkat dua kali lipat)\nJumlah suku (n) = 6 bulan\\n\\nRumus jumlah n suku pertama deret geometri: Sn = \\\\frac{a(r^n - 1)}{r - 1}\n\nS6 = \\\\frac{50(2^6 - 1)}{2 - 1}\nS6 = \\\\frac{50(64 - 1)}{1}\nS6 = 50(63)\nS6 = 3150 tas\\n\\nTotal penjualan selama 6 bulan adalah 3150 tas. UMKM perlu menghitung berapa banyak bahan baku (benang, kancing, dll.) yang dibutuhkan untuk memproduksi 3150 tas. Strategi pengelolaan stok yang efisien adalah dengan melakukan pembelian bahan baku secara bertahap setiap bulan, disesuaikan dengan proyeksi penjualan bulan berikutnya, untuk menghindari penumpukan stok yang berlebihan dan memastikan ketersediaan bahan saat dibutuhkan.\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "2a21ecdd-f35a-4a8c-83dc-6839948d5056",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T09:00:33Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Deret",
+    "task_type": "essay",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_2_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung jumlah n suku pertama pada deret aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1604,
+      "assistant": 2748,
+      "total": 5026,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

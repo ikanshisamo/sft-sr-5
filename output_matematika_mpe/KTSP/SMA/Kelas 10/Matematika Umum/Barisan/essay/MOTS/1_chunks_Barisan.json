@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Barisan | Target: MOTS\n\n--- MATERI ---\nDalam matematika, barisan bilangan adalah susunan bilangan yang diurutkan menurut aturan atau pola tertentu. Dua jenis barisan yang paling fundamental untuk dipelajari di tingkat SMA adalah barisan aritmetika dan barisan geometri. Barisan aritmetika memiliki karakteristik berupa selisih atau beda (b) yang senantiasa tetap antara dua suku yang saling berurutan. Rumus umum untuk menentukan nilai suku ke-n pada barisan aritmetika adalah Un = a + (n - 1)b, di mana variabel 'a' mewakili suku pertama. Di sisi lain, barisan geometri dikonstruksi berlandaskan perbandingan atau rasio (r) yang bernilai konstan antara dua suku yang saling berurutan. Untuk menentukan nilai suku ke-n pada barisan geometri, diaplikasikan formulasi umum Un = a.r^(n - 1). Penguasaan konsep perumusan suku ke-n pada kedua jenis barisan ini sangat esensial karena menjadi landasan analitis dalam memodelkan permasalahan nyata, seperti perhitungan bunga perbankan maupun dinamika pertumbuhan populasi.\n\n[ATP_ALIGNMENT]\nMenentukan suku ke-n pada barisan aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang kerupuk di Pasar Beringharjo, Yogyakarta, mencatat hasil penjualannya selama seminggu. Pada hari Senin, ia menjual 50 bungkus. Setiap hari berikutnya, ia berhasil menjual 5 bungkus lebih banyak dari hari sebelumnya. Perhitungan ini penting untuk merencanakan stok bahan baku dan strategi promosi.",
+      "question": "Berapa perkiraan jumlah bungkus kerupuk yang akan terjual pada hari Sabtu jika pola penjualan ini terus berlanjut?",
+      "rubric_points": [
+        "Mengidentifikasi bahwa ini adalah barisan aritmetika.",
+        "Menentukan suku pertama (a) dan beda (b).",
+        "Menghitung nilai suku ke-6 (Sabtu) menggunakan rumus Un = a + (n-1)b."
+      ],
+      "explanation": "**Perhitungan Penjualan Kerupuk**\\n\\nDiketahui:\\nSuku pertama (a) = 50 bungkus (Senin)\\nBeda (b) = 5 bungkus\\nDitanya: Suku ke-6 (Sabtu)\\n\\nRumus barisan aritmetika: Un = a + (n - 1)b\\n\\nUntuk hari Sabtu (n=6):\\nU6 = 50 + (6 - 1) \\times 5\\nU6 = 50 + (5) \\times 5\\nU6 = 50 + 25\\nU6 = 75\\n\\nJadi, perkiraan jumlah bungkus kerupuk yang akan terjual pada hari Sabtu adalah 75 bungkus.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM yang memproduksi batik tulis di Pekalongan mengalami peningkatan produksi. Pada bulan pertama, mereka berhasil memproduksi 20 lembar batik. Jika setiap bulan produksi meningkat dua kali lipat dari bulan sebelumnya, ini menunjukkan pola pertumbuhan yang eksponensial.",
+      "question": "Berapa lembar batik yang akan diproduksi pada bulan kelima jika tren peningkatan produksi ini konsisten?",
+      "rubric_points": [
+        "Mengenali pola barisan geometri dari deskripsi.",
+        "Menentukan suku pertama (a) dan rasio (r).",
+        "Menghitung suku ke-5 menggunakan rumus Un = a \\times r^(n-1)."
+      ],
+      "explanation": "**Perhitungan Produksi Batik**\\n\\nDiketahui:\\nSuku pertama (a) = 20 lembar (bulan pertama)\\nRasio (r) = 2 (produksi meningkat dua kali lipat)\\nDitanya: Suku ke-5 (bulan kelima)\\n\\nRumus barisan geometri: Un = a \\times r^(n - 1)\\n\\nUntuk bulan kelima (n=5):\\nU5 = 20 \\times 2^(5 - 1)\\nU5 = 20 \\times 2^4\\nU5 = 20 \\times 16\\nU5 = 320\\n\\nJadi, UMKM tersebut akan memproduksi 320 lembar batik pada bulan kelima.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani di lereng Gunung Merapi menanam bibit kopi. Pada tahun pertama panen, ia mendapatkan hasil 100 kg. Ia berharap hasil panennya meningkat secara konstan setiap tahunnya. Jika ia menargetkan hasil panen tahun kelima adalah 180 kg, berapa peningkatan hasil panen per tahun yang harus dicapai?",
+      "question": "Berapa kilogram peningkatan hasil panen kopi yang harus dicapai petani tersebut setiap tahunnya agar target tercapai?",
+      "rubric_points": [
+        "Mengidentifikasi barisan aritmetika dari konteks panen.",
+        "Menentukan suku pertama (a) dan suku kelima (U5).",
+        "Menghitung beda (b) menggunakan rumus Un = a + (n-1)b."
+      ],
+      "explanation": "**Perhitungan Peningkatan Panen Kopi**\\n\\nDiketahui:\\nSuku pertama (a) = 100 kg (tahun pertama)\\nSuku kelima (U5) = 180 kg (tahun kelima)\\nDitanya: Beda (b) per tahun\\n\\nRumus barisan aritmetika: Un = a + (n - 1)b\\n\\nUntuk tahun kelima (n=5):\\n180 = 100 + (5 - 1)b\\n180 = 100 + 4b\\n180 - 100 = 4b\\n80 = 4b\\nb = 80 / 4\\nb = 20\\n\\nJadi, petani tersebut harus mencapai peningkatan hasil panen sebesar 20 kg setiap tahunnya.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan logistik di Surabaya menggunakan dua jenis truk untuk pengiriman. Truk jenis A memiliki kapasitas angkut 5 ton dan setiap kali pengiriman, kapasitasnya bertambah 2 ton. Truk jenis B memiliki kapasitas angkut 5 ton dan setiap kali pengiriman, kapasitasnya berlipat ganda.",
+      "question": "Bandingkan kapasitas angkut truk jenis A dan B pada pengiriman kelima, dan tentukan truk mana yang memiliki kapasitas lebih besar.",
+      "rubric_points": [
+        "Menghitung kapasitas truk A pada pengiriman ke-5 menggunakan rumus barisan aritmetika.",
+        "Menghitung kapasitas truk B pada pengiriman ke-5 menggunakan rumus barisan geometri.",
+        "Membandingkan hasil perhitungan kedua truk dan menyatakan truk dengan kapasitas lebih besar."
+      ],
+      "explanation": "**Perbandingan Kapasitas Truk**\\n\\nTruk Jenis A (Aritmetika):\\na = 5 ton, b = 2 ton, n = 5\\nU5 = 5 + (5 - 1) \\times 2 = 5 + 4 \\times 2 = 5 + 8 = 13 ton\\n\\nTruk Jenis B (Geometri):\\na = 5 ton, r = 2, n = 5\\nU5 = 5 \\times 2^(5 - 1) = 5 \\times 2^4 = 5 \\times 16 = 80 ton\\n\\nPerbandingan:\\nTruk A: 13 ton\\nTruk B: 80 ton\\n\\nTruk jenis B memiliki kapasitas angkut yang lebih besar pada pengiriman kelima.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa SMA di Denpasar sedang menabung untuk membeli sepeda baru. Pada minggu pertama, ia menabung Rp10.000. Ia berencana menambah jumlah tabungannya sebesar Rp2.000 setiap minggu. Ia membutuhkan Rp150.000 untuk membeli sepeda tersebut.",
+      "question": "Berapa minggu yang dibutuhkan siswa tersebut untuk dapat membeli sepeda jika ia konsisten dengan rencana tabungannya?",
+      "rubric_points": [
+        "Mengidentifikasi barisan aritmetika dari pola menabung.",
+        "Menentukan suku pertama (a) dan beda (b).",
+        "Menghitung jumlah minggu (n) yang diperlukan untuk mencapai total tabungan Rp150.000."
+      ],
+      "explanation": "**Perhitungan Waktu Menabung**\\n\\nDiketahui:\\nSuku pertama (a) = Rp10.000\\nBeda (b) = Rp2.000\\nJumlah total yang dibutuhkan (Sn) = Rp150.000\\nDitanya: Jumlah minggu (n)\\n\\nRumus jumlah n suku pertama barisan aritmetika: Sn = n/2 \\times (2a + (n - 1)b)\\n\\n150.000 = n/2 \\times (2 \\times 10.000 + (n - 1) \\times 2.000)\\n150.000 = n/2 \\times (20.000 + 2.000n - 2.000)\\n150.000 = n/2 \\times (18.000 + 2.000n)\\n150.000 = 9.000n + 1.000n^2\\n\\nMenyusun menjadi persamaan kuadrat:\\n1.000n^2 + 9.000n - 150.000 = 0\\nBagi dengan 1.000:\\nn^2 + 9n - 150 = 0\\n\\nFaktorkan persamaan kuadrat:\\n(n + 15)(n - 10) = 0\\n\\nSolusi yang mungkin adalah n = -15 atau n = 10.\\nKarena jumlah minggu tidak mungkin negatif, maka n = 10.\\n\\nJadi, siswa tersebut membutuhkan waktu 10 minggu untuk dapat membeli sepeda.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "072be66f-6532-4f4e-945b-93b84ba65d9b",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:57:31Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Barisan",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan suku ke-n pada barisan aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1284,
+      "assistant": 1882,
+      "total": 3840,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

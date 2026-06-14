@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\",\n      \"expected_reasoning\": [\n        \"multi-step reasoning\",\n        \"contextual interpretation\",\n        \"tradeoff analysis\",\n        \"strategic judgment\",\n        \"real-world implication analysis\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Sistem Persamaan dan Pertidaksamaan Linear | Sub Bab: Sistem Persamaan Linear | Target: HOTS\n\n--- MATERI ---\nSistem persamaan linear merupakan kumpulan atau gabungan dari beberapa persamaan linear yang saling terkait satu sama lain. Penyelesaian dari suatu sistem persamaan linear adalah nilai-nilai variabel yang secara serentak memenuhi semua persamaan yang ada di dalam sistem tersebut. Jika pada jenjang sebelumnya telah dipelajari sistem persamaan linear dengan dua variabel, konsep ini dapat diperluas menjadi sistem persamaan linear dengan tiga variabel. Konsep penyelesaiannya pun serupa, di mana kita dapat memodelkan suatu permasalahan sehari-hari ke dalam bentuk persamaan, lalu menggunakan metode seperti eliminasi maupun substitusi untuk menemukan nilai pasti dari masing-masing variabel.\n\n[ATP_ALIGNMENT]\nMenyajikan grafik dan menentukan daerah penyelesaian persamaan linear dua variabel.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang ibu rumah tangga ingin membeli kebutuhan pokok di pasar tradisional. Ia membeli 2 kg beras, 1 kg gula, dan 3 liter minyak goreng dengan total biaya Rp 71.000. Di lain waktu, ia membeli 3 kg beras, 2 kg gula, dan 1 liter minyak goreng seharga Rp 82.000. Jika ia membeli 1 kg beras, 1 kg gula, dan 2 liter minyak goreng, totalnya adalah Rp 49.000. Ibu tersebut memiliki uang Rp 100.000 dan ingin membeli kombinasi yang berbeda dari ketiga barang tersebut.",
+      "question": "Berdasarkan informasi tersebut, strategi pembelian manakah yang paling efektif agar ibu tersebut dapat memaksimalkan jumlah barang yang dibeli tanpa melebihi anggaran Rp 100.000, dengan tetap mempertimbangkan kebutuhan pokoknya?",
+      "rubric_points": [
+        "Mampu menyusun sistem persamaan linear tiga variabel dari informasi yang diberikan.",
+        "Mampu menyelesaikan sistem persamaan linear untuk menentukan harga satuan setiap barang.",
+        "Mampu menganalisis berbagai kombinasi pembelian dan membandingkan efektivitasnya dalam anggaran yang tersedia."
+      ],
+      "explanation": "**Analisis Strategi Pembelian**\\nUntuk menentukan strategi pembelian yang paling efektif, pertama-tama kita perlu menemukan harga satuan dari beras (b), gula (g), dan minyak goreng (m) dengan membentuk sistem persamaan linear tiga variabel:\\n1) $2b + 1g + 3m = 71.000$\n2) $3b + 2g + 1m = 82.000$\n3) $1b + 1g + 2m = 49.000$\\n\\nDengan metode eliminasi atau substitusi, kita dapat menemukan bahwa $b = 20.000$, $g = 15.000$, dan $m = 4.000$.\\n\\nSelanjutnya, ibu tersebut memiliki anggaran Rp 100.000. Ia perlu mengevaluasi berbagai kombinasi pembelian untuk memaksimalkan jumlah barang. Contohnya, jika ia membeli 2 kg beras (Rp 40.000), 2 kg gula (Rp 30.000), dan 2 liter minyak (Rp 8.000), totalnya Rp 78.000, ia mendapatkan 6 kg barang. Jika ia membeli 3 kg beras (Rp 60.000), 1 kg gula (Rp 15.000), dan 2 liter minyak (Rp 8.000), totalnya Rp 83.000, ia mendapatkan 6 kg barang. Strategi yang paling efektif adalah yang memberikan jumlah barang terbanyak dengan biaya terendah, memungkinkan sisa uang untuk pembelian lain atau tabungan.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memiliki tiga varian rasa: original, pedas, dan balado. Untuk memproduksi 100 bungkus varian original dibutuhkan 5 kg singkong, 2 kg bumbu, dan 1 jam mesin pengemas. Varian pedas membutuhkan 6 kg singkong, 3 kg bumbu, dan 1.5 jam mesin pengemas per 100 bungkus. Varian balado membutuhkan 7 kg singkong, 2 kg bumbu, dan 1.2 jam mesin pengemas per 100 bungkus. UMKM ini memiliki stok 30 kg singkong, 10 kg bumbu, dan 6 jam mesin pengemas per hari.",
+      "question": "Bagaimana UMKM tersebut sebaiknya mengalokasikan sumber daya produksinya untuk memaksimalkan jumlah total keripik yang dihasilkan per hari, dengan mempertimbangkan keterbatasan bahan baku dan mesin?",
+      "rubric_points": [
+        "Mampu merumuskan kendala produksi dalam bentuk pertidaksamaan linear.",
+        "Mampu mengidentifikasi tujuan produksi (memaksimalkan jumlah keripik).",
+        "Mampu menganalisis berbagai skenario produksi untuk menemukan alokasi sumber daya yang optimal."
+      ],
+      "explanation": "**Analisis Alokasi Sumber Daya Produksi**\\nUntuk memaksimalkan jumlah total keripik yang dihasilkan, UMKM perlu menganalisis kendala yang ada. Misalkan $x$ adalah jumlah ratusan bungkus varian original, $y$ varian pedas, dan $z$ varian balado. Kendala produksi adalah:\\nSingkong: $5x + 6y + 7z \\le 30$ (kg)\\nBumbu: $2x + 3y + 2z \\le 10$ (kg)\\nMesin: $1x + 1.5y + 1.2z \\le 6$ (jam)\\n\\nUMKM harus mengevaluasi kombinasi nilai $x, y, z$ yang memenuhi semua pertidaksamaan tersebut dan memaksimalkan nilai $x+y+z$. Ini memerlukan analisis trade-off antara varian rasa yang berbeda berdasarkan efisiensi penggunaan sumber daya. Misalnya, varian original paling efisien dalam penggunaan bumbu per bungkus, sementara varian pedas membutuhkan lebih banyak singkong dan waktu mesin. Keputusan strategis diperlukan untuk menyeimbangkan permintaan pasar dengan kapasitas produksi.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah koperasi sekolah menjual dua jenis alat tulis: buku catatan dan pena. Harga jual buku catatan adalah Rp 5.000 per buah dan pena Rp 3.000 per buah. Koperasi memiliki target keuntungan harian minimal Rp 150.000. Untuk setiap buku catatan yang terjual, keuntungan yang didapat adalah Rp 1.000, dan untuk setiap pena adalah Rp 500. Koperasi hanya dapat menyediakan maksimal 50 buku catatan dan 100 pena setiap harinya.",
+      "question": "Strategi penjualan manakah yang paling menguntungkan bagi koperasi sekolah untuk mencapai target keuntungan harian, dengan mempertimbangkan batasan jumlah stok dan keuntungan per unit?",
+      "rubric_points": [
+        "Mampu merumuskan fungsi tujuan (keuntungan) dan fungsi kendala (stok dan target keuntungan).",
+        "Mampu menganalisis berbagai kombinasi penjualan buku dan pena.",
+        "Mampu menentukan strategi penjualan yang paling efektif untuk memaksimalkan keuntungan."
+      ],
+      "explanation": "**Analisis Strategi Penjualan Koperasi**\\nUntuk menentukan strategi penjualan yang paling menguntungkan, kita perlu memodelkan masalah ini. Misalkan $b$ adalah jumlah buku catatan dan $p$ adalah jumlah pena yang terjual. Fungsi keuntungan adalah $K = 1000b + 500p$. Kendala yang ada adalah:\\nStok buku: $b \\le 50$\\nStok pena: $p \\le 100$\\nTarget keuntungan: $1000b + 500p \\ge 150.000$ (atau $2b + p \\ge 300$ setelah disederhanakan)\\n\\nKoperasi harus mengevaluasi kombinasi $(b, p)$ yang memenuhi semua kendala dan memaksimalkan $K$. Misalnya, menjual 50 buku (Rp 50.000 keuntungan) dan 100 pena (Rp 50.000 keuntungan) total Rp 100.000, belum mencapai target. Menjual 50 buku dan 200 pena (tidak mungkin karena stok pena) atau menjual 150 buku (tidak mungkin) dan 0 pena. Strategi yang paling efektif adalah menjual kombinasi yang memenuhi target keuntungan minimal sambil mempertimbangkan batasan stok, dan kemudian mencari titik yang memberikan keuntungan tertinggi.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 1 hektar. Ia berencana menanam dua jenis tanaman: padi dan jagung. Biaya tanam per hektar untuk padi adalah Rp 5.000.000 dan untuk jagung adalah Rp 4.000.000. Hasil panen per hektar untuk padi adalah 6 ton dan untuk jagung adalah 5 ton. Petani memiliki modal sebesar Rp 4.500.000 untuk biaya tanam. Ia ingin memaksimalkan hasil panen totalnya.",
+      "question": "Bagaimana petani tersebut sebaiknya mengalokasikan lahannya untuk menanam padi dan jagung agar hasil panen totalnya maksimal, dengan mempertimbangkan keterbatasan modal?",
+      "rubric_points": [
+        "Mampu merumuskan fungsi tujuan (hasil panen) dan fungsi kendala (modal dan luas lahan).",
+        "Mampu menganalisis berbagai proporsi penanaman padi dan jagung.",
+        "Mampu menentukan alokasi lahan yang optimal untuk memaksimalkan hasil panen."
+      ],
+      "explanation": "**Analisis Alokasi Lahan Pertanian**\\nUntuk memaksimalkan hasil panen, petani perlu mempertimbangkan kendala modal dan luas lahan. Misalkan $x$ adalah luas lahan (dalam hektar) untuk padi dan $y$ adalah luas lahan untuk jagung. Kendala yang ada adalah:\\nLuas lahan: $x + y \\le 1$ (hektar)\\nModal: $5.000.000x + 4.000.000y \\le 4.500.000$ (Rp)\\n\\nFungsi yang ingin dimaksimalkan adalah hasil panen total $P = 6x + 5y$ (ton). Petani harus mengevaluasi kombinasi $(x, y)$ yang memenuhi kedua kendala. Misalnya, menanam 1 hektar padi (biaya Rp 5.000.000, melebihi modal) atau 1 hektar jagung (biaya Rp 4.000.000, sesuai modal, hasil 5 ton). Jika petani mengalokasikan 0.5 hektar untuk padi (biaya Rp 2.500.000) dan 0.5 hektar untuk jagung (biaya Rp 2.000.000), total biaya Rp 4.500.000, hasil panen $6(0.5) + 5(0.5) = 3 + 2.5 = 5.5$ ton. Strategi optimal adalah menemukan titik $(x, y)$ pada batas kendala yang memberikan nilai $P$ terbesar.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi memiliki dua jenis armada bus: bus besar dengan kapasitas 50 penumpang dan bus kecil dengan kapasitas 30 penumpang. Untuk mengangkut 200 penumpang, perusahaan perlu mengeluarkan biaya operasional Rp 1.000.000 untuk bus besar dan Rp 600.000 untuk bus kecil. Perusahaan ingin mengangkut minimal 200 penumpang dengan biaya serendah mungkin.",
+      "question": "Bagaimana perusahaan sebaiknya mengombinasikan penggunaan bus besar dan bus kecil untuk mengangkut minimal 200 penumpang dengan total biaya operasional terendah?",
+      "rubric_points": [
+        "Mampu merumuskan fungsi tujuan (biaya operasional) dan fungsi kendala (kapasitas penumpang).",
+        "Mampu menganalisis berbagai kombinasi penggunaan bus besar dan kecil.",
+        "Mampu menentukan kombinasi armada yang paling efisien secara biaya."
+      ],
+      "explanation": "**Analisis Kombinasi Armada Transportasi**\\nUntuk meminimalkan biaya operasional, perusahaan perlu mengevaluasi kombinasi bus yang memenuhi target penumpang. Misalkan $b$ adalah jumlah bus besar dan $k$ adalah jumlah bus kecil yang digunakan. Fungsi yang ingin diminimalkan adalah biaya $C = 1.000.000b + 600.000k$. Kendala yang ada adalah kapasitas penumpang total: $50b + 30k \\ge 200$.\\n\\nPerusahaan harus mencari nilai $b$ dan $k$ (bilangan bulat non-negatif) yang memenuhi kendala dan meminimalkan $C$. Contohnya, menggunakan 4 bus besar (kapasitas 200, biaya Rp 4.000.000) atau 7 bus kecil (kapasitas 210, biaya Rp 4.200.000). Kombinasi lain bisa jadi 2 bus besar (100 penumpang, Rp 2.000.000) dan 4 bus kecil (120 penumpang, Rp 2.400.000), total 220 penumpang dengan biaya Rp 4.400.000. Strategi yang paling efisien adalah menemukan titik pada batas kendala yang memberikan nilai $C$ terendah, yang mungkin melibatkan kombinasi kedua jenis bus.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "d92a3353-b22b-4d39-97e1-5b2abe75eb6f",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T13:47:50Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Sistem Persamaan dan Pertidaksamaan Linear",
+    "sub_bab": "Sistem Persamaan Linear",
+    "task_type": "essay",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyajikan grafik dan menentukan daerah penyelesaian persamaan linear dua variabel.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1307,
+      "assistant": 3017,
+      "total": 4998,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

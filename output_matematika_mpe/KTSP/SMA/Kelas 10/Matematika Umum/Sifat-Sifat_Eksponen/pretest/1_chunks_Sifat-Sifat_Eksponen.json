@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Sifat-Sifat Eksponen\n\n--- MATERI ---\nSifat-sifat operasi pemangkatan merupakan aturan dasar yang sangat penting dalam memanipulasi bentuk eksponen. Beberapa sifat utama yang berlaku untuk setiap bilangan riil a dan b, serta bilangan bulat positif m dan n adalah sebagai berikut. Pertama, sifat perkalian bilangan berpangkat menyatakan bahwa a^m × a^n = a^(m+n). Artinya, jika dua bilangan berpangkat dengan basis yang sama dikalikan, pangkatnya cukup dijumlahkan. Kedua, sifat pembagian bilangan berpangkat menyatakan bahwa a^m : a^n = a^(m-n) dengan syarat a tidak sama dengan 0. Ketiga, sifat pangkat dari bilangan berpangkat dirumuskan sebagai (a^m)^n = a^(m × n), di mana eksponennya saling dikalikan. Keempat, sifat pangkat dari perkalian bilangan, yaitu (a × b)^n = a^n × b^n. Kelima, sifat pangkat dari pembagian bilangan, dirumuskan sebagai (a/b)^n = a^n / b^n dengan syarat b tidak sama dengan 0. Menggeneralisasi kelima sifat ini sangat memfasilitasi penyederhanaan perhitungan ekspresi aljabar.\n\n[ATP_ALIGNMENT]\nMenggeneralisasi sifat-sifat bilangan berpangkat.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang kerupuk di pasar tradisional mencatat bahwa stok kerupuk udang miliknya pada hari Senin adalah 5^3 bungkus. Pada hari Selasa, ia menambah stok sebanyak 5^2 bungkus.",
+      "question": "Berapa total stok kerupuk udang yang dimiliki pedagang tersebut pada hari Selasa jika dihitung dalam bentuk perpangkatan dengan basis yang sama?",
+      "options": {
+        "A": "5^(3-2)",
+        "B": "5^6",
+        "C": "5^(3+2)",
+        "D": "5^5",
+        "E": "5^3 + 5^2"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Sesuai sifat perkalian bilangan berpangkat, jika basis sama maka pangkat dijumlahkan. Stok awal adalah 5^3 dan tambahan stok adalah 5^2. Maka total stok adalah 5^3 \\times 5^2 = 5^(3+2) = 5^5."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM memproduksi sabun dengan formula yang menghasilkan 2^4 liter sabun cair setiap jam. Produksi ini berjalan selama 3 jam.",
+      "question": "Jika dihitung total produksi sabun cair dalam bentuk perpangkatan dengan basis yang sama, bagaimana rumusnya?",
+      "options": {
+        "A": "2^(4*3)",
+        "B": "2^(4+3)",
+        "C": "2^4 + 2^3",
+        "D": "2^12",
+        "E": "2^(4/3)"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Produksi per jam adalah 2^4 liter. Jika produksi berjalan selama 3 jam, ini sama dengan mengalikan produksi per jam sebanyak 3 kali. Dalam notasi perpangkatan, ini adalah (2^4)^3 = 2^(4 \\times 3) = 2^12."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 3^5 meter persegi. Ia berencana membagi lahannya menjadi beberapa petak yang masing-masing seluas 3^2 meter persegi untuk menanam sayuran yang berbeda.",
+      "question": "Berapa jumlah petak yang dapat dibuat oleh petani tersebut?",
+      "options": {
+        "A": "3^(5-2)",
+        "B": "3^3",
+        "C": "3^(5+2)",
+        "D": "3^7",
+        "E": "3^5 / 3^2"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Untuk mencari jumlah petak, luas total lahan dibagi dengan luas setiap petak. Berdasarkan sifat pembagian bilangan berpangkat, 3^5 : 3^2 = 3^(5-2) = 3^3. Jadi, petani dapat membuat 3^3 petak."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kompetisi lari estafet antar sekolah, tim SMA Harapan Bangsa memiliki catatan waktu untuk setiap pelari. Pelari pertama mencatat waktu 4^2 menit, pelari kedua 4^2 menit, dan pelari ketiga 4^2 menit.",
+      "question": "Jika total waktu dicatat dalam bentuk perkalian bilangan berpangkat dengan basis yang sama, bagaimana ekspresi yang tepat?",
+      "options": {
+        "A": "4^(2+2+2)",
+        "B": "4^(2*3)",
+        "C": "4^6",
+        "D": "4^2 + 4^2 + 4^2",
+        "E": "3 \\times 4^2"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Total waktu adalah hasil penjumlahan waktu setiap pelari. Namun, jika diminta dalam bentuk perkalian bilangan berpangkat dengan basis yang sama, ini berarti 4^2 \\times 4^2 \\times 4^2 = 4^(2+2+2) = 4^6."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi kue kering. Dalam satu hari, mereka menghasilkan (2 \\times 3)^4 toples kue kering. Setiap toples berisi jumlah kue yang sama.",
+      "question": "Bagaimana cara menyederhanakan ekspresi jumlah total kue kering yang dihasilkan pabrik tersebut menggunakan sifat perpangkatan?",
+      "options": {
+        "A": "2^4 \\times 3^4",
+        "B": "2^4 + 3^4",
+        "C": "(2+3)^4",
+        "D": "6^4",
+        "E": "2^12 \\times 3^12"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Sifat pangkat dari perkalian bilangan menyatakan bahwa (a \\times b)^n = a^n \\times b^n. Menerapkan sifat ini pada (2 \\times 3)^4 menghasilkan 2^4 \\times 3^4. Ini menunjukkan bahwa jumlah kue kering dapat dihitung dari kontribusi masing-masing faktor."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha konveksi ingin meningkatkan kapasitas produksi kaos. Saat ini, ia memiliki mesin yang mampu memproduksi 5^3 kaos per hari. Ia berencana membeli mesin baru yang kapasitasnya dua kali lipat dari mesin lama.",
+      "question": "Jika ia ingin memproduksi kaos sebanyak 5^5 kaos dalam satu hari, berapa kali lipat kapasitas produksi totalnya harus ditingkatkan dari kapasitas awal?",
+      "options": {
+        "A": "5^2 kali",
+        "B": "5^5 / 5^3 kali",
+        "C": "5^2 / 2 kali",
+        "D": "2 kali",
+        "E": "5^5 kali"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Kapasitas awal adalah 5^3 kaos/hari. Target produksi adalah 5^5 kaos/hari. Peningkatan yang dibutuhkan adalah (5^5) / (5^3) = 5^(5-3) = 5^2 kali lipat dari kapasitas awal. Pembelian mesin baru yang kapasitasnya dua kali lipat adalah informasi tambahan yang tidak langsung menjawab pertanyaan."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan logistik menggunakan sistem penomoran kontainer yang melibatkan perpangkatan. Kode dasar untuk kontainer adalah 7^3. Jika ada variasi yang dikalikan dengan kode dasar, misalnya 7^2.",
+      "question": "Bagaimana cara menghitung total kode variasi jika ada 7^2 variasi yang masing-masing dikalikan dengan kode dasar?",
+      "options": {
+        "A": "7^(3+2)",
+        "B": "7^3 \\times 7^2",
+        "C": "7^(3*2)",
+        "D": "7^6",
+        "E": "7^3 + 7^2"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Jika ada 7^2 variasi yang masing-masing dikalikan dengan kode dasar 7^3, maka totalnya adalah 7^3 \\times 7^2. Menggunakan sifat perkalian bilangan berpangkat, ini menjadi 7^(3+2) = 7^5."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa sedang mengerjakan soal latihan eksponen. Ia diberikan ekspresi \\frac{6^5}{6^2} dan diminta menyederhanakannya. Ia kemudian diminta untuk membandingkan hasil ini dengan ekspresi \\frac{6^7}{6^4}.",
+      "question": "Manakah pernyataan yang paling tepat mengenai perbandingan kedua hasil penyederhanaan tersebut?",
+      "options": {
+        "A": "Hasil \\frac{6^5}{6^2} lebih besar dari \\frac{6^7}{6^4}.",
+        "B": "Hasil \\frac{6^7}{6^4} lebih besar dari \\frac{6^5}{6^2}.",
+        "C": "Kedua hasil penyederhanaan memiliki nilai yang sama.",
+        "D": "Hasil \\frac{6^5}{6^2} adalah 6^3 dan \\frac{6^7}{6^4} adalah 6^2.",
+        "E": "Hasil \\frac{6^7}{6^4} lebih kecil dari \\frac{6^5}{6^2} karena pembaginya lebih besar."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** \\frac{6^5}{6^2} = 6^(5-2) = 6^3. Sementara itu, \\frac{6^7}{6^4} = 6^(7-4) = 6^3. Kedua ekspresi tersebut menghasilkan nilai yang sama, yaitu 6^3. Pilihan E salah karena pembagi yang lebih besar tidak selalu menghasilkan nilai yang lebih kecil jika pembilangnya juga lebih besar secara proporsional."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah simulasi pertumbuhan bakteri, jumlah bakteri pada awal pengamatan adalah 10^4 koloni. Jika jumlah bakteri tersebut berlipat ganda setiap jam, maka setelah 3 jam jumlahnya menjadi (10^4)^3 koloni.",
+      "question": "Sifat perpangkatan manakah yang digunakan untuk menghitung jumlah bakteri setelah 3 jam?",
+      "options": {
+        "A": "a^m \\times a^n = a^(m+n)",
+        "B": "a^m : a^n = a^(m-n)",
+        "C": "(a^m)^n = a^(m \\times n)",
+        "D": "(a \\times b)^n = a^n \\times b^n",
+        "E": "(a/b)^n = a^n / b^n"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Ekspresi (10^4)^3 menunjukkan bahwa basis 10^4 dipangkatkan lagi dengan 3. Ini sesuai dengan sifat pangkat dari bilangan berpangkat, yaitu (a^m)^n = a^(m \\times n), yang menghasilkan 10^(4 \\times 3) = 10^12."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha kerajinan tangan ingin memproduksi tas dari bahan daur ulang. Ia memiliki 3^6 meter kain. Setiap tas membutuhkan 3^2 meter kain.",
+      "question": "Jika ia ingin membuat tas sebanyak mungkin, strategi mana yang paling efisien untuk menentukan jumlah tas yang dapat dibuat?",
+      "options": {
+        "A": "Menghitung total kain yang dimiliki lalu membaginya dengan kain per tas.",
+        "B": "Menghitung sisa kain setelah membuat beberapa tas.",
+        "C": "Mengalikan jumlah kain per tas dengan jumlah tas yang diinginkan.",
+        "D": "Membandingkan jumlah kain yang dimiliki dengan jumlah kain per tas menggunakan sifat perpangkatan.",
+        "E": "Mengurangi jumlah kain yang dimiliki dengan jumlah kain per tas berulang kali."
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Strategi paling efisien adalah membagi total sumber daya (kain) dengan kebutuhan per unit (kain per tas). Dalam konteks perpangkatan, ini adalah 3^6 meter kain / 3^2 meter kain per tas = 3^(6-2) = 3^4 tas. Pilihan E adalah metode pengurangan berulang yang setara dengan pembagian."
+    }
+  ],
+  "metadata": {
+    "id": "83638f47-a3a5-4f6d-ba16-1298e29d01b2",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T10:18:42Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Sifat-Sifat Eksponen",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menggeneralisasi sifat-sifat bilangan berpangkat.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2750,
+      "assistant": 2490,
+      "total": 5913,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

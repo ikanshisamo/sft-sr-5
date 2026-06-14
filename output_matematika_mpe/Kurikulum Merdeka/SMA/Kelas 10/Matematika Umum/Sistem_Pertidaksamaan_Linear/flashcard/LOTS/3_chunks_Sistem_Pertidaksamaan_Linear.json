@@ -1,0 +1,68 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate exactly 5 flashcards in JSON array format.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"front\": \"\",\n    \"back\": \"\"\n  }\n]\n\n[FLASHCARD_LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"focus\": [\n      \"definisi\",\n      \"rumus\",\n      \"fakta dasar\",\n      \"konsep inti\"\n    ],\n    \"style\": \"direct recall\"\n  },\n\n  \"MOTS\": {\n    \"focus\": [\n      \"hubungan konsep\",\n      \"aplikasi sederhana\",\n      \"contoh penggunaan\"\n    ],\n    \"style\": \"applied recall\"\n  },\n\n  \"HOTS\": {\n    \"focus\": [\n      \"kesimpulan\",\n      \"strategi\",\n      \"dampak\",\n      \"evaluasi singkat\"\n    ],\n    \"style\": \"evaluative takeaway\"\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Sistem Persamaan dan Pertidaksamaan Linear | Sub Bab: Sistem Pertidaksamaan Linear | Target: LOTS\n\n--- MATERI ---\nSelain sistem persamaan linear, di dalam matematika juga dikenal istilah **sistem pertidaksamaan linear**. Sistem pertidaksamaan linear ini terdiri atas beberapa pertidaksamaan linear, dan penyelesaiannya harus membuat semua pertidaksamaan linear di dalam sistem tersebut bernilai benar. Sebagai contoh untuk menyelesaikan permasalahan batas anggaran biaya penyelenggaraan acara dengan banyak peserta ($x$) dan banyak perlombaan ($y$), model matematikanya dapat ditulis ke dalam sistem pertidaksamaan linear dua variabel, misalnya $20x + 40y \\le 500$ dan $x > 13$.\n\nUntuk **menyelesaikan sistem pertidaksamaan linear**, pengetahuan dasar terkait penyelesaian sistem persamaan linear dapat dimanfaatkan. Langkah pertama yang harus dilakukan adalah menggambarkan grafik sistem persamaan linear yang berpadanan, yaitu dengan cara mengubah sementara tanda pertidaksamaannya menjadi tanda persamaan (sama dengan) untuk mendapatkan garis batas. Sangat penting untuk dicatat bahwa **garis yang didapat dari pertidaksamaan \"lebih dari atau sama dengan\" ($\\ge$) maupun \"kurang dari atau sama dengan\" ($\\le$) harus digambarkan dengan garis utuh** yang berarti dilibatkan dalam daerah jawaban, sedangkan **garis dari pertidaksamaan \"lebih dari\" ($>$) atau \"kurang dari\" ($<$) digambarkan dengan garis putus-putus** yang berarti hanya sebagai batas.\n\nSetelah batas garis selesai digambar, langkah selanjutnya adalah **memilih sebuah titik uji**, misalnya titik $(0,0)$, lalu menyubstitusikan nilai titik tersebut ke dalam pertidaksamaan. Jika nilai titik tersebut memenuhi syarat ketidaksamaannya, maka daerah yang memuat titik $(0,0)$ tersebut diarsir untuk menunjukkan bahwa daerah itulah yang menjadi daerah jawab atau daerah hasilnya. Garis persamaan linear berperan sebagai pembatas antara daerah jawab dan bukan daerah jawab. Lakukan pengujian yang sama untuk seluruh pertidaksamaan yang ada, di mana **solusi akhir dari sistem pertidaksamaan linear tersebut adalah daerah yang merupakan irisan atau perpotongan dari semua daerah jawab yang ada**.\n\n[FLASHCARD_REQUIREMENTS]\n- Generate flashcards aligned with the configured flashcard level.\n- Keep answers concise, useful, and easy to recall.\n- Focus on essential knowledge compression.\n- Avoid long analytical explanations.\n- Use natural Indonesian educational language.\n\n[LEVEL_ALIGNMENT]\n\n- LOTS:\n  Focus on direct recall of concepts, formulas, definitions, or basic facts.\n- MOTS:\n  Focus on simple application, conceptual relationships, or practical usage.\n- HOTS:\n  Focus on concise evaluative conclusions, impacts, strategies, or insights.\n\n[FRONT_RULES]\n- Maximum 20 characters including spaces.\n- Use concise prompts, terms, formulas, or key ideas.\n- Avoid ambiguous wording.\n- Avoid full sentence questions when unnecessary.\n\n[BACK_RULES]\n- Maximum 50 characters including spaces.\n- Must contain definitive answers, formulas, concepts, impacts, or conclusions.\n- Avoid rhetorical or open-ended responses.\n- Avoid filler words.\n- STEM subjects:\n  - may include concise LaTeX formulas\n  - prioritize formulas or technical meaning\n- Theory subjects:\n  - prioritize impacts, relationships, or concise takeaways\n\n[CONTENT_GUIDELINES]\nAllowed content:\n- formulas\n- definitions\n- key concepts\n- practical applications\n- impacts\n- relationships\n- concise strategies\n- evaluative takeaways\n\n[VARIATION_RULES]\nDistribute flashcards naturally across:\n- conceptual recall\n- applied understanding\n- evaluative takeaway\n\nAvoid generating cards with repetitive wording patterns.\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- Escape newline characters.\n- Escape internal quotes.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "front": "Apa itu sistem pertidaksamaan linear?",
+      "back": "Kumpulan beberapa pertidaksamaan linear."
+    },
+    {
+      "level": "LOTS",
+      "front": "Garis utuh pada grafik",
+      "back": "Untuk pertidaksamaan \\ge atau \\le."
+    },
+    {
+      "level": "LOTS",
+      "front": "Garis putus-putus pada grafik",
+      "back": "Untuk pertidaksamaan > atau <."
+    },
+    {
+      "level": "LOTS",
+      "front": "Titik uji untuk pertidaksamaan",
+      "back": "Contoh: (0,0) untuk menentukan daerah jawab."
+    },
+    {
+      "level": "LOTS",
+      "front": "Solusi sistem pertidaksamaan",
+      "back": "Irisan dari semua daerah jawab."
+    }
+  ],
+  "metadata": {
+    "id": "c97922b6-a739-4f38-80ac-4b725d28d17d",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T11:50:01Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Sistem Persamaan dan Pertidaksamaan Linear",
+    "sub_bab": "Sistem Pertidaksamaan Linear",
+    "task_type": "flashcard",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan daerah penyelesaian pertidaksamaan linear dua variabel dan menggambarkannya pada grafik.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1480,
+      "assistant": 170,
+      "total": 2324,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

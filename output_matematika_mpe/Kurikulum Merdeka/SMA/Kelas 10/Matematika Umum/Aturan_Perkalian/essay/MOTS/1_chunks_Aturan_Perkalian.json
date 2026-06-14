@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Perkalian | Target: MOTS\n\n--- MATERI ---\nAturan perkalian dalam materi peluang digunakan untuk menentukan peluang terjadinya dua kejadian yang bersifat saling bebas. Dua kejadian dikatakan saling bebas apabila kejadian yang satu sama sekali tidak memengaruhi peluang terjadinya kejadian yang lainnya. Jika kejadian A dan kejadian B saling bebas, maka peluang terjadinya kedua kejadian tersebut—baik secara berurutan maupun pada saat yang bersamaan—dapat dihitung dengan mengalikan masing-masing peluangnya. Secara matematis, aturan perkalian ini dirumuskan dengan P(A dan B) = P(A) × P(B). Penting untuk dicatat bahwa aturan perkalian dasar ini tidak berlaku jika kedua kejadian tersebut tidak saling bebas, sebagai contoh pada kasus pengambilan bola secara berturut-turut tanpa adanya pengembalian, di mana hasil dari pengambilan pertama akan mengubah jumlah objek dan memengaruhi peluang pada pengambilan selanjutnya.\n\n[ATP_ALIGNMENT]\nMenghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Di sebuah pasar tradisional di Yogyakarta, terdapat dua pedagang buah yang berjualan secara terpisah. Pedagang pertama menjual mangga dengan peluang terjual habis setiap harinya adalah 0,8. Pedagang kedua menjual jeruk dengan peluang terjual habis setiap harinya adalah 0,7. Kedua pedagang tersebut beroperasi secara independen, artinya penjualan salah satu pedagang tidak memengaruhi penjualan pedagang lainnya.",
+      "question": "Berapakah peluang kedua pedagang tersebut berhasil menjual seluruh dagangannya pada hari yang sama?",
+      "rubric_points": [
+        "Mengidentifikasi peluang terjual habis masing-masing pedagang.",
+        "Menentukan bahwa kejadian penjualan kedua pedagang adalah saling bebas.",
+        "Menghitung peluang gabungan dengan mengalikan peluang masing-masing kejadian."
+      ],
+      "explanation": "**Perhitungan Peluang Gabungan**\\nUntuk menghitung peluang kedua pedagang berhasil menjual seluruh dagangannya pada hari yang sama, kita perlu mengalikan peluang masing-masing kejadian karena kedua kejadian tersebut saling bebas.\\n\\nMisalkan:\\nP(A) = Peluang pedagang pertama menjual habis mangga = 0,8\\nP(B) = Peluang pedagang kedua menjual habis jeruk = 0,7\\n\\nP(A dan B) = P(A) \\\\times P(B)\\\\nP(A dan B) = 0,8 \\\\times 0,7\\\\nP(A dan B) = 0,56\\n\\nJadi, peluang kedua pedagang tersebut berhasil menjual seluruh dagangannya pada hari yang sama adalah 0,56 atau 56%.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik roti di Bandung memproduksi dua jenis kue kering: nastar dan kastengel. Peluang sebuah nastar lolos uji kualitas adalah 0,95, dan peluang sebuah kastengel lolos uji kualitas adalah 0,92. Proses pengujian kualitas untuk kedua jenis kue ini dilakukan secara terpisah dan tidak saling memengaruhi.",
+      "question": "Jika diambil satu nastar dan satu kastengel secara acak, berapakah peluang keduanya lolos uji kualitas?",
+      "rubric_points": [
+        "Mengidentifikasi peluang lolos uji kualitas untuk nastar.",
+        "Mengidentifikasi peluang lolos uji kualitas untuk kastengel.",
+        "Menerapkan aturan perkalian untuk kejadian saling bebas guna menghitung peluang gabungan."
+      ],
+      "explanation": "**Menghitung Peluang Lolos Uji Kualitas Gabungan**\\nKarena pengujian kualitas untuk nastar dan kastengel bersifat independen, kita dapat menggunakan aturan perkalian untuk menghitung peluang keduanya lolos uji kualitas.\\n\\nMisalkan:\\nP(N) = Peluang nastar lolos uji kualitas = 0,95\\nP(K) = Peluang kastengel lolos uji kualitas = 0,92\\n\\nP(N dan K) = P(N) \\\\times P(K)\\\\nP(N dan K) = 0,95 \\\\times 0,92\\\\nP(N dan K) = 0,874\\n\\nOleh karena itu, peluang nastar dan kastengel sama-sama lolos uji kualitas adalah 0,874 atau 87,4%.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dalam sebuah acara sekolah di Surabaya, panitia menyiapkan dua jenis undian berhadiah. Undian pertama adalah kupon undian berhadiah buku, dengan peluang menang 1/5. Undian kedua adalah kupon undian berhadiah alat tulis, dengan peluang menang 1/4. Kedua undian ini tidak saling memengaruhi hasil pemenangnya.",
+      "question": "Berapakah peluang seorang siswa memenangkan kedua hadiah tersebut jika ia mengikuti kedua jenis undian?",
+      "rubric_points": [
+        "Menentukan peluang menang pada undian buku.",
+        "Menentukan peluang menang pada undian alat tulis.",
+        "Mengaplikasikan aturan perkalian untuk menghitung peluang memenangkan kedua hadiah."
+      ],
+      "explanation": "**Menghitung Peluang Memenangkan Kedua Hadiah**\\nKarena kedua undian bersifat saling bebas, peluang seorang siswa memenangkan kedua hadiah dapat dihitung dengan mengalikan peluang masing-masing kemenangan.\\n\\nMisalkan:\\nP(Buku) = Peluang memenangkan buku = 1/5\\nP(Alat Tulis) = Peluang memenangkan alat tulis = 1/4\\n\\nP(Buku dan Alat Tulis) = P(Buku) \\\\times P(Alat Tulis)\\\\nP(Buku dan Alat Tulis) = \\\\frac{1}{5} \\\\times \\\\frac{1}{4}\\\\nP(Buku dan Alat Tulis) = \\\\frac{1}{20}\\\\n\\nJadi, peluang siswa tersebut memenangkan kedua hadiah adalah 1/20.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan taksi di Jakarta memiliki dua armada utama: armada sedan dan armada van. Peluang sebuah taksi sedan mengalami kerusakan dalam sebulan adalah 0,05, sedangkan peluang sebuah taksi van mengalami kerusakan dalam sebulan adalah 0,08. Kerusakan pada satu jenis armada tidak memengaruhi kemungkinan kerusakan pada jenis armada lainnya.",
+      "question": "Berapakah peluang sebuah taksi sedan DAN sebuah taksi van sama-sama mengalami kerusakan dalam satu bulan?",
+      "rubric_points": [
+        "Mengidentifikasi peluang kerusakan taksi sedan.",
+        "Mengidentifikasi peluang kerusakan taksi van.",
+        "Menerapkan aturan perkalian untuk menghitung peluang kedua kejadian kerusakan terjadi bersamaan."
+      ],
+      "explanation": "**Menghitung Peluang Kerusakan Gabungan**\\nKarena kejadian kerusakan pada taksi sedan dan taksi van adalah saling bebas, kita dapat mengalikan peluang masing-masing kejadian untuk mendapatkan peluang keduanya terjadi bersamaan.\\n\\nMisalkan:\\nP(Sedan Rusak) = Peluang taksi sedan rusak = 0,05\\nP(Van Rusak) = Peluang taksi van rusak = 0,08\\n\\nP(Sedan Rusak dan Van Rusak) = P(Sedan Rusak) \\\\times P(Van Rusak)\\\\nP(Sedan Rusak dan Van Rusak) = 0,05 \\\\times 0,08\\\\nP(Sedan Rusak dan Van Rusak) = 0,004\\n\\nDengan demikian, peluang sebuah taksi sedan dan sebuah taksi van sama-sama mengalami kerusakan dalam satu bulan adalah 0,004 atau 0,4%.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Di sebuah peternakan ayam di Jawa Timur, terdapat dua kandang ayam yang terpisah. Peluang seekor ayam dari kandang A terjangkit flu burung adalah 0,02, dan peluang seekor ayam dari kandang B terjangkit flu burung adalah 0,03. Kondisi kesehatan ayam di satu kandang tidak memengaruhi kondisi kesehatan ayam di kandang lain.",
+      "question": "Berapakah peluang seekor ayam dari kandang A DAN seekor ayam dari kandang B terjangkit flu burung pada saat yang bersamaan?",
+      "rubric_points": [
+        "Menentukan peluang ayam dari kandang A terjangkit flu burung.",
+        "Menentukan peluang ayam dari kandang B terjangkit flu burung.",
+        "Menggunakan aturan perkalian untuk menghitung peluang kedua kejadian penyakit terjadi secara bersamaan."
+      ],
+      "explanation": "**Menghitung Peluang Penyakit Gabungan**\\nKarena kejadian terjangkit flu burung pada ayam di kandang A dan kandang B bersifat saling bebas, peluang kedua kejadian ini terjadi bersamaan dapat dihitung dengan mengalikan peluang masing-masing.\\n\\nMisalkan:\\nP(A Terjangkit) = Peluang ayam kandang A terjangkit = 0,02\\nP(B Terjangkit) = Peluang ayam kandang B terjangkit = 0,03\\n\\nP(A Terjangkit dan B Terjangkit) = P(A Terjangkit) \\\\times P(B Terjangkit)\\\\nP(A Terjangkit dan B Terjangkit) = 0,02 \\\\times 0,03\\\\nP(A Terjangkit dan B Terjangkit) = 0,0006\\n\\nJadi, peluang seekor ayam dari kandang A dan seekor ayam dari kandang B terjangkit flu burung pada saat yang bersamaan adalah 0,0006 atau 0,06%.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "950c42e2-db5f-4b95-9aa1-5751544a1c47",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T13:45:40Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Perkalian",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1262,
+      "assistant": 2150,
+      "total": 4085,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

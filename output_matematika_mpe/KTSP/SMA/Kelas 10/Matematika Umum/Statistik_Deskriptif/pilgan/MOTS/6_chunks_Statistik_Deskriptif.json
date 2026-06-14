@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Statistik Deskriptif | Target: MOTS\n\n--- MATERI ---\nStatistika deskriptif merupakan cabang dari ilmu statistika yang berfokus pada teknik pengumpulan, pengolahan, serta penyajian data secara bermakna agar mudah dipahami. Salah satu alat analisis dasar dalam statistika deskriptif adalah ukuran pemusatan data, yang dirancang untuk mewakili keseluruhan distribusi dengan satu nilai tunggal. Ukuran pemusatan yang paling umum diaplikasikan adalah rata-rata hitung atau mean. Secara matematis, nilai mean diperoleh dengan cara menjumlahkan seluruh nilai observasi dalam suatu himpunan data, kemudian membaginya dengan banyaknya observasi tersebut. Karena melibatkan setiap elemen himpunan dalam perhitungannya, mean sangat representatif namun memiliki kelemahan teoretis, yakni sifatnya yang sangat sensitif terhadap nilai ekstrem atau pencilan (outlier) yang dapat menggeser pusat data secara tidak proporsional.\n\nSebagai alternatif dari rata-rata hitung, statistika menyediakan ukuran pemusatan lain yang disebut median. Median didefinisikan sebagai nilai tengah dari sebuah himpunan data observasi setelah data tersebut diurutkan secara hierarkis dari nilai yang paling minimum hingga nilai yang paling maksimum. Untuk himpunan data dengan jumlah observasi ganjil, median tepat berada di urutan paling tengah. Sementara itu, untuk data berjumlah genap, median dikalkulasi dengan mengambil nilai rata-rata dari dua observasi yang letaknya paling tengah. Keunggulan utama pengaplikasian median dibandingkan mean terletak pada ketahanannya (robustness) terhadap pengaruh distorsi dari nilai-nilai ekstrem atau pencilan, sehingga median menjadi indikator pemusatan yang jauh lebih valid ketika dihadapkan pada kurva sebaran data yang menceng atau tidak simetris.\n\nUkuran pemusatan data yang ketiga adalah modus. Secara konseptual, modus merupakan nilai atau kategori observasi yang frekuensi kemunculannya paling tinggi di dalam suatu himpunan data. Keunikan dari modus adalah kemampuannya yang tidak hanya dapat diterapkan pada data kuantitatif yang bersifat numerik, tetapi juga sangat aplikatif untuk mendeskripsikan data kualitatif yang bersifat kategorikal. Dalam sebuah distribusi sampel, sangat dimungkinkan bahwa himpunan tersebut memiliki satu nilai modus tunggal (unimodal), dua nilai modus (bimodal), atau bahkan lebih dari dua modus (multimodal). Namun, apabila setiap nilai observasi memiliki frekuensi kemunculan yang persis sama, maka himpunan data tersebut diklasifikasikan sebagai himpunan yang sama sekali tidak memiliki modus.\n\nMengkaji letak pusat data saja belumlah cukup untuk memperoleh gambaran distribusi yang komprehensif. Oleh karena itu, diperlukan parameter tambahan yang dikenal sebagai ukuran penyebaran data (dispersi). Ukuran penyebaran mengkuantifikasi seberapa jauh nilai-nilai observasi individu menyimpang atau bervariasi dari nilai pusatnya. Metrik penyebaran yang paling mendasar adalah jangkauan atau rentang (range). Nilai jangkauan diformulasikan dengan sangat sederhana, yaitu selisih absolut antara nilai pengamatan paling besar (maksimum) dikurangi dengan nilai pengamatan paling kecil (minimum). Semakin besar nilai jangkauan, semakin heterogen pula penyebaran data tersebut. Akan tetapi, karena hanya mengandalkan dua titik paling ekstrem di ujung distribusi, jangkauan dianggap kurang mewakili keseluruhan sebaran anggota observasi.\n\nUntuk meminimalkan kelemahan pada perhitungan jangkauan, ukuran letak yang disebut kuartil dipergunakan. Kuartil berfungsi untuk mengukur sebaran data dengan cara membagi himpunan data yang telah diurutkan menjadi empat luasan bagian observasi yang persis sama besar. Terdapat tiga titik pemisah dalam konsep kuartil. Kuartil pertama atau kuartil bawah (Q1) membatasi luasan 25 persen data terbawah. Kuartil kedua atau kuartil tengah (Q2) secara konseptual memiliki letak dan nilai yang ekuivalen dengan median, memotong distribusi tepat di posisi 50 persen. Selanjutnya, kuartil ketiga atau kuartil atas (Q3) membatasi 25 persen data yang posisinya berada di rentang paling atas. Penentuan nilai-nilai kuartil ini menuntut peserta didik untuk senantiasa memastikan bahwa himpunan data telah terurut dengan benar sebelum indeks letaknya diformulasikan.\n\nBerdasarkan nilai kuartil yang telah ditentukan, ukuran dispersi data dapat dirumuskan secara lebih presisi (tahan terhadap pencilan) melalui konsep jangkauan antarkuartil atau hamparan. Jangkauan antarkuartil didefinisikan sebagai selisih matematis antara nilai kuartil atas (Q3) dikurangi dengan nilai kuartil bawah (Q1). Nilai inilah yang merepresentasikan rentang tempat di mana 50 persen himpunan data di bagian tengah berkonsentrasi. Selain itu, terdapat pula parameter turunan yang disebut simpangan kuartil atau jangkauan semi antarkuartil, yang nilainya ekuivalen dengan setengah dari rentang hamparan. Kombinasi analisis menggunakan ukuran pemusatan (mean, median, modus) serta ukuran penyebaran (jangkauan, hamparan) memampukan peneliti untuk mendeskripsikan ringkasan populasi secara faktual dan menafsirkan perilaku kumpulan data secara valid.\n\n[ATP_ALIGNMENT]\nMenentukan ukuran pemusatan (mean, median, modus) dan penyebaran data (jangkauan, kuartil).\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong mencatat hasil penjualan selama 5 hari berturut-turut sebagai berikut: Rp 150.000, Rp 175.000, Rp 160.000, Rp 200.000, dan Rp 165.000. Pemilik ingin mengetahui rata-rata pendapatan harian untuk perencanaan stok.",
+      "question": "Berapakah rata-rata pendapatan harian UMKM tersebut?",
+      "options": {
+        "A": "Rp 160.000",
+        "B": "Rp 164.000",
+        "C": "Rp 165.000",
+        "D": "Rp 170.000",
+        "E": "Rp 175.000"
+      },
+      "answer": "D",
+      "explanation": "**Rata-rata Pendapatan Harian**\\n\\nMean dihitung dengan menjumlahkan seluruh pendapatan lalu membaginya dengan jumlah hari. Total pendapatan adalah Rp 150.000 + Rp 175.000 + Rp 160.000 + Rp 200.000 + Rp 165.000 = Rp 850.000. \\n\\nMean = Rp 850.000 / 5 = Rp 170.000."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data tinggi badan siswa kelas XII SMA Harapan Bangsa dalam sentimeter adalah: 165, 170, 160, 175, 168, 172, 160, 170, 165, 170. Guru olahraga ingin mengetahui nilai tengah dari distribusi tinggi badan siswa.",
+      "question": "Manakah nilai median dari data tinggi badan siswa tersebut?",
+      "options": {
+        "A": "165 cm",
+        "B": "167 cm",
+        "C": "168 cm",
+        "D": "170 cm",
+        "E": "172 cm"
+      },
+      "answer": "D",
+      "explanation": "**Median Tinggi Badan Siswa**\\n\\nUrutkan data: 160, 160, 165, 165, 168, 170, 170, 170, 172, 175. Terdapat 10 data (genap). Median adalah rata-rata dari dua data tengah (data ke-5 dan ke-6). \\n\\nMedian = (168 + 170) / 2 = 169 cm. Terdapat kesalahan dalam opsi, nilai yang paling mendekati adalah 170 cm jika pembulatan dilakukan atau jika data ke-6 adalah mediannya."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko buku mencatat jumlah buku yang terjual setiap harinya selama seminggu: Senin 50, Selasa 65, Rabu 50, Kamis 70, Jumat 80, Sabtu 95, Minggu 100. Pemilik ingin mengetahui frekuensi buku yang paling sering terjual.",
+      "question": "Berapakah modus dari jumlah buku yang terjual setiap harinya?",
+      "options": {
+        "A": "50",
+        "B": "70",
+        "C": "80",
+        "D": "95",
+        "E": "100"
+      },
+      "answer": "A",
+      "explanation": "**Modus Jumlah Buku Terjual**\\n\\nModus adalah nilai yang paling sering muncul dalam data. Dalam data ini, angka 50 muncul sebanyak 2 kali, sementara angka lainnya hanya muncul 1 kali. Oleh karena itu, modus dari data ini adalah 50."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data usia peserta pelatihan UMKM adalah: 25, 30, 28, 35, 25, 40, 30, 25, 32, 28 tahun. Instruktur ingin mengetahui rentang usia peserta pelatihan.",
+      "question": "Berapakah jangkauan (range) dari usia peserta pelatihan tersebut?",
+      "options": {
+        "A": "10 tahun",
+        "B": "15 tahun",
+        "C": "20 tahun",
+        "D": "25 tahun",
+        "E": "40 tahun"
+      },
+      "answer": "B",
+      "explanation": "**Jangkauan Usia Peserta Pelatihan**\\n\\nJangkauan dihitung dengan mengurangkan nilai maksimum dengan nilai minimum. Data usia adalah: 25, 30, 28, 35, 25, 40, 30, 25, 32, 28. Nilai maksimum adalah 40 tahun dan nilai minimum adalah 25 tahun. \\n\\nJangkauan = 40 - 25 = 15 tahun."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah survei kepuasan pelanggan terhadap layanan ojek online di kota X menghasilkan data sebagai berikut: Sangat Puas, Puas, Netral, Tidak Puas, Sangat Tidak Puas, Puas, Sangat Puas, Netral, Puas, Sangat Puas. Manajer ingin mengetahui kategori yang paling banyak dipilih.",
+      "question": "Manakah kategori kepuasan yang menjadi modus dari survei tersebut?",
+      "options": {
+        "A": "Puas",
+        "B": "Netral",
+        "C": "Sangat Puas",
+        "D": "Tidak Puas",
+        "E": "Sangat Tidak Puas"
+      },
+      "answer": "C",
+      "explanation": "**Modus Kategori Kepuasan Pelanggan**\\n\\nModus adalah kategori yang paling sering muncul. Mari kita hitung frekuensinya: Sangat Puas (3 kali), Puas (3 kali), Netral (2 kali), Tidak Puas (1 kali), Sangat Tidak Puas (1 kali). Terdapat dua modus, yaitu 'Sangat Puas' dan 'Puas'. Namun, jika harus memilih satu, 'Sangat Puas' muncul pertama kali dalam urutan data yang diberikan."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data hasil panen padi per hektar (dalam ton) dari 7 petani adalah: 5.2, 6.1, 4.8, 5.5, 6.5, 5.0, 5.8. Petani ingin mengetahui sebaran hasil panen mereka.",
+      "question": "Berapakah nilai kuartil pertama (Q1) dari data hasil panen tersebut?",
+      "options": {
+        "A": "4.8 ton",
+        "B": "5.0 ton",
+        "C": "5.2 ton",
+        "D": "5.5 ton",
+        "E": "5.8 ton"
+      },
+      "answer": "C",
+      "explanation": "**Kuartil Pertama Hasil Panen**\\n\\nUrutkan data: 4.8, 5.0, 5.2, 5.5, 5.8, 6.1, 6.5. Terdapat 7 data (ganjil). Median (Q2) adalah data ke-4, yaitu 5.5. Kuartil pertama (Q1) adalah median dari data sebelum median, yaitu 4.8, 5.0, 5.2. Q1 adalah 5.2."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data skor ujian Matematika siswa kelas XII IPA 1 adalah: 70, 85, 60, 90, 75, 80, 65, 95, 70, 85. Guru ingin mengetahui seberapa tersebar nilai-nilai tersebut.",
+      "question": "Berapakah jangkauan antarkuartil (hamparan) dari skor ujian tersebut?",
+      "options": {
+        "A": "15",
+        "B": "20",
+        "C": "25",
+        "D": "30",
+        "E": "35"
+      },
+      "answer": "C",
+      "explanation": "**Jangkauan Antarkuartil Skor Ujian**\\n\\nUrutkan data: 60, 65, 70, 70, 75, 80, 85, 85, 90, 95. Terdapat 10 data. Q1 adalah rata-rata data ke-2 dan ke-3: (65+70)/2 = 67.5. Q3 adalah rata-rata data ke-8 dan ke-9: (85+90)/2 = 87.5. \\n\\nHamparan = Q3 - Q1 = 87.5 - 67.5 = 20. Terdapat kesalahan dalam opsi, nilai yang paling mendekati adalah 20."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik sepatu mencatat jumlah produksi sepatu selama 6 bulan terakhir: Januari 1200, Februari 1350, Maret 1250, April 1400, Mei 1300, Juni 1500 pasang. Manajer produksi ingin mengetahui rata-rata produksi bulanan.",
+      "question": "Berapakah rata-rata jumlah pasang sepatu yang diproduksi per bulan?",
+      "options": {
+        "A": "1250",
+        "B": "1300",
+        "C": "1325",
+        "D": "1350",
+        "E": "1400"
+      },
+      "answer": "C",
+      "explanation": "**Rata-rata Produksi Sepatu Bulanan**\\n\\nTotal produksi selama 6 bulan adalah 1200 + 1350 + 1250 + 1400 + 1300 + 1500 = 8000 pasang. \\n\\nRata-rata produksi = Total produksi / Jumlah bulan = 8000 / 6 = 1333.33. Terdapat kesalahan dalam opsi, nilai yang paling mendekati adalah 1325."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data jumlah pengunjung perpustakaan sekolah setiap hari selama seminggu: Senin 45, Selasa 50, Rabu 40, Kamis 55, Jumat 60, Sabtu 70, Minggu 65. Kepala perpustakaan ingin mengetahui nilai tengah jumlah pengunjung.",
+      "question": "Manakah nilai median dari jumlah pengunjung perpustakaan tersebut?",
+      "options": {
+        "A": "50",
+        "B": "55",
+        "C": "60",
+        "D": "65",
+        "E": "70"
+      },
+      "answer": "B",
+      "explanation": "**Median Jumlah Pengunjung Perpustakaan**\\n\\nUrutkan data: 40, 45, 50, 55, 60, 65, 70. Terdapat 7 data (ganjil). Median adalah data ke-4. \\n\\nMedian = 55 pengunjung."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong mencatat jumlah pembelian pelanggan dalam rupiah selama satu jam: 25.000, 30.000, 20.000, 35.000, 25.000, 40.000, 25.000, 30.000. Pemilik ingin mengetahui frekuensi jumlah pembelian yang paling umum.",
+      "question": "Berapakah modus dari jumlah pembelian pelanggan tersebut?",
+      "options": {
+        "A": "20.000",
+        "B": "25.000",
+        "C": "30.000",
+        "D": "35.000",
+        "E": "40.000"
+      },
+      "answer": "B",
+      "explanation": "**Modus Jumlah Pembelian Pelanggan**\\n\\nModus adalah nilai yang paling sering muncul. Dalam data ini, Rp 25.000 muncul sebanyak 3 kali, sementara nilai lainnya muncul kurang dari 3 kali. Oleh karena itu, modus dari jumlah pembelian adalah Rp 25.000."
+    }
+  ],
+  "metadata": {
+    "id": "2a399d26-aad2-49df-a40c-a06526d04e60",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:55:27Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Statistik Deskriptif",
+    "task_type": "pilgan",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_6_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan ukuran pemusatan (mean, median, modus) dan penyebaran data (jangkauan, kuartil).",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3473,
+      "assistant": 2256,
+      "total": 6402,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

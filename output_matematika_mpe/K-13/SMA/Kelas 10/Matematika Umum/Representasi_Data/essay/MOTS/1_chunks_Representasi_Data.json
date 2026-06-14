@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data | Target: MOTS\n\n--- MATERI ---\nPenyajian data merupakan elemen krusial dalam statistika guna mempermudah analisis informasi. Terdapat tiga bentuk representasi visual yang lazim digunakan, yaitu diagram lingkaran, diagram batang, dan histogram. Diagram lingkaran sangat efektif untuk menyajikan proporsi atau persentase, di mana luas setiap juring mewakili bagian dari keseluruhan data. Sementara itu, diagram batang digunakan untuk menampilkan frekuensi data tunggal melalui persegi panjang tegak atau mendatar, di mana tinggi atau panjang batangnya sebanding dengan nilai frekuensi. Ciri khas diagram batang adalah letak batang-batangnya yang saling terpisah. Apabila kuantitas data sangat besar, data tersebut harus dikelompokkan ke dalam interval kelas pada tabel distribusi frekuensi dan disajikan menggunakan histogram. Berbeda dengan diagram batang, histogram digambarkan dengan batang-batang yang saling berimpit tanpa jarak. Hal ini bertujuan untuk merepresentasikan kontinuitas dari rentang interval data yang saling berurutan.\n\n[ATP_ALIGNMENT]\nMenampilkan data secara visual menggunakan diagram lingkaran, batang, dan histogram secara tepat.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang guru Matematika ingin menyajikan data nilai ulangan harian bab statistika kelas XII IPA 1 yang terdiri dari 30 siswa. Data nilai tersebut adalah sebagai berikut: 75, 80, 85, 70, 90, 75, 80, 85, 95, 70, 75, 80, 85, 90, 75, 80, 85, 70, 75, 80, 85, 90, 75, 80, 85, 70, 75, 80, 85, 90. Guru tersebut bingung memilih representasi data yang paling tepat untuk menunjukkan sebaran nilai siswa.",
+      "question": "Jelaskan mengapa histogram lebih tepat dibandingkan diagram batang untuk menyajikan data nilai ulangan harian tersebut, serta sebutkan ciri utama histogram yang mendukung pilihan tersebut.",
+      "rubric_points": [
+        "Menjelaskan alasan pemilihan histogram berdasarkan sifat data kontinu.",
+        "Menyebutkan ciri utama histogram (batang berimpit).",
+        "Menghubungkan ciri histogram dengan representasi data nilai ulangan harian."
+      ],
+      "explanation": "**Alasan Pemilihan Histogram**\\nHistogram lebih tepat digunakan karena data nilai ulangan harian dapat dikelompokkan ke dalam interval kelas, yang menunjukkan kontinuitas data. Berbeda dengan diagram batang yang cocok untuk data tunggal atau kategori yang terpisah, histogram menggambarkan distribusi frekuensi dari data berkelompok.\\n\\nCiri utama histogram adalah batang-batangnya yang saling berimpit tanpa jarak. Hal ini merepresentasikan bahwa rentang interval data yang disajikan saling berurutan dan kontinu, sehingga cocok untuk data kuantitatif seperti nilai ulangan yang memiliki rentang tertentu.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong di Malang ingin menganalisis data penjualan bulanan selama satu tahun terakhir. Data penjualan dalam kilogram adalah sebagai berikut: Januari (150 kg), Februari (175 kg), Maret (200 kg), April (180 kg), Mei (220 kg), Juni (250 kg), Juli (230 kg), Agustus (260 kg), September (280 kg), Oktober (270 kg), November (300 kg), Desember (320 kg). Pemilik UMKM ingin melihat tren kenaikan penjualan dari bulan ke bulan.",
+      "question": "Representasi data manakah yang paling efektif untuk menunjukkan tren kenaikan penjualan keripik singkong dari bulan ke bulan, dan jelaskan alasannya.",
+      "rubric_points": [
+        "Mengidentifikasi diagram batang sebagai representasi yang efektif.",
+        "Menjelaskan bahwa diagram batang dapat menunjukkan perbandingan nilai antar periode waktu.",
+        "Menghubungkan kemampuan diagram batang dengan visualisasi tren penjualan."
+      ],
+      "explanation": "**Efektivitas Diagram Batang untuk Tren Penjualan**\\nDiagram batang merupakan representasi data yang paling efektif untuk menunjukkan tren kenaikan penjualan keripik singkong dari bulan ke bulan. Hal ini dikarenakan diagram batang sangat baik dalam menampilkan perbandingan nilai antar kategori atau periode waktu yang berbeda.\\n\\nSetiap batang pada diagram akan mewakili jumlah penjualan pada bulan tertentu. Dengan membandingkan tinggi batang-batang yang berurutan dari Januari hingga Desember, pemilik UMKM dapat dengan mudah melihat pola kenaikan atau penurunan penjualan secara visual dan cepat. Ini membantu dalam pengambilan keputusan bisnis.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data hasil survei kepuasan pelanggan terhadap pelayanan sebuah restoran cepat saji di Surabaya disajikan dalam bentuk persentase. Hasilnya adalah: Sangat Puas (60%), Puas (25%), Cukup Puas (10%), Tidak Puas (5%). Data ini perlu disampaikan kepada manajemen untuk evaluasi strategi pelayanan.",
+      "question": "Jelaskan mengapa diagram lingkaran paling sesuai untuk menyajikan data persentase kepuasan pelanggan tersebut, serta sebutkan keunggulan utamanya dalam konteks ini.",
+      "rubric_points": [
+        "Menjelaskan bahwa diagram lingkaran cocok untuk data proporsi/persentase.",
+        "Menyebutkan keunggulan diagram lingkaran dalam menunjukkan bagian dari keseluruhan.",
+        "Menghubungkan keunggulan tersebut dengan evaluasi kepuasan pelanggan."
+      ],
+      "explanation": "**Kesesuaian Diagram Lingkaran untuk Proporsi Kepuasan**\\nDiagram lingkaran sangat sesuai untuk menyajikan data persentase kepuasan pelanggan karena kemampuannya dalam menunjukkan proporsi atau bagian dari suatu keseluruhan. Dalam kasus ini, keseluruhan adalah 100% total pelanggan yang disurvei.\\n\\nKeunggulan utama diagram lingkaran adalah setiap juringnya secara visual merepresentasikan persentase dari total. Hal ini memudahkan manajemen untuk segera melihat kontribusi masing-masing tingkat kepuasan (Sangat Puas, Puas, dll.) terhadap total pelanggan, sehingga dapat dengan cepat mengevaluasi area mana yang perlu ditingkatkan atau dipertahankan.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang peneliti lingkungan di Kalimantan Timur mengumpulkan data curah hujan bulanan selama 5 tahun terakhir. Data ini sangat bervariasi dan mencakup rentang nilai yang luas. Untuk menganalisis pola curah hujan tahunan dan membandingkannya antar tahun, peneliti tersebut perlu menyajikan data ini secara visual.",
+      "question": "Jika peneliti ingin membandingkan total curah hujan antar tahun dan melihat sebaran curah hujan dalam satu tahun, representasi data manakah yang paling tepat dan mengapa?",
+      "rubric_points": [
+        "Mengidentifikasi diagram batang sebagai representasi yang tepat.",
+        "Menjelaskan kemampuan diagram batang untuk perbandingan antar tahun.",
+        "Menjelaskan kemampuan diagram batang untuk menampilkan sebaran data dalam satu tahun (jika batang dikelompokkan per bulan)."
+      ],
+      "explanation": "**Pemilihan Diagram Batang untuk Analisis Curah Hujan**\\nDiagram batang adalah representasi data yang paling tepat untuk situasi ini. Diagram batang unggul dalam membandingkan nilai kuantitatif antar kategori yang terpisah, seperti total curah hujan untuk setiap tahun.\\n\\nDengan menggunakan diagram batang, peneliti dapat dengan mudah membandingkan tinggi batang yang mewakili total curah hujan dari tahun ke tahun. Selain itu, jika setiap tahun diwakili oleh sekelompok batang (misalnya, batang untuk setiap bulan dalam tahun tersebut), diagram batang juga dapat digunakan untuk melihat sebaran curah hujan bulanan dalam satu tahun, memungkinkan analisis pola musiman.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah sekolah di Jawa Tengah mengadakan pemilihan ketua OSIS. Data jumlah suara yang diperoleh setiap kandidat adalah sebagai berikut: Kandidat A (120 suara), Kandidat B (95 suara), Kandidat C (150 suara), Kandidat D (80 suara). Data ini perlu disajikan agar seluruh siswa dapat dengan mudah memahami perolehan suara masing-masing kandidat.",
+      "question": "Jelaskan mengapa diagram batang lebih cocok daripada diagram lingkaran untuk menyajikan data perolehan suara pemilihan ketua OSIS, serta sebutkan ciri khas diagram batang yang mendukung pilihan ini.",
+      "rubric_points": [
+        "Menjelaskan bahwa diagram batang cocok untuk membandingkan frekuensi data tunggal.",
+        "Menyebutkan ciri khas diagram batang (batang terpisah).",
+        "Menghubungkan ciri khas diagram batang dengan perbandingan suara antar kandidat."
+      ],
+      "explanation": "**Kelebihan Diagram Batang untuk Perbandingan Suara**\\nDiagram batang lebih cocok daripada diagram lingkaran untuk menyajikan data perolehan suara pemilihan ketua OSIS karena kemampuannya dalam membandingkan frekuensi data tunggal secara jelas. Setiap kandidat merupakan kategori data yang terpisah.\\n\\nCiri khas diagram batang adalah letak batangnya yang saling terpisah. Keterpisahan ini menekankan bahwa setiap kandidat adalah entitas yang berbeda dan perolehan suaranya dapat dibandingkan secara langsung. Tinggi setiap batang secara proporsional mewakili jumlah suara, sehingga memudahkan siswa untuk melihat siapa kandidat dengan suara terbanyak dan perbedaannya dengan kandidat lain.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "3aa0445b-d4ef-4145-bd3b-a1e26b293452",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T22:41:59Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menampilkan data secara visual menggunakan diagram lingkaran, batang, dan histogram secara tepat.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1314,
+      "assistant": 2392,
+      "total": 4380,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

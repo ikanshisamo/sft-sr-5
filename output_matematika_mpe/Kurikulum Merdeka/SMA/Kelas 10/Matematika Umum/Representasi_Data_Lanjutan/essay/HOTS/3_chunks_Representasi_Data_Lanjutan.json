@@ -1,0 +1,103 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\",\n      \"expected_reasoning\": [\n        \"multi-step reasoning\",\n        \"contextual interpretation\",\n        \"tradeoff analysis\",\n        \"strategic judgment\",\n        \"real-world implication analysis\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data Lanjutan | Target: HOTS\n\n--- MATERI ---\nDalam mempelajari representasi data lanjutan, salah satu visualisasi yang digunakan adalah Diagram Box-and-Whisker atau yang lebih dikenal dengan box plot. Diagram ini merupakan suatu cara untuk memvisualkan distribusi data dalam satu diagram yang menampilkan data berdasarkan lima ukuran utama, yaitu nilai minimum, kuartil pertama (Q1), median (Q2), kuartil ketiga (Q3), dan nilai maksimum. Pembuatan box plot tidak hanya berguna untuk melihat bagaimana sebaran dari suatu kelompok data, namun diagram ini juga sangat membantu untuk menganalisis dan membandingkan dua atau lebih kelompok data secara bersamaan.\n\nSelain kelima ukuran data utama, box plot juga memberikan informasi mengenai Jangkauan Inter Kuartil (IQR) dan pencilan (outlier). IQR adalah rentang di mana 50% data tengah berada, yang dihitung dengan mencari selisih antara kuartil ketiga dan kuartil pertama ($IQR = Q_3 - Q_1$). Di sisi lain, pencilan merupakan data yang letaknya jauh menyimpang dari data-data lainnya. Sebuah data dikategorikan sebagai pencilan apabila nilainya berada pada jarak lebih dari $1,5 \\times IQR$ di atas kuartil ketiga ($> Q_3 + 1,5 \\times IQR$) atau di bawah kuartil pertama ($< Q_1 - 1,5 \\times IQR$).\n\nBentuk representasi data lanjutan lainnya adalah Diagram Pencar (Scatter Plot). Diagram pencar adalah diagram di mana dua set data direpresentasikan sebagai titik-titik di sebuah bidang koordinat Kartesius. Tujuan utama dari diagram pencar ini adalah untuk memvisualisasikan hubungan atau korelasi antara dua set variabel data. Terdapat tiga jenis korelasi utama yang dapat dianalisis, yaitu korelasi positif (kedua variabel meningkat searah), korelasi negatif (satu variabel meningkat saat yang lain menurun), dan tidak ada korelasi. Kekuatan korelasi tersebut umumnya dapat dilihat dari seberapa dekat titik-titik data tersebut membentuk suatu pola garis linear.\n\n[ATP_ALIGNMENT]\nMerepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang peneliti pertanian membandingkan hasil panen dua varietas padi, 'Padi Unggul A' dan 'Padi Unggul B', di dua lahan berbeda. Data hasil panen (dalam ton per hektar) selama lima musim tanam disajikan sebagai berikut:\\n\\nPadi Unggul A: 7.2, 7.5, 7.8, 8.1, 8.4\\nPadi Unggul B: 6.8, 7.1, 7.5, 7.9, 8.3\\n\\nPeneliti ingin menentukan varietas mana yang menunjukkan konsistensi hasil panen lebih baik dan potensi pertumbuhan yang lebih stabil.",
+      "question": "Berdasarkan data hasil panen kedua varietas padi, analisis dan bandingkan konsistensi serta potensi pertumbuhan masing-masing varietas menggunakan konsep box plot dan identifikasi kemungkinan strategi pengelolaan lahan yang dapat memaksimalkan hasil.",
+      "rubric_points": [
+        "Menghitung nilai minimum, Q1, median, Q3, dan maksimum untuk kedua varietas.",
+        "Menghitung IQR dan mengidentifikasi potensi pencilan untuk kedua varietas.",
+        "Membandingkan sebaran data dan konsistensi hasil panen kedua varietas.",
+        "Menganalisis potensi pertumbuhan berdasarkan tren data dan memberikan rekomendasi strategi pengelolaan."
+      ],
+      "explanation": "**Analisis Perbandingan Varietas Padi**\\n\\nUntuk membandingkan konsistensi dan potensi pertumbuhan, kita perlu menghitung statistik lima serangkai dan IQR untuk kedua varietas.\\n\\n**Padi Unggul A:**\\nMinimum = 7.2\\nQ1 = 7.5\\nMedian = 7.8\\nQ3 = 8.1\\nMaksimum = 8.4\\nIQR = Q3 - Q1 = 8.1 - 7.5 = 0.6\\n\\n**Padi Unggul B:**\\nMinimum = 6.8\\nQ1 = 7.1\\nMedian = 7.5\\nQ3 = 7.9\\nMaksimum = 8.3\\nIQR = Q3 - Q1 = 7.9 - 7.1 = 0.8\\n\\nPadi Unggul A menunjukkan rentang data yang lebih sempit (IQR 0.6) dibandingkan Padi Unggul B (IQR 0.8), mengindikasikan konsistensi hasil yang lebih baik. Namun, Padi Unggul B memiliki nilai minimum yang lebih rendah tetapi median dan maksimum yang sedikit lebih tinggi, menunjukkan potensi pertumbuhan yang sedikit lebih agresif namun dengan variabilitas lebih besar. Strategi pengelolaan dapat mencakup penyesuaian pupuk atau irigasi berdasarkan variabilitas yang teramati.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong di Yogyakarta ingin meningkatkan skala produksinya. Data penjualan bulanan selama satu tahun terakhir menunjukkan fluktuasi yang signifikan. Manajer produksi ingin memahami pola penjualan untuk merencanakan pengadaan bahan baku dan jadwal produksi yang efisien. Data penjualan (dalam kg) adalah sebagai berikut: 150, 180, 220, 200, 170, 190, 250, 230, 210, 160, 140, 190.",
+      "question": "Analisis data penjualan bulanan UMKM keripik singkong tersebut menggunakan konsep box plot untuk mengidentifikasi tren, variabilitas, dan potensi pencilan, serta berikan rekomendasi strategi produksi yang paling efektif untuk menghadapi fluktuasi tersebut.",
+      "rubric_points": [
+        "Menghitung nilai minimum, Q1, median, Q3, dan maksimum dari data penjualan.",
+        "Menghitung IQR dan mengidentifikasi adanya pencilan dalam data penjualan.",
+        "Menganalisis sebaran data untuk memahami pola penjualan dan variabilitasnya.",
+        "Memberikan rekomendasi strategi produksi yang mempertimbangkan fluktuasi dan pencilan."
+      ],
+      "explanation": "**Analisis Penjualan UMKM Keripik Singkong**\\n\\nUntuk menganalisis data penjualan, kita perlu menghitung statistik lima serangkai dan IQR.\\n\\nData penjualan (diurutkan): 140, 150, 160, 170, 180, 190, 190, 200, 210, 220, 230, 250.\\n\\nMinimum = 140\\nQ1 = 160 (nilai tengah antara 150 dan 170)\\nMedian = 190 (nilai tengah antara 190 dan 190)\\nQ3 = 220 (nilai tengah antara 210 dan 230)\\nMaksimum = 250\\nIQR = Q3 - Q1 = 220 - 160 = 60\\n\\nPerhitungan pencilan: $1.5 \\times IQR = 1.5 \\times 60 = 90$.\\nBatas bawah pencilan: $Q1 - 90 = 160 - 90 = 70$.\\nBatas atas pencilan: $Q3 + 90 = 220 + 90 = 310$.\\n\\nTidak ada data yang berada di bawah 70 atau di atas 310, sehingga tidak ada pencilan. Data menunjukkan variabilitas penjualan yang cukup besar, dengan IQR 60 kg. Strategi produksi dapat mencakup peningkatan kapasitas saat mendekati kuartil atas (220 kg) dan penyesuaian stok saat mendekati kuartil bawah (160 kg) untuk mengelola fluktuasi.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang guru SMA ingin membandingkan pemahaman konsep fisika antara siswa kelas IPA dan IPS setelah mengikuti program bimbingan belajar yang sama. Data nilai ujian akhir (skala 0-100) dari 10 siswa per kelas adalah sebagai berikut:\\n\\nIPA: 75, 80, 85, 70, 90, 88, 78, 82, 92, 70\\nIPS: 65, 70, 75, 60, 80, 78, 68, 72, 85, 60",
+      "question": "Bandingkan distribusi nilai ujian fisika antara siswa IPA dan IPS menggunakan box plot, analisis perbedaan pemahaman konsep, dan tentukan strategi pembelajaran tambahan yang paling relevan untuk meningkatkan hasil belajar siswa IPS.",
+      "rubric_points": [
+        "Menghitung statistik lima serangkai (min, Q1, median, Q3, max) untuk kedua kelompok siswa.",
+        "Menghitung IQR dan mengidentifikasi potensi pencilan untuk kedua kelompok.",
+        "Membandingkan sebaran nilai dan tingkat pemahaman konsep antara siswa IPA dan IPS.",
+        "Merumuskan strategi pembelajaran tambahan yang spesifik untuk mengatasi kesenjangan pemahaman siswa IPS."
+      ],
+      "explanation": "**Analisis Perbandingan Nilai Ujian Fisika**\\n\\nKita akan menghitung statistik lima serangkai dan IQR untuk kedua kelompok.\\n\\n**Siswa IPA:**\\nData (diurutkan): 70, 70, 75, 78, 80, 82, 85, 88, 90, 92\\nMinimum = 70\\nQ1 = 75\\nMedian = 81\\nQ3 = 88\\nMaksimum = 92\\nIQR = 88 - 75 = 13\\n\\n**Siswa IPS:**\\nData (diurutkan): 60, 60, 65, 68, 70, 72, 75, 78, 80, 85\\nMinimum = 60\\nQ1 = 65\\nMedian = 71\\nQ3 = 78\\nMaksimum = 85\\nIQR = 78 - 65 = 13\\n\\nKedua kelompok memiliki IQR yang sama (13), menunjukkan variabilitas internal yang serupa. Namun, siswa IPA memiliki nilai minimum, median, dan Q3 yang lebih tinggi, mengindikasikan pemahaman konsep fisika yang secara umum lebih baik. Strategi pembelajaran tambahan untuk siswa IPS bisa fokus pada penguatan konsep dasar melalui visualisasi yang lebih banyak, latihan soal bertahap, dan diskusi kelompok untuk mengatasi kesenjangan pemahaman.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik ingin menganalisis efisiensi pengiriman paket di dua rute utama, Rute A dan Rute B, selama satu bulan. Data waktu tempuh rata-rata (dalam jam) per pengiriman adalah sebagai berikut:\\n\\nRute A: 2.5, 2.8, 3.1, 2.2, 3.5, 2.9, 3.3, 2.6, 3.0, 2.7\\nRute B: 3.2, 3.5, 3.8, 3.0, 4.0, 3.6, 3.9, 3.3, 3.7, 3.4",
+      "question": "Evaluasi efisiensi kedua rute pengiriman paket berdasarkan data waktu tempuh menggunakan box plot, identifikasi rute mana yang lebih dapat diandalkan untuk pengiriman tepat waktu, dan berikan rekomendasi strategi optimasi rute.",
+      "rubric_points": [
+        "Menghitung statistik lima serangkai (min, Q1, median, Q3, max) untuk waktu tempuh kedua rute.",
+        "Menghitung IQR dan mengidentifikasi potensi pencilan untuk kedua rute.",
+        "Membandingkan sebaran waktu tempuh dan keandalan kedua rute.",
+        "Memberikan rekomendasi strategi optimasi rute berdasarkan analisis."
+      ],
+      "explanation": "**Analisis Efisiensi Rute Pengiriman**\\n\\nKita akan menghitung statistik lima serangkai dan IQR untuk kedua rute.\\n\\n**Rute A:**\\nData (diurutkan): 2.2, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.3, 3.5\\nMinimum = 2.2\\nQ1 = 2.6\\nMedian = 2.85\\nQ3 = 3.15\\nMaksimum = 3.5\\nIQR = 3.15 - 2.6 = 0.55\\n\\n**Rute B:**\\nData (diurutkan): 3.0, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0\\nMinimum = 3.0\\nQ1 = 3.3\\nMedian = 3.55\\nQ3 = 3.75\\nMaksimum = 4.0\\nIQR = 3.75 - 3.3 = 0.45\\n\\nRute A memiliki rentang waktu tempuh yang lebih luas (IQR 0.55) dibandingkan Rute B (IQR 0.45), namun Rute A secara keseluruhan memiliki waktu tempuh yang lebih singkat. Rute B lebih konsisten dengan waktu tempuh yang lebih tinggi. Untuk keandalan pengiriman tepat waktu, Rute A mungkin lebih disukai jika manajemen risiko terhadap variabilitasnya dapat dikelola. Strategi optimasi dapat mencakup penjadwalan pengiriman di Rute A pada jam-jam yang kurang padat atau eksplorasi jalan alternatif di Rute B untuk mengurangi waktu tempuh.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah tim riset pasar sedang menganalisis hubungan antara pengeluaran iklan (dalam jutaan rupiah) dan jumlah penjualan (dalam ribuan unit) untuk produk minuman ringan selama 10 bulan terakhir. Data yang terkumpul adalah sebagai berikut:\\n\\nBulan | Pengeluaran Iklan | Penjualan\\n---|---|---\\n1 | 5 | 12\\n2 | 7 | 15\\n3 | 6 | 14\\n4 | 8 | 18\\n5 | 10 | 22\\n6 | 9 | 20\\n7 | 12 | 25\\n8 | 11 | 23\\n9 | 13 | 28\\n10 | 15 | 30",
+      "question": "Analisis hubungan antara pengeluaran iklan dan jumlah penjualan menggunakan diagram pencar, tentukan jenis dan kekuatan korelasinya, serta berikan rekomendasi strategi alokasi anggaran iklan untuk memaksimalkan penjualan.",
+      "rubric_points": [
+        "Membuat diagram pencar dari data pengeluaran iklan dan penjualan.",
+        "Mengidentifikasi pola titik-titik pada diagram pencar untuk menentukan jenis korelasi.",
+        "Menganalisis seberapa dekat titik-titik membentuk pola garis untuk menentukan kekuatan korelasi.",
+        "Memberikan rekomendasi strategi alokasi anggaran iklan berdasarkan analisis korelasi."
+      ],
+      "explanation": "**Analisis Hubungan Pengeluaran Iklan dan Penjualan**\\n\\nDiagram pencar akan menunjukkan titik-titik data dengan pengeluaran iklan pada sumbu horizontal (x) dan penjualan pada sumbu vertikal (y).\\n\\nSaat pengeluaran iklan meningkat (bergerak ke kanan pada sumbu x), jumlah penjualan juga cenderung meningkat (bergerak ke atas pada sumbu y). Ini menunjukkan adanya korelasi positif antara kedua variabel. Titik-titik data tampak cukup dekat membentuk pola garis lurus, mengindikasikan korelasi yang kuat.\\n\\nOleh karena itu, dapat disimpulkan bahwa terdapat korelasi positif kuat antara pengeluaran iklan dan jumlah penjualan produk minuman ringan. Strategi alokasi anggaran iklan yang direkomendasikan adalah meningkatkan anggaran iklan secara bertahap, karena setiap peningkatan pengeluaran iklan cenderung diikuti oleh peningkatan penjualan yang proporsional, yang berpotensi meningkatkan keuntungan perusahaan.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "72635bb4-0583-45b0-94ae-1fb3e30cbb4e",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:23:46Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data Lanjutan",
+    "task_type": "essay",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Merepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1680,
+      "assistant": 3145,
+      "total": 5498,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

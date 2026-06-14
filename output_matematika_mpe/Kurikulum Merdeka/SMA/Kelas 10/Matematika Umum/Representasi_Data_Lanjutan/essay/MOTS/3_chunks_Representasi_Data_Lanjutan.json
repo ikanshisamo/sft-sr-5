@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data Lanjutan | Target: MOTS\n\n--- MATERI ---\nDalam mempelajari representasi data lanjutan, salah satu visualisasi yang digunakan adalah Diagram Box-and-Whisker atau yang lebih dikenal dengan box plot. Diagram ini merupakan suatu cara untuk memvisualkan distribusi data dalam satu diagram yang menampilkan data berdasarkan lima ukuran utama, yaitu nilai minimum, kuartil pertama (Q1), median (Q2), kuartil ketiga (Q3), dan nilai maksimum. Pembuatan box plot tidak hanya berguna untuk melihat bagaimana sebaran dari suatu kelompok data, namun diagram ini juga sangat membantu untuk menganalisis dan membandingkan dua atau lebih kelompok data secara bersamaan.\n\nSelain kelima ukuran data utama, box plot juga memberikan informasi mengenai Jangkauan Inter Kuartil (IQR) dan pencilan (outlier). IQR adalah rentang di mana 50% data tengah berada, yang dihitung dengan mencari selisih antara kuartil ketiga dan kuartil pertama ($IQR = Q_3 - Q_1$). Di sisi lain, pencilan merupakan data yang letaknya jauh menyimpang dari data-data lainnya. Sebuah data dikategorikan sebagai pencilan apabila nilainya berada pada jarak lebih dari $1,5 \\times IQR$ di atas kuartil ketiga ($> Q_3 + 1,5 \\times IQR$) atau di bawah kuartil pertama ($< Q_1 - 1,5 \\times IQR$).\n\nBentuk representasi data lanjutan lainnya adalah Diagram Pencar (Scatter Plot). Diagram pencar adalah diagram di mana dua set data direpresentasikan sebagai titik-titik di sebuah bidang koordinat Kartesius. Tujuan utama dari diagram pencar ini adalah untuk memvisualisasikan hubungan atau korelasi antara dua set variabel data. Terdapat tiga jenis korelasi utama yang dapat dianalisis, yaitu korelasi positif (kedua variabel meningkat searah), korelasi negatif (satu variabel meningkat saat yang lain menurun), dan tidak ada korelasi. Kekuatan korelasi tersebut umumnya dapat dilihat dari seberapa dekat titik-titik data tersebut membentuk suatu pola garis linear.\n\n[ATP_ALIGNMENT]\nMerepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang guru Matematika ingin membandingkan hasil ujian fisika kelas XI IPA 1 dan XI IPA 2. Data nilai ujian dari kedua kelas disajikan dalam bentuk box plot. Kelas XI IPA 1 memiliki Q1=65, Median=75, Q3=85, nilai minimum=40, dan nilai maksimum=98. Kelas XI IPA 2 memiliki Q1=70, Median=80, Q3=90, nilai minimum=50, dan nilai maksimum=100.",
+      "question": "Berdasarkan data box plot tersebut, analisis dan bandingkan sebaran nilai ujian fisika antara kelas XI IPA 1 dan XI IPA 2, serta tentukan kelas mana yang memiliki variasi nilai lebih merata.",
+      "rubric_points": [
+        "Menghitung Jangkauan Inter Kuartil (IQR) untuk kedua kelas.",
+        "Membandingkan IQR dan rentang nilai keseluruhan (maksimum - minimum) kedua kelas.",
+        "Menjelaskan kesimpulan perbandingan sebaran nilai dan menentukan kelas dengan variasi lebih merata."
+      ],
+      "explanation": "**Analisis Perbandingan Sebaran Data**\\nUntuk membandingkan sebaran nilai, kita perlu menghitung IQR untuk kedua kelas.\\n\\nKelas XI IPA 1:\\n$IQR_1 = Q3_1 - Q1_1 = 85 - 65 = 20$\\\\nRentang Nilai$_1 = 98 - 40 = 58$\\\\n\\nKelas XI IPA 2:\\n$IQR_2 = Q3_2 - Q1_2 = 90 - 70 = 20$\\\\nRentang Nilai$_2 = 100 - 50 = 50$\\\\n\\nKedua kelas memiliki IQR yang sama (20), menunjukkan bahwa 50% data tengah memiliki sebaran yang identik. Namun, kelas XI IPA 2 memiliki rentang nilai keseluruhan yang lebih kecil (50) dibandingkan kelas XI IPA 1 (58). Ini mengindikasikan bahwa nilai-nilai di kelas XI IPA 2 lebih terkonsentrasi di sekitar median, sehingga variasi nilainya lebih merata dibandingkan kelas XI IPA 1 yang memiliki rentang nilai lebih lebar.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong ingin mengetahui hubungan antara jumlah jam promosi di media sosial dan jumlah penjualan per hari. Data selama 10 hari terakhir menunjukkan jam promosi (X) dan penjualan (Y dalam kg) sebagai berikut: (2, 15), (3, 20), (4, 25), (5, 30), (6, 35), (7, 40), (8, 45), (9, 50), (10, 55), (11, 60).",
+      "question": "Buatlah diagram pencar dari data tersebut dan analisis jenis serta kekuatan korelasi antara jam promosi dan jumlah penjualan untuk UMKM keripik singkong.",
+      "rubric_points": [
+        "Membuat diagram pencar dengan sumbu X (jam promosi) dan sumbu Y (penjualan).",
+        "Mengidentifikasi pola titik-titik pada diagram pencar.",
+        "Menjelaskan jenis korelasi (positif/negatif/tidak ada) dan kekuatannya (kuat/lemah) berdasarkan pola tersebut."
+      ],
+      "explanation": "**Analisis Korelasi Diagram Pencar**\\nDiagram pencar akan menampilkan titik-titik data pada bidang koordinat. Sumbu horizontal (X) mewakili jam promosi, dan sumbu vertikal (Y) mewakili jumlah penjualan dalam kilogram.\\n\\nDengan melihat data yang diberikan, terlihat bahwa setiap peningkatan 1 jam promosi diikuti oleh peningkatan 5 kg penjualan. Titik-titik data akan cenderung membentuk garis lurus yang naik dari kiri bawah ke kanan atas. Hal ini menunjukkan adanya korelasi positif yang kuat antara jam promosi dan jumlah penjualan. Semakin banyak UMKM melakukan promosi di media sosial, semakin tinggi pula jumlah penjualan keripik singkongnya.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang peneliti ingin membandingkan tinggi badan rata-rata siswa SMA di dua kota berbeda, Kota A dan Kota B. Data tinggi badan (dalam cm) disajikan dalam bentuk box plot. Kota A: Q1=155, Median=165, Q3=175, Min=145, Max=185. Kota B: Q1=158, Median=168, Q3=178, Min=150, Max=188.",
+      "question": "Berdasarkan box plot tersebut, bandingkan sebaran tinggi badan siswa di Kota A dan Kota B, serta tentukan kota mana yang memiliki sebaran tinggi badan lebih homogen.",
+      "rubric_points": [
+        "Menghitung Jangkauan Inter Kuartil (IQR) untuk kedua kota.",
+        "Membandingkan IQR dan rentang nilai (maksimum - minimum) kedua kota.",
+        "Menyimpulkan perbandingan sebaran tinggi badan dan menentukan kota dengan sebaran lebih homogen."
+      ],
+      "explanation": "**Perbandingan Sebaran Tinggi Badan**\\nUntuk membandingkan homogenitas sebaran tinggi badan, kita hitung IQR dan rentang nilai untuk kedua kota.\\n\\nKota A:\\n$IQR_A = Q3_A - Q1_A = 175 - 155 = 20$\\\\nRentang Nilai$_A = 185 - 145 = 40$\\\\n\\nKota B:\\n$IQR_B = Q3_B - Q1_B = 178 - 158 = 20$\\\\nRentang Nilai$_B = 188 - 150 = 38$\\\\n\\nKedua kota memiliki IQR yang sama (20), yang berarti 50% data tengah memiliki sebaran yang identik. Namun, Kota B memiliki rentang nilai keseluruhan yang lebih kecil (38 cm) dibandingkan Kota A (40 cm). Ini menunjukkan bahwa tinggi badan siswa di Kota B lebih terkonsentrasi dan memiliki variasi yang lebih kecil, sehingga sebarannya lebih homogen.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan logistik ingin menganalisis hubungan antara jarak pengiriman (dalam km) dan biaya pengiriman (dalam ribu rupiah). Data dari 8 rute pengiriman adalah sebagai berikut: (50, 100), (75, 130), (100, 160), (125, 190), (150, 220), (175, 250), (200, 280), (225, 310).",
+      "question": "Buatlah diagram pencar dari data tersebut dan analisis jenis serta kekuatan korelasi antara jarak pengiriman dan biaya pengiriman untuk perusahaan logistik.",
+      "rubric_points": [
+        "Membuat diagram pencar dengan sumbu X (jarak) dan sumbu Y (biaya).",
+        "Mengidentifikasi pola titik-titik pada diagram pencar.",
+        "Menjelaskan jenis korelasi (positif/negatif/tidak ada) dan kekuatannya (kuat/lemah) berdasarkan pola tersebut."
+      ],
+      "explanation": "**Analisis Korelasi Jarak dan Biaya Pengiriman**\\nDiagram pencar akan memvisualisasikan data dengan jarak pengiriman pada sumbu horizontal (X) dan biaya pengiriman pada sumbu vertikal (Y).\\n\\nDari data yang diberikan, setiap kenaikan jarak pengiriman sebesar 25 km diikuti oleh kenaikan biaya pengiriman sebesar 30 ribu rupiah. Titik-titik data akan membentuk pola garis lurus yang naik dari kiri bawah ke kanan atas. Ini mengindikasikan adanya korelasi positif yang kuat antara jarak pengiriman dan biaya pengiriman. Semakin jauh jarak pengiriman, semakin tinggi pula biaya yang dikeluarkan oleh perusahaan logistik.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani ingin membandingkan hasil panen padi di dua lahan yang berbeda, Lahan A dan Lahan B, menggunakan box plot. Lahan A: Q1=4.5 ton/ha, Median=5.5 ton/ha, Q3=6.5 ton/ha, Min=3.0 ton/ha, Max=8.0 ton/ha. Lahan B: Q1=4.8 ton/ha, Median=5.8 ton/ha, Q3=6.8 ton/ha, Min=3.5 ton/ha, Max=7.5 ton/ha.",
+      "question": "Berdasarkan box plot tersebut, bandingkan sebaran hasil panen padi di Lahan A dan Lahan B, serta tentukan lahan mana yang memiliki hasil panen lebih konsisten.",
+      "rubric_points": [
+        "Menghitung Jangkauan Inter Kuartil (IQR) untuk kedua lahan.",
+        "Membandingkan IQR dan rentang nilai (maksimum - minimum) kedua lahan.",
+        "Menyimpulkan perbandingan sebaran hasil panen dan menentukan lahan dengan hasil lebih konsisten."
+      ],
+      "explanation": "**Perbandingan Konsistensi Hasil Panen**\\nUntuk menentukan konsistensi hasil panen, kita hitung IQR dan rentang nilai untuk kedua lahan.\\n\\nLahan A:\\n$IQR_A = Q3_A - Q1_A = 6.5 - 4.5 = 2.0$\\\\nRentang Nilai$_A = 8.0 - 3.0 = 5.0$\\\\n\\nLahan B:\\n$IQR_B = Q3_B - Q1_B = 6.8 - 4.8 = 2.0$\\\\nRentang Nilai$_B = 7.5 - 3.5 = 4.0$\\\\n\\nKedua lahan memiliki IQR yang sama (2.0 ton/ha), yang berarti 50% data tengah memiliki sebaran yang identik. Namun, Lahan B memiliki rentang nilai keseluruhan yang lebih kecil (4.0 ton/ha) dibandingkan Lahan A (5.0 ton/ha). Ini menunjukkan bahwa hasil panen di Lahan B lebih terkonsentrasi dan memiliki variasi yang lebih kecil, sehingga lebih konsisten.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "b00c92f6-e6c8-4338-83a5-2dcec9189083",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:19:19Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data Lanjutan",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Merepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1588,
+      "assistant": 2343,
+      "total": 4605,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

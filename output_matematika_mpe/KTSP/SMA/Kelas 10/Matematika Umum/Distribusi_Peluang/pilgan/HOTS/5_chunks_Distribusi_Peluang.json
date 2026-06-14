@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang | Target: HOTS\n\n--- MATERI ---\nDalam mempelajari teori peluang, pemahaman mengenai konsep percobaan atau eksperimen statistik merupakan fondasi yang sangat penting. Percobaan statistik didefinisikan sebagai suatu tindakan atau proses pengamatan yang menghasilkan serangkaian kemungkinan hasil yang pasti, meskipun hasil spesifiknya tidak dapat diprediksi secara mutlak sebelum percobaan dilakukan. Kumpulan atau himpunan dari semua hasil yang mungkin terjadi dari suatu percobaan ini secara matematis disebut sebagai ruang sampel, dan lazimnya dinotasikan dengan huruf kapital S. Setiap anggota atau elemen individu yang terdapat di dalam sebuah ruang sampel dinamakan titik sampel. Sebagai contoh dasar, pada percobaan pelemparan sebuah dadu bersisi enam yang homogen, hasil yang mungkin muncul adalah salah satu dari mata dadu 1, 2, 3, 4, 5, atau 6. Oleh karena itu, ruang sampel untuk percobaan tersebut dapat dituliskan dalam notasi himpunan sebagai S = {1, 2, 3, 4, 5, 6}.\n\nUntuk mempermudah perhitungan peluang, peserta didik harus mampu menentukan banyaknya titik sampel di dalam ruang sampel, yang umumnya dinotasikan dengan lambang n(S). Pada contoh pelemparan satu buah dadu, nilai n(S) adalah 6. Namun, untuk percobaan majemuk yang melibatkan lebih dari satu objek atau dilakukan secara berulang, proses identifikasi titik sampel menjadi lebih kompleks. Oleh sebab itu, diperlukan metode sistematis untuk mendaftar seluruh kemungkinan hasil agar tidak ada titik sampel yang terlewat. Terdapat tiga metode utama yang sering digunakan dalam mendaftar ruang sampel, yaitu pendaftaran langsung (mendaftar anggota himpunan), tabel silang, dan diagram pohon. Tabel silang sangat efektif diterapkan untuk percobaan yang melibatkan tepat dua objek, sedangkan diagram pohon lebih fleksibel dan direkomendasikan untuk eksperimen bertahap yang melibatkan tiga objek atau lebih, seperti pelemparan tiga keping uang logam sekaligus.\n\nSetelah berhasil memetakan keseluruhan ruang sampel S, tahapan analitis berikutnya adalah mengkaji konsep kejadian. Kejadian atau peristiwa, yang dalam literatur probabilitas sering disimbolkan dengan huruf kapital seperti A, B, atau C, didefinisikan secara formal sebagai himpunan bagian dari suatu ruang sampel S. Dengan kata lain, kejadian adalah sekumpulan hasil spesifik yang memiliki karakteristik atau syarat tertentu sesuai dengan yang diamati. Banyaknya anggota atau hasil yang memenuhi syarat dalam suatu kejadian A dinotasikan secara matematis dengan n(A). Sebagai ilustrasi, jika kita meninjau kembali eksperimen pelemparan sebuah dadu bersisi enam, dan kita mendefinisikan kejadian A sebagai peristiwa munculnya mata dadu bernilai genap, maka himpunan kejadian A dapat dituliskan sebagai A = {2, 4, 6}. Dari himpunan tersebut, dapat diidentifikasi secara langsung bahwa banyaknya titik sampel untuk kejadian munculnya mata dadu genap adalah tiga, atau n(A) = 3.\n\nPerhitungan probabilitas didasarkan pada perbandingan matematis antara kejadian spesifik dengan ruang sampelnya. Jika dalam suatu eksperimen setiap titik sampel pada ruang sampel S diasumsikan memiliki peluang atau kemungkinan yang sama besar untuk muncul, maka peluang teoretis terjadinya suatu kejadian A dapat dirumuskan secara eksak. Peluang kejadian A, yang dinotasikan dengan P(A), merupakan hasil bagi antara banyaknya anggota dalam himpunan kejadian A dengan total banyaknya anggota dalam ruang sampel S. Secara aljabar, formulasi probabilitas ini dituliskan sebagai persamaan P(A) = n(A) / n(S). Mengacu pada ilustrasi kejadian munculnya mata dadu genap sebelumnya, di mana diketahui nilai n(A) = 3 dan n(S) = 6, maka peluang teoretis terjadinya kejadian tersebut adalah 3 dibagi 6, yang jika disederhanakan ke dalam bentuk pecahan paling sederhana akan bernilai 1/2.\n\nKonsep esensial terakhir dalam dasar probabilitas adalah memahami rentang nilai peluang dan kejadian komplemen. Berdasarkan rumusan matematisnya, nilai peluang suatu kejadian akan selalu berada pada rentang tertutup berupa interval bilangan riil dari nol hingga satu, yang secara matematis diekspresikan sebagai 0 ≤ P(A) ≤ 1. Jika suatu kejadian memiliki probabilitas bernilai tepat 0, hal tersebut merepresentasikan sebuah kemustahilan, artinya kejadian itu tidak mungkin terjadi dalam eksperimen. Sebaliknya, probabilitas yang bernilai tepat 1 menunjukkan suatu kepastian mutlak. Selain itu, terdapat pula konsep peluang komplemen kejadian A, yang dinotasikan dengan A' atau A^c. Komplemen memuat semua titik sampel di S yang bukan anggota A. Aturan probabilitas menetapkan bahwa jumlah peluang kejadian A dengan peluang kejadian komplemennya selalu sama dengan satu, yang diformulasikan sebagai P(A) + P(A') = 1.\n\n[ATP_ALIGNMENT]\nMenentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memproduksi 3 varian rasa: original, pedas, dan balado. Setiap varian dikemas dalam 2 ukuran: kecil dan besar. Perusahaan ingin memilih satu varian rasa dan satu ukuran kemasan untuk promosi khusus.",
+      "question": "Manakah strategi pemilihan promosi yang paling efisien untuk menguji respons pasar terhadap kombinasi rasa dan ukuran kemasan?",
+      "options": {
+        "A": "Memilih satu rasa secara acak dan mempromosikan kedua ukuran kemasannya.",
+        "B": "Memilih satu ukuran kemasan secara acak dan mempromosikan ketiga varian rasanya.",
+        "C": "Mempromosikan semua kombinasi rasa dan ukuran kemasan untuk melihat mana yang paling diminati.",
+        "D": "Memilih satu varian rasa dan satu ukuran kemasan secara acak untuk promosi terbatas.",
+        "E": "Mempromosikan satu rasa yang paling populer dan satu ukuran kemasan yang paling laku."
+      },
+      "answer": "D",
+      "explanation": "**Strategi Pemilihan Promosi**\\nPilihan D paling efisien karena membatasi pengujian pada satu kombinasi spesifik (rasa dan ukuran) yang dipilih secara acak, memungkinkan evaluasi respons pasar tanpa biaya promosi yang berlebihan untuk semua kombinasi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa melempar dua keping uang logam yang berbeda jenis (satu koin Rp100 dan satu koin Rp500) secara bersamaan sebanyak 100 kali. Ia mencatat hasil 'Angka' (A) atau 'Gambar' (G) untuk setiap koin.",
+      "question": "Jika siswa tersebut ingin menganalisis kemungkinan munculnya dua 'Angka' (AA) dibandingkan dengan kemungkinan munculnya satu 'Angka' dan satu 'Gambar' (AG atau GA), strategi pencatatan mana yang paling efektif untuk meminimalkan kesalahan identifikasi hasil?",
+      "options": {
+        "A": "Mencatat hanya hasil akhir (misal: 'dua angka', 'satu angka satu gambar').",
+        "B": "Menggunakan tabel silang untuk memvisualisasikan semua kemungkinan hasil dari pelemparan dua koin.",
+        "C": "Mencatat hasil setiap koin secara terpisah (misal: Koin 1: A, Koin 2: G).",
+        "D": "Menggunakan diagram pohon untuk memetakan hasil dari setiap pelemparan.",
+        "E": "Mencatat total kemunculan 'Angka' dan 'Gambar' tanpa memperhatikan urutan."
+      },
+      "answer": "C",
+      "explanation": "**Pencatatan Hasil Pelemparan Koin**\\nMencatat hasil setiap koin secara terpisah (Pilihan C) adalah strategi paling efektif. Ini memungkinkan identifikasi yang jelas dari setiap titik sampel (misalnya, A pada koin 1 dan G pada koin 2), yang krusial untuk membedakan antara AG dan GA, serta menghitung probabilitas yang akurat."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik roti ingin meluncurkan produk baru. Ada 4 jenis tepung (A, B, C, D) dan 3 jenis pemanis (X, Y, Z). Setiap kombinasi tepung dan pemanis akan diuji coba.",
+      "question": "Jika pabrik ingin meminimalkan jumlah percobaan namun tetap dapat mengevaluasi potensi rasa dari setiap jenis tepung dan pemanis secara independen, pendekatan mana yang paling tepat?",
+      "options": {
+        "A": "Mencoba semua 12 kombinasi (4 tepung x 3 pemanis).",
+        "B": "Memilih 1 jenis tepung dan 1 jenis pemanis secara acak untuk diuji.",
+        "C": "Menguji setiap jenis tepung dengan pemanis yang sama, lalu menguji setiap pemanis dengan tepung yang sama.",
+        "D": "Menguji 4 kombinasi tepung A dengan pemanis X, Y, Z, dan satu kombinasi acak lainnya.",
+        "E": "Memilih 4 kombinasi yang berbeda secara acak dari total 12 kombinasi yang ada."
+      },
+      "answer": "C",
+      "explanation": "**Pendekatan Uji Coba Efisien**\\nPilihan C memungkinkan evaluasi independen. Menguji setiap tepung dengan pemanis yang sama (misal: A-X, B-X, C-X, D-X) menunjukkan efek tepung. Menguji setiap pemanis dengan tepung yang sama (misal: A-X, A-Y, A-Z) menunjukkan efek pemanis. Ini lebih efisien daripada menguji semua 12 kombinasi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional menjual 5 jenis sayuran: bayam, kangkung, sawi, wortel, dan tomat. Ia ingin menentukan kombinasi sayuran yang paling disukai pelanggan untuk paket sembako hemat.",
+      "question": "Jika pedagang ingin menganalisis preferensi pelanggan secara sistematis tanpa menguji semua kemungkinan kombinasi (yang bisa mencapai 31 jenis paket jika minimal 1 sayuran), strategi mana yang paling realistis untuk mendapatkan data awal yang berguna?",
+      "options": {
+        "A": "Menawarkan semua 31 jenis paket sembako dan melihat mana yang paling laris.",
+        "B": "Membuat 5 paket berbeda, masing-masing hanya berisi satu jenis sayuran.",
+        "C": "Membuat 5 paket berbeda, masing-masing berisi 3 jenis sayuran yang dipilih secara acak.",
+        "D": "Membuat 5 paket berbeda, masing-masing berisi kombinasi sayuran yang paling umum dibeli (misal: bayam, kangkung, sawi).",
+        "E": "Membuat 5 paket berbeda, masing-masing berisi kombinasi sayuran yang berbeda, dan meminta masukan pelanggan."
+      },
+      "answer": "E",
+      "explanation": "**Strategi Analisis Preferensi Pelanggan**\\nPilihan E adalah yang paling realistis. Dengan membuat 5 paket berbeda dan meminta masukan, pedagang dapat mengumpulkan data kualitatif dan kuantitatif tentang preferensi tanpa harus menguji semua kemungkinan kombinasi yang sangat banyak."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi online memiliki 3 jenis kendaraan: motor, mobil, dan van. Setiap jenis kendaraan memiliki tarif dasar yang berbeda dan biaya per kilometer yang berbeda pula.",
+      "question": "Seorang pelanggan ingin memesan perjalanan sejauh 20 km. Jika perusahaan ingin menawarkan pilihan yang paling hemat biaya bagi pelanggan, namun juga mempertimbangkan potensi keuntungan perusahaan, bagaimana keputusan tarif sebaiknya dibuat?",
+      "options": {
+        "A": "Menetapkan tarif tetap untuk semua jenis kendaraan agar mudah dipahami pelanggan.",
+        "B": "Menawarkan tarif per kilometer yang sama untuk semua jenis kendaraan.",
+        "C": "Menghitung tarif total berdasarkan tarif dasar dan biaya per kilometer spesifik untuk setiap jenis kendaraan, lalu menawarkan pilihan termurah.",
+        "D": "Memberikan diskon besar pada jenis kendaraan yang paling jarang digunakan untuk meningkatkan pemesanan.",
+        "E": "Menetapkan tarif berdasarkan waktu tempuh, bukan jarak, untuk mengantisipasi kemacetan."
+      },
+      "answer": "C",
+      "explanation": "**Keputusan Tarif Transportasi Online**\\nPilihan C adalah yang paling logis. Menghitung tarif berdasarkan struktur biaya spesifik setiap kendaraan (tarif dasar + biaya per km) memungkinkan penawaran yang transparan dan paling hemat bagi pelanggan, sambil tetap memastikan perusahaan menutupi biayanya."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah kelas terdapat 30 siswa. 15 siswa menyukai Matematika, 12 siswa menyukai Fisika, dan 5 siswa menyukai keduanya.",
+      "question": "Jika seorang siswa dipilih secara acak, manakah pernyataan berikut yang paling akurat mengenai probabilitas siswa tersebut menyukai Matematika atau Fisika?",
+      "options": {
+        "A": "Probabilitasnya adalah 15/30 + 12/30 karena kedua kejadian independen.",
+        "B": "Probabilitasnya adalah (15+12)/30 karena kita menjumlahkan semua siswa yang menyukai salah satu mata pelajaran.",
+        "C": "Probabilitasnya adalah (15+12-5)/30 karena kita perlu mengurangkan siswa yang menyukai keduanya agar tidak terhitung ganda.",
+        "D": "Probabilitasnya adalah 5/30 karena hanya siswa yang menyukai keduanya yang relevan.",
+        "E": "Probabilitasnya adalah 1 - (15/30 + 12/30) karena kita mencari siswa yang tidak menyukai keduanya."
+      },
+      "answer": "C",
+      "explanation": "**Probabilitas Gabungan Kejadian**\\nPernyataan C paling akurat. Menggunakan prinsip inklusi-eksklusi, P(M atau F) = P(M) + P(F) - P(M dan F). Dengan n(S)=30, n(M)=15, n(F)=12, dan n(M dan F)=5, maka P(M atau F) = (15/30) + (12/30) - (5/30) = (15+12-5)/30 = 22/30."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko kelontong menjual 3 merek sabun: A, B, dan C. Setiap merek tersedia dalam 2 varian aroma: melati dan mawar. Pemilik toko ingin menata ulang pajangan produk agar mudah dijangkau pelanggan.",
+      "question": "Jika pemilik toko ingin menempatkan produk sedemikian rupa sehingga pelanggan dapat dengan cepat menemukan merek yang diinginkan, strategi penataan mana yang paling efektif?",
+      "options": {
+        "A": "Menata semua produk berdasarkan urutan abjad merek (A, B, C).",
+        "B": "Menata semua produk berdasarkan urutan abjad aroma (mawar, melati).",
+        "C": "Mengelompokkan setiap merek sabun bersama kedua varian aromanya, lalu menata kelompok merek tersebut secara berurutan.",
+        "D": "Menata semua varian melati dari ketiga merek, lalu semua varian mawar dari ketiga merek.",
+        "E": "Menata produk secara acak untuk memberikan kejutan kepada pelanggan."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Penataan Produk Efektif**\\nPilihan C paling efektif. Dengan mengelompokkan setiap merek bersama varian aromanya, pelanggan yang mencari merek tertentu dapat menemukannya dengan mudah tanpa harus mencari di antara merek lain. Urutan kelompok merek (misal: A, B, C) juga membantu navigasi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani memiliki 3 petak sawah. Petak 1 ditanami padi jenis A, Petak 2 padi jenis B, dan Petak 3 padi jenis C. Setiap jenis padi memiliki potensi hasil panen yang berbeda dan risiko serangan hama yang berbeda pula.",
+      "question": "Jika petani ingin meminimalkan risiko gagal panen total akibat serangan hama yang mungkin terjadi secara acak pada salah satu petak, strategi pengelolaan risiko mana yang paling bijaksana?",
+      "options": {
+        "A": "Menanam hanya satu jenis padi yang paling produktif di ketiga petak.",
+        "B": "Menanam jenis padi yang sama di semua petak untuk memudahkan perawatan.",
+        "C": "Menanam jenis padi yang berbeda di setiap petak untuk diversifikasi risiko.",
+        "D": "Menanam jenis padi yang paling tahan hama di semua petak.",
+        "E": "Menanam jenis padi yang paling mahal di semua petak untuk memaksimalkan potensi keuntungan."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Pengelolaan Risiko Petani**\\nPilihan C adalah yang paling bijaksana. Diversifikasi jenis padi di setiap petak mengurangi risiko gagal panen total. Jika satu jenis padi terserang hama, jenis padi lain di petak yang berbeda mungkin tetap aman, sehingga kerugian petani dapat diminimalkan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah sekolah mengadakan pemilihan ketua OSIS. Ada 3 kandidat: Adi, Budi, dan Citra. Setiap siswa dapat memilih satu kandidat.",
+      "question": "Jika panitia ingin memastikan bahwa proses pemilihan adil dan setiap suara memiliki bobot yang sama, namun juga ingin mengantisipasi kemungkinan hasil yang sangat ketat (misalnya, dua kandidat memperoleh suara yang hampir sama), strategi penghitungan suara mana yang paling tepat untuk memverifikasi hasil?",
+      "options": {
+        "A": "Menghitung suara secara manual oleh satu panitia.",
+        "B": "Menggunakan sistem voting elektronik yang tidak dapat diverifikasi ulang.",
+        "C": "Melakukan penghitungan suara berulang oleh tim panitia yang berbeda dan membandingkan hasilnya.",
+        "D": "Mengumumkan hasil segera setelah penghitungan pertama untuk efisiensi.",
+        "E": "Meminta kandidat untuk menghitung suara mereka sendiri."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Penghitungan Suara yang Adil**\\nPilihan C paling tepat untuk memastikan keadilan dan akurasi, terutama dalam hasil yang ketat. Penghitungan berulang oleh tim yang berbeda memberikan mekanisme verifikasi silang, mengurangi kemungkinan kesalahan manusia atau manipulasi, dan meningkatkan kepercayaan pada hasil akhir."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan katering menawarkan 2 paket makan siang: Paket Hemat (nasi, ayam goreng, sayur) dan Paket Lengkap (nasi, ayam goreng, sayur, buah, minuman).",
+      "question": "Jika perusahaan ingin menganalisis mana yang lebih disukai pelanggan, namun juga ingin mengoptimalkan penggunaan bahan baku agar tidak banyak sisa, strategi penawaran mana yang paling efektif?",
+      "options": {
+        "A": "Menawarkan kedua paket dengan harga yang sama.",
+        "B": "Menawarkan Paket Hemat sebagai pilihan utama dan Paket Lengkap sebagai opsi tambahan.",
+        "C": "Menawarkan kedua paket dengan harga berbeda, dan mempromosikan Paket Lengkap sebagai nilai tambah.",
+        "D": "Hanya menawarkan Paket Hemat untuk meminimalkan sisa bahan baku.",
+        "E": "Menawarkan Paket Lengkap dengan harga diskon untuk menarik lebih banyak pelanggan."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Penawaran Paket Katering**\\nPilihan C paling efektif. Menawarkan harga berbeda memungkinkan pelanggan memilih berdasarkan preferensi dan anggaran mereka. Mempromosikan Paket Lengkap sebagai nilai tambah dapat mendorong pemesanan, sementara harga yang berbeda juga membantu mengelola ekspektasi dan potensi sisa bahan baku berdasarkan permintaan."
+    }
+  ],
+  "metadata": {
+    "id": "e62b849a-6eae-4c0c-903d-601426cdcbd1",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:07:53Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_5_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3423,
+      "assistant": 3890,
+      "total": 7987,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

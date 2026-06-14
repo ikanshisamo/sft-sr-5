@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Bentuk Akar | Target: MOTS\n\n--- MATERI ---\nBentuk akar merupakan kebalikan dari pemangkatan suatu bilangan yang memiliki kaitan erat dengan bilangan berpangkat pecahan. Dalam menyelesaikan operasi hitung penjumlahan dan pengurangan pada bentuk akar, syarat mutlak yang harus dipenuhi adalah bentuk akar tersebut harus senama, yaitu memiliki indeks eksponen dan basis akar yang sama persis. Selain operasi hitung dasar, kita sering menjumpai bentuk pecahan yang penyebutnya memuat bentuk akar atau bilangan irasional. Untuk menyederhanakan pecahan tersebut, diperlukan sebuah proses yang dinamakan merasionalkan penyebut pecahan. Prinsip utama dalam merasionalkan penyebut pecahan adalah mengalikan bagian pembilang dan penyebut pecahan tersebut dengan bentuk akar sekawan dari penyebutnya. Sebagai contoh, pada pecahan dasar di mana penyebutnya berbentuk akar tunggal, kita cukup mengalikan pembilang dan penyebut dengan akar yang senama agar bagian penyebut terbebas dari tanda akar dan berubah menjadi bilangan rasional.\n\n[ATP_ALIGNMENT]\nMenyelesaikan operasi hitung pada bentuk akar dan merasionalkan penyebut pecahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional ingin menghitung luas kebun singkongnya yang berbentuk persegi. Ia mengukur panjang sisi kebun tersebut dan mendapatkan hasil \\\\sqrt{125} meter. Untuk keperluan administrasi, ia perlu menyajikan luas kebun dalam bentuk yang lebih sederhana.",
+      "question": "Bantulah pedagang tersebut menghitung luas kebun singkongnya dalam bentuk akar yang paling sederhana.",
+      "rubric_points": [
+        "Menyederhanakan bentuk akar \\\\sqrt{125}.",
+        "Menghitung luas kebun dengan mengkuadratkan panjang sisi.",
+        "Menyajikan hasil akhir dalam bentuk akar sederhana."
+      ],
+      "explanation": "**Perhitungan Luas Kebun Singkong**\\nLuas kebun dihitung dengan mengkuadratkan panjang sisinya.\\nPanjang sisi = \\\\sqrt{125} meter.\\nLuas = (Panjang sisi)^2 = (\\\\sqrt{125})^2 = 125 meter persegi.\\nUntuk menyajikan dalam bentuk akar yang lebih sederhana, kita perlu menyederhanakan \\\\sqrt{125} terlebih dahulu.\\n\\\\sqrt{125} = \\\\sqrt{25 \\\\times 5} = \\\\sqrt{25} \\\\times \\\\sqrt{5} = 5\\\\sqrt{5} meter.\\nJadi, luas kebun singkong tersebut adalah 125 meter persegi, yang dapat juga dinyatakan sebagai hasil dari kuadrat panjang sisi \\\\sqrt{125} meter.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani sedang merencanakan irigasi untuk sawahnya. Ia memiliki dua selang air dengan panjang masing-masing \\\\sqrt{50} meter dan \\\\sqrt{72} meter. Ia ingin menyambungkan kedua selang tersebut untuk mencapai titik yang lebih jauh, namun ia perlu mengetahui panjang total kedua selang setelah disederhanakan.",
+      "question": "Hitunglah panjang total kedua selang air tersebut dalam bentuk akar yang paling sederhana.",
+      "rubric_points": [
+        "Menyederhanakan bentuk akar \\\\sqrt{50}.",
+        "Menyederhanakan bentuk akar \\\\sqrt{72}.",
+        "Menjumlahkan kedua bentuk akar yang sudah disederhanakan."
+      ],
+      "explanation": "**Perhitungan Panjang Total Selang Air**\\nPanjang selang pertama = \\\\sqrt{50} meter.\\nMenyederhanakan \\\\sqrt{50}: \\\\sqrt{50} = \\\\sqrt{25 \\\\times 2} = \\\\sqrt{25} \\\\times \\\\sqrt{2} = 5\\\\sqrt{2} meter.\\nPanjang selang kedua = \\\\sqrt{72} meter.\\nMenyederhanakan \\\\sqrt{72}: \\\\sqrt{72} = \\\\sqrt{36 \\\\times 2} = \\\\sqrt{36} \\\\times \\\\sqrt{2} = 6\\\\sqrt{2} meter.\\nPanjang total = Panjang selang pertama + Panjang selang kedua\\nPanjang total = 5\\\\sqrt{2} + 6\\\\sqrt{2} = (5+6)\\\\\\sqrt{2} = 11\\\\sqrt{2} meter.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM kerajinan tangan memproduksi taplak meja dengan motif batik. Ukuran taplak meja tersebut adalah \\\\sqrt{200} cm \\\\times \\\\sqrt{50} cm. Pemilik UMKM ingin mengetahui luas taplak meja tersebut dalam satuan cm persegi.",
+      "question": "Hitunglah luas taplak meja tersebut dalam bentuk akar yang paling sederhana.",
+      "rubric_points": [
+        "Menyederhanakan bentuk akar \\\\sqrt{200}.",
+        "Menyederhanakan bentuk akar \\\\sqrt{50}.",
+        "Mengalikan kedua bentuk akar yang sudah disederhanakan untuk mendapatkan luas."
+      ],
+      "explanation": "**Perhitungan Luas Taplak Meja**\\nPanjang taplak meja = \\\\sqrt{200} cm.\\nMenyederhanakan \\\\sqrt{200}: \\\\sqrt{200} = \\\\sqrt{100 \\\\times 2} = \\\\sqrt{100} \\\\times \\\\sqrt{2} = 10\\\\sqrt{2} cm.\\nLebar taplak meja = \\\\sqrt{50} cm.\\nMenyederhanakan \\\\sqrt{50}: \\\\sqrt{50} = \\\\sqrt{25 \\\\times 2} = \\\\sqrt{25} \\\\times \\\\sqrt{2} = 5\\\\sqrt{2} cm.\\nLuas = Panjang \\\\times Lebar\\nLuas = (10\\\\sqrt{2}) \\\\times (5\\\\sqrt{2}) = (10 \\\\times 5) \\\\times (\\\\sqrt{2} \\\\times \\\\sqrt{2}) = 50 \\\\times 2 = 100 cm persegi.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa sedang mengerjakan soal latihan matematika mengenai penyederhanaan pecahan. Ia menemukan pecahan \\\\frac{10}{\\\\\\\\sqrt{5}}. Untuk menyelesaikannya, ia perlu merasionalkan penyebut pecahan tersebut.",
+      "question": "Rasionalkan penyebut pecahan \\\\frac{10}{\\\\\\\\sqrt{5}} dan sajikan hasilnya dalam bentuk paling sederhana.",
+      "rubric_points": [
+        "Mengidentifikasi bentuk akar sekawan dari penyebut.",
+        "Mengalikan pembilang dan penyebut dengan akar sekawan.",
+        "Menyederhanakan hasil perkalian menjadi bentuk paling sederhana."
+      ],
+      "explanation": "**Merasionalkan Penyebut Pecahan**\\nPecahan yang diberikan adalah \\\\frac{10}{\\\\\\\\sqrt{5}}.\\nAkar sekawan dari \\\\sqrt{5} adalah \\\\sqrt{5}.\\nUntuk merasionalkan penyebut, kalikan pembilang dan penyebut dengan akar sekawan:\\n\\\\frac{10}{\\\\\\\\sqrt{5}} \\\\times \\\\frac{\\\\\\\\sqrt{5}}{\\\\\\\\sqrt{5}} = \\\\frac{10 \\\\times \\\\sqrt{5}}{\\\\\\\\sqrt{5} \\\\times \\\\sqrt{5}}\\\\n= \\\\frac{10\\\\sqrt{5}}{5}\\\\nSederhanakan hasil pembagian:\\n\\\\frac{10\\\\sqrt{5}}{5} = 2\\\\sqrt{5}\\\\nJadi, bentuk rasional dari \\\\frac{10}{\\\\\\\\sqrt{5}} adalah 2\\\\sqrt{5}.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang ibu rumah tangga ingin menghitung sisa bahan makanan di kulkas. Ia memiliki \\\\sqrt{48} kg beras dan menggunakan \\\\sqrt{12} kg untuk memasak. Ia perlu mengetahui sisa beras yang dimilikinya.",
+      "question": "Hitunglah sisa beras yang dimiliki ibu tersebut dalam bentuk akar yang paling sederhana.",
+      "rubric_points": [
+        "Menyederhanakan bentuk akar \\\\sqrt{48}.",
+        "Menyederhanakan bentuk akar \\\\sqrt{12}.",
+        "Mengurangkan kedua bentuk akar yang sudah disederhanakan."
+      ],
+      "explanation": "**Perhitungan Sisa Beras**\\nJumlah beras awal = \\\\sqrt{48} kg.\\nMenyederhanakan \\\\sqrt{48}: \\\\sqrt{48} = \\\\sqrt{16 \\\\times 3} = \\\\sqrt{16} \\\\times \\\\sqrt{3} = 4\\\\sqrt{3} kg.\\nJumlah beras yang digunakan = \\\\sqrt{12} kg.\\nMenyederhanakan \\\\sqrt{12}: \\\\sqrt{12} = \\\\sqrt{4 \\\\times 3} = \\\\sqrt{4} \\\\times \\\\sqrt{3} = 2\\\\sqrt{3} kg.\\nSisa beras = Jumlah beras awal - Jumlah beras yang digunakan\\nSisa beras = 4\\\\sqrt{3} - 2\\\\sqrt{3} = (4-2)\\\\\\sqrt{3} = 2\\\\sqrt{3} kg.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "5105cabd-f8f4-4075-b99b-d7d179dec31f",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T22:41:37Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Bentuk Akar",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyelesaikan operasi hitung pada bentuk akar dan merasionalkan penyebut pecahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1291,
+      "assistant": 1823,
+      "total": 3787,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

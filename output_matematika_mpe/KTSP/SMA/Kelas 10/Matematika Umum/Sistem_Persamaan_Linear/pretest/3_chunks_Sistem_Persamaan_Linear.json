@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Sistem Persamaan dan Pertidaksamaan Linear | Sub Bab: Sistem Persamaan Linear\n\n--- MATERI ---\nSistem persamaan linear dua variabel (SPLDV) adalah suatu sistem persamaan yang memuat dua peubah, di mana masing-masing peubahnya memiliki pangkat tertinggi satu. Secara matematis, bentuk umum dari SPLDV terdiri atas dua persamaan linear yang digabungkan, yaitu a1x + b1y = c1 dan a2x + b2y = c2, dengan a, b, dan c merupakan bilangan riil. Dalam sistem persamaan ini, penyelesaiannya bermakna mencari pasangan nilai (x, y) yang secara simultan memenuhi kedua persamaan tersebut. Salah satu cara yang paling intuitif untuk memahami dan menentukan penyelesaian SPLDV adalah melalui representasi visual menggunakan metode grafik. Pada metode ini, setiap persamaan linear diproyeksikan sebagai sebuah garis lurus pada bidang koordinat Kartesius.\n\nDalam menggunakan metode grafik untuk menyelesaikan sistem persamaan linear dua variabel, daerah penyelesaian ditentukan oleh letak kedudukan kedua garis lurus tersebut pada bidang koordinat. Berdasarkan gradien (kemiringan garis atau m) dan nilai konstanta (c) pada bentuk eksplisit y = mx + c, sistem ini memiliki tiga kemungkinan penyelesaian. Kemungkinan pertama, SPLDV akan memiliki tepat sebuah penyelesaian berupa satu titik potong apabila kedua garis tersebut saling berpotongan (gradien m1 tidak sama dengan m2). Kemungkinan kedua, sistem persamaan akan memiliki penyelesaian berjumlah tak hingga apabila kedua garis tersebut saling berimpit. Kondisi berimpit ini terjadi jika gradien dan konstanta kedua persamaan bernilai sama persis (m1 = m2 dan c1 = c2), sehingga daerah penyelesaiannya berada di sepanjang garis tersebut.\n\nKemungkinan ketiga pada penyajian grafik sistem persamaan linear dua variabel adalah tidak adanya himpunan penyelesaian. Secara visual, hal ini terjadi apabila kedua garis lurus pada sistem koordinat Kartesius saling sejajar satu sama lain, sehingga sampai kapan pun tidak akan pernah saling bersinggungan atau berpotongan. Secara analitis matematis, keadaan garis sejajar ini terjadi ketika gradien kedua garis bernilai identik (m1 = m2) akan tetapi memiliki nilai titik potong sumbu-y atau konstanta yang berbeda (c1 tidak sama dengan c2). Penguasaan dalam menggambar grafik garis lurus yang presisi serta ketelitian dalam mengidentifikasi letak perpotongan sangatlah krusial, karena pendekatan grafik tidak hanya menyajikan himpunan penyelesaian secara numerik, melainkan juga memberikan pemahaman geometri secara utuh.\n\n[ATP_ALIGNMENT]\nMenyajikan grafik dan menentukan daerah penyelesaian persamaan linear dua variabel.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Dua persamaan linear, 2x + 3y = 12 dan x - y = 1, disajikan dalam bentuk grafik. Kedua persamaan ini mewakili garis lurus pada bidang koordinat Kartesius.",
+      "question": "Berdasarkan materi SPLDV, apa yang terjadi pada kedua garis tersebut jika sistem persamaan memiliki tepat satu penyelesaian?",
+      "options": {
+        "A": "Kedua garis saling berimpit.",
+        "B": "Kedua garis saling sejajar.",
+        "C": "Kedua garis saling berpotongan.",
+        "D": "Salah satu garis vertikal dan yang lain horizontal.",
+        "E": "Salah satu garis memotong sumbu x dan yang lain sumbu y."
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Sistem persamaan linear dua variabel memiliki tepat satu penyelesaian jika kedua garis yang merepresentasikannya saling berpotongan. Titik potong inilah yang merupakan solusi tunggal dari sistem tersebut."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah sistem persamaan linear dua variabel dinyatakan sebagai 3x + 2y = 10 dan 6x + 4y = 20. Kedua persamaan ini digambarkan sebagai garis lurus.",
+      "question": "Dalam representasi grafik, kondisi apa yang menunjukkan bahwa sistem persamaan ini memiliki penyelesaian tak hingga?",
+      "options": {
+        "A": "Garis-garis tersebut saling berpotongan.",
+        "B": "Garis-garis tersebut saling sejajar.",
+        "C": "Garis-garis tersebut saling berimpit.",
+        "D": "Salah satu garis sejajar sumbu x.",
+        "E": "Salah satu garis sejajar sumbu y."
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Sistem persamaan linear dua variabel memiliki penyelesaian tak hingga jika kedua garis yang merepresentasikannya saling berimpit. Ini berarti kedua persamaan tersebut pada dasarnya adalah persamaan yang sama, sehingga setiap titik pada garis tersebut adalah solusi."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dua persamaan linear, 4x - y = 5 dan 4x - y = 10, digambarkan sebagai garis lurus pada bidang koordinat.",
+      "question": "Jika kedua garis pada sistem persamaan ini tidak pernah bertemu, kondisi matematis apa yang mendasarinya?",
+      "options": {
+        "A": "Gradien kedua garis sama dan konstanta juga sama.",
+        "B": "Gradien kedua garis berbeda.",
+        "C": "Gradien kedua garis sama tetapi konstanta berbeda.",
+        "D": "Salah satu garis memiliki gradien nol.",
+        "E": "Salah satu garis memiliki gradien tak terdefinisi."
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Jika kedua garis pada sistem persamaan linear dua variabel saling sejajar dan tidak pernah berpotongan, ini berarti gradien kedua garis sama (m1 = m2) tetapi konstanta atau titik potong sumbu-y-nya berbeda (c1 \\u2260 c2). Kondisi ini menghasilkan tidak ada penyelesaian."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional menjual mangga dan jeruk. Harga 2 kg mangga dan 3 kg jeruk adalah Rp 70.000. Sementara itu, harga 1 kg mangga dan 1 kg jeruk adalah Rp 30.000.",
+      "question": "Jika 'x' adalah harga per kg mangga dan 'y' adalah harga per kg jeruk, sistem persamaan linear mana yang paling tepat merepresentasikan situasi ini?",
+      "options": {
+        "A": "2x + 3y = 70.000 dan x + y = 30.000",
+        "B": "3x + 2y = 70.000 dan x + y = 30.000",
+        "C": "2x - 3y = 70.000 dan x - y = 30.000",
+        "D": "2x + 3y = 30.000 dan x + y = 70.000",
+        "E": "3x + 2y = 30.000 dan x + y = 70.000"
+      },
+      "answer": "A",
+      "explanation": "**Jawaban yang Benar: A**. Persamaan pertama merepresentasikan total biaya 2 kg mangga (2x) dan 3 kg jeruk (3y) yang berjumlah Rp 70.000. Persamaan kedua merepresentasikan total biaya 1 kg mangga (x) dan 1 kg jeruk (y) yang berjumlah Rp 30.000."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong menjual buku tulis dan pensil. Harga 5 buku tulis dan 2 pensil adalah Rp 15.000. Jika harga 3 buku tulis dan 4 pensil adalah Rp 14.000.",
+      "question": "Dengan menggunakan metode grafik, bagaimana cara menentukan penyelesaian dari sistem persamaan yang merepresentasikan situasi ini?",
+      "options": {
+        "A": "Mencari titik potong sumbu x dari kedua persamaan.",
+        "B": "Mencari titik potong sumbu y dari kedua persamaan.",
+        "C": "Menggambar kedua persamaan sebagai garis lurus dan mencari titik perpotongannya.",
+        "D": "Menjumlahkan kedua persamaan untuk mendapatkan satu garis.",
+        "E": "Mengurangi satu persamaan dari yang lain untuk mendapatkan satu garis."
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Metode grafik untuk menyelesaikan SPLDV melibatkan penggambaran setiap persamaan sebagai garis lurus pada bidang koordinat. Titik di mana kedua garis tersebut berpotongan adalah solusi dari sistem persamaan tersebut."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dua persamaan linear adalah y = 2x + 1 dan y = 2x + 3. Kedua persamaan ini mewakili garis lurus pada bidang koordinat.",
+      "question": "Apa yang dapat disimpulkan mengenai penyelesaian sistem persamaan ini berdasarkan bentuk eksplisitnya?",
+      "options": {
+        "A": "Memiliki tepat satu penyelesaian karena gradiennya sama.",
+        "B": "Memiliki penyelesaian tak hingga karena konstanta positif.",
+        "C": "Tidak memiliki penyelesaian karena gradiennya sama tetapi konstanta berbeda.",
+        "D": "Memiliki penyelesaian tak hingga karena kedua konstanta sama.",
+        "E": "Memiliki tepat satu penyelesaian karena konstanta berbeda."
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Kedua persamaan memiliki gradien (m) yang sama yaitu 2, namun konstanta (c) yang berbeda (1 dan 3). Dalam representasi grafik, ini berarti kedua garis sejajar dan tidak akan pernah berpotongan, sehingga sistem tidak memiliki penyelesaian."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani menanam padi dan jagung di lahan seluas 1 hektar. Biaya tanam padi per hektar adalah Rp 5.000.000 dan biaya tanam jagung per hektar adalah Rp 4.000.000. Total biaya yang dikeluarkan petani adalah Rp 4.800.000.",
+      "question": "Jika 'p' adalah luas lahan untuk padi dan 'j' adalah luas lahan untuk jagung, manakah pernyataan yang paling akurat mengenai situasi ini jika petani hanya menanam salah satu jenis tanaman saja?",
+      "options": {
+        "A": "Petani menanam padi seluas 0,8 hektar dan jagung seluas 0,2 hektar.",
+        "B": "Petani menanam padi seluas 0,6 hektar dan jagung seluas 0,4 hektar.",
+        "C": "Petani menanam padi seluas 0,4 hektar dan jagung seluas 0,6 hektar.",
+        "D": "Petani menanam padi seluas 0,2 hektar dan jagung seluas 0,8 hektar.",
+        "E": "Petani menanam jagung seluas 1 hektar karena biayanya lebih rendah."
+      },
+      "answer": "A",
+      "explanation": "**Jawaban yang Benar: A**. Sistem persamaannya adalah p + j = 1 (luas total) dan 5.000.000p + 4.000.000j = 4.800.000. Dari p + j = 1, kita dapatkan j = 1 - p. Substitusikan ke persamaan kedua: 5.000.000p + 4.000.000(1 - p) = 4.800.000. Ini menghasilkan 5.000.000p + 4.000.000 - 4.000.000p = 4.800.000, sehingga 1.000.000p = 800.000, yang berarti p = 0,8 hektar. Maka j = 1 - 0,8 = 0,2 hektar."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua perusahaan taksi, 'Cepat' dan 'Aman', memiliki tarif yang berbeda. Taksi 'Cepat' mengenakan tarif awal Rp 5.000 ditambah Rp 3.000 per kilometer. Taksi 'Aman' mengenakan tarif awal Rp 4.000 ditambah Rp 3.500 per kilometer.",
+      "question": "Jika Anda perlu menempuh jarak 10 kilometer, strategi mana yang paling efisien dari segi biaya?",
+      "options": {
+        "A": "Memilih Taksi 'Cepat' karena tarif awalnya lebih tinggi.",
+        "B": "Memilih Taksi 'Aman' karena tarif per kilometernya lebih rendah.",
+        "C": "Memilih Taksi 'Cepat' karena tarif per kilometernya lebih rendah.",
+        "D": "Memilih Taksi 'Aman' karena tarif awalnya lebih rendah.",
+        "E": "Memilih salah satu karena tarif per kilometernya hampir sama."
+      },
+      "answer": "D",
+      "explanation": "**Jawaban yang Benar: D**. Biaya Taksi 'Cepat' untuk 10 km: 5.000 + (10 \\times 3.000) = 5.000 + 30.000 = Rp 35.000. Biaya Taksi 'Aman' untuk 10 km: 4.000 + (10 \\times 3.500) = 4.000 + 35.000 = Rp 39.000. Meskipun tarif per kilometer Taksi 'Aman' lebih tinggi, tarif awal yang lebih rendah membuatnya lebih murah untuk jarak 10 km."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi dua jenis kue: kue cokelat dan kue vanila. Untuk membuat 1 kue cokelat dibutuhkan 20 gram tepung dan 10 gram gula. Untuk membuat 1 kue vanila dibutuhkan 15 gram tepung dan 15 gram gula. Pabrik memiliki persediaan 300 gram tepung dan 200 gram gula.",
+      "question": "Jika pabrik ingin memaksimalkan produksi kue vanila sambil tetap memenuhi kebutuhan tepung, berapa banyak kue cokelat yang idealnya diproduksi?",
+      "options": {
+        "A": "15 kue cokelat, karena itu akan menggunakan sisa tepung.",
+        "B": "10 kue cokelat, untuk mengoptimalkan penggunaan gula.",
+        "C": "5 kue cokelat, agar sisa tepung cukup untuk kue vanila.",
+        "D": "0 kue cokelat, untuk fokus pada produksi kue vanila.",
+        "E": "20 kue cokelat, untuk menghabiskan persediaan tepung."
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Misalkan C = jumlah kue cokelat, V = jumlah kue vanila. Persamaan tepung: 20C + 15V \\le 300. Persamaan gula: 10C + 15V \\le 200. Untuk memaksimalkan V, kita perlu meminimalkan C. Jika kita produksi 5 kue cokelat (C=5), maka kebutuhan tepung adalah 20*5 = 100g, sisa 200g. Kebutuhan gula adalah 10*5 = 50g, sisa 150g. Dengan sisa tepung 200g dan gula 150g, kita bisa membuat V = 200/15 \\approx 13 kue vanila (terbatas tepung) atau V = 150/15 = 10 kue vanila (terbatas gula). Jika C=0, V=10 (terbatas gula). Jika C=5, V=10 (terbatas gula). Jika C=10, V=5 (terbatas gula). Jika C=15, V=0 (terbatas tepung). Pilihan C memberikan keseimbangan yang memungkinkan produksi vanila."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha UMKM ingin membuka dua cabang usaha. Cabang A membutuhkan modal Rp 10.000.000 dan akan menghasilkan keuntungan Rp 2.000.000 per bulan. Cabang B membutuhkan modal Rp 15.000.000 dan akan menghasilkan keuntungan Rp 3.000.000 per bulan. Total modal yang tersedia adalah Rp 50.000.000.",
+      "question": "Jika pengusaha tersebut ingin memaksimalkan total keuntungan bulanan, strategi investasi mana yang paling masuk akal?",
+      "options": {
+        "A": "Membuka 5 cabang A, karena modalnya lebih kecil.",
+        "B": "Membuka 3 cabang B dan 1 cabang A.",
+        "C": "Membuka 2 cabang B dan 2 cabang A.",
+        "D": "Membuka 1 cabang B dan 4 cabang A.",
+        "E": "Membuka 5 cabang B, karena keuntungannya paling besar."
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Misalkan A = jumlah cabang A, B = jumlah cabang B. Persamaan modal: 10.000.000A + 15.000.000B \\le 50.000.000 atau 2A + 3B \\le 10. Keuntungan: K = 2.000.000A + 3.000.000B. Opsi A: 5A, 0B. Modal = 50jt. Keuntungan = 10jt. Opsi B: 1A, 3B. Modal = 10jt + 45jt = 55jt (tidak cukup). Opsi C: 2A, 2B. Modal = 20jt + 30jt = 50jt. Keuntungan = 4jt + 6jt = 10jt. Opsi D: 4A, 1B. Modal = 40jt + 15jt = 55jt (tidak cukup). Opsi E: 0A, 5B. Modal = 75jt (tidak cukup). Opsi C adalah satu-satunya yang memenuhi modal dan memberikan keuntungan yang sama dengan Opsi A."
+    }
+  ],
+  "metadata": {
+    "id": "293d9ade-71af-422d-b381-e955bf529001",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T09:04:08Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Sistem Persamaan dan Pertidaksamaan Linear",
+    "sub_bab": "Sistem Persamaan Linear",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyajikan grafik dan menentukan daerah penyelesaian persamaan linear dua variabel.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3221,
+      "assistant": 3329,
+      "total": 7224,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

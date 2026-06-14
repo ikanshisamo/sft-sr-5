@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\",\n      \"expected_reasoning\": [\n        \"single-step reasoning\",\n        \"direct concept understanding\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Perbandingan Trigonometri | Sub Bab: Pemanfaatan Perbandingan Trigonometri | Target: LOTS\n\n--- MATERI ---\nPerbandingan trigonometri tidak hanya terbatas pada perhitungan teoritis, tetapi juga memiliki aplikasi yang luas dalam menyelesaikan masalah kontekstual di kehidupan nyata. Salah satu pemanfaatannya yang paling umum adalah untuk mengukur tinggi suatu objek, seperti pohon, gedung, atau menara, serta menghitung jarak antardua titik yang sulit dijangkau secara langsung. Dalam memodelkan masalah ini, situasi nyata diabstraksikan ke dalam bentuk sketsa segitiga siku-siku. Dua konsep sudut yang sangat krusial dalam aplikasi ini adalah sudut elevasi dan sudut depresi. Sudut elevasi adalah sudut yang dibentuk oleh arah pandang pengamat ke atas terhadap garis mendatar, sedangkan sudut depresi adalah sudut pandang pengamat ke bawah terhadap garis mendatar. Dengan mengetahui jarak horizontal pengamat ke objek dan besar sudut elevasi, kita dapat mengaplikasikan perbandingan tangen untuk menentukan tinggi objek tersebut secara komprehensif setelah ditambahkan dengan tinggi pengamat.\n\n[ATP_ALIGNMENT]\nMenyelesaikan masalah kontekstual (tinggi objek/jarak) menggunakan perbandingan trigonometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa SMA ingin mengukur tinggi tiang bendera di sekolahnya. Ia berdiri pada jarak 10 meter dari dasar tiang bendera. Dengan menggunakan klinometer, ia mengukur sudut elevasi dari matanya ke puncak tiang bendera sebesar 30 derajat. Tinggi mata siswa tersebut dari tanah adalah 1,5 meter.",
+      "question": "Berdasarkan informasi tersebut, bagaimana cara menghitung tinggi total tiang bendera menggunakan konsep tangen?",
+      "rubric_points": [
+        "Mengidentifikasi jarak horizontal antara siswa dan tiang bendera.",
+        "Menentukan sudut elevasi yang digunakan dalam perhitungan.",
+        "Menjelaskan penggunaan fungsi tangen untuk mencari tinggi tiang bendera di atas ketinggian mata siswa."
+      ],
+      "explanation": "**Perhitungan Tinggi Tiang Bendera**\\nUntuk menghitung tinggi tiang bendera, kita perlu menggunakan perbandingan trigonometri tangen.\\n1. Identifikasi jarak horizontal (samping) dari siswa ke tiang bendera, yaitu 10 meter.\\n2. Identifikasi sudut elevasi, yaitu 30 derajat.\\n3. Gunakan rumus tangen: \\\\tan(\\text{sudut}) = \\\\frac{\\text{tinggi di depan}}{\\text{jarak samping}}.\\n4. Hitung tinggi tiang bendera di atas ketinggian mata siswa: \\\\tan(30^\\circ) = \\\\frac{\\text{tinggi}}{\\\\text{10 m}}.\\n   Tinggi = 10 \\\\times \\\\tan(30^\\circ) = 10 \\\\times \\\\frac{1}{\\\\sqrt{3}} \\\\text{ meter}.\\n5. Tambahkan tinggi mata siswa ke hasil perhitungan untuk mendapatkan tinggi total tiang bendera: Tinggi Total = (10 \\\\times \\\\frac{1}{\\\\sqrt{3}}) + 1.5 \\\\text{ meter}.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pengamat berdiri di tepi pantai dan melihat sebuah perahu nelayan di laut. Jarak horizontal dari pengamat ke perahu adalah 50 meter. Pengamat mengukur sudut depresi dari pandangannya ke perahu sebesar 45 derajat. Tinggi mata pengamat dari permukaan laut adalah 2 meter.",
+      "question": "Jelaskan langkah-langkah menggunakan perbandingan trigonometri untuk menentukan jarak vertikal dari mata pengamat ke permukaan laut tempat perahu berada.",
+      "rubric_points": [
+        "Mengidentifikasi jarak horizontal antara pengamat dan perahu.",
+        "Menentukan besar sudut depresi.",
+        "Menjelaskan hubungan antara sudut depresi, jarak horizontal, dan tinggi vertikal menggunakan tangen."
+      ],
+      "explanation": "**Menentukan Jarak Vertikal Menggunakan Sudut Depresi**\\nSudut depresi sama besar dengan sudut elevasi dari perahu ke pengamat. Oleh karena itu, kita dapat menggunakan konsep yang sama.\\n1. Jarak horizontal ke perahu adalah 50 meter.\\n2. Sudut depresi adalah 45 derajat, yang berarti sudut elevasi dari perahu ke pengamat juga 45 derajat.\\n3. Gunakan rumus tangen: \\\\tan(\\text{sudut}) = \\\\frac{\\text{tinggi di depan}}{\\text{jarak samping}}.\\n4. Hitung tinggi vertikal dari permukaan laut ke mata pengamat: \\\\tan(45^\\circ) = \\\\frac{\\text{tinggi}}{\\\\text{50 m}}.\\n   Tinggi = 50 \\\\times \\\\tan(45^\\circ) = 50 \\\\times 1 \\\\text{ meter} = 50 \\\\text{ meter}.\\n5. Tinggi ini adalah jarak vertikal dari permukaan laut ke mata pengamat. Jika ditanya jarak dari permukaan laut ke perahu, maka jawabannya adalah 50 meter dikurangi tinggi mata pengamat (jika perahu berada di bawah garis pandang horizontal pengamat). Namun, dalam konteks ini, tinggi yang dihitung adalah jarak vertikal dari permukaan laut ke mata pengamat.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pendaki mengamati puncak gunung dari sebuah pos pengamatan. Jarak horizontal dari pos pengamatan ke puncak gunung adalah 1200 meter. Pendaki tersebut mengukur sudut elevasi dari pos pengamatan ke puncak gunung sebesar 30 derajat. Tinggi pos pengamatan dari permukaan laut adalah 800 meter.",
+      "question": "Bagaimana cara menghitung perkiraan tinggi puncak gunung tersebut menggunakan perbandingan trigonometri tangen?",
+      "rubric_points": [
+        "Mengidentifikasi jarak horizontal antara pos pengamatan dan puncak gunung.",
+        "Menentukan sudut elevasi yang diukur.",
+        "Menjelaskan bagaimana tangen digunakan untuk mencari ketinggian puncak gunung di atas pos pengamatan."
+      ],
+      "explanation": "**Menghitung Tinggi Puncak Gunung**\\nPerhitungan tinggi puncak gunung melibatkan penggunaan fungsi tangen.\\n1. Jarak horizontal dari pos pengamatan ke puncak gunung adalah 1200 meter.\\n2. Sudut elevasi yang diukur adalah 30 derajat.\\n3. Gunakan rumus tangen: \\\\tan(\\text{sudut}) = \\\\frac{\\text{tinggi di depan}}{\\text{jarak samping}}.\\n4. Hitung ketinggian puncak gunung di atas pos pengamatan: \\\\tan(30^\\circ) = \\\\frac{\\text{ketinggian}}{\\\\text{1200 m}}.\\n   Ketinggian = 1200 \\\\times \\\\tan(30^\\circ) = 1200 \\\\times \\\\frac{1}{\\\\sqrt{3}} \\\\text{ meter}.\\n5. Tambahkan ketinggian pos pengamatan untuk mendapatkan tinggi total puncak gunung: Tinggi Total = (1200 \\\\times \\\\frac{1}{\\\\sqrt{3}}) + 800 \\\\text{ meter}.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang surveyor sedang mengukur lebar sebuah sungai. Ia berdiri di satu tepi sungai dan menandai sebuah titik A. Di seberang sungai, ia menandai titik B. Ia kemudian berjalan 20 meter menyusuri tepi sungai ke titik C, membentuk sudut siku-siku dengan garis AB. Dari titik C, ia mengukur sudut elevasi ke titik B sebesar 45 derajat.",
+      "question": "Jelaskan bagaimana surveyor dapat menggunakan perbandingan trigonometri untuk menentukan lebar sungai (jarak AB).",
+      "rubric_points": [
+        "Mengidentifikasi jarak yang ditempuh surveyor (AC).",
+        "Menentukan sudut yang diukur dari titik C.",
+        "Menjelaskan penggunaan tangen untuk mencari lebar sungai (AB)."
+      ],
+      "explanation": "**Menentukan Lebar Sungai**\\nUntuk menentukan lebar sungai, surveyor menggunakan perbandingan tangen.\\n1. Jarak yang ditempuh surveyor dari titik A ke C adalah 20 meter.\\n2. Sudut yang diukur dari titik C ke titik B adalah 45 derajat.\\n3. Dalam segitiga siku-siku ABC, AC adalah sisi samping dan AB adalah sisi depan terhadap sudut C.\\n4. Gunakan rumus tangen: \\\\tan(\\text{sudut C}) = \\\\frac{\\text{sisi depan (AB)}}{\\text{sisi samping (AC)}}.\\n5. Substitusikan nilai yang diketahui: \\\\tan(45^\\circ) = \\\\frac{\\\\text{Lebar Sungai}}{\\\\text{20 m}}.\\n6. Hitung lebar sungai: Lebar Sungai = 20 \\\\times \\\\tan(45^\\circ) = 20 \\\\times 1 \\\\text{ meter} = 20 \\\\text{ meter}.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah menara telekomunikasi memiliki tinggi 30 meter. Seorang teknisi berdiri pada jarak tertentu dari dasar menara. Ia mengukur sudut elevasi ke puncak menara sebesar 60 derajat. Tinggi mata teknisi tersebut dari tanah adalah 1,6 meter.",
+      "question": "Bagaimana cara menghitung jarak horizontal teknisi dari dasar menara menggunakan perbandingan trigonometri tangen?",
+      "rubric_points": [
+        "Menentukan tinggi menara yang relevan untuk perhitungan (tinggi menara dikurangi tinggi mata teknisi).",
+        "Mengidentifikasi sudut elevasi yang diukur.",
+        "Menjelaskan penggunaan tangen untuk mencari jarak horizontal."
+      ],
+      "explanation": "**Menghitung Jarak Horizontal Teknisi**\\nUntuk mencari jarak horizontal, kita perlu mengatur ulang rumus tangen.\\n1. Tinggi menara yang relevan untuk perhitungan adalah tinggi total menara dikurangi tinggi mata teknisi: 30 m - 1.6 m = 28.4 meter.\\n2. Sudut elevasi yang diukur adalah 60 derajat.\\n3. Gunakan rumus tangen: \\\\tan(\\text{sudut}) = \\\\frac{\\text{tinggi di depan}}{\\text{jarak samping}}.\\n4. Dalam kasus ini, tinggi di depan adalah 28.4 meter dan jarak samping adalah jarak horizontal yang dicari.\\n5. Atur ulang rumus untuk mencari jarak samping: Jarak Samping = \\\\frac{\\text{tinggi di depan}}{\\\\text{tan(sudut)}}.\\n6. Hitung jarak horizontal: Jarak Horizontal = \\\\frac{28.4 \\\\text{ m}}{\\\\text{tan(60^\\circ)}} = \\\\frac{28.4}{\\\\sqrt{3}} \\\\text{ meter}.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "d9de564c-7f24-4e0c-b723-321d34a47596",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T09:31:19Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Perbandingan Trigonometri",
+    "sub_bab": "Pemanfaatan Perbandingan Trigonometri",
+    "task_type": "essay",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyelesaikan masalah kontekstual (tinggi objek/jarak) menggunakan perbandingan trigonometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1279,
+      "assistant": 2407,
+      "total": 4360,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

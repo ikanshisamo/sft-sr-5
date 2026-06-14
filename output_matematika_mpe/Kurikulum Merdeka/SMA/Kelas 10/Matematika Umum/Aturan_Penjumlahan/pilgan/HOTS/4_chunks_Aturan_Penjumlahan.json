@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: HOTS\n\n--- MATERI ---\nDalam mempelajari teori peluang, sering kali kita ingin mengetahui kemungkinan terjadinya suatu kejadian A atau kejadian B. Di dalam matematika, kata 'atau' memiliki makna 'salah satu atau kedua-duanya'. Sebagai contoh, peluang seorang siswa pergi ke sekolah menggunakan sepeda atau motor mencakup kemungkinan siswa tersebut hanya menggunakan sepeda, hanya menggunakan motor, atau bisa menggunakan keduanya di kesempatan berbeda. Untuk menghitung peluang gabungan dari kejadian semacam ini, kita menggunakan sebuah prinsip yang dinamakan aturan penjumlahan. Namun, sebelum menjumlahkan nilainya, kita harus menentukan apakah kedua kejadian tersebut bersifat saling lepas atau tidak saling lepas.\n\nDua buah kejadian dikatakan sebagai kejadian saling lepas (atau disjoint) apabila sangat tidak mungkin bagi kedua kejadian tersebut untuk terjadi secara bersamaan pada satu hasil percobaan yang sama. Sebagai contoh, pada pelemparan sepasang dadu, kejadian mendapatkan jumlah kedua mata dadu 7 dan kejadian mendapatkan angka dadu yang kembar adalah contoh dua kejadian yang saling lepas. Hal ini dikarenakan tidak ada satupun kombinasi dadu kembar yang jika dijumlahkan akan menghasilkan angka 7. Untuk menentukan peluang kejadian saling lepas, kita dapat menjumlahkan peluang masing-masing secara langsung, yang dirumuskan secara matematis dengan P(A atau B) = P(A) + P(B).\n\nBerbeda halnya dengan kejadian tidak saling lepas, di mana dua kejadian memiliki irisan dan masih mungkin untuk terjadi secara bersamaan pada satu hasil percobaan yang sama. Contoh nyatanya dapat diamati pada pelemparan dua buah dadu, antara kejadian mendapatkan jumlah mata dadu 8 dan kejadian mendapatkan angka dadu kembar. Kedua kejadian ini dinyatakan tidak saling lepas karena terdapat kemungkinan muncul hasil dadu kembar yang sekaligus berjumlah 8, yaitu ketika kedua mata dadu sama-sama menunjukkan angka 4. Karena terdapat hasil kejadian yang beririsan dan dapat terjadi pada waktu yang sama, perhitungan aturan penjumlahan pada kasus ini harus dimodifikasi.\n\nPada perhitungan kejadian tidak saling lepas, apabila kita sekadar menjumlahkan peluang kejadian A dan kejadian B, maka peluang irisan dari kedua kejadian tersebut akan terhitung dua kali. Hal ini dapat dilihat dengan jelas melalui alat bantu visual berupa diagram Venn, di mana area irisan yang tumpang tindih harus dikurangkan agar perhitungannya akurat. Oleh karena itu, secara matematis aturan penjumlahan untuk kejadian tidak saling lepas dituliskan dengan mengurangi total peluang awal dengan peluang irisannya. Formula ini dirumuskan sebagai P(A atau B) = P(A) + P(B) - P(A dan B). Pemahaman terhadap kedua formula penjumlahan ini sangat penting untuk mencegah kesalahan perhitungan.\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"\n\n[INSTRUKSI KHUSUS]\nResponse WAJIB lebih ringkas dan padat. Batasi total panjang output. Prioritaskan kualitas substansi di atas kuantitas kata.",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memproduksi dua varian rasa: balado dan keju. Dari 100 bungkus yang diproduksi hari ini, 60 bungkus adalah rasa balado, 50 bungkus adalah rasa keju, dan 20 bungkus memiliki kedua rasa tersebut (campuran).",
+      "question": "Manajer produksi ingin mengetahui strategi terbaik untuk meningkatkan penjualan bulan depan. Jika ia memutuskan untuk fokus pada varian rasa yang paling diminati, strategi mana yang paling masuk akal berdasarkan data produksi hari ini?",
+      "options": {
+        "A": "Memproduksi lebih banyak rasa keju karena jumlahnya lebih sedikit dari balado, menandakan permintaan tinggi.",
+        "B": "Memproduksi lebih banyak rasa balado karena secara total lebih banyak diproduksi, menunjukkan popularitas yang lebih luas.",
+        "C": "Memproduksi lebih banyak varian rasa balado dan keju secara terpisah, serta mengurangi varian campuran untuk efisiensi.",
+        "D": "Menganalisis data penjualan aktual, bukan hanya produksi, untuk menentukan rasa mana yang paling laku.",
+        "E": "Memproduksi jumlah yang sama untuk kedua rasa, karena data produksi tidak cukup untuk menentukan preferensi pelanggan."
+      },
+      "answer": "D",
+      "explanation": "**Analisis Strategi Penjualan**\\nKeputusan strategis harus didasarkan pada data penjualan aktual, bukan hanya data produksi. Data produksi menunjukkan jumlah yang dibuat, bukan berapa banyak yang terjual atau diminati pelanggan. Oleh karena itu, menganalisis data penjualan adalah langkah paling masuk akal untuk menentukan strategi peningkatan penjualan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani memiliki dua jenis pupuk: pupuk organik (PO) dan pupuk kimia (PK). Ia berencana menggunakan salah satunya untuk tanaman padi. Peluang tanaman padi tumbuh subur jika diberi PO adalah 0.7. Peluang tumbuh subur jika diberi PK adalah 0.8. Peluang tanaman tumbuh subur jika diberi kedua jenis pupuk (meskipun tidak disarankan) adalah 0.9.",
+      "question": "Petani tersebut ingin memaksimalkan peluang tanaman padinya tumbuh subur. Jika ia hanya boleh memilih satu jenis pupuk, keputusan mana yang paling rasional berdasarkan data peluang yang ada?",
+      "options": {
+        "A": "Memilih pupuk organik karena lebih ramah lingkungan, meskipun peluang suburnya lebih rendah.",
+        "B": "Memilih pupuk kimia karena memiliki peluang tumbuh subur yang lebih tinggi.",
+        "C": "Mencoba kedua pupuk untuk mendapatkan peluang subur tertinggi, meskipun berisiko.",
+        "D": "Menggunakan pupuk organik dan kimia secara bergantian untuk menyeimbangkan risiko dan manfaat.",
+        "E": "Menolak menggunakan pupuk sama sekali karena ada risiko tanaman tidak tumbuh subur."
+      },
+      "answer": "B",
+      "explanation": "**Evaluasi Pilihan Pupuk**\\nUntuk memaksimalkan peluang tanaman tumbuh subur dengan hanya memilih satu jenis pupuk, petani harus memilih opsi dengan peluang tertinggi. Pupuk kimia memberikan peluang tumbuh subur 0.8, yang lebih tinggi dibandingkan pupuk organik (0.7). Oleh karena itu, memilih pupuk kimia adalah keputusan yang paling rasional."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah sekolah mengadakan acara pentas seni. Panitia memperkirakan 70% siswa akan menonton pertunjukan musik dan 50% siswa akan menonton pertunjukan tari. Ada juga perkiraan bahwa 30% siswa akan menonton kedua jenis pertunjukan tersebut.",
+      "question": "Jika panitia ingin memastikan ketersediaan kursi yang cukup, bagaimana mereka sebaiknya mengestimasi jumlah total siswa yang akan menonton setidaknya satu pertunjukan?",
+      "options": {
+        "A": "Menjumlahkan persentase penonton musik dan tari (70% + 50%) untuk mendapatkan total 120%.",
+        "B": "Mengasumsikan tidak ada siswa yang menonton keduanya, lalu menjumlahkan 70% dan 50%.",
+        "C": "Menjumlahkan persentase penonton musik dan tari, lalu mengurangi persentase penonton kedua pertunjukan (70% + 50% - 30%).",
+        "D": "Menggunakan persentase penonton terbanyak (70%) sebagai estimasi total.",
+        "E": "Mengurangi persentase penonton kedua pertunjukan dari total siswa (100% - 30%)."
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Peluang Gabungan**\\nKarena ada siswa yang menonton kedua pertunjukan (irisan), kita perlu menggunakan aturan penjumlahan untuk kejadian tidak saling lepas. Formula P(A atau B) = P(A) + P(B) - P(A dan B) digunakan. Dalam kasus ini, 70% + 50% - 30% = 90%. Ini adalah estimasi yang akurat untuk jumlah siswa yang menonton setidaknya satu pertunjukan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah survei terhadap 200 warga desa mengenai preferensi transportasi, ditemukan bahwa 120 orang menggunakan sepeda motor, 80 orang menggunakan angkutan umum, dan 40 orang menggunakan keduanya.",
+      "question": "Seorang pengamat ingin mengevaluasi efektivitas kampanye 'Ayo Naik Angkutan Umum'. Jika ia berfokus pada warga yang hanya menggunakan satu jenis transportasi, bagaimana ia dapat menginterpretasikan data tersebut untuk menilai dampak kampanye?",
+      "options": {
+        "A": "Menyimpulkan bahwa kampanye tidak efektif karena masih banyak yang menggunakan sepeda motor.",
+        "B": "Menghitung jumlah pengguna sepeda motor saja (120) dan membandingkannya dengan pengguna angkutan umum saja (80 - 40 = 40).",
+        "C": "Menghitung jumlah pengguna sepeda motor saja (120 - 40 = 80) dan membandingkannya dengan pengguna angkutan umum saja (80 - 40 = 40).",
+        "D": "Menghitung total pengguna sepeda motor (120) dan angkutan umum (80) lalu menjumlahkannya.",
+        "E": "Menyimpulkan bahwa kampanye berhasil karena 40 orang menggunakan keduanya."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Preferensi Transportasi**\\nUntuk menilai dampak kampanye pada warga yang hanya menggunakan satu jenis transportasi, kita perlu menghitung jumlah pengguna eksklusif. Pengguna sepeda motor saja adalah 120 - 40 = 80 orang. Pengguna angkutan umum saja adalah 80 - 40 = 40 orang. Perbandingan ini memberikan gambaran tentang proporsi pengguna tunggal."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tahu di lingkungan sekolah memproduksi dua jenis produk: tahu goreng dan tahu rebus. Dari 500 unit yang diproduksi, 300 unit adalah tahu goreng, 250 unit adalah tahu rebus, dan 100 unit adalah tahu yang bisa digoreng dan direbus (misalnya, tahu sutra).",
+      "question": "Manajer produksi ingin mengoptimalkan penggunaan bahan baku. Jika ia melihat bahwa tahu sutra (yang bisa digoreng dan direbus) memiliki margin keuntungan yang sama dengan tahu goreng biasa, keputusan mana yang paling strategis?",
+      "options": {
+        "A": "Meningkatkan produksi tahu goreng biasa karena jumlahnya paling banyak.",
+        "B": "Mengurangi produksi tahu sutra karena prosesnya lebih kompleks.",
+        "C": "Mempertahankan produksi tahu sutra pada level saat ini dan fokus pada efisiensi produksi tahu goreng.",
+        "D": "Meningkatkan produksi tahu sutra karena potensi fleksibilitasnya dan margin keuntungan yang sama.",
+        "E": "Mengganti semua produksi tahu sutra dengan tahu goreng untuk menyederhanakan proses."
+      },
+      "answer": "D",
+      "explanation": "**Evaluasi Strategi Produksi**\\nMeskipun tahu sutra memiliki jumlah produksi lebih sedikit, ia memiliki fleksibilitas untuk digoreng atau direbus dan margin keuntungan yang sama dengan tahu goreng biasa. Peningkatan produksi tahu sutra dapat memberikan fleksibilitas lebih dalam memenuhi permintaan pasar tanpa mengorbankan margin keuntungan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah acara bazar makanan, terdapat dua stan minuman: jus buah (J) dan es teh (T). Dari 150 pengunjung yang membeli minuman, 90 membeli jus buah, 70 membeli es teh, dan 30 membeli keduanya.",
+      "question": "Pemilik stan ingin mengevaluasi strategi promosi silang. Jika ia ingin mengetahui berapa banyak pengunjung yang hanya membeli satu jenis minuman, bagaimana ia harus menghitungnya?",
+      "options": {
+        "A": "Menjumlahkan semua pembeli jus buah dan es teh (90 + 70).",
+        "B": "Menghitung pembeli jus buah saja (90) dan pembeli es teh saja (70).",
+        "C": "Menghitung pembeli jus buah saja (90 - 30) dan pembeli es teh saja (70 - 30), lalu menjumlahkannya.",
+        "D": "Mengurangi jumlah pembeli keduanya dari total pengunjung (150 - 30).",
+        "E": "Menggunakan jumlah pembeli terbanyak (90)."
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Pembeli Tunggal**\\nUntuk mengetahui jumlah pengunjung yang hanya membeli satu jenis minuman, kita perlu menghitung pembeli eksklusif. Pembeli jus buah saja adalah 90 - 30 = 60. Pembeli es teh saja adalah 70 - 30 = 40. Total pengunjung yang hanya membeli satu jenis minuman adalah 60 + 40 = 100."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah koperasi sekolah menjual dua jenis alat tulis: buku catatan (B) dan pulpen (P). Dari 100 siswa yang membeli, 60 membeli buku catatan, 50 membeli pulpen, dan 20 membeli keduanya.",
+      "question": "Manajer koperasi ingin menganalisis pola pembelian untuk menentukan stok bulan depan. Jika ia melihat bahwa siswa yang membeli keduanya cenderung membeli lebih banyak barang secara total, strategi mana yang paling tepat untuk meningkatkan pendapatan?",
+      "options": {
+        "A": "Fokus pada stok buku catatan karena jumlah pembelinya paling banyak.",
+        "B": "Fokus pada stok pulpen karena lebih sering dibeli bersamaan.",
+        "C": "Menawarkan paket bundling buku catatan dan pulpen dengan diskon kecil.",
+        "D": "Menambah variasi buku catatan dan pulpen tanpa strategi bundling.",
+        "E": "Mengurangi stok pulpen karena lebih sedikit dibeli secara tunggal."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Peningkatan Pendapatan**\\nKarena siswa yang membeli keduanya cenderung membeli lebih banyak, strategi bundling buku catatan dan pulpen dapat mendorong pembelian gabungan. Ini memanfaatkan pola yang ada untuk meningkatkan total pembelian per siswa, yang berpotensi meningkatkan pendapatan koperasi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah desa wisata memiliki dua atraksi utama: arung jeram (A) dan trekking gunung (T). Dari 500 wisatawan yang berkunjung, 300 mengikuti arung jeram, 250 mengikuti trekking, dan 100 mengikuti keduanya.",
+      "question": "Pengelola desa wisata ingin meningkatkan kepuasan wisatawan. Jika mereka berencana mengembangkan paket wisata gabungan, bagaimana mereka harus menginterpretasikan data ini untuk mengidentifikasi peluang?",
+      "options": {
+        "A": "Menyimpulkan bahwa arung jeram lebih populer karena jumlah pesertanya lebih banyak.",
+        "B": "Menghitung jumlah wisatawan yang hanya mengikuti arung jeram (300 - 100 = 200) dan trekking saja (250 - 100 = 150).",
+        "C": "Menawarkan paket terpisah untuk arung jeram dan trekking.",
+        "D": "Mengasumsikan bahwa wisatawan yang mengikuti keduanya akan tertarik pada paket gabungan.",
+        "E": "Fokus pada atraksi yang paling sedikit diminati untuk ditingkatkan."
+      },
+      "answer": "D",
+      "explanation": "**Analisis Peluang Paket Wisata**\\nAdanya 100 wisatawan yang mengikuti kedua atraksi menunjukkan minat pada kombinasi aktivitas. Ini adalah indikator kuat bahwa paket wisata gabungan akan menarik bagi segmen wisatawan ini. Pengelola dapat merancang paket yang menggabungkan arung jeram dan trekking untuk meningkatkan pengalaman dan potensi pendapatan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik lokal mengoperasikan dua rute pengiriman utama: Rute Utara (U) dan Rute Selatan (S). Dari 100 pengiriman minggu lalu, 70 pengiriman melalui Rute Utara, 60 pengiriman melalui Rute Selatan, dan 40 pengiriman melalui kedua rute tersebut.",
+      "question": "Manajer operasional ingin mengurangi biaya operasional. Jika ia melihat bahwa Rute Selatan memiliki biaya per kilometer yang lebih tinggi tetapi lebih cepat, keputusan mana yang paling bijaksana untuk efisiensi jangka panjang?",
+      "options": {
+        "A": "Menghentikan penggunaan Rute Selatan sama sekali untuk menghemat biaya.",
+        "B": "Meningkatkan frekuensi pengiriman melalui Rute Utara karena lebih murah.",
+        "C": "Menganalisis total waktu tempuh dan biaya untuk setiap rute, termasuk pengiriman yang melalui kedua rute.",
+        "D": "Menambah jumlah pengiriman melalui Rute Selatan untuk memanfaatkan kecepatannya.",
+        "E": "Menggunakan Rute Utara untuk semua pengiriman untuk konsistensi."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Efisiensi Operasional**\\nKeputusan efisiensi jangka panjang memerlukan analisis menyeluruh. Perlu dihitung total biaya dan waktu tempuh untuk setiap skenario: hanya Rute Utara, hanya Rute Selatan, dan kombinasi keduanya. Membandingkan metrik ini akan memberikan dasar yang kuat untuk menentukan strategi optimal, bukan hanya berdasarkan biaya atau kecepatan saja."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah survei terhadap 100 pelanggan warung makan, 60 pelanggan memesan nasi goreng (N) dan 50 pelanggan memesan mie ayam (M). Sebanyak 30 pelanggan memesan keduanya.",
+      "question": "Pemilik warung ingin meningkatkan kepuasan pelanggan. Jika ia berencana menawarkan menu paket hemat, bagaimana ia dapat menggunakan data ini untuk mengidentifikasi pelanggan yang paling mungkin tertarik pada paket tersebut?",
+      "options": {
+        "A": "Menawarkan paket nasi goreng saja karena paling banyak dipesan.",
+        "B": "Menawarkan paket mie ayam saja karena lebih sedikit dipesan, sehingga menarik bagi yang belum mencoba.",
+        "C": "Menawarkan paket yang menggabungkan nasi goreng dan mie ayam dengan harga diskon.",
+        "D": "Menghitung jumlah pelanggan yang hanya memesan nasi goreng (60-30=30) dan hanya mie ayam (50-30=20) lalu menawarkan paket terpisah.",
+        "E": "Mengasumsikan semua pelanggan akan tertarik pada paket apa pun."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Paket Hemat**\\nAdanya 30 pelanggan yang memesan nasi goreng dan mie ayam menunjukkan adanya minat pada kombinasi kedua menu tersebut. Menawarkan paket yang menggabungkan kedua item dengan harga diskon kemungkinan besar akan menarik bagi segmen pelanggan ini, karena mereka sudah menunjukkan preferensi untuk keduanya."
+    }
+  ],
+  "metadata": {
+    "id": "4b30a8b2-faa2-4923-8c23-db93bdbca948",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:11:10Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_4_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2863,
+      "assistant": 4242,
+      "total": 7779,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

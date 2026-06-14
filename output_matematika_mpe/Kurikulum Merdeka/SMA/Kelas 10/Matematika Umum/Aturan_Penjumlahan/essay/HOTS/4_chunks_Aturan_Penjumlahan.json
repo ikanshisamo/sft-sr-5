@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\",\n      \"expected_reasoning\": [\n        \"multi-step reasoning\",\n        \"contextual interpretation\",\n        \"tradeoff analysis\",\n        \"strategic judgment\",\n        \"real-world implication analysis\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: HOTS\n\n--- MATERI ---\nDalam mempelajari teori peluang, sering kali kita ingin mengetahui kemungkinan terjadinya suatu kejadian A atau kejadian B. Di dalam matematika, kata 'atau' memiliki makna 'salah satu atau kedua-duanya'. Sebagai contoh, peluang seorang siswa pergi ke sekolah menggunakan sepeda atau motor mencakup kemungkinan siswa tersebut hanya menggunakan sepeda, hanya menggunakan motor, atau bisa menggunakan keduanya di kesempatan berbeda. Untuk menghitung peluang gabungan dari kejadian semacam ini, kita menggunakan sebuah prinsip yang dinamakan aturan penjumlahan. Namun, sebelum menjumlahkan nilainya, kita harus menentukan apakah kedua kejadian tersebut bersifat saling lepas atau tidak saling lepas.\n\nDua buah kejadian dikatakan sebagai kejadian saling lepas (atau disjoint) apabila sangat tidak mungkin bagi kedua kejadian tersebut untuk terjadi secara bersamaan pada satu hasil percobaan yang sama. Sebagai contoh, pada pelemparan sepasang dadu, kejadian mendapatkan jumlah kedua mata dadu 7 dan kejadian mendapatkan angka dadu yang kembar adalah contoh dua kejadian yang saling lepas. Hal ini dikarenakan tidak ada satupun kombinasi dadu kembar yang jika dijumlahkan akan menghasilkan angka 7. Untuk menentukan peluang kejadian saling lepas, kita dapat menjumlahkan peluang masing-masing secara langsung, yang dirumuskan secara matematis dengan P(A atau B) = P(A) + P(B).\n\nBerbeda halnya dengan kejadian tidak saling lepas, di mana dua kejadian memiliki irisan dan masih mungkin untuk terjadi secara bersamaan pada satu hasil percobaan yang sama. Contoh nyatanya dapat diamati pada pelemparan dua buah dadu, antara kejadian mendapatkan jumlah mata dadu 8 dan kejadian mendapatkan angka dadu kembar. Kedua kejadian ini dinyatakan tidak saling lepas karena terdapat kemungkinan muncul hasil dadu kembar yang sekaligus berjumlah 8, yaitu ketika kedua mata dadu sama-sama menunjukkan angka 4. Karena terdapat hasil kejadian yang beririsan dan dapat terjadi pada waktu yang sama, perhitungan aturan penjumlahan pada kasus ini harus dimodifikasi.\n\nPada perhitungan kejadian tidak saling lepas, apabila kita sekadar menjumlahkan peluang kejadian A dan kejadian B, maka peluang irisan dari kedua kejadian tersebut akan terhitung dua kali. Hal ini dapat dilihat dengan jelas melalui alat bantu visual berupa diagram Venn, di mana area irisan yang tumpang tindih harus dikurangkan agar perhitungannya akurat. Oleh karena itu, secara matematis aturan penjumlahan untuk kejadian tidak saling lepas dituliskan dengan mengurangi total peluang awal dengan peluang irisannya. Formula ini dirumuskan sebagai P(A atau B) = P(A) + P(B) - P(A dan B). Pemahaman terhadap kedua formula penjumlahan ini sangat penting untuk mencegah kesalahan perhitungan.\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa SMA di Surabaya ingin mengikuti dua kegiatan ekstrakurikuler: Palang Merah Remaja (PMR) dan Pramuka. Berdasarkan data tahun sebelumnya, peluang siswa yang mendaftar PMR adalah 0.6, dan peluang siswa yang mendaftar Pramuka adalah 0.5. Diketahui juga bahwa peluang siswa mendaftar kedua kegiatan tersebut adalah 0.3. Jika siswa tersebut hanya boleh memilih satu kegiatan, bagaimana strategi terbaiknya?",
+      "question": "Berdasarkan skenario tersebut, analisis strategi paling efektif bagi siswa untuk memilih hanya satu kegiatan ekstrakurikuler dengan mempertimbangkan peluang yang ada.",
+      "rubric_points": [
+        "Mengidentifikasi kejadian saling lepas dan tidak saling lepas dalam konteks.",
+        "Menghitung peluang siswa memilih PMR saja atau Pramuka saja.",
+        "Menganalisis konsekuensi dari memilih salah satu kegiatan berdasarkan peluang yang dihitung."
+      ],
+      "explanation": "**Analisis Strategi Pemilihan Ekstrakurikuler**\\n\\nKejadian mendaftar PMR dan mendaftar Pramuka adalah kejadian tidak saling lepas karena ada irisan (siswa mendaftar keduanya).\\n\\nDiketahui:\\nP(PMR) = 0.6\\nP(Pramuka) = 0.5\\nP(PMR dan Pramuka) = 0.3\\n\\nUntuk mencari peluang siswa hanya memilih PMR:\\nP(PMR saja) = P(PMR) - P(PMR dan Pramuka)\\nP(PMR saja) = 0.6 - 0.3 = 0.3\\n\\nUntuk mencari peluang siswa hanya memilih Pramuka:\\nP(Pramuka saja) = P(Pramuka) - P(PMR dan Pramuka)\\nP(Pramuka saja) = 0.5 - 0.3 = 0.2\\n\\nStrategi paling efektif adalah memilih kegiatan dengan peluang 'saja' yang lebih tinggi, yaitu PMR (0.3) dibandingkan Pramuka (0.2).\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong di Malang memproduksi dua varian rasa: balado dan keju. Dari data penjualan bulanan, 40% pembeli menyukai rasa balado, 35% menyukai rasa keju, dan 15% menyukai kedua rasa tersebut. UMKM ini berencana meluncurkan promosi 'Beli satu gratis satu' untuk salah satu rasa. Keputusan ini harus didasarkan pada analisis peluang.",
+      "question": "Evaluasi strategi promosi mana yang lebih menguntungkan bagi UMKM, promosi rasa balado atau rasa keju, dengan mempertimbangkan preferensi konsumen yang ada.",
+      "rubric_points": [
+        "Menentukan apakah kejadian menyukai rasa balado dan keju saling lepas atau tidak.",
+        "Menghitung peluang pembeli hanya menyukai rasa balado atau hanya menyukai rasa keju.",
+        "Menganalisis dampak potensial dari setiap strategi promosi berdasarkan peluang yang dihitung."
+      ],
+      "explanation": "**Analisis Dampak Promosi UMKM**\\n\\nKejadian menyukai rasa balado dan menyukai rasa keju adalah tidak saling lepas karena ada irisan (menyukai keduanya).\\n\\nDiketahui:\\nP(Balado) = 0.40\\nP(Keju) = 0.35\\nP(Balado dan Keju) = 0.15\\n\\nPeluang pembeli hanya menyukai Balado:\\nP(Balado saja) = P(Balado) - P(Balado dan Keju)\\nP(Balado saja) = 0.40 - 0.15 = 0.25\\n\\nPeluang pembeli hanya menyukai Keju:\\nP(Keju saja) = P(Keju) - P(Balado dan Keju)\\nP(Keju saja) = 0.35 - 0.15 = 0.20\\n\\nStrategi promosi yang lebih menguntungkan adalah menargetkan rasa yang memiliki peluang 'saja' lebih tinggi, yaitu Balado (0.25), karena ini menunjukkan basis pelanggan yang lebih besar yang tidak terpengaruh oleh rasa lain.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah acara pentas seni di SMA Negeri 1 Yogyakarta, terdapat dua jenis pertunjukan yang diminati penonton: musik akustik dan tari tradisional. Peluang penonton menyukai musik akustik adalah 70%, dan peluang menyukai tari tradisional adalah 50%. Jika 30% penonton menyukai kedua jenis pertunjukan tersebut, bagaimana sebaiknya panitia mengalokasikan tempat duduk untuk memaksimalkan kepuasan penonton?",
+      "question": "Berdasarkan data preferensi penonton, analisis alokasi tempat duduk yang paling strategis untuk kedua jenis pertunjukan guna meningkatkan kepuasan penonton secara keseluruhan.",
+      "rubric_points": [
+        "Mengidentifikasi sifat kejadian menyukai musik dan tari (saling lepas/tidak).",
+        "Menghitung proporsi penonton yang hanya menyukai musik atau hanya menyukai tari.",
+        "Mengevaluasi implikasi dari proporsi tersebut terhadap strategi penempatan tempat duduk."
+      ],
+      "explanation": "**Analisis Strategi Alokasi Tempat Duduk**\\n\\nKejadian menyukai musik akustik dan tari tradisional adalah tidak saling lepas karena ada irisan (menyukai keduanya).\\n\\nDiketahui:\\nP(Musik) = 0.70\\nP(Tari) = 0.50\\nP(Musik dan Tari) = 0.30\\n\\nPeluang penonton hanya menyukai Musik:\\nP(Musik saja) = P(Musik) - P(Musik dan Tari)\\nP(Musik saja) = 0.70 - 0.30 = 0.40\\n\\nPeluang penonton hanya menyukai Tari:\\nP(Tari saja) = P(Tari) - P(Musik dan Tari)\\nP(Tari saja) = 0.50 - 0.30 = 0.20\\n\\nAlokasi tempat duduk yang strategis harus mempertimbangkan penonton yang hanya menyukai satu jenis pertunjukan. Dengan 40% penonton hanya menyukai musik dan 20% hanya menyukai tari, panitia dapat memprioritaskan area yang lebih luas atau lebih dekat untuk pertunjukan musik, sambil tetap menyediakan area yang memadai untuk tari tradisional.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani di Sleman menanam dua jenis tanaman pangan: padi dan jagung. Peluang tanaman padi menghasilkan panen yang baik adalah 0.8, dan peluang tanaman jagung menghasilkan panen yang baik adalah 0.7. Jika peluang kedua tanaman menghasilkan panen yang baik secara bersamaan adalah 0.6, petani tersebut harus memutuskan apakah akan fokus pada satu jenis tanaman atau tetap menanam keduanya untuk memaksimalkan hasil.",
+      "question": "Analisis keputusan terbaik bagi petani tersebut, apakah fokus pada satu jenis tanaman atau tetap menanam keduanya, dengan mempertimbangkan risiko dan potensi hasil panen.",
+      "rubric_points": [
+        "Menentukan apakah kejadian panen baik pada padi dan jagung saling lepas atau tidak.",
+        "Menghitung peluang panen baik hanya pada padi atau hanya pada jagung.",
+        "Mengevaluasi risiko dan potensi hasil dari strategi menanam satu jenis vs. dua jenis tanaman."
+      ],
+      "explanation": "**Analisis Keputusan Bertani**\\n\\nKejadian panen baik pada padi dan jagung adalah tidak saling lepas karena ada irisan (keduanya panen baik).\\n\\nDiketahui:\\nP(Padi Baik) = 0.8\\nP(Jagung Baik) = 0.7\\nP(Padi Baik dan Jagung Baik) = 0.6\\n\\nPeluang hanya Padi yang panen baik:\\nP(Padi Baik saja) = P(Padi Baik) - P(Padi Baik dan Jagung Baik)\\nP(Padi Baik saja) = 0.8 - 0.6 = 0.2\\n\\nPeluang hanya Jagung yang panen baik:\\nP(Jagung Baik saja) = P(Jagung Baik) - P(Padi Baik dan Jagung Baik)\\nP(Jagung Baik saja) = 0.7 - 0.6 = 0.1\\n\\nKeputusan terbaik adalah tetap menanam keduanya. Meskipun peluang hanya padi yang baik adalah 0.2 dan hanya jagung yang baik adalah 0.1, peluang keduanya panen baik (0.6) sangat tinggi. Fokus pada satu tanaman akan menghilangkan potensi keuntungan dari tanaman lain, sementara menanam keduanya memberikan peluang hasil yang lebih stabil dan tinggi secara keseluruhan.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan otobus di Jawa Tengah melayani rute Jakarta-Bandung. Terdapat dua jenis bus yang beroperasi: bus eksekutif dan bus ekonomi. Peluang bus eksekutif tiba tepat waktu adalah 0.9, dan peluang bus ekonomi tiba tepat waktu adalah 0.7. Jika peluang kedua jenis bus tiba tepat waktu secara bersamaan adalah 0.65, bagaimana perusahaan harus mengevaluasi efektivitas operasional kedua jenis bus tersebut?",
+      "question": "Evaluasi strategi operasional perusahaan otobus, apakah perlu meningkatkan frekuensi bus eksekutif atau bus ekonomi, berdasarkan data ketepatan waktu yang ada.",
+      "rubric_points": [
+        "Menentukan sifat kejadian ketepatan waktu bus eksekutif dan ekonomi (saling lepas/tidak).",
+        "Menghitung peluang hanya bus eksekutif yang tepat waktu atau hanya bus ekonomi yang tepat waktu.",
+        "Menganalisis implikasi dari peluang tersebut terhadap keputusan peningkatan frekuensi bus."
+      ],
+      "explanation": "**Analisis Efektivitas Operasional Otobus**\\n\\nKejadian bus eksekutif tepat waktu dan bus ekonomi tepat waktu adalah tidak saling lepas karena ada irisan (keduanya tepat waktu).\\n\\nDiketahui:\\nP(Eksekutif Tepat Waktu) = 0.9\\nP(Ekonomi Tepat Waktu) = 0.7\\nP(Eksekutif dan Ekonomi Tepat Waktu) = 0.65\\n\\nPeluang hanya bus Eksekutif yang tepat waktu:\\nP(Eksekutif Tepat Waktu saja) = P(Eksekutif Tepat Waktu) - P(Eksekutif dan Ekonomi Tepat Waktu)\\nP(Eksekutif Tepat Waktu saja) = 0.9 - 0.65 = 0.25\\n\\nPeluang hanya bus Ekonomi yang tepat waktu:\\nP(Ekonomi Tepat Waktu saja) = P(Ekonomi Tepat Waktu) - P(Eksekutif dan Ekonomi Tepat Waktu)\\nP(Ekonomi Tepat Waktu saja) = 0.7 - 0.65 = 0.05\\n\\nDengan peluang hanya bus eksekutif yang tepat waktu sebesar 0.25 dan hanya bus ekonomi sebesar 0.05, perusahaan sebaiknya mempertimbangkan peningkatan frekuensi bus eksekutif karena kinerjanya secara keseluruhan lebih konsisten dan memiliki peluang ketepatan waktu yang lebih tinggi, bahkan ketika bus ekonomi juga tepat waktu.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "23fcfa54-d723-4c1b-85fe-866b7e1b3cce",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:22:32Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "essay",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_4_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1936,
+      "assistant": 2766,
+      "total": 5376,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

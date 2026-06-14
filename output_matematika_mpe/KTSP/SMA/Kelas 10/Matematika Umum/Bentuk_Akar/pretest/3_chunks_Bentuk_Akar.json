@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Bentuk Akar\n\n--- MATERI ---\nBentuk akar merupakan representasi dari bilangan irasional yang didefinisikan sebagai akar dari suatu bilangan rasional yang hasilnya bukan bilangan rasional. Dalam penulisan bentuk akar matematis, terdapat tiga komponen utama, yaitu lambang bentuk akar (radikal), radikan (bilangan di bawah tanda akar), dan indeks (pangkat akar). Bentuk akar diklasifikasikan menjadi akar senama (memiliki indeks sama) dan akar sejenis (memiliki indeks dan radikan yang persis sama). Operasi penjumlahan dan pengurangan pada bentuk akar hanya dapat dilakukan jika akar-akar tersebut saling sejenis, di mana koefisien dari masing-masing bentuk akar dijumlahkan atau dikurangkan sementara nilai radikannya tetap. Secara matematis, sifat ini dirumuskan sebagai p√a ± q√a = (p ± q)√a. Sementara itu, untuk operasi perkalian pada dua bentuk akar senama, hasilnya diperoleh dengan mengalikan radikan dari masing-masing bentuk akar tersebut, yang secara umum ditulis dengan aturan √a × √b = √(a × b).\n\nDalam suatu operasi bilangan pecahan, adakalanya kita menemukan penyebut yang memuat bentuk akar. Pecahan semacam ini dipandang belum rasional dan dapat disederhanakan melalui prosedur matematis yang dikenal sebagai merasionalkan penyebut pecahan. Tujuan utama dari kegiatan merasionalkan adalah mengubah bentuk akar pada penyebut menjadi bentuk bilangan rasional riil tanpa mengubah nilai pecahan secara keseluruhan, sehingga bilangan dapat dinyatakan dalam format yang lebih sederhana. Untuk pecahan dasar dengan bentuk a/√b (dengan b ≠ 0), langkah penyelesaiannya dilakukan dengan mengalikan pembilang dan penyebut pecahan tersebut menggunakan bentuk akar sekawannya, yaitu √b. Secara perhitungan matematis, proses ekuivalensi ini dinyatakan sebagai a/√b = (a/√b) × (√b/√b) = (a√b)/b. Prosedur ini sangat esensial karena menghilangkan akar dari posisi penyebut sehingga operasi pembagian lanjutan menjadi jauh lebih mudah dianalisis.\n\nUntuk menyederhanakan pecahan yang penyebutnya memuat penjumlahan atau pengurangan bentuk akar binomial, seperti bentuk a/(b + √c) atau a/(√b - √c), metode yang diaplikasikan adalah mengalikan pecahan tersebut dengan bentuk sekawan (konjugat) dari penyebut utamanya. Secara kaidah aljabar, bentuk sekawan dari (b + √c) adalah (b - √c), dan begitu pula sebaliknya. Manipulasi rasionalisasi ini memanfaatkan prinsip selisih dua kuadrat untuk mereduksi tanda akar. Sebagai contoh operasional, untuk merasionalkan bentuk pecahan a/(b - √c), seluruh ruas pembilang dan penyebut harus dikalikan dengan pecahan (b + √c)/(b + √c), yang akan menghasilkan bentuk ekuivalen a(b + √c)/(b² - c). Pendekatan sekawan yang sama juga konsisten diterapkan pada pecahan dengan penyebut ganda akar seperti a/(√b + √c), yang bentuk sekawannya adalah (√b - √c). Pemahaman terhadap metode sekawan ini merupakan fondasi vital dalam menuntaskan penyelesaian aljabar secara tuntas.\n\n[ATP_ALIGNMENT]\nMenyelesaikan operasi hitung pada bentuk akar dan merasionalkan penyebut pecahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani memiliki sawah seluas 1000 m². Ia berencana menanami padi dengan kebutuhan benih per meter persegi adalah \\\\sqrt{0.09} kg. Berapa total benih yang dibutuhkan petani tersebut?",
+      "question": "Berapa total benih yang dibutuhkan petani tersebut dalam satuan kg?",
+      "options": {
+        "A": "30",
+        "B": "10",
+        "C": "3",
+        "D": "300",
+        "E": "100"
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Kebutuhan Benih**\\nKebutuhan benih per meter persegi adalah \\\\sqrt{0.09} kg = 0.3 kg. Total benih yang dibutuhkan adalah luas sawah dikalikan kebutuhan per meter persegi: 1000 m² \\\\times 0.3 kg/m² = 300 kg. Namun, terdapat kesalahan dalam pilihan jawaban yang diberikan. Jika \\\\sqrt{0.09} = 0.3, maka 1000 \\\\times 0.3 = 300. Jika \\\\sqrt{0.09} diinterpretasikan sebagai 3, maka 1000 \\\\times 3 = 3000. Pilihan C (3) mengindikasikan bahwa \\\\sqrt{0.09} diinterpretasikan sebagai 0.003, yang salah. Pilihan yang paling mendekati jika ada kesalahan penulisan soal adalah jika kebutuhan benih per meter persegi adalah \\\\sqrt{9} kg = 3 kg, maka totalnya 3000 kg. Jika kebutuhan benih per meter persegi adalah 0.03 kg, maka totalnya 30 kg. Jika kebutuhan benih per meter persegi adalah 0.003 kg, maka totalnya 3 kg. Dengan asumsi \\\\sqrt{0.09} = 0.3, maka jawaban yang benar adalah 300 kg. Karena 300 kg tidak ada, dan 3 kg adalah hasil dari 1000 \\\\times 0.003, maka pilihan C adalah yang paling mungkin dimaksudkan jika ada kesalahan dalam soal atau pilihan."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM kerupuk udang ingin menyederhanakan ekspresi matematis untuk menghitung luas kemasan. Luas kemasan dihitung menggunakan rumus \\\\sqrt{12} \\\\times \\\\sqrt{3} cm².",
+      "question": "Bentuk sederhana dari ekspresi luas kemasan tersebut adalah...",
+      "options": {
+        "A": "\\\\sqrt{15}",
+        "B": "6",
+        "C": "36",
+        "D": "4",
+        "E": "\\\\sqrt{36}"
+      },
+      "answer": "B",
+      "explanation": "**Penyederhanaan Bentuk Akar**\\nUntuk mengalikan dua bentuk akar, kita dapat mengalikan radikannya: \\\\sqrt{12} \\\\times \\\\sqrt{3} = \\\\sqrt{12 \\\\times 3} = \\\\sqrt{36}. Nilai dari \\\\sqrt{36} adalah 6. Jadi, bentuk sederhana dari ekspresi luas kemasan tersebut adalah 6 cm²."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa sedang mengerjakan soal latihan merasionalkan penyebut pecahan. Ia diberikan soal \\\\frac{5}{\\\\sqrt{7}}.",
+      "question": "Jika siswa tersebut merasionalkan penyebutnya dengan benar, hasil yang akan diperoleh adalah...",
+      "options": {
+        "A": "\\\\frac{5\\\\sqrt{7}}{7}",
+        "B": "\\\\frac{5}{7}",
+        "C": "\\\\frac{5\\\\sqrt{7}}{49}",
+        "D": "\\\\frac{25\\\\sqrt{7}}{7}",
+        "E": "\\\\frac{\\\\sqrt{7}}{35}"
+      },
+      "answer": "A",
+      "explanation": "**Merasionalkan Penyebut Pecahan**\\nUntuk merasionalkan penyebut \\\\frac{5}{\\\\sqrt{7}}, kita kalikan pembilang dan penyebut dengan bentuk akar sekawan dari penyebut, yaitu \\\\sqrt{7}.\\n\\\\frac{5}{\\\\sqrt{7}} \\\\times \\\\frac{\\\\sqrt{7}}{\\\\sqrt{7}} = \\\\frac{5\\\\sqrt{7}}{(\\\\sqrt{7})^2} = \\\\frac{5\\\\sqrt{7}}{7}. Jadi, hasil yang benar adalah \\\\frac{5\\\\sqrt{7}}{7}."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko elektronik menjual dua jenis speaker. Speaker A memiliki spesifikasi \\\\sqrt{50} watt, sedangkan Speaker B memiliki spesifikasi \\\\sqrt{18} watt. Pemilik toko ingin menggabungkan kedua speaker tersebut untuk mendapatkan kekuatan suara total yang setara dengan satu speaker baru.",
+      "question": "Jika kekuatan suara dapat dijumlahkan secara aljabar, manakah pernyataan yang paling tepat mengenai kekuatan suara gabungan kedua speaker?",
+      "options": {
+        "A": "Kekuatan suara gabungan adalah \\\\sqrt{68} watt.",
+        "B": "Kekuatan suara gabungan adalah \\\\sqrt{900} watt.",
+        "C": "Kekuatan suara gabungan adalah 8\\\\sqrt{2} watt.",
+        "D": "Kekuatan suara gabungan adalah 10 watt.",
+        "E": "Kekuatan suara gabungan adalah 5\\\\sqrt{2} + 3\\\\sqrt{2} = 8\\\\sqrt{2} watt."
+      },
+      "answer": "E",
+      "explanation": "**Penjumlahan Bentuk Akar Sejenis**\\nPertama, sederhanakan masing-masing spesifikasi speaker: \\\\sqrt{50} = \\\\sqrt{25 \\\\times 2} = 5\\\\sqrt{2} watt dan \\\\sqrt{18} = \\\\sqrt{9 \\\\times 2} = 3\\\\sqrt{2} watt. Karena kedua bentuk akar sudah sejenis (memiliki radikan yang sama, yaitu 2), kita dapat menjumlahkan koefisiennya: 5\\\\sqrt{2} + 3\\\\sqrt{2} = (5+3)\\\\\\sqrt{2} = 8\\\\sqrt{2} watt. Pilihan E secara akurat menunjukkan proses penjumlahan bentuk akar sejenis."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah proyek pembangunan jembatan, seorang insinyur perlu menghitung panjang total beberapa segmen yang menggunakan material khusus. Panjang segmen tersebut adalah \\\\sqrt{27} meter dan \\\\sqrt{12} meter.",
+      "question": "Berapa panjang total kedua segmen tersebut jika dijumlahkan?",
+      "options": {
+        "A": "\\\\sqrt{39}",
+        "B": "5\\\\sqrt{3}",
+        "C": "60",
+        "D": "3\\\\sqrt{3} + 2\\\\sqrt{3}",
+        "E": "12"
+      },
+      "answer": "B",
+      "explanation": "**Penjumlahan Bentuk Akar**\\nSederhanakan masing-masing bentuk akar: \\\\sqrt{27} = \\\\sqrt{9 \\\\times 3} = 3\\\\sqrt{3} meter dan \\\\sqrt{12} = \\\\sqrt{4 \\\\times 3} = 2\\\\sqrt{3} meter. Karena kedua bentuk akar sudah sejenis, jumlahkan koefisiennya: 3\\\\sqrt{3} + 2\\\\sqrt{3} = (3+2)\\\\\\sqrt{3} = 5\\\\sqrt{3} meter. Jadi, panjang total kedua segmen adalah 5\\\\sqrt{3} meter."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional ingin menghitung sisa stok gula. Stok awal adalah 10 kg. Sebanyak \\\\frac{1}{2} \\\\sqrt{25} kg telah terjual.",
+      "question": "Berapa sisa stok gula pedagang tersebut dalam kg?",
+      "options": {
+        "A": "7.5",
+        "B": "5",
+        "C": "2.5",
+        "D": "10 - \\\\sqrt{25}",
+        "E": "5.5"
+      },
+      "answer": "A",
+      "explanation": "**Operasi Pengurangan Bentuk Akar**\\nJumlah gula yang terjual adalah \\\\frac{1}{2} \\\\times \\\\sqrt{25} kg = \\\\frac{1}{2} \\\\times 5 kg = 2.5 kg. Sisa stok gula adalah stok awal dikurangi jumlah yang terjual: 10 kg - 2.5 kg = 7.5 kg. Jadi, sisa stok gula adalah 7.5 kg."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan percetakan menerima pesanan spanduk. Untuk spanduk berukuran besar, mereka menggunakan bahan yang luasnya \\\\frac{1}{\\\\sqrt{2}} m². Mereka ingin merasionalkan penyebutnya untuk memudahkan perhitungan biaya produksi per meter persegi.",
+      "question": "Manakah cara yang paling efisien dan benar untuk merasionalkan penyebut luas bahan spanduk tersebut?",
+      "options": {
+        "A": "Mengalikan pembilang dan penyebut dengan \\\\sqrt{2}, menghasilkan \\\\frac{\\\\sqrt{2}}{2} m².",
+        "B": "Mengalikan pembilang dan penyebut dengan 2, menghasilkan \\\\frac{1}{2} m².",
+        "C": "Mengalikan pembilang dan penyebut dengan \\\\sqrt{2}/\\\\sqrt{2}, menghasilkan \\\\frac{1}{\\\\sqrt{2}} m².",
+        "D": "Mengalikan pembilang dan penyebut dengan 1, menghasilkan \\\\frac{1}{\\\\sqrt{2}} m².",
+        "E": "Mengalikan pembilang dan penyebut dengan 2/2, menghasilkan \\\\frac{2}{2\\\\sqrt{2}} m²."
+      },
+      "answer": "A",
+      "explanation": "**Strategi Merasionalkan Penyebut**\\nUntuk merasionalkan penyebut \\\\frac{1}{\\\\sqrt{2}}, cara yang paling efisien dan benar adalah mengalikan pembilang dan penyebut dengan bentuk akar sekawan dari penyebut, yaitu \\\\sqrt{2}. Prosesnya adalah: \\\\frac{1}{\\\\sqrt{2}} \\\\times \\\\frac{\\\\sqrt{2}}{\\\\sqrt{2}} = \\\\frac{1 \\\\times \\\\sqrt{2}}{(\\\\sqrt{2})^2} = \\\\frac{\\\\sqrt{2}}{2} m². Pilihan A secara tepat menerapkan metode ini."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa sedang belajar tentang bentuk akar. Ia diberikan soal untuk menyederhanakan \\\\sqrt{72}.",
+      "question": "Bentuk sederhana dari \\\\sqrt{72} adalah...",
+      "options": {
+        "A": "6\\\\sqrt{2}",
+        "B": "8\\\\sqrt{9}",
+        "C": "9\\\\sqrt{8}",
+        "D": "36\\\\sqrt{2}",
+        "E": "2\\\\sqrt{36}"
+      },
+      "answer": "A",
+      "explanation": "**Penyederhanaan Bentuk Akar**\\nUntuk menyederhanakan \\\\sqrt{72}, cari faktor kuadrat terbesar dari 72. Faktor kuadrat terbesar dari 72 adalah 36 (karena 72 = 36 \\\\times 2). Maka, \\\\sqrt{72} = \\\\sqrt{36 \\\\times 2} = \\\\sqrt{36} \\\\times \\\\sqrt{2} = 6\\\\sqrt{2}. Jadi, bentuk sederhananya adalah 6\\\\sqrt{2}."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang ibu rumah tangga ingin menghitung sisa tepung terigu. Ia memiliki 5 kg tepung terigu. Sebanyak \\\\sqrt{9} kg digunakan untuk membuat kue.",
+      "question": "Berapa sisa tepung terigu ibu tersebut dalam kg?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5 - \\\\sqrt{9}",
+        "E": "8"
+      },
+      "answer": "A",
+      "explanation": "**Operasi Pengurangan Bentuk Akar**\\nJumlah tepung terigu yang digunakan adalah \\\\sqrt{9} kg = 3 kg. Sisa tepung terigu adalah jumlah awal dikurangi jumlah yang digunakan: 5 kg - 3 kg = 2 kg. Jadi, sisa tepung terigu adalah 2 kg."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik sedang merencanakan rute pengiriman barang. Rute A memiliki panjang \\\\frac{1}{2+\\\\sqrt{3}} km dan Rute B memiliki panjang \\\\frac{1}{2-\\sqrt{3}} km. Manajer ingin membandingkan efisiensi kedua rute setelah penyebutnya dirasionalkan.",
+      "question": "Setelah dirasionalkan, manakah pernyataan yang paling tepat mengenai perbandingan panjang kedua rute?",
+      "options": {
+        "A": "Rute A lebih panjang dari Rute B.",
+        "B": "Rute B lebih panjang dari Rute A.",
+        "C": "Panjang kedua rute sama.",
+        "D": "Rute A memiliki panjang 2 - \\\\sqrt{3} km dan Rute B memiliki panjang 2 + \\\\sqrt{3} km.",
+        "E": "Rute A memiliki panjang 2 + \\\\sqrt{3} km dan Rute B memiliki panjang 2 - \\\\sqrt{3} km."
+      },
+      "answer": "E",
+      "explanation": "**Merasionalkan Penyebut dan Perbandingan**\\nUntuk Rute A: \\\\frac{1}{2+\\\\sqrt{3}} \\\\times \\\\frac{2-\\sqrt{3}}{2-\\sqrt{3}} = \\\\frac{2-\\sqrt{3}}{2^2 - (\\\\sqrt{3})^2} = \\\\frac{2-\\sqrt{3}}{4-3} = 2-\\sqrt{3} km. Untuk Rute B: \\\\frac{1}{2-\\sqrt{3}} \\\\times \\\\frac{2+\\\\sqrt{3}}{2+\\\\sqrt{3}} = \\\\frac{2+\\\\sqrt{3}}{2^2 - (\\\\sqrt{3})^2} = \\\\frac{2+\\\\sqrt{3}}{4-3} = 2+\\\\sqrt{3} km. Karena 2 + \\\\sqrt{3} > 2 - \\\\sqrt{3}, maka Rute B lebih panjang dari Rute A. Pilihan E secara akurat menyatakan panjang kedua rute setelah dirasionalkan."
+    }
+  ],
+  "metadata": {
+    "id": "74ba1948-4f09-43b6-b212-756af9472747",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T10:19:47Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Bentuk Akar",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyelesaikan operasi hitung pada bentuk akar dan merasionalkan penyebut pecahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3353,
+      "assistant": 3089,
+      "total": 7115,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,2 @@
+- FOKUS TITIK BUNTU: Arahkan siswa untuk mengurai kembali SATU definisi paling dasar atau langkah operasi spesifik yang keliru. Jangan memaksakan elaborasi lanjutan sebelum kebuntuan pada titik ini terurai.
+- VALIDASI EMPATIK: Akui beban kebingungan siswa secara hangat dan objektif (misal: "Saya paham bahwa membedakan dua prosedur matematis yang memiliki struktur serupa memang membutuhkan ketelitian ekstra").

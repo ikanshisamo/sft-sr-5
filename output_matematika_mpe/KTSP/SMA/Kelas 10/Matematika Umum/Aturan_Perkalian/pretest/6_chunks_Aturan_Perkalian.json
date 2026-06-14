@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Perkalian\n\n--- MATERI ---\nDalam teori peluang, kita seringkali tidak hanya mengamati satu kejadian tunggal, melainkan beberapa kejadian yang terjadi secara bersamaan atau berurutan. Peristiwa semacam ini diklasifikasikan sebagai kejadian majemuk. Salah satu operasi dasar dalam analisis peluang kejadian majemuk adalah irisan dua kejadian, yang secara bahasa umumnya dihubungkan dengan konjungsi 'dan'. Secara matematis, probabilitas terjadinya kejadian A dan kejadian B secara bersamaan atau berturut-turut disimbolkan dengan notasi P(A ∩ B). Untuk dapat menghitung nilai probabilitas dari irisan dua kejadian tersebut, konsep utama yang diaplikasikan adalah aturan perkalian peluang. Namun, sebelum menerapkan aturan perkalian secara langsung, peserta didik harus mampu mengidentifikasi sifat ketergantungan antara kejadian-kejadian yang dikaji, khususnya memastikan apakah dua kejadian tersebut saling bebas atau kejadian bersyarat.\n\nDua buah kejadian dikatakan saling bebas (independent events) apabila kelangsungan atau hasil dari kejadian yang satu sama sekali tidak memengaruhi kemungkinan terjadinya kejadian yang lain. Dengan kata lain, kejadian A dan kejadian B saling bebas jika probabilitas terjadinya kejadian A tidak mengubah probabilitas terjadinya kejadian B, dan begitu pula sebaliknya. Sifat ketidakbergantungan ini merupakan syarat mutlak dalam penerapan aturan perkalian kejadian saling bebas. Sebagai ilustrasi sederhana, pada eksperimen melempar sekeping uang logam dan sebuah dadu bersisi enam secara bersamaan, munculnya sisi angka pada uang logam tidak memiliki korelasi atau pengaruh apapun terhadap probabilitas munculnya mata dadu bernilai lima pada eksperimen tersebut. Karakteristik independensi dari kedua objek yang saling terpisah inilah yang mendasari konsep kejadian saling bebas.\n\nUntuk menghitung peluang dari dua kejadian saling bebas yang terjadi secara bersamaan, teori probabilitas menggunakan teorema yang dikenal sebagai aturan perkalian. Teorema aturan perkalian menyatakan bahwa peluang gabungan irisan dari dua kejadian yang saling bebas merupakan hasil kali dari peluang masing-masing kejadian tunggalnya. Secara formulasi aljabar, jika kejadian A dan kejadian B terbukti saling bebas, maka aturan perkalian probabilitas dinyatakan melalui persamaan P(A ∩ B) = P(A) × P(B). Persamaan matematis ini memberikan kemudahan komputasi karena peserta didik dapat memecah analisis kejadian majemuk yang terlihat rumit menjadi perhitungan peluang kejadian tunggal yang lebih sederhana, kemudian mengalikan rasio dari masing-masing peluang tunggal tersebut untuk mendapatkan probabilitas akhir.\n\nPenerapan aturan perkalian kejadian saling bebas dapat dianalisis secara empiris melalui eksperimen probabilitas pelemparan dua objek yang berbeda secara bersamaan. Misalkan kita melakukan pelemparan sebuah dadu homogen bersisi enam dan sekeping uang logam. Misalkan kejadian A didefinisikan sebagai peristiwa munculnya mata dadu genap, maka peluang P(A) adalah 3/6 atau 1/2. Selanjutnya, kejadian B didefinisikan sebagai peristiwa munculnya sisi gambar pada uang logam, dengan peluang P(B) bernilai 1/2. Karena kedua objek ini secara fisik terpisah dan tidak saling memengaruhi, kejadian A dan B murni saling bebas. Peluang munculnya mata dadu genap pada dadu dan sisi gambar pada uang logam secara bersamaan dikalkulasi dengan mengalikan probabilitas masing-masing, yaitu P(A ∩ B) = (1/2) × (1/2), yang menghasilkan probabilitas gabungan sebesar 1/4.\n\nKonteks permasalahan probabilitas lain yang secara inheren mengandalkan aturan perkalian kejadian saling bebas adalah eksperimen penarikan sampel secara acak dengan metode pengembalian (with replacement). Sebagai contoh, dalam sebuah kantong tertutup terdapat 4 kelereng merah dan 6 kelereng putih. Seseorang mengambil satu kelereng, mencatat warnanya, dan diwajibkan untuk mengembalikan kelereng tersebut ke dalam kantong sebelum pengambilan kedua dilakukan. Karena kelereng dikembalikan, komposisi ruang sampel pada penarikan kedua kembali utuh persis seperti kondisi semula. Tindakan ini menjamin bahwa peluang hasil pada penarikan kedua bebas dari intervensi hasil penarikan pertama. Peluang terambilnya kelereng merah pada pengambilan pertama dan kelereng putih pada pengambilan kedua adalah hasil perkalian probabilitas P(merah) yakni 4/10 dengan probabilitas P(putih) yakni 6/10, menghasilkan komputasi 24/100 atau 6/25.\n\nAturan perkalian P(A ∩ B) = P(A) × P(B) tidak hanya berfungsi sebagai formula komputasi, melainkan juga bertindak sebagai uji analitik pembuktian sifat saling bebas antara dua kejadian matematis. Dalam analisis data statistik tingkat lanjut, sering kali status independensi dua variabel belum diketahui secara kasatmata. Oleh karena itu, untuk membuktikan apakah kejadian A dan kejadian B saling bebas, analis harus membandingkan nilai probabilitas irisan empiris P(A ∩ B) dengan hasil kali peluang tunggalnya P(A) × P(B). Apabila hasil perhitungan kedua sisi memberikan nilai desimal atau pecahan yang ekuivalen sempurna, maka hipotesis bahwa kedua peristiwa tersebut saling bebas terbukti secara matematis. Namun, jika hasil pengujian menunjukkan ketidaksamaan, maka kedua kejadian tersebut diklasifikasikan sebagai kejadian bersyarat yang saling bergantung.\n\n[ATP_ALIGNMENT]\nMenghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah kantong berisi 5 bola merah dan 3 bola biru. Dua bola diambil secara acak satu per satu tanpa pengembalian. Kejadian A adalah terambilnya bola merah pada pengambilan pertama, dan kejadian B adalah terambilnya bola biru pada pengambilan kedua.",
+      "question": "Manakah pernyataan yang paling tepat mengenai hubungan antara kejadian A dan kejadian B?",
+      "options": {
+        "A": "Kejadian A dan B saling bebas karena pengambilan bola pertama tidak memengaruhi pengambilan bola kedua.",
+        "B": "Kejadian A dan B saling bebas karena warna bola yang diambil tidak saling memengaruhi.",
+        "C": "Kejadian A dan B tidak saling bebas karena pengambilan bola pertama memengaruhi komposisi bola untuk pengambilan kedua.",
+        "D": "Kejadian A dan B tidak saling bebas karena keduanya merupakan kejadian yang berbeda.",
+        "E": "Kejadian A dan B saling bebas karena jumlah bola merah dan biru berbeda."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Kejadian A dan B tidak saling bebas (bergantung). Pengambilan bola pertama tanpa pengembalian mengubah jumlah total bola dan jumlah bola per warna di dalam kantong, sehingga memengaruhi probabilitas kejadian B."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah eksperimen, sebuah dadu bersisi enam dilempar bersamaan dengan sebuah koin. Kejadian A adalah munculnya mata dadu angka 4, dan kejadian B adalah munculnya sisi gambar pada koin.",
+      "question": "Berdasarkan deskripsi eksperimen, apakah kejadian A dan kejadian B saling bebas?",
+      "options": {
+        "A": "Ya, karena hasil lemparan dadu tidak memengaruhi hasil lemparan koin.",
+        "B": "Ya, karena keduanya adalah kejadian yang berbeda.",
+        "C": "Tidak, karena keduanya dilakukan bersamaan.",
+        "D": "Tidak, karena hasil dadu memengaruhi hasil koin.",
+        "E": "Ya, karena probabilitas keduanya sama."
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Kejadian A (munculnya mata dadu angka 4) dan kejadian B (munculnya sisi gambar pada koin) adalah saling bebas. Hasil dari satu kejadian tidak memengaruhi hasil dari kejadian lainnya karena objek yang digunakan (dadu dan koin) terpisah."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko UMKM memiliki stok 10 kemeja batik dan 15 kemeja polos. Pemilik ingin mengambil satu kemeja untuk dipajang, mencatat jenisnya, lalu mengembalikannya ke stok sebelum mengambil kemeja kedua. Kejadian A adalah terambilnya kemeja batik pada pengambilan pertama, dan kejadian B adalah terambilnya kemeja polos pada pengambilan kedua.",
+      "question": "Berapakah peluang terjadinya kejadian A dan kejadian B secara bersamaan?",
+      "options": {
+        "A": "150/625",
+        "B": "150/575",
+        "C": "10/25 \\times 15/25",
+        "D": "10/25 \\times 15/24",
+        "E": "15/25 \\times 10/24"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Karena kemeja dikembalikan setelah pengambilan pertama (with replacement), kedua kejadian saling bebas. Peluang A (kemeja batik) adalah P(A) = 10/25. Peluang B (kemeja polos) adalah P(B) = 15/25. Peluang A dan B adalah P(A \\cap B) = P(A) \\times P(B) = (10/25) \\times (15/25)."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dua kejadian, P dan Q, diketahui saling bebas. Probabilitas kejadian P adalah P(P) = 0.6 dan probabilitas kejadian Q adalah P(Q) = 0.3.",
+      "question": "Berapakah probabilitas terjadinya kejadian P dan Q secara bersamaan?",
+      "options": {
+        "A": "0.9",
+        "B": "0.3",
+        "C": "0.18",
+        "D": "0.42",
+        "E": "0.6"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Karena kejadian P dan Q saling bebas, probabilitas keduanya terjadi bersamaan dihitung dengan mengalikan probabilitas masing-masing: P(P \\cap Q) = P(P) \\times P(Q) = 0.6 \\times 0.3 = 0.18."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa sedang mengerjakan soal ujian. Soal pertama adalah pilihan ganda dengan 4 opsi, dan soal kedua adalah isian singkat. Peluang siswa menjawab benar soal pertama adalah 0.8. Peluang siswa menjawab benar soal kedua adalah 0.7. Kedua soal dikerjakan secara independen.",
+      "question": "Jika siswa ingin memastikan peluang menjawab benar kedua soal minimal 0.56, strategi manakah yang paling masuk akal?",
+      "options": {
+        "A": "Mempelajari materi soal kedua lebih intensif untuk meningkatkan peluangnya menjadi 0.9.",
+        "B": "Mencari bocoran jawaban soal pertama karena peluangnya sudah tinggi.",
+        "C": "Mempelajari materi soal pertama lebih intensif untuk meningkatkan peluangnya menjadi 0.9.",
+        "D": "Menerima risiko karena peluang gabungan 0.8 \\times 0.7 = 0.56 sudah sesuai target.",
+        "E": "Mencari bantuan teman untuk kedua soal agar peluangnya menjadi 1."
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan:** Karena kedua soal independen, peluang menjawab benar keduanya adalah hasil kali peluang masing-masing: 0.8 \\times 0.7 = 0.56. Target minimal 0.56 sudah tercapai, sehingga tidak perlu strategi tambahan yang berisiko atau tidak perlu."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Di sebuah pasar tradisional, seorang pedagang menjual 20 kg mangga jenis A dan 30 kg mangga jenis B. Pelanggan mengambil satu kantong mangga secara acak, mencatat jenisnya, lalu mengembalikannya ke tumpukan sebelum mengambil kantong kedua. Kejadian X adalah terambilnya mangga jenis A pada pengambilan pertama, dan kejadian Y adalah terambilnya mangga jenis B pada pengambilan kedua.",
+      "question": "Berapakah peluang terambilnya mangga jenis A pada pengambilan pertama DAN mangga jenis B pada pengambilan kedua?",
+      "options": {
+        "A": "20/50 \\times 30/49",
+        "B": "20/50 \\times 30/50",
+        "C": "20/49 \\times 30/49",
+        "D": "20/50 + 30/50",
+        "E": "20/50 \\times 20/50"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Karena mangga dikembalikan (with replacement), kejadian X dan Y saling bebas. Peluang X adalah P(X) = 20/50. Peluang Y adalah P(Y) = 30/50. Peluang X dan Y adalah P(X \\cap Y) = P(X) \\times P(Y) = (20/50) \\times (30/50)."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah pabrik kerupuk memproduksi dua jenis kerupuk: udang dan ikan. Setiap hari, mesin A memproduksi kerupuk udang dengan peluang 0.7, dan mesin B memproduksi kerupuk ikan dengan peluang 0.9. Produksi kedua mesin dianggap saling bebas.",
+      "question": "Berapakah peluang mesin A memproduksi kerupuk udang DAN mesin B memproduksi kerupuk ikan?",
+      "options": {
+        "A": "0.16",
+        "B": "1.6",
+        "C": "0.7",
+        "D": "0.9",
+        "E": "0.63"
+      },
+      "answer": "E",
+      "explanation": "**Penjelasan:** Karena produksi kedua mesin saling bebas, peluang keduanya terjadi bersamaan adalah hasil perkalian probabilitas masing-masing: P(A \\text{ dan } B) = P(A) \\times P(B) = 0.7 \\times 0.9 = 0.63."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha UMKM ingin meluncurkan dua produk baru secara bersamaan: kopi instan dan teh herbal. Peluang produk kopi instan sukses di pasar adalah 0.7, dan peluang produk teh herbal sukses adalah 0.8. Kedua kesuksesan produk dianggap saling bebas.",
+      "question": "Jika pengusaha tersebut menginginkan peluang kedua produk sukses minimal 0.6, apakah strategi yang paling tepat?",
+      "options": {
+        "A": "Meluncurkan salah satu produk terlebih dahulu untuk mengurangi risiko.",
+        "B": "Meningkatkan kualitas salah satu produk agar peluang suksesnya menjadi 1.",
+        "C": "Menerima risiko karena peluang sukses gabungan 0.7 \\times 0.8 = 0.56 sudah mendekati target.",
+        "D": "Meluncurkan kedua produk karena peluang sukses gabungan 0.7 \\times 0.8 = 0.56 sudah memenuhi target minimal 0.56.",
+        "E": "Membatalkan peluncuran salah satu produk untuk fokus pada yang lain."
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan:** Peluang kedua produk sukses adalah P(Kopi \\cap Teh) = P(Kopi) \\times P(Teh) = 0.7 \\times 0.8 = 0.56. Karena 0.56 sudah memenuhi target minimal 0.56, meluncurkan kedua produk secara bersamaan adalah strategi yang sesuai."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dalam sebuah acara sekolah, panitia menyiapkan dua jenis undian berhadiah. Undian pertama adalah kupon berhadiah sepeda, dan undian kedua adalah kupon berhadiah laptop. Peluang seorang siswa mendapatkan kupon sepeda adalah 1/100, dan peluang mendapatkan kupon laptop adalah 1/50. Kedua undian dianggap saling bebas.",
+      "question": "Berapakah peluang seorang siswa mendapatkan kupon sepeda DAN kupon laptop?",
+      "options": {
+        "A": "1/150",
+        "B": "1/5000",
+        "C": "1/100 \\times 1/50",
+        "D": "1/100 + 1/50",
+        "E": "1/100 \\times 49/50"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Karena kedua undian saling bebas, peluang keduanya terjadi bersamaan adalah hasil perkalian probabilitas masing-masing: P(Sepeda \\cap Laptop) = P(Sepeda) \\times P(Laptop) = (1/100) \\times (1/50)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi online memiliki dua armada utama: mobil dan motor. Peluang mobil mendapatkan penumpang pada jam sibuk adalah 0.6, dan peluang motor mendapatkan penumpang pada jam sibuk yang sama adalah 0.7. Kedua kejadian dianggap saling bebas.",
+      "question": "Manajer operasional ingin memastikan bahwa setidaknya satu armada mendapatkan penumpang. Strategi manakah yang paling efektif untuk mencapai tujuan ini jika ia ingin peluangnya di atas 0.9?",
+      "options": {
+        "A": "Menambah jumlah mobil karena peluangnya lebih tinggi.",
+        "B": "Fokus pada motor karena peluangnya lebih tinggi.",
+        "C": "Menerima peluang saat ini karena 0.6 + 0.7 = 1.3, yang pasti mendapatkan penumpang.",
+        "D": "Menganalisis peluang tidak ada yang mendapatkan penumpang, lalu mencari cara untuk menurunkannya.",
+        "E": "Mengurangi jumlah motor untuk meningkatkan fokus pada mobil."
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan:** Peluang tidak ada yang mendapatkan penumpang adalah P(Mobil tidak dapat) \\times P(Motor tidak dapat) = (1-0.6) \\times (1-0.7) = 0.4 \\times 0.3 = 0.12. Peluang setidaknya satu mendapat penumpang adalah 1 - 0.12 = 0.88. Untuk di atas 0.9, manajer perlu menurunkan peluang 0.12, misalnya dengan meningkatkan peluang masing-masing armada."
+    }
+  ],
+  "metadata": {
+    "id": "7b351238-dba8-402e-b942-2d1f7bccf0f5",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T09:40:10Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Perkalian",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_6_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 4098,
+      "assistant": 3019,
+      "total": 7791,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

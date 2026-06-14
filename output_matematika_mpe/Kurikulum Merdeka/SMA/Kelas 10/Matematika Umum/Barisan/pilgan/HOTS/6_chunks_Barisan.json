@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Barisan | Target: HOTS\n\n--- MATERI ---\nDalam kehidupan sehari-hari, kita sering menjumpai susunan benda atau bilangan yang memiliki pola tertentu, seperti susunan jumlah kursi pada suatu gedung pertunjukan. Pola susunan bilangan yang memiliki aturan dan urutan tertentu ini dikenal dengan istilah barisan bilangan. Salah satu jenis barisan dasar yang sering dipelajari adalah barisan aritmetika. Suatu barisan bilangan dapat disebut sebagai barisan aritmetika apabila memiliki beda atau selisih yang selalu tetap (konstan) antara dua suku yang saling berurutan. Beda pada barisan aritmetika ini dilambangkan dengan huruf b.\n\nUntuk menentukan nilai beda (b) pada barisan aritmetika, kita dapat melakukan pengurangan antara suatu suku dengan suku tepat sebelumnya, yang secara matematis dirumuskan dengan b = Un - U(n-1). Mengetahui nilai beda sangatlah penting untuk memprediksi nilai suku-suku berikutnya. Berdasarkan pola penambahan selisih yang berulang secara konstan, kita dapat merumuskan persamaan untuk mencari suku ke-n, yaitu Un = a + (n - 1)b. Dalam rumus ini, Un mewakili nilai suku ke-n, lambang a adalah suku pertama, n adalah nomor urutan suku, dan b adalah selisih antarsuku.\n\nPenerapan rumus suku ke-n pada barisan aritmetika sangat membantu pemecahan masalah di dunia nyata tanpa harus menghitungnya secara manual satu per satu. Sebagai contoh, jika dalam suatu gedung pertunjukan baris pertama berisi 20 kursi, baris kedua 24 kursi, dan baris ketiga 28 kursi, maka kita dapat melihat bahwa beda (b) antar baris adalah 4. Jika kita ingin mencari jumlah kursi pada baris ke-15, kita dapat menggunakan rumus Un = a + (n - 1)b dengan mensubstitusikan nilai a = 20, b = 4, dan n = 15, sehingga diperoleh jumlah kursi yang tepat pada baris tersebut.\n\nSelain barisan aritmetika, terdapat pula bentuk barisan lain yang melibatkan pola perkalian atau perbandingan yang berulang, yang dinamakan barisan geometri. Suatu barisan bilangan dikatakan sebagai barisan geometri apabila rasio atau perbandingan antara dua suku yang berurutan selalu bernilai tetap atau konstan. Konsep barisan geometri ini dapat dilihat secara nyata pada fenomena pelipatan kertas secara berulang yang menggandakan bidang, maupun pada proses perkembangbiakan atau pembelahan sel bakteri. Rasio pada barisan geometri dilambangkan dengan huruf r.\n\nUntuk mengetahui nilai rasio (r) pada sebuah barisan geometri, kita tidak menggunakan operasi pengurangan, melainkan membagi suatu suku dengan suku tepat sebelumnya. Secara matematis, pencarian nilai rasio ini dituliskan dengan formula r = Un / U(n-1). Sama seperti pada barisan aritmetika, kita juga dapat merumuskan suku ke-n untuk barisan geometri. Rumus umum penentuan suku ke-n pada barisan geometri ditetapkan sebagai Un = a × r^(n-1). Pada formula tersebut, Un adalah nilai suku ke-n, lambang a merepresentasikan suku pertama, r melambangkan rasio, dan n merupakan nomor suku.\n\nPemahaman yang baik mengenai barisan aritmetika dan geometri sangat krusial dalam menyelesaikan masalah kontekstual yang melibatkan pola perkembangan. Hal mendasar yang harus diingat untuk membedakan keduanya adalah pola perubahannya. Barisan aritmetika selalu mengalami perubahan berupa pertambahan atau pengurangan nilai dengan selisih tetap (b). Sementara itu, barisan geometri selalu mengalami perubahan berupa perkalian dengan suatu rasio atau perbandingan tetap (r). Penguasaan materi pencarian suku ke-n pada kedua barisan ini akan menjadi bekal penting saat mempelajari materi deret bilangan.\n\n[ATP_ALIGNMENT]\nMenentukan suku ke-n pada barisan aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"\n\n[INSTRUKSI KHUSUS]\nResponse WAJIB lebih ringkas dan padat. Batasi total panjang output. Prioritaskan kualitas substansi di atas kuantitas kata.",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik pisang memproduksi keripik dalam beberapa varian rasa. Produksi hari pertama adalah 100 bungkus. Hari kedua meningkat menjadi 120 bungkus, dan hari ketiga menjadi 140 bungkus. Peningkatan produksi ini direncanakan terus berlanjut dengan pola yang sama.",
+      "question": "Jika UMKM tersebut ingin mempertahankan pola peningkatan produksi ini selama 10 hari, strategi produksi manakah yang paling realistis untuk dipertimbangkan agar tidak terjadi kelebihan stok atau kekurangan bahan baku?",
+      "options": {
+        "A": "Fokus pada peningkatan produksi harian sebesar 20 bungkus tanpa mempertimbangkan permintaan pasar.",
+        "B": "Menyesuaikan target produksi harian berdasarkan analisis tren permintaan pasar dan kapasitas produksi aktual.",
+        "C": "Mempertahankan produksi hari ketiga (140 bungkus) secara konstan untuk menghindari risiko.",
+        "D": "Meningkatkan produksi secara eksponensial untuk memaksimalkan potensi pasar dalam 10 hari.",
+        "E": "Mengurangi produksi harian setelah hari kelima untuk menghemat biaya operasional."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Strategi Produksi**\\nPola peningkatan produksi harian sebesar 20 bungkus (aritmetika) adalah 100, 120, 140, ... . Namun, strategi produksi yang paling realistis adalah menyesuaikan target dengan permintaan pasar dan kapasitas aktual, bukan hanya mengikuti pola matematis tanpa pertimbangan bisnis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 1 hektar. Ia berencana menanam padi. Pada musim tanam pertama, ia memanen 5 ton padi. Pada musim tanam kedua, dengan perlakuan yang sama, ia memanen 5,5 ton. Pada musim tanam ketiga, ia memanen 6 ton.",
+      "question": "Jika petani tersebut ingin memaksimalkan hasil panen dalam 5 musim tanam ke depan, keputusan manakah yang paling bijaksana berdasarkan data yang ada?",
+      "options": {
+        "A": "Terus menanam dengan pola yang sama karena hasil panen terus meningkat.",
+        "B": "Mencari varietas padi baru yang terbukti memberikan hasil panen lebih tinggi secara signifikan.",
+        "C": "Melakukan analisis mendalam terhadap faktor-faktor lain seperti kualitas tanah, pupuk, dan irigasi untuk mengidentifikasi potensi peningkatan hasil.",
+        "D": "Mengurangi luas tanam untuk fokus pada kualitas daripada kuantitas.",
+        "E": "Mengganti jenis tanaman karena peningkatan hasil yang stagnan."
+      },
+      "answer": "C",
+      "explanation": "**Evaluasi Peningkatan Hasil Panen**\\nPola panen menunjukkan peningkatan aritmetika sebesar 0,5 ton per musim. Namun, untuk memaksimalkan hasil, petani perlu menganalisis faktor eksternal dan internal yang memengaruhi panen, bukan hanya mengandalkan pola yang ada."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik menggunakan armada truk untuk pengiriman. Pada bulan pertama, mereka mengirim 500 paket. Bulan kedua, 600 paket. Bulan ketiga, 720 paket. Pola pertumbuhan ini diperkirakan akan berlanjut.",
+      "question": "Jika perusahaan ingin merencanakan kebutuhan armada dan sumber daya untuk 6 bulan ke depan, strategi manakah yang paling tepat untuk mengantisipasi pertumbuhan pengiriman?",
+      "options": {
+        "A": "Menambah jumlah truk secara proporsional dengan peningkatan jumlah paket setiap bulan.",
+        "B": "Mengasumsikan pertumbuhan eksponensial dan membeli armada baru secara drastis di bulan ketiga.",
+        "C": "Menganalisis tren permintaan pasar dan kapasitas armada saat ini untuk menentukan penambahan armada yang efisien.",
+        "D": "Mempertahankan jumlah armada yang ada dan mengoptimalkan rute pengiriman.",
+        "E": "Mengurangi target pengiriman untuk menjaga efisiensi armada yang ada."
+      },
+      "answer": "C",
+      "explanation": "**Perencanaan Sumber Daya Logistik**\\nPola pengiriman (500, 600, 720) menunjukkan pertumbuhan yang mendekati geometri (rasio sekitar 1.2). Strategi terbaik adalah menganalisis tren pasar dan kapasitas armada untuk penambahan yang efisien, bukan hanya berdasarkan pola matematis atau asumsi drastis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah desa berencana membangun fasilitas umum. Biaya pembangunan pos ronda pertama adalah Rp10.000.000. Pos ronda kedua membutuhkan biaya Rp12.000.000, dan pos ronda ketiga Rp14.400.000. Biaya ini diperkirakan akan terus mengikuti pola yang sama.",
+      "question": "Jika desa tersebut berencana membangun 5 pos ronda, dan anggaran yang tersedia terbatas, keputusan manakah yang paling bijaksana terkait alokasi dana?",
+      "options": {
+        "A": "Mengalokasikan dana berdasarkan pola geometri tanpa mempertimbangkan prioritas kebutuhan.",
+        "B": "Mencari sumber pendanaan tambahan untuk menutupi biaya yang terus meningkat secara eksponensial.",
+        "C": "Menganalisis prioritas kebutuhan pos ronda dan mencari cara untuk menekan biaya pembangunan tanpa mengurangi kualitas.",
+        "D": "Membangun hanya 3 pos ronda sesuai dengan pola awal untuk menghemat anggaran.",
+        "E": "Menggunakan dana yang ada untuk membangun pos ronda pertama dan menunda pembangunan sisanya."
+      },
+      "answer": "C",
+      "explanation": "**Manajemen Anggaran Pembangunan**\\nPola biaya pembangunan (10jt, 12jt, 14.4jt) menunjukkan pertumbuhan geometri dengan rasio 1.2. Namun, dalam konteks anggaran terbatas, prioritas kebutuhan dan efisiensi biaya menjadi kunci, bukan hanya mengikuti pola matematis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha konveksi melihat data penjualan kemeja. Bulan Januari terjual 200 kemeja. Februari 220 kemeja. Maret 242 kemeja. Pola penjualan ini diperkirakan berlanjut.",
+      "question": "Jika pengusaha ingin merencanakan produksi dan stok bahan baku untuk 4 bulan ke depan, strategi manakah yang paling efektif untuk mengelola risiko kehabisan stok atau kelebihan produksi?",
+      "options": {
+        "A": "Memproduksi jumlah kemeja yang sama setiap bulan untuk menjaga stabilitas.",
+        "B": "Meningkatkan produksi secara drastis di bulan kedua untuk mengantisipasi lonjakan permintaan.",
+        "C": "Menganalisis tren penjualan dan menyesuaikan target produksi serta pembelian bahan baku secara berkala.",
+        "D": "Mengurangi target produksi karena penjualan tidak menunjukkan pertumbuhan yang signifikan.",
+        "E": "Fokus pada promosi untuk meningkatkan penjualan tanpa mengubah pola produksi."
+      },
+      "answer": "C",
+      "explanation": "**Perencanaan Produksi dan Stok**\\nPola penjualan (200, 220, 242) menunjukkan pertumbuhan geometri dengan rasio 1.1. Strategi paling efektif adalah menganalisis tren penjualan dan menyesuaikan produksi serta pembelian bahan baku secara berkala untuk mengelola risiko."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah sekolah mengadakan program beasiswa. Tahun pertama, 10 siswa menerima beasiswa. Tahun kedua, 12 siswa. Tahun ketiga, 14 siswa. Program ini direncanakan berlanjut dengan pola yang sama.",
+      "question": "Jika sekolah ingin memastikan keberlanjutan program beasiswa dalam jangka panjang tanpa membebani anggaran secara berlebihan, keputusan manakah yang paling bijaksana?",
+      "options": {
+        "A": "Terus menambah jumlah penerima beasiswa sesuai pola aritmetika tanpa evaluasi anggaran.",
+        "B": "Mencari sponsor baru untuk menutupi peningkatan biaya beasiswa yang terus bertambah.",
+        "C": "Mengevaluasi kembali kriteria penerima beasiswa dan mencari sumber pendanaan alternatif yang stabil.",
+        "D": "Mengurangi jumlah penerima beasiswa setelah tahun kelima untuk menghemat biaya.",
+        "E": "Mempertahankan jumlah penerima beasiswa tahun ketiga untuk menjaga stabilitas anggaran."
+      },
+      "answer": "C",
+      "explanation": "**Keberlanjutan Program Beasiswa**\\nPola penerima beasiswa (10, 12, 14) menunjukkan peningkatan aritmetika. Untuk keberlanjutan jangka panjang, sekolah perlu mengevaluasi kriteria dan mencari sumber pendanaan alternatif, bukan hanya mengikuti pola tanpa pertimbangan finansial."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM makanan ringan memproduksi kerupuk udang. Produksi minggu pertama adalah 50 kg. Minggu kedua 55 kg. Minggu ketiga 60.5 kg. Pola produksi ini diperkirakan berlanjut.",
+      "question": "Jika UMKM tersebut ingin merencanakan kapasitas produksi dan pembelian bahan baku untuk 5 minggu ke depan, strategi manakah yang paling tepat untuk mengoptimalkan keuntungan?",
+      "options": {
+        "A": "Meningkatkan produksi secara eksponensial untuk memaksimalkan potensi pasar.",
+        "B": "Mempertahankan produksi minggu ketiga secara konstan untuk menghindari risiko.",
+        "C": "Menganalisis tren permintaan pasar dan kapasitas produksi aktual untuk menentukan target produksi yang efisien.",
+        "D": "Mengurangi produksi mingguan untuk menghemat biaya operasional.",
+        "E": "Fokus pada peningkatan kualitas produk daripada kuantitas produksi."
+      },
+      "answer": "C",
+      "explanation": "**Optimalisasi Keuntungan UMKM**\\nPola produksi (50, 55, 60.5) menunjukkan pertumbuhan geometri dengan rasio 1.1. Strategi paling tepat adalah menganalisis permintaan pasar dan kapasitas produksi aktual untuk menentukan target yang efisien, bukan hanya mengikuti pola matematis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi online mencatat jumlah pesanan. Hari pertama 100 pesanan. Hari kedua 120 pesanan. Hari ketiga 144 pesanan. Pola ini diperkirakan berlanjut.",
+      "question": "Jika perusahaan ingin merencanakan kebutuhan jumlah pengemudi dan strategi promosi untuk 7 hari ke depan, keputusan manakah yang paling strategis?",
+      "options": {
+        "A": "Menambah jumlah pengemudi secara drastis berdasarkan asumsi pertumbuhan eksponensial.",
+        "B": "Mempertahankan jumlah pengemudi yang ada dan mengoptimalkan rute.",
+        "C": "Menganalisis tren pesanan dan kapasitas pengemudi untuk menentukan penambahan pengemudi yang efisien.",
+        "D": "Mengurangi target pesanan untuk menjaga kualitas layanan.",
+        "E": "Fokus pada promosi agresif tanpa mempertimbangkan ketersediaan pengemudi."
+      },
+      "answer": "C",
+      "explanation": "**Perencanaan Operasional Transportasi Online**\\nPola pesanan (100, 120, 144) menunjukkan pertumbuhan geometri dengan rasio 1.2. Strategi paling strategis adalah menganalisis tren pesanan dan kapasitas pengemudi untuk penambahan yang efisien, bukan hanya berdasarkan pola matematis atau promosi tanpa persiapan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah koperasi simpan pinjam mencatat jumlah anggota. Tahun pertama 50 anggota. Tahun kedua 60 anggota. Tahun ketiga 72 anggota. Pola pertumbuhan ini diperkirakan berlanjut.",
+      "question": "Jika koperasi ingin merencanakan pengembangan layanan dan infrastruktur untuk 5 tahun ke depan, strategi manakah yang paling tepat untuk memastikan pertumbuhan yang berkelanjutan?",
+      "options": {
+        "A": "Meningkatkan jumlah anggota secara eksponensial tanpa mempertimbangkan kapasitas layanan.",
+        "B": "Mempertahankan jumlah anggota saat ini untuk menjaga stabilitas.",
+        "C": "Menganalisis tren pertumbuhan anggota dan kebutuhan layanan untuk merencanakan pengembangan yang seimbang.",
+        "D": "Mengurangi target pertumbuhan anggota untuk menghemat sumber daya.",
+        "E": "Fokus pada penambahan produk simpan pinjam tanpa memperluas basis anggota."
+      },
+      "answer": "C",
+      "explanation": "**Pengembangan Koperasi Berkelanjutan**\\nPola pertumbuhan anggota (50, 60, 72) menunjukkan pertumbuhan geometri dengan rasio 1.2. Strategi paling tepat adalah menganalisis tren pertumbuhan dan kebutuhan layanan untuk merencanakan pengembangan yang seimbang, bukan hanya mengikuti pola matematis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko buku mencatat penjualan novel. Minggu pertama terjual 80 eksemplar. Minggu kedua 88 eksemplar. Minggu ketiga 96.8 eksemplar. Pola penjualan ini diperkirakan berlanjut.",
+      "question": "Jika toko buku ingin merencanakan stok novel dan strategi pemasaran untuk 4 minggu ke depan, keputusan manakah yang paling bijaksana untuk mengoptimalkan penjualan?",
+      "options": {
+        "A": "Meningkatkan stok secara drastis berdasarkan asumsi pertumbuhan eksponensial.",
+        "B": "Mempertahankan stok novel pada jumlah minggu ketiga untuk menghindari risiko.",
+        "C": "Menganalisis tren penjualan dan permintaan pasar untuk menentukan strategi stok dan pemasaran yang efektif.",
+        "D": "Mengurangi stok novel karena penjualan tidak menunjukkan pertumbuhan yang signifikan.",
+        "E": "Fokus pada promosi buku non-novel untuk diversifikasi produk."
+      },
+      "answer": "C",
+      "explanation": "**Optimalisasi Penjualan Toko Buku**\\nPola penjualan (80, 88, 96.8) menunjukkan pertumbuhan geometri dengan rasio 1.1. Keputusan paling bijaksana adalah menganalisis tren penjualan dan permintaan pasar untuk strategi stok dan pemasaran yang efektif, bukan hanya mengikuti pola matematis atau asumsi drastis."
+    }
+  ],
+  "metadata": {
+    "id": "2b657665-0eb9-403f-a542-3e401371f8cc",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T09:04:51Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Barisan",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_6_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan suku ke-n pada barisan aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3084,
+      "assistant": 3849,
+      "total": 7606,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

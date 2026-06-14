@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: HOTS\n\n--- MATERI ---\nDalam matematika peluang, kata \"atau\" berarti \"salah satu atau kedua-duanya\". Hal ini sangat berkaitan dengan aturan penjumlahan peluang untuk berbagai kejadian. Dua kejadian dikatakan saling lepas (atau disjoint) jika tidak mungkin bagi keduanya untuk terjadi pada hasil yang sama. Secara simbolis, aturan untuk menghitung peluang bahwa kejadian A terjadi atau B terjadi pada dua kejadian yang saling lepas dinamakan aturan penjumlahan untuk kejadian saling lepas, di mana $P(A \\cup B) = P(A \\text{ atau } B)$.\n\nSelain kejadian saling lepas, terdapat pula dua kejadian A dan B yang tidak saling lepas. Pada situasi ini, kejadian A dan B dapat terjadi pada hasil yang sama, yang secara matematis dilambangkan dengan $P(A \\cap B)$. Untuk menghitung peluang bahwa A terjadi atau B terjadi pada dua kejadian yang tidak saling lepas ini, aturan penjumlahannya perlu dimodifikasi. Secara simbolis, aturan penjumlahan untuk dua kejadian tidak saling lepas dirumuskan dengan $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$.\n\nPemahaman mengenai aturan penjumlahan ini dapat diterapkan secara langsung untuk memecahkan berbagai permasalahan peluang. Sebagai ilustrasi kejadian saling lepas, kita dapat meninjau peluang pada percobaan melempar sepasang dadu untuk mendapatkan jumlah 7 atau mendapatkan angka yang sama pada kedua dadu. Sementara itu, kejadian tidak saling lepas dapat diilustrasikan dengan pendataan penggunaan transportasi ke sekolah, di mana seorang siswa mungkin saja dapat menggunakan sepeda, menggunakan motor, atau menggunakan baik sepeda maupun motor sekaligus.\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memproduksi dua varian rasa: balado dan keju. Dari data produksi bulanan, 40% keripik yang diproduksi adalah rasa balado, 30% adalah rasa keju. Terdapat 15% keripik yang merupakan varian rasa balado sekaligus keju (misalnya, balado keju).",
+      "question": "Manajer produksi ingin mengetahui peluang keripik yang diproduksi adalah rasa balado ATAU rasa keju. Strategi perhitungan mana yang paling tepat untuk meminimalkan kesalahan interpretasi data?",
+      "options": {
+        "A": "Menjumlahkan langsung persentase balado dan keju (40% + 30%) karena keduanya adalah varian rasa.",
+        "B": "Menggunakan aturan penjumlahan untuk kejadian tidak saling lepas: P(Balado atau Keju) = P(Balado) + P(Keju) - P(Balado dan Keju).",
+        "C": "Menghitung peluang balado saja (40% - 15%) dan keju saja (30% - 15%), lalu menjumlahkannya.",
+        "D": "Mengabaikan persentase balado dan keju karena ada tumpang tindih (balado keju).",
+        "E": "Menghitung peluang balado (40%) dan peluang keju (30%) secara terpisah dan memilih yang lebih tinggi."
+      },
+      "answer": "B",
+      "explanation": "**Strategi Perhitungan yang Tepat**\\nMenggunakan aturan penjumlahan untuk kejadian tidak saling lepas, P(A \\cup B) = P(A) + P(B) - P(A \\cap B), adalah cara yang benar untuk menghitung peluang kejadian A atau B ketika keduanya bisa terjadi bersamaan. Dalam kasus ini, P(Balado atau Keju) = 40% + 30% - 15%."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah acara pentas seni sekolah, terdapat dua jenis pertunjukan yang diminati: tari tradisional dan musik modern. Peluang siswa memilih tari tradisional adalah 0.55, dan peluang memilih musik modern adalah 0.45. Peluang memilih keduanya adalah 0.20.",
+      "question": "Jika seorang siswa diminta memilih satu jenis pertunjukan yang paling ingin ditonton, namun ia juga terbuka untuk menonton keduanya, bagaimana manajer acara sebaiknya menganalisis preferensi mayoritas untuk alokasi tempat duduk?",
+      "options": {
+        "A": "Menjumlahkan peluang tari tradisional dan musik modern (0.55 + 0.45) untuk mendapatkan total preferensi.",
+        "B": "Menggunakan P(Tari atau Musik) = P(Tari) + P(Musik) - P(Tari dan Musik) untuk mengetahui proporsi siswa yang tertarik pada setidaknya satu pertunjukan.",
+        "C": "Memilih pertunjukan dengan peluang tertinggi (tari tradisional) sebagai prioritas utama.",
+        "D": "Mengabaikan peluang memilih keduanya karena itu adalah kasus minoritas.",
+        "E": "Menghitung peluang hanya tari tradisional (0.55 - 0.20) dan hanya musik modern (0.45 - 0.20), lalu membandingkan hasilnya."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Preferensi Mayoritas**\\nUntuk mengetahui proporsi siswa yang tertarik pada setidaknya satu pertunjukan (tari tradisional atau musik modern), gunakan aturan penjumlahan kejadian tidak saling lepas: P(Tari \\cup Musik) = P(Tari) + P(Musik) - P(Tari \\cap Musik) = 0.55 + 0.45 - 0.20 = 0.80. Ini menunjukkan 80% siswa tertarik pada salah satu atau keduanya."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tas lokal memproduksi tas ransel dan tas selempang. Sebanyak 60% tas yang diproduksi adalah ransel, dan 40% adalah tas selempang. Terdapat 25% dari total produksi yang merupakan tas ransel yang juga memiliki fitur tahan air.",
+      "question": "Manajer pemasaran ingin mengetahui peluang tas yang diproduksi adalah tas ransel ATAU tas yang tahan air. Keputusan perhitungan mana yang paling mencerminkan strategi pemasaran yang efektif?",
+      "options": {
+        "A": "Menjumlahkan peluang tas ransel dan tas tahan air secara langsung.",
+        "B": "Menggunakan P(Ransel atau Tahan Air) = P(Ransel) + P(Tahan Air) - P(Ransel dan Tahan Air).",
+        "C": "Menghitung peluang tas ransel saja (60% - 25%) dan mengabaikan tas tahan air.",
+        "D": "Mengasumsikan kejadian saling lepas dan menjumlahkan peluangnya.",
+        "E": "Memilih peluang tas ransel (60%) karena itu adalah produk utama."
+      },
+      "answer": "B",
+      "explanation": "**Strategi Pemasaran Efektif**\\nUntuk menghitung peluang tas ransel ATAU tas tahan air, kita perlu mempertimbangkan kemungkinan tumpang tindih. Jika P(Ransel) = 0.60 dan P(Ransel dan Tahan Air) = 0.25, maka P(Tahan Air) harus dihitung terlebih dahulu. Namun, soal tidak memberikan P(Tahan Air) secara langsung. Jika diasumsikan 'tahan air' hanya berlaku untuk ransel, maka P(Ransel atau Tahan Air) = P(Ransel) = 0.60. Namun, jika 'tahan air' adalah atribut terpisah, kita perlu P(Tahan Air). Dengan asumsi soal mengacu pada P(Ransel) dan P(Ransel dan Tahan Air), maka P(Ransel atau Tahan Air) = P(Ransel) + P(Tahan Air) - P(Ransel dan Tahan Air). Jika kita menginterpretasikan '25% dari total produksi yang merupakan tas ransel yang juga memiliki fitur tahan air' sebagai P(Ransel dan Tahan Air) = 0.25, dan P(Ransel) = 0.60, maka kita perlu P(Tahan Air) untuk menggunakan rumus B. Tanpa P(Tahan Air), kita tidak bisa menghitung P(Ransel atau Tahan Air) secara pasti. Namun, jika soal mengimplikasikan bahwa 'tahan air' adalah atribut yang bisa dimiliki ransel atau tas selempang, dan 25% adalah irisan, maka rumus B adalah kerangka yang benar jika P(Tahan Air) diketahui."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah kedai kopi menyajikan dua jenis minuman populer: Kopi Susu Gula Aren (KSGA) dan Es Kopi Matcha (EKM). Peluang pelanggan memesan KSGA adalah 0.70, dan peluang memesan EKM adalah 0.30. Sebanyak 0.15 dari total pesanan adalah KSGA yang juga dicampur dengan matcha (varian khusus).",
+      "question": "Manajer kedai kopi ingin mengetahui peluang pelanggan memesan KSGA ATAU EKM (varian khusus). Keputusan mana yang paling akurat untuk mengukur daya tarik gabungan kedua varian?",
+      "options": {
+        "A": "Menjumlahkan peluang KSGA dan EKM (0.70 + 0.30) karena keduanya adalah minuman populer.",
+        "B": "Menggunakan P(KSGA atau EKM) = P(KSGA) + P(EKM) - P(KSGA dan EKM).",
+        "C": "Menghitung peluang KSGA saja (0.70 - 0.15) dan mengabaikan EKM.",
+        "D": "Mengasumsikan kedua kejadian saling lepas dan hanya menjumlahkan peluangnya.",
+        "E": "Memilih peluang KSGA (0.70) karena memiliki peluang lebih tinggi."
+      },
+      "answer": "B",
+      "explanation": "**Pengukuran Daya Tarik Gabungan**\\nUntuk menghitung peluang pelanggan memesan KSGA ATAU EKM (varian khusus), kita perlu menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena ada tumpang tindih (KSGA yang dicampur matcha). Rumusnya adalah P(KSGA \\cup EKM) = P(KSGA) + P(EKM) - P(KSGA \\cap EKM). Dengan P(KSGA) = 0.70, P(EKM) = 0.30, dan P(KSGA \\cap EKM) = 0.15, maka P(KSGA \\cup EKM) = 0.70 + 0.30 - 0.15 = 0.85."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik mengelola pengiriman paket. 50% paket dikirim menggunakan truk, dan 45% menggunakan van. Terdapat 20% paket yang dikirim menggunakan kedua jenis kendaraan tersebut (misalnya, paket yang dipindahkan dari truk ke van).",
+      "question": "Manajer operasional ingin mengetahui peluang sebuah paket dikirim menggunakan truk ATAU van. Strategi mana yang paling efisien untuk mengidentifikasi cakupan layanan pengiriman?",
+      "options": {
+        "A": "Menjumlahkan persentase pengiriman truk dan van (50% + 45%) untuk mendapatkan total cakupan.",
+        "B": "Menggunakan P(Truk atau Van) = P(Truk) + P(Van) - P(Truk dan Van).",
+        "C": "Menghitung persentase pengiriman hanya dengan truk (50% - 20%) dan mengabaikan van.",
+        "D": "Mengasumsikan pengiriman truk dan van adalah kejadian saling lepas.",
+        "E": "Memilih persentase pengiriman truk (50%) karena lebih dominan."
+      },
+      "answer": "B",
+      "explanation": "**Identifikasi Cakupan Layanan Efisien**\\nUntuk menghitung peluang paket dikirim menggunakan truk ATAU van, kita perlu menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena ada kemungkinan paket dikirim menggunakan kedua jenis kendaraan. Rumusnya adalah P(Truk \\cup Van) = P(Truk) + P(Van) - P(Truk \\cap Van). Dengan P(Truk) = 0.50, P(Van) = 0.45, dan P(Truk \\cap Van) = 0.20, maka P(Truk \\cup Van) = 0.50 + 0.45 - 0.20 = 0.75."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko buku menjual novel dan komik. 60% pembeli membeli novel, dan 35% membeli komik. Terdapat 15% pembeli yang membeli novel DAN komik sekaligus.",
+      "question": "Manajer toko ingin mengetahui peluang seorang pembeli membeli novel ATAU komik. Keputusan mana yang paling tepat untuk menganalisis perilaku belanja pelanggan?",
+      "options": {
+        "A": "Menjumlahkan persentase pembeli novel dan komik (60% + 35%).",
+        "B": "Menggunakan P(Novel atau Komik) = P(Novel) + P(Komik) - P(Novel dan Komik).",
+        "C": "Menghitung persentase pembeli hanya novel (60% - 15%) dan mengabaikan komik.",
+        "D": "Mengasumsikan pembelian novel dan komik adalah kejadian saling lepas.",
+        "E": "Memilih persentase pembeli novel (60%) karena lebih tinggi."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Perilaku Belanja Tepat**\\nUntuk menghitung peluang pembeli membeli novel ATAU komik, kita perlu menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena ada pembeli yang membeli keduanya. Rumusnya adalah P(Novel \\cup Komik) = P(Novel) + P(Komik) - P(Novel \\cap Komik). Dengan P(Novel) = 0.60, P(Komik) = 0.35, dan P(Novel \\cap Komik) = 0.15, maka P(Novel \\cup Komik) = 0.60 + 0.35 - 0.15 = 0.80."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah yayasan sosial mengumpulkan donasi. 40% donasi berasal dari individu, dan 30% dari perusahaan. Terdapat 10% donasi yang merupakan gabungan dari individu dan perusahaan (misalnya, donasi dari karyawan perusahaan yang disalurkan secara pribadi).",
+      "question": "Ketua yayasan ingin mengetahui peluang sebuah donasi berasal dari individu ATAU perusahaan. Strategi mana yang paling akurat untuk mengukur basis donatur?",
+      "options": {
+        "A": "Menjumlahkan persentase donasi individu dan perusahaan (40% + 30%).",
+        "B": "Menggunakan P(Individu atau Perusahaan) = P(Individu) + P(Perusahaan) - P(Individu dan Perusahaan).",
+        "C": "Menghitung persentase donasi hanya dari individu (40% - 10%) dan mengabaikan perusahaan.",
+        "D": "Mengasumsikan donasi dari individu dan perusahaan adalah kejadian saling lepas.",
+        "E": "Memilih persentase donasi individu (40%) karena lebih besar."
+      },
+      "answer": "B",
+      "explanation": "**Pengukuran Basis Donatur Akurat**\\nUntuk menghitung peluang donasi berasal dari individu ATAU perusahaan, kita perlu menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena ada donasi yang berasal dari gabungan keduanya. Rumusnya adalah P(Individu \\cup Perusahaan) = P(Individu) + P(Perusahaan) - P(Individu \\cap Perusahaan). Dengan P(Individu) = 0.40, P(Perusahaan) = 0.30, dan P(Individu \\cap Perusahaan) = 0.10, maka P(Individu \\cup Perusahaan) = 0.40 + 0.30 - 0.10 = 0.60."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah agen perjalanan menawarkan paket wisata ke Bali dan Lombok. 55% pelanggan memilih paket Bali, dan 40% memilih paket Lombok. Terdapat 25% pelanggan yang memesan kedua paket tersebut (misalnya, tur gabungan).",
+      "question": "Manajer agen perjalanan ingin mengetahui peluang seorang pelanggan memilih paket Bali ATAU paket Lombok. Keputusan mana yang paling tepat untuk menganalisis preferensi destinasi?",
+      "options": {
+        "A": "Menjumlahkan persentase pelanggan paket Bali dan Lombok (55% + 40%).",
+        "B": "Menggunakan P(Bali atau Lombok) = P(Bali) + P(Lombok) - P(Bali dan Lombok).",
+        "C": "Menghitung persentase pelanggan hanya paket Bali (55% - 25%) dan mengabaikan Lombok.",
+        "D": "Mengasumsikan pemilihan paket Bali dan Lombok adalah kejadian saling lepas.",
+        "E": "Memilih persentase pelanggan paket Bali (55%) karena lebih populer."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Preferensi Destinasi Tepat**\\nUntuk menghitung peluang pelanggan memilih paket Bali ATAU Lombok, kita perlu menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena ada pelanggan yang memesan kedua paket. Rumusnya adalah P(Bali \\cup Lombok) = P(Bali) + P(Lombok) - P(Bali \\cap Lombok). Dengan P(Bali) = 0.55, P(Lombok) = 0.40, dan P(Bali \\cap Lombok) = 0.25, maka P(Bali \\cup Lombok) = 0.55 + 0.40 - 0.25 = 0.70."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah universitas memiliki dua program studi unggulan: Teknik Informatika (TI) dan Sistem Informasi (SI). 50% mahasiswa baru mendaftar TI, dan 45% mendaftar SI. Terdapat 20% mahasiswa yang mendaftar kedua program studi tersebut (misalnya, mendaftar pilihan ganda).",
+      "question": "Rektor universitas ingin mengetahui peluang mahasiswa baru mendaftar TI ATAU SI. Strategi mana yang paling akurat untuk mengukur minat calon mahasiswa?",
+      "options": {
+        "A": "Menjumlahkan persentase pendaftar TI dan SI (50% + 45%).",
+        "B": "Menggunakan P(TI atau SI) = P(TI) + P(SI) - P(TI dan SI).",
+        "C": "Menghitung persentase pendaftar hanya TI (50% - 20%) dan mengabaikan SI.",
+        "D": "Mengasumsikan pendaftaran TI dan SI adalah kejadian saling lepas.",
+        "E": "Memilih persentase pendaftar TI (50%) karena lebih banyak."
+      },
+      "answer": "B",
+      "explanation": "**Pengukuran Minat Calon Mahasiswa Akurat**\\nUntuk menghitung peluang mahasiswa baru mendaftar TI ATAU SI, kita perlu menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena ada mahasiswa yang mendaftar kedua program studi. Rumusnya adalah P(TI \\cup SI) = P(TI) + P(SI) - P(TI \\cap SI). Dengan P(TI) = 0.50, P(SI) = 0.45, dan P(TI \\cap SI) = 0.20, maka P(TI \\cup SI) = 0.50 + 0.45 - 0.20 = 0.75."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan asuransi menawarkan dua jenis polis: polis kesehatan (K) dan polis jiwa (J). 60% nasabah memiliki polis kesehatan, dan 45% memiliki polis jiwa. Terdapat 25% nasabah yang memiliki kedua jenis polis tersebut.",
+      "question": "Manajer pemasaran ingin mengetahui peluang seorang nasabah memiliki polis kesehatan ATAU polis jiwa. Keputusan mana yang paling tepat untuk menganalisis cakupan produk?",
+      "options": {
+        "A": "Menjumlahkan persentase nasabah polis kesehatan dan polis jiwa (60% + 45%).",
+        "B": "Menggunakan P(K atau J) = P(K) + P(J) - P(K dan J).",
+        "C": "Menghitung persentase nasabah hanya polis kesehatan (60% - 25%) dan mengabaikan polis jiwa.",
+        "D": "Mengasumsikan kepemilikan polis kesehatan dan jiwa adalah kejadian saling lepas.",
+        "E": "Memilih persentase nasabah polis kesehatan (60%) karena lebih tinggi."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Cakupan Produk Tepat**\\nUntuk menghitung peluang nasabah memiliki polis kesehatan ATAU polis jiwa, kita perlu menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena ada nasabah yang memiliki kedua polis. Rumusnya adalah P(K \\cup J) = P(K) + P(J) - P(K \\cap J). Dengan P(K) = 0.60, P(J) = 0.45, dan P(K \\cap J) = 0.25, maka P(K \\cup J) = 0.60 + 0.45 - 0.25 = 0.80."
+    }
+  ],
+  "metadata": {
+    "id": "ce38e71f-d670-4a1b-a43c-10f457154a1a",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:40:52Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2455,
+      "assistant": 4892,
+      "total": 8020,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

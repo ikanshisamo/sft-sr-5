@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Sistem Persamaan dan Pertidaksamaan Linear | Sub Bab: Sistem Pertidaksamaan Linear\n\n--- MATERI ---\nSistem pertidaksamaan linear dua variabel (SPtLDV) merupakan suatu sistem yang terdiri atas dua atau lebih pertidaksamaan linear yang memuat dua variabel, umumnya x dan y. Berbeda dengan sistem persamaan linear yang penyelesaiannya berupa titik potong atau himpunan titik pada garis, himpunan penyelesaian dari suatu pertidaksamaan linear berupa luasan atau daerah pada bidang koordinat Kartesius. Daerah penyelesaian sistem pertidaksamaan linear adalah daerah tempat kedudukan titik-titik koordinat yang memenuhi seluruh pertidaksamaan linear di dalam sistem tersebut secara serentak. Langkah pertama untuk menentukan daerah penyelesaian ini adalah menggambar garis batas dari masing-masing pertidaksamaan. Garis batas ini dibentuk secara matematis dengan mengubah tanda pertidaksamaan menjadi tanda persamaan (sama dengan). Agar lebih mudah digambar pada koordinat Kartesius, kita dapat menentukan terlebih dahulu titik potong garis batas tersebut terhadap sumbu-x dan sumbu-y.\n\nDalam menggambar garis batas pada bidang Kartesius, perlu diperhatikan bentuk tanda pertidaksamaannya. Apabila memuat tanda sama dengan (≤ atau ≥), maka garis digambar utuh, sedangkan jika tidak memuat tanda sama dengan (< atau >), garis digambar secara putus-putus. Setelah garis batas terbentuk, langkah krusial selanjutnya adalah menentukan daerah penyelesaian menggunakan metode titik uji. Pilihlah satu titik sembarang yang letaknya di luar garis batas, misalnya titik pangkal (0,0), lalu substitusikan koordinatnya ke dalam pertidaksamaan awal. Jika hasil substitusi bernilai benar, maka daerah yang memuat titik uji tersebut adalah daerah penyelesaian dan dapat ditandai dengan sebuah arsiran. Daerah penyelesaian akhir dari sistem pertidaksamaan linear dua variabel merupakan daerah irisan atau perpotongan dari daerah-daerah arsiran setiap pertidaksamaan yang menyusun sistem tersebut.\n\n[ATP_ALIGNMENT]\nMenentukan daerah penyelesaian pertidaksamaan linear dua variabel dan menggambarkannya pada grafik.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"\n\n[INSTRUKSI KHUSUS]\nResponse WAJIB lebih ringkas dan padat. Batasi total panjang output. Prioritaskan kualitas substansi di atas kuantitas kata.",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional menjual dua jenis buah: apel dan jeruk. Ia memiliki modal Rp1.000.000 untuk membeli kedua jenis buah tersebut. Harga beli apel adalah Rp10.000 per kg dan jeruk Rp5.000 per kg. Jumlah buah yang dibeli tidak boleh melebihi 150 kg.",
+      "question": "Manakah pertidaksamaan yang TIDAK termasuk dalam sistem pertidaksamaan linear yang memodelkan kendala modal pedagang tersebut?",
+      "options": {
+        "A": "10.000x + 5.000y \\le 1.000.000",
+        "B": "x + y \\le 150",
+        "C": "x \\ge 0",
+        "D": "y \\ge 0",
+        "E": "10.000x + 5.000y > 1.000.000"
+      },
+      "answer": "E",
+      "explanation": "\\textbf{Penjelasan:}\\nPedagang memiliki modal maksimal Rp1.000.000, sehingga total biaya pembelian apel (x) dan jeruk (y) harus kurang dari atau sama dengan Rp1.000.000. Ini dimodelkan dengan 10.000x + 5.000y \\le 1.000.000. Pilihan E menyatakan sebaliknya, yang tidak sesuai dengan kendala modal."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko roti memproduksi dua jenis kue: donat dan bolu. Untuk membuat 1 donat dibutuhkan 2 gram gula dan 3 gram tepung. Untuk membuat 1 bolu dibutuhkan 4 gram gula dan 5 gram tepung. Persediaan gula di toko tersebut adalah 100 gram dan tepung 150 gram.",
+      "question": "Jika x menyatakan jumlah donat dan y menyatakan jumlah bolu, pertidaksamaan mana yang menyatakan kendala persediaan gula?",
+      "options": {
+        "A": "3x + 5y \\le 150",
+        "B": "2x + 4y \\le 100",
+        "C": "2x + 3y \\le 100",
+        "D": "4x + 5y \\le 150",
+        "E": "3x + 4y \\le 100"
+      },
+      "answer": "B",
+      "explanation": "\\textbf{Penjelasan:}\\nSetiap donat (x) membutuhkan 2 gram gula, sehingga total gula untuk donat adalah 2x. Setiap bolu (y) membutuhkan 4 gram gula, sehingga total gula untuk bolu adalah 4y. Persediaan gula maksimal adalah 100 gram. Jadi, pertidaksamaan yang benar adalah 2x + 4y \\le 100."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 10 hektar. Ia berencana menanam padi dan jagung. Untuk menanam padi, ia membutuhkan 2 liter pupuk per hektar, dan untuk jagung dibutuhkan 3 liter pupuk per hektar. Total pupuk yang tersedia adalah 24 liter.",
+      "question": "Jika x adalah luas lahan untuk padi dan y adalah luas lahan untuk jagung, dan petani tersebut ingin memaksimalkan luas tanamannya, manakah sistem pertidaksamaan yang tepat untuk memodelkan situasi ini?",
+      "options": {
+        "A": "x + y \\le 10; 2x + 3y \\le 24; x \\ge 0; y \\ge 0",
+        "B": "x + y \\ge 10; 2x + 3y \\ge 24; x \\ge 0; y \\ge 0",
+        "C": "x + y \\le 10; 3x + 2y \\le 24; x \\ge 0; y \\ge 0",
+        "D": "x + y = 10; 2x + 3y = 24; x \\ge 0; y \\ge 0",
+        "E": "x + y \\le 10; 2x + 3y \\le 24; x \\le 0; y \\le 0"
+      },
+      "answer": "A",
+      "explanation": "\\textbf{Penjelasan:}\\nLuas lahan total tidak boleh melebihi 10 hektar (x + y \\le 10). Kebutuhan pupuk total tidak boleh melebihi 24 liter (2x + 3y \\le 24). Luas lahan tidak mungkin negatif (x \\ge 0 dan y \\ge 0). Ini membentuk sistem pertidaksamaan linear yang sesuai."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah rapat OSIS, diputuskan untuk membuat dua jenis bingkisan: bingkisan A dan bingkisan B. Bingkisan A memerlukan 2 buku tulis dan 1 pensil. Bingkisan B memerlukan 1 buku tulis dan 2 pensil. Ketersediaan buku tulis adalah 10 buah dan pensil adalah 8 buah.",
+      "question": "Manakah pertidaksamaan yang menyatakan kendala jumlah buku tulis yang tersedia?",
+      "options": {
+        "A": "2x + y \\le 8",
+        "B": "x + 2y \\le 10",
+        "C": "2x + y \\le 10",
+        "D": "x + 2y \\le 8",
+        "E": "2x + 2y \\le 10"
+      },
+      "answer": "C",
+      "explanation": "\\textbf{Penjelasan:}\\nJika x adalah jumlah bingkisan A dan y adalah jumlah bingkisan B, maka total buku tulis yang dibutuhkan adalah 2x (dari bingkisan A) ditambah y (dari bingkisan B). Ketersediaan buku tulis adalah 10 buah. Oleh karena itu, pertidaksamaan yang benar adalah 2x + y \\le 10."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM memproduksi dua jenis keripik: singkong dan pisang. Untuk membuat 1 kg keripik singkong dibutuhkan 2 jam kerja dan 1 kg singkong. Untuk 1 kg keripik pisang dibutuhkan 1 jam kerja dan 2 kg pisang. UMKM memiliki total 10 jam kerja per hari dan maksimal 10 kg bahan baku (singkong atau pisang).",
+      "question": "Jika UMKM ingin memproduksi keripik singkong (x kg) dan keripik pisang (y kg) untuk memenuhi permintaan pasar, strategi produksi manakah yang paling efisien dalam memanfaatkan jam kerja dan bahan baku secara bersamaan?",
+      "options": {
+        "A": "Memproduksi 5 kg keripik singkong dan 0 kg keripik pisang.",
+        "B": "Memproduksi 0 kg keripik singkong dan 5 kg keripik pisang.",
+        "C": "Memproduksi 2 kg keripik singkong dan 6 kg keripik pisang.",
+        "D": "Memproduksi 4 kg keripik singkong dan 2 kg keripik pisang.",
+        "E": "Memproduksi 3 kg keripik singkong dan 4 kg keripik pisang."
+      },
+      "answer": "D",
+      "explanation": "\\textbf{Penjelasan:}\\nKendala: 2x + y \\le 10 (jam kerja), x + 2y \\le 10 (bahan baku), x \\ge 0, y \\ge 0. Pilihan D (x=4, y=2) memenuhi kedua kendala: 2(4) + 2 = 10 \\le 10 dan 4 + 2(2) = 8 \\le 10. Pilihan lain tidak efisien atau melanggar kendala. Misalnya, E (x=3, y=4) membutuhkan 2(3)+4=10 jam kerja dan 3+2(4)=11 kg bahan baku (melanggar)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa sedang mengerjakan soal sistem pertidaksamaan linear. Ia diberikan pertidaksamaan 3x + 2y \\ge 12. Siswa tersebut menggambar garis batas 3x + 2y = 12 dan menguji titik (0,0).",
+      "question": "Setelah mensubstitusikan (0,0) ke dalam pertidaksamaan, siswa mendapatkan hasil 0 \\ge 12, yang bernilai salah. Daerah manakah yang seharusnya diarsir untuk menunjukkan himpunan penyelesaian pertidaksamaan tersebut?",
+      "options": {
+        "A": "Daerah yang memuat titik (0,0).",
+        "B": "Daerah yang tidak memuat titik (0,0).",
+        "C": "Garis batas 3x + 2y = 12 itu sendiri.",
+        "D": "Seluruh bidang Kartesius.",
+        "E": "Daerah di atas garis batas."
+      },
+      "answer": "B",
+      "explanation": "\\textbf{Penjelasan:}\\nKarena hasil substitusi titik (0,0) ke dalam pertidaksamaan 3x + 2y \\ge 12 adalah salah (0 \\ge 12), maka daerah penyelesaiannya adalah daerah yang tidak memuat titik uji (0,0). Ini berarti daerah yang harus diarsir adalah daerah di sisi berlawanan dari garis batas yang memuat (0,0)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tas memiliki dua mesin: mesin jahit dan mesin potong. Untuk membuat 1 tas ransel, dibutuhkan 2 jam kerja mesin jahit dan 1 jam kerja mesin potong. Untuk 1 tas selempang, dibutuhkan 1 jam kerja mesin jahit dan 3 jam kerja mesin potong. Pabrik memiliki total 12 jam kerja mesin jahit dan 15 jam kerja mesin potong per hari.",
+      "question": "Jika pabrik ingin memaksimalkan jumlah total tas yang diproduksi, dan diketahui bahwa produksi tas ransel (x) dan tas selempang (y) harus non-negatif, manakah kombinasi produksi yang paling mendekati pemanfaatan maksimal kedua mesin?",
+      "options": {
+        "A": "Produksi 6 tas ransel dan 0 tas selempang.",
+        "B": "Produksi 0 tas ransel dan 5 tas selempang.",
+        "C": "Produksi 3 tas ransel dan 6 tas selempang.",
+        "D": "Produksi 4 tas ransel dan 4 tas selempang.",
+        "E": "Produksi 5 tas ransel dan 2 tas selempang."
+      },
+      "answer": "E",
+      "explanation": "\\textbf{Penjelasan:}\\nKendala: 2x + y \\le 12 (mesin jahit), x + 3y \\le 15 (mesin potong), x \\ge 0, y \\ge 0. Pilihan E (x=5, y=2) menghasilkan penggunaan mesin jahit: 2(5) + 2 = 12 jam (maksimal). Penggunaan mesin potong: 5 + 3(2) = 11 jam (tersisa 4 jam). Pilihan lain tidak memanfaatkan salah satu mesin secara maksimal atau melanggar kendala."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pengrajin membuat gelang dan kalung. Untuk membuat 1 gelang dibutuhkan 2 manik-manik dan 1 tali. Untuk membuat 1 kalung dibutuhkan 3 manik-manik dan 2 tali. Pengrajin memiliki stok 12 manik-manik dan 7 tali.",
+      "question": "Jika x adalah jumlah gelang dan y adalah jumlah kalung, pertidaksamaan manakah yang menyatakan kendala jumlah tali yang tersedia?",
+      "options": {
+        "A": "2x + 3y \\le 12",
+        "B": "x + 2y \\le 7",
+        "C": "2x + y \\le 7",
+        "D": "3x + 2y \\le 12",
+        "E": "x + 3y \\le 7"
+      },
+      "answer": "B",
+      "explanation": "\\textbf{Penjelasan:}\\nSetiap gelang (x) membutuhkan 1 tali, sehingga total tali untuk gelang adalah x. Setiap kalung (y) membutuhkan 2 tali, sehingga total tali untuk kalung adalah 2y. Stok tali yang tersedia adalah 7 buah. Jadi, pertidaksamaan yang benar adalah x + 2y \\le 7."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan transportasi memiliki armada bus dan truk. Setiap bus dapat mengangkut 40 penumpang, dan setiap truk dapat mengangkut 10 ton barang. Perusahaan memiliki batasan total jam operasional mesin per hari, yaitu 100 jam. Bus membutuhkan 5 jam operasional per hari, dan truk membutuhkan 2 jam operasional per hari.",
+      "question": "Jika x adalah jumlah bus dan y adalah jumlah truk, manakah sistem pertidaksamaan yang tepat untuk memodelkan kendala jam operasional mesin?",
+      "options": {
+        "A": "40x + 10y \\le 100; x \\ge 0; y \\ge 0",
+        "B": "5x + 2y \\le 100; x \\ge 0; y \\ge 0",
+        "C": "5x + 10y \\le 100; x \\ge 0; y \\ge 0",
+        "D": "40x + 2y \\le 100; x \\ge 0; y \\ge 0",
+        "E": "5x + 2y \\ge 100; x \\ge 0; y \\ge 0"
+      },
+      "answer": "B",
+      "explanation": "\\textbf{Penjelasan:}\\nSetiap bus (x) membutuhkan 5 jam operasional, sehingga total jam untuk bus adalah 5x. Setiap truk (y) membutuhkan 2 jam operasional, sehingga total jam untuk truk adalah 2y. Total jam operasional tidak boleh melebihi 100 jam. Jadi, pertidaksamaan yang benar adalah 5x + 2y \\le 100. Kendala non-negatif x \\ge 0 dan y \\ge 0 juga harus disertakan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani ingin menanam sayuran di lahan seluas 1200 m². Ia mempertimbangkan menanam tomat dan cabai. Biaya tanam tomat adalah Rp10.000 per m² dan cabai Rp15.000 per m². Total anggaran petani adalah Rp15.000.000.",
+      "question": "Jika petani ingin memaksimalkan luas tanamannya sambil tetap berada dalam batasan lahan dan anggaran, manakah pernyataan yang paling tepat mengenai strategi penanaman?",
+      "options": {
+        "A": "Menanam tomat seluas 1200 m² dan cabai 0 m².",
+        "B": "Menanam tomat seluas 0 m² dan cabai 800 m².",
+        "C": "Menanam tomat seluas 600 m² dan cabai 400 m².",
+        "D": "Menanam tomat seluas 300 m² dan cabai 600 m².",
+        "E": "Menanam tomat seluas 900 m² dan cabai 200 m²."
+      },
+      "answer": "B",
+      "explanation": "\\textbf{Penjelasan:}\\nKendala: x + y \\le 1200 (lahan), 10000x + 15000y \\le 15000000 (anggaran) atau 2x + 3y \\le 3000 (disederhanakan), x \\ge 0, y \\ge 0. Pilihan B (x=0, y=800) memenuhi lahan (0+800 \\le 1200) dan anggaran (2(0)+3(800) = 2400 \\le 3000). Pilihan lain melanggar salah satu kendala atau kurang efisien dalam memaksimalkan luas."
+    }
+  ],
+  "metadata": {
+    "id": "277eb8ee-5198-4907-9e55-ade03c0df977",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T22:48:25Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Sistem Persamaan dan Pertidaksamaan Linear",
+    "sub_bab": "Sistem Pertidaksamaan Linear",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan daerah penyelesaian pertidaksamaan linear dua variabel dan menggambarkannya pada grafik.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3108,
+      "assistant": 3263,
+      "total": 7045,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

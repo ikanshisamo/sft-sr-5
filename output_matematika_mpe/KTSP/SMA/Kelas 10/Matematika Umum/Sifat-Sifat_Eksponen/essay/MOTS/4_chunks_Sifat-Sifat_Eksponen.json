@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Sifat-Sifat Eksponen | Target: MOTS\n\n--- MATERI ---\nDalam aljabar, operasi pemangkatan memiliki serangkaian sifat fundamental yang mempermudah proses manipulasi dan penyederhanaan bentuk-bentuk eksponensial. Sifat dasar pertama yang perlu dipahami adalah sifat perkalian bilangan berpangkat. Untuk setiap bilangan riil a dan bilangan bulat positif m serta n, perkalian dua bilangan berpangkat dengan basis yang sama akan menghasilkan bilangan dengan basis tersebut dipangkatkan oleh jumlah dari kedua eksponennya. Secara matematis, sifat ini digeneralisasi melalui persamaan a^m × a^n = a^(m+n). Sifat dasar kedua berkaitan dengan operasi pembagian. Apabila dua bilangan berpangkat dengan basis yang sama dibagikan, di mana basis a tidak sama dengan nol dan m lebih besar dari n, hasilnya adalah basis tersebut dipangkatkan oleh selisih dari eksponennya, yang dirumuskan sebagai a^m : a^n = a^(m-n).\n\nSifat operasional bilangan berpangkat selanjutnya melibatkan pemangkatan dari suatu bilangan yang sudah memiliki pangkat. Jika suatu bilangan berpangkat a^m dipangkatkan lagi dengan bilangan bulat n, maka hasil akhirnya ekuivalen dengan basis a dipangkatkan oleh hasil kali dari kedua pangkat tersebut, yang secara aljabar dituliskan sebagai (a^m)^n = a^(m×n). Selain itu, eksponen juga memiliki sifat distributif terhadap operasi perkalian dan pembagian basis. Untuk sebarang bilangan riil a dan b, pemangkatan dari hasil kali dua bilangan dirumuskan sebagai (a × b)^n = a^n × b^n. Prinsip distributif yang sama berlaku secara konsisten pada operasi pembagian, di mana pangkat dari suatu pecahan sama dengan pecahan dari masing-masing pembilang dan penyebut yang dipangkatkan secara terpisah, yaitu (a/b)^n = a^n / b^n, dengan syarat mutlak nilai penyebut b tidak boleh bernilai nol.\n\nGeneralisasi sifat eksponen tidak hanya terbatas pada pangkat bulat positif, melainkan juga mencakup perluasan konsep ke bilangan berpangkat nol dan pangkat bulat negatif, yang diistilahkan sebagai pangkat tak sebenarnya. Berdasarkan turunan dari sifat pembagian bilangan berpangkat, untuk setiap bilangan riil a yang tidak sama dengan nol, a pangkat nol senantiasa didefinisikan memiliki nilai mutlak sama dengan satu (a^0 = 1). Sementara itu, untuk bilangan dengan eksponen bulat negatif, nilainya direpresentasikan sebagai kebalikan atau invers perkalian dari bilangan berpangkat bulat positifnya. Secara formal, sifat ini dinyatakan melalui persamaan a^(-n) = 1 / a^n. Konsep pembalikan posisi pembilang dan penyebut ini sangat krusial dalam menyederhanakan bentuk pecahan aljabar yang memuat eksponen negatif agar menjadi bentuk pangkat positif yang ekuivalen.\n\nBentuk generalisasi terakhir dan paling kompleks dari sifat eksponen melibatkan pangkat dalam wujud bilangan pecahan, yang memiliki relasi konseptual erat dengan bentuk akar. Untuk sebarang bilangan riil a yang lebih besar dari nol, m bilangan bulat, dan n bilangan asli yang lebih besar atau sama dengan dua, bentuk eksponen pecahan a^(m/n) didefinisikan secara ekuivalen sebagai akar pangkat n dari a pangkat m. Seluruh aturan operasi aljabar yang berlaku pada bilangan berpangkat bulat positif terbukti secara konsisten berlaku juga pada bilangan dengan pangkat tak sebenarnya ini. Kemahiran dalam menggeneralisasi dan mengombinasikan seluruh sifat-sifat eksponen ini merupakan fondasi operasional yang esensial untuk memecahkan berbagai masalah kalkulasi fungsi eksponensial maupun penerapan logaritma tingkat lanjut.\n\n[ATP_ALIGNMENT]\nMenggeneralisasi sifat-sifat bilangan berpangkat.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengusaha UMKM keripik singkong ingin menghitung perkiraan jumlah keripik yang dihasilkan dari beberapa karung singkong. Setiap karung berisi rata-rata 5 kg singkong, dan dari 1 kg singkong dapat dihasilkan sekitar 2^10 buah keripik. Jika ia memiliki 2^3 karung singkong, berapakah total perkiraan jumlah keripik yang bisa ia hasilkan?",
+      "question": "Dengan menggunakan sifat-sifat eksponen, hitunglah total perkiraan jumlah keripik singkong yang dapat dihasilkan oleh pengusaha tersebut.",
+      "rubric_points": [
+        "Mengidentifikasi basis dan eksponen dari informasi yang diberikan.",
+        "Menerapkan sifat perkalian bilangan berpangkat (a^m \\times a^n = a^(m+n)).",
+        "Menyederhanakan hasil akhir ke dalam bentuk pangkat yang paling sederhana."
+      ],
+      "explanation": "**Perhitungan Total Keripik**\\nUntuk menghitung total perkiraan jumlah keripik, kita perlu mengalikan jumlah keripik per kilogram dengan jumlah kilogram singkong yang dimiliki.\\n\\nJumlah keripik per kg = $2^{10}$\\nJumlah karung = $2^3$\\nBerat per karung = 5 kg\\n\\nTotal berat singkong = Jumlah karung \\times Berat per karung\\nTotal berat singkong = $2^3 \\times 5$ kg\\n\\nTotal perkiraan jumlah keripik = Total berat singkong \\times Jumlah keripik per kg\\nTotal perkiraan jumlah keripik = $(2^3 \\times 5) \\times 2^{10}$\\n\\nMenggunakan sifat perkalian eksponen ($a^m \\times a^n = a^{m+n}$):\\nTotal perkiraan jumlah keripik = $5 \\times (2^3 \\times 2^{10})$\\nTotal perkiraan jumlah keripik = $5 \\times 2^{(3+10)}$\\nTotal perkiraan jumlah keripik = $5 \\times 2^{13}$\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani memiliki lahan sawah seluas $3^5$ meter persegi. Ia berencana membagi lahannya menjadi beberapa petak yang lebih kecil. Jika setiap petak memiliki luas $3^3$ meter persegi, berapakah jumlah petak yang bisa dibuat dari seluruh lahannya?",
+      "question": "Tentukan jumlah petak sawah yang dapat dibuat oleh petani tersebut dengan menerapkan sifat pembagian bilangan berpangkat.",
+      "rubric_points": [
+        "Mengidentifikasi luas total lahan dan luas setiap petak.",
+        "Menerapkan sifat pembagian bilangan berpangkat (a^m : a^n = a^(m-n)).",
+        "Menyajikan hasil akhir sebagai jumlah petak yang rasional."
+      ],
+      "explanation": "**Perhitungan Jumlah Petak Sawah**\\nUntuk menentukan jumlah petak sawah, kita perlu membagi luas total lahan dengan luas setiap petak.\\n\\nLuas total lahan = $3^5$ meter persegi\\nLuas setiap petak = $3^3$ meter persegi\\n\\nJumlah petak = Luas total lahan : Luas setiap petak\\nJumlah petak = $3^5 : 3^3$\\n\\nMenggunakan sifat pembagian eksponen ($a^m : a^n = a^{m-n}$):\\nJumlah petak = $3^{(5-3)}$\\nJumlah petak = $3^2$\\nJumlah petak = 9\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi adonan yang volumenya terus meningkat setiap jam. Jika volume awal adonan adalah 10 liter, dan setiap jam volumenya meningkat menjadi 3 kali lipat dari jam sebelumnya, berapakah volume adonan setelah 4 jam?",
+      "question": "Hitunglah volume adonan roti setelah 4 jam dengan menggunakan konsep pemangkatan berulang (eksponen).",
+      "rubric_points": [
+        "Mengidentifikasi volume awal dan faktor peningkatan per jam.",
+        "Menerapkan konsep pemangkatan untuk menghitung peningkatan volume.",
+        "Menyajikan hasil akhir volume adonan dalam satuan liter."
+      ],
+      "explanation": "**Perhitungan Volume Adonan Roti**\\nVolume adonan meningkat secara eksponensial. Volume awal adalah 10 liter, dan meningkat 3 kali lipat setiap jam.\\n\\nVolume awal = 10 liter\\nFaktor peningkatan per jam = 3\\nWaktu = 4 jam\\n\\nVolume setelah 1 jam = $10 \\times 3^1$\\nVolume setelah 2 jam = $10 \\times 3^2$\\nVolume setelah 3 jam = $10 \\times 3^3$\\nVolume setelah 4 jam = $10 \\times 3^4$\\n\\nMenghitung $3^4$: $3 \\times 3 \\times 3 \\times 3 = 81$.\\n\\nVolume setelah 4 jam = $10 \\times 81$\\nVolume setelah 4 jam = 810 liter.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong memiliki stok beras sebanyak $2^7$ kilogram. Sebagian beras tersebut digunakan untuk program bantuan sosial sebanyak $2^5$ kilogram. Berapa sisa beras di toko tersebut?",
+      "question": "Tentukan sisa beras di toko kelontong dengan menerapkan sifat pengurangan eksponen.",
+      "rubric_points": [
+        "Mengidentifikasi jumlah stok awal dan jumlah yang digunakan.",
+        "Menerapkan sifat pembagian bilangan berpangkat (a^m : a^n = a^(m-n)) atau pengurangan eksponen secara konseptual.",
+        "Menyajikan hasil akhir sebagai sisa beras dalam kilogram."
+      ],
+      "explanation": "**Perhitungan Sisa Beras**\\nUntuk mengetahui sisa beras, kita perlu mengurangkan jumlah beras yang digunakan dari jumlah stok awal.\\n\\nStok awal = $2^7$ kg\\nDigunakan = $2^5$ kg\\n\\nSisa beras = Stok awal - Digunakan\\nSisa beras = $2^7 - 2^5$\\n\\nKita bisa memfaktorkan $2^5$ dari kedua suku:\\nSisa beras = $2^5 \\times (2^{(7-5)} - 1)$\\nSisa beras = $2^5 \\times (2^2 - 1)$\\nSisa beras = $2^5 \\times (4 - 1)$\\nSisa beras = $2^5 \\times 3$\\n\\nMenghitung $2^5$: $2 \\times 2 \\times 2 \\times 2 \\times 2 = 32$.\\n\\nSisa beras = $32 \\times 3$\\nSisa beras = 96 kg.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa sedang mengerjakan soal latihan fisika tentang pertumbuhan bakteri. Diketahui bahwa jumlah bakteri berlipat ganda setiap 30 menit. Jika pada awal pengamatan terdapat $5^2$ bakteri, berapa jumlah bakteri setelah 2 jam?",
+      "question": "Hitunglah jumlah bakteri setelah 2 jam dengan menerapkan sifat eksponen yang sesuai.",
+      "rubric_points": [
+        "Mengidentifikasi jumlah bakteri awal dan periode penggandaan.",
+        "Menentukan jumlah periode penggandaan dalam 2 jam.",
+        "Menerapkan sifat perkalian bilangan berpangkat untuk menghitung total bakteri."
+      ],
+      "explanation": "**Perhitungan Jumlah Bakteri**\\nJumlah bakteri berlipat ganda setiap 30 menit. Dalam 2 jam, terdapat 4 periode penggandaan (2 jam = 120 menit; 120 menit / 30 menit = 4 periode).\\n\\nJumlah bakteri awal = $5^2 = 25$\\nJumlah periode penggandaan = 4\\n\\nJumlah bakteri setelah 2 jam = Jumlah bakteri awal \\times (Faktor penggandaan)^Jumlah periode\\nJumlah bakteri setelah 2 jam = $5^2 \\times 2^4$\\n\\nMenghitung $5^2 = 25$.\\nMenghitung $2^4 = 2 \\times 2 \\times 2 \\times 2 = 16$.\\n\\nJumlah bakteri setelah 2 jam = $25 \\times 16$\\nJumlah bakteri setelah 2 jam = 400\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "ce383f83-73f8-4eef-abb2-31ecf90113b8",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:19:50Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Sifat-Sifat Eksponen",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_4_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menggeneralisasi sifat-sifat bilangan berpangkat.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2047,
+      "assistant": 1970,
+      "total": 4691,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

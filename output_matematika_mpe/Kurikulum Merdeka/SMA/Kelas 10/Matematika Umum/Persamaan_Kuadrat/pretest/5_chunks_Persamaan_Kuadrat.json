@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Persamaan dan Fungsi Kuadrat | Sub Bab: Persamaan Kuadrat\n\n--- MATERI ---\nPersamaan kuadrat adalah suatu persamaan polinomial dengan pangkat tertinggi dua yang memiliki bentuk umum ax^2 + bx + c = 0, di mana a, b, dan c merupakan bilangan real serta a tidak sama dengan nol. Dalam kehidupan sehari-hari, konsep persamaan kuadrat banyak diterapkan untuk memecahkan persoalan nyata, misalnya untuk menentukan panjang sisi sebuah area jika luasnya diketahui, atau merumuskan lintasan objek yang melambung. Solusi penyelesaian dari sebuah persamaan kuadrat dinamakan sebagai akar-akar persamaan kuadrat.\n\nUntuk menentukan akar-akar dari sebuah persamaan kuadrat, terdapat beberapa metode penyelesaian yang dapat dipelajari. Metode pertama adalah faktorisasi, yaitu mengubah bentuk persamaan kuadrat ax^2 + bx + c = 0 menjadi bentuk perkalian a(x - x1)(x - x2) = 0. Jika persamaan tersebut sulit diselesaikan secara langsung dengan pemfaktoran, kita dapat menggunakan metode kedua, yaitu melengkapkan kuadrat sempurna,. Metode ini dilakukan dengan cara mengubah bentuk awal persamaan kuadrat tersebut menjadi bentuk persamaan kuadrat sempurna yang ekuivalen, yaitu (x + m)^2 = n, sehingga nilai x dapat dicari secara spesifik.\n\nSelain metode faktorisasi dan melengkapkan kuadrat sempurna, cara ketiga untuk memecahkan persamaan kuadrat adalah dengan menggunakan rumus persamaan kuadrat. Rumus matematis ini pada dasarnya diturunkan dari penyelesaian dengan metode melengkapkan kuadrat sempurna. Untuk persamaan ax^2 + bx + c = 0, nilai akar-akarnya dapat dicari secara pasti dengan menggunakan rumus x = (-b ± √(b^2 - 4ac)) / 2a,. Rumus ini sangat praktis dan menjadi solusi alternatif terbaik ketika suatu persamaan kuadrat sulit diselesaikan dengan metode pemfaktoran biasa.\n\nDi dalam rumus persamaan kuadrat, terdapat bentuk matematis b^2 - 4ac yang posisinya berada tepat di bawah tanda akar. Bentuk b^2 - 4ac ini dikenal dengan sebutan diskriminan (D), yang nilainya sangat menentukan jenis-jenis akar penyelesaiannya. Jika nilai diskriminan positif (D > 0), maka persamaan kuadrat akan memiliki dua akar bilangan real yang berbeda nilainya. Apabila nilai diskriminannya sama persis dengan nol (D = 0), persamaan tersebut dipastikan memiliki akar real yang kembar atau sama persis. Sementara itu, jika diskriminannya bernilai negatif (D < 0), maka persamaan tersebut tidak memiliki akar nyata, melainkan memiliki dua buah akar imajiner (tidak real) yang berbeda,.\n\nPemahaman komprehensif mengenai persamaan kuadrat juga mencakup sifat-sifat khusus yang terbentuk dari penjumlahan dan perkalian akar-akarnya. Jika x1 dan x2 adalah akar-akar dari persamaan ax^2 + bx + c = 0, maka hasil penjumlahan akarnya dirumuskan dengan x1 + x2 = -b/a, dan hasil perkalian akarnya adalah x1 × x2 = c/a. Sifat penjumlahan dan perkalian kedua akar ini sangat memudahkan kita ketika diminta untuk menyusun atau mengonstruksi sebuah persamaan kuadrat baru. Sebagai contoh, jika kita mengetahui bahwa sebuah persamaan kuadrat baru memiliki akar p dan q, kita tinggal menghitung nilai jumlah akar dan kali akarnya untuk menyusun komponen persamaan kuadrat yang baru tersebut,.\n\n[ATP_ALIGNMENT]\nMenentukan akar-akar, menganalisis diskriminan, serta menyusun persamaan kuadrat baru.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko kelontong ingin menghitung keuntungan bersihnya dari penjualan minuman kemasan. Jika total pendapatan adalah Rp 5.000.000 dan total biaya operasional adalah Rp 3.500.000, berapakah keuntungan bersih yang diperoleh?",
+      "question": "Berdasarkan informasi di atas, berapakah keuntungan bersih toko tersebut?",
+      "options": {
+        "A": "Rp 1.000.000",
+        "B": "Rp 1.500.000",
+        "C": "Rp 2.000.000",
+        "D": "Rp 2.500.000",
+        "E": "Rp 3.000.000"
+      },
+      "answer": "B",
+      "explanation": "**Keuntungan Bersih**\\nKeuntungan bersih dihitung dengan mengurangkan total biaya operasional dari total pendapatan. \\nRp 5.000.000 (Pendapatan) - Rp 3.500.000 (Biaya) = Rp 1.500.000 (Keuntungan Bersih)."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Persamaan kuadrat umum adalah ax^2 + bx + c = 0, dengan a \\u2260 0. Dalam persamaan ini, koefisien 'a' adalah pengali dari suku x^2, 'b' adalah pengali dari suku x, dan 'c' adalah konstanta.",
+      "question": "Pada persamaan kuadrat 3x^2 - 5x + 2 = 0, berapakah nilai dari koefisien 'b'?",
+      "options": {
+        "A": "3",
+        "B": "-5",
+        "C": "2",
+        "D": "5",
+        "E": "-3"
+      },
+      "answer": "B",
+      "explanation": "**Identifikasi Koefisien**\\nDalam persamaan kuadrat ax^2 + bx + c = 0, koefisien 'b' adalah nilai yang mengalikan suku x. Pada persamaan 3x^2 - 5x + 2 = 0, nilai yang mengalikan x adalah -5."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani ingin menanam jagung di lahan berbentuk persegi panjang. Ia memiliki 40 meter kawat untuk memagari lahannya. Jika panjang lahan adalah 5 meter lebih dari lebarnya, dan ia ingin menggunakan seluruh kawat untuk memagari.",
+      "question": "Berapakah panjang dan lebar lahan jagung tersebut agar seluruh kawat terpakai?",
+      "options": {
+        "A": "Panjang 15 m, Lebar 5 m",
+        "B": "Panjang 12.5 m, Lebar 7.5 m",
+        "C": "Panjang 10 m, Lebar 10 m",
+        "D": "Panjang 17.5 m, Lebar 2.5 m",
+        "E": "Panjang 20 m, Lebar 0 m"
+      },
+      "answer": "B",
+      "explanation": "**Aplikasi Konsep Keliling**\\nMisalkan lebar = l, maka panjang = l+5. Keliling = 2(panjang + lebar) = 2((l+5) + l) = 2(2l+5) = 4l+10. Diketahui keliling = 40 m, maka 4l+10 = 40 \\u2192 4l = 30 \\u2192 l = 7.5 m. Panjang = l+5 = 7.5+5 = 12.5 m."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memproduksi keripik dengan biaya produksi per bungkus Rp 2.000. Jika harga jual per bungkus adalah Rp 3.500, dan mereka menargetkan keuntungan Rp 300.000 per hari.",
+      "question": "Berapa jumlah minimum bungkus keripik yang harus terjual setiap hari agar target keuntungan tercapai?",
+      "options": {
+        "A": "150 bungkus",
+        "B": "200 bungkus",
+        "C": "250 bungkus",
+        "D": "300 bungkus",
+        "E": "400 bungkus"
+      },
+      "answer": "B",
+      "explanation": "**Analisis Keuntungan per Unit**\\nKeuntungan per bungkus = Harga Jual - Biaya Produksi = Rp 3.500 - Rp 2.000 = Rp 1.500. Untuk mencapai target keuntungan Rp 300.000, jumlah bungkus yang harus terjual adalah Target Keuntungan / Keuntungan per Bungkus = Rp 300.000 / Rp 1.500 = 200 bungkus."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Akar-akar dari persamaan kuadrat x^2 - 7x + 10 = 0 adalah x1 dan x2. Metode faktorisasi dapat digunakan untuk mencari akar-akar ini.",
+      "question": "Manakah pasangan bilangan yang merupakan akar-akar dari persamaan kuadrat tersebut?",
+      "options": {
+        "A": "1 dan 10",
+        "B": "2 dan 5",
+        "C": "3 dan 4",
+        "D": "-1 dan -10",
+        "E": "-2 dan -5"
+      },
+      "answer": "B",
+      "explanation": "**Faktorisasi Persamaan Kuadrat**\\nKita mencari dua bilangan yang jika dikalikan menghasilkan 10 dan jika dijumlahkan menghasilkan -7. Bilangan tersebut adalah -2 dan -5. Maka, persamaan dapat difaktorkan menjadi (x - 2)(x - 5) = 0, sehingga akar-akarnya adalah x=2 dan x=5."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah bola dilempar vertikal ke atas. Ketinggian bola (h) dalam meter setelah t detik dapat dinyatakan dengan fungsi kuadrat h(t) = -5t^2 + 20t. Fungsi ini menggambarkan lintasan bola.",
+      "question": "Berapa ketinggian maksimum yang dapat dicapai oleh bola tersebut?",
+      "options": {
+        "A": "10 meter",
+        "B": "15 meter",
+        "C": "20 meter",
+        "D": "25 meter",
+        "E": "30 meter"
+      },
+      "answer": "C",
+      "explanation": "**Puncak Fungsi Kuadrat**\\nKetinggian maksimum dicapai pada titik puncak parabola. Waktu untuk mencapai puncak adalah t = -b / 2a = -20 / (2 \\u00d7 -5) = -20 / -10 = 2 detik. Ketinggian maksimum adalah h(2) = -5(2)^2 + 20(2) = -5(4) + 40 = -20 + 40 = 20 meter."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua UMKM, 'Rasa Nusantara' dan 'Gurih Mantap', memproduksi kerupuk udang. 'Rasa Nusantara' memiliki biaya tetap Rp 500.000 dan biaya variabel Rp 3.000 per kg. 'Gurih Mantap' memiliki biaya tetap Rp 700.000 dan biaya variabel Rp 2.500 per kg. Harga jual per kg sama untuk keduanya.",
+      "question": "Jika kedua UMKM ingin mencapai titik impas (BEP) pada volume produksi yang sama, manakah pernyataan yang paling tepat mengenai kondisi tersebut?",
+      "options": {
+        "A": "'Rasa Nusantara' akan mencapai BEP pada volume yang lebih rendah.",
+        "B": "'Gurih Mantap' akan mencapai BEP pada volume yang lebih rendah.",
+        "C": "Keduanya akan mencapai BEP pada volume yang sama.",
+        "D": "Perlu informasi harga jual untuk menentukan mana yang lebih dulu mencapai BEP.",
+        "E": "Tidak mungkin keduanya mencapai BEP pada volume yang sama."
+      },
+      "answer": "D",
+      "explanation": "**Analisis Titik Impas (BEP)**\\nTitik impas tercapai ketika Total Pendapatan = Total Biaya. Misalkan harga jual per kg adalah P dan volume produksi adalah Q. Untuk 'Rasa Nusantara': P \\u00d7 Q = 500.000 + 3.000 \\u00d7 Q. Untuk 'Gurih Mantap': P \\u00d7 Q = 700.000 + 2.500 \\u00d7 Q. Agar Q sama, maka 500.000 + 3.000Q = 700.000 + 2.500Q \\u2192 500Q = 200.000 \\u2192 Q = 400 kg. Nilai P (harga jual) tidak memengaruhi volume Q untuk mencapai BEP jika volume produksi sama, tetapi menentukan apakah BEP itu menguntungkan atau tidak. Namun, untuk menentukan volume BEP, harga jual P sangat krusial."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Diskriminan (D) dari persamaan kuadrat ax^2 + bx + c = 0 dihitung dengan rumus D = b^2 - 4ac. Nilai diskriminan menentukan jenis akar persamaan.",
+      "question": "Jika nilai diskriminan (D) sebuah persamaan kuadrat adalah 25, jenis akar apa yang dimiliki persamaan tersebut?",
+      "options": {
+        "A": "Dua akar real berbeda",
+        "B": "Dua akar real kembar",
+        "C": "Tidak memiliki akar real (akar imajiner)",
+        "D": "Satu akar real",
+        "E": "Akar rasional"
+      },
+      "answer": "A",
+      "explanation": "**Interpretasi Diskriminan**\\nJika D > 0, persamaan kuadrat memiliki dua akar real yang berbeda. Karena D = 25, yang mana lebih besar dari 0, maka persamaan tersebut memiliki dua akar real yang berbeda."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang ingin membuat persamaan kuadrat baru yang akar-akarnya adalah 3 dan 5. Ia ingat bahwa jika x1 dan x2 adalah akar-akar, maka x1 + x2 = -b/a dan x1 \\u00d7 x2 = c/a.",
+      "question": "Bentuk persamaan kuadrat baru yang paling sederhana dengan akar-akar tersebut adalah?",
+      "options": {
+        "A": "x^2 + 8x + 15 = 0",
+        "B": "x^2 - 8x + 15 = 0",
+        "C": "x^2 - 2x + 15 = 0",
+        "D": "x^2 + 2x - 15 = 0",
+        "E": "x^2 - 8x - 15 = 0"
+      },
+      "answer": "B",
+      "explanation": "**Menyusun Persamaan Kuadrat Baru**\\nJumlah akar (x1 + x2) = 3 + 5 = 8. Perkalian akar (x1 \\u00d7 x2) = 3 \\u00d7 5 = 15. Dengan a=1, maka -b/a = 8 \\u2192 b = -8, dan c/a = 15 \\u2192 c = 15. Persamaan kuadratnya adalah x^2 - 8x + 15 = 0."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik roti menggunakan mesin untuk mencetak adonan menjadi bentuk roti. Kecepatan mesin dapat diatur. Jika jumlah roti yang dihasilkan per jam dimodelkan oleh fungsi R(x) = -x^2 + 10x + 50, di mana x adalah kecepatan mesin dalam satuan tertentu.",
+      "question": "Untuk mendapatkan jumlah roti terbanyak dalam satu jam, berapakah kecepatan mesin yang harus diatur?",
+      "options": {
+        "A": "2 satuan",
+        "B": "5 satuan",
+        "C": "7 satuan",
+        "D": "10 satuan",
+        "E": "50 satuan"
+      },
+      "answer": "B",
+      "explanation": "**Optimasi Fungsi Kuadrat**\\nJumlah roti maksimum dicapai pada titik puncak fungsi kuadrat R(x). Waktu untuk mencapai puncak adalah x = -b / 2a. Dalam fungsi R(x) = -x^2 + 10x + 50, a = -1 dan b = 10. Maka, kecepatan optimal adalah x = -10 / (2 \\u00d7 -1) = -10 / -2 = 5 satuan."
+    }
+  ],
+  "metadata": {
+    "id": "816f11ae-368c-4a11-a984-c8b0f52e5675",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:22:09Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Persamaan dan Fungsi Kuadrat",
+    "sub_bab": "Persamaan Kuadrat",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_5_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan akar-akar, menganalisis diskriminan, serta menyusun persamaan kuadrat baru.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3428,
+      "assistant": 2509,
+      "total": 6610,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

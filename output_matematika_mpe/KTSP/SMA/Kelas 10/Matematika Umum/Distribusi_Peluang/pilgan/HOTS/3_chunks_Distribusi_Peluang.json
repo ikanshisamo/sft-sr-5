@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang | Target: HOTS\n\n--- MATERI ---\nDalam kajian teori peluang, konsep dasar yang pertama kali harus dipahami adalah percobaan, ruang sampel, dan titik sampel. Percobaan atau eksperimen statistika didefinisikan sebagai suatu proses atau tindakan yang menghasilkan observasi atau pengamatan yang hasil akhirnya tidak dapat dipastikan sebelumnya, namun semua kemungkinannya dapat diketahui. Himpunan dari semua hasil yang mungkin terjadi dari suatu percobaan tersebut dinamakan sebagai ruang sampel, yang secara matematis umumnya dinotasikan dengan huruf S kapital. Setiap anggota atau elemen individu yang terdapat di dalam himpunan ruang sampel tersebut diistilahkan sebagai titik sampel. Sebagai contoh dasar, pada pelemparan sebuah dadu bersisi enam yang seimbang, hasil yang mungkin muncul adalah angka 1, 2, 3, 4, 5, atau 6. Keseluruhan angka tersebut membentuk ruang sampel S = {1, 2, 3, 4, 5, 6}, sedangkan angka 1 secara mandiri merupakan salah satu titik sampelnya.\n\nUntuk menentukan banyaknya anggota ruang sampel dari suatu percobaan, khususnya percobaan yang melibatkan lebih dari satu objek atau dilakukan secara berulang, dapat digunakan beberapa pendekatan sistematis seperti diagram pohon dan tabel silang. Pendekatan tabel sangat efektif digunakan untuk mendaftar ruang sampel dari percobaan dua objek secara bersamaan, misalnya pelemparan dua buah dadu, di mana baris mewakili hasil dadu pertama dan kolom mewakili hasil dadu kedua. Sementara itu, diagram pohon lebih aplikatif untuk merinci titik sampel dari percobaan majemuk yang melibatkan tiga objek atau lebih, seperti pelemparan tiga keping uang logam sekaligus. Selain menggunakan pendaftaran langsung, banyaknya titik sampel secara total, yang dinotasikan dengan n(S), juga dapat dihitung secara efisien menggunakan kaidah pencacahan dasar atau aturan perkalian, tanpa harus menuliskan seluruh kemungkinan hasil observasi satu per satu.\n\nSetelah ruang sampel dan titik sampel berhasil diidentifikasi, tahapan selanjutnya adalah menghitung nilai peluang dari suatu kejadian. Kejadian, yang sering disimbolkan dengan huruf kapital seperti A, merupakan himpunan bagian dari ruang sampel. Jika setiap titik sampel pada ruang sampel S memiliki kemungkinan (kesempatan) yang sama untuk muncul, maka peluang teoretis atau probabilitas terjadinya suatu kejadian A dirumuskan sebagai perbandingan antara banyaknya anggota kejadian A dengan banyaknya anggota ruang sampel S. Secara matematis, formulasi ini ditulis sebagai P(A) = n(A) / n(S), di mana P(A) adalah nilai peluang kejadian A, n(A) adalah banyaknya hasil dalam kejadian A, dan n(S) adalah jumlah seluruh kemungkinan dalam ruang sampel. Nilai peluang suatu kejadian senantiasa berada pada interval tertutup dari nol hingga satu, di mana nilai nol menyatakan kemustahilan dan nilai satu merepresentasikan kepastian mutlak.\n\n[ATP_ALIGNMENT]\nMenentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pedagang kerupuk di pasar tradisional memiliki dua jenis kerupuk: udang dan ikan. Ia ingin mengemasnya dalam paket berisi dua bungkus kerupuk. Setiap bungkus bisa berisi kerupuk udang saja, ikan saja, atau campuran keduanya. Ia ingin memastikan setiap kombinasi paket yang mungkin tercatat.",
+      "question": "Jika pedagang tersebut ingin membuat paket yang berisi dua bungkus kerupuk, dan setiap bungkus bisa berisi kerupuk udang (U), ikan (I), atau campuran (C), strategi mana yang paling efisien untuk mendaftar semua kemungkinan kombinasi isi paket agar tidak ada yang terlewat dan tidak ada yang berulang?",
+      "options": {
+        "A": "Mendaftar semua kemungkinan isi bungkus (U, I, C) lalu mengulanginya dua kali untuk setiap bungkus.",
+        "B": "Menggunakan diagram pohon untuk memvisualisasikan setiap pilihan bungkus pertama dan kedua.",
+        "C": "Membuat tabel silang dengan baris dan kolom yang mewakili jenis kerupuk (U, I, C) untuk setiap bungkus.",
+        "D": "Mencatat setiap kombinasi secara acak sampai merasa semua sudah tercatat.",
+        "E": "Fokus pada kombinasi yang paling laku saja, mengabaikan yang lain."
+      },
+      "answer": "B",
+      "explanation": "**Strategi Diagram Pohon**\\nDiagram pohon sangat efektif untuk memvisualisasikan setiap pilihan berurutan. Untuk paket dua bungkus, cabang pertama mewakili pilihan bungkus pertama (U, I, C), dan dari setiap cabang tersebut, cabang kedua mewakili pilihan bungkus kedua (U, I, C), sehingga semua kombinasi unik dapat tercatat dengan sistematis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM memproduksi kaos dengan dua pilihan warna dasar (putih dan hitam) dan tiga pilihan desain sablon (minimalis, grafis, tulisan). Mereka ingin membuat sampel produk yang menampilkan semua kemungkinan kombinasi warna dan desain.",
+      "question": "Manajer UMKM tersebut ingin memastikan semua variasi sampel kaos yang mungkin dibuat. Jika ia memutuskan untuk menggunakan kaidah pencacahan untuk menghitung total variasi tanpa membuat sampelnya satu per satu, pendekatan mana yang paling tepat untuk memprediksi jumlah total variasi yang akan dihasilkan?",
+      "options": {
+        "A": "Menjumlahkan jumlah pilihan warna dan jumlah pilihan desain.",
+        "B": "Mengalikan jumlah pilihan warna dengan jumlah pilihan desain.",
+        "C": "Menjumlahkan jumlah pilihan warna dengan jumlah pilihan desain, lalu dikalikan dua.",
+        "D": "Membuat daftar semua kombinasi secara manual dan menghitungnya.",
+        "E": "Mengabaikan salah satu faktor (warna atau desain) untuk menyederhanakan perhitungan."
+      },
+      "answer": "B",
+      "explanation": "**Kaidah Pencacahan (Perkalian)**\\nUntuk menemukan jumlah total kombinasi dari dua set pilihan independen, kita menggunakan aturan perkalian. Jumlah total variasi adalah hasil perkalian jumlah pilihan pada setiap kategori. Dalam kasus ini, 2 pilihan warna \\\\times 3 pilihan desain = 6 variasi total."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah acara sekolah, panitia akan memilih satu ketua OSIS dan satu wakil ketua dari 5 kandidat calon ketua OSIS. Setiap kandidat memiliki peluang yang sama untuk terpilih.",
+      "question": "Jika panitia ingin menganalisis kemungkinan hasil pemilihan, strategi mana yang paling tepat untuk mengidentifikasi semua kemungkinan pasangan ketua dan wakil ketua yang dapat terbentuk?",
+      "options": {
+        "A": "Mendaftar semua kandidat dan memilih satu secara acak.",
+        "B": "Menggunakan tabel silang di mana baris dan kolom mewakili kandidat yang sama.",
+        "C": "Menggunakan diagram pohon untuk setiap pilihan kandidat ketua, lalu pilihan wakil ketua.",
+        "D": "Menjumlahkan jumlah kandidat untuk ketua dan wakil ketua.",
+        "E": "Memilih kandidat yang paling populer untuk kedua posisi."
+      },
+      "answer": "C",
+      "explanation": "**Diagram Pohon untuk Urutan**\\nDiagram pohon cocok untuk memvisualisasikan hasil percobaan yang berurutan. Kandidat pertama dipilih sebagai ketua (5 cabang), kemudian dari setiap cabang ketua, dipilih kandidat kedua sebagai wakil ketua (4 cabang tersisa). Ini secara sistematis mendaftar semua pasangan yang mungkin."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik memiliki 3 armada truk dan 4 rute pengiriman yang berbeda. Setiap truk dapat dialokasikan ke salah satu rute.",
+      "question": "Perusahaan ingin merencanakan alokasi truk ke rute untuk memaksimalkan efisiensi. Jika mereka ingin mengetahui berapa banyak cara berbeda untuk mengalokasikan setiap truk ke salah satu rute, pendekatan mana yang paling logis untuk dipertimbangkan?",
+      "options": {
+        "A": "Menjumlahkan jumlah truk dan jumlah rute.",
+        "B": "Mengalikan jumlah truk dengan jumlah rute.",
+        "C": "Menggunakan diagram pohon untuk setiap truk dan rute yang tersedia.",
+        "D": "Memilih rute yang paling sering digunakan untuk semua truk.",
+        "E": "Mendaftar semua kemungkinan alokasi secara manual."
+      },
+      "answer": "C",
+      "explanation": "**Diagram Pohon untuk Alokasi Berurutan**\\nDiagram pohon sangat berguna untuk memvisualisasikan setiap keputusan alokasi secara berurutan. Truk pertama memiliki 4 pilihan rute, truk kedua memiliki 4 pilihan rute, dan truk ketiga juga memiliki 4 pilihan rute. Diagram pohon akan secara sistematis menunjukkan semua kombinasi alokasi yang mungkin."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa sedang belajar tentang peluang dan dihadapkan pada soal pelemparan dua keping uang logam yang seimbang. Ia perlu mengidentifikasi semua kemungkinan hasil.",
+      "question": "Siswa tersebut bingung bagaimana cara terbaik untuk memastikan semua hasil (misalnya, Angka-Angka, Angka-Gambar, Gambar-Angka, Gambar-Gambar) tercatat tanpa ada yang terlewat. Strategi mana yang paling efisien dan akurat untuk memvisualisasikan ruang sampel dari percobaan ini?",
+      "options": {
+        "A": "Menebak beberapa kemungkinan hasil.",
+        "B": "Membuat tabel silang dengan baris dan kolom mewakili sisi uang logam pertama dan kedua.",
+        "C": "Menjumlahkan jumlah sisi pada kedua uang logam.",
+        "D": "Menggunakan diagram pohon yang bercabang dua kali.",
+        "E": "Fokus hanya pada hasil yang paling sering muncul."
+      },
+      "answer": "B",
+      "explanation": "**Tabel Silang untuk Dua Objek**\\nTabel silang sangat efektif untuk mendaftar ruang sampel dari percobaan yang melibatkan dua objek. Baris dapat mewakili hasil keping pertama (A atau G) dan kolom mewakili hasil keping kedua (A atau G), sehingga setiap sel tabel mewakili satu titik sampel unik."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko roti menawarkan 3 jenis roti (manis, tawar, gandum) dan 2 jenis topping (cokelat, keju). Pelanggan dapat memilih satu jenis roti dan satu jenis topping.",
+      "question": "Pemilik toko ingin mengetahui berapa banyak variasi produk yang bisa ditawarkan kepada pelanggan. Jika ia ingin menggunakan kaidah pencacahan untuk menghitung total variasi, pendekatan mana yang paling tepat untuk memprediksi jumlah total kombinasi roti dan topping?",
+      "options": {
+        "A": "Menjumlahkan jumlah jenis roti dan jumlah jenis topping.",
+        "B": "Mengalikan jumlah jenis roti dengan jumlah jenis topping.",
+        "C": "Membuat daftar semua kombinasi secara manual.",
+        "D": "Memilih topping yang paling disukai pelanggan.",
+        "E": "Mengabaikan salah satu pilihan untuk menyederhanakan."
+      },
+      "answer": "B",
+      "explanation": "**Kaidah Pencacahan (Perkalian)**\\nUntuk menentukan jumlah total kombinasi dari dua set pilihan independen, gunakan aturan perkalian. Jumlah total variasi adalah hasil perkalian jumlah pilihan pada setiap kategori. Dalam kasus ini, 3 jenis roti \\\\times 2 jenis topping = 6 variasi produk."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang guru memberikan tugas kepada siswanya untuk menghitung peluang munculnya mata dadu berjumlah 7 saat melempar dua dadu bersisi enam secara bersamaan.",
+      "question": "Siswa tersebut telah mengidentifikasi ruang sampel dari pelemparan dua dadu. Strategi mana yang paling efisien untuk menentukan banyaknya kejadian muncul mata dadu berjumlah 7 dari ruang sampel tersebut?",
+      "options": {
+        "A": "Menebak beberapa pasangan angka yang mungkin berjumlah 7.",
+        "B": "Mendaftar semua pasangan angka dari kedua dadu dan memeriksa jumlahnya.",
+        "C": "Menjumlahkan semua angka pada kedua dadu.",
+        "D": "Menggunakan diagram pohon untuk setiap kemungkinan hasil.",
+        "E": "Fokus pada hasil yang paling sering muncul."
+      },
+      "answer": "B",
+      "explanation": "**Pendaftaran dan Pemeriksaan Manual**\\nSetelah ruang sampel (36 kemungkinan hasil) diketahui, cara paling langsung dan akurat untuk menentukan kejadian berjumlah 7 adalah dengan mendaftar semua pasangan hasil dari kedua dadu dan secara sistematis memeriksa mana saja yang berjumlah 7. Ini melibatkan pemeriksaan setiap elemen ruang sampel."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi memiliki 2 jenis bus (standar dan eksekutif) dan 3 rute utama (kota A-B, B-C, A-C). Mereka ingin merencanakan jadwal keberangkatan.",
+      "question": "Perusahaan ingin mengetahui berapa banyak kemungkinan kombinasi jenis bus dan rute yang dapat mereka operasikan. Jika mereka menggunakan kaidah pencacahan, pendekatan mana yang paling tepat untuk menghitung total kombinasi tersebut?",
+      "options": {
+        "A": "Menjumlahkan jumlah jenis bus dan jumlah rute.",
+        "B": "Mengalikan jumlah jenis bus dengan jumlah rute.",
+        "C": "Membuat daftar semua kombinasi secara acak.",
+        "D": "Memilih rute yang paling menguntungkan.",
+        "E": "Mengabaikan salah satu jenis bus untuk menyederhanakan."
+      },
+      "answer": "B",
+      "explanation": "**Kaidah Pencacahan (Perkalian)**\\nUntuk menghitung jumlah total kombinasi dari dua set pilihan independen, gunakan aturan perkalian. Jumlah total kombinasi adalah hasil perkalian jumlah pilihan pada setiap kategori. Dalam kasus ini, 2 jenis bus \\\\times 3 rute = 6 kombinasi bus dan rute."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa sedang mempelajari peluang dan dihadapkan pada percobaan melempar tiga keping uang logam yang seimbang. Ia perlu mengidentifikasi semua kemungkinan hasil.",
+      "question": "Siswa tersebut ingin memastikan semua hasil (misalnya, Angka-Angka-Angka, Angka-Angka-Gambar, dst.) tercatat tanpa ada yang terlewat. Strategi mana yang paling efektif untuk memvisualisasikan dan mendaftar ruang sampel dari percobaan ini?",
+      "options": {
+        "A": "Menebak beberapa kemungkinan hasil.",
+        "B": "Membuat tabel silang untuk tiga keping uang logam.",
+        "C": "Menggunakan diagram pohon yang bercabang tiga kali.",
+        "D": "Menjumlahkan jumlah sisi pada ketiga uang logam.",
+        "E": "Fokus hanya pada hasil yang paling sering muncul."
+      },
+      "answer": "C",
+      "explanation": "**Diagram Pohon untuk Tiga Objek**\\nDiagram pohon sangat cocok untuk percobaan dengan tiga atau lebih objek. Cabang pertama mewakili hasil keping pertama (A atau G), cabang kedua mewakili hasil keping kedua (A atau G) dari setiap cabang pertama, dan cabang ketiga mewakili hasil keping ketiga (A atau G) dari setiap cabang kedua, sehingga semua 8 titik sampel unik dapat didaftar."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah tim futsal memiliki 12 pemain. Pelatih perlu memilih 5 pemain untuk tim inti yang akan bertanding.",
+      "question": "Pelatih ingin memastikan semua kemungkinan kombinasi 5 pemain dari 12 pemain yang ada tercatat. Jika ia ingin menggunakan kaidah pencacahan untuk menghitung total kombinasi tersebut, pendekatan mana yang paling tepat untuk memprediksi jumlah total tim inti yang mungkin terbentuk?",
+      "options": {
+        "A": "Menjumlahkan jumlah pemain.",
+        "B": "Mengalikan jumlah pemain dengan jumlah pemain yang dipilih.",
+        "C": "Menggunakan permutasi untuk menghitung urutan pemain.",
+        "D": "Menggunakan kombinasi untuk menghitung pemilihan tanpa memperhatikan urutan.",
+        "E": "Memilih pemain yang paling mahir saja."
+      },
+      "answer": "D",
+      "explanation": "**Kaidah Kombinasi**\\nKarena urutan pemilihan pemain tidak penting (tim yang sama terbentuk meskipun pemain dipilih dalam urutan berbeda), kaidah kombinasi adalah yang paling tepat. Rumus kombinasi \\\\binom{n}{k} = \\\\frac{n!}{k!(n-k)!} digunakan untuk menghitung jumlah cara memilih k item dari n item tanpa memperhatikan urutan."
+    }
+  ],
+  "metadata": {
+    "id": "1ee58975-c2a7-4e59-ada0-3c3d9c136841",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:13:28Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2842,
+      "assistant": 3706,
+      "total": 7222,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

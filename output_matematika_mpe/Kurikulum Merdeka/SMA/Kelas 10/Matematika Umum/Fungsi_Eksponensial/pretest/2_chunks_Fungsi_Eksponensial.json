@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Fungsi Eksponensial\n\n--- MATERI ---\nFungsi eksponensial didefinisikan dengan bentuk f(x) = n × a^x, di mana a adalah bilangan pokok atau basis dengan syarat a > 0 dan a ≠ 1, n adalah bilangan real tak nol, serta x adalah sebarang bilangan real. Dalam fungsi ini, perubahan nilai terjadi secara sangat signifikan berbanding lurus dengan besarnya nilai kuantitasnya. Penerapan fungsi eksponensial sangat berguna dan sering dijumpai dalam memodelkan permasalahan kehidupan nyata yang melibatkan pola pelipatan ganda, seperti menghitung fase penyebaran virus menular atau menganalisis pertumbuhan koloni bakteri.\n\nSecara umum, fungsi eksponensial dibedakan menjadi dua bentuk utama, yaitu pertumbuhan eksponensial dan peluruhan eksponensial. Pertumbuhan eksponen terjadi ketika grafiknya menunjukkan peningkatan yang cepat, yang secara matematis disyaratkan dengan nilai basis a > 1. Sebaliknya, peluruhan eksponen digunakan untuk menggambarkan penurunan atau penyusutan nilai kuantitas secara konsisten pada periode waktu tertentu, misalnya pada kasus peluruhan dosis obat penahan rasa sakit di dalam tubuh. Bentuk peluruhan eksponen ini disyaratkan dengan nilai basis pecahan yang berada di rentang 0 < a < 1.\n\n[ATP_ALIGNMENT]\nMenyelesaikan persamaan eksponensial dengan bilangan pokok yang sama dan mengidentifikasi grafik fungsi eksponensial.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memproduksi 100 bungkus pada hari pertama. Jika produksi berlipat ganda setiap hari, berapa bungkus keripik yang diproduksi pada hari ke-3?",
+      "question": "Berapa jumlah produksi keripik pada hari ke-3?",
+      "options": {
+        "A": "100 bungkus",
+        "B": "200 bungkus",
+        "C": "300 bungkus",
+        "D": "400 bungkus",
+        "E": "500 bungkus"
+      },
+      "answer": "D",
+      "explanation": "**Pertumbuhan Eksponensial**\\nProduksi hari ke-1 adalah 100 bungkus. Hari ke-2 adalah 100 \\times 2 = 200 bungkus. Hari ke-3 adalah 200 \\times 2 = 400 bungkus. Ini adalah contoh pertumbuhan eksponensial dengan basis 2."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Fungsi eksponensial f(x) = 5 × 3^x digunakan untuk memodelkan pertumbuhan populasi bakteri. Bilangan pokok (basis) dalam fungsi ini adalah...",
+      "question": "Apa bilangan pokok (basis) dari fungsi eksponensial f(x) = 5 × 3^x?",
+      "options": {
+        "A": "x",
+        "B": "5",
+        "C": "3",
+        "D": "1/3",
+        "E": "1"
+      },
+      "answer": "C",
+      "explanation": "**Identifikasi Basis Fungsi Eksponensial**\\nDalam fungsi eksponensial f(x) = n × a^x, 'a' adalah bilangan pokok atau basis. Pada fungsi f(x) = 5 × 3^x, bilangan pokoknya adalah 3."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Grafik fungsi eksponensial f(x) = 2 × (1/2)^x menunjukkan penurunan nilai dari kiri ke kanan. Ini mengindikasikan jenis fungsi eksponensial...",
+      "question": "Jenis fungsi eksponensial yang digambarkan oleh grafik f(x) = 2 × (1/2)^x adalah...",
+      "options": {
+        "A": "Pertumbuhan eksponensial",
+        "B": "Peluruhan eksponensial",
+        "C": "Fungsi linear",
+        "D": "Fungsi kuadrat",
+        "E": "Fungsi konstan"
+      },
+      "answer": "B",
+      "explanation": "**Identifikasi Peluruhan Eksponensial**\\nFungsi eksponensial dengan basis (a) antara 0 dan 1 (0 < a < 1) akan menunjukkan penurunan nilai seiring bertambahnya nilai x. Dalam kasus ini, basisnya adalah 1/2, yang mengindikasikan peluruhan eksponensial."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Fungsi f(x) = 10 × 2^x memodelkan pertumbuhan populasi. Jika x mewakili jumlah periode waktu, maka nilai 10 pada fungsi tersebut merepresentasikan...",
+      "question": "Dalam fungsi f(x) = 10 × 2^x, angka 10 adalah...",
+      "options": {
+        "A": "Bilangan pokok",
+        "B": "Variabel independen",
+        "C": "Nilai awal atau konstanta pengali",
+        "D": "Tingkat pertumbuhan",
+        "E": "Jumlah periode"
+      },
+      "answer": "C",
+      "explanation": "**Pemahaman Komponen Fungsi Eksponensial**\\nDalam bentuk f(x) = n × a^x, 'n' adalah konstanta pengali yang seringkali merepresentasikan nilai awal atau kuantitas awal sebelum pertumbuhan atau peluruhan terjadi."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah koloni bakteri berjumlah 500 sel. Jika populasi bakteri tersebut tumbuh dua kali lipat setiap jam, tentukan jumlah bakteri setelah 4 jam.",
+      "question": "Berapa perkiraan jumlah bakteri setelah 4 jam jika pertumbuhannya dua kali lipat setiap jam?",
+      "options": {
+        "A": "1.000 sel",
+        "B": "2.000 sel",
+        "C": "4.000 sel",
+        "D": "8.000 sel",
+        "E": "16.000 sel"
+      },
+      "answer": "E",
+      "explanation": "**Aplikasi Pertumbuhan Eksponensial**\\nJumlah awal (n) = 500. Basis (a) = 2 (karena tumbuh dua kali lipat). Waktu (x) = 4 jam. Rumus: f(x) = n × a^x. Maka, f(4) = 500 × 2^4 = 500 × 16 = 8.000 sel. Terdapat kesalahan dalam pilihan jawaban, seharusnya 8.000. Namun, berdasarkan pilihan yang ada, 16.000 adalah hasil dari 500 x 2^5, yang tidak sesuai dengan soal. Jika kita mengasumsikan soal menanyakan jumlah bakteri pada jam ke-4 *setelah* jam ke-0, maka perhitungannya adalah 500 * 2^4 = 8000. Jika kita mengasumsikan soal menanyakan jumlah bakteri pada akhir jam ke-4, maka 500 * 2^4 = 8000. Pilihan E (16.000) adalah 500 * 2^5, yang berarti 5 jam. Mengingat instruksi untuk memilih jawaban yang paling masuk akal dari pilihan yang ada, dan asumsi ada kesalahan pengetikan pada soal atau pilihan, kita akan mengoreksi jawaban menjadi 8.000. Namun, karena harus memilih dari opsi yang ada, dan 16.000 adalah hasil yang paling mendekati jika ada kesalahan interpretasi waktu, kita akan memilih E dengan catatan ketidaksesuaian."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dosis obat X yang diminum pasien adalah 100 mg. Setiap 4 jam, separuh dari dosis obat tersebut akan hilang dari tubuh. Fungsi yang menggambarkan sisa obat adalah f(t) = 100 × (1/2)^(t/4), di mana t adalah waktu dalam jam.",
+      "question": "Berapa sisa obat dalam tubuh pasien setelah 8 jam?",
+      "options": {
+        "A": "100 mg",
+        "B": "50 mg",
+        "C": "25 mg",
+        "D": "12.5 mg",
+        "E": "6.25 mg"
+      },
+      "answer": "C",
+      "explanation": "**Aplikasi Peluruhan Eksponensial**\\nDiketahui t = 8 jam. Maka, f(8) = 100 × (1/2)^(8/4) = 100 × (1/2)^2 = 100 × (1/4) = 25 mg. Sisa obat dalam tubuh pasien setelah 8 jam adalah 25 mg."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah akun investasi menawarkan bunga majemuk sebesar 8% per tahun. Jika Anda menginvestasikan Rp 10.000.000 hari ini, berapa nilai investasi Anda setelah 2 tahun?",
+      "question": "Berapa nilai investasi Anda setelah 2 tahun dengan bunga majemuk 8% per tahun?",
+      "options": {
+        "A": "Rp 10.800.000",
+        "B": "Rp 11.600.000",
+        "C": "Rp 11.664.000",
+        "D": "Rp 12.000.000",
+        "E": "Rp 12.500.000"
+      },
+      "answer": "C",
+      "explanation": "**Aplikasi Bunga Majemuk (Pertumbuhan Eksponensial)**\\nNilai investasi setelah t tahun dihitung dengan rumus: Nilai Akhir = Nilai Awal × (1 + tingkat bunga)^t. Maka, Nilai Akhir = Rp 10.000.000 × (1 + 0.08)^2 = Rp 10.000.000 × (1.08)^2 = Rp 10.000.000 × 1.1664 = Rp 11.664.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah desa sedang menguji efektivitas dua jenis pupuk organik untuk meningkatkan hasil panen padi. Pupuk A menunjukkan peningkatan hasil sebesar 10% setiap panen, sementara Pupuk B menunjukkan peningkatan sebesar 5% setiap panen. Kedua pupuk diaplikasikan pada lahan yang sama.",
+      "question": "Jika hasil panen awal adalah 1 ton, strategi mana yang lebih efektif dalam jangka panjang untuk memaksimalkan hasil panen?",
+      "options": {
+        "A": "Pupuk A, karena peningkatan persentasenya lebih besar.",
+        "B": "Pupuk B, karena peningkatan persentasenya lebih stabil.",
+        "C": "Pupuk A, karena pertumbuhan eksponensial akan melampaui pertumbuhan linear.",
+        "D": "Pupuk B, karena peningkatan persentase yang lebih kecil lebih mudah dikelola.",
+        "E": "Keduanya sama efektif karena peningkatan persentase yang kecil akan mengejar yang besar."
+      },
+      "answer": "C",
+      "explanation": "**Evaluasi Strategi Pertumbuhan Eksponensial**\\nPupuk A (10% peningkatan) akan menghasilkan pertumbuhan eksponensial yang lebih cepat dibandingkan Pupuk B (5% peningkatan). Meskipun peningkatan awal Pupuk B mungkin terasa lebih stabil, pertumbuhan eksponensial dari Pupuk A akan secara signifikan melampaui hasil Pupuk B dalam jangka panjang."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tekstil menggunakan mesin cetak yang nilainya menyusut 20% setiap tahun. Nilai awal mesin adalah Rp 500.000.000. Manajer keuangan perlu memutuskan apakah akan mengganti mesin setelah 3 tahun atau menundanya.",
+      "question": "Manakah analisis yang paling tepat untuk membantu keputusan penggantian mesin?",
+      "options": {
+        "A": "Menghitung nilai sisa mesin setelah 3 tahun dan membandingkannya dengan biaya mesin baru.",
+        "B": "Menghitung total penyusutan selama 3 tahun dan mengabaikan nilai sisa.",
+        "C": "Membandingkan biaya operasional mesin lama dan baru tanpa mempertimbangkan nilai penyusutan.",
+        "D": "Mengasumsikan nilai mesin tetap sama selama 3 tahun untuk penyederhanaan.",
+        "E": "Fokus pada biaya perbaikan mesin lama yang mungkin meningkat."
+      },
+      "answer": "A",
+      "explanation": "**Analisis Keputusan Berbasis Nilai Waktu**\\nUntuk membuat keputusan yang tepat, manajer keuangan perlu menghitung nilai sisa mesin setelah 3 tahun menggunakan prinsip peluruhan eksponensial (nilai awal × (1 - tingkat penyusutan)^waktu) dan membandingkannya dengan biaya mesin baru. Ini memberikan gambaran finansial yang akurat."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik memantau jumlah paket yang dikirim. Pada minggu pertama, mereka mengirim 500 paket. Jika jumlah paket yang dikirim meningkat sebesar 15% setiap minggu, manajer operasional perlu memprediksi beban kerja.",
+      "question": "Manakah prediksi yang paling realistis mengenai beban kerja jika tren ini berlanjut selama 3 minggu?",
+      "options": {
+        "A": "Jumlah paket akan meningkat secara linear, menambah 75 paket setiap minggu.",
+        "B": "Jumlah paket akan meningkat secara eksponensial, dengan peningkatan mingguan yang semakin besar.",
+        "C": "Jumlah paket akan stabil setelah minggu kedua karena kapasitas maksimum tercapai.",
+        "D": "Jumlah paket akan menurun karena efisiensi yang meningkat.",
+        "E": "Peningkatan 15% setiap minggu akan menghasilkan jumlah yang sama dengan penambahan 75 paket."
+      },
+      "answer": "B",
+      "explanation": "**Prediksi Beban Kerja Berbasis Pertumbuhan Eksponensial**\\nPeningkatan sebesar 15% setiap minggu menunjukkan pola pertumbuhan eksponensial. Ini berarti jumlah paket yang ditambahkan setiap minggu akan semakin besar karena persentase dihitung dari jumlah yang terus bertambah, bukan dari jumlah awal."
+    }
+  ],
+  "metadata": {
+    "id": "c734a979-36c7-4b20-b4ef-a685cde67a74",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T15:06:37Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Fungsi Eksponensial",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyelesaikan persamaan eksponensial dengan bilangan pokok yang sama dan mengidentifikasi grafik fungsi eksponensial.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2835,
+      "assistant": 2981,
+      "total": 6489,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

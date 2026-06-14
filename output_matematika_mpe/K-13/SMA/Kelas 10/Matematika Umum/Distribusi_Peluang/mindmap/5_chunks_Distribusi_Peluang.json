@@ -1,0 +1,147 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate a recursive nested tree mindmap in JSON format.\n\n[OUTPUT_SCHEMA]\n{\n  \"root\": {\n    \"name\": \"\",\n    \"description\": \"\",\n    \"children\": []\n  }\n}\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang\n\n--- MATERI ---\nKonsep dasar peluang erat kaitannya dengan proses pengamatan atau eksperimen yang dinamakan percobaan. Dalam melakukan suatu percobaan sederhana, seperti melempar uang logam atau dadu setimbang, kita dapat menduga atau mendaftar semua hasil yang mungkin terjadi, meskipun kita tidak dapat memastikan hasil pasti mana yang akan keluar pada satu kali pelemparan. Seluruh kemungkinan hasil yang dapat terjadi dari suatu percobaan ini memegang peranan penting dalam menentukan nilai peluang. Sebagai contoh, pada pelemparan sebuah dadu bersisi enam, kemungkinan hasil yang akan muncul adalah salah satu dari angka 1, 2, 3, 4, 5, atau 6. Setiap hasil individual yang mungkin muncul dari percobaan ini secara matematis dikenal dengan istilah titik sampel.\n\nBerdasarkan pemahaman mengenai titik sampel, kita dapat mendefinisikan konsep ruang sampel. Ruang sampel, yang lazim disimbolkan dengan huruf kapital S, adalah himpunan dari semua hasil yang mungkin terjadi dari suatu percobaan. Banyaknya anggota atau elemen di dalam ruang sampel S dinotasikan dengan n(S). Sementara itu, himpunan bagian dari ruang sampel yang memuat hasil-hasil spesifik yang diharapkan muncul dinamakan sebagai kejadian, dan umumnya disimbolkan dengan huruf kapital E. Banyaknya anggota kejadian E dinotasikan dengan n(E). Sebagai ilustrasi, pada pelemparan sebuah dadu, ruang sampel S memuat enam anggota. Jika kejadian E didefinisikan sebagai munculnya mata dadu genap, maka himpunan E memuat anggota 2, 4, dan 6, sehingga nilai n(E) sama dengan 3.\n\nDalam percobaan majemuk yang melibatkan lebih dari satu objek, penentuan ruang sampel menuntut ketelitian yang lebih tinggi. Misalnya, pada percobaan pelemparan tiga buah uang logam secara bersamaan, setiap uang logam memiliki dua kemungkinan sisi, yaitu Angka (A) atau Gambar (G). Untuk menyusun ruang sampelnya secara terstruktur agar tidak ada yang terlewat, kita dapat menggunakan bantuan diagram pohon atau tabel silang. Seluruh kemungkinan yang akan muncul memuat 8 titik sampel, yaitu (A,A,A), (A,A,G), (A,G,A), (G,A,A), (G,G,A), (G,A,G), (A,G,G), dan (G,G,G). Melalui penyusunan ruang sampel yang sistematis ini, kita dapat dengan mudah mengidentifikasi himpunan kejadian spesifik, seperti kejadian munculnya dua sisi angka, yang beranggotakan tiga titik sampel.\n\nSetelah ruang sampel S dan kejadian E berhasil diidentifikasi beserta masing-masing kuantitas anggotanya, nilai peluang suatu kejadian dapat dihitung secara analitis. Peluang suatu kejadian E, yang secara universal dituliskan sebagai P(E), didefinisikan sebagai hasil bagi antara banyaknya kejadian E yang muncul dengan banyaknya seluruh anggota ruang sampel S dari percobaan tersebut. Secara formal, rumusan ini dituliskan dengan persamaan matematis P(E) = n(E) / n(S). Penggunaan rumus ini diimplementasikan secara luas untuk menyelesaikan berbagai pemodelan probabilistik. Sebagai contoh, dari seperangkat kartu remi lengkap berjumlah 52 buah, peluang terambilnya sebuah kartu As Sekop secara acak dapat dihitung presisi menjadi 1/52, karena hanya terdapat tepat satu kartu As Sekop pada ruang sampel tersebut.\n\nPemahaman terhadap batasan nilai peluang sangat krusial dalam menganalisis dan menafsirkan suatu kejadian. Peluang sebuah kejadian E selalu direpresentasikan oleh bilangan real yang berada pada rentang interval tertutup dari 0 hingga 1, yang secara aljabar diekspresikan dengan ketidaksamaan 0 ≤ P(E) ≤ 1. Jika peluang suatu kejadian bernilai 0, hal ini menunjukkan suatu kemustahilan, artinya kejadian tersebut dipastikan tidak akan pernah terjadi. Sebaliknya, nilai peluang 1 bermakna kepastian mutlak bahwa kejadian itu pasti terjadi pada setiap percobaan. Selain itu, dikenal pula konsep kejadian komplemen (Ec), yaitu himpunan seluruh hasil di ruang sampel yang bukan termasuk kejadian E. Secara sistematis, jumlah probabilitas suatu kejadian dengan probabilitas kejadian komplemennya senantiasa bernilai konstan, yaitu P(E) + P(Ec) = 1.\n\n[SOURCE_MATERIAL]\n{chunks}\n\n[MINDMAP_REQUIREMENTS]\n- Generate a minimum tree depth of 3 levels:\n  Root → Child → Grandchild.\n- Leaf nodes must end with:\n  \"children\": []\n\n- Organize concepts hierarchically.\n- Preserve logical relationships between concepts.\n- Keep descriptions concise and information-dense.\n\n[DESCRIPTION_RULES]\n- Maximum 15 words per description.\n- Avoid unnecessary filler words.\n- Do not use second-person language.\n- Avoid rigid numbering or label formatting.\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- Escape newline characters.\n- Escape internal quotes.",
+  "assistant": {
+    "root": {
+      "name": "Distribusi Peluang",
+      "description": "Konsep dasar peluang dalam percobaan dan ruang sampel.",
+      "children": [
+        {
+          "name": "Percobaan dan Titik Sampel",
+          "description": "Pengamatan atau eksperimen yang menghasilkan kemungkinan hasil.",
+          "children": [
+            {
+              "name": "Percobaan Sederhana",
+              "description": "Contoh: melempar uang logam atau dadu.",
+              "children": []
+            },
+            {
+              "name": "Titik Sampel",
+              "description": "Setiap hasil individual yang mungkin terjadi dari percobaan.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Ruang Sampel (S)",
+          "description": "Himpunan semua hasil yang mungkin terjadi dari suatu percobaan.",
+          "children": [
+            {
+              "name": "Notasi n(S)",
+              "description": "Banyaknya anggota atau elemen dalam ruang sampel.",
+              "children": []
+            },
+            {
+              "name": "Percobaan Majemuk",
+              "description": "Melibatkan lebih dari satu objek, perlu ketelitian.",
+              "children": [
+                {
+                  "name": "Diagram Pohon/Tabel Silang",
+                  "description": "Alat bantu menyusun ruang sampel secara terstruktur.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Kejadian (E)",
+          "description": "Himpunan bagian dari ruang sampel dengan hasil spesifik.",
+          "children": [
+            {
+              "name": "Notasi n(E)",
+              "description": "Banyaknya anggota atau elemen dalam himpunan kejadian.",
+              "children": []
+            },
+            {
+              "name": "Contoh Kejadian",
+              "description": "Munculnya mata dadu genap pada pelemparan dadu.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Menghitung Peluang Kejadian P(E)",
+          "description": "Rumus P(E) = n(E) / n(S).",
+          "children": [
+            {
+              "name": "Penerapan Rumus",
+              "description": "Menyelesaikan pemodelan probabilistik.",
+              "children": [
+                {
+                  "name": "Contoh Kartu Remi",
+                  "description": "Peluang terambilnya As Sekop adalah 1/52.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Batasan Nilai Peluang",
+          "description": "Nilai peluang selalu antara 0 dan 1.",
+          "children": [
+            {
+              "name": "Peluang 0",
+              "description": "Menunjukkan kemustahilan, kejadian tidak akan pernah terjadi.",
+              "children": []
+            },
+            {
+              "name": "Peluang 1",
+              "description": "Menunjukkan kepastian mutlak, kejadian pasti terjadi.",
+              "children": []
+            },
+            {
+              "name": "Kejadian Komplemen (Ec)",
+              "description": "Hasil di ruang sampel yang bukan termasuk kejadian E.",
+              "children": [
+                {
+                  "name": "Hubungan Komplemen",
+                  "description": "P(E) + P(Ec) = 1.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "id": "7edc546a-a950-42e1-b47f-2cd2670cacc8",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T18:56:35Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "mindmap",
+    "level": null,
+    "source_file": "Matematika_5_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1802,
+      "assistant": 674,
+      "total": 3150,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

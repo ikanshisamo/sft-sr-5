@@ -1,0 +1,11 @@
+Mentor harus membimbing siswa level MIDDLE dengan cara:
+- menggunakan bahasa formal yang jelas, terarah, dan mudah diikuti;
+- memecah prosedur atau hubungan antarkonsep menjadi beberapa tahapan logis;
+- tidak langsung memberikan seluruh jawaban atau kesimpulan akhir;
+- memberi pertanyaan penuntun yang membantu siswa menghubungkan satu langkah ke langkah matematis berikutnya;
+- membantu siswa mengidentifikasi sifat, aturan, atau syarat penghubung yang terlewat;
+- membantu siswa membedakan prosedur, hasil, atau konsep matematis yang strukturnya mirip;
+- memberi contoh ekspresi matematis konkret sebelum membawa siswa ke hubungan yang lebih luas;
+- memberi konfirmasi singkat ketika siswa berhasil memahami sebagian hubungan antarlangkah;
+- meluruskan kesalahan prosedur atau koneksi antarkonsep secara lugas dan bertahap;
+- mendorong siswa menyimpulkan kembali hubungan utama atau hasil akhir dengan kalimat sendiri.

@@ -1,0 +1,99 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang | Target: MOTS\n\n--- MATERI ---\nDalam kajian teori peluang, konsep dasar yang pertama kali harus dipahami adalah percobaan, ruang sampel, dan titik sampel. Percobaan atau eksperimen statistika didefinisikan sebagai suatu proses atau tindakan yang menghasilkan observasi atau pengamatan yang hasil akhirnya tidak dapat dipastikan sebelumnya, namun semua kemungkinannya dapat diketahui. Himpunan dari semua hasil yang mungkin terjadi dari suatu percobaan tersebut dinamakan sebagai ruang sampel, yang secara matematis umumnya dinotasikan dengan huruf S kapital. Setiap anggota atau elemen individu yang terdapat di dalam himpunan ruang sampel tersebut diistilahkan sebagai titik sampel. Sebagai contoh dasar, pada pelemparan sebuah dadu bersisi enam yang seimbang, hasil yang mungkin muncul adalah angka 1, 2, 3, 4, 5, atau 6. Keseluruhan angka tersebut membentuk ruang sampel S = {1, 2, 3, 4, 5, 6}, sedangkan angka 1 secara mandiri merupakan salah satu titik sampelnya.\n\nUntuk menentukan banyaknya anggota ruang sampel dari suatu percobaan, khususnya percobaan yang melibatkan lebih dari satu objek atau dilakukan secara berulang, dapat digunakan beberapa pendekatan sistematis seperti diagram pohon dan tabel silang. Pendekatan tabel sangat efektif digunakan untuk mendaftar ruang sampel dari percobaan dua objek secara bersamaan, misalnya pelemparan dua buah dadu, di mana baris mewakili hasil dadu pertama dan kolom mewakili hasil dadu kedua. Sementara itu, diagram pohon lebih aplikatif untuk merinci titik sampel dari percobaan majemuk yang melibatkan tiga objek atau lebih, seperti pelemparan tiga keping uang logam sekaligus. Selain menggunakan pendaftaran langsung, banyaknya titik sampel secara total, yang dinotasikan dengan n(S), juga dapat dihitung secara efisien menggunakan kaidah pencacahan dasar atau aturan perkalian, tanpa harus menuliskan seluruh kemungkinan hasil observasi satu per satu.\n\nSetelah ruang sampel dan titik sampel berhasil diidentifikasi, tahapan selanjutnya adalah menghitung nilai peluang dari suatu kejadian. Kejadian, yang sering disimbolkan dengan huruf kapital seperti A, merupakan himpunan bagian dari ruang sampel. Jika setiap titik sampel pada ruang sampel S memiliki kemungkinan (kesempatan) yang sama untuk muncul, maka peluang teoretis atau probabilitas terjadinya suatu kejadian A dirumuskan sebagai perbandingan antara banyaknya anggota kejadian A dengan banyaknya anggota ruang sampel S. Secara matematis, formulasi ini ditulis sebagai P(A) = n(A) / n(S), di mana P(A) adalah nilai peluang kejadian A, n(A) adalah banyaknya hasil dalam kejadian A, dan n(S) adalah jumlah seluruh kemungkinan dalam ruang sampel. Nilai peluang suatu kejadian senantiasa berada pada interval tertutup dari nol hingga satu, di mana nilai nol menyatakan kemustahilan dan nilai satu merepresentasikan kepastian mutlak.\n\n[ATP_ALIGNMENT]\nMenentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang di Pasar Beringharjo Yogyakarta memiliki dua jenis kerupuk udang dan kerupuk ikan. Ia ingin mengemasnya dalam dua bungkus berbeda. Bungkus pertama hanya berisi kerupuk udang, dan bungkus kedua hanya berisi kerupuk ikan. Ia kemudian ingin membuat paket berisi dua bungkus, di mana setiap paket harus memiliki satu bungkus kerupuk udang dan satu bungkus kerupuk ikan. Tentukan semua kemungkinan kombinasi paket yang dapat dibuat oleh pedagang tersebut.",
+      "question": "Berdasarkan skenario pedagang di Pasar Beringharjo, tentukanlah ruang sampel dari semua kemungkinan paket yang dapat dibuat jika ia memiliki 3 bungkus kerupuk udang (U1, U2, U3) dan 2 bungkus kerupuk ikan (I1, I2).",
+      "rubric_points": [
+        "Mengidentifikasi dengan benar semua bungkus kerupuk udang sebagai U1, U2, U3.",
+        "Mengidentifikasi dengan benar semua bungkus kerupuk ikan sebagai I1, I2.",
+        "Mendaftar semua pasangan unik yang terdiri dari satu bungkus kerupuk udang dan satu bungkus kerupuk ikan."
+      ],
+      "explanation": "**Penjelasan Ruang Sampel**\\nUntuk menentukan ruang sampel, kita perlu mencocokkan setiap bungkus kerupuk udang dengan setiap bungkus kerupuk ikan.\\n\\nMisalkan:\\nKerupuk Udang: {U1, U2, U3}\\nKerupuk Ikan: {I1, I2}\\n\\nSetiap pasangan yang mungkin adalah:\\n(U1, I1), (U1, I2)\\n(U2, I1), (U2, I2)\\n(U3, I1), (U3, I2)\\n\\nJadi, ruang sampelnya adalah S = {(U1, I1), (U1, I2), (U2, I1), (U2, I2), (U3, I1), (U3, I2)}. Terdapat 6 kemungkinan kombinasi paket.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM di Sleman memproduksi dua jenis kue kering: Nastar (N) dan Putri Salju (P). Setiap hari, mereka memproduksi 50 kue Nastar dan 40 kue Putri Salju. Kue-kue ini kemudian dikemas dalam kotak. Kotak pertama hanya berisi Nastar, dan kotak kedua hanya berisi Putri Salju. Mereka ingin membuat paket promosi yang terdiri dari satu kotak Nastar dan satu kotak Putri Salju.",
+      "question": "Jika UMKM tersebut memiliki 3 kotak Nastar (N1, N2, N3) dan 2 kotak Putri Salju (P1, P2) yang siap dikemas, tentukan banyaknya kemungkinan paket promosi yang dapat dibuat.",
+      "rubric_points": [
+        "Mengidentifikasi jumlah total kue Nastar yang tersedia.",
+        "Mengidentifikasi jumlah total kue Putri Salju yang tersedia.",
+        "Menghitung jumlah kombinasi unik dari satu kue Nastar dan satu kue Putri Salju."
+      ],
+      "explanation": "**Penjelasan Kombinasi Paket**\\nUntuk menghitung banyaknya kemungkinan paket promosi, kita menggunakan kaidah perkalian. Setiap pilihan kue Nastar dapat dipasangkan dengan setiap pilihan kue Putri Salju.\\n\\nJumlah kotak Nastar = 3\\nJumlah kotak Putri Salju = 2\\n\\nBanyaknya kemungkinan paket = (Jumlah kotak Nastar) \\times (Jumlah kotak Putri Salju)\\nBanyaknya kemungkinan paket = 3 \\times 2\\nBanyaknya kemungkinan paket = 6\\n\\nJadi, terdapat 6 kemungkinan paket promosi yang dapat dibuat.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa SMA di Surabaya sedang mempersiapkan diri untuk lomba cerdas cermat. Ia harus menguasai materi Fisika, Kimia, dan Biologi. Panitia menyediakan 3 buku Fisika (F1, F2, F3), 2 buku Kimia (K1, K2), dan 4 buku Biologi (B1, B2, B3, B4). Ia memutuskan untuk memilih satu buku dari setiap mata pelajaran untuk dipelajari.",
+      "question": "Berapa banyak cara berbeda bagi siswa tersebut untuk memilih satu buku Fisika, satu buku Kimia, dan satu buku Biologi?",
+      "rubric_points": [
+        "Menentukan jumlah pilihan buku Fisika yang tersedia.",
+        "Menentukan jumlah pilihan buku Kimia yang tersedia.",
+        "Menentukan jumlah pilihan buku Biologi yang tersedia.",
+        "Menghitung total kombinasi pemilihan buku dari ketiga mata pelajaran."
+      ],
+      "explanation": "**Penjelasan Kombinasi Pemilihan Buku**\\nUntuk menentukan banyaknya cara berbeda dalam memilih satu buku dari setiap mata pelajaran, kita menggunakan kaidah perkalian.\\n\\nJumlah buku Fisika = 3\\nJumlah buku Kimia = 2\\nJumlah buku Biologi = 4\\n\\nBanyaknya cara pemilihan = (Jumlah buku Fisika) \\times (Jumlah buku Kimia) \\times (Jumlah buku Biologi)\\nBanyaknya cara pemilihan = 3 \\times 2 \\times 4\\nBanyaknya cara pemilihan = 24\\n\\nJadi, ada 24 cara berbeda bagi siswa tersebut untuk memilih buku.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik roti di Bandung memproduksi dua varian roti tawar: roti tawar putih (P) dan roti tawar gandum (G). Setiap hari, mereka memproduksi 100 roti tawar putih dan 80 roti tawar gandum. Roti-roti ini kemudian dikemas dalam kantong. Kantong pertama hanya berisi roti tawar putih, dan kantong kedua hanya berisi roti tawar gandum. Mereka ingin membuat paket bundling yang terdiri dari satu kantong roti tawar putih dan satu kantong roti tawar gandum.",
+      "question": "Jika pabrik tersebut memiliki 5 kantong roti tawar putih (P1, P2, P3, P4, P5) dan 3 kantong roti tawar gandum (G1, G2, G3) yang siap dikemas, tentukan banyaknya kemungkinan paket bundling yang dapat dibuat.",
+      "rubric_points": [
+        "Mengidentifikasi jumlah total kantong roti tawar putih yang tersedia.",
+        "Mengidentifikasi jumlah total kantong roti tawar gandum yang tersedia.",
+        "Menghitung jumlah kombinasi unik dari satu kantong roti tawar putih dan satu kantong roti tawar gandum."
+      ],
+      "explanation": "**Penjelasan Kombinasi Paket Bundling**\\nUntuk menghitung banyaknya kemungkinan paket bundling, kita menggunakan kaidah perkalian. Setiap pilihan kantong roti tawar putih dapat dipasangkan dengan setiap pilihan kantong roti tawar gandum.\\n\\nJumlah kantong roti tawar putih = 5\\nJumlah kantong roti tawar gandum = 3\\n\\nBanyaknya kemungkinan paket bundling = (Jumlah kantong roti tawar putih) \\times (Jumlah kantong roti tawar gandum)\\nBanyaknya kemungkinan paket bundling = 5 \\times 3\\nBanyaknya kemungkinan paket bundling = 15\\n\\nJadi, terdapat 15 kemungkinan paket bundling yang dapat dibuat.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani di Jawa Tengah memiliki dua jenis pupuk untuk tanamannya: pupuk urea (U) dan pupuk NPK (N). Ia ingin mengaplikasikannya pada dua petak sawah yang berbeda. Petak pertama hanya akan diberi pupuk urea, dan petak kedua hanya akan diberi pupuk NPK. Ia kemudian ingin membuat kombinasi pemberian pupuk untuk dua petak sawah tersebut.",
+      "question": "Jika petani tersebut memiliki 3 karung pupuk urea (U1, U2, U3) dan 2 karung pupuk NPK (N1, N2) yang siap digunakan, tentukanlah semua kemungkinan kombinasi pemberian pupuk untuk kedua petak sawahnya.",
+      "rubric_points": [
+        "Mengidentifikasi semua karung pupuk urea yang tersedia.",
+        "Mengidentifikasi semua karung pupuk NPK yang tersedia.",
+        "Mendaftar semua pasangan unik yang terdiri dari satu karung pupuk urea dan satu karung pupuk NPK."
+      ],
+      "explanation": "**Penjelasan Kombinasi Pupuk**\\nUntuk menentukan semua kemungkinan kombinasi pemberian pupuk, kita perlu mencocokkan setiap karung pupuk urea dengan setiap karung pupuk NPK.\\n\\nMisalkan:\\nPupuk Urea: {U1, U2, U3}\\nPupuk NPK: {N1, N2}\\n\\nSetiap pasangan yang mungkin adalah:\\n(U1, N1), (U1, N2)\\n(U2, N1), (U2, N2)\\n(U3, N1), (U3, N2)\\n\\nJadi, ruang sampel kombinasinya adalah {(U1, N1), (U1, N2), (U2, N1), (U2, N2), (U3, N1), (U3, N2)}. Terdapat 6 kemungkinan kombinasi pemberian pupuk.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "5c06bea9-e497-42ba-bf00-f14e3bb75e16",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T09:01:25Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1869,
+      "assistant": 2244,
+      "total": 4786,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,3 @@
+1. Respons Faktual: Konfirmasi kemampuan siswa menghubungkan langkah atau konsep matematis secara ringkas dan faktual. Jika tersendat, tunjukkan elemen penghubung yang terlewat — misal sebuah sifat, aturan, atau syarat — secara lugas.
+2. Urai Materi (Prosa Naratif): Sajikan SATU tahapan prosedur atau transisi konsep matematis utuh — misal proses dari langkah $A$ ke langkah $B$ — dengan presisi dan tanpa melompati langkah antara.
+3. Penutup Socratic: Ajukan SATU pertanyaan yang meminta siswa memprediksi atau mengidentifikasi hasil langsung dari tahapan yang baru saja dijelaskan, untuk menghubungkan langkah $B$ ke langkah $C$.

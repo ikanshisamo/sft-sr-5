@@ -1,0 +1,68 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate exactly 5 flashcards in JSON array format.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"front\": \"\",\n    \"back\": \"\"\n  }\n]\n\n[FLASHCARD_LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"focus\": [\n      \"definisi\",\n      \"rumus\",\n      \"fakta dasar\",\n      \"konsep inti\"\n    ],\n    \"style\": \"direct recall\"\n  },\n\n  \"MOTS\": {\n    \"focus\": [\n      \"hubungan konsep\",\n      \"aplikasi sederhana\",\n      \"contoh penggunaan\"\n    ],\n    \"style\": \"applied recall\"\n  },\n\n  \"HOTS\": {\n    \"focus\": [\n      \"kesimpulan\",\n      \"strategi\",\n      \"dampak\",\n      \"evaluasi singkat\"\n    ],\n    \"style\": \"evaluative takeaway\"\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Statistik Deskriptif | Target: LOTS\n\n--- MATERI ---\nStatistika deskriptif merupakan cabang dari ilmu statistika yang berfokus pada teknik pengumpulan, pengolahan, serta penyajian data secara bermakna agar mudah dipahami. Salah satu alat analisis dasar dalam statistika deskriptif adalah ukuran pemusatan data, yang dirancang untuk mewakili keseluruhan distribusi dengan satu nilai tunggal. Ukuran pemusatan yang paling umum diaplikasikan adalah rata-rata hitung atau mean. Secara matematis, nilai mean diperoleh dengan cara menjumlahkan seluruh nilai observasi dalam suatu himpunan data, kemudian membaginya dengan banyaknya observasi tersebut. Karena melibatkan setiap elemen himpunan dalam perhitungannya, mean sangat representatif namun memiliki kelemahan teoretis, yakni sifatnya yang sangat sensitif terhadap nilai ekstrem atau pencilan (outlier) yang dapat menggeser pusat data secara tidak proporsional.\n\nSebagai alternatif dari rata-rata hitung, statistika menyediakan ukuran pemusatan lain yang disebut median. Median didefinisikan sebagai nilai tengah dari sebuah himpunan data observasi setelah data tersebut diurutkan secara hierarkis dari nilai yang paling minimum hingga nilai yang paling maksimum. Untuk himpunan data dengan jumlah observasi ganjil, median tepat berada di urutan paling tengah. Sementara itu, untuk data berjumlah genap, median dikalkulasi dengan mengambil nilai rata-rata dari dua observasi yang letaknya paling tengah. Keunggulan utama pengaplikasian median dibandingkan mean terletak pada ketahanannya (robustness) terhadap pengaruh distorsi dari nilai-nilai ekstrem atau pencilan, sehingga median menjadi indikator pemusatan yang jauh lebih valid ketika dihadapkan pada kurva sebaran data yang menceng atau tidak simetris.\n\nUkuran pemusatan data yang ketiga adalah modus. Secara konseptual, modus merupakan nilai atau kategori observasi yang frekuensi kemunculannya paling tinggi di dalam suatu himpunan data. Keunikan dari modus adalah kemampuannya yang tidak hanya dapat diterapkan pada data kuantitatif yang bersifat numerik, tetapi juga sangat aplikatif untuk mendeskripsikan data kualitatif yang bersifat kategorikal. Dalam sebuah distribusi sampel, sangat dimungkinkan bahwa himpunan tersebut memiliki satu nilai modus tunggal (unimodal), dua nilai modus (bimodal), atau bahkan lebih dari dua modus (multimodal). Namun, apabila setiap nilai observasi memiliki frekuensi kemunculan yang persis sama, maka himpunan data tersebut diklasifikasikan sebagai himpunan yang sama sekali tidak memiliki modus.\n\nMengkaji letak pusat data saja belumlah cukup untuk memperoleh gambaran distribusi yang komprehensif. Oleh karena itu, diperlukan parameter tambahan yang dikenal sebagai ukuran penyebaran data (dispersi). Ukuran penyebaran mengkuantifikasi seberapa jauh nilai-nilai observasi individu menyimpang atau bervariasi dari nilai pusatnya. Metrik penyebaran yang paling mendasar adalah jangkauan atau rentang (range). Nilai jangkauan diformulasikan dengan sangat sederhana, yaitu selisih absolut antara nilai pengamatan paling besar (maksimum) dikurangi dengan nilai pengamatan paling kecil (minimum). Semakin besar nilai jangkauan, semakin heterogen pula penyebaran data tersebut. Akan tetapi, karena hanya mengandalkan dua titik paling ekstrem di ujung distribusi, jangkauan dianggap kurang mewakili keseluruhan sebaran anggota observasi.\n\nUntuk meminimalkan kelemahan pada perhitungan jangkauan, ukuran letak yang disebut kuartil dipergunakan. Kuartil berfungsi untuk mengukur sebaran data dengan cara membagi himpunan data yang telah diurutkan menjadi empat luasan bagian observasi yang persis sama besar. Terdapat tiga titik pemisah dalam konsep kuartil. Kuartil pertama atau kuartil bawah (Q1) membatasi luasan 25 persen data terbawah. Kuartil kedua atau kuartil tengah (Q2) secara konseptual memiliki letak dan nilai yang ekuivalen dengan median, memotong distribusi tepat di posisi 50 persen. Selanjutnya, kuartil ketiga atau kuartil atas (Q3) membatasi 25 persen data yang posisinya berada di rentang paling atas. Penentuan nilai-nilai kuartil ini menuntut peserta didik untuk senantiasa memastikan bahwa himpunan data telah terurut dengan benar sebelum indeks letaknya diformulasikan.\n\nBerdasarkan nilai kuartil yang telah ditentukan, ukuran dispersi data dapat dirumuskan secara lebih presisi (tahan terhadap pencilan) melalui konsep jangkauan antarkuartil atau hamparan. Jangkauan antarkuartil didefinisikan sebagai selisih matematis antara nilai kuartil atas (Q3) dikurangi dengan nilai kuartil bawah (Q1). Nilai inilah yang merepresentasikan rentang tempat di mana 50 persen himpunan data di bagian tengah berkonsentrasi. Selain itu, terdapat pula parameter turunan yang disebut simpangan kuartil atau jangkauan semi antarkuartil, yang nilainya ekuivalen dengan setengah dari rentang hamparan. Kombinasi analisis menggunakan ukuran pemusatan (mean, median, modus) serta ukuran penyebaran (jangkauan, hamparan) memampukan peneliti untuk mendeskripsikan ringkasan populasi secara faktual dan menafsirkan perilaku kumpulan data secara valid.\n\n[FLASHCARD_REQUIREMENTS]\n- Generate flashcards aligned with the configured flashcard level.\n- Keep answers concise, useful, and easy to recall.\n- Focus on essential knowledge compression.\n- Avoid long analytical explanations.\n- Use natural Indonesian educational language.\n\n[LEVEL_ALIGNMENT]\n\n- LOTS:\n  Focus on direct recall of concepts, formulas, definitions, or basic facts.\n- MOTS:\n  Focus on simple application, conceptual relationships, or practical usage.\n- HOTS:\n  Focus on concise evaluative conclusions, impacts, strategies, or insights.\n\n[FRONT_RULES]\n- Maximum 20 characters including spaces.\n- Use concise prompts, terms, formulas, or key ideas.\n- Avoid ambiguous wording.\n- Avoid full sentence questions when unnecessary.\n\n[BACK_RULES]\n- Maximum 50 characters including spaces.\n- Must contain definitive answers, formulas, concepts, impacts, or conclusions.\n- Avoid rhetorical or open-ended responses.\n- Avoid filler words.\n- STEM subjects:\n  - may include concise LaTeX formulas\n  - prioritize formulas or technical meaning\n- Theory subjects:\n  - prioritize impacts, relationships, or concise takeaways\n\n[CONTENT_GUIDELINES]\nAllowed content:\n- formulas\n- definitions\n- key concepts\n- practical applications\n- impacts\n- relationships\n- concise strategies\n- evaluative takeaways\n\n[VARIATION_RULES]\nDistribute flashcards naturally across:\n- conceptual recall\n- applied understanding\n- evaluative takeaway\n\nAvoid generating cards with repetitive wording patterns.\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- Escape newline characters.\n- Escape internal quotes.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "front": "Apa itu statistika deskriptif?",
+      "back": "Teknik kumpul, olah, sajikan data agar mudah dipahami."
+    },
+    {
+      "level": "LOTS",
+      "front": "Rumus Mean",
+      "back": "\\\\sum x / n"
+    },
+    {
+      "level": "LOTS",
+      "front": "Definisi Median",
+      "back": "Nilai tengah data terurut."
+    },
+    {
+      "level": "LOTS",
+      "front": "Definisi Modus",
+      "back": "Nilai frekuensi kemunculan tertinggi."
+    },
+    {
+      "level": "LOTS",
+      "front": "Rumus Jangkauan",
+      "back": "Nilai Maksimum - Nilai Minimum"
+    }
+  ],
+  "metadata": {
+    "id": "282f8f9a-ad88-48f7-8bb5-bd064e3819f8",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:49:17Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Statistik Deskriptif",
+    "task_type": "flashcard",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_6_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan ukuran pemusatan (mean, median, modus) dan penyebaran data (jangkauan, kuartil).",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2411,
+      "assistant": 145,
+      "total": 3229,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

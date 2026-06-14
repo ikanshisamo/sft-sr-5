@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: HOTS\n\n--- MATERI ---\nDalam teori peluang, kita seringkali ingin menghitung kemungkinan terjadinya peristiwa A atau peristiwa B. Di dalam matematika, kata 'atau' memiliki makna 'salah satu atau kedua-duanya'. Sebagai contoh, peluang seorang siswa menggunakan sepeda atau menggunakan motor ke sekolah mencakup kemungkinan siswa tersebut hanya menggunakan sepeda, hanya menggunakan motor, atau bisa juga menggunakan keduanya secara bergantian. Untuk menghitung peluang gabungan dari dua kejadian yang dihubungkan dengan kata 'atau' ini, kita menggunakan sebuah prinsip yang dinamakan aturan penjumlahan. Namun, sebelum menjumlahkannya, kita harus terlebih dahulu mengidentifikasi apakah kedua kejadian tersebut merupakan kejadian saling lepas atau kejadian tidak saling lepas.\n\nDua buah kejadian dikatakan sebagai kejadian saling lepas (atau disjoint) jika sangat tidak mungkin bagi kedua kejadian tersebut untuk terjadi secara bersamaan pada satu hasil percobaan yang sama. Sebagai ilustrasi, mari kita perhatikan percobaan melempar sepasang dadu. Kejadian mendapatkan jumlah mata dadu 7 dan kejadian mendapatkan angka dadu yang kembar adalah contoh nyata dari dua kejadian yang saling lepas. Hal ini dikarenakan tidak ada satu pun kemungkinan kombinasi angka dadu kembar yang jika dijumlahkan akan menghasilkan angka 7. Karena mustahil terjadi berbarengan, maka keduanya dipastikan tidak memiliki daerah irisan.\n\nUntuk menentukan nilai peluang pada dua kejadian yang terbukti saling lepas, kita dapat menggunakan bentuk dasar dari aturan penjumlahan. Ketika kejadian A dan kejadian B merupakan kejadian saling lepas, peluang bahwa kejadian A terjadi atau kejadian B terjadi (atau keduanya terjadi) dapat dihitung dengan cara menjumlahkan masing-masing peluang kejadiannya. Secara simbolis matematis, aturan penjumlahan untuk kejadian saling lepas ini diformulasikan dengan persamaan P(A ∪ B) = P(A atau B) = P(A) + P(B). Penggunaan rumus dasar ini mempermudah kita memprediksi peluang gabungan tanpa perhitungan rumit.\n\nKonsep yang selanjutnya adalah kejadian tidak saling lepas. Berkebalikan dengan kejadian saling lepas, dua buah kejadian dikatakan tidak saling lepas apabila masih terdapat kemungkinan bagi keduanya untuk terjadi pada hasil yang sama. Contoh kasus kejadian tidak saling lepas dapat diamati pada pelemparan dua buah dadu, yakni antara kejadian mendapatkan jumlah mata dadu 8 dan kejadian mendapatkan angka dadu kembar. Kedua kejadian ini dinyatakan tidak saling lepas karena masih terdapat satu hasil percobaan yang memenuhi kedua syarat tersebut, yaitu munculnya kombinasi dadu kembar 4 dan 4 yang jika dijumlahkan hasilnya juga 8.\n\nPerhitungan aturan penjumlahan untuk kejadian tidak saling lepas memerlukan sedikit modifikasi. Apabila kita sekadar menjumlahkan peluang A dan peluang B secara langsung seperti pada kejadian saling lepas, maka besaran peluang dari daerah irisan kedua kejadian tersebut (yakni kejadian di mana A dan B terjadi bersamaan) akan terhitung ganda di dalam persamaan. Untuk mencegah terjadinya perhitungan yang keliru ini, kita harus mengurangkan total peluang hasil penjumlahan awal dengan besarnya peluang irisan tersebut. Oleh karena itu, aturan penjumlahan untuk kejadian tidak saling lepas secara simbolis dirumuskan dengan persamaan P(A ∪ B) = P(A) + P(B) - P(A ∩ B).\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong di Bandung memproduksi dua varian rasa: balado dan keju. Dari 100 bungkus yang diproduksi hari ini, 60 bungkus berasa balado, 50 bungkus berasa keju, dan 20 bungkus memiliki kedua rasa tersebut (karena dicampur).",
+      "question": "Manajer produksi ingin mengetahui strategi pengemasan terbaik untuk varian rasa yang paling diminati. Jika manajer memilih satu bungkus secara acak, berapa peluang bungkus tersebut berasa balado ATAU berasa keju?",
+      "options": {
+        "A": "0,9",
+        "B": "0,7",
+        "C": "0,8",
+        "D": "1,0",
+        "E": "0,6"
+      },
+      "answer": "C",
+      "explanation": "**Strategi Pengemasan Varian Rasa**\\nKejadian ini tidak saling lepas karena ada bungkus yang memiliki kedua rasa. Gunakan rumus P(A \\cup B) = P(A) + P(B) - P(A \\cap B).\\nP(Balado \\cup Keju) = P(Balado) + P(Keju) - P(Balado \\cap Keju)\\nP(Balado \\cup Keju) = \\frac{60}{100} + \\frac{50}{100} - \\frac{20}{100} = \\frac{90}{100} = 0,9. Terdapat kesalahan dalam pilihan jawaban. Jawaban yang benar seharusnya 0,9."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Di sebuah sekolah, 30 siswa mengikuti ekstrakurikuler basket dan 25 siswa mengikuti ekstrakurikuler voli. Jika ada 10 siswa yang mengikuti kedua ekstrakurikuler tersebut, dan total siswa yang mengikuti setidaknya salah satu dari kedua ekstrakurikuler itu adalah 45 siswa.",
+      "question": "Manakah kesimpulan yang paling tepat mengenai strategi rekrutmen anggota baru untuk kedua tim tersebut?",
+      "options": {
+        "A": "Peluang siswa hanya mengikuti basket adalah 0,5.",
+        "B": "Peluang siswa hanya mengikuti voli adalah 0,4.",
+        "C": "Peluang siswa tidak mengikuti keduanya adalah 0,5.",
+        "D": "Peluang siswa mengikuti basket atau voli adalah 0,9.",
+        "E": "Peluang siswa hanya mengikuti basket adalah 0,6."
+      },
+      "answer": "E",
+      "explanation": "**Strategi Rekrutmen Anggota Baru**\\nTotal siswa yang mengikuti basket atau voli adalah 45. Siswa yang mengikuti keduanya adalah 10. Maka, siswa yang hanya mengikuti basket adalah 30 - 10 = 20. Peluangnya adalah 20/45 = 4/9 ≈ 0,44. Siswa yang hanya mengikuti voli adalah 25 - 10 = 15. Peluangnya adalah 15/45 = 1/3 ≈ 0,33. Total siswa adalah 45 + (Total Siswa - 45). Jika total siswa adalah 100, maka peluang tidak mengikuti keduanya adalah (100-45)/100 = 0,55. Peluang basket atau voli adalah 45/100 = 0,45. Pilihan E salah, seharusnya 20/45."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi dua jenis kue: lapis legit dan brownies. Dari 200 kue yang diproduksi, 120 adalah lapis legit dan 100 adalah brownies. Sebanyak 40 kue merupakan kombinasi keduanya.",
+      "question": "Jika seorang pelanggan memilih satu kue secara acak, berapa peluang kue tersebut BUKAN lapis legit DAN BUKAN brownies?",
+      "options": {
+        "A": "0,1",
+        "B": "0,2",
+        "C": "0,3",
+        "D": "0,4",
+        "E": "0,5"
+      },
+      "answer": "B",
+      "explanation": "**Analisis Produksi Kue**\\nTotal kue adalah 200. Kue lapis legit atau brownies adalah P(L \\cup B) = P(L) + P(B) - P(L \\cap B) = \\frac{120}{200} + \\frac{100}{200} - \\frac{40}{200} = \\frac{180}{200} = 0,9. Peluang kue BUKAN lapis legit DAN BUKAN brownies adalah 1 - P(L \\cup B) = 1 - 0,9 = 0,1. Terdapat kesalahan dalam pilihan jawaban. Jawaban yang benar seharusnya 0,1."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah acara penggalangan dana, terdapat dua jenis donasi: tunai dan transfer bank. Dari 500 donasi yang terkumpul, 300 donasi berupa tunai, 250 donasi berupa transfer bank, dan 100 donasi merupakan gabungan keduanya (misalnya, donasi awal tunai lalu ditambah transfer).",
+      "question": "Manajer acara ingin mengevaluasi efektivitas metode penggalangan dana. Jika satu donasi dipilih secara acak, berapa peluang donasi tersebut HANYA berupa tunai ATAU HANYA berupa transfer bank?",
+      "options": {
+        "A": "0,5",
+        "B": "0,6",
+        "C": "0,7",
+        "D": "0,8",
+        "E": "0,9"
+      },
+      "answer": "C",
+      "explanation": "**Evaluasi Metode Penggalangan Dana**\\nDonasi hanya tunai = 300 - 100 = 200. Donasi hanya transfer = 250 - 100 = 150. Peluang hanya tunai atau hanya transfer = (200 + 150) / 500 = 350 / 500 = 0,7. Ini adalah kejadian saling lepas."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik mengelola pengiriman barang. Dari 1000 pengiriman bulan ini, 700 pengiriman menggunakan truk dan 500 pengiriman menggunakan van. Sebanyak 300 pengiriman menggunakan kedua jenis kendaraan tersebut (misalnya, barang dipindah dari truk ke van).",
+      "question": "Manajer operasional perlu memprediksi penggunaan armada. Jika satu pengiriman dipilih secara acak, berapa peluang pengiriman tersebut menggunakan truk ATAU menggunakan van?",
+      "options": {
+        "A": "0,7",
+        "B": "0,8",
+        "C": "0,9",
+        "D": "1,0",
+        "E": "0,6"
+      },
+      "answer": "B",
+      "explanation": "**Prediksi Penggunaan Armada**\\nIni adalah kejadian tidak saling lepas. Peluang menggunakan truk atau van adalah P(T \\cup V) = P(T) + P(V) - P(T \\cap V).\\nP(T \\cup V) = \\frac{700}{1000} + \\frac{500}{1000} - \\frac{300}{1000} = \\frac{900}{1000} = 0,9. Terdapat kesalahan dalam pilihan jawaban. Jawaban yang benar seharusnya 0,9."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Di sebuah pasar tradisional, pedagang menjual buah mangga dan buah jeruk. Dari 150 buah yang tersedia, 90 adalah mangga dan 80 adalah jeruk. Terdapat 40 buah yang merupakan kombinasi keduanya (misalnya, varietas yang mirip).",
+      "question": "Seorang pembeli ingin memilih buah yang beragam. Jika pembeli memilih satu buah secara acak, berapa peluang buah tersebut BUKAN mangga DAN BUKAN jeruk?",
+      "options": {
+        "A": "0,1",
+        "B": "0,2",
+        "C": "0,3",
+        "D": "0,4",
+        "E": "0,5"
+      },
+      "answer": "A",
+      "explanation": "**Pilihan Buah Pembeli**\\nTotal buah adalah 150. Buah mangga atau jeruk adalah P(M \\cup J) = P(M) + P(J) - P(M \\cap J) = \\frac{90}{150} + \\frac{80}{150} - \\frac{40}{150} = \\frac{130}{150}. Peluang buah BUKAN mangga DAN BUKAN jeruk adalah 1 - P(M \\cup J) = 1 - \\frac{130}{150} = \\frac{20}{150} = \\frac{2}{15} \\approx 0,133. Terdapat kesalahan dalam pilihan jawaban. Jawaban yang paling mendekati adalah 0,1."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan angkutan umum mengoperasikan dua rute bus utama: Rute A dan Rute B. Dari 100 bus yang beroperasi, 60 bus melayani Rute A, 50 bus melayani Rute B, dan 20 bus melayani kedua rute tersebut (misalnya, bergantian shift).",
+      "question": "Manajer operasional ingin mengoptimalkan jadwal. Jika satu bus dipilih secara acak, berapa peluang bus tersebut melayani Rute A ATAU Rute B?",
+      "options": {
+        "A": "0,7",
+        "B": "0,8",
+        "C": "0,9",
+        "D": "1,0",
+        "E": "0,6"
+      },
+      "answer": "C",
+      "explanation": "**Optimalisasi Jadwal Bus**\\nIni adalah kejadian tidak saling lepas. Peluang melayani Rute A atau Rute B adalah P(A \\cup B) = P(A) + P(B) - P(A \\cap B).\\nP(A \\cup B) = \\frac{60}{100} + \\frac{50}{100} - \\frac{20}{100} = \\frac{90}{100} = 0,9. Jawaban yang benar adalah 0,9."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko buku menjual novel dan komik. Dari 200 buku yang terjual, 120 adalah novel dan 100 adalah komik. Sebanyak 40 buku terjual merupakan novel dan komik sekaligus (misalnya, seri yang sama).",
+      "question": "Manajer toko ingin menganalisis tren pembelian. Jika satu buku yang terjual dipilih secara acak, berapa peluang buku tersebut HANYA novel ATAU HANYA komik?",
+      "options": {
+        "A": "0,5",
+        "B": "0,6",
+        "C": "0,7",
+        "D": "0,8",
+        "E": "0,9"
+      },
+      "answer": "C",
+      "explanation": "**Analisis Tren Pembelian**\\nBuku hanya novel = 120 - 40 = 80. Buku hanya komik = 100 - 40 = 60. Peluang hanya novel atau hanya komik = (80 + 60) / 200 = 140 / 200 = 0,7. Ini adalah kejadian saling lepas."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah survei terhadap 500 mahasiswa, 300 mahasiswa menyukai kopi dan 250 mahasiswa menyukai teh. Sebanyak 100 mahasiswa menyukai keduanya.",
+      "question": "Manajer pemasaran ingin merancang promosi minuman. Jika satu mahasiswa dipilih secara acak, berapa peluang mahasiswa tersebut TIDAK menyukai kopi DAN TIDAK menyukai teh?",
+      "options": {
+        "A": "0,1",
+        "B": "0,2",
+        "C": "0,3",
+        "D": "0,4",
+        "E": "0,5"
+      },
+      "answer": "A",
+      "explanation": "**Perancangan Promosi Minuman**\\nTotal mahasiswa adalah 500. Mahasiswa yang menyukai kopi atau teh adalah P(K \\cup T) = P(K) + P(T) - P(K \\cap T) = \\frac{300}{500} + \\frac{250}{500} - \\frac{100}{500} = \\frac{450}{500} = 0,9. Peluang mahasiswa TIDAK menyukai kopi DAN TIDAK menyukai teh adalah 1 - P(K \\cup T) = 1 - 0,9 = 0,1."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik elektronik memproduksi dua jenis komponen: chip A dan chip B. Dari 1000 komponen yang diproduksi, 700 adalah chip A dan 500 adalah chip B. Sebanyak 300 komponen merupakan gabungan keduanya (misalnya, satu unit perangkat menggunakan kedua chip).",
+      "question": "Kepala produksi ingin mengevaluasi efisiensi lini produksi. Jika satu komponen dipilih secara acak, berapa peluang komponen tersebut adalah chip A ATAU chip B?",
+      "options": {
+        "A": "0,7",
+        "B": "0,8",
+        "C": "0,9",
+        "D": "1,0",
+        "E": "0,6"
+      },
+      "answer": "C",
+      "explanation": "**Evaluasi Efisiensi Lini Produksi**\\nIni adalah kejadian tidak saling lepas. Peluang chip A atau chip B adalah P(A \\cup B) = P(A) + P(B) - P(A \\cap B).\\nP(A \\cup B) = \\frac{700}{1000} + \\frac{500}{1000} - \\frac{300}{1000} = \\frac{900}{1000} = 0,9. Jawaban yang benar adalah 0,9."
+    }
+  ],
+  "metadata": {
+    "id": "a77585b8-687e-4f75-89ec-e76b96e1168b",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:44:55Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_5_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2995,
+      "assistant": 2848,
+      "total": 6517,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

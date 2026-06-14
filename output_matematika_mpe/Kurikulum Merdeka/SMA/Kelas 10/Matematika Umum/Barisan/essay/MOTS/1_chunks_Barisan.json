@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Barisan | Target: MOTS\n\n--- MATERI ---\nKonsep barisan sangat erat kaitannya dengan pola bilangan. Dalam matematika, terdapat dua jenis barisan utama yang umum dipelajari, yaitu barisan aritmetika dan barisan geometri. Barisan aritmetika didefinisikan sebagai suatu barisan bilangan di mana beda atau selisih antara dua suku yang berurutan selalu tetap atau konstan. Selisih yang konstan ini biasanya dilambangkan dengan huruf b. Untuk menentukan nilai suku ke-n pada suatu barisan aritmetika, dapat digunakan rumus Un = a + (n - 1)b, dengan a mewakili suku pertama. Di sisi lain, barisan geometri merupakan barisan bilangan yang memiliki rasio atau perbandingan yang selalu tetap antara dua suku yang berurutan. Rasio konstan ini dilambangkan dengan huruf r. Adapun rumus umum untuk mencari suku ke-n pada barisan geometri adalah Un = a dikali r pangkat (n - 1).\n\n[ATP_ALIGNMENT]\nMenentukan suku ke-n pada barisan aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengrajin batik di Pekalongan sedang merancang motif baru. Ia memulai dengan membuat 5 pola dasar. Untuk setiap pola berikutnya, ia menambahkan 3 pola baru dari pola sebelumnya. Pola ini akan diaplikasikan pada kain sepanjang 10 meter.",
+      "question": "Berapa jumlah total pola yang akan tersedia jika pengrajin tersebut membuat pola hingga 8 tingkatan?",
+      "rubric_points": [
+        "Mengidentifikasi bahwa pola penambahan bersifat aritmetika.",
+        "Menentukan suku pertama (a) dan beda (b) dari barisan.",
+        "Menghitung jumlah total pola menggunakan rumus deret aritmetika."
+      ],
+      "explanation": "**Perhitungan Jumlah Pola**\\nBarisan pola yang dibuat pengrajin bersifat aritmetika karena penambahan pola konstan sebanyak 3 setiap tingkatan.\\n\\nDiketahui:\\nSuku pertama (a) = 5 pola\\nBeda (b) = 3 pola\\nJumlah tingkatan (n) = 8\\n\\nRumus jumlah n suku pertama deret aritmetika adalah Sn = \\\\frac{n}{2} [2a + (n-1)b].\\n\\nSubstitusikan nilai yang diketahui ke dalam rumus:\\nS8 = \\\\frac{8}{2} [2(5) + (8-1)3]\\\\nS8 = 4 [10 + (7)3]\\\\nS8 = 4 [10 + 21]\\\\nS8 = 4 [31]\\\\nS8 = 124\\n\\nJadi, jumlah total pola yang akan tersedia adalah 124 pola.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani di Jawa Barat menanam padi. Pada panen pertama, ia mendapatkan hasil 2 ton gabah. Ia berharap hasil panennya meningkat setiap musim tanam. Jika peningkatan hasil panen setiap musim adalah 0.5 ton, tentukan hasil panen pada musim tanam ke-6.",
+      "question": "Berapa ton gabah yang diharapkan petani pada musim tanam keenam?",
+      "rubric_points": [
+        "Mengidentifikasi barisan aritmetika dari peningkatan hasil panen.",
+        "Menentukan suku pertama (a) dan beda (b) barisan.",
+        "Menghitung suku ke-n (hasil panen musim keenam) menggunakan rumus barisan aritmetika."
+      ],
+      "explanation": "**Perhitungan Hasil Panen Musim Keenam**\\nKondisi peningkatan hasil panen setiap musim tanam menunjukkan pola barisan aritmetika.\\n\\nDiketahui:\\nHasil panen musim pertama (a) = 2 ton\\nPeningkatan hasil panen per musim (b) = 0.5 ton\\nMusim tanam yang ditanyakan (n) = 6\\n\\nRumus suku ke-n barisan aritmetika adalah Un = a + (n-1)b.\\n\\nSubstitusikan nilai yang diketahui ke dalam rumus:\\nU6 = 2 + (6-1)0.5\\\\nU6 = 2 + (5)0.5\\\\nU6 = 2 + 2.5\\\\nU6 = 4.5\\n\\nJadi, petani tersebut diharapkan mendapatkan hasil panen 4.5 ton gabah pada musim tanam keenam.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM kerupuk udang di Sidoarjo memproduksi kerupuk. Pada bulan pertama, mereka memproduksi 1000 bungkus. Jika produksi mereka meningkat dua kali lipat setiap bulan, hitunglah total produksi kerupuk selama 4 bulan pertama.",
+      "question": "Berapa total bungkus kerupuk yang diproduksi selama 4 bulan pertama?",
+      "rubric_points": [
+        "Mengenali pola peningkatan produksi sebagai barisan geometri.",
+        "Menentukan suku pertama (a) dan rasio (r) dari barisan.",
+        "Menghitung total produksi menggunakan rumus deret geometri."
+      ],
+      "explanation": "**Perhitungan Total Produksi Kerupuk**\\nPeningkatan produksi yang berlipat ganda setiap bulan mengindikasikan barisan geometri.\\n\\nDiketahui:\\nProduksi bulan pertama (a) = 1000 bungkus\\nRasio peningkatan produksi (r) = 2\\nJumlah bulan (n) = 4\\n\\nRumus jumlah n suku pertama deret geometri adalah Sn = \\\\frac{a(r^n - 1)}{r - 1}.\\n\\nSubstitusikan nilai yang diketahui ke dalam rumus:\\nS4 = \\\\frac{1000(2^4 - 1)}{2 - 1}\\\\nS4 = \\\\frac{1000(16 - 1)}{1}\\\\nS4 = 1000(15)\\\\nS4 = 15000\\n\\nJadi, total produksi kerupuk selama 4 bulan pertama adalah 15.000 bungkus.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan transportasi di Jakarta memiliki armada bus. Pada tahun pertama operasional, mereka memiliki 10 bus. Jika setiap tahun jumlah armada bertambah sebanyak 5 bus, tentukan jumlah total bus yang dimiliki perusahaan tersebut pada akhir tahun ke-7.",
+      "question": "Berapa jumlah total bus yang dimiliki perusahaan pada akhir tahun ketujuh?",
+      "rubric_points": [
+        "Mengidentifikasi penambahan armada sebagai barisan aritmetika.",
+        "Menentukan suku pertama (a) dan beda (b) barisan.",
+        "Menghitung suku ke-n (jumlah bus pada tahun ketujuh) menggunakan rumus barisan aritmetika."
+      ],
+      "explanation": "**Perhitungan Jumlah Bus pada Tahun Ketujuh**\\nPeningkatan jumlah armada bus yang konstan setiap tahun menunjukkan pola barisan aritmetika.\\n\\nDiketahui:\\nJumlah bus tahun pertama (a) = 10 bus\\nPeningkatan armada per tahun (b) = 5 bus\\nTahun yang ditanyakan (n) = 7\\n\\nRumus suku ke-n barisan aritmetika adalah Un = a + (n-1)b.\\n\\nSubstitusikan nilai yang diketahui ke dalam rumus:\\nU7 = 10 + (7-1)5\\\\nU7 = 10 + (6)5\\\\nU7 = 10 + 30\\\\nU7 = 40\\n\\nJadi, jumlah total bus yang dimiliki perusahaan pada akhir tahun ketujuh adalah 40 bus.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa menabung di bank. Pada minggu pertama, ia menabung Rp5.000. Setiap minggu berikutnya, ia menabung dua kali lipat dari jumlah tabungan minggu sebelumnya. Hitunglah total tabungan siswa tersebut setelah 5 minggu.",
+      "question": "Berapa total tabungan siswa tersebut setelah 5 minggu?",
+      "rubric_points": [
+        "Mengenali pola peningkatan tabungan sebagai barisan geometri.",
+        "Menentukan suku pertama (a) dan rasio (r) dari barisan.",
+        "Menghitung total tabungan menggunakan rumus deret geometri."
+      ],
+      "explanation": "**Perhitungan Total Tabungan Siswa**\\nPola peningkatan jumlah tabungan yang berlipat ganda setiap minggu mengindikasikan barisan geometri.\\n\\nDiketahui:\\nTabungan minggu pertama (a) = Rp5.000\\nRasio peningkatan tabungan (r) = 2\\nJumlah minggu (n) = 5\\n\\nRumus jumlah n suku pertama deret geometri adalah Sn = \\\\frac{a(r^n - 1)}{r - 1}.\\n\\nSubstitusikan nilai yang diketahui ke dalam rumus:\\nS5 = \\\\frac{5000(2^5 - 1)}{2 - 1}\\\\nS5 = \\\\frac{5000(32 - 1)}{1}\\\\nS5 = 5000(31)\\\\nS5 = 155000\\n\\nJadi, total tabungan siswa tersebut setelah 5 minggu adalah Rp155.000.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "d16ba6e2-6bec-4248-979f-b8daf76a7850",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T13:43:29Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Barisan",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan suku ke-n pada barisan aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1236,
+      "assistant": 1851,
+      "total": 3761,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

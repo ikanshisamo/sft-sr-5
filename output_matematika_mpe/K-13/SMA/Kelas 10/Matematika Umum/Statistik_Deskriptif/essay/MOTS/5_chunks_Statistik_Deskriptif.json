@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Statistik Deskriptif | Target: MOTS\n\n--- MATERI ---\nDalam statistika deskriptif, setelah kumpulan data disajikan dalam bentuk tabel atau grafik, langkah penting selanjutnya adalah menentukan nilai yang dapat merepresentasikan keseluruhan observasi tersebut. Nilai representatif ini dikenal sebagai ukuran pemusatan data. Salah satu ukuran pemusatan yang paling mendasar dan sering diaplikasikan adalah rata-rata hitung atau mean. Secara matematis, mean dari sekumpulan data tunggal diperoleh dengan menjumlahkan seluruh nilai datum yang ada, kemudian membaginya dengan banyaknya datum tersebut. Nilai mean memberikan gambaran analitis mengenai letak titik keseimbangan dari suatu distribusi data. Pemahaman yang kuat mengenai cara menghitung rata-rata ini sangat penting dalam berbagai pemodelan kontekstual, misalnya untuk menentukan capaian rata-rata nilai evaluasi siswa di suatu kelas.\n\nSelain rata-rata hitung, ukuran pemusatan data lainnya yang sangat esensial untuk dipelajari adalah median dan modus. Median didefinisikan sebagai nilai tengah yang secara akurat membagi sekumpulan observasi menjadi dua bagian yang sama besar, setelah data tersebut diurutkan dari nilai yang paling kecil hingga yang paling besar. Jika banyaknya data bernilai ganjil, median tepat berada pada datum di posisi tengah, sedangkan jika genap, median adalah rata-rata dari dua datum yang terletak di tengah. Di sisi lain, modus merupakan nilai datum yang memiliki frekuensi kemunculan paling tinggi di dalam sekumpulan data. Keunggulan utama dari penggunaan median dan modus dibandingkan dengan mean adalah sifatnya yang tidak mudah terdistorsi oleh nilai pencilan (outlier), sehingga sangat tepat digunakan pada distribusi data yang tidak simetris.\n\nMengandalkan ukuran pemusatan data semata belumlah cukup untuk mendeskripsikan karakteristik suatu himpunan observasi secara utuh. Dua kelompok pengamatan yang berbeda dapat saja memiliki nilai rata-rata yang identik, namun menyajikan pola sebaran yang sangat jauh berbeda. Oleh karena itu, kita membutuhkan instrumen analitis lain berupa ukuran penyebaran data (ukuran dispersi). Ukuran ini berfungsi krusial untuk memberikan informasi mengenai seberapa jauh nilai-nilai data individual menyebar atau menyimpang dari nilai pusatnya. Ukuran penyebaran yang paling sederhana dan mudah dihitung adalah jangkauan atau rentang (range). Jangkauan didefinisikan sebagai selisih matematis antara nilai datum terbesar (maksimum) dengan nilai datum terkecil (minimum) dari suatu kumpulan data statistik.\n\nUntuk memperoleh gambaran penyebaran data dengan tingkat presisi yang lebih tinggi dan lebih kebal terhadap pengaruh nilai-nilai ekstrem, statistika memperkenalkan konsep ukuran letak yang disebut kuartil. Kuartil merupakan serangkaian nilai batas yang secara sistematis membagi sekumpulan data yang telah diurutkan menjadi empat kelompok bagian yang sama banyak. Dalam analisis statistika, dikenal tiga jenis kuartil. Kuartil bawah (Q1) bertindak sebagai batas 25 persen data terbawah, kuartil tengah (Q2) posisinya ekuivalen dengan nilai median dan membatasi 50 persen data, serta kuartil atas (Q3) yang menjadi batas 25 persen data teratas. Penentuan letak kuartil bergantung pada kuantitas pengamatan observasi dan sering kali memanfaatkan teknik pemotongan proporsional pada barisan data.\n\nBerlandaskan pemahaman mengenai letak dan nilai ketiga kuartil tersebut, kita dapat mengevaluasi ukuran penyebaran data tingkat lanjut yang disebut jangkauan interkuartil atau hamparan. Jangkauan interkuartil didefinisikan sebagai selisih matematis antara nilai kuartil atas dengan kuartil bawah (Q3 - Q1). Penggunaan ukuran ini sangat diandalkan karena ia hanya mengukur variabilitas pada 50 persen konsentrasi data yang berada tepat di bagian tengah distribusi, sehingga otomatis mereduksi anomali dari data pencilan. Kombinasi penguasaan antara penentuan ukuran pemusatan seperti mean, median, dan modus, yang disandingkan dengan evaluasi ukuran penyebaran seperti jangkauan serta kuartil, akan membekali siswa dengan kompetensi komprehensif dalam menafsirkan dan menyimpulkan profil sebuah data kuantitatif.\n\n[ATP_ALIGNMENT]\nMenentukan ukuran pemusatan (mean, median, modus) dan penyebaran data (jangkauan, kuartil).\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang di Pasar Beringharjo Yogyakarta mencatat hasil penjualan harian selama seminggu terakhir. Data penjualan dalam ribuan rupiah adalah sebagai berikut: Senin (150), Selasa (180), Rabu (160), Kamis (200), Jumat (220), Sabtu (250), Minggu (230). Pedagang tersebut ingin mengetahui rata-rata pendapatannya per hari untuk perencanaan stok.",
+      "question": "Hitunglah rata-rata pendapatan harian pedagang tersebut selama seminggu berdasarkan data penjualannya.",
+      "rubric_points": [
+        "Menjumlahkan seluruh data penjualan harian.",
+        "Membagi total penjualan dengan jumlah hari dalam seminggu.",
+        "Menyajikan hasil perhitungan rata-rata pendapatan."
+      ],
+      "explanation": "**Perhitungan Rata-rata Pendapatan Harian**\\nUntuk menghitung rata-rata pendapatan harian, kita perlu menjumlahkan seluruh nilai penjualan dan membaginya dengan jumlah hari.\\n\\nTotal Penjualan = 150 + 180 + 160 + 200 + 220 + 250 + 230 = 1490 (ribu rupiah)\\n\\nJumlah Hari = 7\\n\\nRata-rata Pendapatan = \\\\frac{Total Penjualan}{Jumlah Hari}\\\\n= \\\\frac{1490}{7}\\\\n= 212.86 (ribu rupiah)\\\\n\\nJadi, rata-rata pendapatan harian pedagang tersebut adalah sekitar Rp 212.860,00.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong di Sleman memproduksi keripik dalam beberapa varian rasa. Data jumlah produksi per hari (dalam kemasan) untuk varian rasa balado selama 11 hari adalah: 120, 135, 110, 140, 135, 150, 125, 130, 135, 145, 115. Pemilik UMKM ingin mengetahui nilai tengah produksi untuk memahami tren.",
+      "question": "Tentukan median dari data jumlah produksi keripik rasa balado selama 11 hari tersebut.",
+      "rubric_points": [
+        "Mengurutkan data produksi dari terkecil ke terbesar.",
+        "Mengidentifikasi nilai tengah setelah data diurutkan.",
+        "Menyatakan nilai median produksi."
+      ],
+      "explanation": "**Penentuan Median Produksi Keripik**\\nMedian adalah nilai tengah dari data yang telah diurutkan. Pertama, urutkan data produksi dari yang terkecil hingga terbesar:\\n110, 115, 120, 125, 130, \\\\mathbf{135}\\\\, 135, 135, 140, 145, 150.\\n\\nKarena terdapat 11 data (jumlah ganjil), median adalah data pada posisi ke-\\(\\frac{11+1}{2} = 6\\).\\n\\nNilai pada posisi ke-6 adalah 135.\\n\\nJadi, median jumlah produksi keripik rasa balado adalah 135 kemasan.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah sekolah di Surabaya mengadakan lomba karya tulis ilmiah antar kelas. Data jumlah peserta dari 5 kelas adalah sebagai berikut: Kelas X-A (25), Kelas X-B (30), Kelas X-C (28), Kelas X-D (30), Kelas X-E (27). Pihak panitia ingin mengetahui varian rasa yang paling banyak diminati.",
+      "question": "Identifikasi modus dari data jumlah peserta lomba karya tulis ilmiah per kelas tersebut.",
+      "rubric_points": [
+        "Mencatat frekuensi kemunculan setiap nilai jumlah peserta.",
+        "Menentukan nilai jumlah peserta yang paling sering muncul.",
+        "Menyatakan modus jumlah peserta."
+      ],
+      "explanation": "**Identifikasi Modus Jumlah Peserta**\\nModus adalah nilai yang paling sering muncul dalam sekumpulan data. Dalam data jumlah peserta lomba:\\n- Kelas X-A: 25 (muncul 1 kali)\\n- Kelas X-B: 30 (muncul 2 kali)\\n- Kelas X-C: 28 (muncul 1 kali)\\n- Kelas X-D: 30 (muncul 2 kali)\\n- Kelas X-E: 27 (muncul 1 kali)\\n\\nNilai yang paling sering muncul adalah 30, yang muncul sebanyak 2 kali.\\n\\nJadi, modus jumlah peserta lomba karya tulis ilmiah adalah 30 peserta.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani di Jawa Barat mencatat hasil panen padi dalam kuintal selama 6 musim tanam terakhir: 50, 55, 48, 60, 52, 58. Petani tersebut ingin mengetahui rentang variasi hasil panennya untuk membandingkan musim tanam yang paling produktif dan kurang produktif.",
+      "question": "Hitunglah jangkauan (range) dari hasil panen padi petani tersebut selama 6 musim tanam.",
+      "rubric_points": [
+        "Mengidentifikasi nilai panen maksimum.",
+        "Mengidentifikasi nilai panen minimum.",
+        "Menghitung selisih antara nilai maksimum dan minimum."
+      ],
+      "explanation": "**Perhitungan Jangkauan Hasil Panen**\\nJangkauan (range) adalah selisih antara nilai data terbesar (maksimum) dan nilai data terkecil (minimum).\\n\\nData hasil panen (dalam kuintal): 50, 55, 48, 60, 52, 58.\\n\\nNilai maksimum = 60 kuintal.\\nNilai minimum = 48 kuintal.\\n\\nJangkauan = Nilai Maksimum - Nilai Minimum\\\\n= 60 - 48\\\\n= 12 kuintal.\\n\\nJadi, jangkauan hasil panen padi petani tersebut adalah 12 kuintal.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan roti di Bandung memproduksi berbagai jenis kue. Data jumlah penjualan harian (dalam lusin) untuk kue lapis legit selama 10 hari adalah: 15, 18, 16, 20, 17, 18, 19, 16, 18, 21. Perusahaan ingin mengetahui sebaran data penjualan untuk memahami variabilitasnya.",
+      "question": "Tentukan kuartil atas (Q3) dari data jumlah penjualan kue lapis legit selama 10 hari tersebut.",
+      "rubric_points": [
+        "Mengurutkan data penjualan dari terkecil ke terbesar.",
+        "Menentukan nilai kuartil tengah (Q2) atau median.",
+        "Menentukan nilai kuartil atas (Q3) dari separuh data bagian atas."
+      ],
+      "explanation": "**Penentuan Kuartil Atas (Q3) Penjualan Kue**\\nPertama, urutkan data penjualan (dalam lusin) dari yang terkecil hingga terbesar:\\n15, 16, 16, 17, \\\\mathbf{18}\\\\, \\\\mathbf{18}\\\\, 18, 19, 20, 21.\\n\\nKarena terdapat 10 data (jumlah genap), median (Q2) adalah rata-rata dari data ke-5 dan ke-6: \\(\\frac{18+18}{2} = 18\\).\\n\\nSelanjutnya, tentukan kuartil atas (Q3) dari separuh data bagian atas, yaitu: 18, 19, 20, 21.\\n\\nMedian dari data ini (Q3) adalah rata-rata dari dua nilai tengahnya (data ke-3 dan ke-4 dari kelompok ini): \\(\\frac{19+20}{2} = 19.5\\).\\n\\nJadi, kuartil atas (Q3) dari data penjualan kue lapis legit adalah 19.5 lusin.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "c14996b1-d2b3-4465-af9e-babee4c1552e",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:14:27Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Statistik Deskriptif",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_5_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan ukuran pemusatan (mean, median, modus) dan penyebaran data (jangkauan, kuartil).",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2276,
+      "assistant": 1796,
+      "total": 4746,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

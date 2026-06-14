@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Bunga | Target: HOTS\n\n--- MATERI ---\nDalam dunia perbankan dan keuangan, konsep barisan dan deret sangat aplikatif, salah satunya dalam perhitungan suku bunga. Terdapat dua jenis bunga yang umum dipelajari, yaitu bunga tunggal dan bunga majemuk. Bunga tunggal adalah bunga yang dihitung hanya berdasarkan besarnya modal awal yang disetorkan. Karena penambahan nilai bunganya selalu bernilai tetap pada setiap periode, perhitungan bunga tunggal berprinsip pada pola barisan aritmetika. Jika suatu modal awal disimbolkan dengan M dan mendapat persentase bunga tunggal sebesar b per periode, maka besar bunga pada setiap periode selalu konstan. Dengan demikian, total modal pada akhir periode ke-n (dinotasikan dengan Mn) dapat dihitung menggunakan rumus yang ekuivalen dengan suku ke-n barisan aritmetika, yaitu Mn = M(1 + n × b). Konsep ini membantu kita memprediksi pertumbuhan aset secara linear tanpa adanya akumulasi bunga berbunga.\n\nBerbeda dengan bunga tunggal, bunga majemuk merupakan jenis bunga yang perhitungannya tidak hanya didasarkan pada modal awal, melainkan juga memperhitungkan akumulasi bunga yang telah diperoleh pada periode-periode sebelumnya. Karena nilai modal bertambah secara eksponensial di mana bunga turut menghasilkan bunga, perhitungan bunga majemuk menerapkan secara langsung prinsip barisan geometri. Jika modal awal disimbolkan M dan diinvestasikan dengan suku bunga majemuk sebesar i per periode, maka total modal pada akhir periode ke-t (dinotasikan dengan Mt) akan mengalami pelipatgandaan yang konstan. Secara matematis, formulasi untuk menghitung nilai modal akhir ini dirumuskan sebagai Mt = M(1 + i)^t. Pemahaman mengenai perbedaan mendasar antara bunga tunggal dan bunga majemuk ini sangat krusial dalam memecahkan masalah nyata terkait pengambilan keputusan finansial, seperti deposito atau pinjaman.\n\n[ATP_ALIGNMENT]\nMenghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Ibu Ani berencana menabung di bank. Ia memiliki dua pilihan: Bank A menawarkan bunga tunggal 5% per tahun, sedangkan Bank B menawarkan bunga majemuk 4% per tahun. Ibu Ani berencana menyimpan uangnya selama 5 tahun.",
+      "question": "Jika Ibu Ani ingin mendapatkan keuntungan total yang paling besar setelah 5 tahun, strategi manakah yang sebaiknya ia pilih dan mengapa?",
+      "options": {
+        "A": "Bank A, karena bunga tunggal memberikan kepastian keuntungan yang lebih stabil setiap tahun.",
+        "B": "Bank B, karena bunga majemuk akan menghasilkan pertumbuhan yang lebih cepat seiring waktu.",
+        "C": "Bank A, karena persentase bunganya lebih tinggi, sehingga total bunga yang didapat pasti lebih besar.",
+        "D": "Bank B, karena bunga majemuk akan membuat modal awal berlipat ganda lebih cepat.",
+        "E": "Keduanya sama saja, karena perbedaan persentase bunga tidak signifikan untuk jangka waktu 5 tahun."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Pertumbuhan Modal.** Bunga majemuk (Bank B) memiliki potensi pertumbuhan yang lebih eksponensial dibandingkan bunga tunggal (Bank A). Meskipun bunga tunggal memiliki persentase lebih tinggi, akumulasi bunga berbunga pada bunga majemuk akan melampaui keuntungan bunga tunggal dalam jangka waktu menengah hingga panjang seperti 5 tahun."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Pak Budi meminjam uang sebesar Rp20.000.000 dari dua koperasi berbeda untuk modal usaha UMKM-nya. Koperasi pertama mengenakan bunga tunggal 10% per tahun, dan Koperasi kedua mengenakan bunga majemuk 9% per tahun. Pak Budi berencana melunasi pinjaman dalam waktu 3 tahun.",
+      "question": "Untuk meminimalkan total pembayaran bunga setelah 3 tahun, Pak Budi sebaiknya memilih pinjaman dari koperasi mana, dan apa pertimbangan utamanya?",
+      "options": {
+        "A": "Koperasi pertama, karena bunga tunggal lebih mudah dihitung dan diprediksi.",
+        "B": "Koperasi kedua, karena bunga majemuk dengan persentase lebih rendah akan menghasilkan total bunga yang lebih kecil.",
+        "C": "Koperasi pertama, karena bunga tunggal 10% lebih besar dari bunga majemuk 9%, sehingga lebih menguntungkan.",
+        "D": "Koperasi kedua, karena bunga majemuk akan mengurangi pokok pinjaman lebih cepat.",
+        "E": "Keduanya sama, karena perbedaan persentase bunga kecil dan jangka waktu pinjaman pendek."
+      },
+      "answer": "B",
+      "explanation": "**Perbandingan Total Bunga.** Meskipun bunga tunggal memiliki persentase lebih tinggi, bunga majemuk pada Koperasi kedua akan menghasilkan total bunga yang lebih kecil dalam 3 tahun karena bunga dihitung dari modal yang terus bertambah. Perhitungan bunga majemuk 9% akan lebih efisien daripada bunga tunggal 10% untuk jangka waktu ini."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa SMA bernama Rina ingin menabung untuk membeli laptop seharga Rp8.000.000 dalam waktu 2 tahun. Ia memiliki dua opsi investasi: Opsi 1 adalah deposito dengan bunga tunggal 6% per tahun. Opsi 2 adalah reksa dana dengan estimasi bunga majemuk 5% per tahun.",
+      "question": "Jika Rina ingin memastikan dana tabungannya mencapai target minimal Rp8.000.000, strategi mana yang lebih aman dan realistis untuk dipilih?",
+      "options": {
+        "A": "Opsi 1, karena bunga tunggal memberikan kepastian nilai akhir yang lebih terjamin.",
+        "B": "Opsi 2, karena bunga majemuk berpotensi memberikan hasil lebih besar dari target.",
+        "C": "Opsi 1, karena persentase bunga lebih tinggi sehingga lebih cepat mencapai target.",
+        "D": "Opsi 2, karena bunga majemuk akan memberikan keuntungan tambahan dari bunga yang sudah ada.",
+        "E": "Keduanya memiliki risiko yang sama karena targetnya sama."
+      },
+      "answer": "A",
+      "explanation": "**Keamanan dan Kepastian Dana.** Opsi 1 (bunga tunggal) menawarkan kepastian nilai akhir yang lebih terjamin karena perhitungan bunganya konstan. Opsi 2 (bunga majemuk) bersifat estimasi dan berpotensi lebih tinggi, namun juga memiliki risiko fluktuasi yang tidak pasti, sehingga Opsi 1 lebih aman untuk mencapai target minimal."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM kerajinan tangan menerima pinjaman Rp50.000.000. Pilihan 1: Pinjaman dengan bunga tunggal 12% per tahun selama 4 tahun. Pilihan 2: Pinjaman dengan bunga majemuk 10% per tahun selama 4 tahun. UMKM tersebut ingin meminimalkan beban pembayaran total.",
+      "question": "Manakah pilihan pinjaman yang harus diambil UMKM tersebut untuk meminimalkan total pembayaran, dan mengapa?",
+      "options": {
+        "A": "Pilihan 1, karena persentase bunganya lebih tinggi sehingga lebih cepat lunas.",
+        "B": "Pilihan 2, karena bunga majemuk dengan persentase lebih rendah akan menghasilkan total bunga yang lebih kecil.",
+        "C": "Pilihan 1, karena bunga tunggal lebih mudah dikelola dalam pembukuan UMKM.",
+        "D": "Pilihan 2, karena bunga majemuk akan mengurangi pokok pinjaman lebih cepat.",
+        "E": "Keduanya sama, karena perbedaan persentase bunga tidak signifikan untuk jangka waktu 4 tahun."
+      },
+      "answer": "B",
+      "explanation": "**Efisiensi Biaya Pinjaman.** Pilihan 2 (bunga majemuk 10%) akan menghasilkan total pembayaran bunga yang lebih kecil dibandingkan Pilihan 1 (bunga tunggal 12%) selama 4 tahun. Meskipun persentase bunga tunggal lebih tinggi, akumulasi bunga berbunga pada bunga majemuk dengan suku bunga lebih rendah akan lebih efisien dalam jangka waktu tersebut."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua orang sahabat, Adi dan Budi, menabung di bank yang sama. Adi menabung Rp1.000.000 dengan bunga tunggal 5% per tahun. Budi menabung Rp1.000.000 dengan bunga majemuk 4% per tahun. Mereka berencana menabung selama 10 tahun.",
+      "question": "Setelah 10 tahun, siapakah yang akan memiliki saldo tabungan lebih besar, dan apa alasan utamanya?",
+      "options": {
+        "A": "Adi, karena bunga tunggal 5% lebih tinggi dari bunga majemuk 4%.",
+        "B": "Budi, karena bunga majemuk akan terus bertambah dari bunga sebelumnya.",
+        "C": "Adi, karena bunga tunggal memberikan pertumbuhan yang stabil dan dapat diprediksi.",
+        "D": "Budi, karena bunga majemuk memiliki potensi pertumbuhan eksponensial yang lebih besar dalam jangka panjang.",
+        "E": "Saldo mereka akan sama karena modal awal dan banknya sama."
+      },
+      "answer": "D",
+      "explanation": "**Perbandingan Pertumbuhan Jangka Panjang.** Meskipun bunga tunggal Adi lebih tinggi, bunga majemuk Budi akan menghasilkan pertumbuhan yang lebih eksponensial dalam jangka waktu 10 tahun. Akumulasi bunga berbunga pada Budi akan melampaui keuntungan bunga tunggal Adi, sehingga saldo Budi akan lebih besar."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani menyewa lahan pertanian seluas 1 hektar. Ia memiliki dua opsi pembiayaan untuk membeli pupuk dan bibit: Opsi A adalah pinjaman bank dengan bunga tunggal 8% per tahun selama 3 tahun. Opsi B adalah pinjaman dari rentenir dengan bunga majemuk 7% per tahun selama 3 tahun.",
+      "question": "Jika petani tersebut ingin meminimalkan biaya total yang harus dibayarkan untuk pinjaman, opsi mana yang sebaiknya ia pilih dan mengapa?",
+      "options": {
+        "A": "Opsi A, karena bunga tunggal 8% lebih besar dan akan melunasi pinjaman lebih cepat.",
+        "B": "Opsi B, karena bunga majemuk dengan persentase lebih rendah akan menghasilkan total biaya yang lebih kecil.",
+        "C": "Opsi A, karena bunga tunggal lebih mudah dihitung dan tidak ada risiko bunga berbunga.",
+        "D": "Opsi B, karena bunga majemuk akan mengurangi pokok pinjaman lebih cepat.",
+        "E": "Keduanya sama, karena perbedaan persentase bunga kecil dan jangka waktu pinjaman pendek."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Biaya Pinjaman.** Opsi B (bunga majemuk 7%) akan menghasilkan total biaya yang lebih rendah dibandingkan Opsi A (bunga tunggal 8%) selama 3 tahun. Meskipun bunga tunggal memiliki persentase lebih tinggi, bunga majemuk dengan suku bunga lebih rendah akan lebih efisien dalam jangka waktu tersebut karena bunga dihitung dari modal yang terus bertambah."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Pak Jaya berencana menginvestasikan Rp10.000.000 selama 5 tahun. Ia membandingkan dua skema investasi: Skema 1 menawarkan bunga tunggal 7% per tahun. Skema 2 menawarkan bunga majemuk 6% per tahun.",
+      "question": "Untuk memaksimalkan keuntungan investasi setelah 5 tahun, strategi mana yang lebih unggul dan apa dasar perbandingannya?",
+      "options": {
+        "A": "Skema 1, karena persentase bunga lebih tinggi.",
+        "B": "Skema 2, karena bunga majemuk akan menghasilkan pertumbuhan yang lebih cepat.",
+        "C": "Skema 1, karena bunga tunggal memberikan kepastian keuntungan yang lebih besar.",
+        "D": "Skema 2, karena bunga majemuk akan terus bertambah dari bunga sebelumnya.",
+        "E": "Keduanya sama, karena perbedaan persentase bunga tidak signifikan."
+      },
+      "answer": "B",
+      "explanation": "**Potensi Pertumbuhan Investasi.** Skema 2 (bunga majemuk 6%) lebih unggul untuk memaksimalkan keuntungan dalam jangka waktu 5 tahun. Meskipun bunga tunggal pada Skema 1 lebih tinggi, efek bunga berbunga pada Skema 2 akan menghasilkan total keuntungan yang lebih besar seiring waktu."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan dagang membutuhkan modal Rp100.000.000. Pilihan 1: Pinjaman dengan bunga tunggal 10% per tahun selama 4 tahun. Pilihan 2: Pinjaman dengan bunga majemuk 9% per tahun selama 4 tahun. Perusahaan ingin meminimalkan total biaya pinjaman.",
+      "question": "Manakah pilihan pinjaman yang paling efisien dari segi biaya total, dan mengapa?",
+      "options": {
+        "A": "Pilihan 1, karena bunga tunggal 10% lebih besar dan akan melunasi pinjaman lebih cepat.",
+        "B": "Pilihan 2, karena bunga majemuk dengan persentase lebih rendah akan menghasilkan total bunga yang lebih kecil.",
+        "C": "Pilihan 1, karena bunga tunggal lebih mudah dikelola dalam pembukuan perusahaan.",
+        "D": "Pilihan 2, karena bunga majemuk akan mengurangi pokok pinjaman lebih cepat.",
+        "E": "Keduanya sama, karena perbedaan persentase bunga kecil dan jangka waktu pinjaman pendek."
+      },
+      "answer": "B",
+      "explanation": "**Efisiensi Biaya Pinjaman.** Pilihan 2 (bunga majemuk 9%) akan menghasilkan total biaya pinjaman yang lebih kecil dibandingkan Pilihan 1 (bunga tunggal 10%) selama 4 tahun. Mekanisme bunga majemuk dengan suku bunga yang lebih rendah lebih efisien dalam jangka waktu tersebut karena bunga dihitung dari modal yang terus bertambah."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Ibu Siti memiliki Rp5.000.000 untuk diinvestasikan selama 3 tahun. Ia mempertimbangkan dua opsi: Opsi A adalah deposito dengan bunga tunggal 7% per tahun. Opsi B adalah investasi reksa dana dengan estimasi bunga majemuk 6% per tahun.",
+      "question": "Jika Ibu Siti mengutamakan keamanan dan kepastian hasil investasi, opsi mana yang lebih tepat untuk dipilih?",
+      "options": {
+        "A": "Opsi A, karena bunga tunggal memberikan kepastian nilai akhir yang terjamin.",
+        "B": "Opsi B, karena bunga majemuk berpotensi memberikan hasil lebih besar.",
+        "C": "Opsi A, karena persentase bunganya lebih tinggi.",
+        "D": "Opsi B, karena bunga majemuk akan memberikan keuntungan tambahan dari bunga yang sudah ada.",
+        "E": "Keduanya memiliki risiko yang sama karena jangka waktunya pendek."
+      },
+      "answer": "A",
+      "explanation": "**Prioritas Keamanan Investasi.** Opsi A (bunga tunggal) lebih tepat dipilih jika Ibu Siti mengutamakan keamanan dan kepastian hasil. Perhitungan bunga tunggal yang konstan memberikan jaminan nilai akhir yang pasti, berbeda dengan Opsi B yang bersifat estimasi dan berpotensi fluktuatif."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang mahasiswa bernama Rian ingin membeli laptop seharga Rp7.000.000 dalam waktu 2 tahun. Ia memiliki Rp5.000.000 untuk ditabung. Opsi 1: Menabung di bank dengan bunga tunggal 6% per tahun. Opsi 2: Menginvestasikan di instrumen dengan estimasi bunga majemuk 5% per tahun.",
+      "question": "Jika Rian ingin memastikan dana tabungannya cukup untuk membeli laptop, strategi mana yang lebih realistis dan aman untuk dipilih?",
+      "options": {
+        "A": "Opsi 1, karena bunga tunggal memberikan kepastian nilai akhir yang lebih terjamin.",
+        "B": "Opsi 2, karena bunga majemuk berpotensi memberikan hasil lebih besar dari target.",
+        "C": "Opsi 1, karena persentase bunga lebih tinggi sehingga lebih cepat mencapai target.",
+        "D": "Opsi 2, karena bunga majemuk akan memberikan keuntungan tambahan dari bunga yang sudah ada.",
+        "E": "Keduanya memiliki risiko yang sama karena targetnya sama."
+      },
+      "answer": "A",
+      "explanation": "**Keamanan dan Kepastian Dana.** Opsi 1 (bunga tunggal) lebih realistis dan aman karena memberikan kepastian nilai akhir yang terjamin. Opsi 2 (bunga majemuk) bersifat estimasi dan berpotensi lebih tinggi, namun juga memiliki risiko fluktuasi yang tidak pasti, sehingga Opsi 1 lebih disarankan untuk mencapai target minimal."
+    }
+  ],
+  "metadata": {
+    "id": "df9956db-908f-4100-9245-0174b8541294",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:06:15Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Bunga",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2524,
+      "assistant": 3885,
+      "total": 7082,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

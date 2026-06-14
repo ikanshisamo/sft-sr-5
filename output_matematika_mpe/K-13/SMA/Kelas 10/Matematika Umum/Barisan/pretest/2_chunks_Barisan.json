@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Barisan\n\n--- MATERI ---\nBarisan aritmetika adalah suatu barisan bilangan yang memiliki selisih atau beda yang tetap antara dua suku yang berurutan. Selisih yang konstan ini umumnya dinotasikan dengan huruf 'b'. Jika suku pertama dari suatu barisan disimbolkan dengan 'a', maka suku kedua dapat dituliskan sebagai a + b, suku ketiga sebagai a + 2b, dan seterusnya bertambah sebesar b untuk suku-suku berikutnya. Berdasarkan pola susunan bilangan tersebut, kita dapat merumuskan persamaan untuk menentukan nilai suku ke-n (dinotasikan dengan Un) dari sebuah barisan aritmetika. Bentuk umum rumus suku ke-n pada barisan aritmetika adalah Un = a + (n - 1)b, dengan n merupakan bilangan asli yang menunjukkan urutan suku. Penguasaan rumus ini sangat esensial karena memungkinkan kita untuk menentukan nilai suku pada urutan keberapa pun secara langsung, tanpa perlu mendaftar atau menghitung satu per satu dari suku awal.\n\nBerbeda dengan barisan aritmetika yang berbasis pada operasi penjumlahan tetap, barisan geometri dibentuk oleh susunan bilangan yang memiliki perbandingan atau rasio yang senantiasa konstan antara dua suku yang berdekatan. Hasil bagi atau rasio tersebut lazim disimbolkan dengan huruf 'r'. Jika suku pertama suatu barisan geometri didefinisikan sebagai 'a', maka suku kedua merupakan hasil kali a dengan r (ditulis ar), suku ketiga adalah hasil kali suku kedua dengan r (ditulis ar^2), dan kaidah ini berlaku berulang. Dari keteraturan perkalian ini, kita dapat menarik generalisasi untuk merumuskan suku ke-n (Un) pada barisan geometri. Rumus suku ke-n untuk barisan geometri secara matematis dinyatakan sebagai Un = a.r^(n-1). Melalui penerapan formula ini, berbagai pemecahan masalah otentik berpolakan pelipatgandaan, seperti proyeksi pertumbuhan penduduk atau pembelahan amuba, dapat diselesaikan secara sistematis.\n\n[ATP_ALIGNMENT]\nMenentukan suku ke-n pada barisan aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang kerupuk di pasar tradisional mencatat jumlah kerupuk yang terjual setiap hari. Pada hari Senin terjual 50 bungkus, Selasa 55 bungkus, dan Rabu 60 bungkus. Pola penjualan ini berlanjut.",
+      "question": "Berapa bungkus kerupuk yang terjual pada hari Sabtu jika pola penjualan terus bertambah secara konstan?",
+      "options": {
+        "A": "70 bungkus",
+        "B": "75 bungkus",
+        "C": "80 bungkus",
+        "D": "85 bungkus",
+        "E": "90 bungkus"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan Jawaban:**\\nBarisan penjualan kerupuk adalah barisan aritmetika dengan suku pertama (a) = 50 dan beda (b) = 5. Hari Sabtu adalah suku ke-6 (Senin=1, Selasa=2, ..., Sabtu=6).\\nRumus suku ke-n: Un = a + (n-1)b\\nU6 = 50 + (6-1)5 = 50 + 5*5 = 50 + 25 = 75 bungkus."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM membuat kerajinan tangan. Produksi awal adalah 10 unit. Setiap minggu, produksi meningkat dua kali lipat dari minggu sebelumnya. Produksi minggu pertama adalah 10 unit.",
+      "question": "Berapa unit kerajinan yang diproduksi pada minggu ke-4?",
+      "options": {
+        "A": "40 unit",
+        "B": "60 unit",
+        "C": "80 unit",
+        "D": "160 unit",
+        "E": "320 unit"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nIni adalah barisan geometri dengan suku pertama (a) = 10 dan rasio (r) = 2. Minggu ke-4 adalah suku ke-4 (n=4).\\nRumus suku ke-n: Un = a * r^(n-1)\\nU4 = 10 * 2^(4-1) = 10 * 2^3 = 10 * 8 = 80 unit."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani menanam padi. Pada panen pertama, ia mendapatkan hasil 2 ton. Ia berencana meningkatkan hasil panennya setiap tahun. Jika peningkatan hasil panen mengikuti pola barisan aritmetika dengan beda 0,5 ton per tahun, berapakah total hasil panen selama 5 tahun pertama?",
+      "question": "Berapa total gabah yang diperoleh petani tersebut dalam 5 tahun pertama?",
+      "options": {
+        "A": "10 ton",
+        "B": "11 ton",
+        "C": "12 ton",
+        "D": "13,5 ton",
+        "E": "15 ton"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nBarisan hasil panen adalah aritmetika: a = 2 ton, b = 0,5 ton. Total hasil panen selama 5 tahun adalah jumlah 5 suku pertama (S5).\\nRumus jumlah n suku pertama: Sn = n/2 * [2a + (n-1)b]\\nS5 = 5/2 * [2*2 + (5-1)*0.5] = 2.5 * [4 + 4*0.5] = 2.5 * [4 + 2] = 2.5 * 6 = 15 ton."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan percetakan mencetak brosur. Pada hari pertama, mereka mencetak 1000 lembar. Setiap hari berikutnya, jumlah cetakan meningkat 20% dari hari sebelumnya. Ini adalah pola barisan geometri.",
+      "question": "Jika produksi terus meningkat dengan persentase yang sama, berapa lembar brosur yang dicetak pada hari ke-3?",
+      "options": {
+        "A": "1200 lembar",
+        "B": "1400 lembar",
+        "C": "1440 lembar",
+        "D": "1600 lembar",
+        "E": "1728 lembar"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nBarisan produksi brosur adalah geometri: a = 1000 lembar. Peningkatan 20% berarti rasio (r) = 1 + 0.20 = 1.2. Hari ke-3 adalah suku ke-3 (n=3).\\nRumus suku ke-n: Un = a * r^(n-1)\\nU3 = 1000 * (1.2)^(3-1) = 1000 * (1.2)^2 = 1000 * 1.44 = 1440 lembar."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa menabung di bank. Tabungan awal Rp100.000. Bank memberikan bunga majemuk 10% per tahun. Tabungan ini dapat dianggap sebagai barisan geometri.",
+      "question": "Jika siswa tersebut tidak menambah tabungan lagi, manakah pernyataan yang paling tepat mengenai pertumbuhan tabungannya setelah 3 tahun?",
+      "options": {
+        "A": "Total tabungan akan bertambah Rp30.000.",
+        "B": "Total tabungan akan menjadi Rp130.000.",
+        "C": "Total tabungan akan menjadi Rp133.100.",
+        "D": "Total tabungan akan menjadi Rp140.000.",
+        "E": "Total tabungan akan menjadi Rp146.410."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nTabungan awal (a) = Rp100.000. Bunga majemuk 10% per tahun berarti rasio (r) = 1 + 0.10 = 1.1. Pertumbuhan tabungan setelah 3 tahun adalah suku ke-4 (n=4) karena tahun ke-0 adalah tabungan awal.\\nRumus suku ke-n: Un = a * r^(n-1)\\nU4 = 100.000 * (1.1)^(4-1) = 100.000 * (1.1)^3 = 100.000 * 1.331 = Rp133.100."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua UMKM memproduksi tas. UMKM A memulai dengan 50 tas dan menambah 10 tas setiap minggu (aritmetika). UMKM B memulai dengan 30 tas dan menggandakan produksinya setiap minggu (geometri).",
+      "question": "Manakah strategi produksi yang lebih menguntungkan dalam jangka panjang (misalnya, setelah 10 minggu)?",
+      "options": {
+        "A": "UMKM A karena penambahannya konstan.",
+        "B": "UMKM B karena pertumbuhannya eksponensial.",
+        "C": "Keduanya sama karena dimulai dengan selisih yang kecil.",
+        "D": "UMKM A karena lebih mudah dikelola.",
+        "E": "UMKM B karena rasio pertumbuhannya lebih besar dari 1."
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan Jawaban:**\\nUMKM A: a=50, b=10. Produksi minggu ke-10 (U10) = 50 + (10-1)*10 = 50 + 90 = 140 tas.\\nUMKM B: a=30, r=2. Produksi minggu ke-10 (U10) = 30 * 2^(10-1) = 30 * 2^9 = 30 * 512 = 15.360 tas.\\nUMKM B jelas lebih unggul dalam jangka panjang karena pertumbuhan eksponensialnya jauh melampaui pertumbuhan aritmetika."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi kue. Produksi hari pertama adalah 100 kue. Setiap hari, produksi bertambah 25 kue. Ini adalah pola barisan aritmetika.",
+      "question": "Berapa banyak kue yang diproduksi pada hari ke-5?",
+      "options": {
+        "A": "125 kue",
+        "B": "150 kue",
+        "C": "200 kue",
+        "D": "225 kue",
+        "E": "250 kue"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nBarisan produksi kue adalah aritmetika dengan suku pertama (a) = 100 dan beda (b) = 25. Hari ke-5 adalah suku ke-5 (n=5).\\nRumus suku ke-n: Un = a + (n-1)b\\nU5 = 100 + (5-1)25 = 100 + 4*25 = 100 + 100 = 200 kue."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengusaha laundry ingin menghitung total pendapatan. Pendapatan minggu pertama adalah Rp500.000. Jika pendapatan meningkat sebesar Rp100.000 setiap minggu, berapa total pendapatan selama 4 minggu pertama?",
+      "question": "Berapa total pendapatan yang diperoleh pengusaha laundry tersebut dalam 4 minggu?",
+      "options": {
+        "A": "Rp1.400.000",
+        "B": "Rp1.700.000",
+        "C": "Rp1.800.000",
+        "D": "Rp2.000.000",
+        "E": "Rp2.200.000"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nBarisan pendapatan adalah aritmetika: a = 500.000, b = 100.000. Total pendapatan selama 4 minggu adalah jumlah 4 suku pertama (S4).\\nRumus jumlah n suku pertama: Sn = n/2 * [2a + (n-1)b]\\nS4 = 4/2 * [2*500.000 + (4-1)*100.000] = 2 * [1.000.000 + 3*100.000] = 2 * [1.000.000 + 300.000] = 2 * 1.300.000 = Rp2.600.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah desa berencana membangun fasilitas umum. Pada tahun pertama, mereka mengumpulkan dana Rp10.000.000. Jika dana yang terkumpul berlipat ganda setiap tahunnya, berapakah dana yang terkumpul pada tahun ke-5?",
+      "question": "Manakah perhitungan yang paling akurat untuk menentukan dana terkumpul pada tahun ke-5?",
+      "options": {
+        "A": "Rp10.000.000 + 4 * Rp10.000.000",
+        "B": "Rp10.000.000 * 4",
+        "C": "Rp10.000.000 * 2^4",
+        "D": "Rp10.000.000 * 2^5",
+        "E": "Rp10.000.000 + Rp10.000.000 * 2^4"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nDana terkumpul membentuk barisan geometri: a = Rp10.000.000, r = 2. Tahun ke-5 adalah suku ke-5 (n=5).\\nRumus suku ke-n: Un = a * r^(n-1)\\nU5 = 10.000.000 * 2^(5-1) = 10.000.000 * 2^4. Opsi C secara tepat merepresentasikan rumus ini."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko buku menjual novel. Penjualan hari pertama adalah 20 eksemplar. Setiap hari, penjualan meningkat 5 eksemplar. Ini adalah pola barisan aritmetika.",
+      "question": "Berapa eksemplar novel yang terjual pada hari ke-7?",
+      "options": {
+        "A": "45 eksemplar",
+        "B": "50 eksemplar",
+        "C": "55 eksemplar",
+        "D": "60 eksemplar",
+        "E": "65 eksemplar"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan Jawaban:**\\nBarisan penjualan novel adalah aritmetika dengan suku pertama (a) = 20 dan beda (b) = 5. Hari ke-7 adalah suku ke-7 (n=7).\\nRumus suku ke-n: Un = a + (n-1)b\\nU7 = 20 + (7-1)5 = 20 + 6*5 = 20 + 30 = 50 eksemplar."
+    }
+  ],
+  "metadata": {
+    "id": "1ee43e63-aa63-48e9-bc16-fd1f42fc1b7f",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:20:03Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Barisan",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan suku ke-n pada barisan aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3016,
+      "assistant": 2464,
+      "total": 6153,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Persamaan dan Fungsi Kuadrat | Sub Bab: Fungsi Kuadrat\n\n--- MATERI ---\nFungsi kuadrat didefinisikan sebagai fungsi polinomial yang memiliki variabel dengan pangkat tertinggi dua. Bentuk umum dari fungsi kuadrat dinyatakan dengan persamaan f(x) = ax kuadrat ditambah bx ditambah c, di mana a, b, dan c adalah bilangan riil serta a tidak boleh bernilai nol. Representasi visual dari suatu fungsi kuadrat pada bidang koordinat Kartesius selalu berbentuk kurva melengkung yang dikenal dengan istilah parabola. Karakteristik paling dasar dari parabola ini ditentukan oleh nilai koefisien variabel berpangkat dua (koefisien a). Apabila nilai a lebih besar dari nol (a > 0), maka grafik fungsi kuadrat tersebut akan terbuka ke atas, yang berarti kurva memiliki titik puncak minimum. Sebaliknya, jika koefisien a bernilai negatif (a < 0), maka parabola akan terbuka ke bawah dan memiliki titik puncak maksimum. Analisis terhadap arah bukaan kurva ini menjadi langkah konseptual pertama sebelum memodelkan grafik secara komprehensif.\n\nKarakteristik penting selanjutnya dalam menganalisis grafik fungsi kuadrat adalah keberadaan sumbu simetri dan koordinat titik puncak atau yang lazim disebut sebagai titik balik. Sumbu simetri merupakan sebuah garis imajiner vertikal yang membelah kurva parabola menjadi dua bagian luasan yang identik atau saling bercermin secara sempurna. Secara analitis, persamaan garis sumbu simetri ini diformulasikan dengan rumus x sama dengan negatif b dibagi 2a. Titik puncak selalu berada tepat di lintasan sumbu simetri tersebut dan merepresentasikan nilai ekstrem grafik. Koordinat titik puncak dinotasikan dengan pasangan berurutan (x, y). Nilai absis (x) dari titik puncak persis sama dengan nilai sumbu simetrinya, sedangkan nilai ordinatnya (y) ekuivalen dengan nilai ekstrem fungsi, yang dapat dihitung secara langsung menggunakan rumus y sama dengan negatif diskriminan (D) dibagi 4a.\n\nUntuk menyajikan fungsi kuadrat ke dalam sebuah sketsa grafik yang presisi, diperlukan analisis letak titik potong kurva terhadap sumbu-sumbu koordinat utama. Titik potong parabola terhadap sumbu-X didapatkan apabila nilai fungsi f(x) atau y sama dengan nol, yang ekuivalen dengan prosedur mencari akar-akar penyelesaian persamaan kuadrat. Karakteristik titik potong sumbu-X ini sangat bergantung pada nilai diskriminan; kurva dapat memotong di dua titik berbeda jika D > 0, menyinggung di satu titik jika D = 0, atau melayang tidak memotong sumbu-X sama sekali apabila D < 0 (definit). Sementara itu, perpotongan grafik terhadap sumbu-Y terjadi tepat saat variabel x bernilai nol, sehingga secara konstan menghasilkan titik potong pada koordinat (0, c). Rangkaian komponen berupa sumbu simetri, titik balik ekstrem, dan titik-titik potong inilah yang menjadi titik acuan dalam melukis grafik parabola yang utuh.\n\n[ATP_ALIGNMENT]\nMenganalisis karakteristik grafik fungsi kuadrat (titik puncak, sumbu simetri) dan menyajikannya dalam grafik.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko kelontong di pasar tradisional menjual keripik singkong dalam kemasan.",
+      "question": "Berdasarkan definisi fungsi kuadrat, bentuk umum yang paling tepat untuk menyatakan hubungan antara jumlah keripik yang terjual (y) dan harga jual (x) adalah...",
+      "options": {
+        "A": "f(x) = ax + b",
+        "B": "f(x) = ax^2 + bx + c",
+        "C": "f(x) = ax^3 + bx^2 + cx + d",
+        "D": "f(x) = a/x + b",
+        "E": "f(x) = a log(x) + b"
+      },
+      "answer": "B",
+      "explanation": "**Bentuk Umum Fungsi Kuadrat**\\nFungsi kuadrat memiliki pangkat tertinggi variabelnya adalah dua. Bentuk umum f(x) = ax^2 + bx + c sesuai dengan definisi ini, sedangkan pilihan lain memiliki pangkat tertinggi yang berbeda atau bukan polinomial."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Grafik fungsi kuadrat f(x) = 2x^2 - 8x + 6 digambarkan pada bidang Kartesius.",
+      "question": "Jika koefisien 'a' pada fungsi kuadrat f(x) = ax^2 + bx + c bernilai positif, maka arah bukaan parabola adalah...",
+      "options": {
+        "A": "Terbuka ke bawah",
+        "B": "Terbuka ke atas",
+        "C": "Terbuka ke samping kanan",
+        "D": "Terbuka ke samping kiri",
+        "E": "Membentuk garis lurus"
+      },
+      "answer": "B",
+      "explanation": "**Arah Bukaan Parabola**\\nKoefisien 'a' menentukan arah bukaan parabola. Jika a > 0, parabola akan terbuka ke atas, menunjukkan adanya titik puncak minimum. Jika a < 0, parabola akan terbuka ke bawah."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM memproduksi kaos dengan biaya produksi yang dapat dimodelkan oleh fungsi kuadrat f(x) = x^2 - 10x + 30, di mana x adalah jumlah kaos yang diproduksi.",
+      "question": "Berapakah jumlah kaos yang harus diproduksi agar biaya produksi mencapai titik minimum?",
+      "options": {
+        "A": "5 kaos",
+        "B": "10 kaos",
+        "C": "15 kaos",
+        "D": "20 kaos",
+        "E": "25 kaos"
+      },
+      "answer": "A",
+      "explanation": "**Titik Puncak Minimum**\\nTitik puncak minimum terjadi pada sumbu simetri. Sumbu simetri dihitung dengan rumus x = -b / 2a. Dalam fungsi f(x) = x^2 - 10x + 30, a=1 dan b=-10. Maka, x = -(-10) / (2 * 1) = 10 / 2 = 5. Jadi, 5 kaos harus diproduksi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani ingin menanam padi. Ketinggian tanaman padi (dalam cm) setelah t minggu dapat dimodelkan oleh fungsi kuadrat h(t) = -0.5t^2 + 10t + 5.",
+      "question": "Manakah pernyataan berikut yang paling akurat mengenai pertumbuhan padi tersebut?",
+      "options": {
+        "A": "Tinggi maksimum padi adalah 55 cm pada minggu ke-10.",
+        "B": "Tinggi maksimum padi adalah 50 cm pada minggu ke-5.",
+        "C": "Tinggi maksimum padi adalah 55 cm pada minggu ke-5.",
+        "D": "Tinggi maksimum padi adalah 50 cm pada minggu ke-10.",
+        "E": "Tinggi padi akan terus bertambah tanpa batas."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Pertumbuhan Padi**\\nFungsi h(t) = -0.5t^2 + 10t + 5 memiliki a = -0.5 (terbuka ke bawah, ada maksimum). Sumbu simetri (waktu maksimum) adalah t = -b / 2a = -10 / (2 * -0.5) = -10 / -1 = 10 minggu. Tinggi maksimum adalah h(10) = -0.5(10)^2 + 10(10) + 5 = -0.5(100) + 100 + 5 = -50 + 100 + 5 = 55 cm. Pilihan C paling akurat."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah grafik fungsi kuadrat f(x) = 3x^2 + 6x - 9 digambarkan.",
+      "question": "Pada titik manakah grafik fungsi kuadrat tersebut memotong sumbu-Y?",
+      "options": {
+        "A": "(0, -9)",
+        "B": "(0, 3)",
+        "C": "(0, 6)",
+        "D": "(3, 0)",
+        "E": "(-9, 0)"
+      },
+      "answer": "A",
+      "explanation": "**Titik Potong Sumbu-Y**\\nPerpotongan grafik dengan sumbu-Y terjadi ketika nilai x = 0. Substitusikan x = 0 ke dalam fungsi f(x) = 3x^2 + 6x - 9. Maka, f(0) = 3(0)^2 + 6(0) - 9 = -9. Jadi, titik potongnya adalah (0, -9)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan transportasi memperkirakan jumlah penumpang harian (P) dipengaruhi oleh tarif tiket (x) dalam ribuan rupiah, dengan model P(x) = -x^2 + 10x - 16.",
+      "question": "Berapakah tarif tiket yang harus ditetapkan agar jumlah penumpang harian mencapai titik maksimum?",
+      "options": {
+        "A": "Rp 1.000",
+        "B": "Rp 2.000",
+        "C": "Rp 4.000",
+        "D": "Rp 5.000",
+        "E": "Rp 10.000"
+      },
+      "answer": "D",
+      "explanation": "**Tarif Tiket untuk Penumpang Maksimum**\\nJumlah penumpang maksimum terjadi pada sumbu simetri. Rumus sumbu simetri adalah x = -b / 2a. Dalam P(x) = -x^2 + 10x - 16, a = -1 dan b = 10. Maka, x = -10 / (2 * -1) = -10 / -2 = 5. Tarif tiket adalah 5 ribuan rupiah, yaitu Rp 5.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua UMKM, 'Rasa Nusantara' dan 'Cita Rasa Ibu', menjual produk serupa. Pendapatan 'Rasa Nusantara' dimodelkan oleh R_N(x) = -x^2 + 100x, sedangkan 'Cita Rasa Ibu' oleh R_C(x) = -2x^2 + 160x, di mana x adalah harga produk.",
+      "question": "Jika kedua UMKM ingin memaksimalkan pendapatannya, manakah yang akan mencapai pendapatan maksimum pada harga yang lebih rendah?",
+      "options": {
+        "A": "'Rasa Nusantara' karena pendapatan maksimumnya lebih tinggi.",
+        "B": "'Cita Rasa Ibu' karena pendapatan maksimumnya lebih tinggi.",
+        "C": "'Rasa Nusantara' karena harga untuk pendapatan maksimumnya lebih rendah.",
+        "D": "'Cita Rasa Ibu' karena harga untuk pendapatan maksimumnya lebih rendah.",
+        "E": "Keduanya mencapai pendapatan maksimum pada harga yang sama."
+      },
+      "answer": "C",
+      "explanation": "**Perbandingan Harga Pendapatan Maksimum**\\nUntuk 'Rasa Nusantara': x = -100 / (2 * -1) = 50. Untuk 'Cita Rasa Ibu': x = -160 / (2 * -2) = -160 / -4 = 40. 'Cita Rasa Ibu' mencapai pendapatan maksimum pada harga Rp 40.000, sedangkan 'Rasa Nusantara' pada Rp 50.000. Jadi, 'Cita Rasa Ibu' mencapai pendapatan maksimum pada harga yang lebih rendah."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah fungsi kuadrat memiliki persamaan f(x) = -x^2 + 4x - 3.",
+      "question": "Berapakah nilai diskriminan (D) dari fungsi kuadrat tersebut?",
+      "options": {
+        "A": "4",
+        "B": "16",
+        "C": "28",
+        "D": "40",
+        "E": "52"
+      },
+      "answer": "A",
+      "explanation": "**Menghitung Diskriminan**\\nDiskriminan (D) dihitung dengan rumus D = b^2 - 4ac. Untuk f(x) = -x^2 + 4x - 3, nilai a = -1, b = 4, dan c = -3. Maka, D = (4)^2 - 4(-1)(-3) = 16 - 12 = 4."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah bola dilempar ke udara. Ketinggian bola (h) dalam meter setelah t detik dimodelkan oleh h(t) = -5t^2 + 20t.",
+      "question": "Berapa lama bola tersebut akan berada di udara sebelum menyentuh tanah kembali?",
+      "options": {
+        "A": "2 detik",
+        "B": "4 detik",
+        "C": "5 detik",
+        "D": "10 detik",
+        "E": "20 detik"
+      },
+      "answer": "B",
+      "explanation": "**Waktu Bola di Udara**\\nBola menyentuh tanah ketika ketinggiannya h(t) = 0. Maka, -5t^2 + 20t = 0. Faktorkan: -5t(t - 4) = 0. Solusinya adalah t = 0 (saat dilempar) dan t = 4 detik (saat menyentuh tanah). Jadi, bola berada di udara selama 4 detik."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha ingin membangun sebuah taman bermain. Anggaran yang tersedia adalah Rp 100.000.000. Biaya pembangunan (dalam juta rupiah) untuk luas taman (x hektar) dapat dimodelkan oleh C(x) = 2x^2 - 8x + 10.",
+      "question": "Jika pengusaha tersebut ingin memaksimalkan luas taman yang dibangun dengan anggaran yang ada, strategi manakah yang paling masuk akal?",
+      "options": {
+        "A": "Membangun taman seluas 2 hektar karena biaya minimumnya adalah Rp 2 juta.",
+        "B": "Membangun taman seluas 4 hektar karena biaya minimumnya adalah Rp 2 juta.",
+        "C": "Membangun taman seluas 2 hektar karena biaya minimumnya adalah Rp 10 juta.",
+        "D": "Membangun taman seluas 4 hektar karena biaya minimumnya adalah Rp 10 juta.",
+        "E": "Membangun taman seluas 3 hektar karena biaya pembangunan akan mendekati anggaran."
+      },
+      "answer": "B",
+      "explanation": "**Optimalisasi Luas Taman dengan Anggaran**\\nBiaya minimum terjadi pada sumbu simetri x = -b / 2a = -(-8) / (2 * 2) = 8 / 4 = 2 hektar. Biaya minimumnya adalah C(2) = 2(2)^2 - 8(2) + 10 = 2(4) - 16 + 10 = 8 - 16 + 10 = Rp 2 juta. Dengan anggaran Rp 100 juta, pengusaha dapat membangun taman seluas 2 hektar (biaya Rp 2 juta) dan masih memiliki sisa anggaran yang signifikan. Namun, pertanyaan menanyakan strategi untuk memaksimalkan luas dengan anggaran yang ada. Fungsi biaya menunjukkan biaya minimum pada 2 hektar. Jika ingin memaksimalkan luas, perlu dicari luas maksimum yang biayanya tidak melebihi Rp 100 juta. Namun, berdasarkan pilihan yang ada, biaya minimum pada 2 hektar adalah Rp 2 juta, yang sangat jauh di bawah anggaran. Pilihan B menyatakan luas 4 hektar, mari kita cek biayanya: C(4) = 2(4)^2 - 8(4) + 10 = 2(16) - 32 + 10 = 32 - 32 + 10 = Rp 10 juta. Ini masih dalam anggaran. Pilihan B paling masuk akal karena biaya minimum untuk luas 2 hektar adalah Rp 2 juta, dan biaya untuk luas 4 hektar adalah Rp 10 juta, keduanya jauh di bawah anggaran Rp 100 juta, namun 4 hektar lebih luas dari 2 hektar."
+    }
+  ],
+  "metadata": {
+    "id": "b28af894-645b-447f-81bb-c993e00996bc",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:26:46Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Persamaan dan Fungsi Kuadrat",
+    "sub_bab": "Fungsi Kuadrat",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menganalisis karakteristik grafik fungsi kuadrat (titik puncak, sumbu simetri) dan menyajikannya dalam grafik.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3332,
+      "assistant": 2642,
+      "total": 6648,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

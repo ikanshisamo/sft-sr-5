@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Sifat-Sifat Eksponen\n\n--- MATERI ---\nDalam operasi pemangkatan bilangan riil, terdapat beberapa sifat fundamental yang sangat penting untuk menyederhanakan bentuk-bentuk aljabar yang kompleks. Sifat pertama yang perlu dipahami adalah sifat perkalian bilangan berpangkat. Jika terdapat sebuah bilangan riil a dan dua bilangan bulat positif m serta n, maka perkalian antara a pangkat m dengan a pangkat n akan menghasilkan bilangan pokok a yang dipangkatkan dengan jumlah dari kedua eksponennya. Secara matematis, sifat ini dituliskan sebagai a^m × a^n = a^(m+n). Sifat dasar kedua adalah sifat pembagian bilangan berpangkat. Apabila bilangan berpangkat a^m dibagi dengan a^n, di mana a tidak sama dengan nol dan m lebih besar dari n, maka hasilnya adalah bilangan pokok a dipangkatkan dengan selisih dari kedua eksponen tersebut. Rumusan aljabarnya diekspresikan sebagai a^m : a^n = a^(m-n). Kedua sifat ini mendasari operasi hitung eksponensial yang memiliki basis atau bilangan pokok yang sama.\n\nSifat operasi pemangkatan selanjutnya berlaku ketika suatu bilangan yang sudah memiliki eksponen dipangkatkan kembali. Jika suatu bilangan berpangkat a^m dipangkatkan lagi dengan bilangan bulat positif n, maka hasil akhirnya adalah bilangan pokok a dipangkatkan dengan hasil kali dari kedua eksponen tersebut. Secara formal, sifat ini dinyatakan dengan (a^m)^n = a^(m×n). Selain itu, eksponen juga memiliki sifat distributif terhadap operasi perkalian dan pembagian bilangan riil. Untuk pemangkatan dari suatu perkalian bilangan, berlaku sifat (a × b)^n = a^n × b^n, yang berarti setiap faktor di dalam kurung dipangkatkan secara individu. Konsep distributif yang sama juga konsisten diterapkan pada operasi pembagian atau pecahan. Pemangkatan dari sebuah pecahan a dibagi b dirumuskan sebagai (a/b)^n = a^n / b^n, dengan syarat esensial bahwa nilai penyebut b tidak boleh sama dengan nol.\n\nSelain pangkat bulat positif, generalisasi sifat eksponen juga diperluas ke bentuk pangkat nol dan pangkat bulat negatif. Bentuk-bentuk ini sering disebut sebagai perluasan konsep pemangkatan. Untuk sifat pangkat nol, aturannya menyatakan bahwa setiap bilangan riil a yang tidak sama dengan nol, apabila dipangkatkan dengan nol, maka nilainya selalu sama dengan satu. Secara notasi matematis dituliskan sebagai a^0 = 1. Pembuktian sifat ini bermula dari sifat pembagian bilangan berpangkat, yaitu a^n dibagi a^n ekuivalen dengan a^(n-n), yang menghasilkan a^0. Karena bilangan apa pun (selain nol) yang dibagi dengan dirinya sendiri hasilnya adalah satu, maka terbukti bahwa a^0 = 1. Penting untuk dicatat bahwa jika basis a bernilai nol (0^0), maka bentuk tersebut dikategorikan sebagai nilai yang tidak terdefinisi dalam sistem bilangan riil.\n\nKonsep perluasan eksponen yang sangat krusial lainnya adalah bilangan dengan pangkat bulat negatif. Apabila terdapat suatu bilangan riil a yang tidak sama dengan nol dan n adalah bilangan bulat positif, maka a pangkat negatif n didefinisikan sebagai kebalikan atau invers perkalian dari a pangkat n. Secara aljabar, definisi dasar ini diekspresikan melalui persamaan a^(-n) = 1 / a^n. Sifat ini sangat aplikatif saat peserta didik dihadapkan pada pecahan yang memuat bilangan berpangkat. Jika sebuah faktor dipindahkan dari pembilang ke penyebut atau sebaliknya, maka tanda eksponennya harus diubah (dari positif menjadi negatif, atau sebaliknya). Pemahaman mengenai bilangan berpangkat negatif ini berfungsi untuk mentransformasi atau menyederhanakan ekspresi matematika rumit menjadi bentuk pangkat positif yang ekuivalen dan jauh lebih mudah untuk dioperasikan.\n\nBentuk generalisasi paling lanjut dari eksponen adalah pangkat pecahan, yang memiliki relasi konseptual dengan bentuk akar. Bilangan berpangkat dengan eksponen pecahan ini sering diistilahkan sebagai pangkat tak sebenarnya. Untuk sebarang nilai bilangan riil a yang lebih besar atau sama dengan nol, dengan m bilangan bulat dan n bilangan asli yang bernilai lebih besar atau sama dengan dua, maka bentuk eksponen pecahan a^(m/n) didefinisikan secara ekuivalen sebagai akar pangkat n dari a pangkat m. Secara matematis, sifat kesetaraan ini memperlihatkan bahwa operasi pemangkatan dan penarikan akar pada dasarnya merupakan dua representasi dari proses perhitungan yang sama. Seluruh sifat perkalian, pembagian, serta pemangkatan yang berlaku pada eksponen bulat positif secara konsisten berlaku sepenuhnya pada bentuk pangkat tak sebenarnya ini, asalkan basis bilangannya terdefinisi dengan tepat.\n\n[ATP_ALIGNMENT]\nMenggeneralisasi sifat-sifat bilangan berpangkat.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa sedang mengerjakan soal latihan matematika. Ia menemukan ekspresi \\((\\frac{3}{4})^2 \\times (\\frac{3}{4})^3\\).",
+      "question": "Berdasarkan sifat perkalian bilangan berpangkat, bentuk sederhana dari ekspresi tersebut adalah...",
+      "options": {
+        "A": "(\\frac{3}{4})^{2/3}",
+        "B": "(\\frac{3}{4})^{2+3}",
+        "C": "(\\frac{3}{4})^{2 \\times 3}",
+        "D": "(\\frac{3}{4})^5",
+        "E": "(\\frac{3}{4})^6"
+      },
+      "answer": "D",
+      "explanation": "**Sifat Perkalian Bilangan Berpangkat**\\nKetika mengalikan bilangan berpangkat dengan basis yang sama, eksponennya dijumlahkan. Jadi, $(\\frac{3}{4})^2 \\times (\\frac{3}{4})^3 = (\\frac{3}{4})^{(2+3)} = (\\frac{3}{4})^5$."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah diskusi kelas, guru menjelaskan bahwa $5^0$ memiliki nilai tertentu. Siswa diminta untuk mengingat kembali sifat eksponen terkait pangkat nol.",
+      "question": "Berapakah nilai dari $5^0$?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "5",
+        "D": "Tidak terdefinisi",
+        "E": "1/5"
+      },
+      "answer": "B",
+      "explanation": "**Sifat Pangkat Nol**\\nSetiap bilangan riil $a$ yang tidak sama dengan nol, jika dipangkatkan dengan nol ($a^0$), maka nilainya selalu sama dengan satu. Oleh karena itu, $5^0 = 1$."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengusaha UMKM keripik singkong ingin menghitung potensi produksi. Jika produksi awal adalah 100 kg dan setiap bulan meningkat sebesar $2^3$ kg, berapakah total produksi setelah 3 bulan?",
+      "question": "Jika produksi awal adalah 100 kg dan setiap bulan meningkat sebesar $2^3$ kg, berapakah total produksi setelah 3 bulan?",
+      "options": {
+        "A": "100 + 3 \\times 2^3",
+        "B": "100 \\times (2^3)^3",
+        "C": "100 + 2^3 + 2^3 + 2^3",
+        "D": "100 \\times 2^{3 \\times 3}",
+        "E": "100 \\times 2^9"
+      },
+      "answer": "A",
+      "explanation": "**Aplikasi Sifat Penjumlahan**\\nProduksi awal adalah 100 kg. Peningkatan setiap bulan adalah $2^3$ kg. Setelah 3 bulan, total peningkatan adalah $3 \\times 2^3$ kg. Jadi, total produksi adalah $100 + 3 \\times 2^3$ kg."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang guru memberikan soal latihan mengenai sifat pembagian bilangan berpangkat: $\\frac{7^5}{7^2}$.",
+      "question": "Berdasarkan sifat pembagian bilangan berpangkat, hasil dari $\\frac{7^5}{7^2}$ adalah...",
+      "options": {
+        "A": "7^{5/2}",
+        "B": "7^{5 \\times 2}",
+        "C": "7^{5-2}",
+        "D": "7^{5+2}",
+        "E": "7^{2/5}"
+      },
+      "answer": "C",
+      "explanation": "**Sifat Pembagian Bilangan Berpangkat**\\nKetika membagi bilangan berpangkat dengan basis yang sama, eksponennya dikurangi. Jadi, $\\frac{7^5}{7^2} = 7^{(5-2)} = 7^3$."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas $1000$ m$^2$. Ia berencana menanam padi. Jika luas lahan yang ditanami padi setiap tahunnya menjadi dua kali lipat dari tahun sebelumnya, dan tahun pertama ia menanam di $10$ m$^2$.",
+      "question": "Manakah pernyataan berikut yang paling tepat menggambarkan luas lahan yang ditanami padi pada tahun ke-n?",
+      "options": {
+        "A": "Luas = $10 + 2(n-1)$ m$^2$",
+        "B": "Luas = $10 \\times 2^{n-1}$ m$^2$",
+        "C": "Luas = $10 \\times n^2$ m$^2$",
+        "D": "Luas = $10 \\times 2^n$ m$^2$",
+        "E": "Luas = $10 + 2^{n-1}$ m$^2$"
+      },
+      "answer": "B",
+      "explanation": "**Analisis Pertumbuhan Eksponensial**\\nIni adalah kasus pertumbuhan eksponensial. Luas awal adalah $10$ m$^2$. Setiap tahun luasnya menjadi dua kali lipat. Pola ini mengikuti rumus $a \\times r^{(n-1)}$, di mana $a$ adalah nilai awal dan $r$ adalah rasio. Jadi, luasnya adalah $10 \\times 2^{(n-1)}$ m$^2$."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah bakteri berkembang biak. Jumlah bakteri berlipat ganda setiap jam. Jika awalnya ada 50 bakteri, berapakah jumlah bakteri setelah 4 jam?",
+      "question": "Jika jumlah bakteri berlipat ganda setiap jam dan awalnya ada 50 bakteri, berapakah jumlah bakteri setelah 4 jam?",
+      "options": {
+        "A": "50 + 4 \\times 2",
+        "B": "50 \\times 4^2",
+        "C": "50 \\times 2^4",
+        "D": "50 \\times 2^{4-1}",
+        "E": "50 + 2^4"
+      },
+      "answer": "C",
+      "explanation": "**Aplikasi Pangkat Bilangan**\\nJumlah bakteri berlipat ganda setiap jam, yang berarti dikalikan 2. Setelah 4 jam, perkalian terjadi sebanyak 4 kali. Jadi, jumlah bakteri adalah $50 \\times 2 \\times 2 \\times 2 \\times 2 = 50 \\times 2^4$."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah soal, terdapat ekspresi $(\\frac{x}{y})^3$.",
+      "question": "Menggunakan sifat distributif eksponen terhadap pembagian, bentuk yang setara dengan $(\\frac{x}{y})^3$ adalah...",
+      "options": {
+        "A": "\\frac{x^3}{y}",
+        "B": "\\frac{x}{y^3}",
+        "C": "x^3 / y^3",
+        "D": "x^3 \\times y^3",
+        "E": "\\frac{x^3}{y^0}"
+      },
+      "answer": "C",
+      "explanation": "**Sifat Distributif Eksponen pada Pembagian**\\nSifat $(a/b)^n = a^n / b^n$ berlaku. Dengan menerapkan sifat ini pada $(\\frac{x}{y})^3$, kita mendapatkan $\\frac{x^3}{y^3}$."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan teknologi sedang mengembangkan aplikasi baru. Biaya pengembangan awal adalah Rp 500.000.000. Setiap bulan, biaya tambahan untuk pemeliharaan dan pembaruan adalah Rp 50.000.000. Jika biaya ini dihitung menggunakan notasi eksponensial, manakah yang paling tepat?",
+      "question": "Manakah notasi eksponensial yang paling tepat untuk menyatakan total biaya setelah $n$ bulan, jika biaya awal adalah Rp 500.000.000 dan biaya bulanan Rp 50.000.000?",
+      "options": {
+        "A": "$500.000.000 \\times (50.000.000)^n$",
+        "B": "$500.000.000 + n \\times 50.000.000$",
+        "C": "$500.000.000 \\times (1 + 50.000.000)^n$",
+        "D": "$500.000.000 + (50.000.000)^n$",
+        "E": "$500.000.000 \\times n^{50.000.000}$"
+      },
+      "answer": "B",
+      "explanation": "**Analisis Biaya Linier**\\nBiaya awal adalah Rp 500.000.000. Biaya tambahan setiap bulan adalah Rp 50.000.000. Ini adalah penambahan linier, bukan perkalian eksponensial. Total biaya setelah $n$ bulan adalah biaya awal ditambah total biaya tambahan selama $n$ bulan, yaitu $500.000.000 + n \\times 50.000.000$."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa sedang menyederhanakan ekspresi $\\frac{1}{x^4}$.",
+      "question": "Menggunakan sifat pangkat negatif, bentuk $\\frac{1}{x^4}$ dapat ditulis ulang sebagai...",
+      "options": {
+        "A": "$x^4$",
+        "B": "$x^{-4}$",
+        "C": "$x^{1/4}$",
+        "D": "$x^{-1/4}$",
+        "E": "1/x^{-4}"
+      },
+      "answer": "B",
+      "explanation": "**Sifat Pangkat Negatif**\\nDefinisi pangkat negatif adalah $a^{-n} = \\frac{1}{a^n}$. Dengan demikian, $\\frac{1}{x^4}$ setara dengan $x^{-4}$."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Guru memberikan soal: $(a^3)^4$.",
+      "question": "Berdasarkan sifat pemangkatan bilangan berpangkat, hasil dari $(a^3)^4$ adalah...",
+      "options": {
+        "A": "$a^{3+4}$",
+        "B": "$a^{3/4}$",
+        "C": "$a^{4/3}$",
+        "D": "$a^{3 \\times 4}$",
+        "E": "$a^{3^4}$"
+      },
+      "answer": "D",
+      "explanation": "**Sifat Pemangkatan Bilangan Berpangkat**\\nKetika suatu bilangan berpangkat dipangkatkan lagi, eksponennya dikalikan. Jadi, $(a^3)^4 = a^{(3 \\times 4)} = a^{12}$."
+    }
+  ],
+  "metadata": {
+    "id": "47eebfec-1ab7-4ca2-a5fe-f7e82a3fc5f1",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T09:04:22Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Sifat-Sifat Eksponen",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_5_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menggeneralisasi sifat-sifat bilangan berpangkat.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3842,
+      "assistant": 2107,
+      "total": 6623,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

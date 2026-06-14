@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: HOTS\n\n--- MATERI ---\nDalam mempelajari teori peluang, kita seringkali dihadapkan pada percobaan yang melibatkan lebih dari satu kejadian. Konsep ini dikenal sebagai kejadian majemuk. Salah satu operasi dasar dalam kejadian majemuk adalah gabungan dua kejadian atau lebih, yang secara bahasa sering dihubungkan dengan kata hubung 'atau'. Secara matematis, gabungan antara kejadian A dan kejadian B dinotasikan dengan himpunan A ∪ B. Untuk menghitung peluang gabungan dua kejadian ini, matematika menyediakan sebuah prinsip fundamental yang disebut aturan penjumlahan peluang. Sebelum menerapkan formula aturan penjumlahan, peserta didik harus terlebih dahulu menganalisis hubungan antar kejadian tersebut di dalam ruang sampel. Karakteristik irisan himpunan dari kejadian-kejadian inilah yang nantinya akan menentukan rumusan peluang mana yang tepat untuk digunakan dalam pemecahan masalah.\n\nKarakteristik hubungan dua kejadian yang pertama adalah kejadian saling lepas atau mutually exclusive. Dua buah kejadian dikatakan saling lepas apabila kedua kejadian tersebut tidak mungkin terjadi secara bersama-sama dalam satu kali percobaan. Dari perspektif teori himpunan, hal ini berarti bahwa himpunan kejadian A dan himpunan kejadian B sama sekali tidak memiliki anggota persekutuan, sehingga irisan dari kedua kejadian tersebut merupakan himpunan kosong (A ∩ B = ∅). Jika direpresentasikan menggunakan diagram Venn, kurva yang menggambarkan himpunan A dan himpunan B akan tampak saling terpisah dan tidak berpotongan. Sebagai contoh nyata, pada percobaan pelemparan sebuah dadu bersisi enam, kejadian munculnya mata dadu ganjil dan kejadian munculnya mata dadu genap dipastikan tidak akan dapat terjadi secara simultan pada lemparan yang sama.\n\nMengingat bahwa dua kejadian yang saling lepas tidak memiliki titik sampel persekutuan, maka nilai peluang irisan kedua kejadian tersebut secara mutlak bernilai nol, dituliskan sebagai P(A ∩ B) = 0. Berlandaskan karakteristik himpunan ini, aturan penjumlahan untuk menghitung probabilitas terjadinya kejadian A atau kejadian B dirumuskan secara lugas. Peluang gabungan dari dua kejadian saling lepas didefinisikan sebagai jumlah total dari peluang masing-masing kejadian tunggalnya. Secara matematis, rumus aturan penjumlahan ini diekspresikan sebagai P(A ∪ B) = P(A) + P(B). Penggunaan rumusan ini memberikan kemudahan perhitungan karena kita hanya perlu menentukan probabilitas dari tiap-tiap kejadian secara individual, lalu menjumlahkan kedua nilai tersebut untuk memperoleh hasil peluang gabungannya secara tepat.\n\nKarakteristik hubungan majemuk yang kedua adalah kejadian tidak saling lepas atau non-mutually exclusive. Berlawanan dengan konsep kejadian saling lepas, dua kejadian dinyatakan tidak saling lepas apabila keduanya masih memiliki kemungkinan untuk terjadi secara bersamaan dalam satu kali pelaksanaan percobaan eksperimen. Hal ini secara langsung mengindikasikan bahwa terdapat paling sedikit satu titik sampel yang berkedudukan ganda, yaitu menjadi anggota himpunan kejadian A sekaligus juga merupakan anggota himpunan kejadian B. Secara notasi matematis, irisan dari kedua himpunan kejadian ini bukanlah sebuah himpunan kosong (A ∩ B ≠ ∅). Sebagai ilustrasi, pada pengambilan satu lembar kartu acak dari satu set kartu remi standar, peluang terambilnya kartu As atau kartu berwarna merah adalah kejadian tidak saling lepas, karena terdapat dua kartu As yang secara spesifik juga berwarna merah.\n\nKeberadaan titik sampel persekutuan pada kejadian tidak saling lepas menuntut adanya penyesuaian khusus pada formula aturan penjumlahan peluang. Apabila kita hanya menjumlahkan peluang kejadian A dan peluang kejadian B secara langsung, maka elemen yang menjadi anggota irisan akan terhitung dua kali secara tumpang tindih. Untuk menghindari kesalahan perhitungan ganda (double counting) tersebut, kita menerapkan prinsip inklusi-eksklusi dalam teori himpunan. Aturan penjumlahan memformulasikan bahwa total peluang gabungan harus dikurangi dengan probabilitas irisan kedua kejadian tersebut. Oleh karena itu, rumus aturan penjumlahan yang berlaku universal untuk kejadian tidak saling lepas dideklarasikan sebagai P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Pengurangan nilai peluang irisan ini penting agar perhitungan model probabilitas tetap akurat dan representatif.\n\nPenerapan aturan penjumlahan, baik untuk kejadian saling lepas maupun tidak saling lepas, membutuhkan kejelian peserta didik dalam mengidentifikasi titik sampel dari ruang sampel yang diamati. Langkah strategis pertama dalam menyelesaikan persoalan peluang majemuk adalah mendata secara sistematis anggota dari masing-masing himpunan kejadian. Setelah itu, peserta didik harus memeriksa eksistensi irisan dari kejadian-kejadian tersebut untuk menentukan formula mana yang relevan. Jika P(A ∩ B) = 0, gunakan rumusan P(A ∪ B) = P(A) + P(B). Namun, jika P(A ∩ B) ≠ 0, wajib mengaplikasikan rumus P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Penguasaan konsep probabilitas dan ketelitian dalam menganalisis irisan himpunan ini sangat aplikatif dalam memecahkan berbagai persoalan statistika di dunia nyata.\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko UMKM menjual dua jenis keripik: singkong dan pisang. Peluang keripik singkong laku terjual dalam sehari adalah 0.6, sedangkan peluang keripik pisang laku terjual adalah 0.5. Peluang kedua jenis keripik tersebut laku terjual bersamaan adalah 0.3.",
+      "question": "Manajer UMKM ingin mengetahui peluang setidaknya salah satu jenis keripik laku terjual. Strategi perhitungan mana yang paling tepat untuk meminimalkan risiko kesalahan dalam pengambilan keputusan stok?",
+      "options": {
+        "A": "Menjumlahkan peluang masing-masing keripik: 0.6 + 0.5 = 1.1.",
+        "B": "Menggunakan aturan penjumlahan untuk kejadian saling lepas: 0.6 + 0.5.",
+        "C": "Menggunakan aturan penjumlahan untuk kejadian tidak saling lepas: 0.6 + 0.5 - 0.3.",
+        "D": "Mengalikan peluang masing-masing keripik: 0.6 \\times 0.5.",
+        "E": "Menggunakan peluang irisan: 0.3."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Perhitungan Tepat**\\nKarena ada kemungkinan kedua jenis keripik laku bersamaan (irisan tidak kosong, P(A \\cap B) = 0.3), maka digunakan aturan penjumlahan untuk kejadian tidak saling lepas: P(A \\cup B) = P(A) + P(B) - P(A \\cap B). Ini mencegah penghitungan ganda dan memberikan hasil yang akurat."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa kelas XII akan mengikuti dua ujian: Matematika dan Fisika. Peluang siswa tersebut lulus Matematika adalah 0.8, dan peluang lulus Fisika adalah 0.7. Diketahui bahwa kejadian lulus Matematika dan lulus Fisika adalah kejadian tidak saling lepas, dengan peluang lulus keduanya adalah 0.6.",
+      "question": "Jika siswa tersebut ingin memastikan strategi belajarnya efektif untuk lulus setidaknya satu mata pelajaran, keputusan mana yang paling mencerminkan analisis peluang yang benar?",
+      "options": {
+        "A": "Fokus belajar hanya pada Matematika karena peluang lulusnya lebih tinggi.",
+        "B": "Menganggap kedua ujian independen dan menjumlahkan peluang lulusnya.",
+        "C": "Menghitung peluang lulus setidaknya satu mata pelajaran menggunakan P(M \\cup F) = P(M) + P(F) - P(M \\cap F).",
+        "D": "Mengabaikan peluang lulus Fisika karena lebih rendah dari Matematika.",
+        "E": "Memprediksi kelulusan hanya berdasarkan peluang irisan 0.6."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Peluang Kelulusan**\\nUntuk menentukan peluang lulus setidaknya satu mata pelajaran, kita perlu menghitung gabungan kedua kejadian. Karena kejadian lulus Matematika dan Fisika tidak saling lepas (memiliki irisan), rumus yang tepat adalah P(M \\cup F) = P(M) + P(F) - P(M \\cap F). Ini memberikan gambaran peluang yang akurat."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah panitia acara sekolah akan memilih ketua dan wakil ketua dari 10 siswa. Terdapat 4 siswa kelas XI dan 6 siswa kelas XII. Peluang terpilihnya siswa kelas XI sebagai ketua adalah 4/10. Peluang terpilihnya siswa kelas XII sebagai wakil ketua, jika siswa kelas XI sudah terpilih sebagai ketua, adalah 6/9.",
+      "question": "Jika panitia ingin mengetahui peluang terpilihnya ketua dari kelas XI ATAU wakil ketua dari kelas XII, strategi evaluasi mana yang paling sesuai untuk menghindari kesalahan dalam perhitungan?",
+      "options": {
+        "A": "Menjumlahkan peluang terpilihnya ketua kelas XI dan wakil ketua kelas XII secara langsung.",
+        "B": "Menggunakan rumus P(A \\cup B) = P(A) + P(B) karena kedua kejadian berbeda.",
+        "C": "Menghitung peluang terpilihnya ketua kelas XI (4/10) dan mengabaikan kejadian wakil ketua.",
+        "D": "Menggunakan rumus P(A \\cup B) = P(A) + P(B) - P(A \\cap B) dengan P(A \\cap B) = 0.",
+        "E": "Menganalisis apakah kejadian 'ketua dari kelas XI' dan 'wakil ketua dari kelas XII' saling lepas atau tidak."
+      },
+      "answer": "E",
+      "explanation": "**Evaluasi Hubungan Kejadian**\\nUntuk menghitung peluang 'ketua dari kelas XI ATAU wakil ketua dari kelas XII', penting untuk menentukan apakah kedua kejadian ini saling lepas atau tidak. Jika mereka saling lepas, P(A \\cup B) = P(A) + P(B). Jika tidak, P(A \\cup B) = P(A) + P(B) - P(A \\cap B). Analisis ini krusial sebelum menerapkan formula."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah kotak terdapat 5 bola merah dan 3 bola biru. Dua bola diambil satu per satu tanpa pengembalian. Peluang terambilnya bola merah pada pengambilan pertama adalah 5/8. Peluang terambilnya bola biru pada pengambilan kedua, jika bola pertama merah, adalah 3/7.",
+      "question": "Seorang siswa ingin menghitung peluang terambilnya bola merah pada pengambilan pertama ATAU bola biru pada pengambilan kedua. Keputusan perhitungan mana yang paling logis untuk mendapatkan hasil yang akurat?",
+      "options": {
+        "A": "Menjumlahkan peluang kedua kejadian: 5/8 + 3/7.",
+        "B": "Menggunakan rumus P(A \\cup B) = P(A) + P(B) karena urutan pengambilan berbeda.",
+        "C": "Menghitung peluang terambilnya bola merah pada pengambilan pertama saja.",
+        "D": "Menganalisis apakah kejadian 'bola merah pertama' dan 'bola biru kedua' saling lepas atau tidak.",
+        "E": "Mengalikan kedua peluang: (5/8) \\times (3/7)."
+      },
+      "answer": "D",
+      "explanation": "**Analisis Logis Kejadian**\\nUntuk menghitung peluang 'bola merah pertama ATAU bola biru kedua', perlu dianalisis apakah kedua kejadian ini saling lepas. Jika saling lepas, P(A \\cup B) = P(A) + P(B). Jika tidak, P(A \\cup B) = P(A) + P(B) - P(A \\cap B). Analisis ini penting untuk memilih rumus yang tepat."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik memiliki dua rute pengiriman utama ke luar kota. Rute A memiliki peluang keterlambatan 0.1, dan Rute B memiliki peluang keterlambatan 0.15. Peluang kedua rute mengalami keterlambatan secara bersamaan adalah 0.05.",
+      "question": "Manajer operasional perlu memprediksi peluang setidaknya salah satu rute mengalami keterlambatan untuk mengantisipasi dampak pada jadwal pengiriman. Strategi prediksi mana yang paling efektif?",
+      "options": {
+        "A": "Menjumlahkan peluang keterlambatan kedua rute: 0.1 + 0.15.",
+        "B": "Menggunakan rumus P(A \\cup B) = P(A) + P(B) karena rute berbeda.",
+        "C": "Menggunakan rumus P(A \\cup B) = P(A) + P(B) - P(A \\cap B) untuk kejadian tidak saling lepas.",
+        "D": "Memprediksi hanya berdasarkan peluang keterlambatan Rute B (0.15).",
+        "E": "Mengalikan peluang keterlambatan kedua rute: 0.1 \\times 0.15."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Prediksi Efektif**\\nKarena ada kemungkinan kedua rute terlambat bersamaan (P(A \\cap B) = 0.05), kejadian ini tidak saling lepas. Untuk memprediksi peluang setidaknya salah satu rute terlambat, gunakan aturan penjumlahan kejadian tidak saling lepas: P(A \\cup B) = P(A) + P(B) - P(A \\cap B). Ini mencegah penghitungan ganda."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Di sebuah pasar tradisional, pedagang buah menjual mangga dan jeruk. Peluang mangga terjual habis pada hari pasar adalah 0.7. Peluang jeruk terjual habis adalah 0.6. Peluang kedua jenis buah tersebut terjual habis bersamaan adalah 0.4.",
+      "question": "Pemilik toko ingin mengevaluasi strategi stok untuk hari berikutnya. Keputusan mana yang paling mencerminkan analisis risiko stok yang tepat berdasarkan peluang terjual habis?",
+      "options": {
+        "A": "Menjumlahkan peluang terjual habis mangga dan jeruk: 0.7 + 0.6.",
+        "B": "Menggunakan rumus P(M \\cup J) = P(M) + P(J) karena keduanya buah.",
+        "C": "Menggunakan rumus P(M \\cup J) = P(M) + P(J) - P(M \\cap J) karena ada irisan.",
+        "D": "Mengabaikan peluang terjual habis jeruk karena lebih rendah dari mangga.",
+        "E": "Mengalikan peluang terjual habis kedua buah: 0.7 \\times 0.6."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Risiko Stok Tepat**\\nKarena ada kemungkinan kedua buah terjual habis bersamaan (P(M \\cap J) = 0.4), kejadian ini tidak saling lepas. Untuk mengevaluasi peluang setidaknya salah satu buah terjual habis, gunakan aturan penjumlahan kejadian tidak saling lepas: P(M \\cup J) = P(M) + P(J) - P(M \\cap J). Ini memberikan gambaran risiko yang akurat."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi dua jenis kue: cokelat dan keju. Peluang kue cokelat laku terjual adalah 0.8. Peluang kue keju laku terjual adalah 0.7. Peluang kedua kue laku terjual bersamaan adalah 0.55.",
+      "question": "Manajer produksi perlu memprediksi permintaan pasar. Keputusan mana yang paling tepat untuk menentukan peluang setidaknya salah satu jenis kue laku terjual?",
+      "options": {
+        "A": "Menjumlahkan peluang masing-masing kue: 0.8 + 0.7.",
+        "B": "Menggunakan rumus P(C \\cup K) = P(C) + P(K) karena keduanya kue.",
+        "C": "Menggunakan rumus P(C \\cup K) = P(C) + P(K) - P(C \\cap K) karena ada irisan.",
+        "D": "Mengabaikan peluang kue keju karena lebih rendah dari kue cokelat.",
+        "E": "Mengalikan peluang kedua kue: 0.8 \\times 0.7."
+      },
+      "answer": "C",
+      "explanation": "**Keputusan Prediksi Tepat**\\nKarena ada kemungkinan kedua kue laku terjual bersamaan (P(C \\cap K) = 0.55), kejadian ini tidak saling lepas. Untuk memprediksi peluang setidaknya salah satu kue laku terjual, gunakan aturan penjumlahan kejadian tidak saling lepas: P(C \\cup K) = P(C) + P(K) - P(C \\cap K). Ini mencegah penghitungan ganda."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah acara penggalangan dana, terdapat dua jenis donasi: tunai dan transfer bank. Peluang donasi tunai diterima adalah 0.6. Peluang donasi transfer bank diterima adalah 0.5. Peluang kedua jenis donasi diterima bersamaan adalah 0.3.",
+      "question": "Panitia ingin mengetahui peluang menerima setidaknya satu jenis donasi. Strategi mana yang paling tepat untuk menghindari kesalahan dalam perhitungan total donasi yang diterima?",
+      "options": {
+        "A": "Menjumlahkan peluang kedua jenis donasi: 0.6 + 0.5.",
+        "B": "Menggunakan rumus P(T \\cup B) = P(T) + P(B) karena keduanya donasi.",
+        "C": "Menggunakan rumus P(T \\cup B) = P(T) + P(B) - P(T \\cap B) karena ada irisan.",
+        "D": "Mengabaikan peluang donasi transfer bank karena lebih rendah dari donasi tunai.",
+        "E": "Mengalikan peluang kedua jenis donasi: 0.6 \\times 0.5."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Perhitungan Tepat**\\nKarena ada kemungkinan kedua jenis donasi diterima bersamaan (P(T \\cap B) = 0.3), kejadian ini tidak saling lepas. Untuk menghitung peluang setidaknya satu jenis donasi diterima, gunakan aturan penjumlahan kejadian tidak saling lepas: P(T \\cup B) = P(T) + P(B) - P(T \\cap B). Ini mencegah penghitungan ganda."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan travel menawarkan dua paket liburan: Bali dan Lombok. Peluang paket Bali dipilih adalah 0.7. Peluang paket Lombok dipilih adalah 0.6. Peluang kedua paket dipilih bersamaan adalah 0.45.",
+      "question": "Manajer pemasaran ingin memprediksi peluang pelanggan memilih setidaknya salah satu paket. Keputusan mana yang paling akurat untuk meminimalkan kesalahan prediksi?",
+      "options": {
+        "A": "Menjumlahkan peluang kedua paket: 0.7 + 0.6.",
+        "B": "Menggunakan rumus P(B \\cup L) = P(B) + P(L) karena keduanya paket liburan.",
+        "C": "Menggunakan rumus P(B \\cup L) = P(B) + P(L) - P(B \\cap L) karena ada irisan.",
+        "D": "Mengabaikan peluang paket Lombok karena lebih rendah dari paket Bali.",
+        "E": "Mengalikan peluang kedua paket: 0.7 \\times 0.6."
+      },
+      "answer": "C",
+      "explanation": "**Keputusan Prediksi Akurat**\\nKarena ada kemungkinan kedua paket dipilih bersamaan (P(B \\cap L) = 0.45), kejadian ini tidak saling lepas. Untuk memprediksi peluang setidaknya salah satu paket dipilih, gunakan aturan penjumlahan kejadian tidak saling lepas: P(B \\cup L) = P(B) + P(L) - P(B \\cap L). Ini mencegah penghitungan ganda."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah survei kepuasan pelanggan terhadap dua produk elektronik, A dan B. Peluang pelanggan puas dengan produk A adalah 0.8. Peluang puas dengan produk B adalah 0.7. Peluang puas dengan kedua produk adalah 0.6.",
+      "question": "Seorang analis ingin mengevaluasi peluang pelanggan puas dengan setidaknya salah satu produk. Strategi analisis mana yang paling tepat untuk menghindari kesalahan interpretasi data?",
+      "options": {
+        "A": "Menjumlahkan peluang kepuasan kedua produk: 0.8 + 0.7.",
+        "B": "Menggunakan rumus P(A \\cup B) = P(A) + P(B) karena keduanya produk elektronik.",
+        "C": "Menggunakan rumus P(A \\cup B) = P(A) + P(B) - P(A \\cap B) karena ada irisan.",
+        "D": "Mengabaikan peluang kepuasan produk B karena lebih rendah dari produk A.",
+        "E": "Mengalikan peluang kepuasan kedua produk: 0.8 \\times 0.7."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Analisis Tepat**\\nKarena ada kemungkinan pelanggan puas dengan kedua produk (P(A \\cap B) = 0.6), kejadian ini tidak saling lepas. Untuk menganalisis peluang pelanggan puas dengan setidaknya salah satu produk, gunakan aturan penjumlahan kejadian tidak saling lepas: P(A \\cup B) = P(A) + P(B) - P(A \\cap B). Ini mencegah penghitungan ganda."
+    }
+  ],
+  "metadata": {
+    "id": "0482ae0e-2a02-4866-aa64-12e172199c95",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T15:11:09Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_6_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3557,
+      "assistant": 3914,
+      "total": 8145,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

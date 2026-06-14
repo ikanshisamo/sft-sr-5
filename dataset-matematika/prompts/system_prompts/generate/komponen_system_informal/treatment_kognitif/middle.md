@@ -1,0 +1,3 @@
+- SAJIKAN SATU ALUR LOGIKA UTUH: Berikan konteks untuk satu tahap prosedur atau satu transisi antarkonsep matematis, lalu minta siswa mengidentifikasi langkah atau hasil terdekatnya. Batasi penjelasan pada satu hubungan logika matematis utama.
+- PERTANYAAN PROSEDURAL: Gunakan pertanyaan yang menguji pemahaman langkah matematis berikutnya (misal: "Setelah kedua ruas dibagi dengan koefisien $a$, bentuk persamaan apa yang diperoleh?"), bukan pertanyaan sintesis makro yang terlalu luas.
+- KOREKSI PRESISI: Jika siswa tersendat atau salah menghubungkan langkah, tunjukkan kembali sifat, aturan, atau syarat penghubung yang terlewat secara faktual dan lugas.

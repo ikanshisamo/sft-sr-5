@@ -1,0 +1,68 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate exactly 5 flashcards in JSON array format.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"front\": \"\",\n    \"back\": \"\"\n  }\n]\n\n[FLASHCARD_LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"focus\": [\n      \"definisi\",\n      \"rumus\",\n      \"fakta dasar\",\n      \"konsep inti\"\n    ],\n    \"style\": \"direct recall\"\n  },\n\n  \"MOTS\": {\n    \"focus\": [\n      \"hubungan konsep\",\n      \"aplikasi sederhana\",\n      \"contoh penggunaan\"\n    ],\n    \"style\": \"applied recall\"\n  },\n\n  \"HOTS\": {\n    \"focus\": [\n      \"kesimpulan\",\n      \"strategi\",\n      \"dampak\",\n      \"evaluasi singkat\"\n    ],\n    \"style\": \"evaluative takeaway\"\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Bunga | Target: HOTS\n\n--- MATERI ---\nDalam aplikasi matematika keuangan, konsep barisan dan deret memiliki peran yang sangat penting, khususnya dalam perhitungan suku bunga tabungan maupun pinjaman. Secara umum, sistem perhitungan bunga yang diterapkan oleh lembaga perbankan atau institusi keuangan dibedakan menjadi dua jenis utama, yaitu bunga tunggal dan bunga majemuk. Bunga adalah balas jasa yang diberikan oleh pihak institusi keuangan kepada nasabah atas simpanan uang, atau sebaliknya, beban yang harus dibayarkan oleh peminjam. Pemahaman mengenai karakteristik kedua jenis bunga ini sangat esensial karena penambahan nilai modal dari waktu ke waktu mematuhi pola bilangan tertentu. Bunga tunggal memiliki pola penambahan yang identik dengan barisan aritmetika, sedangkan bunga majemuk memiliki pola pelipatgandaan yang identik dengan barisan geometri.\n\nBunga tunggal didefinisikan sebagai sistem perhitungan bunga yang besarnya selalu tetap dan hanya dihitung berdasarkan nilai modal awal saja pada setiap akhir periode tertentu. Karena penambahan bunganya konstan, perhitungan modal akhir pada bunga tunggal mengaplikasikan prinsip dasar barisan aritmetika, di mana modal awal bertindak sebagai suku pertama dan nominal bunga bertindak sebagai beda. Jika sebuah modal awal disimbolkan dengan M, persentase suku bunga per periode disimbolkan dengan b, dan lama periode waktu disimbolkan dengan n, maka besar bunga yang diperoleh pada setiap periode adalah M dikalikan b. Berdasarkan pola tersebut, total modal akhir pada periode ke-n, yang dinotasikan dengan Mn, dapat dihitung menggunakan rumusan linear, yaitu Mn = M(1 + n × b).\n\nBerbeda halnya dengan sistem bunga tunggal, perhitungan bunga majemuk tidak hanya didasarkan pada besaran modal awal. Bunga majemuk dihitung berdasarkan akumulasi dari modal awal ditambah dengan total bunga yang telah diperoleh pada periode-periode sebelumnya. Sistem ini sering disebut sebagai bunga berbunga. Pertumbuhan nilai modal pada bunga majemuk selaras dengan prinsip barisan geometri, di mana rasio pertumbuhannya senantiasa bernilai tetap. Jika suatu modal awal M diinvestasikan dengan persentase suku bunga majemuk sebesar i per periode, maka pada setiap akhir periode, total modal akan dikalikan dengan rasio (1 + i). Dengan demikian, formulasi matematis untuk menghitung jumlah modal pada akhir periode ke-n dirumuskan secara eksponensial menjadi Mn = M(1 + i)^n.\n\nPerbedaan mendasar antara bunga tunggal dan bunga majemuk dapat diidentifikasi secara jelas melalui pola pertumbuhan modalnya. Pada bunga tunggal, modal tumbuh secara linear atau konstan layaknya grafik fungsi garis lurus, karena penambahan bunga pada setiap periode bernilai identik. Sebaliknya, pada bunga majemuk, pertumbuhan modal berlangsung secara eksponensial melengkung ke atas, karena bunga yang dihasilkan pada suatu periode akan kembali berbunga pada periode berikutnya. Dalam jangka waktu investasi yang panjang, sistem bunga majemuk akan memberikan akumulasi hasil akhir yang jauh lebih signifikan dan menguntungkan dibandingkan sistem bunga tunggal. Oleh sebab itu, institusi perbankan modern hampir secara eksklusif menggunakan sistem bunga majemuk untuk berbagai produk simpanan, deposito, dan skema perkreditan.\n\nUntuk menyelesaikan berbagai masalah kontekstual yang melibatkan perhitungan bunga, ketelitian dalam mengidentifikasi parameter periode waktu (n) dan persentase suku bunga (i) sangatlah diutamakan. Kedua parameter tersebut harus selalu disesuaikan agar memiliki satuan waktu yang seragam. Sebagai contoh, apabila suku bunga majemuk ditetapkan secara tahunan namun sistem kapitalisasi bunganya dihitung setiap kuartal atau tiga bulanan, maka persentase suku bunga harus dibagi empat, dan sebaliknya jumlah periode waktu n harus dikalikan empat. Melalui keterampilan memodelkan persoalan keuangan ke dalam formulasi barisan aritmetika maupun barisan geometri ini, peserta didik akan memiliki literasi finansial yang mumpuni untuk mengevaluasi produk perbankan, merencanakan investasi jangka panjang, serta mengambil keputusan ekonomi secara rasional.\n\n[FLASHCARD_REQUIREMENTS]\n- Generate flashcards aligned with the configured flashcard level.\n- Keep answers concise, useful, and easy to recall.\n- Focus on essential knowledge compression.\n- Avoid long analytical explanations.\n- Use natural Indonesian educational language.\n\n[LEVEL_ALIGNMENT]\n\n- LOTS:\n  Focus on direct recall of concepts, formulas, definitions, or basic facts.\n- MOTS:\n  Focus on simple application, conceptual relationships, or practical usage.\n- HOTS:\n  Focus on concise evaluative conclusions, impacts, strategies, or insights.\n\n[FRONT_RULES]\n- Maximum 20 characters including spaces.\n- Use concise prompts, terms, formulas, or key ideas.\n- Avoid ambiguous wording.\n- Avoid full sentence questions when unnecessary.\n\n[BACK_RULES]\n- Maximum 50 characters including spaces.\n- Must contain definitive answers, formulas, concepts, impacts, or conclusions.\n- Avoid rhetorical or open-ended responses.\n- Avoid filler words.\n- STEM subjects:\n  - may include concise LaTeX formulas\n  - prioritize formulas or technical meaning\n- Theory subjects:\n  - prioritize impacts, relationships, or concise takeaways\n\n[CONTENT_GUIDELINES]\nAllowed content:\n- formulas\n- definitions\n- key concepts\n- practical applications\n- impacts\n- relationships\n- concise strategies\n- evaluative takeaways\n\n[VARIATION_RULES]\nDistribute flashcards naturally across:\n- conceptual recall\n- applied understanding\n- evaluative takeaway\n\nAvoid generating cards with repetitive wording patterns.\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- Escape newline characters.\n- Escape internal quotes.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "front": "Bunga Majemuk vs Tunggal",
+      "back": "Majemuk lebih menguntungkan jangka panjang."
+    },
+    {
+      "level": "HOTS",
+      "front": "Dampak Bunga Majemuk",
+      "back": "Pertumbuhan eksponensial, hasil akhir signifikan."
+    },
+    {
+      "level": "HOTS",
+      "front": "Penyesuaian Periode Bunga",
+      "back": "Satukan satuan waktu bunga & periode."
+    },
+    {
+      "level": "HOTS",
+      "front": "Strategi Literasi Finansial",
+      "back": "Modelkan keuangan ke barisan arit/geo."
+    },
+    {
+      "level": "HOTS",
+      "front": "Pola Pertumbuhan Modal",
+      "back": "Tunggal: linear. Majemuk: eksponensial."
+    }
+  ],
+  "metadata": {
+    "id": "c7990595-8a01-4b7c-ad5d-e804a179ac57",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T18:54:09Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Bunga",
+    "task_type": "flashcard",
+    "level": "HOTS",
+    "source_file": "Matematika_5_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2097,
+      "assistant": 170,
+      "total": 2940,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

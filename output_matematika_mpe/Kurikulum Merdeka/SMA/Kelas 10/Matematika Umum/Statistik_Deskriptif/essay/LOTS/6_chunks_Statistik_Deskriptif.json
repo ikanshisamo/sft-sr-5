@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\",\n      \"expected_reasoning\": [\n        \"single-step reasoning\",\n        \"direct concept understanding\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Statistik Deskriptif | Target: LOTS\n\n--- MATERI ---\nDalam statistik deskriptif, ukuran pemusatan digunakan untuk melihat kecenderungan suatu kumpulan data. Dua ukuran pemusatan yang sering digunakan adalah median dan modus. Median adalah nilai data yang berada tepat di tengah ketika seluruh data telah diurutkan dari yang terkecil sampai yang terbesar. Sementara itu, modus dari sebuah kumpulan data adalah data yang paling sering muncul atau memiliki frekuensi paling besar. Keunggulan utama dari modus dan median adalah nilainya tidak akan terpengaruh jika kumpulan data memiliki data pencilan (outlier) atau data ekstrem.\n\nSelain median dan modus, ukuran pemusatan data yang umum digunakan adalah rerata atau mean. Mean dari sebuah kumpulan data adalah bilangan yang diperoleh dengan mendistribusikan secara merata ke seluruh anggota dari kumpulan data. Kamu dapat menghitung mean dengan cara menambahkan seluruh nilai data dan membaginya dengan total banyaknya data. Berbeda dengan median, nilai mean terpengaruh oleh data dengan nilai yang ekstrem. Pemilihan di antara mean, median, dan modus harus disesuaikan secara tepat dengan konteks permasalahannya.\n\nPada kasus pengolahan data berkelompok, cara menghitung mean dilakukan dengan menggunakan nilai tengah dari tiap kelompok. Data tunggal dalam kelompok diasumsikan tersebar merata, sehingga nilai tengah kelas digunakan untuk mewakili kelompok tersebut. Untuk mencari median dari data kelompok, kita akan menggunakan metode interpolasi. Setelah menentukan kelas median dari pembagian persentase observasinya, kita menggunakan nilai tepi bawah dan tepi atas kelas lalu membandingkan selisih bilangannya. Kelas modus juga bisa langsung dilihat dari frekuensi terbanyaknya.\n\nMengetahui ukuran pemusatan belum cukup, sehingga kita juga perlu mengukur penyebaran datanya. Ukuran penyebaran mengukur seberapa jauh kumpulan data tersebut tersebar dari pemusatannya. Ukuran penyebaran yang paling sederhana adalah jangkauan atau range, yang dihitung dari selisih antara data terkecil dengan data terbesar. Ukuran penyebaran lain yang sering digunakan adalah jangkauan interkuartil. Jangkauan interkuartil adalah selisih antara kuartil atas (Q3) dan kuartil bawah (Q1) untuk melihat penyebaran pada 50% data di tengah.\n\nBerkaitan dengan jangkauan interkuartil, terdapat konsep ukuran penempatan yang disebut kuartil. Jika median membagi kumpulan data yang telah diurutkan menjadi dua bagian yang sama besar, maka kuartil membagi kumpulan data tersebut menjadi empat bagian sama besar. Kuartil Bawah (Q1) berada di letak urutan 25% dari kelompok data. Kuartil Tengah (Q2) identik dengan letak median yang berada di 50% data. Sementara itu, Kuartil Atas (Q3) berada di urutan 75% dari kelompok data tersebut.\n\nUntuk mencari letak kuartil pada data tunggal, bagilah banyaknya data dengan 4. Jika hasilnya bilangan bulat (misal m), maka kuartil terletak di tengah-tengah antara urutan ke-m dan ke-(m+1). Jika hasil baginya bukan bilangan bulat, bulatkanlah hasilnya ke atas agar posisi urutan datanya sesuai. Sama seperti mencari letak median, cara menentukan kuartil pada distribusi tabel frekuensi data kelompok juga menggunakan interpolasi. Kita cukup mencari kelas letak kuartil tersebut berada lalu memasukkannya ke garis perbandingan selisih.\n\n[ATP_ALIGNMENT]\nMenentukan ukuran pemusatan (mean, median, modus) dan penyebaran data (jangkauan, kuartil).\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang di Pasar Beringharjo Yogyakarta mencatat hasil penjualan harian selama seminggu terakhir dalam Rupiah: 150.000, 175.000, 160.000, 175.000, 200.000, 180.000, 175.000. Data ini perlu dianalisis untuk memahami tren pendapatan.",
+      "question": "Berdasarkan data penjualan harian tersebut, tentukan nilai modus dari pendapatan pedagang tersebut.",
+      "rubric_points": [
+        "Mengidentifikasi data yang paling sering muncul.",
+        "Menyatakan nilai modus dengan benar.",
+        "Menghubungkan modus dengan frekuensi kemunculan data."
+      ],
+      "explanation": "**Penjelasan Modus**\\nModus adalah nilai yang paling sering muncul dalam suatu kumpulan data. Untuk menentukan modus dari data penjualan harian pedagang, kita perlu mengamati frekuensi kemunculan setiap nilai pendapatan.\\n\\nData Penjualan (dalam Rupiah):\\n150.000 (1 kali)\\n175.000 (3 kali)\\n160.000 (1 kali)\\n200.000 (1 kali)\\n180.000 (1 kali)\\n\\nNilai yang paling sering muncul adalah 175.000, yaitu sebanyak 3 kali.\\nJadi, modus dari pendapatan pedagang tersebut adalah Rp 175.000.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM keripik singkong di Malang memproduksi keripik dalam kemasan berbagai ukuran. Data berat bersih (dalam gram) dari 10 kemasan acak adalah: 105, 110, 100, 115, 105, 120, 105, 110, 115, 105.",
+      "question": "Tentukan nilai median dari berat bersih kemasan keripik singkong tersebut setelah data diurutkan.",
+      "rubric_points": [
+        "Mengurutkan data berat bersih dari terkecil ke terbesar.",
+        "Menemukan nilai tengah dari kumpulan data yang telah diurutkan.",
+        "Menyatakan nilai median dengan tepat."
+      ],
+      "explanation": "**Penjelasan Median**\\nMedian adalah nilai tengah dari kumpulan data yang telah diurutkan. Langkah pertama adalah mengurutkan data berat bersih kemasan keripik singkong:\\n\\nData Urut (gram): 100, 105, 105, 105, 105, 110, 110, 115, 115, 120\\n\\nKarena jumlah data (n) adalah 10 (genap), median dihitung dari rata-rata dua nilai tengah, yaitu data ke-5 dan data ke-6.\\nData ke-5 = 105\\nData ke-6 = 110\\n\\nMedian = \\\\frac{105 + 110}{2} = \\\\frac{215}{2} = 107.5\\n\\nJadi, median berat bersih kemasan keripik singkong adalah 107.5 gram.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani di Sleman mencatat jumlah pupuk urea (dalam kg) yang digunakan untuk 5 petak sawahnya dalam satu musim tanam: 25 kg, 30 kg, 28 kg, 32 kg, 25 kg.",
+      "question": "Hitunglah nilai rerata (mean) jumlah pupuk urea yang digunakan per petak sawah.",
+      "rubric_points": [
+        "Menjumlahkan seluruh nilai penggunaan pupuk.",
+        "Membagi total jumlah pupuk dengan banyaknya petak sawah.",
+        "Menyatakan hasil rerata dengan satuan yang benar."
+      ],
+      "explanation": "**Penjelasan Rerata (Mean)**\\nRerata atau mean adalah jumlah seluruh nilai data dibagi dengan banyaknya data. Untuk menghitung rerata jumlah pupuk urea yang digunakan:\\n\\nJumlah seluruh pupuk = 25 kg + 30 kg + 28 kg + 32 kg + 25 kg = 140 kg\\n\\nBanyaknya petak sawah = 5\\n\\nRerata (Mean) = \\\\frac{Jumlah Seluruh Pupuk}{Banyaknya Petak Sawah}\\\\nMean = \\\\frac{140 \\text{ kg}}{5}\\\\nMean = 28 \\text{ kg}\\\\n\\nJadi, rerata jumlah pupuk urea yang digunakan per petak sawah adalah 28 kg.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko buku di Bandung mengurutkan jumlah buku yang terjual setiap hari selama 7 hari: 50, 55, 48, 60, 52, 55, 58.",
+      "question": "Tentukan median dari jumlah buku yang terjual selama seminggu tersebut.",
+      "rubric_points": [
+        "Mengurutkan data penjualan buku dari terkecil ke terbesar.",
+        "Mengidentifikasi nilai tengah dari data yang sudah terurut.",
+        "Menyebutkan nilai median dengan tepat."
+      ],
+      "explanation": "**Penjelasan Median**\\nMedian adalah nilai tengah dari kumpulan data yang telah diurutkan. Pertama, urutkan data jumlah buku yang terjual:\\n\\nData Urut: 48, 50, 52, 55, 55, 58, 60\\n\\nKarena jumlah data (n) adalah 7 (ganjil), median adalah nilai yang berada tepat di tengah urutan data, yaitu data ke-4.\\nData ke-4 = 55\\n\\nJadi, median jumlah buku yang terjual selama seminggu adalah 55 buku.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pengrajin batik di Pekalongan mencatat harga jual beberapa jenis batiknya dalam Rupiah: 150.000, 200.000, 180.000, 200.000, 220.000, 190.000, 200.000.",
+      "question": "Berdasarkan data harga jual batik tersebut, tentukan nilai modus dari harga jual batik yang paling sering ditawarkan.",
+      "rubric_points": [
+        "Mengidentifikasi nilai harga yang paling sering muncul.",
+        "Menyatakan modus harga jual dengan benar.",
+        "Menghubungkan modus dengan frekuensi kemunculan harga."
+      ],
+      "explanation": "**Penjelasan Modus**\\nModus adalah nilai yang paling sering muncul dalam suatu kumpulan data. Untuk menentukan modus dari data harga jual batik, kita perlu mengamati frekuensi kemunculan setiap nilai harga.\\n\\nHarga Jual (dalam Rupiah):\\n150.000 (1 kali)\\n200.000 (3 kali)\\n180.000 (1 kali)\\n220.000 (1 kali)\\n190.000 (1 kali)\\n\\nNilai yang paling sering muncul adalah 200.000, yaitu sebanyak 3 kali.\\nJadi, modus dari harga jual batik tersebut adalah Rp 200.000.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "cd9c95a4-75d6-4d0e-9f2f-1a43b61b7148",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T09:12:16Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Statistik Deskriptif",
+    "task_type": "essay",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_6_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan ukuran pemusatan (mean, median, modus) dan penyebaran data (jangkauan, kuartil).",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1982,
+      "assistant": 1593,
+      "total": 4249,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

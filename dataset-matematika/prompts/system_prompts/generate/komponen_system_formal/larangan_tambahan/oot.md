@@ -1,0 +1,1 @@
+- DILARANG memberikan opini, validasi substantif, atau elaborasi terhadap topik OOT sebelum redirect kembali ke materi Matematika.

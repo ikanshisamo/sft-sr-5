@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\",\n      \"expected_reasoning\": [\n        \"multi-step reasoning\",\n        \"contextual interpretation\",\n        \"tradeoff analysis\",\n        \"strategic judgment\",\n        \"real-world implication analysis\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Barisan | Target: HOTS\n\n--- MATERI ---\nDalam matematika, barisan bilangan adalah susunan objek atau bilangan yang diurutkan berdasarkan aturan atau pola tertentu. Mengenali pola barisan sangat penting karena memungkinkan kita untuk menentukan atau memprediksi nilai suku-suku berikutnya pada susunan tersebut tanpa harus menghitungnya satu per satu. Secara umum, suku ke-n dari suatu barisan dilambangkan dengan notasi Un, di mana n merupakan bilangan asli yang menunjukkan urutan suku tersebut. Dua jenis barisan dasar yang sering dijumpai dan dipelajari dalam matematika adalah barisan aritmetika dan barisan geometri. Masing-masing memiliki aturan perubahan (pola) antar suku yang khas.\n\n[ATP_ALIGNMENT]\nMenentukan suku ke-n pada barisan aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha UMKM keripik singkong ingin meningkatkan kapasitas produksinya. Ia mencatat jumlah produksi keripik dalam kilogram selama seminggu pertama sebagai berikut: 50 kg, 55 kg, 60 kg, 65 kg, 70 kg, 75 kg, 80 kg. Jika tren peningkatan produksi ini terus berlanjut dengan pola yang sama, pengusaha tersebut perlu merencanakan kebutuhan bahan baku dan tenaga kerja untuk produksi bulan depan.",
+      "question": "Berdasarkan data produksi seminggu, bagaimana strategi pengusaha UMKM tersebut dalam memprediksi kebutuhan bahan baku dan tenaga kerja untuk produksi bulan depan jika pola peningkatan produksi terus berlanjut?",
+      "rubric_points": [
+        "Mengidentifikasi pola barisan aritmetika dari data produksi.",
+        "Menghitung prediksi produksi untuk hari-hari berikutnya dalam sebulan.",
+        "Menganalisis implikasi prediksi produksi terhadap kebutuhan bahan baku dan tenaga kerja."
+      ],
+      "explanation": "**Analisis Prediksi Produksi UMKM**\\nUntuk memprediksi kebutuhan produksi bulan depan, pengusaha perlu mengidentifikasi pola peningkatan produksi mingguan. Data menunjukkan peningkatan konstan sebesar 5 kg setiap hari, yang mengindikasikan sebuah barisan aritmetika dengan suku pertama (a) = 50 kg dan beda (b) = 5 kg.\\n\\nRumus suku ke-n barisan aritmetika adalah Un = a + (n-1)b.\\n\\nJika diasumsikan satu bulan memiliki 30 hari, maka produksi pada hari ke-30 dapat dihitung:\\nU30 = 50 + (30-1) \\times 5\\nU30 = 50 + 29 \\times 5\\nU30 = 50 + 145\\nU30 = 195 kg.\\n\\nDengan memprediksi total produksi bulanan (misalnya, dengan menjumlahkan suku-suku barisan atau menggunakan rumus jumlah deret aritmetika Sn = n/2 * (a + Un)), pengusaha dapat memperkirakan total kebutuhan bahan baku dan tenaga kerja yang diperlukan untuk mencapai target produksi tersebut. Strategi ini memungkinkan perencanaan yang lebih matang untuk menghindari kekurangan pasokan atau kelebihan kapasitas.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik sedang mengevaluasi efisiensi pengiriman paket. Pada hari pertama, mereka mengirim 100 paket. Pada hari kedua, jumlah paket yang dikirim meningkat menjadi 120 paket. Pada hari ketiga, menjadi 144 paket. Perusahaan ingin mengetahui apakah pola pertumbuhan pengiriman ini berkelanjutan dan bagaimana dampaknya terhadap kapasitas armada pengiriman dalam jangka panjang.",
+      "question": "Jika pola pengiriman paket terus berlanjut, bagaimana perusahaan logistik dapat mengevaluasi kelayakan peningkatan kapasitas armada pengiriman untuk dua bulan ke depan?",
+      "rubric_points": [
+        "Mengidentifikasi pola barisan geometri dari data pengiriman.",
+        "Menghitung prediksi jumlah pengiriman paket untuk periode dua bulan.",
+        "Menganalisis dampak prediksi pengiriman terhadap kebutuhan armada dan logistik."
+      ],
+      "explanation": "**Evaluasi Kapasitas Armada Logistik**\\nData pengiriman paket menunjukkan pola pertumbuhan yang konstan dalam rasio, yaitu 120/100 = 1.2 dan 144/120 = 1.2. Ini mengindikasikan sebuah barisan geometri dengan suku pertama (a) = 100 paket dan rasio (r) = 1.2.\\n\\nRumus suku ke-n barisan geometri adalah Un = a \\times r^(n-1).\\n\\nUntuk memprediksi pengiriman pada hari ke-n, kita gunakan rumus tersebut. Jika kita ingin mengetahui total pengiriman selama dua bulan (misalnya, 60 hari), kita perlu menghitung jumlah deret geometri (Sn) dengan rumus Sn = a \\times (r^n - 1) / (r - 1).\\n\\nS60 = 100 \\times (1.2^60 - 1) / (1.2 - 1)\\nS60 = 100 \\times (1.2^60 - 1) / 0.2\\nS60 = 500 \\times (1.2^60 - 1)\\n\\nNilai 1.2^60 sangat besar, menunjukkan pertumbuhan eksponensial yang signifikan. Perusahaan harus mengevaluasi apakah kapasitas armada saat ini mampu menangani lonjakan pengiriman ini. Jika tidak, mereka perlu merencanakan penambahan armada atau strategi logistik alternatif untuk menghindari penundaan dan menjaga kepuasan pelanggan.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani di desa Sukamaju mencatat hasil panen padi selama tiga musim tanam berturut-turut. Musim pertama menghasilkan 3 ton, musim kedua 3.5 ton, dan musim ketiga 4 ton. Petani tersebut berencana untuk mengajukan pinjaman ke bank untuk membeli pupuk dan peralatan baru guna meningkatkan hasil panen di musim mendatang.",
+      "question": "Bagaimana petani tersebut dapat menggunakan pola hasil panen untuk membuat argumen yang kuat dalam pengajuan pinjaman bank guna membeli pupuk dan peralatan baru?",
+      "rubric_points": [
+        "Mengidentifikasi pola peningkatan hasil panen sebagai barisan aritmetika.",
+        "Memproyeksikan potensi hasil panen di musim mendatang dengan mempertimbangkan investasi.",
+        "Menilai kelayakan finansial dan operasional dari rencana pembelian pupuk dan peralatan."
+      ],
+      "explanation": "**Argumentasi Pengajuan Pinjaman Petani**\\nHasil panen petani menunjukkan pola peningkatan yang konsisten sebesar 0.5 ton per musim (3.5 - 3 = 0.5; 4 - 3.5 = 0.5). Ini adalah barisan aritmetika dengan suku pertama (a) = 3 ton dan beda (b) = 0.5 ton.\\n\\nJika petani berinvestasi pada pupuk dan peralatan baru, ia dapat berargumen bahwa peningkatan hasil panen akan lebih signifikan dari sekadar pola aritmetika dasar. Misalnya, ia bisa memprediksi peningkatan sebesar 0.75 ton atau 1 ton per musim setelah investasi.\\n\\nRumus prediksi hasil panen di musim ke-n (setelah investasi) bisa dimodelkan sebagai Un = a + (n-1)b + P, di mana P adalah peningkatan tambahan hasil panen akibat investasi. Dengan memproyeksikan hasil panen yang lebih tinggi, petani dapat menunjukkan kepada bank bahwa pendapatan masa depannya akan meningkat, sehingga pinjaman tersebut layak diberikan dan dapat dilunasi tepat waktu. Analisis ini menunjukkan potensi keuntungan investasi yang jelas.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah komunitas pengrajin batik di Pekalongan ingin mengembangkan motif baru. Mereka memulai dengan 5 motif dasar. Setelah satu bulan, mereka berhasil mengembangkan 7 motif baru. Di bulan kedua, mereka mengembangkan 9 motif baru. Komunitas ini berencana untuk mengikuti pameran nasional dalam 6 bulan ke depan dan perlu menentukan target jumlah motif yang harus dikembangkan.",
+      "question": "Bagaimana komunitas pengrajin batik tersebut dapat memprediksi jumlah total motif yang akan mereka miliki dalam 6 bulan ke depan untuk menetapkan target pengembangan yang realistis?",
+      "rubric_points": [
+        "Mengidentifikasi pola penambahan motif baru sebagai barisan aritmetika.",
+        "Menghitung jumlah total motif yang akan dimiliki setelah 6 bulan.",
+        "Menentukan target pengembangan motif baru yang realistis berdasarkan prediksi."
+      ],
+      "explanation": "**Penetapan Target Pengembangan Motif Batik**\\nPola penambahan motif baru adalah 5 (awal), lalu +2 menjadi 7, lalu +2 menjadi 9. Ini menunjukkan barisan aritmetika di mana jumlah motif baru yang dikembangkan setiap bulan bertambah dengan beda (b) = 2 motif. Suku pertama (a) untuk penambahan motif baru adalah 5, dan beda (b) adalah 2.\\n\\nJumlah motif baru yang dikembangkan pada bulan ke-n adalah Un = a + (n-1)b.\\nUntuk 6 bulan ke depan, kita perlu menghitung jumlah penambahan motif baru di setiap bulan dan menjumlahkannya.\\nBulan 1: 5 motif\\nBulan 2: 5 + (2-1) \\times 2 = 7 motif\\nBulan 3: 5 + (3-1) \\times 2 = 9 motif\\nBulan 4: 5 + (4-1) \\times 2 = 11 motif\\nBulan 5: 5 + (5-1) \\times 2 = 13 motif\\nBulan 6: 5 + (6-1) \\times 2 = 15 motif\\n\\nTotal penambahan motif baru selama 6 bulan adalah jumlah deret aritmetika: S6 = 6/2 \\times (5 + 15) = 3 \\times 20 = 60 motif baru.\\n\\nJika komunitas memulai dengan 5 motif dasar, maka total motif yang akan dimiliki setelah 6 bulan adalah 5 (dasar) + 60 (baru) = 65 motif. Target ini memberikan gambaran kuantitatif yang jelas untuk perencanaan pengembangan motif.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan manufaktur elektronik di Batam mencatat jumlah unit ponsel yang diproduksi setiap kuartal. Kuartal pertama menghasilkan 10.000 unit, kuartal kedua 12.000 unit, kuartal ketiga 14.400 unit, dan kuartal keempat 17.280 unit. Perusahaan ingin memproyeksikan target produksi untuk tahun depan dan mengevaluasi kebutuhan sumber daya.",
+      "question": "Bagaimana perusahaan manufaktur tersebut dapat memprediksi target produksi untuk tahun depan dan mengevaluasi kesiapan sumber daya berdasarkan tren produksi kuartalan saat ini?",
+      "rubric_points": [
+        "Mengidentifikasi pola pertumbuhan produksi sebagai barisan geometri.",
+        "Menghitung prediksi jumlah produksi untuk empat kuartal tahun depan.",
+        "Menganalisis implikasi prediksi produksi terhadap kebutuhan sumber daya (tenaga kerja, bahan baku, mesin)."
+      ],
+      "explanation": "**Proyeksi Produksi dan Kesiapan Sumber Daya**\\nData produksi menunjukkan rasio pertumbuhan yang konstan: 12.000/10.000 = 1.2, 14.400/12.000 = 1.2, 17.280/14.400 = 1.2. Ini adalah barisan geometri dengan suku pertama (a) = 10.000 unit dan rasio (r) = 1.2.\\n\\nUntuk memprediksi produksi tahun depan, kita perlu menghitung produksi untuk empat kuartal berikutnya, dimulai dari kuartal kelima (n=5) hingga kuartal kedelapan (n=8).\\n\\nProduksi Kuartal 5 (Tahun Depan Q1): U5 = 10.000 \\times 1.2^(5-1) = 10.000 \\times 1.2^4 = 10.000 \\times 2.0736 = 20.736 unit.\\nProduksi Kuartal 6 (Tahun Depan Q2): U6 = 10.000 \\times 1.2^(6-1) = 10.000 \\times 1.2^5 = 10.000 \\times 2.48832 = 24.883 unit (dibulatkan).\\nProduksi Kuartal 7 (Tahun Depan Q3): U7 = 10.000 \\times 1.2^(7-1) = 10.000 \\times 1.2^6 = 10.000 \\times 2.985984 = 29.860 unit (dibulatkan).\\nProduksi Kuartal 8 (Tahun Depan Q4): U8 = 10.000 \\times 1.2^(8-1) = 10.000 \\times 1.2^7 = 10.000 \\times 3.5831808 = 35.832 unit (dibulatkan).\\n\\nTotal produksi tahun depan diprediksi sekitar 20.736 + 24.883 + 29.860 + 35.832 = 111.311 unit. Perusahaan harus mengevaluasi apakah kapasitas produksi saat ini, ketersediaan bahan baku, dan jumlah tenaga kerja memadai untuk memenuhi target ini. Jika tidak, perlu dilakukan investasi atau penyesuaian strategis.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "22463782-41a3-4351-a207-9e8d2f807b5d",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T22:42:52Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Barisan",
+    "task_type": "essay",
+    "level": "HOTS",
+    "source_file": "Matematika_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan suku ke-n pada barisan aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1274,
+      "assistant": 3095,
+      "total": 5042,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

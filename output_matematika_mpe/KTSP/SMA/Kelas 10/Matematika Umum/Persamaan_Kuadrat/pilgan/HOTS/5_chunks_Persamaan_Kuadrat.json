@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Persamaan dan Fungsi Kuadrat | Sub Bab: Persamaan Kuadrat | Target: HOTS\n\n--- MATERI ---\nPersamaan kuadrat didefinisikan sebagai kalimat terbuka yang menyatakan hubungan sama dengan dan pangkat tertinggi dari variabelnya adalah dua. Bentuk umumnya adalah ax kuadrat ditambah bx ditambah c sama dengan nol, dengan a, b, dan c anggota bilangan riil serta a tidak sama dengan nol. Untuk mencari akar-akar persamaan kuadrat atau nilai x yang memenuhi persamaan tersebut, salah satu metode yang paling dasar adalah memfaktorkan. Metode ini menggunakan sifat faktor nol, yaitu jika p dikali q sama dengan nol, maka p sama dengan nol atau q sama dengan nol. Pada bentuk persamaan yang tidak memiliki konstanta, pemfaktoran dilakukan dengan memisahkan variabel x sesuai sifat distributif. Sementara untuk bentuk lengkap, pemfaktoran dilakukan dengan mencari dua bilangan yang jika dijumlahkan bernilai b dan jika dikalikan bernilai sama dengan hasil kali a dan c.\n\nSelain memfaktorkan, akar-akar persamaan kuadrat juga dapat ditentukan melalui metode melengkapkan kuadrat sempurna dan rumus kuadrat atau yang lazim dikenal sebagai rumus abc. Melengkapkan kuadrat sempurna dilakukan dengan memanipulasi aljabar untuk mengubah bentuk persamaan ke dalam bentuk kuadrat utuh pada salah satu ruasnya, kemudian ditarik nilai akarnya. Secara lebih praktis, pencarian akar-akar ini dapat diformulasikan ke dalam sebuah rumus universal. Rumus abc ini diformulasikan sebagai x1 dan x2 sama dengan negatif b plus minus akar kuadrat dari b kuadrat dikurangi 4ac, keseluruhannya dibagi 2a. Penggunaan rumus ini sangat efektif, terutama ketika persamaan kuadrat dirasa terlalu sulit atau bahkan tidak dapat difaktorkan secara langsung menggunakan bilangan bulat.\n\nDalam rumus penyelesaian persamaan kuadrat atau rumus abc, terdapat bentuk b kuadrat dikurangi 4ac yang secara matematis disebut sebagai diskriminan dan dilambangkan dengan huruf D kapital. Nilai diskriminan ini berfungsi sebagai parameter utama untuk menganalisis dan menentukan jenis akar-akar dari suatu persamaan kuadrat tanpa harus menghitung nilai numerik akarnya secara pasti. Berdasarkan pendekatan nilai diskriminannya, jika D lebih besar dari nol, maka persamaan kuadrat dipastikan memiliki dua akar riil yang berlainan. Jika nilai D sama persis dengan nol, maka persamaan tersebut memiliki dua akar riil yang sama atau sering disebut sebagai akar kembar. Sebaliknya, jika nilai diskriminan D kurang dari nol, maka persamaan kuadrat tersebut tidak memiliki akar riil.\n\nBerdasarkan penemuan akar-akar persamaan kuadrat, kita dapat menganalisis relasi antar akar tersebut tanpa harus mengetahui nilai pastinya terlebih dahulu melalui rumus jumlah dan hasil kali akar. Misalkan suatu persamaan kuadrat ax kuadrat ditambah bx ditambah c sama dengan nol memiliki dua akar yaitu x1 dan x2. Rumus jumlah akar-akar persamaan kuadrat, yaitu x1 ditambah x2, selalu ekuivalen dengan nilai negatif b dibagi a. Di sisi lain, rumus hasil kali akar-akarnya, yaitu x1 dikalikan x2, selalu ekuivalen dengan nilai c dibagi a. Pemahaman terhadap sifat jumlah dan hasil kali akar ini sangatlah krusial karena akan digunakan sebagai dasar fundamental dalam memecahkan persoalan bentuk simetri akar seperti jumlah kuadrat akar-akar, sekaligus menjadi prasyarat untuk menyusun persamaan kuadrat baru.\n\nTahap lanjutan dari penguasaan konsep akar-akar persamaan adalah kemampuan menyusun persamaan kuadrat baru. Jika suatu persamaan kuadrat telah diketahui akar-akarnya secara spesifik, yakni x1 dan x2, maka persamaan tersebut dapat direkonstruksi melalui bentuk perkalian faktor, yaitu (x dikurangi x1) dikalikan (x dikurangi x2) sama dengan nol. Di samping itu, penyusunan persamaan kuadrat baru juga dapat dilakukan jika hanya diketahui jumlah dan hasil kali akar-akarnya. Persamaan kuadrat barunya dapat langsung dinyatakan dalam formula x kuadrat dikurangi jumlah akar dikalikan x, kemudian ditambah hasil kali akar sama dengan nol. Pendekatan formula substitusi ini akan sangat mempermudah peserta didik dalam menyusun persamaan kuadrat baru yang akar-akarnya memiliki relasi matematis tertentu dengan persamaan kuadrat acuan.\n\n[ATP_ALIGNMENT]\nMenentukan akar-akar, menganalisis diskriminan, serta menyusun persamaan kuadrat baru.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong ingin meningkatkan kapasitas produksi. Mesin lama mampu memproduksi 100 bungkus per jam dengan biaya operasional Rp5.000 per jam. Mesin baru yang dipertimbangkan mampu memproduksi 150 bungkus per jam dengan biaya operasional Rp7.500 per jam. UMKM ini beroperasi 8 jam sehari.",
+      "question": "Manakah keputusan yang paling strategis bagi UMKM tersebut dalam jangka pendek untuk memaksimalkan efisiensi biaya per bungkus keripik, dengan asumsi permintaan pasar stabil?",
+      "options": {
+        "A": "Tetap menggunakan mesin lama karena biaya operasional per jam lebih rendah.",
+        "B": "Mengganti mesin lama dengan mesin baru untuk meningkatkan volume produksi.",
+        "C": "Menggunakan mesin baru hanya saat permintaan tinggi dan mesin lama saat permintaan normal.",
+        "D": "Menganalisis biaya per bungkus dari kedua mesin untuk menentukan pilihan terbaik.",
+        "E": "Menambah jam operasional mesin lama untuk mengejar target produksi mesin baru."
+      },
+      "answer": "D",
+      "explanation": "**Analisis Biaya Efisiensi** Keputusan strategis harus didasarkan pada efisiensi biaya per unit. Mesin lama: Rp5.000/100 bungkus = Rp50/bungkus. Mesin baru: Rp7.500/150 bungkus = Rp50/bungkus. Keduanya sama efisien per bungkus. Namun, mesin baru memungkinkan peningkatan kapasitas total. Pilihan D mendorong analisis mendalam."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 1000 m². Ia berencana menanam jagung. Jika ia menggunakan pupuk jenis A, hasil panen rata-rata adalah 5 kg/m² dengan biaya pupuk Rp10.000/m². Jika menggunakan pupuk jenis B, hasil panen rata-rata 7 kg/m² dengan biaya pupuk Rp15.000/m².",
+      "question": "Jika petani tersebut ingin memaksimalkan keuntungan bersih dan mengetahui bahwa harga jual jagung adalah Rp3.000/kg, strategi pemupukan manakah yang paling menguntungkan?",
+      "options": {
+        "A": "Menggunakan pupuk A karena biayanya lebih murah.",
+        "B": "Menggunakan pupuk B karena hasil panennya lebih tinggi.",
+        "C": "Menghitung total pendapatan dan total biaya untuk kedua jenis pupuk.",
+        "D": "Mencampur pupuk A dan B untuk mendapatkan hasil optimal.",
+        "E": "Mengurangi luas lahan yang ditanami jika menggunakan pupuk B agar biaya terkendali."
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Keuntungan Bersih** Keuntungan bersih = (Hasil Panen \\times Harga Jual) - Biaya Pupuk. Pupuk A: (5 kg/m² \\times 1000 m² \\times Rp3.000/kg) - (Rp10.000/m² \\times 1000 m²) = Rp15.000.000 - Rp10.000.000 = Rp5.000.000. Pupuk B: (7 kg/m² \\times 1000 m² \\times Rp3.000/kg) - (Rp15.000/m² \\times 1000 m²) = Rp21.000.000 - Rp15.000.000 = Rp6.000.000. Pupuk B lebih menguntungkan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi online sedang mengevaluasi dua skema penetapan harga untuk layanan antar jemput bandara. Skema 1: Tarif tetap Rp150.000 per perjalanan. Skema 2: Tarif dasar Rp50.000 ditambah Rp2.000 per kilometer.",
+      "question": "Dalam kondisi pasar yang kompetitif, perusahaan harus memilih skema mana yang lebih berisiko kehilangan pelanggan jika jarak rata-rata perjalanan adalah 20 km?",
+      "options": {
+        "A": "Skema 1, karena tarifnya lebih tinggi secara absolut.",
+        "B": "Skema 2, karena tarifnya bisa menjadi sangat mahal untuk jarak jauh.",
+        "C": "Kedua skema memiliki risiko yang sama karena pelanggan akan membandingkan dengan kompetitor.",
+        "D": "Skema 1 lebih berisiko jika kompetitor menawarkan tarif per kilometer.",
+        "E": "Skema 2 lebih berisiko jika kompetitor menawarkan tarif tetap yang lebih rendah."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Risiko Tarif** Skema 1: Rp150.000. Skema 2: Rp50.000 + (20 km \\times Rp2.000/km) = Rp50.000 + Rp40.000 = Rp90.000. Untuk jarak 20 km, Skema 2 lebih murah. Namun, jika jarak menjadi lebih jauh (misal 50 km), tarif Skema 2 menjadi Rp50.000 + (50 \\times Rp2.000) = Rp150.000. Jika jaraknya lebih dari 50 km, Skema 2 akan lebih mahal dari Skema 1, sehingga lebih berisiko."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah koperasi simpan pinjam memiliki data pinjaman anggota. Persamaan kuadrat x² - 10x + 21 = 0 merepresentasikan jumlah pokok pinjaman (dalam jutaan rupiah) yang harus dilunasi oleh dua anggota. Koperasi ingin mengetahui potensi total dana yang kembali dari kedua anggota tersebut.",
+      "question": "Jika koperasi ingin memprediksi total dana yang akan kembali dari kedua anggota tersebut, informasi manakah yang paling relevan dan efisien untuk digunakan?",
+      "options": {
+        "A": "Menghitung akar-akar persamaan satu per satu menggunakan rumus abc.",
+        "B": "Menggunakan sifat jumlah akar-akar persamaan kuadrat.",
+        "C": "Mencari nilai diskriminan untuk mengetahui jenis akarnya.",
+        "D": "Memfaktorkan persamaan untuk menemukan nilai x1 dan x2.",
+        "E": "Menyusun persamaan kuadrat baru dari akar-akar yang ditemukan."
+      },
+      "answer": "B",
+      "explanation": "**Sifat Jumlah Akar** Persamaan kuadrat ax² + bx + c = 0 memiliki jumlah akar x1 + x2 = -b/a. Dalam kasus ini, x² - 10x + 21 = 0, maka a=1, b=-10, c=21. Jumlah akar = -(-10)/1 = 10. Ini merepresentasikan total pinjaman dalam jutaan rupiah (Rp10 juta) yang akan kembali, tanpa perlu mencari nilai masing-masing akar."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa SMA sedang mengerjakan soal persamaan kuadrat. Ia diberikan persamaan 2x² + 5x - 3 = 0 dan diminta mencari akar-akarnya. Siswa tersebut mencoba memfaktorkan namun kesulitan menemukan dua bilangan yang tepat.",
+      "question": "Dalam situasi ini, strategi penyelesaian manakah yang paling efisien dan direkomendasikan untuk siswa tersebut?",
+      "options": {
+        "A": "Terus mencoba berbagai kombinasi pemfaktoran hingga berhasil.",
+        "B": "Menggunakan metode melengkapkan kuadrat sempurna yang lebih rumit.",
+        "C": "Menggunakan rumus abc (rumus kuadrat) untuk mencari akar-akarnya.",
+        "D": "Meminta bantuan teman untuk memfaktorkan persamaan tersebut.",
+        "E": "Meninggalkan soal tersebut karena dianggap terlalu sulit."
+      },
+      "answer": "C",
+      "explanation": "**Efisiensi Rumus abc** Rumus abc (x = [-b ± √(b² - 4ac)] / 2a) adalah metode universal untuk mencari akar persamaan kuadrat, terutama ketika pemfaktoran sulit atau tidak mungkin dilakukan dengan bilangan bulat. Ini memberikan solusi langsung dan terstruktur tanpa perlu coba-coba."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pengembang properti merencanakan pembangunan kompleks perumahan. Biaya pembangunan per unit rumah (dalam miliar rupiah) dapat dimodelkan oleh fungsi kuadrat C(x) = x² - 20x + 150, di mana x adalah jumlah unit rumah yang dibangun. Pengembang ingin mengetahui biaya minimum.",
+      "question": "Keputusan strategis apa yang harus diambil pengembang untuk meminimalkan biaya pembangunan per unit?",
+      "options": {
+        "A": "Membangun jumlah unit rumah yang sangat banyak untuk menekan biaya.",
+        "B": "Membangun jumlah unit rumah yang sangat sedikit untuk menghindari biaya tetap yang tinggi.",
+        "C": "Menentukan jumlah unit rumah yang meminimalkan nilai fungsi biaya kuadrat tersebut.",
+        "D": "Mencari akar-akar dari fungsi biaya untuk menentukan titik impas.",
+        "E": "Mengabaikan fungsi kuadrat dan memilih biaya tetap yang paling rendah."
+      },
+      "answer": "C",
+      "explanation": "**Minimisasi Fungsi Kuadrat** Fungsi biaya C(x) = x² - 20x + 150 adalah parabola terbuka ke atas. Nilai minimumnya tercapai pada titik puncak. Absis titik puncak (jumlah unit rumah) adalah -b/(2a) = -(-20)/(2*1) = 10 unit. Membangun 10 unit akan meminimalkan biaya per unit."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua startup teknologi, 'Inovasi Cepat' dan 'Solusi Andal', bersaing di pasar aplikasi edukasi. Pendapatan tahunan mereka (dalam miliar rupiah) dapat dimodelkan oleh fungsi kuadrat. 'Inovasi Cepat': P(t) = -t² + 10t + 5. 'Solusi Andal': Q(t) = -t² + 8t + 12, di mana t adalah tahun sejak peluncuran.",
+      "question": "Jika kedua startup terus beroperasi, strategi pertumbuhan manakah yang paling realistis untuk 'Inovasi Cepat' dalam jangka panjang dibandingkan 'Solusi Andal'?",
+      "options": {
+        "A": "'Inovasi Cepat' akan selalu memiliki pendapatan lebih tinggi karena koefisien t² lebih kecil.",
+        "B": "'Solusi Andal' akan selalu lebih unggul karena memiliki pendapatan awal yang lebih tinggi.",
+        "C": "Pendapatan 'Inovasi Cepat' akan mencapai puncak lebih awal dan kemudian menurun, sementara 'Solusi Andal' akan menurun lebih lambat.",
+        "D": "Kedua startup akan mengalami penurunan pendapatan yang sama setelah mencapai puncaknya.",
+        "E": "'Inovasi Cepat' harus fokus pada peningkatan pendapatan awal untuk mengalahkan 'Solusi Andal'."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Puncak Pendapatan** Puncak P(t) terjadi pada t = -10/(2*(-1)) = 5 tahun, dengan pendapatan P(5) = -(5)² + 10(5) + 5 = -25 + 50 + 5 = Rp30 miliar. Puncak Q(t) terjadi pada t = -8/(2*(-1)) = 4 tahun, dengan pendapatan Q(4) = -(4)² + 8(4) + 12 = -16 + 32 + 12 = Rp28 miliar. 'Inovasi Cepat' mencapai puncak lebih lambat dan lebih tinggi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tekstil menggunakan dua jenis mesin untuk memproduksi kain. Mesin A menghasilkan 50 meter kain per jam dengan biaya perawatan Rp10.000 per jam. Mesin B menghasilkan 70 meter kain per jam dengan biaya perawatan Rp15.000 per jam. Pabrik beroperasi 10 jam sehari.",
+      "question": "Jika pabrik ingin mencapai target produksi 500 meter kain per hari dengan biaya perawatan seminimal mungkin, kombinasi operasional manakah yang paling efisien?",
+      "options": {
+        "A": "Mengoperasikan Mesin A selama 10 jam.",
+        "B": "Mengoperasikan Mesin B selama 10 jam.",
+        "C": "Mengoperasikan Mesin A selama 5 jam dan Mesin B selama 5 jam.",
+        "D": "Mengoperasikan Mesin A selama 6 jam dan Mesin B selama 4 jam.",
+        "E": "Mengoperasikan Mesin A selama 4 jam dan Mesin B selama 6 jam."
+      },
+      "answer": "E",
+      "explanation": "**Analisis Efisiensi Biaya per Meter** Mesin A: Rp10.000/50m = Rp200/m. Mesin B: Rp15.000/70m ≈ Rp214/m. Mesin A lebih efisien. Target 500m. Opsi E: (4 jam \\times 50m/jam) + (6 jam \\times 70m/jam) = 200m + 420m = 620m. Biaya: (4 \\times Rp10.000) + (6 \\times Rp15.000) = Rp40.000 + Rp90.000 = Rp130.000. Opsi ini melebihi target tapi dengan biaya terendah untuk produksi di atas 500m."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang guru matematika memberikan soal kepada siswanya: 'Susunlah sebuah persamaan kuadrat baru yang akar-akarnya adalah dua kali akar-akar dari persamaan x² - 5x + 6 = 0'.",
+      "question": "Strategi penyelesaian manakah yang paling efektif dan efisien untuk siswa tersebut?",
+      "options": {
+        "A": "Mencari akar-akar persamaan asli, mengalikannya dengan dua, lalu menyusun persamaan baru.",
+        "B": "Menggunakan sifat jumlah dan hasil kali akar untuk menyusun persamaan baru secara langsung.",
+        "C": "Mencoba-coba berbagai persamaan kuadrat hingga menemukan yang sesuai.",
+        "D": "Menggunakan rumus diskriminan untuk memodifikasi persamaan asli.",
+        "E": "Meminta guru memberikan contoh persamaan kuadrat baru yang sudah jadi."
+      },
+      "answer": "A",
+      "explanation": "**Pendekatan Langsung Melalui Akar** Akar dari x² - 5x + 6 = 0 adalah x=2 dan x=3. Akar baru adalah 2*2=4 dan 2*3=6. Persamaan baru: (x-4)(x-6) = x² - 10x + 24 = 0. Pendekatan ini paling lugas dan mudah dipahami."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik sedang menganalisis efektivitas dua rute pengiriman. Rute A memiliki panjang 100 km dengan biaya operasional Rp1.000/km. Rute B memiliki panjang 120 km dengan biaya operasional Rp900/km. Perusahaan ingin memilih rute yang paling hemat biaya untuk pengiriman rutin.",
+      "question": "Evaluasi manakah yang paling krusial untuk dilakukan perusahaan dalam memilih rute pengiriman yang paling efisien?",
+      "options": {
+        "A": "Membandingkan panjang kedua rute saja.",
+        "B": "Membandingkan biaya operasional per kilometer kedua rute.",
+        "C": "Menghitung total biaya operasional untuk setiap rute.",
+        "D": "Mempertimbangkan faktor kecepatan pengiriman kedua rute.",
+        "E": "Memprediksi kemungkinan adanya biaya tak terduga di setiap rute."
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Total Biaya** Efisiensi biaya ditentukan oleh total pengeluaran. Rute A: 100 km \\times Rp1.000/km = Rp100.000. Rute B: 120 km \\times Rp900/km = Rp108.000. Meskipun Rute B lebih murah per kilometer, total biayanya lebih tinggi. Perbandingan total biaya adalah evaluasi paling krusial."
+    }
+  ],
+  "metadata": {
+    "id": "aa30dd48-8540-4588-9a02-4c8622325231",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T09:33:33Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Persamaan dan Fungsi Kuadrat",
+    "sub_bab": "Persamaan Kuadrat",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_5_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan akar-akar, menganalisis diskriminan, serta menyusun persamaan kuadrat baru.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3240,
+      "assistant": 3782,
+      "total": 7696,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

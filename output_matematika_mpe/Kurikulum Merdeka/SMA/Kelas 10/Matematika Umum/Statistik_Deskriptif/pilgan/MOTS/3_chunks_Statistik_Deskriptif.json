@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Statistik Deskriptif | Target: MOTS\n\n--- MATERI ---\nStatistik deskriptif mempelajari berbagai ukuran untuk menganalisis sekumpulan data, salah satunya adalah ukuran pemusatan yang mencakup modus, median, dan mean. Median adalah nilai data yang berada tepat di tengah ketika seluruh data diurutkan dari yang terkecil sampai yang terbesar. Modus adalah data yang paling sering muncul atau memiliki frekuensi paling besar di dalam sebuah kumpulan data. Kedua ukuran ini memiliki keuntungan karena tidak terpengaruh oleh adanya data pencilan yang ekstrem. Sementara itu, mean atau rata-rata dihitung dengan cara menambahkan seluruh nilai data kemudian membaginya dengan total banyaknya data.\n\nSelain ukuran pemusatan, terdapat pula ukuran penempatan (measure of location) yang berfungsi untuk melihat letak sebaran data, seperti kuartil dan persentil. Kuartil membagi kumpulan data yang telah diurutkan menjadi empat bagian yang sama besar. Kuartil ini terdiri dari Kuartil Pertama (Q1) yang memuat 25% data, Median (Q2) sebesar 50% data, dan Kuartil Ketiga (Q3) yang memuat 75% data. Di sisi lain, persentil berfungsi membagi kumpulan data menjadi 100 bagian yang sama besar, sebagai contoh Persentil ke-85 (P85) berarti 85% data berada di bawah nilai tersebut.\n\nUntuk melihat seberapa jauh data-data tersebut tersebar dari pusatnya, digunakan ukuran penyebaran data. Beberapa jenis ukuran penyebaran meliputi jangkauan (range) yang merupakan selisih antara data terkecil dengan data terbesar, serta jangkauan interkuartil (IQR) yang diperoleh dari selisih antara kuartil atas (Q3) dan kuartil bawah (Q1). Ukuran penyebaran lainnya adalah varian dan simpangan baku. Semakin kecil nilai varian yang dimiliki, maka data-data dalam kelompok tersebut akan semakin seragam dan nilainya mendekati rata-rata (mean) dari kelompoknya.\n\n[ATP_ALIGNMENT]\nMenentukan ukuran pemusatan (mean, median, modus) dan penyebaran data (jangkauan, kuartil).\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong mencatat jumlah produksi harian selama seminggu terakhir: 150, 160, 155, 170, 165, 150, 180 bungkus. Data ini akan digunakan untuk perencanaan produksi minggu depan.",
+      "question": "Manakah ukuran pemusatan yang paling tepat untuk menggambarkan produksi rata-rata harian UMKM tersebut, dengan mempertimbangkan potensi adanya lonjakan produksi di akhir minggu?",
+      "options": {
+        "A": "Modus, karena menunjukkan jumlah produksi yang paling sering terjadi.",
+        "B": "Median, karena tidak terpengaruh oleh lonjakan produksi di hari terakhir.",
+        "C": "Mean, karena menghitung rata-rata dari semua data produksi.",
+        "D": "Jangkauan, karena menunjukkan variasi produksi harian.",
+        "E": "Kuartil Pertama, karena menunjukkan 25% produksi terendah."
+      },
+      "answer": "B",
+      "explanation": "**Median sebagai Ukuran Tepat**\\nMedian adalah pilihan terbaik karena nilai ini tidak sensitif terhadap nilai ekstrem atau lonjakan data (seperti 180 bungkus di hari terakhir). Ini memberikan gambaran yang lebih stabil tentang produksi harian dibandingkan mean yang bisa terpengaruh oleh nilai 180 tersebut."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa mengumpulkan data tinggi badan teman sekelasnya dalam sentimeter: 165, 170, 160, 175, 168, 172, 165, 180, 165, 170. Data ini akan digunakan untuk menentukan ukuran seragam kelas.",
+      "question": "Jika siswa tersebut ingin mengetahui tinggi badan yang paling umum dijumpai di kelasnya, ukuran statistik deskriptif manakah yang paling relevan?",
+      "options": {
+        "A": "Mean, untuk mendapatkan rata-rata tinggi badan.",
+        "B": "Median, untuk menemukan nilai tengah tinggi badan.",
+        "C": "Modus, karena menunjukkan tinggi badan yang paling sering muncul.",
+        "D": "Jangkauan Interkuartil (IQR), untuk mengukur sebaran data.",
+        "E": "Simpangan Baku, untuk mengukur seberapa jauh data menyebar dari rata-rata."
+      },
+      "answer": "C",
+      "explanation": "**Modus untuk Frekuensi Tertinggi**\\nModus adalah ukuran pemusatan yang paling tepat untuk mengidentifikasi nilai yang paling sering muncul dalam kumpulan data. Dalam kasus ini, modus akan menunjukkan tinggi badan yang paling umum dijumpai di antara teman sekelas."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko buku mencatat jumlah buku yang terjual setiap hari selama 10 hari: 30, 35, 40, 32, 38, 45, 30, 33, 42, 30. Data ini digunakan untuk memprediksi penjualan.",
+      "question": "Jika toko ingin mengetahui rata-rata penjualan harian yang lebih stabil, tanpa terlalu dipengaruhi oleh hari dengan penjualan sangat tinggi (misalnya 45 buku), ukuran statistik manakah yang sebaiknya digunakan?",
+      "options": {
+        "A": "Mean, karena memberikan gambaran total penjualan dibagi jumlah hari.",
+        "B": "Modus, karena menunjukkan jumlah penjualan yang paling sering terjadi.",
+        "C": "Median, karena nilai tengahnya tidak terpengaruh oleh nilai ekstrem.",
+        "D": "Jangkauan, karena menunjukkan selisih penjualan tertinggi dan terendah.",
+        "E": "Kuartil Ketiga, karena menunjukkan 75% penjualan teratas."
+      },
+      "answer": "C",
+      "explanation": "**Median untuk Stabilitas Data**\\nMedian adalah ukuran pemusatan yang paling cocok ketika ada potensi nilai ekstrem (seperti 45 buku). Nilai median tidak akan bergeser secara signifikan oleh satu atau dua nilai yang sangat tinggi atau sangat rendah, sehingga memberikan gambaran yang lebih stabil."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data nilai ujian Matematika kelas XII SMA Pelita Bangsa adalah: 70, 85, 75, 90, 80, 75, 88, 75, 92, 80. Guru ingin mengetahui sebaran nilai siswa.",
+      "question": "Untuk mengetahui seberapa merata nilai-nilai siswa di kelas tersebut, ukuran penyebaran data manakah yang paling informatif untuk dihitung?",
+      "options": {
+        "A": "Mean, untuk mengetahui rata-rata nilai.",
+        "B": "Modus, untuk mengetahui nilai yang paling sering muncul.",
+        "C": "Median, untuk mengetahui nilai tengah.",
+        "D": "Jangkauan Interkuartil (IQR), untuk mengukur sebaran data di 50% tengah.",
+        "E": "Simpangan Baku, untuk mengukur sebaran data dari rata-rata."
+      },
+      "answer": "D",
+      "explanation": "**Jangkauan Interkuartil (IQR) untuk Sebaran Tengah**\\nIQR mengukur sebaran data pada 50% tengah dari kumpulan data. Ini memberikan gambaran yang baik tentang variabilitas nilai siswa tanpa terpengaruh oleh nilai ekstrem di ujung atas atau bawah, sehingga lebih fokus pada sebaran inti nilai kelas."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi 1000 roti per hari. Data produksi selama 5 hari adalah: 1000, 1050, 980, 1100, 1020. Perusahaan ingin menganalisis efisiensi produksi.",
+      "question": "Jika perusahaan ingin mengetahui seberapa konsisten produksi harian mereka di sekitar rata-rata, ukuran penyebaran data manakah yang paling relevan untuk dianalisis?",
+      "options": {
+        "A": "Jangkauan, karena selisih antara produksi tertinggi dan terendah.",
+        "B": "Modus, karena menunjukkan produksi yang paling sering terjadi.",
+        "C": "Median, karena menunjukkan produksi tengah.",
+        "D": "Varian atau Simpangan Baku, karena mengukur sebaran data dari rata-rata.",
+        "E": "Kuartil Pertama, karena menunjukkan 25% produksi terendah."
+      },
+      "answer": "D",
+      "explanation": "**Varian/Simpangan Baku untuk Konsistensi**\\nVarian dan simpangan baku adalah ukuran penyebaran yang secara langsung mengukur seberapa jauh data individu menyimpang dari rata-rata (mean). Nilai yang kecil menunjukkan data yang lebih seragam dan konsisten di sekitar rata-rata produksi."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data tinggi badan 10 siswa SMA dalam cm: 165, 170, 160, 175, 168, 172, 165, 180, 165, 170. Data ini akan digunakan untuk menentukan ukuran seragam seragam sekolah.",
+      "question": "Jika sekolah ingin menentukan ukuran seragam yang paling banyak dibutuhkan siswa, ukuran statistik manakah yang paling tepat untuk diidentifikasi?",
+      "options": {
+        "A": "Mean, untuk rata-rata tinggi badan.",
+        "B": "Median, untuk tinggi badan tengah.",
+        "C": "Modus, untuk tinggi badan yang paling sering muncul.",
+        "D": "Jangkauan Interkuartil, untuk sebaran 50% siswa.",
+        "E": "Simpangan Baku, untuk sebaran data."
+      },
+      "answer": "C",
+      "explanation": "**Modus untuk Kebutuhan Paling Umum**\\nModus menunjukkan nilai yang paling sering muncul dalam kumpulan data. Dalam konteks ini, modus akan mengidentifikasi tinggi badan yang paling umum di antara siswa, sehingga sekolah dapat memesan seragam dengan ukuran tersebut dalam jumlah terbanyak."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pasar tradisional mencatat jumlah pedagang yang berjualan setiap hari selama seminggu: 50, 55, 52, 60, 58, 50, 65. Data ini digunakan untuk perencanaan operasional pasar.",
+      "question": "Manakah ukuran pemusatan yang paling baik menggambarkan jumlah pedagang yang beraktivitas secara umum, tanpa terlalu dipengaruhi oleh hari dengan jumlah pedagang yang sangat banyak (misalnya 65)?",
+      "options": {
+        "A": "Mean, karena menghitung rata-rata dari semua data.",
+        "B": "Modus, karena menunjukkan jumlah pedagang yang paling sering.",
+        "C": "Median, karena nilai tengahnya tidak terpengaruh oleh nilai ekstrem.",
+        "D": "Jangkauan, karena selisih pedagang terbanyak dan tersedikit.",
+        "E": "Kuartil Ketiga, karena menunjukkan 75% pedagang terbanyak."
+      },
+      "answer": "C",
+      "explanation": "**Median untuk Gambaran Umum yang Stabil**\\nMedian adalah ukuran pemusatan yang paling sesuai ketika ada potensi nilai ekstrem (seperti 65 pedagang). Median memberikan gambaran yang lebih stabil tentang jumlah pedagang yang beraktivitas karena tidak terpengaruh oleh satu nilai yang sangat tinggi."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data pendapatan harian pedagang kaki lima di sebuah area: Rp 50.000, Rp 75.000, Rp 60.000, Rp 100.000, Rp 70.000, Rp 50.000, Rp 120.000. Data ini digunakan untuk program bantuan.",
+      "question": "Jika program bantuan ditujukan untuk pedagang dengan pendapatan di bawah rata-rata yang umum, ukuran statistik manakah yang paling relevan untuk menentukan ambang batas pendapatan tersebut?",
+      "options": {
+        "A": "Modus, karena menunjukkan pendapatan yang paling sering terjadi.",
+        "B": "Median, karena menunjukkan pendapatan tengah yang tidak terpengaruh nilai ekstrem.",
+        "C": "Mean, karena menghitung rata-rata pendapatan.",
+        "D": "Jangkauan Interkuartil, karena mengukur sebaran 50% pendapatan tengah.",
+        "E": "Simpangan Baku, karena mengukur sebaran pendapatan dari rata-rata."
+      },
+      "answer": "C",
+      "explanation": "**Mean untuk Menentukan Rata-rata Umum**\\nMean (rata-rata) adalah ukuran yang paling tepat untuk menentukan ambang batas pendapatan umum. Dengan menghitung mean, kita mendapatkan nilai rata-rata yang mewakili seluruh pendapatan pedagang, sehingga dapat digunakan untuk mengidentifikasi mereka yang berpendapatan di bawah rata-rata tersebut."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan logistik mencatat waktu pengiriman paket dalam jam: 2.5, 3.0, 2.8, 3.5, 2.6, 2.9, 3.2, 2.7, 3.1, 2.9. Perusahaan ingin meningkatkan efisiensi.",
+      "question": "Untuk mengetahui seberapa bervariasi waktu pengiriman paket di sekitar rata-rata, ukuran penyebaran data manakah yang paling relevan untuk dianalisis?",
+      "options": {
+        "A": "Jangkauan, karena selisih waktu pengiriman tercepat dan terlambat.",
+        "B": "Modus, karena menunjukkan waktu pengiriman yang paling sering.",
+        "C": "Median, karena menunjukkan waktu pengiriman tengah.",
+        "D": "Varian atau Simpangan Baku, karena mengukur sebaran data dari rata-rata.",
+        "E": "Kuartil Pertama, karena menunjukkan 25% waktu pengiriman tercepat."
+      },
+      "answer": "D",
+      "explanation": "**Varian/Simpangan Baku untuk Variabilitas Waktu**\\nVarian dan simpangan baku adalah ukuran penyebaran yang paling tepat untuk mengukur seberapa jauh waktu pengiriman paket menyimpang dari rata-rata. Nilai yang kecil menunjukkan konsistensi waktu pengiriman, yang penting untuk efisiensi logistik."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data jumlah pengunjung harian sebuah museum selama 10 hari: 150, 180, 160, 200, 170, 150, 190, 160, 210, 150. Data ini digunakan untuk perencanaan staf.",
+      "question": "Jika museum ingin mengetahui jumlah pengunjung yang paling sering terjadi untuk perencanaan staf harian, ukuran statistik manakah yang paling relevan?",
+      "options": {
+        "A": "Mean, untuk rata-rata pengunjung.",
+        "B": "Median, untuk jumlah pengunjung tengah.",
+        "C": "Modus, untuk jumlah pengunjung yang paling sering muncul.",
+        "D": "Jangkauan Interkuartil, untuk sebaran 50% pengunjung tengah.",
+        "E": "Simpangan Baku, untuk sebaran data pengunjung."
+      },
+      "answer": "C",
+      "explanation": "**Modus untuk Frekuensi Pengunjung**\\nModus adalah ukuran pemusatan yang mengidentifikasi nilai yang paling sering muncul dalam kumpulan data. Dalam konteks ini, modus akan menunjukkan jumlah pengunjung harian yang paling umum, yang sangat berguna untuk perencanaan jumlah staf yang dibutuhkan."
+    }
+  ],
+  "metadata": {
+    "id": "f777d7bd-6154-4e1b-909e-8177d802d74f",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:03:42Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Statistik Deskriptif",
+    "task_type": "pilgan",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan ukuran pemusatan (mean, median, modus) dan penyebaran data (jangkauan, kuartil).",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2452,
+      "assistant": 3328,
+      "total": 6454,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

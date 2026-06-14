@@ -1,0 +1,101 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\",\n      \"expected_reasoning\": [\n        \"single-step reasoning\",\n        \"direct concept understanding\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Bunga | Target: LOTS\n\n--- MATERI ---\nKonsep barisan dan deret memiliki aplikasi yang sangat luas dalam bidang matematika keuangan, salah satunya adalah dalam perhitungan bunga. Bunga didefinisikan sebagai jasa atau imbalan yang diberikan atas penggunaan sejumlah uang atau modal dalam jangka waktu tertentu. Dalam sistem perbankan dan lembaga keuangan, perhitungan bunga menjadi instrumen esensial baik untuk produk simpanan maupun pinjaman. Secara umum, pemodelan matematis untuk perhitungan bunga diklasifikasikan menjadi dua sistem utama, yaitu sistem bunga tunggal dan sistem bunga majemuk. Penguasaan mengenai kedua sistem ini merupakan fondasi yang krusial bagi peserta didik sebelum melakukan analisis atau perencanaan keuangan yang lebih kompleks di dunia nyata.\n\nBunga tunggal adalah metode perhitungan bunga yang secara eksklusif hanya didasarkan pada besaran modal awal atau pinjaman pokok saja. Pada sistem ini, bunga yang diperoleh pada suatu periode waktu tidak akan ditambahkan kembali ke modal awal untuk dihitung bunganya pada periode selanjutnya. Akibatnya, nominal bunga yang dihasilkan akan selalu bernilai konstan atau tetap dari satu periode ke periode berikutnya. Pertambahan nilai modal pada skema bunga tunggal ini memiliki karakteristik matematis yang identik dengan konsep barisan aritmetika, di mana selisih nilai antar periode senantiasa bernilai konstan sebesar persentase bunga dikalikan dengan modal awal.\n\nSecara matematis, perhitungan bunga tunggal dapat diformulasikan dengan pendekatan aljabar yang sederhana. Jika suatu modal awal sebesar M dibungakan dengan persentase bunga tunggal sebesar i per periode waktu, maka besarnya nominal bunga yang didapatkan pada suatu periode dirumuskan sebagai perkalian M dan i. Dengan demikian, total akumulasi modal akhir pada periode ke-n, yang dinotasikan dengan Mn, merupakan penjumlahan dari modal awal dengan total seluruh bunga yang diperoleh. Formulasinya dapat dinyatakan sebagai Mn = M(1 + i dikali n). Pemahaman formula linear ini sangat memudahkan penyelesaian kasus seperti simpanan deposito sederhana atau kredit dengan skema cicilan tetap.\n\nBerbeda secara fundamental dengan perhitungan bunga tunggal, sistem bunga majemuk menerapkan konsep kapitalisasi berkelanjutan. Pada sistem ini, bunga yang diperoleh pada akhir suatu periode akan langsung ditambahkan ke dalam modal awal. Penjumlahan ini akan membentuk akumulasi modal baru yang nilainya lebih besar, yang kemudian dijadikan sebagai basis perhitungan bunga untuk periode berikutnya. Konsep finansial ini lazim dikenal oleh masyarakat umum sebagai fenomena bunga berbunga. Karakteristik pelipatgandaan modal ini mengakibatkan laju pertumbuhan uang tidak lagi berjalan secara konstan, melainkan melesat secara eksponensial seiring bertambahnya interval waktu simpanan.\n\nProyeksi perhitungan akumulasi nilai modal pada sistem bunga majemuk diformulasikan secara presisi menggunakan pemodelan deret geometri. Apabila sebuah modal awal sebesar M diinvestasikan dengan tingkat suku bunga majemuk sebesar i per periode, maka besaran modal akhir pada periode ke-n (Mn) dihitung menggunakan persamaan eksponensial Mn = M(1 + i)^n. Dalam struktur persamaan tersebut, nilai (1 + i) bertindak sebagai rasio pertumbuhan yang statis, sementara variabel n merepresentasikan kuantitas periode kapitalisasi. Karena sifat pertumbuhannya yang berlipat ganda, model perhitungan geometri ini diadaptasi secara universal untuk mendeskripsikan nilai instrumen moneter di institusi perbankan modern.\n\nDalam mengevaluasi dan membedakan kedua jenis sistem bunga tersebut, peserta didik diarahkan untuk mencermati karakteristik kurva pertumbuhannya terhadap fungsi waktu. Proyeksi pertumbuhan modal pada sistem bunga tunggal selalu membentuk garis lurus atau linear, selaras dengan pola pertumbuhan barisan aritmetika. Sebaliknya, pada skema bunga majemuk, kurva yang terbentuk akan senantiasa melengkung dan menanjak tajam menyerupai grafik fungsi eksponensial. Sebagai implikasi analitik, untuk jangka waktu investasi yang panjang, sistem bunga majemuk dipastikan akan selalu menghasilkan akumulasi dana akhir yang secara signifikan lebih besar dibandingkan kalkulasi bunga tunggal. Analisis komparatif inilah yang mengasah kemampuan literasi finansial para siswa secara aplikatif.\n\n[ATP_ALIGNMENT]\nMenghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Ibu Ani menabung di Bank Sejahtera sebesar Rp10.000.000 dengan suku bunga tunggal 5% per tahun. Setelah 3 tahun, berapakah total uang yang dimiliki Ibu Ani di bank tersebut?",
+      "question": "Berdasarkan informasi di atas, tentukan total akumulasi modal Ibu Ani setelah 3 tahun dengan menggunakan konsep bunga tunggal.",
+      "rubric_points": [
+        "Mengidentifikasi modal awal (M).",
+        "Mengidentifikasi tingkat bunga tunggal per tahun (i).",
+        "Menghitung total bunga yang diperoleh selama periode waktu tertentu.",
+        "Menghitung total akumulasi modal akhir."
+      ],
+      "explanation": "**Perhitungan Bunga Tunggal**\\nUntuk menghitung total akumulasi modal Ibu Ani, kita menggunakan rumus bunga tunggal:\\nMn = M(1 + i \\times n)\\nDimana:\\nM = Modal Awal = Rp10.000.000\\ni = Tingkat Bunga per Periode = 5% = 0,05\\nn = Jumlah Periode = 3 tahun\\n\\nLangkah 1: Hitung total bunga yang diperoleh.\\nTotal Bunga = M \\times i \\times n\\nTotal Bunga = Rp10.000.000 \\times 0,05 \\times 3\\nTotal Bunga = Rp1.500.000\\n\\nLangkah 2: Hitung total akumulasi modal akhir.\\nMn = M + Total Bunga\\nMn = Rp10.000.000 + Rp1.500.000\\nMn = Rp11.500.000\\n\\nJadi, total uang yang dimiliki Ibu Ani setelah 3 tahun adalah Rp11.500.000.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Pak Budi meminjam uang di Koperasi Maju sebesar Rp5.000.000 dengan bunga majemuk 2% per bulan. Berapakah total utang Pak Budi setelah 2 bulan jika bunga dihitung setiap bulan?",
+      "question": "Hitunglah total utang Pak Budi setelah 2 bulan dengan menerapkan prinsip perhitungan bunga majemuk.",
+      "rubric_points": [
+        "Mengidentifikasi modal pinjaman awal (M).",
+        "Mengidentifikasi tingkat bunga majemuk per bulan (i).",
+        "Menghitung modal akhir setelah periode pertama.",
+        "Menghitung modal akhir setelah periode kedua."
+      ],
+      "explanation": "**Perhitungan Bunga Majemuk**\\nUntuk menghitung total utang Pak Budi, kita menggunakan rumus bunga majemuk:\\nMn = M(1 + i)^n\\nDimana:\\nM = Modal Awal = Rp5.000.000\\ni = Tingkat Bunga per Periode = 2% = 0,02\\nn = Jumlah Periode = 2 bulan\\n\\nLangkah 1: Hitung modal akhir setelah bulan pertama.\\nM1 = M(1 + i)^1\\nM1 = Rp5.000.000(1 + 0,02)^1\\nM1 = Rp5.000.000(1,02)\\nM1 = Rp5.100.000\\n\\nLangkah 2: Hitung modal akhir setelah bulan kedua (menggunakan M1 sebagai modal baru).\\nM2 = M1(1 + i)^1\\nM2 = Rp5.100.000(1 + 0,02)\\nM2 = Rp5.100.000(1,02)\\nM2 = Rp5.202.000\\n\\nAtau menggunakan rumus langsung:\\nM2 = Rp5.000.000(1 + 0,02)^2\\nM2 = Rp5.000.000(1,02)^2\\nM2 = Rp5.000.000(1,0404)\\nM2 = Rp5.202.000\\n\\nJadi, total utang Pak Budi setelah 2 bulan adalah Rp5.202.000.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM keripik singkong menerima pesanan 100 kg keripik. Modal awal untuk produksi adalah Rp2.000.000. Jika setiap kg keripik dijual dengan keuntungan Rp3.000, tentukan total keuntungan yang diperoleh jika seluruh keripik terjual.",
+      "question": "Berdasarkan skenario UMKM tersebut, hitunglah total keuntungan bersih yang didapatkan dari penjualan seluruh keripik.",
+      "rubric_points": [
+        "Mengidentifikasi jumlah total produk yang dijual.",
+        "Mengidentifikasi keuntungan per unit produk.",
+        "Menghitung total keuntungan kotor dari penjualan.",
+        "Menghitung keuntungan bersih setelah dikurangi modal."
+      ],
+      "explanation": "**Perhitungan Keuntungan UMKM**\\nUntuk menghitung total keuntungan bersih, kita perlu mengetahui total pendapatan dan menguranginya dengan modal awal.\\n\\nLangkah 1: Hitung total keuntungan kotor dari penjualan.\\nTotal Keuntungan Kotor = Jumlah Produk \\times Keuntungan per Unit\\nTotal Keuntungan Kotor = 100 kg \\times Rp3.000/kg\\nTotal Keuntungan Kotor = Rp300.000\\n\\nLangkah 2: Hitung total keuntungan bersih.\\nKeuntungan Bersih = Total Keuntungan Kotor - Modal Awal\\nKeuntungan Bersih = Rp300.000 - Rp2.000.000\\nKeuntungan Bersih = -Rp1.700.000\\n\\nDalam kasus ini, UMKM mengalami kerugian sebesar Rp1.700.000 karena modal awal lebih besar dari keuntungan kotor penjualan. Ini menunjukkan bahwa harga jual per kg keripik belum mencukupi untuk menutupi biaya produksi dan modal awal.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani memiliki sawah seluas 1 hektar. Ia berencana menanam padi varietas unggul yang membutuhkan biaya bibit dan pupuk sebesar Rp4.000.000. Jika hasil panen diperkirakan 5 ton dan harga jual gabah per kg adalah Rp5.000, tentukan total pendapatan kotor dari hasil panen.",
+      "question": "Hitunglah total pendapatan kotor yang akan diterima petani dari penjualan seluruh hasil panen padinya.",
+      "rubric_points": [
+        "Mengidentifikasi total hasil panen dalam satuan yang konsisten (kg).",
+        "Mengidentifikasi harga jual per satuan hasil panen.",
+        "Menghitung total pendapatan kotor dari penjualan seluruh hasil panen."
+      ],
+      "explanation": "**Perhitungan Pendapatan Petani**\\nUntuk menghitung total pendapatan kotor, kita perlu mengalikan jumlah total hasil panen dengan harga jual per satuan.\\n\\nLangkah 1: Konversi hasil panen ke satuan kilogram.\\nTotal Hasil Panen = 5 ton \\times 1000 kg/ton\\nTotal Hasil Panen = 5000 kg\\n\\nLangkah 2: Hitung total pendapatan kotor.\\nTotal Pendapatan Kotor = Total Hasil Panen \\times Harga Jual per kg\\nTotal Pendapatan Kotor = 5000 kg \\times Rp5.000/kg\\nTotal Pendapatan Kotor = Rp25.000.000\\n\\nJadi, total pendapatan kotor yang akan diterima petani dari hasil panen adalah Rp25.000.000.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko kelontong di pasar tradisional mencatat bahwa setiap hari rata-rata penjualan sabun mandi adalah 50 batang. Harga beli per batang sabun adalah Rp2.500 dan harga jualnya adalah Rp3.500. Berapakah total keuntungan harian yang diperoleh dari penjualan sabun mandi?",
+      "question": "Tentukan total keuntungan harian yang didapatkan toko kelontong tersebut dari penjualan sabun mandi.",
+      "rubric_points": [
+        "Mengidentifikasi jumlah unit produk yang terjual per hari.",
+        "Menghitung keuntungan per unit produk.",
+        "Menghitung total keuntungan harian dari penjualan seluruh unit."
+      ],
+      "explanation": "**Perhitungan Keuntungan Harian Toko**\\nUntuk menghitung total keuntungan harian, kita perlu menghitung keuntungan per batang sabun terlebih dahulu, kemudian mengalikannya dengan jumlah batang yang terjual.\\n\\nLangkah 1: Hitung keuntungan per batang sabun.\\nKeuntungan per Batang = Harga Jual - Harga Beli\\nKeuntungan per Batang = Rp3.500 - Rp2.500\\nKeuntungan per Batang = Rp1.000\\n\\nLangkah 2: Hitung total keuntungan harian.\\nTotal Keuntungan Harian = Jumlah Penjualan per Hari \\times Keuntungan per Batang\\nTotal Keuntungan Harian = 50 batang \\times Rp1.000/batang\\nTotal Keuntungan Harian = Rp50.000\\n\\nJadi, total keuntungan harian yang diperoleh toko kelontong dari penjualan sabun mandi adalah Rp50.000.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "5d5efd3e-3873-4298-a2c7-c1962099dac3",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:12:56Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Bunga",
+    "task_type": "essay",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_6_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2288,
+      "assistant": 2108,
+      "total": 5070,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Fungsi Eksponensial\n\n--- MATERI ---\nFungsi eksponensial didefinisikan sebagai fungsi yang memetakan bilangan riil x ke bilangan riil a berpangkat x. Bentuk umum fungsi eksponensial adalah f(x) = k dikalikan a pangkat x, di mana k adalah konstanta sembarang yang tidak sama dengan nol, a adalah bilangan pokok atau basis dengan syarat a lebih dari 0 dan a tidak sama dengan 1, serta x merupakan variabel bebas. Perbedaan mendasar antara fungsi eksponensial dan fungsi aljabar biasa terletak pada posisi variabelnya; pada fungsi eksponensial, variabel senantiasa berada pada posisi pangkat atau eksponen. Pemahaman mengenai fungsi ini sangat esensial karena fungsinya sering diaplikasikan untuk memodelkan fenomena pertumbuhan atau peluruhan secara matematis di alam maupun ilmu sains.\n\nKarakteristik utama dari grafik fungsi eksponensial sangat bergantung pada nilai bilangan pokok atau basisnya (a). Untuk kasus analitis pertama, apabila nilai basis lebih besar dari satu (a > 0), contohnya pada fungsi f(x) = 2^x atau f(x) = 3^x, maka kurva grafik fungsi tersebut akan selalu menunjukkan karakteristik yang monoton naik. Hal ini mengindikasikan bahwa seiring dengan pertambahan nilai variabel x yang bergerak dari kiri ke kanan pada sumbu mendatar, nilai fungsi f(x) akan terus membesar secara eksponensial menuju tak hingga. Kurva ini akan senantiasa memotong sumbu-Y di titik koordinat (0, k) dan akan terus menurun mendekati sumbu-X di area negatif tanpa pernah memotongnya, sehingga sumbu-X secara geometris bertindak sebagai garis asimtot datar.\n\nKasus analitis kedua dalam mengidentifikasi grafik fungsi eksponensial terjadi ketika nilai bilangan pokok (a) merupakan bilangan pecahan yang terletak pada interval di antara nol dan satu (0 < a < 1), misalnya pada fungsi f(x) = (1/2)^x. Berkebalikan dengan karakteristik pada basis yang lebih dari satu, grafik fungsi eksponensial untuk interval basis pecahan ini akan membentuk kurva yang bersifat monoton turun. Secara visual, kurva akan menurun secara drastis dari area kiri atas menuju ke kanan bawah seiring dengan membesarnya nilai variabel bebas x. Sama seperti kurva monoton naik, nilai fungsi pada kurva ini secara konstan menyusut mendekati nol namun tidak pernah memotong sumbu-X, menjadikan sumbu mendatar tersebut sebagai asimtot datar yang presisi.\n\nSelain mengenali grafik fungsi, konsep eksponen juga diterapkan dalam pemecahan persamaan eksponensial. Persamaan eksponensial didefinisikan sebagai persamaan matematika di mana variabel utamanya terletak pada posisi pangkat atau eksponen, dan pada beberapa kasus kompleks, variabel juga dapat bertindak sebagai bilangan pokok. Salah satu bentuk dasar yang paling mendasar untuk dianalisis adalah persamaan eksponensial yang memiliki bilangan pokok atau basis yang persis sama di kedua ruasnya. Secara matematis, bentuk umum dari persamaan jenis ini dapat diekspresikan sebagai a^f(x) = a^g(x). Syarat mutlak yang harus terpenuhi untuk basis eksponensial adalah bilangan pokok a harus selalu bernilai positif (a > 0) dan tidak boleh sama dengan satu (a ≠ 1).\n\nTahapan penyelesaian persamaan eksponensial dengan basis yang sama bersandar secara teoretis pada sifat kesamaan nilai eksponen. Sifat analitis ini memformulasikan logika bahwa jika dua buah bilangan berpangkat yang memiliki basis identik saling bernilai ekuivalen di kedua ruas persamaan, maka pangkat atau eksponen dari kedua bilangan tersebut pastilah bernilai sama persis. Apabila dijumpai persamaan yang berbentuk a^f(x) = a^g(x), maka penentuan himpunan penyelesaiannya dapat langsung dicari dengan cara menyamakan fungsi pangkat pada ruas kiri dan kanan, yakni f(x) = g(x). Konsep kesamaan inilah yang bertindak sebagai prinsip fundamental dalam mentransformasikan persamaan eksponensial menjadi persamaan aljabar linear atau kuadrat yang solutif.\n\nPenerapan konsep kesamaan nilai eksponen dalam pemecahan soal sering kali memerlukan keterampilan manipulasi aljabar lanjutan. Apabila bilangan pokok pada ruas kiri dan kanan pada awalnya belum terlihat sama, bentuk tersebut wajib direkonstruksi terlebih dahulu menggunakan sifat-sifat dasar operasi pemangkatan. Sebagai ilustrasi, pada persamaan 2^(3x - 1) = 32, konstanta numerik 32 pada ruas kanan harus dimanipulasi menjadi bilangan berpangkat dengan basis 2, yang mana ekuivalen dengan 2^5. Begitu struktur persamaan sukses direkonstruksi menjadi bentuk basis identik 2^(3x - 1) = 2^5, prinsip kesamaan pangkat f(x) = g(x) dapat langsung diterapkan secara presisi, menghasilkan bentuk linear 3x - 1 = 5, yang bermuara pada himpunan penyelesaian akhir bernilai x = 2.\n\n[ATP_ALIGNMENT]\nMenyelesaikan persamaan eksponensial dengan bilangan pokok yang sama dan mengidentifikasi grafik fungsi eksponensial.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa sedang mempelajari fungsi eksponensial. Ia mencatat bahwa variabel bebas selalu berada pada posisi pangkat.",
+      "question": "Berdasarkan catatan siswa tersebut, manakah di antara pilihan berikut yang paling tepat mendeskripsikan perbedaan mendasar fungsi eksponensial dengan fungsi aljabar biasa?",
+      "options": {
+        "A": "Fungsi eksponensial menggunakan basis bilangan riil, sedangkan fungsi aljabar menggunakan basis bilangan bulat.",
+        "B": "Pada fungsi eksponensial, variabel berada di posisi pangkat, sedangkan pada fungsi aljabar, variabel berada di posisi basis.",
+        "C": "Fungsi eksponensial selalu memiliki konstanta pengali, sedangkan fungsi aljabar tidak.",
+        "D": "Variabel pada fungsi eksponensial selalu bernilai positif, sedangkan pada fungsi aljabar bisa bernilai negatif.",
+        "E": "Fungsi eksponensial hanya dapat digambarkan pada kuadran pertama, sedangkan fungsi aljabar dapat di semua kuadran."
+      },
+      "answer": "B",
+      "explanation": "**Perbedaan Mendasar Fungsi Eksponensial**\\nFungsi eksponensial memiliki ciri khas di mana variabel bebas (x) selalu menempati posisi sebagai eksponen atau pangkat dari suatu bilangan pokok (basis). Sebaliknya, pada fungsi aljabar, variabel biasanya berada pada posisi basis."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Grafik fungsi eksponensial f(x) = 3^x diamati. Basisnya adalah 3.",
+      "question": "Bagaimana karakteristik grafik fungsi eksponensial tersebut jika nilai basisnya lebih besar dari satu?",
+      "options": {
+        "A": "Grafik fungsi akan monoton turun.",
+        "B": "Grafik fungsi akan memotong sumbu-X di titik (0,1).",
+        "C": "Grafik fungsi akan selalu menunjukkan karakteristik monoton naik.",
+        "D": "Grafik fungsi akan mendekati sumbu-Y di area negatif.",
+        "E": "Grafik fungsi akan memiliki asimtot tegak pada x=0."
+      },
+      "answer": "C",
+      "explanation": "**Karakteristik Grafik Fungsi Eksponensial (Basis > 1)**\\nKetika nilai basis (a) dari fungsi eksponensial lebih besar dari satu (a > 1), seperti pada f(x) = 3^x, kurva grafiknya akan selalu menunjukkan karakteristik monoton naik. Ini berarti nilai f(x) akan terus meningkat seiring dengan peningkatan nilai x."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah fungsi eksponensial memiliki basis a dengan nilai 0 < a < 1, contohnya f(x) = (1/2)^x.",
+      "question": "Apa yang dapat disimpulkan mengenai bentuk kurva grafik fungsi eksponensial tersebut?",
+      "options": {
+        "A": "Kurva grafik fungsi akan monoton naik.",
+        "B": "Kurva grafik fungsi akan memotong sumbu-Y di titik (0, 1/2).",
+        "C": "Kurva grafik fungsi akan terus menurun mendekati sumbu-X di area positif.",
+        "D": "Kurva grafik fungsi akan bersifat monoton turun.",
+        "E": "Sumbu-X akan bertindak sebagai asimtot tegak."
+      },
+      "answer": "D",
+      "explanation": "**Karakteristik Grafik Fungsi Eksponensial (0 < Basis < 1)**\\nJika nilai basis (a) dari fungsi eksponensial berada di antara nol dan satu (0 < a < 1), seperti pada f(x) = (1/2)^x, maka kurva grafiknya akan bersifat monoton turun. Nilai fungsi akan terus mengecil seiring dengan membesarnya nilai x."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Persamaan eksponensial adalah persamaan di mana variabel utama terletak pada posisi pangkat.",
+      "question": "Manakah dari bentuk berikut yang merupakan bentuk umum persamaan eksponensial dengan basis yang sama di kedua ruas?",
+      "options": {
+        "A": "f(x) = a^x",
+        "B": "a^f(x) = b^g(x)",
+        "C": "a^f(x) = a^g(x)",
+        "D": "f(x) = g(x)",
+        "E": "a * f(x) = a * g(x)"
+      },
+      "answer": "C",
+      "explanation": "**Bentuk Umum Persamaan Eksponensial Basis Sama**\\nPersamaan eksponensial dengan basis yang sama di kedua ruas memiliki bentuk umum a^f(x) = a^g(x). Dalam bentuk ini, 'a' adalah basis yang sama, dan f(x) serta g(x) adalah fungsi yang menjadi eksponen."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional mencatat bahwa jumlah pelanggannya berlipat ganda setiap jam. Jika pada jam pertama ia memiliki 5 pelanggan, dan pola ini berlanjut.",
+      "question": "Berapa jumlah pelanggan yang akan dimiliki pedagang tersebut pada akhir jam ke-3, jika diasumsikan pola pertumbuhan eksponensial ini tepat?",
+      "options": {
+        "A": "15 pelanggan",
+        "B": "20 pelanggan",
+        "C": "25 pelanggan",
+        "D": "40 pelanggan",
+        "E": "45 pelanggan"
+      },
+      "answer": "B",
+      "explanation": "**Perhitungan Pertumbuhan Pelanggan Eksponensial**\\nJumlah pelanggan pada jam ke-n dapat dimodelkan dengan fungsi f(n) = k * a^(n-1), di mana k adalah jumlah awal dan a adalah faktor pertumbuhan. Dalam kasus ini, k=5 dan a=2 (berlipat ganda).\\nJam 1: 5 pelanggan\\nJam 2: 5 * 2 = 10 pelanggan\\nJam 3: 10 * 2 = 20 pelanggan\\nJadi, pada akhir jam ke-3, pedagang akan memiliki 20 pelanggan."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong menggunakan resep yang menghasilkan 100 bungkus per hari. Jika setiap hari produksi ditingkatkan sebesar 10% dari produksi hari sebelumnya.",
+      "question": "Berapa perkiraan jumlah bungkus keripik singkong yang akan diproduksi UMKM tersebut pada hari ke-3, jika produksi awal adalah 100 bungkus?",
+      "options": {
+        "A": "110 bungkus",
+        "B": "120 bungkus",
+        "C": "121 bungkus",
+        "D": "130 bungkus",
+        "E": "133 bungkus"
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Peningkatan Produksi Eksponensial**\\nPeningkatan produksi sebesar 10% setiap hari berarti faktor pertumbuhannya adalah 1 + 0.10 = 1.1.\\nProduksi hari ke-1: 100 bungkus\\nProduksi hari ke-2: 100 * 1.1 = 110 bungkus\\nProduksi hari ke-3: 110 * 1.1 = 121 bungkus\\nJadi, UMKM tersebut akan memproduksi 121 bungkus pada hari ke-3."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Persamaan eksponensial yang perlu diselesaikan adalah 2^(2x - 1) = 16.",
+      "question": "Langkah pertama yang paling tepat untuk menyelesaikan persamaan tersebut adalah?",
+      "options": {
+        "A": "Menyamakan basis kedua ruas menjadi 2.",
+        "B": "Menyamakan eksponen kedua ruas.",
+        "C": "Mengubah basis 16 menjadi 2x - 1.",
+        "D": "Menurunkan pangkat dari kedua sisi.",
+        "E": "Menghitung nilai 2^(2x - 1) secara langsung."
+      },
+      "answer": "A",
+      "explanation": "**Menyamakan Basis Persamaan Eksponensial**\\nUntuk menyelesaikan persamaan eksponensial seperti 2^(2x - 1) = 16, langkah pertama yang krusial adalah mengubah kedua ruas agar memiliki basis yang sama. Dalam hal ini, angka 16 dapat diubah menjadi 2^4. Setelah basis sama, barulah eksponen dapat disamakan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah desa berencana mengembangkan potensi wisata alamnya. Mereka memperkirakan jumlah pengunjung akan tumbuh secara eksponensial. Jika pada tahun pertama pengunjung berjumlah 1.000 orang, dan diproyeksikan tumbuh 20% per tahun.",
+      "question": "Manakah pernyataan berikut yang paling akurat mengenai proyeksi jumlah pengunjung pada tahun ke-3?",
+      "options": {
+        "A": "Jumlah pengunjung akan bertambah 400 orang dari tahun pertama.",
+        "B": "Jumlah pengunjung pada tahun ke-3 akan menjadi 1.400 orang.",
+        "C": "Pertumbuhan jumlah pengunjung pada tahun ke-3 akan lebih besar daripada pertumbuhan pada tahun ke-2.",
+        "D": "Jumlah pengunjung pada tahun ke-3 akan sama dengan jumlah pengunjung pada tahun pertama ditambah dua kali lipat pertumbuhan tahunan.",
+        "E": "Total penambahan pengunjung selama dua tahun pertama adalah 440 orang."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Pertumbuhan Eksponensial**\\nPertumbuhan eksponensial berarti laju pertumbuhan itu sendiri meningkat seiring waktu. Tahun 1: 1.000 pengunjung. Tahun 2: 1.000 * 1.20 = 1.200 pengunjung (penambahan 200). Tahun 3: 1.200 * 1.20 = 1.440 pengunjung (penambahan 240). Karena 240 > 200, pertumbuhan pada tahun ke-3 lebih besar dari tahun ke-2."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua sekolah, SMA Maju dan SMA Cemerlang, membandingkan pertumbuhan jumlah siswa. SMA Maju memiliki 500 siswa dan bertambah 50 siswa per tahun (pertumbuhan linear). SMA Cemerlang memiliki 400 siswa dan bertambah 10% per tahun (pertumbuhan eksponensial).",
+      "question": "Dalam jangka panjang, strategi pertumbuhan mana yang akan menghasilkan jumlah siswa terbanyak di SMA Cemerlang dibandingkan SMA Maju?",
+      "options": {
+        "A": "Pertumbuhan linear SMA Maju akan selalu lebih unggul karena penambahan absolutnya lebih besar di awal.",
+        "B": "Pertumbuhan eksponensial SMA Cemerlang akan melampaui pertumbuhan linear SMA Maju setelah beberapa tahun.",
+        "C": "Kedua sekolah akan memiliki jumlah siswa yang sama pada tahun ke-10.",
+        "D": "Pertumbuhan linear lebih stabil dan dapat diprediksi daripada pertumbuhan eksponensial.",
+        "E": "Pertumbuhan eksponensial hanya menguntungkan jika basisnya sangat besar."
+      },
+      "answer": "B",
+      "explanation": "**Perbandingan Pertumbuhan Linear vs. Eksponensial**\\nPertumbuhan eksponensial, meskipun dimulai dengan penambahan absolut yang lebih kecil, memiliki laju pertumbuhan yang meningkat seiring waktu. Sebaliknya, pertumbuhan linear memiliki penambahan absolut yang konstan. Oleh karena itu, pertumbuhan eksponensial SMA Cemerlang pada akhirnya akan melampaui pertumbuhan linear SMA Maju."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani ingin mengendalikan populasi hama di sawahnya. Ia memiliki dua opsi strategi: (1) menyemprotkan pestisida yang mengurangi populasi hama sebesar 50% setiap minggu, atau (2) menggunakan predator alami yang mengurangi populasi hama sebesar 100 hama setiap minggu.",
+      "question": "Jika populasi awal hama adalah 1.000 ekor, strategi mana yang lebih efektif dalam jangka waktu 5 minggu untuk mengurangi populasi hama secara signifikan?",
+      "options": {
+        "A": "Strategi 1, karena pengurangan persentase lebih drastis.",
+        "B": "Strategi 2, karena pengurangan absolutnya konsisten.",
+        "C": "Strategi 1, karena populasi hama akan berkurang lebih cepat di minggu-minggu awal.",
+        "D": "Strategi 2, karena pengurangan 100 hama per minggu lebih pasti daripada persentase.",
+        "E": "Strategi 1, karena pengurangan eksponensial akan membuat populasi hama mendekati nol lebih cepat."
+      },
+      "answer": "E",
+      "explanation": "**Evaluasi Efektivitas Pengendalian Hama**\\nStrategi 1 (pengurangan 50%) adalah pertumbuhan eksponensial negatif. Minggu 1: 1000 -> 500. Minggu 2: 500 -> 250. Minggu 3: 250 -> 125. Minggu 4: 125 -> 62.5. Minggu 5: 62.5 -> 31.25. Strategi 2 (pengurangan 100): Minggu 1: 1000 -> 900. Minggu 2: 900 -> 800. Minggu 3: 800 -> 700. Minggu 4: 700 -> 600. Minggu 5: 600 -> 500. Strategi 1 lebih efektif dalam jangka panjang."
+    }
+  ],
+  "metadata": {
+    "id": "d22946dd-6cc1-481b-9268-f05b23712f20",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:22:46Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Fungsi Eksponensial",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_6_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyelesaikan persamaan eksponensial dengan bilangan pokok yang sama dan mengidentifikasi grafik fungsi eksponensial.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3897,
+      "assistant": 3173,
+      "total": 7744,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

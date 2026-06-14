@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Fungsi Eksponensial\n\n--- MATERI ---\nPersamaan eksponensial adalah persamaan yang di dalamnya memuat eksponen (pangkat) yang mengandung variabel, dan tidak menutup kemungkinan bilangan pokoknya juga mengandung variabel. Salah satu bentuk persamaan eksponensial yang paling dasar adalah persamaan yang memiliki bilangan pokok atau basis yang sama di kedua ruasnya. Jika terdapat bentuk persamaan a^f(x) = a^g(x), dengan syarat a > 0 dan a tidak sama dengan 1, maka himpunan penyelesaiannya dapat ditentukan dengan menggunakan sifat kesamaan nilai eksponen. Sifat kesamaan ini menyatakan bahwa jika basisnya sudah bernilai sama, maka pangkat dari kedua ruas tersebut pasti bernilai sama, sehingga f(x) = g(x). Konsep dasar inilah yang menjadi kunci utama dalam menyelesaikan berbagai masalah persamaan eksponensial sederhana.\n\nDalam menyelesaikan persoalan persamaan eksponensial, langkah pertama yang harus dilakukan adalah memastikan bahwa bilangan pokok pada kedua ruas persamaan sudah identik. Apabila bilangan pokok pada ruas kiri dan ruas kanan belum sama, maka kita perlu memanipulasi salah satu atau kedua bilangan tersebut menggunakan sifat-sifat dasar operasi pemangkatan. Misalnya, jika terdapat persamaan 2^(3x-1) = 32, kita harus mengubah bilangan 32 menjadi bentuk berpangkat dengan basis 2, yaitu 2^5. Setelah bentuk persamaan direkonstruksi menjadi 2^(3x-1) = 2^5, prinsip kesamaan pangkat f(x) = g(x) dapat langsung diterapkan sehingga diperoleh 3x - 1 = 5. Melalui operasi aljabar linear biasa, kita dapat menemukan himpunan penyelesaian persamaan tersebut secara presisi.\n\nSelain persamaan, kajian eksponen juga mencakup fungsi eksponensial. Fungsi eksponensial didefinisikan sebagai fungsi yang memetakan bilangan real x ke bilangan real a^x. Bentuk umum fungsi eksponensial adalah f(x) = k dikali a^x, di mana k adalah konstanta sembarang yang tidak sama dengan nol, a adalah bilangan pokok (basis) dengan syarat a > 0 dan a tidak sama dengan 1, serta x merupakan variabel bebas yang menempati posisi pangkat. Variabel bebas pada posisi pangkat inilah yang membedakan fungsi eksponensial dengan fungsi aljabar biasa. Karakteristik paling menonjol dari fungsi ini dapat diidentifikasi secara visual dengan cara melukiskan pasangan titik koordinat (x, f(x)) pada bidang koordinat Kartesius sehingga membentuk sebuah kurva lengkung yang mulus dan kontinu.\n\nUntuk mengidentifikasi grafik fungsi eksponensial, kita perlu memperhatikan secara saksama nilai dari bilangan pokok atau basis (a). Kasus pertama adalah ketika nilai basis lebih besar dari satu (a > 0), contohnya pada fungsi f(x) = 2^x atau f(x) = 3^x. Pada kondisi basis ini, grafik fungsi eksponensial akan senantiasa menunjukkan karakteristik kurva yang monoton naik. Artinya, seiring dengan pertambahan nilai x yang bergerak dari kiri ke kanan pada sumbu mendatar, nilai fungsi f(x) akan terus membesar secara tajam. Kurva ini akan selalu memotong sumbu Y di titik koordinat (0, k) karena setiap konstanta berpangkat nol bernilai satu. Selain itu, kurva monoton naik ini hanya akan terus mendekati sumbu X di ruang tak hingga dan tidak akan pernah menyentuhnya, menjadikan sumbu X sebagai asimtot datar.\n\nKasus analitis kedua dalam mengidentifikasi grafik fungsi eksponensial terjadi apabila nilai bilangan pokok atau basis (a) berupa bilangan pecahan yang terletak pada interval di antara nol dan satu (0 < a < 1), misalnya f(x) = (1/2)^x. Berkebalikan dengan kasus basis lebih dari satu, grafik fungsi untuk interval basis pecahan ini akan selalu membentuk kurva yang bersifat monoton turun. Secara visual, kurva ini akan menurun dengan tajam dari area kiri atas menuju ke kanan bawah seiring dengan semakin membesarnya nilai variabel x. Meskipun nilai fungsi terus mengalami penyusutan drastis mendekati angka nol, kurva ini tetap tidak akan pernah memotong sumbu X. Sumbu X secara konstan tetap bertindak sebagai garis asimtot datar dari kurva tersebut.\n\n[ATP_ALIGNMENT]\nMenyelesaikan persamaan eksponensial dengan bilangan pokok yang sama dan mengidentifikasi grafik fungsi eksponensial.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM keripik singkong ingin meningkatkan produksinya. Mereka memiliki resep yang menghasilkan 100 bungkus keripik dengan menggunakan 5 kg singkong. Jika mereka ingin memproduksi 500 bungkus, berapa kg singkong yang dibutuhkan?",
+      "question": "Berapa kg singkong yang dibutuhkan untuk memproduksi 500 bungkus keripik singkong?",
+      "options": {
+        "A": "15 kg",
+        "B": "20 kg",
+        "C": "25 kg",
+        "D": "30 kg",
+        "E": "35 kg"
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Kebutuhan Singkong**\\nUntuk memproduksi 100 bungkus keripik dibutuhkan 5 kg singkong. Maka, untuk 500 bungkus, dibutuhkan (500/100) \\\\times 5 kg = 5 \\\\times 5 kg = 25 kg singkong."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kelas, terdapat 30 siswa. Sebanyak 2/3 dari siswa tersebut adalah perempuan. Berapa jumlah siswa laki-laki di kelas tersebut?",
+      "question": "Berapa jumlah siswa laki-laki di kelas tersebut?",
+      "options": {
+        "A": "10 siswa",
+        "B": "15 siswa",
+        "C": "20 siswa",
+        "D": "25 siswa",
+        "E": "30 siswa"
+      },
+      "answer": "A",
+      "explanation": "**Jumlah Siswa Laki-laki**\\nJumlah siswa perempuan adalah (2/3) \\\\times 30 = 20 siswa. Jumlah siswa laki-laki adalah total siswa dikurangi siswa perempuan, yaitu 30 - 20 = 10 siswa."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 1 hektar. Ia menanam padi yang menghasilkan rata-rata 6 ton per hektar. Jika harga jual gabah kering panen adalah Rp 5.000.000 per ton, berapa total pendapatan petani tersebut dari satu kali panen?",
+      "question": "Berapa total pendapatan petani tersebut dari satu kali panen?",
+      "options": {
+        "A": "Rp 25.000.000",
+        "B": "Rp 30.000.000",
+        "C": "Rp 35.000.000",
+        "D": "Rp 40.000.000",
+        "E": "Rp 45.000.000"
+      },
+      "answer": "B",
+      "explanation": "**Perhitungan Pendapatan Petani**\\nPetani menghasilkan 6 ton gabah dari 1 hektar lahan. Dengan harga Rp 5.000.000 per ton, total pendapatan adalah 6 ton \\\\times Rp 5.000.000/ton = Rp 30.000.000."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko buku menjual novel dengan harga Rp 75.000 per buku. Jika toko tersebut berhasil menjual 150 buku dalam sebulan, berapa total pendapatan kotor dari penjualan novel tersebut?",
+      "question": "Berapa total pendapatan kotor dari penjualan novel tersebut?",
+      "options": {
+        "A": "Rp 10.000.000",
+        "B": "Rp 11.250.000",
+        "C": "Rp 12.500.000",
+        "D": "Rp 15.000.000",
+        "E": "Rp 17.500.000"
+      },
+      "answer": "B",
+      "explanation": "**Total Pendapatan Penjualan Novel**\\nTotal pendapatan dihitung dengan mengalikan harga per buku dengan jumlah buku yang terjual: Rp 75.000/buku \\\\times 150 buku = Rp 11.250.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik sedang mengevaluasi dua opsi pengiriman barang dari Jakarta ke Surabaya. Opsi A menggunakan jalur darat dengan biaya Rp 1.000.000 per pengiriman dan waktu tempuh 12 jam. Opsi B menggunakan jalur laut dengan biaya Rp 700.000 per pengiriman tetapi waktu tempuh 36 jam. Perusahaan menargetkan pengiriman barang harus tiba dalam maksimal 24 jam.",
+      "question": "Berdasarkan target waktu pengiriman, opsi manakah yang paling sesuai untuk dipilih perusahaan logistik?",
+      "options": {
+        "A": "Opsi A, karena biayanya lebih murah.",
+        "B": "Opsi B, karena biayanya lebih hemat.",
+        "C": "Opsi A, karena memenuhi target waktu pengiriman.",
+        "D": "Opsi B, karena waktu tempuhnya lebih singkat.",
+        "E": "Kedua opsi sama-sama tidak memenuhi target waktu."
+      },
+      "answer": "C",
+      "explanation": "**Evaluasi Opsi Pengiriman**\\nTarget waktu pengiriman adalah maksimal 24 jam. Opsi A memiliki waktu tempuh 12 jam, yang memenuhi target. Opsi B memiliki waktu tempuh 36 jam, yang melebihi target. Oleh karena itu, Opsi A adalah pilihan yang paling sesuai."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah warung makan mencatat bahwa jumlah pelanggan harian mengikuti pola pertumbuhan eksponensial. Pada hari pertama, warung tersebut melayani 20 pelanggan. Pada hari kedua, jumlah pelanggan menjadi 40, dan pada hari ketiga menjadi 80. Jika pola ini berlanjut, berapa jumlah pelanggan pada hari kelima?",
+      "question": "Berapa jumlah pelanggan yang diprediksi pada hari kelima?",
+      "options": {
+        "A": "160 pelanggan",
+        "B": "240 pelanggan",
+        "C": "320 pelanggan",
+        "D": "400 pelanggan",
+        "E": "640 pelanggan"
+      },
+      "answer": "C",
+      "explanation": "**Prediksi Jumlah Pelanggan**\\nPola pertumbuhan pelanggan adalah dikalikan 2 setiap hari (20, 40, 80). Hari keempat: 80 \\\\times 2 = 160 pelanggan. Hari kelima: 160 \\\\times 2 = 320 pelanggan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua UMKM kerajinan tangan, 'Asri' dan 'Bumi', memproduksi tas anyaman. UMKM Asri menggunakan bahan baku yang lebih mahal namun proses produksi lebih efisien, menghasilkan 50 tas per minggu dengan biaya produksi Rp 100.000 per tas. UMKM Bumi menggunakan bahan baku lebih murah tetapi proses kurang efisien, menghasilkan 30 tas per minggu dengan biaya produksi Rp 70.000 per tas. Keduanya ingin memaksimalkan keuntungan dengan menjual tas seharga Rp 150.000 per buah.",
+      "question": "Jika kedua UMKM memiliki kapasitas produksi maksimal yang sama, UMKM manakah yang memiliki potensi keuntungan mingguan lebih tinggi dan mengapa?",
+      "options": {
+        "A": "UMKM Asri, karena biaya produksinya lebih rendah.",
+        "B": "UMKM Bumi, karena biaya bahan bakunya lebih murah.",
+        "C": "UMKM Asri, karena efisiensi produksi memungkinkan volume lebih besar dengan biaya per unit lebih tinggi.",
+        "D": "UMKM Bumi, karena biaya produksi per tas lebih rendah.",
+        "E": "UMKM Asri, karena meskipun biaya bahan baku lebih tinggi, efisiensi prosesnya menghasilkan keuntungan per unit yang lebih besar."
+      },
+      "answer": "E",
+      "explanation": "**Analisis Potensi Keuntungan**\\nUMKM Asri: Keuntungan per tas = Rp 150.000 - Rp 100.000 = Rp 50.000. Total keuntungan mingguan (misal kapasitas 50 tas) = 50 \\\\times Rp 50.000 = Rp 2.500.000. UMKM Bumi: Keuntungan per tas = Rp 150.000 - Rp 70.000 = Rp 80.000. Total keuntungan mingguan (misal kapasitas 30 tas) = 30 \\\\times Rp 80.000 = Rp 2.400.000. UMKM Asri memiliki potensi keuntungan lebih tinggi karena keuntungan per unitnya lebih besar, meskipun volume produksinya lebih kecil."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Grafik fungsi eksponensial f(x) = 3^x digambarkan pada bidang Kartesius. Manakah pernyataan berikut yang paling tepat menggambarkan karakteristik grafik fungsi tersebut?",
+      "question": "Manakah pernyataan yang paling tepat menggambarkan karakteristik grafik fungsi f(x) = 3^x?",
+      "options": {
+        "A": "Grafik monoton turun dan memotong sumbu Y di (0,1).",
+        "B": "Grafik monoton naik dan mendekati sumbu X di tak hingga.",
+        "C": "Grafik monoton turun dan memiliki asimtot datar y=1.",
+        "D": "Grafik monoton naik dan memotong sumbu X di (0,0).",
+        "E": "Grafik monoton turun dan memotong sumbu Y di (0,3)."
+      },
+      "answer": "B",
+      "explanation": "**Karakteristik Grafik Fungsi Eksponensial**\\nUntuk fungsi f(x) = a^x dengan a > 1 (dalam hal ini a=3), grafiknya bersifat monoton naik. Grafik ini akan selalu memotong sumbu Y di titik (0,1) dan mendekati sumbu X (menjadi asimtot datar) di tak hingga."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan percetakan mencetak brosur. Biaya cetak untuk 1000 lembar brosur adalah Rp 200.000. Jika perusahaan ingin mencetak 5000 lembar brosur, dan diasumsikan biaya per lembar tetap, berapa total biaya yang dibutuhkan?",
+      "question": "Berapa total biaya yang dibutuhkan untuk mencetak 5000 lembar brosur?",
+      "options": {
+        "A": "Rp 800.000",
+        "B": "Rp 1.000.000",
+        "C": "Rp 1.200.000",
+        "D": "Rp 1.500.000",
+        "E": "Rp 2.000.000"
+      },
+      "answer": "B",
+      "explanation": "**Perhitungan Total Biaya Cetak**\\nBiaya per lembar brosur adalah Rp 200.000 / 1000 lembar = Rp 200/lembar. Untuk 5000 lembar, total biaya adalah 5000 lembar \\\\times Rp 200/lembar = Rp 1.000.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa sedang belajar tentang fungsi eksponensial. Ia diberikan dua fungsi: f(x) = (1/2)^x dan g(x) = 4^x. Siswa tersebut diminta untuk membandingkan perilaku kedua fungsi tersebut ketika nilai x semakin besar.",
+      "question": "Manakah pernyataan yang paling akurat menggambarkan perbandingan perilaku kedua fungsi tersebut saat nilai x semakin besar?",
+      "options": {
+        "A": "Kedua fungsi akan bernilai semakin besar.",
+        "B": "f(x) akan bernilai semakin kecil, sedangkan g(x) akan bernilai semakin besar.",
+        "C": "f(x) akan bernilai semakin besar, sedangkan g(x) akan bernilai semakin kecil.",
+        "D": "Kedua fungsi akan bernilai semakin kecil.",
+        "E": "f(x) akan mendekati nol, sedangkan g(x) akan mendekati tak hingga."
+      },
+      "answer": "E",
+      "explanation": "**Perbandingan Perilaku Fungsi Eksponensial**\\nUntuk f(x) = (1/2)^x, karena basisnya (1/2) berada di antara 0 dan 1, fungsi ini monoton turun. Saat x semakin besar, f(x) akan mendekati 0. Untuk g(x) = 4^x, karena basisnya (4) lebih besar dari 1, fungsi ini monoton naik. Saat x semakin besar, g(x) akan mendekati tak hingga."
+    }
+  ],
+  "metadata": {
+    "id": "4716744e-d615-445e-b0a5-3ba68c32d9be",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T09:35:59Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Fungsi Eksponensial",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_5_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyelesaikan persamaan eksponensial dengan bilangan pokok yang sama dan mengidentifikasi grafik fungsi eksponensial.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3687,
+      "assistant": 2737,
+      "total": 7097,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

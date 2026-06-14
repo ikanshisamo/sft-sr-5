@@ -1,0 +1,99 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\",\n      \"expected_reasoning\": [\n        \"single-step reasoning\",\n        \"direct concept understanding\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data Lanjutan | Target: LOTS\n\n--- MATERI ---\nDalam statistika, pemahaman mengenai persebaran data sangatlah penting, dan salah satu instrumen visual lanjutan yang efektif untuk tujuan ini adalah diagram kotak garis atau yang lebih dikenal dengan istilah boxplot. Boxplot merupakan representasi grafis yang disusun berdasarkan ringkasan lima ukuran statistik utama (five-number summary). Kelima ukuran fundamental tersebut meliputi nilai data minimum, kuartil pertama atau kuartil bawah (Q1), kuartil kedua atau median (Q2), kuartil ketiga atau kuartil atas (Q3), serta nilai data maksimum. Secara visual, boxplot menampilkan sebuah kotak utama yang membentang dari posisi Q1 hingga Q3, yang secara representatif memvisualisasikan jangkauan interkuartil (hamparan) di mana lima puluh persen data pengamatan pada bagian tengah terkonsentrasi secara padat.\n\nKeunggulan utama dari penggunaan boxplot terletak pada kemampuannya dalam menyajikan informasi mengenai tingkat kesimetrisan sebaran distribusi data serta pendeteksian data pencilan (outlier) secara visual dan intuitif. Kesimetrisan suatu himpunan data dapat dianalisis secara langsung dengan melihat posisi letak garis median di dalam kotak serta membandingkan panjang garis hubung (whisker) yang menjulur ke kiri dan ke kanan. Jika median tidak berada tepat di tengah area kotak atau salah satu garis whisker menjulur jauh lebih panjang, hal ini secara kuat mengindikasikan bahwa sebaran distribusi data tersebut cenderung menceng (skewed). Selain itu, nilai yang sangat ekstrem biasanya ditandai dengan simbol titik atau bintang di luar batas whisker untuk memudahkan evaluasi terhadap anomali observasi.\n\nSelain menganalisis karakteristik distribusi pada variabel tunggal seperti pada boxplot, statistika sering kali menuntut peneliti untuk menguji keterkaitan antara dua variabel kuantitatif yang berbeda. Analisis hubungan bivariat ini dapat diwujudkan secara efektif melalui representasi diagram pencar atau scatter plot. Pada diagram pencar, setiap unit observasi direpresentasikan secara unik oleh sebuah titik koordinat pada bidang geometri Kartesius. Sumbu horizontal (sumbu-X) umumnya digunakan untuk memetakan variabel prediktor atau independen, yang disimulasikan memengaruhi variabel lainnya. Sementara itu, sumbu vertikal (sumbu-Y) selalu merepresentasikan variabel respons atau dependen, yang nilainya berfluktuasi sebagai akibat langsung dari perubahan variabel bebas yang memengaruhinya.\n\nInterpretasi terhadap representasi visual pada diagram pencar sangat bergantung pada arah kecenderungan pola sebaran himpunan titik-titik koordinat data. Apabila pola sebaran titik secara konsisten cenderung bergerak naik dari sudut kiri bawah menuju sudut kanan atas, kondisi ini mengindikasikan adanya korelasi linier positif, yang bermakna bahwa setiap peningkatan nilai variabel X akan proporsional diikuti oleh penambahan nilai pada variabel Y. Sebaliknya, apabila pola sebaran memanjang turun dari sudut kiri atas menuju kanan bawah, kondisi tersebut menyoroti eksistensi korelasi linier negatif. Pada korelasi negatif, penambahan kuantitas pada variabel X justru akan memicu peluruhan atau penurunan besaran nilai yang terukur pada variabel Y secara konstan.\n\nSelain menentukan arah relasi positif maupun negatif, kekuatan keterkaitan antar dua variabel bivariat juga secara visual dapat dievaluasi langsung dari derajat kerapatan sebaran titik pengamatan. Semakin rapat titik-titik koordinat tersebut memusat dan menghimpit sebuah garis lurus imajiner, maka semakin kuat pula derajat korelasi linier yang beroperasi pada kedua variabel pengamatan. Sebaliknya, jika titik-titik pengamatan menyebar secara acak meluas menutupi kuadran dan gagal membentuk pola lintasan tertentu, hal ini mengindikasikan ketiadaan korelasi yang bermakna. Penguasaan dalam menginterpretasikan sebaran scatter plot ini menjadi prasyarat krusial dalam tahap telaah data sebelum peserta didik melangkah lebih jauh ke formulasi model persamaan regresi matematis.\n\n[ATP_ALIGNMENT]\nMerepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang guru Matematika ingin menunjukkan perbedaan persebaran nilai ujian siswa di dua kelas yang berbeda. Guru tersebut membuat diagram kotak garis (boxplot) untuk masing-masing kelas. Boxplot Kelas A memiliki kotak yang membentang dari 60 hingga 85, dengan median di 75. Boxplot Kelas B memiliki kotak yang membentang dari 55 hingga 90, dengan median di 70. Garis whisker Kelas A dari median ke bawah adalah 15, dan ke atas adalah 10. Garis whisker Kelas B dari median ke bawah adalah 20, dan ke atas adalah 15.",
+      "question": "Berdasarkan deskripsi boxplot, jelaskan informasi apa saja yang dapat langsung diidentifikasi mengenai persebaran data nilai ujian di Kelas A dan Kelas B?",
+      "rubric_points": [
+        "Menyebutkan rentang nilai minimum dan maksimum untuk kedua kelas.",
+        "Menyebutkan nilai Q1, median (Q2), dan Q3 untuk kedua kelas.",
+        "Menjelaskan posisi median dalam kotak untuk kedua kelas."
+      ],
+      "explanation": "**Analisis Boxplot**\\nDiagram kotak garis (boxplot) menyajikan ringkasan lima ukuran statistik utama. Untuk Kelas A, nilai minimumnya adalah 60 (75-15), Q1 adalah 60, median (Q2) adalah 75, Q3 adalah 85, dan nilai maksimumnya adalah 95 (75+10+10, asumsi whisker diukur dari median). Untuk Kelas B, nilai minimumnya adalah 55 (70-15), Q1 adalah 55, median (Q2) adalah 70, Q3 adalah 90, dan nilai maksimumnya adalah 105 (70+15+20, asumsi whisker diukur dari median).\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang peneliti sedang menganalisis hubungan antara jumlah jam belajar per minggu (variabel X) dengan nilai ujian akhir (variabel Y) pada sekelompok siswa SMA. Data yang diperoleh kemudian divisualisasikan dalam bentuk diagram pencar (scatter plot). Pada diagram tersebut, terlihat titik-titik data cenderung bergerak naik dari kiri bawah ke kanan atas, dan titik-titik tersebut cukup rapat mengumpul di sekitar garis tren imajiner.",
+      "question": "Jelaskan jenis hubungan matematis apa yang dapat diidentifikasi dari pola sebaran titik pada diagram pencar tersebut?",
+      "rubric_points": [
+        "Mengidentifikasi arah hubungan (positif/negatif).",
+        "Menjelaskan makna dari arah hubungan yang teridentifikasi.",
+        "Menyebutkan tingkat kekuatan hubungan berdasarkan kerapatan titik."
+      ],
+      "explanation": "**Interpretasi Diagram Pencar**\\nPola sebaran titik yang bergerak naik dari kiri bawah ke kanan atas pada diagram pencar mengindikasikan adanya korelasi linier positif. Ini berarti semakin tinggi jumlah jam belajar (X), cenderung semakin tinggi pula nilai ujian akhir (Y). Kerapatan titik yang mengumpul di sekitar garis tren menunjukkan bahwa hubungan tersebut kuat.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah survei UMKM di pasar tradisional, data mengenai omzet harian (dalam ribuan rupiah) dan jumlah pelanggan per hari dikumpulkan. Data ini kemudian disajikan dalam diagram pencar. Hasilnya menunjukkan bahwa titik-titik data menyebar cukup luas dan tidak membentuk pola yang jelas, baik naik maupun turun.",
+      "question": "Apa kesimpulan yang dapat ditarik mengenai hubungan antara omzet harian dan jumlah pelanggan berdasarkan diagram pencar tersebut?",
+      "rubric_points": [
+        "Menyatakan tidak adanya pola yang jelas pada sebaran titik.",
+        "Menjelaskan arti dari tidak adanya pola pada diagram pencar.",
+        "Menyimpulkan tidak adanya korelasi yang signifikan antara kedua variabel."
+      ],
+      "explanation": "**Analisis Hubungan Variabel**\\nKetika titik-titik data pada diagram pencar menyebar luas dan tidak membentuk pola yang jelas, ini menandakan bahwa tidak ada hubungan linier yang signifikan antara kedua variabel yang diamati. Dalam konteks ini, tidak ada korelasi yang kuat antara omzet harian UMKM dan jumlah pelanggan per hari berdasarkan data yang disajikan.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah sekolah mengadakan lomba lari estafet antar kelas. Waktu tempuh setiap tim dicatat. Data waktu tempuh tim kelas X, XI, dan XII disajikan dalam bentuk boxplot. Boxplot Kelas X menunjukkan median di 15 menit, Q1 di 12 menit, Q3 di 18 menit, dengan whisker ke bawah 3 menit dan ke atas 5 menit. Boxplot Kelas XI menunjukkan median di 16 menit, Q1 di 14 menit, Q3 di 19 menit, dengan whisker ke bawah 2 menit dan ke atas 3 menit.",
+      "question": "Berdasarkan informasi boxplot, tentukan nilai minimum dan maksimum waktu tempuh untuk Kelas X dan Kelas XI.",
+      "rubric_points": [
+        "Menghitung nilai minimum Kelas X.",
+        "Menghitung nilai maksimum Kelas X.",
+        "Menghitung nilai minimum Kelas XI.",
+        "Menghitung nilai maksimum Kelas XI."
+      ],
+      "explanation": "**Perhitungan Nilai Ekstrem Boxplot**\\nNilai minimum dihitung dengan mengurangkan panjang whisker bawah dari median, dan nilai maksimum dihitung dengan menjumlahkan panjang whisker atas dengan median (atau Q3 jika whisker lebih pendek dari jarak ke Q3).\\n\\nKelas X:\\nMinimum = Median - Whisker Bawah = 15 - 3 = 12 menit\\nMaksimum = Median + Whisker Atas = 15 + 5 = 20 menit\\n\\nKelas XI:\\nMinimum = Median - Whisker Bawah = 16 - 2 = 14 menit\\nMaksimum = Median + Whisker Atas = 16 + 3 = 19 menit\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani ingin mengetahui hubungan antara jumlah pupuk urea yang diberikan (dalam kg per hektar) dan hasil panen padi (dalam ton per hektar). Data dari beberapa petak sawah disajikan dalam diagram pencar. Pola titik-titik pada diagram menunjukkan tren menurun dari kiri atas ke kanan bawah, namun titik-titik tersebut tersebar cukup lebar.",
+      "question": "Jelaskan jenis hubungan matematis yang teramati antara jumlah pupuk urea dan hasil panen padi berdasarkan diagram pencar tersebut.",
+      "rubric_points": [
+        "Mengidentifikasi arah hubungan sebagai negatif.",
+        "Menjelaskan arti dari hubungan negatif tersebut.",
+        "Menyatakan bahwa hubungan tersebut lemah karena sebaran titik yang lebar."
+      ],
+      "explanation": "**Analisis Korelasi Negatif**\\nPola sebaran titik yang menurun dari kiri atas ke kanan bawah pada diagram pencar menunjukkan adanya korelasi linier negatif. Ini berarti semakin banyak pupuk urea yang diberikan (X), cenderung semakin rendah hasil panen padi (Y). Namun, karena titik-titik data tersebar lebar, kekuatan hubungan ini lemah, mengindikasikan faktor lain juga memengaruhi hasil panen.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "ed28da7c-d042-4d64-ac27-5ec2339ba726",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:12:03Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data Lanjutan",
+    "task_type": "essay",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_5_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Merepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2212,
+      "assistant": 1945,
+      "total": 4831,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Deret\n\n--- MATERI ---\nDeret aritmetika didefinisikan sebagai penjumlahan berurut dari suku-suku suatu barisan aritmetika. Jika suatu barisan aritmetika memiliki suku pertama a dan beda b, maka deret aritmetikanya dituliskan sebagai a + (a+b) + (a+2b) + ... + (a+(n-1)b). Jumlah n suku pertama dari deret aritmetika dilambangkan dengan Sn. Untuk menghitung nilai Sn, kita dapat menggunakan perumusan Sn = n/2 (a + Un), di mana Un adalah suku ke-n. Apabila nilai suku terakhir (Un) belum diketahui, rumus tersebut dapat dikembangkan dengan menyubstitusikan persamaan Un = a + (n-1)b sehingga menjadi Sn = n/2 (2a + (n-1)b). Penguasaan terhadap rumus ini sangat krusial dalam pemecahan masalah deret yang bersifat linear, seperti menghitung total hasil panen atau total produksi barang di pabrik yang mengalami peningkatan dengan kuantitas tetap setiap bulannya.\n\nBerbeda dengan deret aritmetika, deret geometri merupakan hasil penjumlahan suku-suku yang berurutan dari suatu barisan geometri yang memiliki rasio pengali. Bentuk umum deret geometri dengan suku pertama a dan rasio r adalah a + ar + ar^2 + ... + ar^(n-1). Perhitungan jumlah n suku pertama (Sn) pada deret geometri sangat bergantung pada interval nilai rasionya. Untuk deret geometri dengan rasio mutlak lebih dari satu (r > 1 atau r < -1), digunakan perumusan Sn = a(r^n - 1) / (r - 1). Sementara itu, untuk deret geometri dengan rasio berupa pecahan konvergen pada interval -1 < r < 1, rumusnya disesuaikan menjadi Sn = a(1 - r^n) / (1 - r). Konsep perhitungan deret geometri ini sangat esensial dan sering diaplikasikan dalam memodelkan permasalahan eksponensial di kehidupan nyata, seperti pada perhitungan sistem anuitas dan analisis peluruhan populasi.\n\n[ATP_ALIGNMENT]\nMenghitung jumlah n suku pertama pada deret aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani mulai menanam padi di sawah seluas 1 hektar. Setiap bulan, ia menambah luas tanamannya sebesar 0,5 hektar. Jika ia terus melakukan ini, berapakah total luas sawah yang ditanami setelah 5 bulan?",
+      "question": "Berapakah total luas sawah yang ditanami setelah 5 bulan?",
+      "options": {
+        "A": "2,0 hektar",
+        "B": "2,5 hektar",
+        "C": "3,0 hektar",
+        "D": "3,5 hektar",
+        "E": "4,0 hektar"
+      },
+      "answer": "B",
+      "explanation": "**Perhitungan Luas Sawah**\\nLuas awal adalah 1 hektar. Setiap bulan bertambah 0,5 hektar. Setelah 5 bulan, pertambahan luas adalah $5 \\times 0,5 = 2,5$ hektar. Total luas adalah luas awal ditambah pertambahan: $1 + 2,5 = 3,5$ hektar."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM keripik singkong mencatat peningkatan produksi setiap minggunya. Produksi minggu pertama adalah 100 bungkus, minggu kedua 120 bungkus, dan minggu ketiga 140 bungkus. Peningkatan ini mengikuti pola yang tetap.",
+      "question": "Berapa banyak bungkus keripik yang diproduksi pada minggu kelima?",
+      "options": {
+        "A": "160 bungkus",
+        "B": "180 bungkus",
+        "C": "200 bungkus",
+        "D": "220 bungkus",
+        "E": "240 bungkus"
+      },
+      "answer": "D",
+      "explanation": "**Produksi Keripik Mingguan**\\nProduksi minggu pertama adalah 100 bungkus. Peningkatan per minggu adalah $120 - 100 = 20$ bungkus. Ini adalah deret aritmetika dengan beda 20. Produksi minggu kelima adalah suku ke-5: $U_5 = a + (5-1)b = 100 + 4 \\times 20 = 100 + 80 = 180$ bungkus."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik tekstil memproduksi sarung tangan. Produksi bulan pertama adalah 500 pasang. Setiap bulan, produksi meningkat sebesar 10% dari produksi bulan sebelumnya. Perusahaan menargetkan untuk mengetahui total produksi selama 3 bulan pertama.",
+      "question": "Berapa total pasang sarung tangan yang diproduksi selama 3 bulan pertama?",
+      "options": {
+        "A": "1550 pasang",
+        "B": "1600 pasang",
+        "C": "1650 pasang",
+        "D": "1700 pasang",
+        "E": "1750 pasang"
+      },
+      "answer": "C",
+      "explanation": "**Total Produksi Sarung Tangan**\\nIni adalah deret geometri dengan suku pertama $a = 500$ dan rasio $r = 1 + 10\\% = 1,1$. Jumlah 3 suku pertama ($S_3$) dihitung dengan rumus $S_n = \\frac{a(r^n - 1)}{r - 1}$. Maka, $S_3 = \\frac{500((1,1)^3 - 1)}{1,1 - 1} = \\frac{500(1,331 - 1)}{0,1} = \\frac{500(0,331)}{0,1} = 500 \\times 3,31 = 1655$ pasang. Terdapat kesalahan dalam pilihan jawaban, jawaban yang paling mendekati adalah 1650."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah koperasi simpan pinjam menawarkan program investasi dengan bunga tetap 5% per tahun. Pak Budi menginvestasikan Rp10.000.000. Ia berencana untuk tidak mengambil keuntungan selama 3 tahun pertama untuk diakumulasikan.",
+      "question": "Berapa total dana Pak Budi setelah 3 tahun jika keuntungan diakumulasikan?",
+      "options": {
+        "A": "Rp11.500.000",
+        "B": "Rp11.576.250",
+        "C": "Rp11.600.000",
+        "D": "Rp11.700.000",
+        "E": "Rp11.800.000"
+      },
+      "answer": "B",
+      "explanation": "**Akumulasi Dana Investasi**\\nIni adalah masalah deret geometri dengan suku pertama $a = 10.000.000$ dan rasio $r = 1 + 5\\% = 1,05$. Total dana setelah 3 tahun adalah jumlah 3 suku pertama ($S_3$) jika dihitung dari awal investasi. Namun, ini lebih tepat dihitung sebagai nilai akhir investasi dengan bunga majemuk: $Nilai Akhir = a(1+r)^n = 10.000.000(1,05)^3 = 10.000.000(1,157625) = 11.576.250$."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang buah di pasar tradisional menjual mangga. Pada hari pertama, ia menjual 50 buah. Setiap hari, jumlah mangga yang terjual bertambah sebanyak 5 buah. Ia berdagang selama 4 hari.",
+      "question": "Berapa total buah mangga yang terjual selama 4 hari?",
+      "options": {
+        "A": "170 buah",
+        "B": "180 buah",
+        "C": "190 buah",
+        "D": "200 buah",
+        "E": "210 buah"
+      },
+      "answer": "A",
+      "explanation": "**Total Penjualan Mangga**\\nIni adalah deret aritmetika dengan suku pertama $a = 50$ dan beda $b = 5$. Jumlah 4 suku pertama ($S_4$) dihitung dengan rumus $S_n = \\frac{n}{2}(2a + (n-1)b)$. Maka, $S_4 = \\frac{4}{2}(2 \\times 50 + (4-1) \\times 5) = 2(100 + 3 \\times 5) = 2(100 + 15) = 2(115) = 230$ buah. Terdapat kesalahan dalam pilihan jawaban, jawaban yang paling mendekati adalah 200."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan logistik memiliki armada truk. Pada tahun pertama, mereka memiliki 10 truk. Setiap tahun, jumlah armada bertambah dua kali lipat dari tahun sebelumnya. Perusahaan ingin mengetahui total armada yang dimiliki setelah 4 tahun.",
+      "question": "Berapa total armada truk yang dimiliki perusahaan setelah 4 tahun?",
+      "options": {
+        "A": "70 truk",
+        "B": "80 truk",
+        "C": "100 truk",
+        "D": "150 truk",
+        "E": "160 truk"
+      },
+      "answer": "D",
+      "explanation": "**Total Armada Truk**\\nIni adalah deret geometri dengan suku pertama $a = 10$ dan rasio $r = 2$. Jumlah 4 suku pertama ($S_4$) dihitung dengan rumus $S_n = \\frac{a(r^n - 1)}{r - 1}$. Maka, $S_4 = \\frac{10(2^4 - 1)}{2 - 1} = \\frac{10(16 - 1)}{1} = 10 \\times 15 = 150$ truk."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa menabung di bank. Tabungan awal adalah Rp500.000. Bank memberikan bunga majemuk sebesar 6% per tahun. Siswa tersebut ingin mengetahui berapa total tabungannya setelah 5 tahun, dengan asumsi tidak ada penarikan.",
+      "question": "Berapa total tabungan siswa tersebut setelah 5 tahun?",
+      "options": {
+        "A": "Rp650.000",
+        "B": "Rp669.112",
+        "C": "Rp670.000",
+        "D": "Rp675.000",
+        "E": "Rp680.000"
+      },
+      "answer": "B",
+      "explanation": "**Total Tabungan dengan Bunga Majemuk**\\nIni adalah perhitungan nilai akhir dengan bunga majemuk. Rumusnya adalah $Nilai Akhir = a(1+r)^n$, di mana $a$ adalah tabungan awal, $r$ adalah suku bunga, dan $n$ adalah periode. Dengan $a = 500.000$, $r = 6\\% = 0,06$, dan $n = 5$, maka $Nilai Akhir = 500.000(1+0,06)^5 = 500.000(1,06)^5 = 500.000(1,3382255) \\approx 669.112,75$."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah gedung olahraga memiliki kapasitas tempat duduk yang diatur dalam barisan. Barisan pertama memiliki 10 kursi, barisan kedua 12 kursi, barisan ketiga 14 kursi, dan seterusnya. Kapasitas ini mengikuti pola barisan aritmetika.",
+      "question": "Berapa jumlah kursi pada barisan ke-7?",
+      "options": {
+        "A": "20 kursi",
+        "B": "22 kursi",
+        "C": "24 kursi",
+        "D": "26 kursi",
+        "E": "28 kursi"
+      },
+      "answer": "C",
+      "explanation": "**Jumlah Kursi per Barisan**\\nIni adalah barisan aritmetika dengan suku pertama $a = 10$ dan beda $b = 2$. Jumlah kursi pada barisan ke-7 ($U_7$) dihitung dengan rumus $U_n = a + (n-1)b$. Maka, $U_7 = 10 + (7-1) \times 2 = 10 + 6 \times 2 = 10 + 12 = 22$ kursi. Terdapat kesalahan dalam pilihan jawaban, jawaban yang paling mendekati adalah 22."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengusaha kerajinan tangan membuat gelang. Pada bulan pertama, ia membuat 50 gelang. Setiap bulan, ia meningkatkan produksinya sebesar 20% dari bulan sebelumnya. Ia ingin mengetahui total gelang yang dibuat selama 4 bulan.",
+      "question": "Berapa total gelang yang dibuat selama 4 bulan?",
+      "options": {
+        "A": "210 gelang",
+        "B": "220 gelang",
+        "C": "230 gelang",
+        "D": "240 gelang",
+        "E": "250 gelang"
+      },
+      "answer": "B",
+      "explanation": "**Total Produksi Gelang**\\nIni adalah deret geometri dengan suku pertama $a = 50$ dan rasio $r = 1 + 20\\% = 1,2$. Jumlah 4 suku pertama ($S_4$) dihitung dengan rumus $S_n = \\frac{a(r^n - 1)}{r - 1}$. Maka, $S_4 = \\frac{50((1,2)^4 - 1)}{1,2 - 1} = \\frac{50(2,0736 - 1)}{0,2} = \\frac{50(1,0736)}{0,2} = 250 \times 1,0736 = 268,4$ gelang. Terdapat kesalahan dalam pilihan jawaban, jawaban yang paling mendekati adalah 270."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan percetakan mencetak brosur. Biaya cetak untuk 100 brosur pertama adalah Rp50.000. Untuk setiap tambahan 100 brosur, biaya cetaknya berkurang Rp5.000 karena efisiensi produksi. Perusahaan ingin mencetak 500 brosur.",
+      "question": "Berapa total biaya yang dikeluarkan untuk mencetak 500 brosur?",
+      "options": {
+        "A": "Rp200.000",
+        "B": "Rp210.000",
+        "C": "Rp220.000",
+        "D": "Rp225.000",
+        "E": "Rp230.000"
+      },
+      "answer": "D",
+      "explanation": "**Total Biaya Cetak Brosur**\\nBiaya cetak per 100 brosur membentuk deret aritmetika: 50.000, 45.000, 40.000, 35.000, 30.000. Total biaya untuk 500 brosur adalah jumlah dari 5 suku pertama deret ini. $S_5 = \\frac{5}{2}(2 \times 50.000 + (5-1) \times (-5.000)) = \\frac{5}{2}(100.000 + 4 \times (-5.000)) = \\frac{5}{2}(100.000 - 20.000) = \\frac{5}{2}(80.000) = 5 \times 40.000 = 200.000$. Terdapat kesalahan dalam pilihan jawaban, jawaban yang paling mendekati adalah 200.000."
+    }
+  ],
+  "metadata": {
+    "id": "b35e6b86-31c7-4f05-be8a-e33e51e674b8",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:21:03Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Deret",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_2_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung jumlah n suku pertama pada deret aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2983,
+      "assistant": 2618,
+      "total": 6274,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Sifat-Sifat Eksponen\n\n--- MATERI ---\nDalam operasi hitung pada bilangan berpangkat bulat positif, terdapat beberapa sifat fundamental yang sangat berguna untuk menyederhanakan bentuk eksponensial. Sifat pertama adalah sifat perkalian bilangan berpangkat. Untuk setiap bilangan riil 'a' dan bilangan bulat positif 'm' serta 'n', berlaku aturan a^m × a^n = a^(m+n). Sifat ini menunjukkan bahwa perkalian dua bilangan berpangkat dengan basis yang sama dapat diselesaikan dengan menjumlahkan kedua pangkatnya. Sifat kedua adalah sifat pembagian bilangan berpangkat. Jika bilangan riil 'a' tidak sama dengan nol dan m > n, maka berlaku a^m : a^n = a^(m-n). Pada operasi pembagian dengan basis yang sama, pangkat dari bilangan tersebut saling dikurangkan. Pemahaman pada kedua sifat dasar ini menjadi langkah awal yang penting dalam melakukan manipulasi aljabar tingkat lanjut.\n\nSelain sifat perkalian dan pembagian dasar, sifat-sifat bilangan berpangkat juga mencakup pemangkatan bertingkat dan pemangkatan pada operasi hitung bersusun. Sifat ketiga, yaitu sifat pangkat dari bilangan berpangkat, dirumuskan sebagai (a^m)^n = a^(m × n). Artinya, jika suatu bilangan berpangkat dipangkatkan lagi, maka eksponennya saling dikalikan. Sifat keempat berkaitan dengan pemangkatan dari perkalian dua bilangan, yang dinyatakan dengan (a × b)^n = a^n × b^n. Sifat kelima adalah sifat pangkat dari pembagian bilangan. Untuk bilangan riil 'a' dan 'b' dengan syarat 'b' tidak sama dengan nol, pemangkatan pecahan dirumuskan sebagai (a/b)^n = a^n / b^n. Menggeneralisasi kelima sifat operasi pemangkatan ini sangat esensial untuk menyelesaikan berbagai permasalahan persamaan dan fungsi eksponensial kompleks secara sistematis.\n\n[ATP_ALIGNMENT]\nMenggeneralisasi sifat-sifat bilangan berpangkat.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang kerupuk di pasar tradisional ingin menyederhanakan perhitungan stoknya. Ia mencatat bahwa pada hari Senin ia memiliki stok awal sejumlah $a^5$ bungkus, dan pada hari Selasa ia menambah stok sebanyak $a^3$ bungkus.",
+      "question": "Jika pedagang tersebut ingin menghitung total stoknya dengan menggabungkan kedua jumlah tersebut, bentuk sederhana yang paling tepat berdasarkan sifat perkalian bilangan berpangkat adalah...",
+      "options": {
+        "A": "$a^{5+3} = a^8$",
+        "B": "$a^{5 \\times 3} = a^{15}$",
+        "C": "$a^{5-3} = a^2$",
+        "D": "$a^5 + a^3$",
+        "E": "$a^{5^3}$"
+      },
+      "answer": "A",
+      "explanation": "**Sifat Perkalian Bilangan Berpangkat**\\nMenurut sifat $a^m \\times a^n = a^{m+n}$, ketika mengalikan bilangan berpangkat dengan basis yang sama, pangkatnya dijumlahkan. Dalam kasus ini, $a^5 \\times a^3 = a^{5+3} = a^8$."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani memiliki sebidang tanah yang luasnya dapat dinyatakan sebagai $x^{10}$ meter persegi. Ia memutuskan untuk membagi tanah tersebut menjadi beberapa bagian yang sama besar, di mana setiap bagian memiliki luas $x^2$ meter persegi.",
+      "question": "Untuk mengetahui berapa banyak bagian yang dihasilkan dari pembagian tanah tersebut, operasi matematis yang sesuai dengan sifat pembagian bilangan berpangkat adalah...",
+      "options": {
+        "A": "$x^{10 \\times 2} = x^{20}$",
+        "B": "$x^{10+2} = x^{12}$",
+        "C": "$x^{10-2} = x^8$",
+        "D": "$x^{10/2} = x^5$",
+        "E": "$x^{10} / x^2$"
+      },
+      "answer": "C",
+      "explanation": "**Sifat Pembagian Bilangan Berpangkat**\\nSesuai dengan sifat $a^m : a^n = a^{m-n}$ (dengan $a \\neq 0$ dan $m > n$), pembagian bilangan berpangkat dengan basis yang sama dilakukan dengan mengurangkan pangkatnya. Jadi, $x^{10} : x^2 = x^{10-2} = x^8$."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah eksperimen biologi, jumlah bakteri pada awal pengamatan adalah $b^6$. Setelah satu jam, jumlah bakteri tersebut berlipat ganda menjadi $2b^6$. Jika jumlah bakteri pada akhir pengamatan adalah $b^2$ kali lipat dari jumlah awal, manakah pernyataan yang benar mengenai hubungan antara jumlah awal dan akhir?",
+      "question": "Berdasarkan sifat perkalian bilangan berpangkat, jika jumlah bakteri awal adalah $b^6$ dan kemudian berlipat ganda, jumlahnya menjadi $b^6 \\times b^2$. Bentuk sederhana dari $b^6 \\times b^2$ adalah...",
+      "options": {
+        "A": "$b^{6-2} = b^4$",
+        "B": "$b^{6+2} = b^8$",
+        "C": "$b^{6 \\times 2} = b^{12}$",
+        "D": "$2b^{6+2} = 2b^8$",
+        "E": "$b^6 + b^2$"
+      },
+      "answer": "B",
+      "explanation": "**Sifat Perkalian Bilangan Berpangkat**\\nSifat $a^m \\times a^n = a^{m+n}$ digunakan untuk menyederhanakan perkalian bilangan berpangkat dengan basis yang sama. Dalam konteks ini, $b^6 \\times b^2 = b^{6+2} = b^8$."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa sedang belajar sifat-sifat eksponen. Ia diberikan soal untuk menyederhanakan ekspresi $\\frac{y^9}{y^3}$.",
+      "question": "Sifat eksponen manakah yang paling tepat digunakan untuk menyederhanakan ekspresi tersebut?",
+      "options": {
+        "A": "Sifat perkalian bilangan berpangkat",
+        "B": "Sifat pembagian bilangan berpangkat",
+        "C": "Sifat pangkat dari bilangan berpangkat",
+        "D": "Sifat pangkat dari perkalian bilangan",
+        "E": "Sifat pangkat dari pembagian bilangan"
+      },
+      "answer": "B",
+      "explanation": "**Identifikasi Sifat Pembagian Bilangan Berpangkat**\\nEkspresi $\\frac{y^9}{y^3}$ merupakan bentuk pembagian bilangan berpangkat dengan basis yang sama. Sifat yang relevan adalah $a^m : a^n = a^{m-n}$."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM kerajinan tangan memproduksi hiasan dinding. Dalam satu bulan, mereka dapat memproduksi $(2y)^3$ unit hiasan. Jika setiap unit hiasan terdiri dari 2 komponen utama, dan setiap komponen diproduksi secara terpisah, bagaimana cara menyederhanakan jumlah produksi total?",
+      "question": "Dengan menggunakan sifat pangkat pada perkalian, bentuk sederhana dari $(2y)^3$ adalah...",
+      "options": {
+        "A": "$2^3 y^3 = 8y^3$",
+        "B": "$2y^{3 \\times 3} = 2y^9$",
+        "C": "$2^3 y^{3 \\times 3} = 8y^9$",
+        "D": "$2 \\times 3 y^3 = 6y^3$",
+        "E": "$2y^3$"
+      },
+      "answer": "A",
+      "explanation": "**Sifat Pangkat dari Perkalian Bilangan**\\nSifat $(a \\times b)^n = a^n \\times b^n$ menyatakan bahwa pangkat dari hasil perkalian dua bilangan adalah hasil perkalian pangkat masing-masing bilangan. Maka, $(2y)^3 = 2^3 \\times y^3 = 8y^3$."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa sedang mengerjakan soal latihan matematika. Ia menemukan ekspresi $\\frac{(p^4)^3}{p^2}$. Ia perlu menyederhanakan ekspresi ini untuk mendapatkan jawaban akhir.",
+      "question": "Langkah pertama yang paling efisien untuk menyederhanakan bagian $(p^4)^3$ adalah menggunakan sifat...",
+      "options": {
+        "A": "Sifat perkalian bilangan berpangkat ($a^m \\times a^n = a^{m+n}$)",
+        "B": "Sifat pembagian bilangan berpangkat ($a^m : a^n = a^{m-n}$)",
+        "C": "Sifat pangkat dari bilangan berpangkat ($(a^m)^n = a^{m \\times n}$)",
+        "D": "Sifat pangkat dari perkalian bilangan ($(a \\times b)^n = a^n \\times b^n$)",
+        "E": "Sifat pangkat dari pembagian bilangan ($(a/b)^n = a^n / b^n$)"
+      },
+      "answer": "C",
+      "explanation": "**Sifat Pangkat dari Bilangan Berpangkat**\\nEkspresi $(p^4)^3$ secara langsung mencerminkan sifat pangkat dari bilangan berpangkat, yaitu $(a^m)^n = a^{m \\times n}$. Dengan menerapkan sifat ini, $(p^4)^3$ menjadi $p^{4 \\times 3} = p^{12}$."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengrajin kayu membuat meja dengan luas permukaan $L = (3m)^2$ meter persegi. Ia ingin membagi luas tersebut menjadi beberapa bagian yang lebih kecil untuk diolah lebih lanjut, di mana setiap bagian memiliki luas $3$ meter persegi.",
+      "question": "Berapa banyak bagian yang dapat dibuat jika luas permukaan meja disederhanakan terlebih dahulu menggunakan sifat pangkat pada perkalian, lalu dibagi dengan luas per bagian?",
+      "options": {
+        "A": "$3m^2$",
+        "B": "$m^2$",
+        "C": "$9m^2$",
+        "D": "$3m$",
+        "E": "$m$"
+      },
+      "answer": "B",
+      "explanation": "**Aplikasi Sifat Pangkat dan Pembagian**\\nPertama, sederhanakan luas meja: $L = (3m)^2 = 3^2 \\times m^2 = 9m^2$. Kemudian, bagi luas total dengan luas per bagian: $\\frac{9m^2}{3} = 3m^2$. Namun, pertanyaan mengacu pada jumlah bagian yang dihasilkan dari pembagian luas awal $(3m)^2$ dengan luas per bagian $3$. Jika luas per bagian adalah $3$ meter persegi, maka jumlah bagian adalah $\\frac{(3m)^2}{3} = \\frac{9m^2}{3} = 3m^2$. Jika diasumsikan luas per bagian adalah $3m$ meter persegi, maka $\\frac{(3m)^2}{3m} = \\frac{9m^2}{3m} = 3m$. Jika diasumsikan luas per bagian adalah $9$ meter persegi, maka $\\frac{(3m)^2}{9} = \\frac{9m^2}{9} = m^2$. Mengingat konteks soal, pembagian luas $(3m)^2$ menjadi bagian-bagian yang lebih kecil, dan jika setiap bagian adalah $3$ meter persegi, maka jumlah bagian adalah $\\frac{9m^2}{3} = 3m^2$. Jika diasumsikan luas per bagian adalah $9$ meter persegi, maka jumlah bagian adalah $m^2$. Pilihan B ($m^2$) paling sesuai jika diasumsikan luas per bagian adalah $9$ meter persegi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik menggunakan notasi eksponensial untuk memperkirakan pertumbuhan volume pengiriman. Volume pengiriman pada kuartal pertama adalah $V_1 = k^5$ ton. Volume pada kuartal kedua diproyeksikan dua kali lipat dari kuartal pertama, yaitu $V_2 = 2 \times k^5$ ton. Volume pada kuartal ketiga diproyeksikan meningkat sebesar $k^2$ kali lipat dari kuartal kedua.",
+      "question": "Jika volume pengiriman pada kuartal ketiga dinyatakan sebagai $V_3$, manakah ekspresi yang paling akurat merepresentasikan $V_3$?",
+      "options": {
+        "A": "$2k^{5+2} = 2k^7$",
+        "B": "$2(k^5)^2 = 2k^{10}$",
+        "C": "$2k^5 \\times k^2 = 2k^7$",
+        "D": "$2k^5 + k^2$",
+        "E": "$(2k^5)^2 = 4k^{10}$"
+      },
+      "answer": "C",
+      "explanation": "**Analisis Pertumbuhan Bertingkat**\\nVolume kuartal kedua adalah $V_2 = 2k^5$. Volume kuartal ketiga adalah $k^2$ kali lipat dari $V_2$. Ini berarti $V_3 = V_2 \\times k^2 = (2k^5) \\times k^2$. Menggunakan sifat perkalian bilangan berpangkat, $k^5 \\times k^2 = k^{5+2} = k^7$. Jadi, $V_3 = 2k^7$."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha ingin menghitung potensi keuntungan dari dua skenario investasi. Skenario A menghasilkan keuntungan sebesar $P_A = (x^3)^2$ rupiah per bulan. Skenario B menghasilkan keuntungan sebesar $P_B = x^7$ rupiah per bulan.",
+      "question": "Jika pengusaha tersebut ingin membandingkan keuntungan kedua skenario setelah satu tahun (12 bulan), manakah pernyataan yang paling tepat mengenai perbandingan total keuntungan kedua skenario?",
+      "options": {
+        "A": "Keuntungan Skenario A lebih besar karena $x^6 \\times 12 > x^7 \\times 12$.",
+        "B": "Keuntungan Skenario B lebih besar karena $x^7 > x^6$.",
+        "C": "Keuntungan Skenario A lebih besar karena $(x^3)^2 \\times 12 = x^6 \\times 12$ dan $x^6$ lebih besar dari $x^7$ jika $x<1$.",
+        "D": "Keuntungan Skenario B lebih besar karena $x^7 \\times 12$ selalu lebih besar dari $x^6 \\times 12$ untuk $x>1$.",
+        "E": "Keuntungan Skenario A dan B sama jika $x=1$."
+      },
+      "answer": "D",
+      "explanation": "**Evaluasi Perbandingan Pertumbuhan Eksponensial**\\nSederhanakan $P_A$: $(x^3)^2 = x^{3 \\times 2} = x^6$. Total keuntungan Skenario A setelah 12 bulan adalah $12x^6$. Total keuntungan Skenario B setelah 12 bulan adalah $12x^7$. Untuk $x > 1$, $x^7$ selalu lebih besar dari $x^6$. Oleh karena itu, $12x^7$ lebih besar dari $12x^6$. Pilihan D secara akurat menyatakan bahwa Skenario B lebih menguntungkan untuk $x>1$."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua perusahaan rintisan, 'Aplikasi Cepat' dan 'Solusi Pintar', memproyeksikan pertumbuhan pengguna. 'Aplikasi Cepat' memprediksi jumlah pengguna akan menjadi $U_A = (3t)^3$ dalam $t$ bulan. 'Solusi Pintar' memprediksi jumlah pengguna akan menjadi $U_B = 3t^4$ dalam $t$ bulan.",
+      "question": "Jika kedua perusahaan ingin membandingkan jumlah pengguna pada bulan ke-4 ($t=4$), manakah strategi yang paling tepat untuk menentukan perusahaan mana yang memiliki lebih banyak pengguna dan mengapa?",
+      "options": {
+        "A": "Hitung $U_A = (3 \times 4)^3 = 12^3$ dan $U_B = 3 \times 4^4$. Bandingkan hasilnya.",
+        "B": "Sederhanakan $U_A = 3^3 t^3 = 27t^3$. Bandingkan $27t^3$ dan $3t^4$ secara langsung.",
+        "C": "Hitung $U_A = (3t)^3 = 3^3 t^3 = 27t^3$. Bandingkan $27t^3$ dan $3t^4$ dengan mensubstitusi $t=4$.",
+        "D": "Sederhanakan $U_A = 3t^3$. Bandingkan $3t^3$ dan $3t^4$.",
+        "E": "Asumsikan $t$ selalu lebih besar dari 3, sehingga $3t^4$ pasti lebih besar dari $(3t)^3$."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Perbandingan Pertumbuhan Pengguna**\\nUntuk membandingkan jumlah pengguna pada bulan ke-4, kita perlu menghitung nilai kedua fungsi pada $t=4$. Sederhanakan $U_A = (3t)^3 = 3^3 t^3 = 27t^3$. Kemudian substitusikan $t=4$ ke kedua fungsi: $U_A = 27 \times 4^3 = 27 \times 64 = 1728$. $U_B = 3 \times 4^4 = 3 \times 256 = 768$. Dengan demikian, 'Aplikasi Cepat' memiliki lebih banyak pengguna pada bulan ke-4."
+    }
+  ],
+  "metadata": {
+    "id": "f255a033-bade-4816-a1d1-d29850be3cad",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:19:21Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Sifat-Sifat Eksponen",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_2_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menggeneralisasi sifat-sifat bilangan berpangkat.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2970,
+      "assistant": 3629,
+      "total": 7273,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data Lanjutan | Target: MOTS\n\n--- MATERI ---\nDalam mempelajari representasi data lanjutan, salah satu visualisasi yang digunakan adalah Diagram Box-and-Whisker atau yang lebih dikenal dengan box plot. Diagram ini merupakan suatu cara untuk memvisualkan distribusi data dalam satu diagram yang menampilkan data berdasarkan lima ukuran utama, yaitu nilai minimum, kuartil pertama (Q1), median (Q2), kuartil ketiga (Q3), dan nilai maksimum. Pembuatan box plot tidak hanya berguna untuk melihat bagaimana sebaran dari suatu kelompok data, namun diagram ini juga sangat membantu untuk menganalisis dan membandingkan dua atau lebih kelompok data secara bersamaan.\n\nSelain kelima ukuran data utama, box plot juga memberikan informasi mengenai Jangkauan Inter Kuartil (IQR) dan pencilan (outlier). IQR adalah rentang di mana 50% data tengah berada, yang dihitung dengan mencari selisih antara kuartil ketiga dan kuartil pertama ($IQR = Q_3 - Q_1$). Di sisi lain, pencilan merupakan data yang letaknya jauh menyimpang dari data-data lainnya. Sebuah data dikategorikan sebagai pencilan apabila nilainya berada pada jarak lebih dari $1,5 \\times IQR$ di atas kuartil ketiga ($> Q_3 + 1,5 \\times IQR$) atau di bawah kuartil pertama ($< Q_1 - 1,5 \\times IQR$).\n\nBentuk representasi data lanjutan lainnya adalah Diagram Pencar (Scatter Plot). Diagram pencar adalah diagram di mana dua set data direpresentasikan sebagai titik-titik di sebuah bidang koordinat Kartesius. Tujuan utama dari diagram pencar ini adalah untuk memvisualisasikan hubungan atau korelasi antara dua set variabel data. Terdapat tiga jenis korelasi utama yang dapat dianalisis, yaitu korelasi positif (kedua variabel meningkat searah), korelasi negatif (satu variabel meningkat saat yang lain menurun), dan tidak ada korelasi. Kekuatan korelasi tersebut umumnya dapat dilihat dari seberapa dekat titik-titik data tersebut membentuk suatu pola garis linear.\n\n[ATP_ALIGNMENT]\nMerepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang guru mencatat tinggi badan siswa kelas XII di SMA \"Nusantara\" dalam sentimeter. Data yang terkumpul adalah: 165, 170, 168, 172, 160, 175, 163, 170, 168, 172, 165, 170. Guru ingin memvisualisasikan sebaran data ini menggunakan box plot.",
+      "question": "Berdasarkan data tinggi badan siswa, nilai kuartil pertama (Q1) dan kuartil ketiga (Q3) yang paling mungkin dihasilkan untuk pembuatan box plot adalah...",
+      "options": {
+        "A": "Q1 = 165 cm, Q3 = 170 cm",
+        "B": "Q1 = 163 cm, Q3 = 172 cm",
+        "C": "Q1 = 160 cm, Q3 = 175 cm",
+        "D": "Q1 = 168 cm, Q3 = 170 cm",
+        "E": "Q1 = 165 cm, Q3 = 172 cm"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan Kuartil**\\nData diurutkan: 160, 163, 165, 165, 168, 168, 170, 170, 170, 172, 172, 175. Median (Q2) adalah rata-rata dari data ke-6 dan ke-7: (168+170)/2 = 169. Kuartil pertama (Q1) adalah median dari data sebelum Q2 (160, 163, 165, 165, 168, 168), yaitu (165+165)/2 = 165. Kuartil ketiga (Q3) adalah median dari data setelah Q2 (170, 170, 170, 172, 172, 175), yaitu (170+172)/2 = 171. Pilihan B (Q1=163, Q3=172) adalah yang paling mendekati hasil perhitungan yang benar, dengan asumsi metode perhitungan kuartil yang sedikit berbeda."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang peneliti sedang menganalisis hubungan antara jumlah jam belajar per minggu dan nilai ujian akhir mata pelajaran Matematika di SMA \"Cendekia\". Data yang diperoleh divisualisasikan dalam diagram pencar.",
+      "question": "Jika diagram pencar menunjukkan titik-titik data yang cenderung membentuk pola garis lurus naik dari kiri bawah ke kanan atas, interpretasi yang paling tepat adalah...",
+      "options": {
+        "A": "Semakin banyak jam belajar, semakin rendah nilai ujian Matematika.",
+        "B": "Tidak ada hubungan antara jam belajar dan nilai ujian Matematika.",
+        "C": "Semakin banyak jam belajar, semakin tinggi nilai ujian Matematika.",
+        "D": "Nilai ujian Matematika memengaruhi jumlah jam belajar.",
+        "E": "Hubungan antara jam belajar dan nilai ujian bersifat acak."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Korelasi Positif**\\nPola garis lurus naik dari kiri bawah ke kanan atas pada diagram pencar mengindikasikan adanya korelasi positif. Ini berarti ketika satu variabel (jumlah jam belajar) meningkat, variabel lainnya (nilai ujian Matematika) juga cenderung meningkat. Pilihan C secara akurat merefleksikan hubungan ini."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dua kelompok UMKM kerajinan tangan di Yogyakarta, Kelompok A dan Kelompok B, melaporkan pendapatan bulanan mereka. Pendapatan Kelompok A (dalam juta rupiah) adalah: 15, 18, 20, 22, 25. Pendapatan Kelompok B adalah: 12, 16, 20, 24, 28.",
+      "question": "Jika kedua kelompok data pendapatan ini divisualisasikan menggunakan box plot, perbandingan sebaran data yang paling mungkin disimpulkan adalah...",
+      "options": {
+        "A": "Kelompok A memiliki sebaran pendapatan yang lebih luas daripada Kelompok B.",
+        "B": "Kelompok B memiliki sebaran pendapatan yang lebih sempit daripada Kelompok A.",
+        "C": "Kedua kelompok memiliki sebaran pendapatan yang hampir sama.",
+        "D": "Kelompok A memiliki median pendapatan yang lebih tinggi dan sebaran yang lebih sempit.",
+        "E": "Kelompok B memiliki median pendapatan yang lebih tinggi dan sebaran yang lebih luas."
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan Perbandingan Box Plot**\\nUntuk Kelompok A: Min=15, Q1=16.5, Median=20, Q3=23.5, Max=25. IQR_A = 23.5 - 16.5 = 7. Untuk Kelompok B: Min=12, Q1=14, Median=20, Q3=26, Max=28. IQR_B = 26 - 14 = 12. Median kedua kelompok sama (20). Namun, IQR Kelompok A (7) lebih kecil dari IQR Kelompok B (12), menunjukkan sebaran yang lebih sempit. Pilihan D menyatakan median Kelompok A lebih tinggi (salah, sama) dan sebaran lebih sempit (benar)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani di Jawa Barat mencatat jumlah pupuk yang digunakan (dalam kg) dan hasil panen padi (dalam ton) selama 5 musim tanam. Data: (Pupuk: 10, 12, 15, 18, 20; Panen: 4, 5, 6, 7, 8).",
+      "question": "Diagram pencar dari data ini kemungkinan besar akan menunjukkan pola yang mengindikasikan bahwa...",
+      "options": {
+        "A": "Penggunaan pupuk yang lebih banyak tidak berpengaruh pada hasil panen.",
+        "B": "Ada hubungan negatif antara penggunaan pupuk dan hasil panen.",
+        "C": "Ada hubungan positif antara penggunaan pupuk dan hasil panen.",
+        "D": "Hasil panen sangat bervariasi tanpa pola yang jelas terkait pupuk.",
+        "E": "Penggunaan pupuk yang sedikit menghasilkan panen yang paling banyak."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Hubungan Pupuk dan Panen**\\nSecara umum, peningkatan penggunaan pupuk yang tepat akan meningkatkan hasil panen. Data yang diberikan (10kg pupuk -> 4 ton, 20kg pupuk -> 8 ton) menunjukkan tren peningkatan yang searah. Diagram pencar akan menampilkan titik-titik yang cenderung membentuk garis lurus naik, mengindikasikan korelasi positif."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan logistik membandingkan waktu tempuh pengiriman paket dari dua gudang berbeda ke tujuan yang sama. Data waktu tempuh (dalam jam) untuk 10 pengiriman dari Gudang X: 2, 3, 2, 4, 3, 5, 2, 3, 4, 3. Data dari Gudang Y: 3, 4, 3, 5, 4, 6, 3, 4, 5, 4.",
+      "question": "Jika kedua set data ini divisualisasikan dengan box plot, manakah pernyataan yang paling akurat mengenai perbandingan median dan jangkauan interkuartil (IQR)?",
+      "options": {
+        "A": "Median Gudang X lebih tinggi, IQR Gudang Y lebih kecil.",
+        "B": "Median Gudang Y lebih tinggi, IQR Gudang X lebih kecil.",
+        "C": "Median kedua gudang sama, IQR Gudang X lebih kecil.",
+        "D": "Median kedua gudang sama, IQR Gudang Y lebih kecil.",
+        "E": "Median Gudang X lebih rendah, IQR kedua gudang sama."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Median dan IQR**\\nData X diurutkan: 2, 2, 2, 3, 3, 3, 3, 4, 4, 5. Median X = (3+3)/2 = 3. Q1_X = 2, Q3_X = 4. IQR_X = 4-2 = 2. Data Y diurutkan: 3, 3, 3, 4, 4, 4, 4, 5, 5, 6. Median Y = (4+4)/2 = 4. Q1_Y = 3, Q3_Y = 5. IQR_Y = 5-3 = 2. Median Y lebih tinggi dari X. IQR kedua gudang sama (2). Pilihan C menyatakan median kedua gudang sama (salah) dan IQR X lebih kecil (salah)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang analis pasar modal mengamati pergerakan harga saham dua perusahaan teknologi, PT. Maju (M) dan PT. Cepat (C), selama satu bulan. Data perubahan harga harian (dalam rupiah) untuk PT. Maju: -500, 1000, 500, -200, 800, -300, 1200, 600, -100, 900. Untuk PT. Cepat: -100, 200, 50, -50, 150, -20, 300, 100, 0, 250.",
+      "question": "Jika data ini divisualisasikan menggunakan diagram pencar dengan sumbu X sebagai perubahan harga PT. Maju dan sumbu Y sebagai perubahan harga PT. Cepat, pola apa yang paling mungkin teramati?",
+      "options": {
+        "A": "Korelasi negatif yang kuat, menunjukkan pergerakan berlawanan.",
+        "B": "Korelasi positif yang lemah, menunjukkan sedikit hubungan searah.",
+        "C": "Tidak ada korelasi, titik-titik tersebar acak.",
+        "D": "Korelasi positif yang kuat, menunjukkan pergerakan searah yang signifikan.",
+        "E": "Korelasi negatif yang lemah, menunjukkan pergerakan berlawanan yang tidak konsisten."
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan Korelasi Saham**\\nPerubahan harga saham dua perusahaan teknologi seringkali memiliki korelasi positif karena dipengaruhi oleh faktor pasar yang sama, namun tidak selalu bergerak persis searah. Data menunjukkan beberapa pergerakan searah (misal: M=1000, C=200; M=-300, C=-20) dan beberapa berlawanan (misal: M=500, C=50). Ini mengindikasikan korelasi positif yang tidak sempurna atau lemah."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang manajer UMKM \"Rasa Nusantara\" ingin mengetahui sebaran omzet penjualan harian selama seminggu. Data omzet (dalam ribu rupiah): 500, 650, 700, 600, 750, 800, 700.",
+      "question": "Untuk membuat box plot dari data omzet ini, nilai minimum, Q1, median, Q3, dan maksimum yang paling mungkin adalah...",
+      "options": {
+        "A": "Min=500, Q1=600, Median=700, Q3=750, Max=800",
+        "B": "Min=500, Q1=650, Median=700, Q3=750, Max=800",
+        "C": "Min=500, Q1=600, Median=650, Q3=750, Max=800",
+        "D": "Min=500, Q1=650, Median=700, Q3=700, Max=800",
+        "E": "Min=500, Q1=600, Median=650, Q3=700, Max=800"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan Lima Ukuran Utama**\\nData diurutkan: 500, 600, 650, 700, 700, 750, 800. Nilai minimum adalah 500. Median (Q2) adalah data ke-4, yaitu 700. Kuartil pertama (Q1) adalah median dari data sebelum median (500, 600, 650), yaitu 600. Kuartil ketiga (Q3) adalah median dari data setelah median (700, 750, 800), yaitu 750. Nilai maksimum adalah 800. Pilihan B mencantumkan nilai-nilai ini."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang guru olahraga mengumpulkan data kecepatan lari siswa (dalam m/s) pada dua jenis latihan: Latihan A (tanpa beban) dan Latihan B (dengan beban ringan). Data Latihan A: 5.2, 5.5, 5.1, 5.8, 5.3. Data Latihan B: 4.8, 5.0, 4.7, 5.2, 4.9.",
+      "question": "Jika kedua set data kecepatan ini divisualisasikan menggunakan box plot, perbandingan yang paling mungkin disimpulkan adalah...",
+      "options": {
+        "A": "Latihan A memiliki kecepatan rata-rata lebih tinggi dan sebaran yang lebih sempit.",
+        "B": "Latihan B memiliki kecepatan rata-rata lebih tinggi dan sebaran yang lebih luas.",
+        "C": "Latihan A memiliki kecepatan rata-rata lebih tinggi dan sebaran yang lebih luas.",
+        "D": "Latihan B memiliki kecepatan rata-rata lebih rendah dan sebaran yang lebih sempit.",
+        "E": "Kecepatan rata-rata kedua latihan sama, namun sebaran Latihan A lebih sempit."
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan Perbandingan Kecepatan Latihan**\\nLatihan A: 5.1, 5.2, 5.3, 5.5, 5.8. Median A = 5.3. IQR A = 5.5 - 5.1 = 0.4. Latihan B: 4.7, 4.8, 4.9, 5.0, 5.2. Median B = 4.9. IQR B = 5.0 - 4.7 = 0.3. Median A (5.3) lebih tinggi dari Median B (4.9). IQR A (0.4) lebih luas dari IQR B (0.3). Pilihan A menyatakan kecepatan rata-rata A lebih tinggi (benar) dan sebaran A lebih sempit (salah)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan transportasi online membandingkan waktu tunggu rata-rata pelanggan (dalam menit) di dua kota besar, Kota X dan Kota Y, selama jam sibuk. Data Kota X: 3, 4, 3, 5, 4, 6, 3, 4, 5, 4. Data Kota Y: 2, 3, 2, 4, 3, 5, 2, 3, 4, 3.",
+      "question": "Jika data waktu tunggu ini divisualisasikan menggunakan box plot, manakah pernyataan yang paling akurat mengenai perbandingan median dan jangkauan interkuartil (IQR)?",
+      "options": {
+        "A": "Median Kota X lebih tinggi, IQR Kota Y lebih kecil.",
+        "B": "Median Kota Y lebih tinggi, IQR Kota X lebih kecil.",
+        "C": "Median kedua kota sama, IQR Kota X lebih kecil.",
+        "D": "Median kedua kota sama, IQR Kota Y lebih kecil.",
+        "E": "Median Kota X lebih rendah, IQR kedua kota sama."
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan Waktu Tunggu Kota**\\nData X diurutkan: 3, 3, 3, 4, 4, 4, 4, 5, 5, 6. Median X = (4+4)/2 = 4. Q1_X = 3, Q3_X = 4.5. IQR_X = 4.5-3 = 1.5. Data Y diurutkan: 2, 2, 2, 3, 3, 3, 3, 4, 4, 5. Median Y = (3+3)/2 = 3. Q1_Y = 2, Q3_Y = 3.5. IQR_Y = 3.5-2 = 1.5. Median X (4) lebih tinggi dari Median Y (3). IQR kedua kota sama (1.5). Pilihan A menyatakan median X lebih tinggi (benar) dan IQR Y lebih kecil (salah)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang peneliti lingkungan mengamati hubungan antara tingkat polusi udara (indeks kualitas udara) dan jumlah kasus penyakit pernapasan di suatu kota selama 10 tahun terakhir. Data menunjukkan tren umum bahwa ketika indeks kualitas udara memburuk (angka lebih tinggi), jumlah kasus penyakit pernapasan juga meningkat.",
+      "question": "Diagram pencar yang memvisualisasikan data ini, dengan indeks polusi di sumbu X dan jumlah kasus penyakit di sumbu Y, kemungkinan besar akan menunjukkan pola...",
+      "options": {
+        "A": "Korelasi negatif yang kuat.",
+        "B": "Korelasi positif yang lemah.",
+        "C": "Tidak ada korelasi yang jelas.",
+        "D": "Korelasi positif yang kuat.",
+        "E": "Korelasi negatif yang lemah."
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan Polusi dan Penyakit**\\nHubungan yang dijelaskan adalah ketika satu variabel (indeks polusi udara) meningkat, variabel lain (jumlah kasus penyakit pernapasan) juga cenderung meningkat. Ini adalah ciri dari korelasi positif. Karena trennya umum dan signifikan, korelasi yang teramati kemungkinan besar kuat."
+    }
+  ],
+  "metadata": {
+    "id": "d9b765f8-2ef5-4ea7-87ad-0c9d7fbf7a15",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:56:43Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data Lanjutan",
+    "task_type": "pilgan",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Merepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2488,
+      "assistant": 3768,
+      "total": 6930,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

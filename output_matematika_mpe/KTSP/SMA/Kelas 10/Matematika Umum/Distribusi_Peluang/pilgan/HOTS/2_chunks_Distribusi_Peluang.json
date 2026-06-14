@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang | Target: HOTS\n\n--- MATERI ---\nDalam kajian peluang, langkah esensial pertama yang harus dikuasai adalah memahami konsep percobaan, ruang sampel, dan titik sampel. Percobaan diartikan sebagai suatu tindakan atau kegiatan yang dapat memberikan beberapa kemungkinan hasil. Kumpulan dari semua hasil yang mungkin terjadi dari suatu percobaan tersebut dinamakan ruang sampel, yang secara matematis senantiasa dinotasikan dengan himpunan S. Sementara itu, setiap anggota tunggal yang terdapat di dalam ruang sampel disebut sebagai titik sampel. Banyaknya anggota atau titik sampel dalam suatu ruang sampel dinotasikan dengan n(S). Sebagai contoh, pada percobaan pelemparan sebuah dadu bersisi enam yang setimbang, ruang sampel yang terbentuk adalah S = {1, 2, 3, 4, 5, 6}. Dari himpunan tersebut, kita dapat menentukan bahwa banyaknya anggota ruang sampel atau n(S) adalah 6.\n\nSetelah ruang sampel berhasil diidentifikasi, kita dapat melangkah pada penentuan nilai peluang suatu kejadian. Kejadian, yang umumnya dilambangkan dengan huruf kapital seperti A atau B, merupakan himpunan bagian dari ruang sampel S. Banyaknya titik sampel untuk kejadian A dinotasikan dengan n(A). Peluang teoretis atau probabilitas dari kejadian A, ditulis P(A), dihitung berdasarkan perbandingan antara banyaknya kejadian A yang diharapkan terjadi terhadap total banyaknya seluruh kemungkinan hasil pada ruang sampel. Secara matematis, rumusnya dituliskan sebagai P(A) = n(A) / n(S). Mengacu pada contoh pelemparan dadu sebelumnya, apabila A adalah kejadian munculnya mata dadu bernilai genap, maka A = {2, 4, 6} sehingga n(A) = 3. Dengan demikian, peluang munculnya mata dadu genap adalah P(A) = 3/6, yang dapat disederhanakan menjadi 1/2.\n\n[ATP_ALIGNMENT]\nMenentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional memiliki 5 jenis buah: apel, jeruk, mangga, pisang, dan anggur. Ia berencana membuat paket buah campuran untuk dijual. Setiap paket harus berisi tepat 3 jenis buah yang berbeda.",
+      "question": "Jika pedagang tersebut ingin memastikan setiap kombinasi paket buah yang mungkin dibuatnya unik, strategi apa yang paling efisien untuk menghitung jumlah total variasi paket yang dapat dibuat?",
+      "options": {
+        "A": "Menghitung semua kemungkinan urutan pemilihan 3 buah dari 5 jenis, lalu membaginya dengan jumlah permutasi dari 3 buah.",
+        "B": "Menggunakan rumus kombinasi untuk memilih 3 jenis buah dari 5 jenis yang tersedia.",
+        "C": "Mencatat setiap kemungkinan pemilihan 3 buah secara manual dan menghilangkannya jika ada yang sama.",
+        "D": "Menghitung jumlah permutasi 3 buah dari 5 jenis, karena urutan pemilihan buah dalam paket penting.",
+        "E": "Menjumlahkan jumlah jenis buah (5) dengan jumlah buah per paket (3)."
+      },
+      "answer": "B",
+      "explanation": "**Strategi Efisien untuk Variasi Paket Buah**\\nMetode paling efisien adalah menggunakan konsep kombinasi. Kombinasi digunakan karena urutan pemilihan buah dalam paket tidak mempengaruhi jenis paketnya (misalnya, paket apel-jeruk-mangga sama dengan paket jeruk-mangga-apel). Rumus kombinasi C(n, k) = n! / (k!(n-k)!) secara langsung menghitung jumlah cara memilih k item dari n item tanpa memperhatikan urutan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM kerupuk udang memproduksi kerupuk dalam 3 varian rasa: original, pedas, dan manis. Setiap bungkus kerupuk diberi nomor seri unik dari 001 hingga 150. Terdapat mesin pengemas yang terkadang macet.",
+      "question": "Manajer produksi ingin menganalisis risiko produksi. Jika mesin pengemas memiliki probabilitas 0.05 untuk macet pada setiap siklus pengemasan 10 bungkus, dan setiap nomor seri harus dikemas sempurna, strategi evaluasi risiko apa yang paling tepat untuk menentukan kemungkinan seluruh 150 bungkus dikemas tanpa macet?",
+      "options": {
+        "A": "Menghitung probabilitas mesin tidak macet pada satu siklus (0.95) lalu memangkatkannya dengan jumlah siklus (15).",
+        "B": "Mengalikan probabilitas macet (0.05) dengan jumlah total bungkus (150).",
+        "C": "Menjumlahkan probabilitas macet untuk setiap bungkus.",
+        "D": "Mengabaikan risiko macet karena jumlahnya kecil.",
+        "E": "Menghitung probabilitas mesin macet pada satu siklus (0.05) lalu memangkatkannya dengan jumlah siklus (15)."
+      },
+      "answer": "A",
+      "explanation": "**Evaluasi Risiko Produksi Kerupuk**\\nUntuk menentukan kemungkinan seluruh 150 bungkus dikemas tanpa macet, kita perlu menghitung probabilitas mesin tidak macet dalam setiap siklus pengemasan. Ada 15 siklus (150 bungkus / 10 bungkus per siklus). Probabilitas tidak macet per siklus adalah 1 - 0.05 = 0.95. Probabilitas seluruhnya tanpa macet adalah (0.95)^15."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah sekolah mengadakan pemilihan ketua OSIS. Ada 3 kandidat: Adi, Budi, dan Citra. Sebanyak 300 siswa memberikan suara. Adi mendapat 120 suara, Budi mendapat 100 suara, dan Citra mendapat 80 suara. Sisa suara (10 suara) tidak sah.",
+      "question": "Jika panitia ingin menganalisis efektivitas kampanye masing-masing kandidat berdasarkan perolehan suara sah, keputusan strategis apa yang paling tepat untuk diambil berdasarkan data ini?",
+      "options": {
+        "A": "Menyimpulkan bahwa kampanye Adi paling efektif karena mendapat suara terbanyak.",
+        "B": "Menganalisis rasio suara sah terhadap total suara yang diberikan untuk setiap kandidat.",
+        "C": "Membandingkan jumlah suara tidak sah dengan total suara sah untuk menilai kualitas proses pemilihan.",
+        "D": "Menghitung selisih suara antara kandidat teratas dan terbawah untuk mengukur tingkat persaingan.",
+        "E": "Menyatakan bahwa kampanye Budi dan Citra sama-sama kurang efektif karena tidak memenangkan pemilihan."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Efektivitas Kampanye Kandidat**\\nUntuk menganalisis efektivitas kampanye secara kuantitatif, perbandingan rasio suara sah terhadap total suara yang diberikan (termasuk suara tidak sah) memberikan gambaran yang lebih objektif mengenai jangkauan dan penerimaan kandidat di kalangan seluruh pemilih, bukan hanya pemilih sah."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 1 hektar. Ia menanam padi jenis A yang menghasilkan rata-rata 6 ton per hektar dan padi jenis B yang menghasilkan rata-rata 7 ton per hektar. Biaya tanam per hektar untuk jenis A adalah Rp 5.000.000 dan untuk jenis B adalah Rp 6.000.000.",
+      "question": "Petani tersebut ingin memaksimalkan keuntungan. Jika harga jual padi jenis A adalah Rp 4.000/kg dan jenis B adalah Rp 4.500/kg, strategi penanaman apa yang paling menguntungkan jika ia hanya bisa menanam salah satu jenis padi di lahannya?",
+      "options": {
+        "A": "Menanam padi jenis A karena biaya tanamnya lebih rendah.",
+        "B": "Menanam padi jenis B karena harga jual per kilogramnya lebih tinggi.",
+        "C": "Menghitung total pendapatan dan total biaya untuk masing-masing jenis padi, lalu membandingkan keuntungannya.",
+        "D": "Memilih jenis padi yang menghasilkan tonase paling tinggi per hektar.",
+        "E": "Membagi lahan untuk menanam kedua jenis padi agar risiko kerugian berkurang."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Penanaman untuk Keuntungan Maksimal**\\nUntuk menentukan strategi yang paling menguntungkan, petani harus menghitung potensi keuntungan bersih dari masing-masing jenis padi. Ini melibatkan perhitungan total pendapatan (tonase x harga jual) dan total biaya tanam, kemudian mencari selisihnya (keuntungan) untuk setiap jenis padi dan membandingkannya."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi lokal memiliki 20 armada bus. Sebanyak 15 bus beroperasi di rute kota A dan 5 bus di rute kota B. Rata-rata setiap bus di rute A menempuh 200 km per hari, dan di rute B menempuh 250 km per hari. Biaya operasional per km adalah Rp 1.500.",
+      "question": "Manajer operasional ingin mengevaluasi efisiensi penggunaan armada. Jika target harian adalah meminimalkan biaya operasional total sambil tetap melayani kedua rute, analisis apa yang paling relevan untuk dilakukan?",
+      "options": {
+        "A": "Menghitung total jarak tempuh harian untuk rute A dan rute B secara terpisah.",
+        "B": "Membandingkan jumlah bus yang beroperasi di kedua rute.",
+        "C": "Menghitung total biaya operasional harian untuk kedua rute dan menganalisis kontribusi masing-masing rute terhadap total biaya.",
+        "D": "Menghitung rata-rata jarak tempuh per bus di seluruh armada.",
+        "E": "Mengusulkan penambahan bus di rute B karena jarak tempuhnya lebih jauh."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Efisiensi Biaya Operasional Armada**\\nUntuk mengevaluasi efisiensi dan meminimalkan biaya, manajer perlu menghitung total biaya operasional harian untuk setiap rute (jumlah bus x jarak tempuh x biaya per km) dan kemudian menjumlahkannya. Analisis kontribusi masing-masing rute terhadap total biaya akan menunjukkan area mana yang paling signifikan dalam pengeluaran."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko kelontong menjual 3 jenis minuman: teh botol, air mineral, dan jus kemasan. Stok awal teh botol adalah 50 unit, air mineral 80 unit, dan jus kemasan 40 unit. Dalam sehari, terjual 30 teh botol, 50 air mineral, dan 25 jus kemasan.",
+      "question": "Pemilik toko ingin memastikan ketersediaan stok untuk menghindari kehabisan barang. Strategi manajemen stok apa yang paling tepat untuk memprediksi kapan suatu jenis minuman akan habis?",
+      "options": {
+        "A": "Menghitung selisih antara stok awal dan stok terjual untuk setiap jenis minuman.",
+        "B": "Membandingkan jumlah stok awal dari ketiga jenis minuman.",
+        "C": "Menghitung sisa stok untuk setiap jenis minuman di akhir hari.",
+        "D": "Membagi stok awal dengan jumlah yang terjual per hari untuk memprediksi berapa hari stok akan bertahan.",
+        "E": "Menjumlahkan semua stok awal dan semua stok terjual."
+      },
+      "answer": "D",
+      "explanation": "**Prediksi Ketersediaan Stok Minuman**\\nUntuk memprediksi kapan suatu jenis minuman akan habis, strategi yang paling tepat adalah membagi jumlah stok awal dengan rata-rata jumlah yang terjual per hari. Hasilnya akan menunjukkan perkiraan berapa hari stok tersebut akan mencukupi sebelum habis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah acara pentas seni sekolah, panitia menyediakan 3 jenis stan makanan: sate, bakso, dan mie ayam. Stan sate memiliki 5 varian tusuk, stan bakso memiliki 4 varian porsi, dan stan mie ayam memiliki 3 varian topping.",
+      "question": "Jika seorang pengunjung ingin mencoba satu varian dari setiap jenis makanan, keputusan strategis apa yang paling efisien untuk menentukan total kombinasi pilihan yang tersedia?",
+      "options": {
+        "A": "Menjumlahkan jumlah varian dari setiap stan makanan.",
+        "B": "Mengalikan jumlah varian dari setiap stan makanan.",
+        "C": "Menghitung permutasi dari total varian yang tersedia.",
+        "D": "Memilih satu varian secara acak dari setiap stan.",
+        "E": "Mencatat setiap kombinasi yang mungkin secara manual."
+      },
+      "answer": "B",
+      "explanation": "**Menentukan Total Kombinasi Pilihan Makanan**\\nUntuk menentukan total kombinasi pilihan yang tersedia ketika pengunjung memilih satu varian dari setiap jenis makanan, prinsip perkalian (aturan perkalian) digunakan. Ini karena setiap pilihan varian dari satu jenis makanan dapat dikombinasikan dengan setiap pilihan varian dari jenis makanan lainnya."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tahu di desa Sukamaju memproduksi tahu dalam 2 ukuran: kecil dan besar. Setiap hari, mereka memproduksi 1000 unit tahu kecil dan 500 unit tahu besar. Harga jual tahu kecil Rp 500/unit dan tahu besar Rp 800/unit. Biaya produksi per unit tahu kecil Rp 300 dan tahu besar Rp 450.",
+      "question": "Manajer pabrik ingin memaksimalkan keuntungan harian. Strategi evaluasi profitabilitas apa yang paling tepat untuk menentukan fokus produksi?",
+      "options": {
+        "A": "Membandingkan jumlah unit yang diproduksi untuk setiap ukuran.",
+        "B": "Menghitung total pendapatan dari kedua ukuran tahu.",
+        "C": "Menghitung keuntungan per unit untuk setiap ukuran tahu, lalu mengalikannya dengan jumlah produksi masing-masing.",
+        "D": "Menjumlahkan harga jual kedua ukuran tahu.",
+        "E": "Membandingkan biaya produksi kedua ukuran tahu."
+      },
+      "answer": "C",
+      "explanation": "**Evaluasi Profitabilitas Produksi Tahu**\\nUntuk mengevaluasi profitabilitas, langkah paling tepat adalah menghitung keuntungan per unit untuk setiap ukuran tahu (harga jual - biaya produksi). Kemudian, kalikan keuntungan per unit ini dengan jumlah unit yang diproduksi untuk masing-masing ukuran untuk mendapatkan total keuntungan harian dari setiap jenis tahu, lalu bandingkan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah koperasi simpan pinjam di lingkungan perumahan memiliki 100 anggota. Sebanyak 60 anggota meminjam uang dengan rata-rata pinjaman Rp 2.000.000, dan 40 anggota menyimpan uang dengan rata-rata simpanan Rp 1.500.000. Bunga pinjaman 1% per bulan, bunga simpanan 0.5% per bulan.",
+      "question": "Ketua koperasi ingin menganalisis kesehatan finansial lembaga. Keputusan strategis apa yang paling tepat untuk menilai apakah koperasi untung atau rugi dalam satu bulan?",
+      "options": {
+        "A": "Menghitung total uang yang dipinjamkan dan total uang yang disimpan.",
+        "B": "Membandingkan jumlah anggota peminjam dan penyimpan.",
+        "C": "Menghitung total pendapatan bunga pinjaman dan total pengeluaran bunga simpanan, lalu mencari selisihnya.",
+        "D": "Menghitung rata-rata pinjaman dan rata-rata simpanan.",
+        "E": "Menyatakan bahwa koperasi untung jika jumlah peminjam lebih banyak dari penyimpan."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Kesehatan Finansial Koperasi**\\nUntuk menilai kesehatan finansial, ketua koperasi harus menghitung total pendapatan bunga dari pinjaman (total pinjaman x bunga pinjaman) dan total pengeluaran bunga untuk simpanan (total simpanan x bunga simpanan). Selisih antara pendapatan dan pengeluaran bunga ini akan menunjukkan keuntungan atau kerugian bersih koperasi dalam satu bulan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah tim peneliti dari universitas lokal sedang menguji efektivitas pupuk organik baru. Mereka membagi lahan percobaan menjadi 4 petak yang identik. Petak 1 diberi pupuk A (kontrol), Petak 2 diberi pupuk B, Petak 3 diberi pupuk C, dan Petak 4 diberi pupuk D. Hasil panen per petak adalah: Petak 1 (3.5 kg), Petak 2 (4.2 kg), Petak 3 (3.9 kg), Petak 4 (4.5 kg).",
+      "question": "Jika tujuan utama penelitian adalah memilih pupuk yang paling efektif meningkatkan hasil panen, strategi analisis data apa yang paling tepat untuk membuat keputusan?",
+      "options": {
+        "A": "Membandingkan jumlah hasil panen dari semua petak.",
+        "B": "Menghitung rata-rata hasil panen dari semua petak.",
+        "C": "Membandingkan hasil panen setiap petak dengan petak kontrol (pupuk A) untuk melihat peningkatan.",
+        "D": "Menghitung selisih hasil panen antara petak dengan hasil tertinggi dan terendah.",
+        "E": "Menyatakan bahwa pupuk D paling efektif karena menghasilkan panen tertinggi."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Efektivitas Pupuk Organik**\\nUntuk menentukan pupuk yang paling efektif, strategi analisis yang paling tepat adalah membandingkan hasil panen dari setiap petak yang menggunakan pupuk baru (B, C, D) dengan hasil panen petak kontrol (A). Perbandingan ini secara langsung menunjukkan seberapa besar peningkatan hasil panen yang diberikan oleh masing-masing pupuk organik baru."
+    }
+  ],
+  "metadata": {
+    "id": "a55ec7e3-18de-469b-b27c-d8151f247316",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:06:37Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_2_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2490,
+      "assistant": 4177,
+      "total": 7341,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

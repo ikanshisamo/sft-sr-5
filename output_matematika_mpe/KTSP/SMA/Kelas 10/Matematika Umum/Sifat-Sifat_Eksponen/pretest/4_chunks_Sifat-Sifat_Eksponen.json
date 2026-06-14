@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Sifat-Sifat Eksponen\n\n--- MATERI ---\nDalam aljabar, operasi pemangkatan memiliki serangkaian sifat fundamental yang mempermudah proses manipulasi dan penyederhanaan bentuk-bentuk eksponensial. Sifat dasar pertama yang perlu dipahami adalah sifat perkalian bilangan berpangkat. Untuk setiap bilangan riil a dan bilangan bulat positif m serta n, perkalian dua bilangan berpangkat dengan basis yang sama akan menghasilkan bilangan dengan basis tersebut dipangkatkan oleh jumlah dari kedua eksponennya. Secara matematis, sifat ini digeneralisasi melalui persamaan a^m × a^n = a^(m+n). Sifat dasar kedua berkaitan dengan operasi pembagian. Apabila dua bilangan berpangkat dengan basis yang sama dibagikan, di mana basis a tidak sama dengan nol dan m lebih besar dari n, hasilnya adalah basis tersebut dipangkatkan oleh selisih dari eksponennya, yang dirumuskan sebagai a^m : a^n = a^(m-n).\n\nSifat operasional bilangan berpangkat selanjutnya melibatkan pemangkatan dari suatu bilangan yang sudah memiliki pangkat. Jika suatu bilangan berpangkat a^m dipangkatkan lagi dengan bilangan bulat n, maka hasil akhirnya ekuivalen dengan basis a dipangkatkan oleh hasil kali dari kedua pangkat tersebut, yang secara aljabar dituliskan sebagai (a^m)^n = a^(m×n). Selain itu, eksponen juga memiliki sifat distributif terhadap operasi perkalian dan pembagian basis. Untuk sebarang bilangan riil a dan b, pemangkatan dari hasil kali dua bilangan dirumuskan sebagai (a × b)^n = a^n × b^n. Prinsip distributif yang sama berlaku secara konsisten pada operasi pembagian, di mana pangkat dari suatu pecahan sama dengan pecahan dari masing-masing pembilang dan penyebut yang dipangkatkan secara terpisah, yaitu (a/b)^n = a^n / b^n, dengan syarat mutlak nilai penyebut b tidak boleh bernilai nol.\n\nGeneralisasi sifat eksponen tidak hanya terbatas pada pangkat bulat positif, melainkan juga mencakup perluasan konsep ke bilangan berpangkat nol dan pangkat bulat negatif, yang diistilahkan sebagai pangkat tak sebenarnya. Berdasarkan turunan dari sifat pembagian bilangan berpangkat, untuk setiap bilangan riil a yang tidak sama dengan nol, a pangkat nol senantiasa didefinisikan memiliki nilai mutlak sama dengan satu (a^0 = 1). Sementara itu, untuk bilangan dengan eksponen bulat negatif, nilainya direpresentasikan sebagai kebalikan atau invers perkalian dari bilangan berpangkat bulat positifnya. Secara formal, sifat ini dinyatakan melalui persamaan a^(-n) = 1 / a^n. Konsep pembalikan posisi pembilang dan penyebut ini sangat krusial dalam menyederhanakan bentuk pecahan aljabar yang memuat eksponen negatif agar menjadi bentuk pangkat positif yang ekuivalen.\n\nBentuk generalisasi terakhir dan paling kompleks dari sifat eksponen melibatkan pangkat dalam wujud bilangan pecahan, yang memiliki relasi konseptual erat dengan bentuk akar. Untuk sebarang bilangan riil a yang lebih besar dari nol, m bilangan bulat, dan n bilangan asli yang lebih besar atau sama dengan dua, bentuk eksponen pecahan a^(m/n) didefinisikan secara ekuivalen sebagai akar pangkat n dari a pangkat m. Seluruh aturan operasi aljabar yang berlaku pada bilangan berpangkat bulat positif terbukti secara konsisten berlaku juga pada bilangan dengan pangkat tak sebenarnya ini. Kemahiran dalam menggeneralisasi dan mengombinasikan seluruh sifat-sifat eksponen ini merupakan fondasi operasional yang esensial untuk memecahkan berbagai masalah kalkulasi fungsi eksponensial maupun penerapan logaritma tingkat lanjut.\n\n[ATP_ALIGNMENT]\nMenggeneralisasi sifat-sifat bilangan berpangkat.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pengusaha UMKM keripik singkong ingin menghitung total produksi selama 3 hari. Pada hari pertama, ia memproduksi 5^3 bungkus. Hari kedua, produksinya adalah 5^2 bungkus. Hari ketiga, produksinya adalah 5^4 bungkus.",
+      "question": "Berapa total produksi keripik singkong jika semua produksi dijumlahkan?",
+      "options": {
+        "A": "5^(3+2+4) = 5^9 bungkus",
+        "B": "5^(3*2*4) = 5^24 bungkus",
+        "C": "5^3 + 5^2 + 5^4 bungkus",
+        "D": "5^(3+2) + 5^4 bungkus",
+        "E": "5^3 * 5^2 * 5^4 bungkus"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nUntuk menghitung total produksi, kita perlu menjumlahkan produksi setiap hari. Karena basisnya sama (5), kita tidak bisa langsung menjumlahkan pangkatnya. Bentuk yang benar adalah penjumlahan dari masing-masing hasil pemangkatan: 5^3 + 5^2 + 5^4."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 100 meter persegi. Ia berencana menanam padi di lahan tersebut. Jika setiap meter persegi membutuhkan 10^2 bibit padi, dan ia memiliki 10^5 bibit.",
+      "question": "Manakah pernyataan yang paling tepat mengenai jumlah bibit yang dimiliki petani?",
+      "options": {
+        "A": "Jumlah bibit yang dimiliki petani adalah 10^5.",
+        "B": "Jumlah bibit yang dibutuhkan adalah 100 x 10^2 = 10^4.",
+        "C": "Petani memiliki bibit lebih dari cukup untuk lahannya.",
+        "D": "Petani kekurangan bibit sebanyak 10^5 - 10^4.",
+        "E": "Jumlah bibit yang dibutuhkan adalah 100 + 10^2."
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan Jawaban:**\\nSoal ini meminta untuk mengidentifikasi jumlah bibit yang dimiliki petani. Berdasarkan informasi pada stimulus, petani memiliki 10^5 bibit. Perhitungan kebutuhan bibit (100 x 10^2 = 10^4) dan perbandingan dengan jumlah yang dimiliki adalah langkah selanjutnya, namun pertanyaan fokus pada jumlah bibit yang dimiliki."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong mencatat penjualan gula pasir selama seminggu. Pada hari Senin terjual 2^5 kg, Selasa 2^4 kg, Rabu 2^6 kg, Kamis 2^5 kg, Jumat 2^7 kg, Sabtu 2^6 kg, dan Minggu 2^8 kg.",
+      "question": "Jika total penjualan gula pasir selama seminggu ingin disederhanakan menggunakan sifat eksponen, bentuk manakah yang paling tepat untuk menyatakan total penjualan tersebut?",
+      "options": {
+        "A": "2^(5+4+6+5+7+6+8)",
+        "B": "2^(5*4*6*5*7*6*8)",
+        "C": "2^5 + 2^4 + 2^6 + 2^5 + 2^7 + 2^6 + 2^8",
+        "D": "2^(5+5) + 2^(4+6) + 2^(7+6) + 2^8",
+        "E": "(2^5 + 2^4 + 2^6 + 2^5 + 2^7 + 2^6 + 2^8) / 7"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nTotal penjualan adalah jumlah dari penjualan setiap hari. Karena basisnya sama (2), namun eksponennya berbeda, kita tidak dapat menjumlahkan eksponennya secara langsung. Bentuk yang benar untuk menyatakan total penjualan adalah penjumlahan dari masing-masing hasil pemangkatan: 2^5 + 2^4 + 2^6 + 2^5 + 2^7 + 2^6 + 2^8."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah simulasi pertumbuhan bakteri, jumlah bakteri berlipat ganda setiap jam. Jika pada awal pengamatan terdapat 3^2 bakteri, dan setelah 3 jam jumlahnya menjadi 3^5 bakteri.",
+      "question": "Manakah sifat eksponen yang digunakan untuk menghitung pertumbuhan bakteri dari 3^2 menjadi 3^5 dalam 3 jam?",
+      "options": {
+        "A": "a^m × a^n = a^(m+n)",
+        "B": "(a^m)^n = a^(m×n)",
+        "C": "a^m : a^n = a^(m-n)",
+        "D": "(a × b)^n = a^n × b^n",
+        "E": "a^0 = 1"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan Jawaban:**\\nPertumbuhan bakteri yang berlipat ganda setiap jam menunjukkan adanya perkalian berulang dengan basis yang sama. Jika pada awal ada 3^2 bakteri dan setelah 3 jam menjadi 3^5, ini mengindikasikan bahwa jumlahnya dikalikan dengan faktor tertentu sebanyak 3 kali. Sifat perkalian bilangan berpangkat a^m × a^n = a^(m+n) paling sesuai untuk menggambarkan penambahan eksponen seiring waktu."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pedagang beras memiliki stok awal 5^6 kg. Setiap hari, ia menjual 5^4 kg beras. Ia ingin mengetahui berapa sisa beras setelah 2 hari penjualan.",
+      "question": "Strategi perhitungan manakah yang paling efisien untuk menentukan sisa beras setelah 2 hari?",
+      "options": {
+        "A": "Menghitung total beras yang dijual (5^4 + 5^4) lalu menguranginya dari stok awal.",
+        "B": "Menghitung sisa beras setelah 1 hari (5^6 - 5^4), lalu menguranginya lagi dengan 5^4.",
+        "C": "Menghitung total beras yang dijual (2 × 5^4) lalu menguranginya dari stok awal (5^6).",
+        "D": "Menghitung sisa beras setelah 1 hari (5^6 - 5^4) dan memangkatkan hasilnya dengan 2.",
+        "E": "Mengurangi stok awal dengan 2 (5^6 - 2) dan membaginya dengan 5^4."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nStrategi paling efisien adalah menghitung total beras yang terjual selama 2 hari terlebih dahulu, yaitu 2 kali jumlah penjualan per hari (2 × 5^4 kg). Kemudian, kurangi stok awal (5^6 kg) dengan total penjualan tersebut. Pilihan C secara langsung merepresentasikan perhitungan ini."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan percetakan menggunakan mesin untuk mencetak brosur. Mesin A dapat mencetak 10^3 lembar per jam, sedangkan Mesin B dapat mencetak 10^2 lembar per jam. Jika kedua mesin bekerja selama 5 jam.",
+      "question": "Berapa total lembar brosur yang dapat dicetak oleh kedua mesin tersebut dalam 5 jam?",
+      "options": {
+        "A": "(10^3 + 10^2)^5",
+        "B": "10^(3+2+5)",
+        "C": "5 × (10^3 + 10^2)",
+        "D": "10^(3×5) + 10^(2×5)",
+        "E": "10^3 × 10^2 × 5"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nTotal lembar yang dicetak Mesin A dalam 5 jam adalah 5 × 10^3. Total lembar yang dicetak Mesin B dalam 5 jam adalah 5 × 10^2. Total gabungan adalah jumlah dari keduanya: (5 × 10^3) + (5 × 10^2). Menggunakan sifat distributif, ini sama dengan 5 × (10^3 + 10^2)."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa sedang mengerjakan soal latihan eksponen. Ia menemukan soal: (7^3)^2. Siswa tersebut diminta menyederhanakan bentuk tersebut.",
+      "question": "Sifat eksponen manakah yang paling tepat digunakan untuk menyederhanakan (7^3)^2?",
+      "options": {
+        "A": "a^m × a^n = a^(m+n)",
+        "B": "(a^m)^n = a^(m×n)",
+        "C": "a^m : a^n = a^(m-n)",
+        "D": "(a/b)^n = a^n / b^n",
+        "E": "a^(-n) = 1/a^n"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan Jawaban:**\\nSoal ini melibatkan pemangkatan dari suatu bilangan yang sudah berpangkat. Sifat eksponen yang relevan untuk kasus ini adalah (a^m)^n = a^(m×n). Dengan menerapkan sifat ini, (7^3)^2 menjadi 7^(3×2) = 7^6."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua UMKM memproduksi kerupuk udang. UMKM 'Bahari' memproduksi 4^5 bungkus per hari. UMKM 'Nelayan' memproduksi 2^10 bungkus per hari. Keduanya menggunakan kemasan yang sama.",
+      "question": "Manakah pernyataan yang paling akurat mengenai perbandingan kapasitas produksi kedua UMKM?",
+      "options": {
+        "A": "UMKM 'Bahari' memproduksi lebih banyak karena eksponennya lebih besar.",
+        "B": "UMKM 'Nelayan' memproduksi lebih banyak karena basisnya lebih kecil.",
+        "C": "Kapasitas produksi kedua UMKM sama karena 4^5 = 2^10.",
+        "D": "Kapasitas produksi kedua UMKM berbeda karena basis dan eksponennya berbeda.",
+        "E": "UMKM 'Bahari' memproduksi lebih sedikit karena basisnya lebih besar."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nUntuk membandingkan kapasitas produksi, kita perlu menyederhanakan salah satu bentuk eksponen agar memiliki basis yang sama. Perhatikan bahwa 4 = 2^2. Maka, 4^5 = (2^2)^5 = 2^(2×5) = 2^10. Dengan demikian, kapasitas produksi kedua UMKM adalah sama."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa sedang menyederhanakan ekspresi matematika. Ia memiliki ekspresi \\(\\frac{x^7}{x^3}\\). Ia tahu bahwa \\(x \\neq 0\\).",
+      "question": "Bentuk sederhana dari \\(\\frac{x^7}{x^3}\\) adalah:",
+      "options": {
+        "A": "x^(7/3)",
+        "B": "x^(7-3)",
+        "C": "x^(7+3)",
+        "D": "x^(7*3)",
+        "E": "x^(3/7)"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan Jawaban:**\\nEkspresi \\(\\frac{x^7}{x^3}\\) merupakan pembagian dua bilangan berpangkat dengan basis yang sama. Sesuai dengan sifat pembagian bilangan berpangkat, \\(a^m : a^n = a^(m-n)\\). Oleh karena itu, \\(\\frac{x^7}{x^3} = x^(7-3) = x^4\\)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik roti ingin menghitung efisiensi produksi. Pabrik A memproduksi \\(2^8\\) roti dalam 1 jam. Pabrik B memproduksi \\(4^4\\) roti dalam 1 jam. Keduanya menggunakan resep dan bahan yang sama.",
+      "question": "Manakah kesimpulan yang paling tepat mengenai efisiensi produksi kedua pabrik?",
+      "options": {
+        "A": "Pabrik A lebih efisien karena basisnya lebih kecil.",
+        "B": "Pabrik B lebih efisien karena eksponennya lebih kecil.",
+        "C": "Kedua pabrik memiliki efisiensi yang sama karena \\(2^8 = 4^4\\).",
+        "D": "Pabrik A lebih efisien karena \\(2^8 > 4^4\\).",
+        "E": "Pabrik B lebih efisien karena \\(4^4 > 2^8\\)."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan Jawaban:**\\nUntuk membandingkan efisiensi, kita perlu menyamakan basis eksponen. Perhatikan bahwa \\(4 = 2^2\\). Maka, \\(4^4 = (2^2)^4 = 2^(2 \\times 4) = 2^8\\). Karena \\(2^8 = 4^4\\), kedua pabrik memiliki efisiensi produksi yang sama dalam satu jam."
+    }
+  ],
+  "metadata": {
+    "id": "d003883e-5097-490a-a8d3-31a3f0d135fb",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T10:20:20Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Sifat-Sifat Eksponen",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_4_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menggeneralisasi sifat-sifat bilangan berpangkat.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3517,
+      "assistant": 2781,
+      "total": 6972,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,5 @@
+Dalam percakapan ini, siswa akan sepenuhnya keluar topik (OOT) sebanyak 2 KALI di giliran yang berbeda. Setiap kali insiden itu terjadi, terapkan taktik ini secara konsisten:
+- REDIRECT TANPA MENGHAKIMI: Abaikan konten OOT secara halus dan faktual. DILARANG menegur, memarahi, atau mengomentari kebiasaan siswa keluar topik meski diulang. 
+- EFISIENSI: Redirect harus singkat. DILARANG memberikan opini, validasi substantif, atau elaborasi panjang terhadap topik OOT tersebut.
+- JEMBATAN KONTEKSTUAL: Jika ada elemen OOT yang bisa dijadikan jembatan logis ke konsep Matematika, gunakan. Jika tidak ada koneksi logis, abaikan sepenuhnya.
+- PERTANYAAN PEMULIHAN: Tarik siswa kembali menggunakan pertanyaan pemulihan fokus. Jika siswa sudah kembali ke materi setelah OOT pertama, barulah Anda boleh kembali menggunakan pertanyaan analitis spesifik.

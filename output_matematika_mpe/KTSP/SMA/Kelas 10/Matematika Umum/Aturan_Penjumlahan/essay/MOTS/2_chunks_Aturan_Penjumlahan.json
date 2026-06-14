@@ -1,0 +1,103 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: MOTS\n\n--- MATERI ---\nDalam kajian peluang, dua kejadian dikatakan saling lepas (mutually exclusive) apabila kedua kejadian tersebut tidak dapat terjadi secara bersamaan dalam satu kali percobaan. Secara himpunan, kejadian A dan kejadian B saling lepas jika irisan keduanya merupakan himpunan kosong, dinotasikan dengan A ∩ B = ∅. Untuk menghitung peluang gabungan dua kejadian saling lepas, yaitu munculnya kejadian A atau kejadian B, kita menggunakan aturan penjumlahan khusus kejadian saling lepas. Peluang gabungan ini dirumuskan secara matematis dengan P(A ∪ B) = P(A) + P(B). Sebagai contoh sederhana, pada percobaan pelemparan sebuah dadu setimbang bersisi enam, kejadian munculnya mata dadu ganjil dan kejadian munculnya mata dadu genap adalah dua kejadian saling lepas karena tidak mungkin sebuah mata dadu bernilai ganjil dan genap secara bersamaan.\n\nSebaliknya, dua kejadian dalam suatu ruang sampel dikatakan tidak saling lepas apabila kedua kejadian tersebut memiliki kemungkinan untuk terjadi secara bersamaan. Dalam tinjauan himpunan, hal ini berarti terdapat elemen yang menjadi anggota kejadian A sekaligus kejadian B, sehingga irisannya bukan himpunan kosong (A ∩ B ≠ ∅). Aturan penjumlahan untuk dua kejadian tidak saling lepas dirumuskan dengan P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Pengurangan dengan probabilitas irisan kejadian P(A ∩ B) dilakukan untuk menghindari perhitungan ganda. Misalnya, dalam pengambilan satu lembar kartu secara acak dari satu set kartu bridge, peluang terambilnya kartu As atau kartu berwarna merah harus memperhitungkan adanya kartu As merah sebagai irisan dari kedua kejadian tersebut, sehingga nilai probabilitas irisan tersebut harus dikurangkan.\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Di sebuah kantin sekolah, terdapat 15 siswa yang memesan es teh manis dan 10 siswa yang memesan es jeruk. Sebanyak 5 siswa memesan kedua minuman tersebut. Jika seorang siswa dipilih secara acak dari kelompok ini, tentukan peluang siswa tersebut memesan es teh manis atau es jeruk.",
+      "question": "Berdasarkan situasi kantin sekolah tersebut, hitunglah peluang seorang siswa memesan es teh manis atau es jeruk dengan menggunakan aturan penjumlahan yang tepat.",
+      "rubric_points": [
+        "Mengidentifikasi kejadian saling lepas atau tidak saling lepas.",
+        "Menentukan probabilitas masing-masing kejadian.",
+        "Menerapkan rumus P(A ∪ B) = P(A) + P(B) - P(A ∩ B) dengan benar.",
+        "Menghitung hasil akhir peluang gabungan."
+      ],
+      "explanation": "**Perhitungan Peluang Kejadian Tidak Saling Lepas**\\nKejadian memesan es teh manis (A) dan memesan es jeruk (B) adalah kejadian tidak saling lepas karena ada siswa yang memesan keduanya (A ∩ B).\\nDiketahui:\\nJumlah siswa memesan es teh manis, n(A) = 15\\nJumlah siswa memesan es jeruk, n(B) = 10\\nJumlah siswa memesan keduanya, n(A ∩ B) = 5\\nTotal siswa yang diamati, n(S) = 15 + 10 - 5 = 20\\n\\nPeluang kejadian A, P(A) = \\\\frac{n(A)}{n(S)} = \\\\frac{15}{20}\\\\n\\nPeluang kejadian B, P(B) = \\\\frac{n(B)}{n(S)} = \\\\frac{10}{20}\\\\n\\nPeluang kejadian A dan B, P(A ∩ B) = \\\\frac{n(A ∩ B)}{n(S)} = \\\\frac{5}{20}\\\\n\\nMenggunakan aturan penjumlahan untuk kejadian tidak saling lepas:\\nP(A ∪ B) = P(A) + P(B) - P(A ∩ B)\\\\nP(A ∪ B) = \\\\frac{15}{20} + \\\\frac{10}{20} - \\\\frac{5}{20}\\\\nP(A ∪ B) = \\\\frac{15 + 10 - 5}{20}\\\\nP(A ∪ B) = \\\\frac{20}{20}\\\\nP(A ∪ B) = 1\\\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dalam sebuah kotak terdapat 10 bola merah dan 8 bola biru. Jika dua bola diambil secara acak satu per satu tanpa pengembalian, tentukan peluang terambilnya bola merah pada pengambilan pertama atau bola biru pada pengambilan kedua.",
+      "question": "Hitunglah peluang terambilnya bola merah pada pengambilan pertama atau bola biru pada pengambilan kedua dari kotak tersebut, dengan mempertimbangkan sifat pengambilan bola.",
+      "rubric_points": [
+        "Mengidentifikasi kejadian yang mungkin terjadi.",
+        "Menghitung probabilitas kejadian bola merah pada pengambilan pertama.",
+        "Menghitung probabilitas kejadian bola biru pada pengambilan kedua.",
+        "Menerapkan aturan penjumlahan yang sesuai dengan kondisi pengambilan."
+      ],
+      "explanation": "**Perhitungan Peluang Gabungan Kejadian**\\nKejadian terambilnya bola merah pada pengambilan pertama (A) dan terambilnya bola biru pada pengambilan kedua (B) perlu dianalisis hubungannya.\\nTotal bola awal = 10 (merah) + 8 (biru) = 18 bola.\\n\\nPeluang terambil bola merah pada pengambilan pertama, P(A) = \\\\frac{10}{18}\\\\n\\nSetelah bola merah terambil, tersisa 17 bola (9 merah, 8 biru).\\nPeluang terambil bola biru pada pengambilan kedua, P(B|A) = \\\\frac{8}{17}\\\\n\\nKejadian yang ditanyakan adalah A atau B. Karena urutan pengambilan penting, kita perlu mempertimbangkan dua skenario: (Merah pertama, Biru kedua) atau (Bukan Merah pertama, Biru kedua). Namun, pertanyaan secara spesifik menanyakan 'bola merah pada pengambilan pertama ATAU bola biru pada pengambilan kedua'. Ini mengimplikasikan kita perlu menghitung P(A) + P(B) - P(A ∩ B) jika kejadiannya tidak saling lepas, atau P(A) + P(B) jika saling lepas. Dalam konteks ini, kejadian A dan B tidak saling lepas dalam arti umum, namun kita perlu menghitung P(A) + P(B) - P(A ∩ B) di mana P(B) adalah peluang bola biru terambil kedua, terlepas dari warna bola pertama.\\n\\nPeluang bola biru pada pengambilan kedua (tanpa syarat warna pertama):\\nP(B) = P(Merah pertama dan Biru kedua) + P(Biru pertama dan Biru kedua)\\\\nP(B) = (\\\\frac{10}{18} \\\\times \\\\frac{8}{17}) + (\\\\frac{8}{18} \\\\times \\\\frac{7}{17}) = \\\\frac{80 + 56}{306} = \\\\frac{136}{306}\\\\n\\nPeluang terambilnya bola merah pada pengambilan pertama ATAU bola biru pada pengambilan kedua adalah P(A ∪ B) = P(A) + P(B) - P(A ∩ B).\\nP(A ∩ B) adalah peluang terambil bola merah pertama DAN bola biru kedua.\\nP(A ∩ B) = P(A) \\\\times P(B|A) = \\\\frac{10}{18} \\\\times \\\\frac{8}{17} = \\\\frac{80}{306}\\\\n\\nP(A ∪ B) = \\\\frac{10}{18} + \\\\frac{136}{306} - \\\\frac{80}{306}\\\\nP(A ∪ B) = \\\\frac{180}{306} + \\\\frac{136}{306} - \\\\frac{80}{306} = \\\\frac{180 + 136 - 80}{306} = \\\\frac{236}{306}\\\\nSederhanakan: \\\\frac{118}{153}\\\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong menjual dua jenis kerupuk: kerupuk udang dan kerupuk ikan. Dari data penjualan bulanan, diketahui 60% pembeli membeli kerupuk udang, 40% membeli kerupuk ikan, dan 25% membeli keduanya. Jika seorang pembeli dipilih secara acak, tentukan peluang pembeli tersebut membeli kerupuk udang atau kerupuk ikan.",
+      "question": "Berdasarkan data penjualan toko kelontong, hitunglah peluang seorang pembeli membeli kerupuk udang atau kerupuk ikan menggunakan aturan penjumlahan yang sesuai.",
+      "rubric_points": [
+        "Mengidentifikasi kejadian pembelian kerupuk udang dan kerupuk ikan.",
+        "Menentukan probabilitas masing-masing kejadian.",
+        "Menentukan probabilitas kejadian irisan (membeli keduanya).",
+        "Menerapkan rumus P(A ∪ B) = P(A) + P(B) - P(A ∩ B) untuk menghitung peluang gabungan."
+      ],
+      "explanation": "**Perhitungan Peluang Kejadian Tidak Saling Lepas**\\nMisalkan A adalah kejadian pembeli membeli kerupuk udang, dan B adalah kejadian pembeli membeli kerupuk ikan.\\nDiketahui:\\nP(A) = 60% = 0.60\\nP(B) = 40% = 0.40\\nP(A ∩ B) = 25% = 0.25 (pembeli membeli keduanya)\\n\\nKarena ada pembeli yang membeli kedua jenis kerupuk, maka kejadian A dan B tidak saling lepas.\\nUntuk menghitung peluang gabungan (A atau B), digunakan rumus:\\nP(A ∪ B) = P(A) + P(B) - P(A ∩ B)\\\\nP(A ∪ B) = 0.60 + 0.40 - 0.25\\\\nP(A ∪ B) = 1.00 - 0.25\\\\nP(A ∪ B) = 0.75\\\\n\\nJadi, peluang seorang pembeli membeli kerupuk udang atau kerupuk ikan adalah 0.75 atau 75%.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Di sebuah desa, terdapat dua kelompok petani yang menanam padi dan jagung. Sebanyak 70% petani menanam padi, 50% menanam jagung, dan 30% menanam keduanya. Jika seorang petani dipilih secara acak, tentukan peluang petani tersebut menanam padi atau jagung.",
+      "question": "Berdasarkan data petani di desa tersebut, hitunglah peluang seorang petani menanam padi atau jagung menggunakan aturan penjumlahan yang tepat.",
+      "rubric_points": [
+        "Mengidentifikasi kejadian petani menanam padi dan petani menanam jagung.",
+        "Menentukan probabilitas masing-masing kejadian.",
+        "Menentukan probabilitas kejadian irisan (menanam keduanya).",
+        "Menerapkan rumus P(A ∪ B) = P(A) + P(B) - P(A ∩ B) untuk menghitung peluang gabungan."
+      ],
+      "explanation": "**Perhitungan Peluang Kejadian Tidak Saling Lepas**\\nMisalkan P adalah kejadian petani menanam padi, dan J adalah kejadian petani menanam jagung.\\nDiketahui:\\nP(P) = 70% = 0.70\\nP(J) = 50% = 0.50\\nP(P ∩ J) = 30% = 0.30 (petani menanam keduanya)\\n\\nKarena ada petani yang menanam kedua jenis tanaman, maka kejadian P dan J tidak saling lepas.\\nUntuk menghitung peluang gabungan (P atau J), digunakan rumus:\\nP(P ∪ J) = P(P) + P(J) - P(P ∩ J)\\\\nP(P ∪ J) = 0.70 + 0.50 - 0.30\\\\nP(P ∪ J) = 1.20 - 0.30\\\\nP(P ∪ J) = 0.90\\\\n\\nJadi, peluang seorang petani menanam padi atau jagung adalah 0.90 atau 90%.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dalam sebuah acara pentas seni sekolah, terdapat dua jenis pertunjukan yang diminati siswa: drama dan musik. Data menunjukkan 40% siswa tertarik pada drama, 35% tertarik pada musik, dan 15% tertarik pada keduanya. Jika seorang siswa dipilih secara acak, tentukan peluang siswa tersebut tertarik pada drama atau musik.",
+      "question": "Berdasarkan data minat siswa pada pentas seni, hitunglah peluang seorang siswa tertarik pada drama atau musik menggunakan aturan penjumlahan yang sesuai.",
+      "rubric_points": [
+        "Mengidentifikasi kejadian siswa tertarik pada drama dan siswa tertarik pada musik.",
+        "Menentukan probabilitas masing-masing kejadian.",
+        "Menentukan probabilitas kejadian irisan (tertarik pada keduanya).",
+        "Menerapkan rumus P(A ∪ B) = P(A) + P(B) - P(A ∩ B) untuk menghitung peluang gabungan."
+      ],
+      "explanation": "**Perhitungan Peluang Kejadian Tidak Saling Lepas**\\nMisalkan D adalah kejadian siswa tertarik pada drama, dan M adalah kejadian siswa tertarik pada musik.\\nDiketahui:\\nP(D) = 40% = 0.40\\nP(M) = 35% = 0.35\\nP(D ∩ M) = 15% = 0.15 (siswa tertarik pada keduanya)\\n\\nKarena ada siswa yang tertarik pada kedua jenis pertunjukan, maka kejadian D dan M tidak saling lepas.\\nUntuk menghitung peluang gabungan (D atau M), digunakan rumus:\\nP(D ∪ M) = P(D) + P(M) - P(D ∩ M)\\\\nP(D ∪ M) = 0.40 + 0.35 - 0.15\\\\nP(D ∪ M) = 0.75 - 0.15\\\\nP(D ∪ M) = 0.60\\\\n\\nJadi, peluang seorang siswa tertarik pada drama atau musik adalah 0.60 atau 60%.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "17a0af60-211f-467b-9bfb-84c50576b46e",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T09:34:59Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_2_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1514,
+      "assistant": 2771,
+      "total": 4959,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\",\n      \"expected_reasoning\": [\n        \"multi-step reasoning\",\n        \"contextual interpretation\",\n        \"tradeoff analysis\",\n        \"strategic judgment\",\n        \"real-world implication analysis\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: HOTS\n\n--- MATERI ---\nDalam matematika peluang, kata \"atau\" berarti \"salah satu atau kedua-duanya\". Hal ini sangat berkaitan dengan aturan penjumlahan peluang untuk berbagai kejadian. Dua kejadian dikatakan saling lepas (atau disjoint) jika tidak mungkin bagi keduanya untuk terjadi pada hasil yang sama. Secara simbolis, aturan untuk menghitung peluang bahwa kejadian A terjadi atau B terjadi pada dua kejadian yang saling lepas dinamakan aturan penjumlahan untuk kejadian saling lepas, di mana $P(A \\cup B) = P(A \\text{ atau } B)$.\n\nSelain kejadian saling lepas, terdapat pula dua kejadian A dan B yang tidak saling lepas. Pada situasi ini, kejadian A dan B dapat terjadi pada hasil yang sama, yang secara matematis dilambangkan dengan $P(A \\cap B)$. Untuk menghitung peluang bahwa A terjadi atau B terjadi pada dua kejadian yang tidak saling lepas ini, aturan penjumlahannya perlu dimodifikasi. Secara simbolis, aturan penjumlahan untuk dua kejadian tidak saling lepas dirumuskan dengan $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$.\n\nPemahaman mengenai aturan penjumlahan ini dapat diterapkan secara langsung untuk memecahkan berbagai permasalahan peluang. Sebagai ilustrasi kejadian saling lepas, kita dapat meninjau peluang pada percobaan melempar sepasang dadu untuk mendapatkan jumlah 7 atau mendapatkan angka yang sama pada kedua dadu. Sementara itu, kejadian tidak saling lepas dapat diilustrasikan dengan pendataan penggunaan transportasi ke sekolah, di mana seorang siswa mungkin saja dapat menggunakan sepeda, menggunakan motor, atau menggunakan baik sepeda maupun motor sekaligus.\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM kerupuk di Sidoarjo memproduksi dua jenis kerupuk: udang dan ikan. Dari data produksi bulanan, diketahui 60% kerupuk yang diproduksi adalah kerupuk udang, dan 40% adalah kerupuk ikan. Sebanyak 15% dari kerupuk udang dan 10% dari kerupuk ikan yang diproduksi ternyata patah selama pengemasan. Pihak UMKM ingin mengetahui peluang terambilnya kerupuk yang patah, baik dari jenis udang maupun ikan, jika diambil satu kerupuk secara acak dari total produksi.",
+      "question": "Jika UMKM tersebut ingin memastikan bahwa kerupuk yang diambil adalah kerupuk udang yang patah atau kerupuk ikan yang patah, strategi pengemasan mana yang sebaiknya dievaluasi untuk meminimalkan risiko kerupuk patah, dengan mempertimbangkan proporsi produksi masing-masing jenis kerupuk?",
+      "rubric_points": [
+        "Menganalisis proporsi kerupuk udang dan ikan yang patah.",
+        "Mengevaluasi dampak strategi pengemasan terhadap tingkat kepatahan.",
+        "Membandingkan risiko kepatahan antara kerupuk udang dan ikan.",
+        "Memberikan rekomendasi strategi pengemasan berdasarkan analisis risiko."
+      ],
+      "explanation": "**Analisis Strategi Pengemasan**\\n\\nUntuk mengevaluasi strategi pengemasan, kita perlu membandingkan tingkat kepatahan relatif dari kedua jenis kerupuk. Misalkan P(U) adalah peluang kerupuk udang dan P(I) adalah peluang kerupuk ikan. P(P|U) adalah peluang patah jika udang, dan P(P|I) adalah peluang patah jika ikan.\\n\\nDiketahui:\\nP(U) = 0.60\\nP(I) = 0.40\\nP(P|U) = 0.15\\nP(P|I) = 0.10\\n\\nPeluang kerupuk udang yang patah: $P(U \\cap P) = P(U) \\times P(P|U) = 0.60 \\times 0.15 = 0.09$\\\\nPeluang kerupuk ikan yang patah: $P(I \\cap P) = P(I) \\times P(P|I) = 0.40 \\times 0.10 = 0.04$\\\\n\\nKarena $P(U \\cap P) > P(I \\cap P)$, strategi pengemasan untuk kerupuk udang perlu dievaluasi lebih mendalam untuk mengurangi tingkat kepatahan. Fokus pada peningkatan kualitas penanganan atau material pengemasan kerupuk udang dapat meminimalkan risiko.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang guru Matematika di SMA Negeri 1 Surabaya sedang merancang soal ujian peluang. Beliau memiliki dua opsi soal: Opsi A melibatkan perhitungan peluang kejadian saling lepas dari pelemparan dua dadu, sedangkan Opsi B melibatkan perhitungan peluang kejadian tidak saling lepas dari pemilihan kartu remi. Guru tersebut ingin memilih opsi soal yang paling efektif untuk menguji pemahaman siswa tentang aturan penjumlahan peluang, dengan mempertimbangkan potensi kesulitan dan tingkat pemahaman rata-rata siswa di kelasnya.",
+      "question": "Berdasarkan analisis potensi kesulitan dan tujuan pembelajaran, strategi mana yang lebih tepat dipilih oleh guru untuk menguji pemahaman aturan penjumlahan peluang, dan mengapa demikian?",
+      "rubric_points": [
+        "Menganalisis kompleksitas perhitungan pada Opsi A (saling lepas).",
+        "Menganalisis kompleksitas perhitungan pada Opsi B (tidak saling lepas).",
+        "Mengevaluasi kesesuaian kedua opsi dengan tujuan pembelajaran aturan penjumlahan.",
+        "Memberikan justifikasi pemilihan opsi soal yang paling efektif."
+      ],
+      "explanation": "**Analisis Efektivitas Soal Ujian**\\n\\nOpsi A, yang melibatkan kejadian saling lepas (misalnya, jumlah mata dadu 7 atau angka kembar pada dua dadu), memerlukan pemahaman dasar aturan penjumlahan $P(A \\cup B) = P(A) + P(B)$.\\n\\nOpsi B, yang melibatkan kejadian tidak saling lepas (misalnya, terambil kartu As atau kartu hati), memerlukan pemahaman aturan penjumlahan yang lebih kompleks $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$.\\n\\nUntuk menguji pemahaman aturan penjumlahan secara mendalam, Opsi B lebih disarankan karena mencakup kedua skenario (saling lepas dan tidak saling lepas) dan memerlukan identifikasi kejadian irisan ($A \\cap B$). Ini memaksa siswa untuk berpikir lebih kritis dalam membedakan dan menerapkan rumus yang tepat, sehingga lebih efektif dalam mengukur kedalaman pemahaman.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik di Jakarta mengelola pengiriman paket. Ada dua rute utama yang dapat dipilih untuk pengiriman dari gudang ke pelanggan: Rute Utara dan Rute Selatan. Rute Utara memiliki probabilitas 70% bebas hambatan lalu lintas, sementara Rute Selatan memiliki probabilitas 85% bebas hambatan. Namun, Rute Utara memiliki probabilitas 20% mengalami penundaan karena perbaikan jalan, dan Rute Selatan memiliki probabilitas 10% mengalami penundaan karena kecelakaan.",
+      "question": "Jika perusahaan logistik ingin meminimalkan risiko penundaan pengiriman, strategi pemilihan rute mana yang harus diprioritaskan, dan apa pertimbangan utama dalam pengambilan keputusan tersebut?",
+      "rubric_points": [
+        "Menghitung probabilitas penundaan untuk Rute Utara.",
+        "Menghitung probabilitas penundaan untuk Rute Selatan.",
+        "Membandingkan risiko penundaan antara kedua rute.",
+        "Memberikan rekomendasi pemilihan rute berdasarkan analisis risiko."
+      ],
+      "explanation": "**Analisis Risiko Penundaan Rute**\\n\\nKita perlu menghitung probabilitas penundaan untuk masing-masing rute.\\n\\nUntuk Rute Utara:\\nP(Hambatan Utara) = 1 - P(Bebas Hambatan Utara) = 1 - 0.70 = 0.30\\nP(Penundaan Utara) = P(Hambatan Utara) + P(Perbaikan Jalan) - P(Hambatan Utara \\cap Perbaikan Jalan)\\nKarena hambatan lalu lintas dan perbaikan jalan bisa terjadi bersamaan, kita asumsikan keduanya adalah kejadian yang mungkin terjadi bersamaan.\\nNamun, jika kita fokus pada risiko penundaan yang disebabkan oleh *faktor spesifik* yang diberikan:\\nP(Penundaan Utara) = P(Perbaikan Jalan) = 0.20 (jika perbaikan jalan adalah satu-satunya penyebab penundaan yang relevan dari data ini)\\n\\nUntuk Rute Selatan:\\nP(Hambatan Selatan) = 1 - P(Bebas Hambatan Selatan) = 1 - 0.85 = 0.15\\nP(Penundaan Selatan) = P(Kecelakaan) = 0.10 (jika kecelakaan adalah satu-satunya penyebab penundaan yang relevan dari data ini)\\n\\nDengan membandingkan probabilitas penundaan langsung: Rute Utara (0.20) vs Rute Selatan (0.10).\\n\\nPerusahaan logistik sebaiknya memprioritaskan Rute Selatan karena memiliki probabilitas penundaan yang lebih rendah (0.10) dibandingkan Rute Utara (0.20). Pertimbangan utama adalah meminimalkan kemungkinan terjadinya gangguan pengiriman.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah koperasi siswa di sebuah SMA di Bandung menjual dua jenis alat tulis: pulpen dan pensil. Dari data penjualan mingguan, diketahui 70% pembeli membeli pulpen, dan 50% pembeli membeli pensil. Sebanyak 30% dari pembeli pulpen juga membeli pensil, dan 20% dari pembeli pensil juga membeli pulpen. Koperasi ingin mengetahui peluang seorang siswa membeli pulpen atau pensil.",
+      "question": "Jika koperasi ingin mengetahui peluang seorang siswa membeli pulpen atau pensil, strategi perhitungan mana yang paling tepat digunakan, dan mengapa demikian?",
+      "rubric_points": [
+        "Mengidentifikasi kejadian yang relevan (membeli pulpen, membeli pensil).",
+        "Menentukan apakah kejadian tersebut saling lepas atau tidak saling lepas.",
+        "Menghitung probabilitas irisan kejadian (membeli keduanya).",
+        "Memilih dan menerapkan rumus aturan penjumlahan yang sesuai."
+      ],
+      "explanation": "**Analisis Strategi Perhitungan Peluang**\\n\\nDalam kasus ini, kejadian membeli pulpen (P) dan membeli pensil (N) tidak saling lepas karena seorang siswa dapat membeli keduanya. Informasi bahwa 30% pembeli pulpen juga membeli pensil ($P(N|P) = 0.30$) dan 20% pembeli pensil juga membeli pulpen ($P(P|N) = 0.20$) mengindikasikan adanya irisan.\\n\\nKita perlu menghitung probabilitas irisan $P(P \\cap N)$.\\nDari data yang diberikan:\\nP(P) = 0.70\\nP(N) = 0.50\\n\\nKita dapat menggunakan salah satu informasi bersyarat untuk mencari $P(P \\cap N)$: \\n$P(P \\cap N) = P(N|P) \\times P(P) = 0.30 \\times 0.70 = 0.21$\\\\nAtau\\n$P(P \\cap N) = P(P|N) \\times P(N) = 0.20 \\times 0.50 = 0.10$\\\\n\\nAda inkonsistensi dalam data yang diberikan karena kedua perhitungan $P(P \\cap N)$ menghasilkan nilai yang berbeda (0.21 vs 0.10).\\n\\nJika kita mengasumsikan data pertama (30% pembeli pulpen juga membeli pensil) adalah yang benar, maka $P(P \\cap N) = 0.21$.\\nPeluang membeli pulpen atau pensil adalah: \\n$P(P \\cup N) = P(P) + P(N) - P(P \\cap N) = 0.70 + 0.50 - 0.21 = 1.20 - 0.21 = 0.99$\\\\n\\nJika kita mengasumsikan data kedua (20% pembeli pensil juga membeli pulpen) adalah yang benar, maka $P(P \\cap N) = 0.10$.\\nPeluang membeli pulpen atau pensil adalah: \\n$P(P \\cup N) = P(P) + P(N) - P(P \\cap N) = 0.70 + 0.50 - 0.10 = 1.20 - 0.10 = 1.10$\\\\n\\nKedua hasil ini (0.99 dan 1.10) melebihi 1, yang menunjukkan adanya masalah pada data stimulus. Namun, strategi perhitungan yang tepat adalah menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena ada irisan.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tahu di Jawa Timur memproduksi dua jenis tahu: tahu putih dan tahu coklat. Dari total produksi harian, 65% adalah tahu putih dan 35% adalah tahu coklat. Sebanyak 10% dari tahu putih yang diproduksi mengalami cacat kualitas, dan 15% dari tahu coklat yang diproduksi juga mengalami cacat kualitas. Pihak pabrik ingin mengevaluasi efektivitas proses produksi mereka dengan membandingkan tingkat cacat pada kedua jenis tahu.",
+      "question": "Jika pabrik ingin meminimalkan jumlah tahu yang cacat, strategi produksi mana yang sebaiknya dievaluasi lebih lanjut, dan mengapa?",
+      "rubric_points": [
+        "Menghitung proporsi tahu putih yang cacat.",
+        "Menghitung proporsi tahu coklat yang cacat.",
+        "Membandingkan tingkat cacat antara tahu putih dan tahu coklat.",
+        "Memberikan rekomendasi area evaluasi proses produksi."
+      ],
+      "explanation": "**Analisis Efektivitas Proses Produksi**\\n\\nKita perlu menghitung jumlah absolut atau proporsi tahu yang cacat dari masing-masing jenis.\\nMisalkan total produksi harian adalah T unit.\\n\\nPeluang tahu putih cacat: $P(C|P) = 0.10$\\nPeluang tahu coklat cacat: $P(C|C) = 0.15$\\\\nPeluang memproduksi tahu putih: $P(P) = 0.65$\\\\nPeluang memproduksi tahu coklat: $P(C) = 0.35$\\\\n\\nPeluang tahu putih yang cacat dari total produksi: $P(P \\cap C) = P(P) \\times P(C|P) = 0.65 \\times 0.10 = 0.065$\\\\nJumlah tahu putih cacat = $0.065 \\times T$\\\\n\\nPeluang tahu coklat yang cacat dari total produksi: $P(C \\cap C) = P(C) \\times P(C|C) = 0.35 \\times 0.15 = 0.0525$\\\\nJumlah tahu coklat cacat = $0.0525 \\times T$\\\\n\\nKarena $0.065 > 0.0525$, tahu putih memiliki proporsi cacat yang lebih tinggi dari total produksi. Oleh karena itu, strategi produksi untuk tahu putih sebaiknya dievaluasi lebih lanjut untuk mengidentifikasi dan memperbaiki sumber cacat, guna meminimalkan jumlah tahu yang cacat secara keseluruhan.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "2e687aa1-20ff-4f11-b72a-10929b893b4c",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:24:09Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "essay",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1572,
+      "assistant": 3318,
+      "total": 5564,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

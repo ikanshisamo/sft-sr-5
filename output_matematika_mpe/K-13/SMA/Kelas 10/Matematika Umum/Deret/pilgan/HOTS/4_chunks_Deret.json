@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Deret | Target: HOTS\n\n--- MATERI ---\nDeret aritmetika merupakan bentuk penjumlahan berurut dari suku-suku pada suatu barisan aritmetika. Jika pada barisan aritmetika kita hanya menentukan nilai suku pada urutan tertentu, pada deret aritmetika kita bertujuan menentukan total nilai keseluruhan suku hingga batas urutan ke-n. Total penjumlahan ini lazim dinotasikan dengan simbol Sn. Untuk menghitung jumlah n suku pertama secara lebih efisien tanpa harus menjumlahkan setiap suku secara manual satu per satu, kita dapat menggunakan rumus Sn = n/2 (a + Un), dengan parameter 'a' melambangkan suku pertama dan parameter 'Un' merepresentasikan nilai suku ke-n. Pemahaman konsep dasar deret aritmetika ini sangat penting karena sering diaplikasikan dalam pemecahan masalah nyata, seperti memprediksi total produksi barang atau menghitung total tabungan yang peningkatannya konstan.\n\nDalam praktiknya, nilai suku ke-n (Un) sering kali belum diketahui secara langsung dari pokok permasalahan. Oleh karena itu, rumus deret aritmetika dapat diekspansi dengan cara menyubstitusikan rumus umum suku ke-n barisan aritmetika, yaitu Un = a + (n - 1)b, ke dalam rumus deret tersebut. Dari proses substitusi ini, diperoleh bentuk rumus ekuivalen yang lebih komprehensif, yaitu Sn = n/2 (2a + (n - 1)b). Pada bentuk rumus ini, variabel 'b' mewakili selisih atau beda konstan antar suku yang berurutan. Melalui pemahaman kedua bentuk ekuivalen rumus Sn ini, peserta didik diharapkan mampu memilih strategi perhitungan yang paling efektif sesuai dengan informasi parameter yang diketahui pada masalah deret aritmetika yang sedang dipecahkan.\n\nSejalan dengan prinsip dasar deret sebelumnya, deret geometri didefinisikan sebagai hasil penjumlahan berurut dari suku-suku penyusun suatu barisan geometri. Rumus matematis yang digunakan untuk menghitung jumlah n suku pertama (Sn) pada deret geometri sangat bergantung pada nilai rasio atau pengali (r) yang dimiliki oleh barisan tersebut. Apabila barisan geometri tersebut memiliki rasio lebih besar dari satu (r > 1) atau kurang dari negatif satu (r < -1), formula perhitungan yang tepat untuk merumuskan jumlah deretnya adalah Sn = a(r^n - 1) / (r - 1). Formula pemodelan ini sangat fungsional dan terbukti efektif untuk menyelesaikan persoalan aritmatika sosial maupun permasalahan eksponensial di mana data mengalami pertumbuhan atau pelipatgandaan secara sangat cepat pada setiap periodenya secara konstan.\n\nDi sisi lain, apabila sebuah barisan geometri memiliki nilai rasio pecahan yang berada di antara interval negatif satu dan satu (-1 < r < 1), maka bentuk formula deret geometri yang diaplikasikan harus disesuaikan menjadi Sn = a(1 - r^n) / (1 - r). Selain mempelajari rumus-rumus spesifik untuk masing-masing jenis deret, terdapat pula sebuah relasi fundamental antara deret dan barisan bilangan yang bersifat universal. Jika Sn menyatakan jumlah n suku pertama dan S(n-1) menyatakan jumlah n-1 suku pertama, maka nilai suku ke-n (Un) akan selalu dapat diidentifikasi dengan menghitung selisih matematis di antara keduanya. Keterkaitan mutlak ini dirumuskan secara aljabar sebagai Un = Sn - S(n-1). Melalui relasi ini, kemampuan analitis dalam membedah hubungan barisan dan deret akan terbentuk secara holistik.\n\n[ATP_ALIGNMENT]\nMenghitung jumlah n suku pertama pada deret aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha UMKM keripik singkong berencana meningkatkan kapasitas produksinya. Bulan pertama, ia memproduksi 100 bungkus. Setiap bulan berikutnya, ia menargetkan peningkatan produksi sebesar 20 bungkus dari bulan sebelumnya. Jika target ini tercapai, berapa total produksi keripik singkong selama 12 bulan pertama?",
+      "question": "Manakah strategi perhitungan yang paling efisien untuk menentukan total produksi keripik singkong selama 12 bulan?",
+      "options": {
+        "A": "Menjumlahkan produksi setiap bulan secara manual dari bulan 1 hingga bulan 12.",
+        "B": "Menggunakan rumus deret aritmetika Sn = n/2 (2a + (n - 1)b) dengan a=100, b=20, dan n=12.",
+        "C": "Menggunakan rumus deret geometri Sn = a(r^n - 1) / (r - 1) karena ada peningkatan.",
+        "D": "Menghitung suku ke-12 (U12) lalu mengalikannya dengan jumlah bulan (12).",
+        "E": "Menggunakan rumus Sn = n/2 (a + Un) tanpa menghitung U12 terlebih dahulu."
+      },
+      "answer": "B",
+      "explanation": "**Strategi Perhitungan Efisien**\\nProduksi keripik singkong menunjukkan peningkatan konstan setiap bulan, yang merupakan ciri deret aritmetika. Rumus Sn = n/2 (2a + (n - 1)b) secara langsung menghitung total produksi (Sn) dengan informasi suku pertama (a), beda (b), dan jumlah bulan (n), sehingga lebih efisien daripada menjumlahkan manual atau menggunakan rumus yang tidak sesuai."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko roti 'Rasa Manis' mencatat penjualan kuenya. Penjualan hari pertama adalah 50 loyang. Setiap hari berikutnya, penjualan meningkat dua kali lipat dari hari sebelumnya. Jika tren ini berlanjut, manakah pernyataan yang paling akurat mengenai total penjualan kue selama 5 hari pertama?",
+      "question": "Manakah analisis yang paling tepat untuk memprediksi total penjualan kue selama 5 hari pertama?",
+      "options": {
+        "A": "Penjualan hari ke-5 akan sangat tinggi, sehingga totalnya mudah dihitung dengan menjumlahkan.",
+        "B": "Ini adalah deret aritmetika dengan beda 2, sehingga totalnya dapat dihitung dengan Sn = n/2 (2a + (n-1)b).",
+        "C": "Ini adalah deret geometri dengan rasio 2, dan total penjualan dapat dihitung menggunakan Sn = a(r^n - 1) / (r - 1).",
+        "D": "Total penjualan dapat dihitung dengan menjumlahkan penjualan hari pertama dan hari kelima.",
+        "E": "Karena penjualannya berlipat ganda, kita hanya perlu menghitung penjualan hari ke-5."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Pertumbuhan Penjualan**\\nPeningkatan penjualan yang berlipat ganda setiap hari menunjukkan pola deret geometri dengan rasio (r) sebesar 2. Rumus Sn = a(r^n - 1) / (r - 1) adalah formula yang tepat untuk menghitung jumlah n suku pertama pada deret geometri dengan r > 1, sehingga paling akurat untuk memprediksi total penjualan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani menanam padi di sawahnya. Pada panen pertama, ia mendapatkan hasil 2 ton. Ia berharap setiap panen berikutnya hasil panennya meningkat sebesar 0.5 ton dari panen sebelumnya. Jika ia berencana melakukan 10 kali panen, manakah keputusan investasi yang paling bijak berdasarkan proyeksi hasil panen?",
+      "question": "Jika petani tersebut ingin membandingkan dua skenario investasi: (1) hasil panen meningkat konstan 0.5 ton per panen, atau (2) hasil panen berlipat ganda setiap panen, strategi evaluasi manakah yang paling tepat?",
+      "options": {
+        "A": "Menghitung total hasil panen untuk skenario 1 menggunakan deret aritmetika dan membandingkannya dengan total hasil panen skenario 2 yang dihitung menggunakan deret geometri.",
+        "B": "Membandingkan hasil panen pada panen ke-10 saja untuk kedua skenario.",
+        "C": "Menjumlahkan hasil panen pertama dan terakhir untuk kedua skenario.",
+        "D": "Mengabaikan skenario kedua karena peningkatan berlipat ganda tidak realistis.",
+        "E": "Menghitung rata-rata hasil panen per panen untuk kedua skenario."
+      },
+      "answer": "A",
+      "explanation": "**Evaluasi Skenario Investasi**\\nUntuk membandingkan dua skenario pertumbuhan yang berbeda (aritmetika dan geometri), diperlukan perhitungan total hasil untuk masing-masing skenario. Menghitung total hasil panen menggunakan rumus deret yang sesuai (aritmetika untuk peningkatan konstan, geometri untuk penggandaan) memungkinkan perbandingan yang akurat."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik sedang mengoptimalkan rute pengiriman. Rute A memiliki total jarak 100 km. Setiap penambahan satu titik pemberhentian berikutnya, jarak tempuh total bertambah 5 km. Perusahaan mempertimbangkan untuk menambah 5 titik pemberhentian.",
+      "question": "Jika perusahaan ingin mengevaluasi efisiensi penambahan titik pemberhentian, manakah analisis yang paling krusial?",
+      "options": {
+        "A": "Menghitung jarak tempuh untuk setiap titik pemberhentian secara terpisah.",
+        "B": "Menghitung total jarak tempuh dengan rumus deret geometri.",
+        "C": "Menghitung total jarak tempuh dengan rumus deret aritmetika Sn = n/2 (2a + (n - 1)b) dan membandingkannya dengan jarak awal.",
+        "D": "Membandingkan jarak tempuh titik pemberhentian ke-5 dengan jarak awal.",
+        "E": "Menjumlahkan jarak awal dengan penambahan jarak pada titik pemberhentian ke-5."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Efisiensi Rute**\\nPeningkatan jarak tempuh yang konstan sebesar 5 km untuk setiap penambahan titik pemberhentian mengindikasikan pola deret aritmetika. Menghitung total jarak tempuh menggunakan rumus deret aritmetika Sn = n/2 (2a + (n - 1)b) memungkinkan evaluasi dampak penambahan titik pemberhentian terhadap total jarak tempuh secara keseluruhan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa menabung di bank. Bulan pertama ia menabung Rp50.000. Setiap bulan berikutnya, ia menambah tabungannya sebesar Rp10.000 dari bulan sebelumnya. Ia berencana menabung selama 1 tahun (12 bulan).",
+      "question": "Jika siswa tersebut ingin memprediksi total tabungannya setelah 12 bulan, manakah strategi perhitungan yang paling tepat dan efisien?",
+      "options": {
+        "A": "Menjumlahkan Rp50.000 dengan Rp10.000 sebanyak 11 kali.",
+        "B": "Menghitung suku ke-12 (U12) lalu mengalikannya dengan jumlah bulan.",
+        "C": "Menggunakan rumus deret aritmetika Sn = n/2 (2a + (n - 1)b) dengan a=50.000, b=10.000, dan n=12.",
+        "D": "Menggunakan rumus deret geometri Sn = a(r^n - 1) / (r - 1) karena ada penambahan.",
+        "E": "Menjumlahkan tabungan bulan pertama dan bulan terakhir."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Perhitungan Tabungan**\\nPenambahan tabungan yang konstan setiap bulan (Rp10.000) menunjukkan pola deret aritmetika. Rumus Sn = n/2 (2a + (n - 1)b) secara langsung menghitung total tabungan (Sn) dengan informasi suku pertama (a), beda (b), dan jumlah bulan (n), sehingga merupakan metode paling efisien."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah komunitas pengrajin batik ingin meningkatkan jumlah produksi mereka. Pada bulan pertama, mereka memproduksi 30 potong batik. Setiap bulan berikutnya, produksi meningkat sebesar 15% dari bulan sebelumnya. Mereka menargetkan produksi selama 6 bulan.",
+      "question": "Manakah analisis yang paling tepat untuk memprediksi total produksi batik selama 6 bulan?",
+      "options": {
+        "A": "Menjumlahkan produksi setiap bulan secara manual.",
+        "B": "Menggunakan rumus deret aritmetika Sn = n/2 (2a + (n - 1)b).",
+        "C": "Menggunakan rumus deret geometri Sn = a(1 - r^n) / (1 - r) dengan a=30, r=1.15, dan n=6.",
+        "D": "Menghitung produksi bulan ke-6 lalu mengalikannya dengan jumlah bulan.",
+        "E": "Menjumlahkan produksi bulan pertama dan bulan keenam."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Peningkatan Produksi**\\nPeningkatan produksi sebesar 15% setiap bulan berarti produksi bulan berikutnya adalah 115% dari bulan sebelumnya, yang menunjukkan pola deret geometri dengan rasio r = 1.15. Rumus Sn = a(1 - r^n) / (1 - r) adalah formula yang tepat untuk menghitung jumlah n suku pertama pada deret geometri dengan -1 < r < 1 atau r > 1."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM makanan ringan memproduksi keripik kentang. Produksi hari pertama adalah 200 bungkus. Setiap hari berikutnya, produksi meningkat dua kali lipat dari hari sebelumnya. UMKM ini ingin mengetahui total produksi selama 4 hari.",
+      "question": "Manakah strategi evaluasi yang paling efektif untuk menentukan total produksi keripik kentang selama 4 hari?",
+      "options": {
+        "A": "Menjumlahkan produksi hari pertama, kedua, ketiga, dan keempat secara manual.",
+        "B": "Menggunakan rumus deret aritmetika Sn = n/2 (2a + (n - 1)b).",
+        "C": "Menggunakan rumus deret geometri Sn = a(r^n - 1) / (r - 1) dengan a=200, r=2, dan n=4.",
+        "D": "Menghitung produksi hari ke-4 saja.",
+        "E": "Menjumlahkan produksi hari pertama dan hari keempat."
+      },
+      "answer": "C",
+      "explanation": "**Evaluasi Efektivitas Produksi**\\nPeningkatan produksi yang berlipat ganda setiap hari menunjukkan pola deret geometri dengan rasio (r) sebesar 2. Rumus Sn = a(r^n - 1) / (r - 1) adalah formula yang tepat untuk menghitung jumlah n suku pertama pada deret geometri dengan r > 1, sehingga paling efektif untuk menentukan total produksi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengrajin gerabah membuat vas bunga. Bulan pertama ia membuat 15 vas. Setiap bulan berikutnya, ia berencana menambah produksinya sebanyak 3 vas dari bulan sebelumnya. Ia ingin mengetahui total produksi vas selama 10 bulan.",
+      "question": "Jika pengrajin tersebut ingin membandingkan dua skenario produksi: (1) peningkatan konstan 3 vas per bulan, atau (2) peningkatan produksi menjadi 1.5 kali lipat setiap bulan, strategi evaluasi manakah yang paling tepat?",
+      "options": {
+        "A": "Menghitung total produksi untuk skenario 1 menggunakan deret aritmetika dan membandingkannya dengan total produksi skenario 2 yang dihitung menggunakan deret geometri.",
+        "B": "Membandingkan produksi pada bulan ke-10 saja untuk kedua skenario.",
+        "C": "Menjumlahkan produksi bulan pertama dan bulan terakhir untuk kedua skenario.",
+        "D": "Mengabaikan skenario kedua karena peningkatan berlipat ganda tidak realistis.",
+        "E": "Menghitung rata-rata produksi per bulan untuk kedua skenario."
+      },
+      "answer": "A",
+      "explanation": "**Evaluasi Skenario Produksi**\\nUntuk membandingkan dua skenario pertumbuhan yang berbeda (aritmetika dan geometri), diperlukan perhitungan total hasil untuk masing-masing skenario. Menghitung total produksi menggunakan rumus deret yang sesuai (aritmetika untuk peningkatan konstan, geometri untuk penggandaan) memungkinkan perbandingan yang akurat dan mendalam."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan percetakan buku mencatat jumlah buku yang dicetak. Hari pertama dicetak 500 eksemplar. Setiap hari berikutnya, jumlah cetakan meningkat sebesar 10% dari hari sebelumnya. Perusahaan ingin mengetahui total cetakan selama 7 hari.",
+      "question": "Manakah analisis yang paling tepat untuk memprediksi total cetakan buku selama 7 hari?",
+      "options": {
+        "A": "Menjumlahkan cetakan setiap hari secara manual.",
+        "B": "Menggunakan rumus deret aritmetika Sn = n/2 (2a + (n - 1)b).",
+        "C": "Menggunakan rumus deret geometri Sn = a(1 - r^n) / (1 - r) dengan a=500, r=1.10, dan n=7.",
+        "D": "Menghitung cetakan hari ke-7 lalu mengalikannya dengan jumlah hari.",
+        "E": "Menjumlahkan cetakan hari pertama dan hari ketujuh."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Peningkatan Cetakan**\\nPeningkatan jumlah cetakan sebesar 10% setiap hari berarti jumlah cetakan hari berikutnya adalah 110% dari hari sebelumnya, yang menunjukkan pola deret geometri dengan rasio r = 1.10. Rumus Sn = a(1 - r^n) / (1 - r) adalah formula yang tepat untuk menghitung jumlah n suku pertama pada deret geometri dengan r > 1, sehingga paling tepat untuk prediksi total cetakan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pedagang buah menjual mangga. Hari pertama ia menjual 40 kg. Setiap hari berikutnya, ia menargetkan peningkatan penjualan sebesar 5 kg dari hari sebelumnya. Ia berencana berjualan selama 15 hari.",
+      "question": "Manakah strategi perhitungan yang paling efisien untuk menentukan total penjualan mangga selama 15 hari?",
+      "options": {
+        "A": "Menjumlahkan penjualan setiap hari secara manual dari hari 1 hingga hari 15.",
+        "B": "Menggunakan rumus deret aritmetika Sn = n/2 (2a + (n - 1)b) dengan a=40, b=5, dan n=15.",
+        "C": "Menggunakan rumus deret geometri Sn = a(r^n - 1) / (r - 1) karena ada peningkatan.",
+        "D": "Menghitung penjualan hari ke-15 (U15) lalu mengalikannya dengan jumlah hari (15).",
+        "E": "Menggunakan rumus Sn = n/2 (a + Un) tanpa menghitung U15 terlebih dahulu."
+      },
+      "answer": "B",
+      "explanation": "**Strategi Perhitungan Penjualan**\\nPeningkatan penjualan yang konstan setiap hari (5 kg) menunjukkan pola deret aritmetika. Rumus Sn = n/2 (2a + (n - 1)b) secara langsung menghitung total penjualan (Sn) dengan informasi suku pertama (a), beda (b), dan jumlah hari (n), sehingga merupakan metode paling efisien."
+    }
+  ],
+  "metadata": {
+    "id": "a2ba55d6-3723-455c-8b7a-6ce16c81afed",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:08:12Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Deret",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_4_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung jumlah n suku pertama pada deret aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2960,
+      "assistant": 3954,
+      "total": 7587,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

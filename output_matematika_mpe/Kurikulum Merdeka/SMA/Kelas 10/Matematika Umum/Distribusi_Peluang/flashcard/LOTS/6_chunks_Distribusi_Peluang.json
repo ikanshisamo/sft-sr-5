@@ -1,0 +1,68 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate exactly 5 flashcards in JSON array format.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"front\": \"\",\n    \"back\": \"\"\n  }\n]\n\n[FLASHCARD_LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"focus\": [\n      \"definisi\",\n      \"rumus\",\n      \"fakta dasar\",\n      \"konsep inti\"\n    ],\n    \"style\": \"direct recall\"\n  },\n\n  \"MOTS\": {\n    \"focus\": [\n      \"hubungan konsep\",\n      \"aplikasi sederhana\",\n      \"contoh penggunaan\"\n    ],\n    \"style\": \"applied recall\"\n  },\n\n  \"HOTS\": {\n    \"focus\": [\n      \"kesimpulan\",\n      \"strategi\",\n      \"dampak\",\n      \"evaluasi singkat\"\n    ],\n    \"style\": \"evaluative takeaway\"\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang | Target: LOTS\n\n--- MATERI ---\nDalam kehidupan sehari-hari, kita sering dihadapkan pada pertanyaan yang berhubungan dengan kemungkinan suatu kejadian, seperti kemungkinan turun hujan atau peluang seseorang terpapar virus. Prediksi mengenai kejadian tersebut dapat dipelajari melalui bidang matematika yang disebut peluang. Peluang adalah ukuran tentang kemungkinan suatu kejadian yang akan terjadi (atau tidak terjadi) di masa mendatang. Nilai peluang selalu berada di antara rentang 0 dan 1 inklusif. Jika sebuah kejadian tidak mungkin terjadi, maka peluangnya bernilai 0. Sebaliknya, jika sebuah kejadian pasti terjadi, maka peluangnya bernilai 1. Nilai peluang ini umumnya dituliskan dalam bentuk pecahan atau desimal.\n\nSebelum menghitung peluang, kita perlu memahami konsep ruang sampel. Ruang sampel, yang biasanya dilambangkan dengan huruf S, adalah himpunan semua kemungkinan hasil yang didapatkan dari suatu percobaan (eksperimen) peluang acak. Setiap anggota individual di dalam ruang sampel dinamakan sebagai titik sampel. Banyaknya semua anggota himpunan ruang sampel ditulis dengan simbol n(S). Jika semua hasil dalam ruang sampel tersebut sama kemungkinannya untuk terjadi, maka peluang terjadinya suatu kejadian spesifik, misalnya kejadian A, ditentukan dengan rumus dasar P(A) = n(A)/n(S), di mana n(A) mewakili banyaknya anggota dalam kejadian A yang diharapkan muncul.\n\nSebagai contoh penerapan ruang sampel, mari pertimbangkan percobaan pelemparan dua buah dadu berenam secara bersamaan, misalnya satu dadu merah dan satu dadu putih. Ruang sampel dari percobaan ini memuat seluruh kombinasi angka-angka yang mungkin muncul dari kedua dadu tersebut. Karena setiap dadu memiliki 6 sisi, total semua kemungkinan hasil atau n(S) adalah 36 titik sampel. Jika dadu tersebut diasumsikan sebagai dadu yang adil dan simetris, maka ke-36 hasil pada ruang sampel tersebut sama kemungkinannya untuk terjadi. Artinya, setiap kombinasi angka memiliki besaran peluang yang sama besar untuk muncul dalam setiap proses pelemparannya.\n\nDengan mengetahui total ruang sampel yang sama kemungkinannya tersebut, kita bisa langsung menghitung peluang sebuah kejadian tertentu. Misalnya, pada pelemparan dua dadu tadi, kita ingin mencari peluang mendapatkan jumlah kedua mata dadu sama dengan 11. Dari tabel ruang sampel, kejadian munculnya jumlah 11 hanya memiliki dua hasil kemungkinan, yaitu dadu pertama 5 dan dadu kedua 6 atau sebaliknya dadu pertama 6 dan dadu kedua 5. Maka nilai n(A) adalah 2. Peluang kejadian jumlah 11 adalah P(A) = 2/36 atau jika disederhanakan menjadi 1/18. Hal ini dapat diterapkan untuk berbagai kejadian lainnya dengan membagi jumlah kejadian yang memenuhi syarat dengan total n(S).\n\nSetelah memahami ruang sampel, tingkat analisis selanjutnya adalah menyusun distribusi peluang. Distribusi peluang adalah sebuah deskripsi komprehensif yang menjabarkan semua kemungkinan hasil dari suatu situasi acak, yang disajikan secara berdampingan dengan besaran peluang terjadinya masing-masing hasil tersebut. Terdapat perbedaan konsep yang jelas antara ruang sampel dan distribusi peluang. Di dalam sebuah distribusi peluang, semua kemungkinan hasil yang beragam harus terlebih dahulu disederhanakan dan dinyatakan ke dalam bentuk sebuah angka tunggal, lalu nilai peluang mutlak untuk masing-masing angka tunggal tersebut dihitung secara spesifik.\n\nContoh nyata dari distribusi peluang dapat dilihat saat kita mengamati total jumlah pelemparan dua dadu. Alih-alih menuliskan pasangan bilangannya, hasil dijabarkan sebagai angka tunggal yang merepresentasikan jumlah mata dadu, yaitu rentang angka dari 2 hingga 12. Masing-masing angka tersebut memiliki peluang tersendiri, misalnya peluang munculnya jumlah 2 adalah 1/36, peluang jumlah 3 adalah 2/36, dan seterusnya hingga jumlah 12. Kumpulan angka tunggal beserta nilai peluangnya ini akan membentuk sebuah tabel distribusi peluang. Prinsip yang sama juga dapat diterapkan pada perhitungan pelemparan dua keping uang logam untuk mengamati distribusi peluang kemunculan sisi gambarnya.\n\n[FLASHCARD_REQUIREMENTS]\n- Generate flashcards aligned with the configured flashcard level.\n- Keep answers concise, useful, and easy to recall.\n- Focus on essential knowledge compression.\n- Avoid long analytical explanations.\n- Use natural Indonesian educational language.\n\n[LEVEL_ALIGNMENT]\n\n- LOTS:\n  Focus on direct recall of concepts, formulas, definitions, or basic facts.\n- MOTS:\n  Focus on simple application, conceptual relationships, or practical usage.\n- HOTS:\n  Focus on concise evaluative conclusions, impacts, strategies, or insights.\n\n[FRONT_RULES]\n- Maximum 20 characters including spaces.\n- Use concise prompts, terms, formulas, or key ideas.\n- Avoid ambiguous wording.\n- Avoid full sentence questions when unnecessary.\n\n[BACK_RULES]\n- Maximum 50 characters including spaces.\n- Must contain definitive answers, formulas, concepts, impacts, or conclusions.\n- Avoid rhetorical or open-ended responses.\n- Avoid filler words.\n- STEM subjects:\n  - may include concise LaTeX formulas\n  - prioritize formulas or technical meaning\n- Theory subjects:\n  - prioritize impacts, relationships, or concise takeaways\n\n[CONTENT_GUIDELINES]\nAllowed content:\n- formulas\n- definitions\n- key concepts\n- practical applications\n- impacts\n- relationships\n- concise strategies\n- evaluative takeaways\n\n[VARIATION_RULES]\nDistribute flashcards naturally across:\n- conceptual recall\n- applied understanding\n- evaluative takeaway\n\nAvoid generating cards with repetitive wording patterns.\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- Escape newline characters.\n- Escape internal quotes.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "front": "Apa itu peluang?",
+      "back": "Ukuran kemungkinan kejadian di masa mendatang."
+    },
+    {
+      "level": "LOTS",
+      "front": "Rentang nilai peluang",
+      "back": "0 sampai 1 (inklusif)."
+    },
+    {
+      "level": "LOTS",
+      "front": "Rumus peluang dasar",
+      "back": "P(A) = n(A)/n(S)"
+    },
+    {
+      "level": "LOTS",
+      "front": "Apa itu ruang sampel?",
+      "back": "Himpunan semua kemungkinan hasil percobaan."
+    },
+    {
+      "level": "LOTS",
+      "front": "Apa itu distribusi peluang?",
+      "back": "Hasil acak & peluang masing-masing hasil."
+    }
+  ],
+  "metadata": {
+    "id": "3a31eae8-3ab6-4d84-9db7-3d050f27518f",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T08:49:31Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "flashcard",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_6_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2085,
+      "assistant": 153,
+      "total": 2912,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

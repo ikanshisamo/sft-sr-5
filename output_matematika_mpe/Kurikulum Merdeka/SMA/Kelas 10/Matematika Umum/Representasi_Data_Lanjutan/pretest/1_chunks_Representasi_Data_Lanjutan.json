@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data Lanjutan\n\n--- MATERI ---\nDalam materi representasi data lanjutan, terdapat dua metode visualisasi yang dipelajari, yaitu Diagram Box-and-Whisker (box plot) dan Diagram Pencar (scatter plot). Box plot merupakan cara efektif untuk memvisualisasikan distribusi data dalam satu diagram yang menampilkan lima ukuran utama: nilai minimum, kuartil pertama (Q1), median (Q2), kuartil ketiga (Q3), dan nilai maksimum. Selain itu, box plot juga dapat memperlihatkan Jangkauan Interkuartil (IQR) serta secara jelas mengidentifikasi keberadaan nilai pencilan, sehingga sangat berguna untuk menganalisis dan membandingkan sebaran dua kelompok data atau lebih. Di sisi lain, diagram pencar atau scatter plot merepresentasikan dua set data sebagai titik-titik pada sebuah bidang dengan koordinat Kartesius, di mana sumbu horizontal dan vertikalnya masing-masing mewakili satu variabel. Tujuan utama dari diagram pencar adalah memvisualisasikan pola hubungan atau korelasi antara dua himpunan data, yang nantinya dapat dikategorikan menjadi korelasi positif, korelasi negatif, atau tidak ada korelasi sama sekali.\n\n[ATP_ALIGNMENT]\nMerepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM keripik singkong ingin menganalisis data penjualan selama satu bulan. Data yang terkumpul meliputi jumlah penjualan harian dan harga jual per kilogram. Manakah representasi data yang paling cocok untuk melihat tren penjualan harian?",
+      "question": "Manakah representasi data yang paling efektif untuk memvisualisasikan distribusi sebaran data penjualan harian?",
+      "options": {
+        "A": "Diagram Pencar (Scatter Plot)",
+        "B": "Diagram Batang (Bar Chart)",
+        "C": "Diagram Lingkaran (Pie Chart)",
+        "D": "Diagram Garis (Line Chart)",
+        "E": "Diagram Box-and-Whisker (Box Plot)"
+      },
+      "answer": "E",
+      "explanation": "**Diagram Box-and-Whisker** sangat efektif untuk memvisualisasikan distribusi data, termasuk sebaran nilai minimum, Q1, median, Q3, dan nilai maksimum, serta mengidentifikasi pencilan. Ini membantu memahami variabilitas penjualan harian."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang guru ingin menunjukkan hubungan antara jam belajar siswa dan nilai ujian mereka. Data ini dikumpulkan dari 30 siswa di sebuah SMA di Surabaya. Guru tersebut memiliki dua pilihan visualisasi data.",
+      "question": "Jika guru ingin melihat apakah ada pola hubungan antara jam belajar dan nilai ujian, representasi data manakah yang paling tepat digunakan?",
+      "options": {
+        "A": "Diagram Box-and-Whisker",
+        "B": "Histogram",
+        "C": "Diagram Pencar (Scatter Plot)",
+        "D": "Diagram Batang",
+        "E": "Diagram Garis"
+      },
+      "answer": "C",
+      "explanation": "**Diagram Pencar (Scatter Plot)** digunakan untuk memvisualisasikan pola hubungan antara dua variabel kuantitatif. Dalam kasus ini, variabelnya adalah jam belajar dan nilai ujian, sehingga diagram pencar cocok untuk melihat korelasi."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data hasil panen padi di tiga desa di Jawa Tengah selama 5 tahun terakhir disajikan dalam tabel. Desa A mengalami peningkatan panen yang stabil, Desa B fluktuatif, dan Desa C cenderung menurun.",
+      "question": "Jika data panen padi dari ketiga desa tersebut divisualisasikan menggunakan diagram yang sama, manakah representasi data yang paling memungkinkan untuk membandingkan sebaran panen antar desa secara efektif?",
+      "options": {
+        "A": "Diagram Pencar (Scatter Plot)",
+        "B": "Diagram Lingkaran (Pie Chart)",
+        "C": "Diagram Batang (Bar Chart)",
+        "D": "Diagram Box-and-Whisker (Box Plot)",
+        "E": "Diagram Garis (Line Chart)"
+      },
+      "answer": "D",
+      "explanation": "**Diagram Box-and-Whisker** sangat cocok untuk membandingkan sebaran data dari beberapa kelompok. Dengan menggunakan box plot untuk setiap desa, kita dapat dengan mudah membandingkan median, jangkauan, dan keberadaan pencilan panen antar desa."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan transportasi online di Jakarta mengumpulkan data mengenai jarak tempuh perjalanan dan tarif yang dikenakan kepada pelanggan selama seminggu terakhir. Data ini terdiri dari 100 entri.",
+      "question": "Manakah metode visualisasi data yang paling tepat untuk mengidentifikasi apakah ada korelasi antara jarak tempuh perjalanan dan tarif yang dikenakan?",
+      "options": {
+        "A": "Diagram Box-and-Whisker",
+        "B": "Diagram Pencar (Scatter Plot)",
+        "C": "Histogram",
+        "D": "Diagram Batang",
+        "E": "Diagram Lingkaran"
+      },
+      "answer": "B",
+      "explanation": "**Diagram Pencar (Scatter Plot)** adalah alat yang ideal untuk menampilkan hubungan antara dua variabel kuantitatif. Dalam konteks ini, diagram pencar akan menunjukkan bagaimana tarif berubah seiring dengan perubahan jarak tempuh, sehingga korelasi dapat diamati."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang peneliti membandingkan hasil belajar matematika siswa di dua sekolah yang menggunakan metode pengajaran berbeda. Data nilai ujian akhir siswa disajikan dalam dua box plot terpisah. Box plot Sekolah A menunjukkan median yang lebih tinggi dan sebaran yang lebih sempit dibandingkan Sekolah B.",
+      "question": "Berdasarkan perbandingan kedua box plot, kesimpulan manakah yang paling logis mengenai efektivitas metode pengajaran?",
+      "options": {
+        "A": "Metode pengajaran di Sekolah B lebih efektif karena memiliki jangkauan nilai yang lebih luas.",
+        "B": "Metode pengajaran di Sekolah A lebih efektif karena menghasilkan nilai rata-rata yang lebih tinggi dan konsistensi yang lebih baik.",
+        "C": "Tidak ada kesimpulan yang dapat ditarik tanpa mengetahui jumlah siswa di setiap sekolah.",
+        "D": "Metode pengajaran di Sekolah B lebih efektif karena memiliki nilai minimum yang lebih tinggi.",
+        "E": "Kedua metode pengajaran memiliki efektivitas yang sama karena mediannya berada dalam rentang yang berdekatan."
+      },
+      "answer": "B",
+      "explanation": "**Metode pengajaran di Sekolah A lebih efektif** karena box plot menunjukkan median yang lebih tinggi (menunjukkan nilai tengah yang lebih baik) dan sebaran yang lebih sempit (menunjukkan konsistensi hasil yang lebih baik, artinya lebih sedikit variasi nilai antar siswa)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah startup teknologi di Bandung menganalisis data penggunaan aplikasi mereka. Mereka memiliki data jumlah pengguna aktif harian dan jumlah fitur yang diakses per pengguna. Mereka ingin mengetahui apakah penambahan fitur baru berdampak pada peningkatan interaksi pengguna.",
+      "question": "Jika startup tersebut memvisualisasikan data ini menggunakan diagram pencar, dan mereka melihat pola titik-titik yang mengarah ke atas dari kiri ke kanan, apa implikasi paling kuat dari pola ini terhadap strategi pengembangan fitur mereka?",
+      "options": {
+        "A": "Penambahan fitur baru tidak berpengaruh pada jumlah pengguna aktif harian.",
+        "B": "Pengguna cenderung mengakses lebih banyak fitur ketika jumlah pengguna aktif harian menurun.",
+        "C": "Ada korelasi positif yang kuat: semakin banyak fitur yang diakses, semakin tinggi jumlah pengguna aktif harian.",
+        "D": "Ada korelasi negatif: semakin banyak fitur yang diakses, semakin rendah jumlah pengguna aktif harian.",
+        "E": "Pola tersebut menunjukkan bahwa jumlah pengguna aktif harian dan jumlah fitur yang diakses adalah independen."
+      },
+      "answer": "C",
+      "explanation": "**Ada korelasi positif yang kuat** karena pola titik-titik yang mengarah ke atas dari kiri ke kanan pada diagram pencar mengindikasikan bahwa ketika satu variabel (jumlah fitur yang diakses) meningkat, variabel lainnya (jumlah pengguna aktif harian) juga cenderung meningkat. Ini mendukung strategi pengembangan fitur."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah survei kepuasan pelanggan sebuah restoran di Yogyakarta, data dikumpulkan mengenai frekuensi kunjungan dan skor kepuasan. Data ini akan divisualisasikan untuk melihat tren.",
+      "question": "Manakah dari berikut ini yang merupakan salah satu dari lima ukuran utama yang ditampilkan dalam diagram Box-and-Whisker?",
+      "options": {
+        "A": "Rata-rata (Mean)",
+        "B": "Modus (Mode)",
+        "C": "Kuartil Pertama (Q1)",
+        "D": "Rentang (Range)",
+        "E": "Standar Deviasi"
+      },
+      "answer": "C",
+      "explanation": "**Kuartil Pertama (Q1)** adalah salah satu dari lima ukuran utama (minimum, Q1, median, Q3, maksimum) yang ditampilkan dalam diagram Box-and-Whisker untuk menggambarkan distribusi data."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani di Malang ingin menganalisis hubungan antara jumlah pupuk yang digunakan per hektar dan hasil panen jagung. Data dikumpulkan dari beberapa petak lahan.",
+      "question": "Jika petani tersebut membuat diagram pencar dari data tersebut dan melihat titik-titik tersebar acak tanpa pola yang jelas, apa interpretasi yang paling mungkin mengenai hubungan antara jumlah pupuk dan hasil panen?",
+      "options": {
+        "A": "Semakin banyak pupuk, semakin tinggi hasil panen.",
+        "B": "Semakin banyak pupuk, semakin rendah hasil panen.",
+        "C": "Tidak ada korelasi yang jelas antara jumlah pupuk yang digunakan dan hasil panen jagung.",
+        "D": "Hasil panen jagung hanya dipengaruhi oleh cuaca, bukan pupuk.",
+        "E": "Jumlah pupuk yang digunakan harus dikurangi secara drastis."
+      },
+      "answer": "C",
+      "explanation": "**Tidak ada korelasi yang jelas** karena titik-titik yang tersebar acak pada diagram pencar menunjukkan bahwa tidak ada pola hubungan yang konsisten antara kedua variabel tersebut. Perubahan pada satu variabel tidak secara sistematis diikuti oleh perubahan pada variabel lainnya."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik di Semarang membandingkan efisiensi pengiriman dua rute berbeda menggunakan diagram box plot. Rute A menunjukkan median waktu pengiriman yang lebih rendah tetapi dengan jangkauan interkuartil (IQR) yang lebih besar. Rute B memiliki median waktu pengiriman yang sedikit lebih tinggi tetapi dengan IQR yang lebih kecil.",
+      "question": "Jika perusahaan memprioritaskan keandalan dan prediktabilitas waktu pengiriman, rute manakah yang sebaiknya dipilih dan mengapa?",
+      "options": {
+        "A": "Rute A, karena median waktu pengirimannya lebih rendah.",
+        "B": "Rute B, karena jangkauan interkuartilnya lebih kecil, menunjukkan konsistensi yang lebih baik.",
+        "C": "Rute A, karena jangkauan interkuartilnya yang lebih besar menunjukkan potensi pengiriman yang lebih cepat.",
+        "D": "Rute B, karena median waktu pengirimannya sedikit lebih tinggi, yang mungkin menandakan kualitas layanan yang lebih baik.",
+        "E": "Kedua rute sama efisiennya karena perbedaan mediannya kecil."
+      },
+      "answer": "B",
+      "explanation": "**Rute B sebaiknya dipilih karena jangkauan interkuartilnya (IQR) yang lebih kecil.** IQR yang lebih kecil menunjukkan bahwa sebagian besar data (nilai tengah) lebih terkonsentrasi dan bervariasi lebih sedikit, yang berarti waktu pengiriman lebih dapat diprediksi dan konsisten."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang peneliti sedang menganalisis data tinggi badan siswa SMA di sebuah sekolah di Bandung. Ia ingin memvisualisasikan sebaran data tinggi badan tersebut.",
+      "question": "Manakah dari representasi data berikut yang paling cocok untuk menunjukkan lima ringkasan statistik utama (minimum, Q1, median, Q3, maksimum) dari tinggi badan siswa?",
+      "options": {
+        "A": "Diagram Pencar (Scatter Plot)",
+        "B": "Diagram Batang (Bar Chart)",
+        "C": "Diagram Lingkaran (Pie Chart)",
+        "D": "Diagram Box-and-Whisker (Box Plot)",
+        "E": "Histogram"
+      },
+      "answer": "D",
+      "explanation": "**Diagram Box-and-Whisker** secara khusus dirancang untuk menampilkan lima ringkasan statistik utama data, yaitu nilai minimum, kuartil pertama (Q1), median (Q2), kuartil ketiga (Q3), dan nilai maksimum. Ini sangat berguna untuk memahami sebaran data."
+    }
+  ],
+  "metadata": {
+    "id": "b78f7f3c-243c-47f3-903b-3b9efacaf8b4",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T13:53:33Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data Lanjutan",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Merepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2810,
+      "assistant": 3206,
+      "total": 6690,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Bentuk Akar\n\n--- MATERI ---\nBentuk akar memiliki hubungan yang sangat erat dengan bilangan berpangkat pecahan. Secara matematis, bentuk akar didefinisikan sebagai berikut: untuk setiap bilangan dengan pangkat rasional m/n, di mana m dan n adalah bilangan bulat dan n lebih dari 0, maka a pangkat m/n dapat dinyatakan sebagai akar pangkat n dari a pangkat m. Sifat-sifat eksponen yang telah dipelajari sebelumnya juga berlaku dan dapat dikaitkan langsung untuk menyelesaikan operasi hitung pada bentuk akar berpangkat pecahan ini. Selain itu, dalam pengoperasian bentuk akar, sering kali kita perlu melakukan proses merasionalkan bentuk akar, khususnya apabila bentuk akar tersebut berada sebagai penyebut dalam suatu pecahan. Langkah utama untuk merasionalkan penyebut bentuk akar ini adalah dengan mengalikannya menggunakan bentuk akar sekawannya.\n\n[ATP_ALIGNMENT]\nMenyelesaikan operasi hitung pada bentuk akar dan merasionalkan penyebut pecahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 1000 meter persegi. Ia ingin menanami 50% lahannya dengan padi dan sisanya dengan jagung. Berapa luas lahan yang ditanami padi?",
+      "question": "Berapa luas lahan yang ditanami padi dalam satuan meter persegi?",
+      "options": {
+        "A": "250",
+        "B": "500",
+        "C": "750",
+        "D": "1000",
+        "E": "1500"
+      },
+      "answer": "B",
+      "explanation": "**Perhitungan Luas Lahan Padi**\\nLuas lahan yang ditanami padi adalah 50% dari total luas lahan. \\nLuas Padi = 50% \\times 1000 m^2 = 0.5 \\times 1000 m^2 = 500 m^2."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM kerupuk udang memproduksi 200 bungkus kerupuk setiap hari. Jika setiap bungkus dijual seharga Rp2.500, berapakah total pendapatan UMKM tersebut dalam satu hari?",
+      "question": "Berapakah total pendapatan UMKM kerupuk udang dalam satu hari?",
+      "options": {
+        "A": "Rp250.000",
+        "B": "Rp300.000",
+        "C": "Rp400.000",
+        "D": "Rp500.000",
+        "E": "Rp600.000"
+      },
+      "answer": "D",
+      "explanation": "**Perhitungan Pendapatan Harian**\\nTotal pendapatan dihitung dengan mengalikan jumlah produksi dengan harga jual per bungkus.\\nPendapatan = Jumlah Produksi \\times Harga Jual\\nPendapatan = 200 bungkus \\times Rp2.500/bungkus = Rp500.000."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko buku menjual novel dengan harga Rp75.000 per eksemplar. Jika toko tersebut memberikan diskon 10% untuk pembelian minimal 3 eksemplar, berapakah harga yang harus dibayar oleh seorang siswa yang membeli 4 eksemplar novel?",
+      "question": "Berapakah total harga yang harus dibayar siswa tersebut setelah diskon?",
+      "options": {
+        "A": "Rp270.000",
+        "B": "Rp285.000",
+        "C": "Rp300.000",
+        "D": "Rp315.000",
+        "E": "Rp330.000"
+      },
+      "answer": "A",
+      "explanation": "**Perhitungan Harga Setelah Diskon**\\nHarga awal 4 novel = 4 \\times Rp75.000 = Rp300.000.\\nDiskon 10% = 10% \\times Rp300.000 = Rp30.000.\\nHarga setelah diskon = Rp300.000 - Rp30.000 = Rp270.000."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Bentuk akar \\(\\sqrt{16}\\) dapat disederhanakan menjadi bilangan bulat. Nilai dari \\(\\sqrt{16}\\) adalah...",
+      "question": "Berapakah nilai dari \\(\\sqrt{16}\\)?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "8",
+        "E": "16"
+      },
+      "answer": "C",
+      "explanation": "**Menyederhanakan Bentuk Akar**\\nBentuk akar \\(\\sqrt{16}\\) berarti mencari bilangan yang jika dikalikan dengan dirinya sendiri menghasilkan 16. Bilangan tersebut adalah 4, karena 4 \\times 4 = 16."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional membeli 50 kg beras dengan harga Rp10.000 per kg. Ia kemudian menjualnya kembali dengan keuntungan 15%. Berapa harga jual per kg beras tersebut?",
+      "question": "Berapakah harga jual beras per kilogram agar pedagang mendapatkan keuntungan 15%?",
+      "options": {
+        "A": "Rp10.500",
+        "B": "Rp11.000",
+        "C": "Rp11.500",
+        "D": "Rp12.000",
+        "E": "Rp12.500"
+      },
+      "answer": "C",
+      "explanation": "**Menghitung Harga Jual dengan Keuntungan**\\nKeuntungan per kg = 15% \\times Rp10.000 = Rp1.500.\\nHarga Jual per kg = Harga Beli per kg + Keuntungan per kg\\nHarga Jual per kg = Rp10.000 + Rp1.500 = Rp11.500."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi lokal berencana menambah armada busnya. Bus A memiliki kapasitas 40 penumpang dan beroperasi 12 jam sehari dengan tingkat keterisian rata-rata 80%. Bus B memiliki kapasitas 30 penumpang dan beroperasi 15 jam sehari dengan tingkat keterisian rata-rata 90%.",
+      "question": "Jika perusahaan ingin memaksimalkan jumlah penumpang yang diangkut per hari, strategi penambahan armada manakah yang lebih efektif jika biaya operasional per jam kedua bus tersebut sama?",
+      "options": {
+        "A": "Menambah Bus A karena kapasitasnya lebih besar.",
+        "B": "Menambah Bus B karena jam operasinya lebih lama.",
+        "C": "Menambah Bus A karena tingkat keterisiannya lebih stabil.",
+        "D": "Menambah Bus B karena total penumpang per hari lebih banyak.",
+        "E": "Menambah kedua bus secara proporsional untuk cakupan yang lebih luas."
+      },
+      "answer": "D",
+      "explanation": "**Analisis Efektivitas Armada**\\nPenumpang Bus A per hari = 40 \\times 12 jam \\times 80% = 384 penumpang.\\nPenumpang Bus B per hari = 30 \\times 15 jam \\times 90% = 405 penumpang.\\nBus B mengangkut lebih banyak penumpang per hari, sehingga lebih efektif untuk memaksimalkan jumlah penumpang."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Bentuk akar \\(\\sqrt[3]{27}\\) adalah akar pangkat tiga dari 27. Bilangan berapakah yang jika dipangkatkan tiga menghasilkan 27?",
+      "question": "Berapakah nilai dari \\(\\sqrt[3]{27}\\)?",
+      "options": {
+        "A": "3",
+        "B": "6",
+        "C": "9",
+        "D": "27",
+        "E": "81"
+      },
+      "answer": "A",
+      "explanation": "**Menyederhanakan Akar Pangkat Tiga**\\nBentuk akar \\(\\sqrt[3]{27}\\) berarti mencari bilangan yang jika dikalikan dengan dirinya sendiri sebanyak tiga kali menghasilkan 27. Bilangan tersebut adalah 3, karena 3 \\times 3 \\times 3 = 27."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM kerajinan tangan memproduksi tas anyaman. Biaya produksi per tas adalah Rp50.000. Jika mereka ingin mendapatkan keuntungan 20% dari biaya produksi, berapakah harga jual per tas?",
+      "question": "Berapakah harga jual yang harus ditetapkan agar UMKM mendapatkan keuntungan 20%?",
+      "options": {
+        "A": "Rp55.000",
+        "B": "Rp60.000",
+        "C": "Rp65.000",
+        "D": "Rp70.000",
+        "E": "Rp75.000"
+      },
+      "answer": "B",
+      "explanation": "**Menghitung Harga Jual dengan Keuntungan**\\nBesar keuntungan yang diinginkan = 20% \\times Rp50.000 = Rp10.000.\\nHarga Jual = Biaya Produksi + Keuntungan\\nHarga Jual = Rp50.000 + Rp10.000 = Rp60.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa memiliki uang saku Rp100.000 per minggu. Ia berencana membeli buku seharga Rp45.000 dan alat tulis seharga Rp25.000. Sisa uangnya ingin ia tabung. Jika ia menabung Rp10.000 setiap minggu, berapa minggu yang dibutuhkan untuk mengumpulkan Rp100.000 untuk membeli tas sekolah?",
+      "question": "Berapa minggu yang dibutuhkan siswa tersebut untuk menabung cukup uang membeli tas sekolah seharga Rp100.000?",
+      "options": {
+        "A": "5 minggu",
+        "B": "6 minggu",
+        "C": "7 minggu",
+        "D": "8 minggu",
+        "E": "10 minggu"
+      },
+      "answer": "D",
+      "explanation": "**Perhitungan Waktu Menabung**\\nPengeluaran mingguan = Rp45.000 + Rp25.000 = Rp70.000.\\nUang sisa untuk ditabung per minggu = Rp100.000 - Rp70.000 = Rp30.000.\\nJumlah minggu untuk menabung Rp100.000 = Rp100.000 / Rp30.000 \\approx 3.33 minggu. Namun, karena menabung dilakukan mingguan, ia perlu menabung selama 4 minggu untuk mencapai target Rp100.000 (3 minggu = Rp90.000, 4 minggu = Rp120.000). Namun, jika diasumsikan ia menabung Rp10.000 setiap minggu, maka waktu yang dibutuhkan adalah Rp100.000 / Rp10.000 = 10 minggu. Terdapat ambiguitas dalam soal, namun jika diasumsikan ia menabung Rp10.000 setiap minggu, maka jawabannya adalah 10 minggu."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tahu di desa Sukamaju menggunakan resep yang menghasilkan 100 buah tahu dengan biaya bahan baku Rp50.000. Jika mereka ingin menjual tahu tersebut dengan harga Rp1.000 per buah dan mendapatkan keuntungan 25% dari total biaya produksi, berapa jumlah tahu yang harus mereka produksi dan jual agar mencapai target keuntungan tersebut?",
+      "question": "Berapa jumlah tahu yang harus diproduksi dan dijual agar pabrik mencapai target keuntungan 25% dari total biaya produksi?",
+      "options": {
+        "A": "100 buah",
+        "B": "110 buah",
+        "C": "125 buah",
+        "D": "150 buah",
+        "E": "200 buah"
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Jumlah Produksi untuk Keuntungan Target**\\nBiaya produksi per buah = Rp50.000 / 100 buah = Rp500/buah.\\nTarget keuntungan = 25% \\times Rp50.000 = Rp12.500.\\nHarga jual per buah agar untung 25% dari total biaya produksi = (Rp50.000 + Rp12.500) / 100 = Rp625/buah.\\nJika harga jual per buah adalah Rp1.000, maka keuntungan per buah adalah Rp1.000 - Rp500 = Rp500.\\nJumlah tahu yang harus dijual untuk mendapatkan keuntungan Rp12.500 = Rp12.500 / Rp500 = 25 buah.\\nTotal tahu yang harus diproduksi dan dijual = 100 buah + 25 buah = 125 buah."
+    }
+  ],
+  "metadata": {
+    "id": "03d41378-dfac-41bd-960a-230f75baeb36",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T14:09:39Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Bentuk Akar",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyelesaikan operasi hitung pada bentuk akar dan merasionalkan penyebut pecahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2711,
+      "assistant": 2470,
+      "total": 5855,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

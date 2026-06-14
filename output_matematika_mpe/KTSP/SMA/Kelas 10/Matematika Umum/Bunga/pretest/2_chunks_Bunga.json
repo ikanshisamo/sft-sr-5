@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Bunga\n\n--- MATERI ---\nDalam aplikasi matematika keuangan, konsep barisan dan deret digunakan untuk memecahkan berbagai permasalahan nyata, salah satunya adalah perhitungan bunga. Bunga didefinisikan sebagai jasa atau imbalan yang diberikan atas penggunaan sejumlah uang atau modal dalam jangka waktu tertentu. Secara matematis, terdapat dua sistem perhitungan bunga, yaitu bunga tunggal dan bunga majemuk. Bunga tunggal adalah sistem perhitungan di mana besarnya bunga dihitung hanya berdasarkan modal awalnya saja. Oleh karena itu, nominal bunga yang diperoleh pada setiap periode akan selalu konstan atau tetap. Jika suatu modal awal disimbolkan dengan M dan suku bunga tunggal per periode disimbolkan dengan i, maka besarnya bunga pada akhir periode ke-n adalah M dikali i dikali n. Karena pertambahan nilainya selalu tetap setiap periode, sistem bunga tunggal memiliki pola pertumbuhan yang identik dengan konsep barisan aritmetika, di mana besarnya bunga per periode bertindak sebagai beda antarsuku.\n\nBerbeda dengan sistem bunga tunggal, sistem bunga majemuk menggunakan prinsip perhitungan di mana bunga yang diperoleh pada periode sebelumnya ditambahkan ke dalam modal awal untuk perhitungan bunga pada periode berikutnya. Sistem ini sering dikenal di masyarakat sebagai 'bunga berbunga'. Karena modal yang dihitung bunganya senantiasa bertambah seiring berjalannya waktu, nominal bunga yang dihasilkan pada setiap periode juga akan mengalami peningkatan. Jika modal awal M dibungakan dengan suku bunga majemuk i per periode, maka besar modal pada akhir periode ke-n dapat dirumuskan dengan M dikali (1 + i) pangkat n. Pola pertumbuhan modal pada perhitungan bunga majemuk ini sangat berkaitan erat dengan konsep barisan geometri. Dalam hal ini, rasio atau faktor pengalinya adalah (1 + i). Pemahaman yang komprehensif dalam membedakan pertumbuhan aritmetika pada bunga tunggal dan pertumbuhan eksponensial pada bunga majemuk sangat krusial dalam perencanaan investasi keuangan.\n\n[ATP_ALIGNMENT]\nMenghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional menabung uang sebesar Rp1.000.000 di bank dengan suku bunga tunggal 10% per tahun. Ia berencana mengambil uang tersebut setelah 3 tahun.",
+      "question": "Berapa total uang yang akan dimiliki pedagang tersebut setelah 3 tahun jika menggunakan sistem bunga tunggal?",
+      "options": {
+        "A": "Rp1.300.000",
+        "B": "Rp1.100.000",
+        "C": "Rp1.000.000",
+        "D": "Rp1.200.000",
+        "E": "Rp1.150.000"
+      },
+      "answer": "A",
+      "explanation": "**Perhitungan Bunga Tunggal**\\nBunga tunggal dihitung berdasarkan modal awal. Bunga per tahun = 10% \\u00d7 Rp1.000.000 = Rp100.000. Total bunga selama 3 tahun = 3 \\u00d7 Rp100.000 = Rp300.000. Total uang = Modal awal + Total bunga = Rp1.000.000 + Rp300.000 = Rp1.300.000."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Ibu Ani menyimpan uang Rp5.000.000 di bank dengan bunga majemuk 5% per tahun. Uang tersebut akan diambil setelah 2 tahun.",
+      "question": "Berapa total uang yang akan dimiliki Ibu Ani setelah 2 tahun jika menggunakan sistem bunga majemuk?",
+      "options": {
+        "A": "Rp5.250.000",
+        "B": "Rp5.500.000",
+        "C": "Rp5.512.500",
+        "D": "Rp5.525.000",
+        "E": "Rp5.000.000"
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Bunga Majemuk**\\nRumus bunga majemuk: M_n = M_0 \\u00d7 (1 + i)^n. Dengan M_0 = Rp5.000.000, i = 0.05, dan n = 2. M_2 = Rp5.000.000 \\u00d7 (1 + 0.05)^2 = Rp5.000.000 \\u00d7 (1.05)^2 = Rp5.000.000 \\u00d7 1.1025 = Rp5.512.500."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani meminjam uang Rp10.000.000 dari koperasi untuk membeli bibit. Koperasi mengenakan bunga tunggal sebesar 12% per tahun. Petani tersebut berencana melunasi pinjamannya dalam waktu 4 tahun.",
+      "question": "Jika petani tersebut ingin mengetahui berapa total pembayaran yang harus ia siapkan, perhitungan mana yang paling tepat untuk digunakan?",
+      "options": {
+        "A": "Menghitung bunga majemuk karena pinjaman selalu bertambah.",
+        "B": "Menghitung bunga tunggal karena koperasi menghitung berdasarkan modal awal.",
+        "C": "Menghitung bunga tunggal karena bunga yang dibayar setiap tahun selalu sama.",
+        "D": "Menghitung bunga majemuk karena ada penambahan bunga setiap tahun.",
+        "E": "Menghitung total pinjaman ditambah bunga per tahun saja."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Sistem Bunga**\\nSoal menyatakan koperasi mengenakan bunga tunggal. Pada bunga tunggal, besarnya bunga dihitung hanya berdasarkan modal awal, sehingga nominal bunga per periode selalu konstan. Pilihan C secara tepat menjelaskan karakteristik bunga tunggal yang relevan untuk perhitungan total pembayaran."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Pak Budi menginvestasikan Rp20.000.000 di dua instrumen berbeda. Instrumen A memberikan bunga tunggal 8% per tahun, dan Instrumen B memberikan bunga majemuk 7% per tahun. Investasi dilakukan selama 5 tahun.",
+      "question": "Manakah pernyataan yang paling akurat mengenai perbandingan hasil investasi kedua instrumen setelah 5 tahun?",
+      "options": {
+        "A": "Instrumen A akan menghasilkan total yang lebih besar karena bunganya lebih tinggi.",
+        "B": "Instrumen B akan menghasilkan total yang lebih besar karena bunga berbunga.",
+        "C": "Kedua instrumen akan menghasilkan total yang sama karena selisih bunganya kecil.",
+        "D": "Instrumen A akan menghasilkan total yang lebih besar karena bunga tunggal lebih mudah dihitung.",
+        "E": "Instrumen B akan menghasilkan total yang lebih besar karena perhitungan bunga majemuk lebih menguntungkan."
+      },
+      "answer": "B",
+      "explanation": "**Perbandingan Bunga Tunggal dan Majemuk**\\nBunga majemuk cenderung menghasilkan nilai akhir yang lebih besar dibandingkan bunga tunggal untuk jangka waktu yang sama, meskipun suku bunganya sedikit lebih rendah, karena adanya efek 'bunga berbunga'. Oleh karena itu, Instrumen B kemungkinan akan lebih unggul."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha UMKM memiliki dua pilihan pendanaan untuk ekspansi usahanya: Pinjaman A dengan bunga tunggal 10% per tahun selama 3 tahun, dan Pinjaman B dengan bunga majemuk 9% per tahun selama 3 tahun. Kedua pinjaman memiliki pokok yang sama.",
+      "question": "Jika pengusaha tersebut ingin meminimalkan total biaya yang harus dibayarkan, pilihan pinjaman mana yang sebaiknya diambil?",
+      "options": {
+        "A": "Pinjaman A, karena bunga tunggal lebih rendah secara nominal.",
+        "B": "Pinjaman B, karena suku bunganya lebih rendah.",
+        "C": "Pinjaman A, karena bunga tunggal menghasilkan pertumbuhan yang lebih lambat.",
+        "D": "Pinjaman B, karena bunga majemuk lebih menguntungkan untuk jangka panjang.",
+        "E": "Pinjaman A, karena bunga tunggal akan menghasilkan total pembayaran yang lebih kecil."
+      },
+      "answer": "E",
+      "explanation": "**Evaluasi Biaya Pinjaman**\\nUntuk meminimalkan biaya, pengusaha harus memilih pinjaman dengan total pembayaran terendah. Bunga tunggal dihitung hanya dari modal awal, sehingga total bunga yang dibayarkan lebih kecil dibandingkan bunga majemuk yang dihitung dari modal awal ditambah bunga yang terakumulasi. Pinjaman A akan menghasilkan total pembayaran yang lebih kecil."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah koperasi simpan pinjam menawarkan dua jenis skema pinjaman kepada anggotanya. Skema pertama adalah bunga tunggal 15% per tahun, dan skema kedua adalah bunga majemuk 13% per tahun. Keduanya untuk jangka waktu 2 tahun.",
+      "question": "Manakah dari pernyataan berikut yang paling tepat menggambarkan perbedaan mendasar antara kedua skema bunga tersebut?",
+      "options": {
+        "A": "Bunga tunggal selalu lebih besar dari bunga majemuk.",
+        "B": "Bunga majemuk dihitung hanya dari modal awal.",
+        "C": "Bunga tunggal menghasilkan bunga yang konstan setiap periode.",
+        "D": "Bunga majemuk tidak memiliki efek 'bunga berbunga'.",
+        "E": "Bunga tunggal dan majemuk menghasilkan jumlah yang sama jika suku bunganya sama."
+      },
+      "answer": "C",
+      "explanation": "**Definisi Bunga Tunggal**\\nBunga tunggal dihitung berdasarkan modal awal saja. Ini berarti jumlah bunga yang diperoleh atau dibayarkan pada setiap periode (misalnya, per tahun) akan selalu sama atau konstan, tidak peduli berapa lama periode tersebut berlangsung."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang mahasiswa magang di sebuah bank syariah sedang menganalisis pertumbuhan dana nasabah. Ia menemukan dua skema investasi: Skema X dengan bunga tunggal 10% per tahun, dan Skema Y dengan bunga majemuk 9% per tahun. Dana diinvestasikan selama 10 tahun.",
+      "question": "Jika mahasiswa tersebut diminta memprediksi skema mana yang akan memberikan hasil akhir lebih besar, analisis apa yang perlu dilakukan?",
+      "options": {
+        "A": "Membandingkan total bunga yang diperoleh pada tahun pertama saja.",
+        "B": "Menghitung total modal akhir untuk kedua skema menggunakan rumus yang sesuai.",
+        "C": "Membandingkan suku bunga nominalnya saja.",
+        "D": "Melihat berapa lama jangka waktu investasinya.",
+        "E": "Menghitung selisih bunga antara kedua skema pada tahun terakhir."
+      },
+      "answer": "B",
+      "explanation": "**Aplikasi Konsep Bunga**\\nUntuk membandingkan hasil akhir kedua skema investasi, perlu dihitung total modal akhir untuk masing-masing skema. Ini melibatkan penerapan rumus bunga tunggal dan bunga majemuk untuk jangka waktu 10 tahun, kemudian membandingkan hasilnya."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Pak Ahmad berencana menabung uang Rp5.000.000. Ia dihadapkan pada dua pilihan bank: Bank A menawarkan bunga tunggal 12% per tahun, dan Bank B menawarkan bunga majemuk 10% per tahun. Pak Ahmad membutuhkan uang tersebut setelah 5 tahun.",
+      "question": "Jika Pak Ahmad ingin mendapatkan keuntungan paling maksimal dari tabungannya, bank mana yang sebaiknya ia pilih dan mengapa?",
+      "options": {
+        "A": "Bank A, karena bunga tunggal 12% lebih tinggi dari 10%.",
+        "B": "Bank B, karena bunga majemuk akan memberikan pertumbuhan yang lebih cepat.",
+        "C": "Bank A, karena bunga tunggal menghasilkan total yang lebih besar dalam jangka panjang.",
+        "D": "Bank B, karena efek bunga berbunga akan membuat totalnya lebih besar meskipun suku bunga lebih rendah.",
+        "E": "Keduanya sama, karena selisih suku bunga hanya 2%."
+      },
+      "answer": "D",
+      "explanation": "**Analisis Keputusan Investasi**\\nDalam jangka waktu 5 tahun, efek 'bunga berbunga' pada skema majemuk Bank B cenderung menghasilkan total akhir yang lebih besar dibandingkan skema bunga tunggal Bank A, meskipun suku bunganya lebih rendah. Ini karena bunga yang diperoleh pada periode sebelumnya ditambahkan ke modal untuk perhitungan bunga berikutnya."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah perusahaan pembiayaan memberikan pinjaman kepada UMKM dengan sistem bunga tunggal 18% per tahun. Jika seorang pengusaha meminjam Rp20.000.000 selama 2 tahun.",
+      "question": "Berapa jumlah bunga yang harus dibayarkan pengusaha tersebut selama 2 tahun?",
+      "options": {
+        "A": "Rp3.600.000",
+        "B": "Rp7.200.000",
+        "C": "Rp3.000.000",
+        "D": "Rp4.000.000",
+        "E": "Rp7.000.000"
+      },
+      "answer": "B",
+      "explanation": "**Perhitungan Bunga Tunggal**\\nBunga per tahun = 18% \\u00d7 Rp20.000.000 = Rp3.600.000. Total bunga selama 2 tahun = 2 \\u00d7 Rp3.600.000 = Rp7.200.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang ibu rumah tangga ingin menginvestasikan Rp1.000.000. Ia memiliki dua pilihan: Opsi 1 adalah deposito dengan bunga tunggal 10% per tahun selama 3 tahun. Opsi 2 adalah tabungan dengan bunga majemuk 8% per tahun selama 3 tahun.",
+      "question": "Jika ibu tersebut ingin memaksimalkan jumlah uang yang ia miliki setelah 3 tahun, manakah opsi yang paling menguntungkan dan mengapa?",
+      "options": {
+        "A": "Opsi 1, karena bunga tunggal 10% lebih tinggi.",
+        "B": "Opsi 2, karena bunga majemuk selalu lebih baik.",
+        "C": "Opsi 1, karena bunga tunggal menghasilkan total yang lebih besar dalam jangka pendek.",
+        "D": "Opsi 2, karena efek bunga berbunga akan membuat totalnya lebih besar meskipun suku bunga lebih rendah.",
+        "E": "Keduanya sama karena jangka waktunya pendek."
+      },
+      "answer": "A",
+      "explanation": "**Evaluasi Opsi Investasi**\\nUntuk jangka waktu 3 tahun, bunga tunggal 10% akan menghasilkan total yang lebih besar dibandingkan bunga majemuk 8%. Perhitungan: Opsi 1 = Rp1.000.000 + (3 \\u00d7 10% \\u00d7 Rp1.000.000) = Rp1.300.000. Opsi 2 = Rp1.000.000 \\u00d7 (1.08)^3 \\u2248 Rp1.259.712. Opsi 1 lebih menguntungkan."
+    }
+  ],
+  "metadata": {
+    "id": "79a39b8c-60a3-4564-a13e-12190f867361",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T09:02:47Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Bunga",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_2_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3070,
+      "assistant": 3145,
+      "total": 6889,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

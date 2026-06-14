@@ -1,0 +1,68 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate exactly 5 flashcards in JSON array format.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"front\": \"\",\n    \"back\": \"\"\n  }\n]\n\n[FLASHCARD_LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"focus\": [\n      \"definisi\",\n      \"rumus\",\n      \"fakta dasar\",\n      \"konsep inti\"\n    ],\n    \"style\": \"direct recall\"\n  },\n\n  \"MOTS\": {\n    \"focus\": [\n      \"hubungan konsep\",\n      \"aplikasi sederhana\",\n      \"contoh penggunaan\"\n    ],\n    \"style\": \"applied recall\"\n  },\n\n  \"HOTS\": {\n    \"focus\": [\n      \"kesimpulan\",\n      \"strategi\",\n      \"dampak\",\n      \"evaluasi singkat\"\n    ],\n    \"style\": \"evaluative takeaway\"\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Perkalian | Target: HOTS\n\n--- MATERI ---\nDalam kajian teori peluang, kita tidak hanya mengamati satu kejadian tunggal, melainkan sering dihadapkan pada percobaan majemuk yang melibatkan dua kejadian atau lebih. Salah satu konsep penting dalam peluang majemuk adalah kejadian saling bebas (independent events). Dua buah kejadian, misalnya kejadian A dan kejadian B, diklasifikasikan sebagai kejadian saling bebas apabila terjadinya kejadian A sama sekali tidak memengaruhi kemungkinan terjadinya kejadian B, dan begitu pula sebaliknya. Artinya, hasil dari percobaan pertama tidak memberikan dampak atau mengubah ruang sampel pada percobaan kedua. Sebagai contoh yang representatif, jika kita melempar sekeping uang logam dan sebuah dadu bersisi enam secara bersamaan, munculnya sisi gambar pada koin tidak memiliki keterkaitan dengan munculnya angka genap pada pelemparan dadu. Pemahaman mengenai independensi antarkejadian ini merupakan fondasi utama sebelum kita melakukan perhitungan probabilitas menggunakan operasi perkalian.\n\nUntuk menghitung besaran peluang terjadinya dua kejadian yang saling bebas secara bersamaan atau berurutan, kita menerapkan prinsip dasar yang dikenal sebagai aturan perkalian peluang. Secara linguistik, gabungan dua kejadian yang diamati secara simultan ini umumnya dihubungkan dengan kata hubung 'dan', yang secara notasi himpunan dilambangkan dengan simbol irisan. Berdasarkan teorema peluang, jika kejadian A dan kejadian B telah teridentifikasi secara pasti sebagai dua kejadian yang saling bebas, maka peluang munculnya kejadian A dan kejadian B secara bersama-sama dirumuskan dengan mengalikan nilai peluang dari masing-masing kejadian tunggalnya. Secara matematis, formula aturan perkalian untuk kejadian saling bebas dituliskan secara baku sebagai P(A ∩ B) = P(A) × P(B). Penggunaan formulasi perkalian ini sangat mempermudah proses komputasi probabilitas ruang sampel majemuk.\n\nPenerapan nyata dari aturan perkalian peluang dapat diamati pada kasus pengambilan benda secara acak dengan pengembalian. Misalkan terdapat sebuah kotak yang berisi tiga bola merah dan dua bola putih. Jika kita melakukan dua kali pengambilan bola satu per satu, di mana bola yang terambil pada pengambilan pertama dikembalikan lagi ke dalam kotak sebelum pengambilan kedua dilakukan, maka ruang sampel pada pengambilan kedua tetap sama dengan pengambilan pertama. Hal ini menjamin bahwa kejadian terambilnya bola pada pengambilan pertama dan kejadian terambilnya bola pada pengambilan kedua bersifat saling bebas. Jika kita ingin menghitung peluang terambilnya bola merah pada pengambilan pertama dan bola putih pada pengambilan kedua, kita cukup menghitung peluang masing-masing kejadian tunggalnya terlebih dahulu, lalu mengalikannya secara langsung berdasarkan prinsip P(A ∩ B) = P(A) × P(B).\n\nAturan perkalian peluang tidak hanya terbatas dan ekuivalen untuk dua kejadian saja, melainkan memiliki sifat yang sangat fleksibel untuk digeneralisasikan pada tiga atau lebih kejadian yang saling bebas. Apabila terdapat serangkaian kejadian majemuk, misalnya kejadian A, kejadian B, dan kejadian C yang saling bebas secara keseluruhan, maka peluang terjadinya ketiga kejadian tersebut secara simultan dapat dihitung dengan memperluas perumusan sebelumnya. Secara analitis matematis, perluasan rumus tersebut dinyatakan sebagai P(A ∩ B ∩ C) = P(A) × P(B) × P(C). Konsep generalisasi ini sangat bermanfaat dalam memecahkan pemodelan peluang yang lebih kompleks, seperti pelemparan beberapa dadu sekaligus atau eksperimen pelemparan koin berulang secara konstan.\n\nSatu hal krusial yang perlu mendapat perhatian khusus bagi peserta didik dalam mengaplikasikan aturan perkalian adalah kecermatan dalam memastikan bahwa kejadian tersebut benar-benar saling bebas. Apabila kemunculan kejadian pertama memengaruhi atau mengubah ruang sampel untuk kejadian kedua, maka kedua kejadian tersebut diklasifikasikan sebagai kejadian tidak saling bebas atau kejadian bersyarat. Ilustrasi utamanya adalah eksperimen pengambilan objek tanpa pengembalian. Jika sebuah kelereng diambil dari dalam kantong dan tidak dikembalikan, maka total kelereng pada pengambilan kedua akan menyusut, sehingga probabilitas kejadian kedua otomatis berubah bergantung pada hasil pengambilan pertama. Pada kondisi dependen semacam ini, aturan perkalian murni P(A ∩ B) = P(A) × P(B) menjadi tidak sah untuk digunakan dan harus disesuaikan menggunakan rumus peluang bersyarat.\n\n[FLASHCARD_REQUIREMENTS]\n- Generate flashcards aligned with the configured flashcard level.\n- Keep answers concise, useful, and easy to recall.\n- Focus on essential knowledge compression.\n- Avoid long analytical explanations.\n- Use natural Indonesian educational language.\n\n[LEVEL_ALIGNMENT]\n\n- LOTS:\n  Focus on direct recall of concepts, formulas, definitions, or basic facts.\n- MOTS:\n  Focus on simple application, conceptual relationships, or practical usage.\n- HOTS:\n  Focus on concise evaluative conclusions, impacts, strategies, or insights.\n\n[FRONT_RULES]\n- Maximum 20 characters including spaces.\n- Use concise prompts, terms, formulas, or key ideas.\n- Avoid ambiguous wording.\n- Avoid full sentence questions when unnecessary.\n\n[BACK_RULES]\n- Maximum 50 characters including spaces.\n- Must contain definitive answers, formulas, concepts, impacts, or conclusions.\n- Avoid rhetorical or open-ended responses.\n- Avoid filler words.\n- STEM subjects:\n  - may include concise LaTeX formulas\n  - prioritize formulas or technical meaning\n- Theory subjects:\n  - prioritize impacts, relationships, or concise takeaways\n\n[CONTENT_GUIDELINES]\nAllowed content:\n- formulas\n- definitions\n- key concepts\n- practical applications\n- impacts\n- relationships\n- concise strategies\n- evaluative takeaways\n\n[VARIATION_RULES]\nDistribute flashcards naturally across:\n- conceptual recall\n- applied understanding\n- evaluative takeaway\n\nAvoid generating cards with repetitive wording patterns.\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- Escape newline characters.\n- Escape internal quotes.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "front": "Kapan aturan perkalian P(A ∩ B) = P(A) × P(B) tidak berlaku?",
+      "back": "Saat kejadian A memengaruhi ruang sampel kejadian B (tidak saling bebas)."
+    },
+    {
+      "level": "LOTS",
+      "front": "Rumus peluang dua kejadian saling bebas",
+      "back": "P(A ∩ B) = P(A) × P(B)"
+    },
+    {
+      "level": "MOTS",
+      "front": "Contoh kejadian saling bebas",
+      "back": "Melempar koin dan dadu bersamaan."
+    },
+    {
+      "level": "HOTS",
+      "front": "Generalisasi aturan perkalian",
+      "back": "Untuk A, B, C saling bebas: P(A ∩ B ∩ C) = P(A) × P(B) × P(C)"
+    },
+    {
+      "level": "MOTS",
+      "front": "Pengambilan bola dengan pengembalian",
+      "back": "Menjamin kejadian saling bebas."
+    }
+  ],
+  "metadata": {
+    "id": "9403885a-ed5f-47f3-ade1-6c26c812c762",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T18:54:52Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Perkalian",
+    "task_type": "flashcard",
+    "level": "HOTS",
+    "source_file": "Matematika_5_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2207,
+      "assistant": 197,
+      "total": 3078,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

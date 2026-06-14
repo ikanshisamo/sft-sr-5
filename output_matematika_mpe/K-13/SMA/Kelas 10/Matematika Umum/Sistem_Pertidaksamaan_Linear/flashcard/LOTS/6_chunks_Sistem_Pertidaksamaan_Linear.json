@@ -1,0 +1,68 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate exactly 5 flashcards in JSON array format.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"front\": \"\",\n    \"back\": \"\"\n  }\n]\n\n[FLASHCARD_LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"focus\": [\n      \"definisi\",\n      \"rumus\",\n      \"fakta dasar\",\n      \"konsep inti\"\n    ],\n    \"style\": \"direct recall\"\n  },\n\n  \"MOTS\": {\n    \"focus\": [\n      \"hubungan konsep\",\n      \"aplikasi sederhana\",\n      \"contoh penggunaan\"\n    ],\n    \"style\": \"applied recall\"\n  },\n\n  \"HOTS\": {\n    \"focus\": [\n      \"kesimpulan\",\n      \"strategi\",\n      \"dampak\",\n      \"evaluasi singkat\"\n    ],\n    \"style\": \"evaluative takeaway\"\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Sistem Persamaan dan Pertidaksamaan Linear | Sub Bab: Sistem Pertidaksamaan Linear | Target: LOTS\n\n--- MATERI ---\nPertidaksamaan linear dua variabel didefinisikan sebagai kalimat terbuka matematika yang memuat dua variabel, masing-masing berderajat satu, dan dihubungkan oleh tanda ketidaksamaan seperti kurang dari, lebih dari, kurang dari atau sama dengan, maupun lebih dari atau sama dengan. Berbeda dengan persamaan linear dua variabel yang himpunan penyelesaiannya direpresentasikan oleh himpunan titik-titik pada sebuah garis lurus, penyelesaian dari suatu pertidaksamaan linear dua variabel mencakup suatu luasan atau daerah setengah bidang pada koordinat Kartesius. Semua titik koordinat (x, y) yang terletak di dalam daerah luasan tersebut merupakan himpunan penyelesaian yang memenuhi syarat ketidaksamaan yang diberikan.\n\nLangkah pertama dan paling fundamental dalam menentukan daerah penyelesaian pertidaksamaan linear dua variabel adalah menggambar garis batas pada bidang Kartesius. Garis batas ini diperoleh dengan cara mengubah tanda ketidaksamaan pada soal menjadi tanda persamaan (=) untuk sementara waktu. Aturan penggambaran garis batas ini memiliki ketentuan khusus: apabila tanda ketidaksamaan tidak memuat tanda sama dengan (< atau >), maka garis batas harus digambarkan secara putus-putus. Hal ini mengindikasikan bahwa titik-titik yang berada tepat pada garis tersebut bukanlah bagian dari penyelesaian. Sebaliknya, jika memuat tanda sama dengan (≤ atau ≥), garis batas digambar utuh.\n\nUntuk menggambar garis batas ax + by = c dengan presisi tinggi, teknik yang paling efisien adalah dengan mencari titik-titik potong garis tersebut terhadap sumbu koordinat. Pertama, tentukan titik potong terhadap sumbu-x dengan menyubstitusikan nilai y = 0 ke dalam persamaan, sehingga diperoleh koordinat (x, 0). Selanjutnya, tentukan titik potong terhadap sumbu-y dengan menyubstitusikan nilai x = 0, sehingga didapatkan koordinat (0, y). Setelah kedua titik potong ini diplot pada sistem koordinat Kartesius, proyeksikan sebuah garis lurus yang menghubungkan kedua titik tersebut. Garis inilah yang akan membelah bidang Kartesius menjadi dua wilayah penyelesaian.\n\nSetelah garis batas membagi bidang Kartesius menjadi dua wilayah, langkah berikutnya adalah menetapkan wilayah mana yang merupakan himpunan daerah penyelesaian sesungguhnya menggunakan metode titik uji. Pilihlah sebuah titik sembarang (x, y) yang secara visual dipastikan tidak dilalui oleh garis batas tersebut. Titik pusat O(0,0) adalah titik uji yang paling direkomendasikan karena kemudahan komputasinya. Substitusikan koordinat titik uji tersebut ke dalam pertidaksamaan awal. Apabila menghasilkan pernyataan matematis yang bernilai benar, maka wilayah yang memuat titik uji tersebut diarsir sebagai penanda daerah penyelesaian. Jika bernilai salah, maka arsirlah wilayah yang berlawanan.\n\nApabila kita mengkaji dua atau lebih pertidaksamaan linear dua variabel secara serentak yang memuat variabel-variabel saling berkesesuaian, himpunan rumusan tersebut membentuk sebuah Sistem Pertidaksamaan Linear Dua Variabel (SPtLDV). Himpunan penyelesaian dari SPtLDV bukan lagi sekadar daerah penyelesaian dari pertidaksamaan tunggal, melainkan didefinisikan sebagai daerah irisan atau persekutuan yang memenuhi seluruh pertidaksamaan penyusun sistem tersebut. Setiap titik koordinat yang berlokasi di dalam daerah irisan ini harus diuji dan dijamin memenuhi semua kendala matematis yang diberikan secara bersamaan tanpa terkecuali.\n\nDalam memvisualisasikan daerah penyelesaian SPtLDV, seluruh garis batas dari masing-masing pertidaksamaan linear harus digambarkan dan diproyeksikan pada satu sistem koordinat Kartesius yang sama. Lakukan metode pengujian dan berikan arah arsiran untuk setiap garis batas secara cermat. Daerah penyelesaian akhir dari sistem ini ditunjukkan oleh wilayah luasan yang mendapatkan arsiran gabungan paling banyak atau merupakan titik temu dari seluruh arah arsiran. Secara visual, daerah himpunan penyelesaian ini umumnya akan membentuk suatu bidang poligon segi banyak tertutup, meskipun dalam beberapa kasus khusus dapat pula membentuk daerah luasan terbuka tanpa batas atas.\n\n[FLASHCARD_REQUIREMENTS]\n- Generate flashcards aligned with the configured flashcard level.\n- Keep answers concise, useful, and easy to recall.\n- Focus on essential knowledge compression.\n- Avoid long analytical explanations.\n- Use natural Indonesian educational language.\n\n[LEVEL_ALIGNMENT]\n\n- LOTS:\n  Focus on direct recall of concepts, formulas, definitions, or basic facts.\n- MOTS:\n  Focus on simple application, conceptual relationships, or practical usage.\n- HOTS:\n  Focus on concise evaluative conclusions, impacts, strategies, or insights.\n\n[FRONT_RULES]\n- Maximum 20 characters including spaces.\n- Use concise prompts, terms, formulas, or key ideas.\n- Avoid ambiguous wording.\n- Avoid full sentence questions when unnecessary.\n\n[BACK_RULES]\n- Maximum 50 characters including spaces.\n- Must contain definitive answers, formulas, concepts, impacts, or conclusions.\n- Avoid rhetorical or open-ended responses.\n- Avoid filler words.\n- STEM subjects:\n  - may include concise LaTeX formulas\n  - prioritize formulas or technical meaning\n- Theory subjects:\n  - prioritize impacts, relationships, or concise takeaways\n\n[CONTENT_GUIDELINES]\nAllowed content:\n- formulas\n- definitions\n- key concepts\n- practical applications\n- impacts\n- relationships\n- concise strategies\n- evaluative takeaways\n\n[VARIATION_RULES]\nDistribute flashcards naturally across:\n- conceptual recall\n- applied understanding\n- evaluative takeaway\n\nAvoid generating cards with repetitive wording patterns.\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- Escape newline characters.\n- Escape internal quotes.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "front": "Definisi pertidaksamaan linear",
+      "back": "Kalimat terbuka \\\\textit{dua} variabel, \\\\textit{derajat satu}, tanda ketidaksamaan."
+    },
+    {
+      "level": "LOTS",
+      "front": "Garis batas pertidaksamaan",
+      "back": "Ubah \\\\textit{<, >, \\\\leq, \\\\geq} menjadi \\\\textit{=}. Garis \\\\textit{putus-putus} jika \\\\textit{< atau >}."
+    },
+    {
+      "level": "LOTS",
+      "front": "Titik potong sumbu",
+      "back": "Sumbu-x: y=0. Sumbu-y: x=0."
+    },
+    {
+      "level": "LOTS",
+      "front": "Metode titik uji",
+      "back": "Uji titik (\\\\textit{0,0}) ke pertidaksamaan. Benar: arsiran memuat titik."
+    },
+    {
+      "level": "LOTS",
+      "front": "Penyelesaian SPtLDV",
+      "back": "Daerah \\\\textit{irisan} dari semua pertidaksamaan."
+    }
+  ],
+  "metadata": {
+    "id": "3d564d58-76cc-4a31-9e1f-c0e9d0a67689",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T14:14:45Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Sistem Persamaan dan Pertidaksamaan Linear",
+    "sub_bab": "Sistem Pertidaksamaan Linear",
+    "task_type": "flashcard",
+    "level": "LOTS",
+    "source_file": "Matematika_6_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan daerah penyelesaian pertidaksamaan linear dua variabel dan menggambarkannya pada grafik.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2114,
+      "assistant": 215,
+      "total": 3003,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

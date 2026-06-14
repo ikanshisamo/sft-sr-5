@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Barisan | Target: MOTS\n\n--- MATERI ---\nBarisan bilangan berkaitan dengan susunan bilangan yang dibentuk berdasarkan aturan atau pola tertentu, di mana masing-masing bilangannya disebut sebagai suku. Salah satu jenis barisan yang dipelajari adalah barisan aritmetika, yaitu suatu barisan bilangan di mana beda atau selisih antara dua suku yang saling berurutan selalu tetap atau konstan. Beda pada barisan aritmetika dilambangkan dengan huruf $b$ dan dapat dihitung dengan cara mengurangi suku ke-n dengan suku sebelumnya, yang dituliskan dengan $b = U_n - U_{n-1}$. Untuk menentukan nilai suku ke-n pada barisan aritmetika, digunakan rumus umum $U_n = a + (n - 1)b$, di mana $a$ merupakan suku pertama, $b$ adalah beda, dan $n$ adalah nomor suku yang dicari.\n\nSelain barisan aritmetika, terdapat jenis barisan lain yang dikenal dengan nama barisan geometri. Barisan geometri adalah suatu barisan bilangan di mana rasio atau perbandingan antara dua suku yang berurutan selalu bernilai tetap atau konstan. Nilai rasio ini dilambangkan dengan huruf $r$ dan dapat dihitung dengan cara membagi suatu suku dengan suku yang tepat berada sebelumnya, atau dirumuskan dengan $r = \\frac{U_n}{U_{n-1}}$. Untuk menentukan nilai suku ke-n dari sebuah barisan geometri, rumus umum yang digunakan adalah $U_n = a \\cdot r^{n-1}$, dengan $a$ melambangkan suku pertama, $r$ merupakan rasio, dan $n$ adalah nomor suku.\n\nPenerapan konsep barisan bilangan sangat mudah ditemui dalam memodelkan permasalahan kehidupan sehari-hari. Barisan aritmetika umumnya digunakan untuk menghitung pola yang bertambah atau berkurang dengan selisih tetap, sebagai contoh untuk memprediksi jumlah kursi pada baris tertentu di sebuah gedung pertunjukan, atau menghitung jumlah nominal uang tabungan yang nilai peningkatannya konstan setiap bulan. Di sisi lain, barisan geometri diterapkan pada masalah yang melibatkan rasio atau pola berlipat ganda, seperti memprediksi banyaknya bagian kertas yang terbentuk setelah dilipat beberapa kali, menghitung pembelahan sel bakteri setiap periode waktu tertentu, maupun menghitung sebaran pesan atau foto berantai.\n\n[ATP_ALIGNMENT]\nMenentukan suku ke-n pada barisan aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang kerupuk di pasar tradisional mencatat jumlah kerupuk yang ia produksi setiap hari. Pada hari pertama, ia memproduksi 100 bungkus. Setiap hari berikutnya, ia menambah produksinya sebanyak 15 bungkus dari hari sebelumnya. Ia berencana terus meningkatkan produksinya dengan pola yang sama selama 10 hari.",
+      "question": "Berapa total jumlah kerupuk yang diproduksi pedagang tersebut selama 10 hari jika ia konsisten mengikuti pola peningkatan produksinya?",
+      "rubric_points": [
+        "Mengidentifikasi jenis barisan (aritmetika).",
+        "Menentukan suku pertama (a) dan beda (b).",
+        "Menghitung jumlah 10 suku pertama menggunakan rumus deret aritmetika."
+      ],
+      "explanation": "**Perhitungan Total Produksi Kerupuk**\\n\\nDiketahui:\\nSuku pertama (a) = 100 bungkus\\nBeda (b) = 15 bungkus\\nJumlah hari (n) = 10 hari\\n\\nDitanya: Total produksi selama 10 hari (S_10)\\n\\nRumus jumlah n suku pertama deret aritmetika adalah:\\n$S_n = \\frac{n}{2} [2a + (n-1)b]$\n\\nSubstitusikan nilai yang diketahui:\\n$S_{10} = \\frac{10}{2} [2(100) + (10-1)15]$\n$S_{10} = 5 [200 + (9)15]$\n$S_{10} = 5 [200 + 135]$\n$S_{10} = 5 [335]$\n$S_{10} = 1675$\n\\nJadi, total jumlah kerupuk yang diproduksi adalah 1675 bungkus.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM yang memproduksi sabun ramah lingkungan mencatat bahwa jumlah sabun yang terjual mengalami peningkatan yang berlipat ganda setiap minggunya. Pada minggu pertama, terjual 50 unit sabun. Jika pola ini terus berlanjut, berapa banyak sabun yang akan terjual pada minggu ke-5?",
+      "question": "Hitunglah perkiraan jumlah sabun yang akan terjual pada minggu kelima berdasarkan pola pertumbuhan penjualan yang berlipat ganda.",
+      "rubric_points": [
+        "Mengidentifikasi jenis barisan (geometri).",
+        "Menentukan suku pertama (a) dan rasio (r).",
+        "Menghitung suku ke-5 menggunakan rumus barisan geometri."
+      ],
+      "explanation": "**Perhitungan Penjualan Sabun Mingguan**\\n\\nDiketahui:\\nSuku pertama (a) = 50 unit\\nRasio (r) = 2 (karena berlipat ganda)\\nNomor suku yang dicari (n) = 5\\n\\nDitanya: Suku ke-5 (U_5)\\n\\nRumus suku ke-n barisan geometri adalah:\\n$U_n = a \\cdot r^{n-1}$\n\\nSubstitusikan nilai yang diketahui:\\n$U_5 = 50 \\cdot 2^{5-1}$\n$U_5 = 50 \\cdot 2^4$\n$U_5 = 50 \\cdot 16$\n$U_5 = 800$\n\\nJadi, perkiraan jumlah sabun yang akan terjual pada minggu kelima adalah 800 unit.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa menabung uang jajan di celengan. Pada minggu pertama, ia menabung Rp10.000. Pada minggu kedua, ia menambah tabungannya menjadi Rp12.000, dan pada minggu ketiga menjadi Rp14.000. Jika pola kenaikan tabungan mingguan ini berlanjut, berapakah jumlah total uang yang ditabung siswa tersebut setelah 8 minggu?",
+      "question": "Tentukan total tabungan siswa tersebut setelah 8 minggu jika ia konsisten menambah jumlah tabungannya dengan pola yang sama.",
+      "rubric_points": [
+        "Mengenali barisan aritmetika dari pola tabungan.",
+        "Menentukan nilai suku pertama dan beda.",
+        "Menghitung jumlah deret aritmetika untuk 8 suku pertama."
+      ],
+      "explanation": "**Perhitungan Total Tabungan Mingguan**\\n\\nDiketahui:\\nSuku pertama (a) = Rp10.000\\nBeda (b) = Rp12.000 - Rp10.000 = Rp2.000\\nJumlah minggu (n) = 8 minggu\\n\\nDitanya: Total tabungan setelah 8 minggu (S_8)\\n\\nRumus jumlah n suku pertama deret aritmetika adalah:\\n$S_n = \\frac{n}{2} [2a + (n-1)b]$\n\\nSubstitusikan nilai yang diketahui:\\n$S_8 = \\frac{8}{2} [2(10.000) + (8-1)2.000]$\n$S_8 = 4 [20.000 + (7)2.000]$\n$S_8 = 4 [20.000 + 14.000]$\n$S_8 = 4 [34.000]$\n$S_8 = 136.000$\n\\nJadi, total tabungan siswa tersebut setelah 8 minggu adalah Rp136.000.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan percetakan menerima pesanan spanduk. Untuk pesanan pertama, mereka mencetak 50 spanduk. Untuk pesanan kedua, mereka mencetak 75 spanduk. Untuk pesanan ketiga, mereka mencetak 100 spanduk. Jika pola peningkatan jumlah cetakan ini berlanjut, berapa jumlah spanduk yang akan dicetak pada pesanan ke-12?",
+      "question": "Berapa jumlah spanduk yang akan dicetak oleh perusahaan pada pesanan ke-12 jika pola peningkatan jumlah cetakan terus berlanjut?",
+      "rubric_points": [
+        "Mengidentifikasi barisan aritmetika dari data pesanan.",
+        "Menentukan suku pertama (a) dan beda (b).",
+        "Menghitung suku ke-12 menggunakan rumus barisan aritmetika."
+      ],
+      "explanation": "**Perhitungan Jumlah Cetakan Spanduk**\\n\\nDiketahui:\\nSuku pertama (a) = 50 spanduk\\nBeda (b) = 75 - 50 = 25 spanduk\\nNomor pesanan yang dicari (n) = 12\\n\\nDitanya: Suku ke-12 (U_12)\\n\\nRumus suku ke-n barisan aritmetika adalah:\\n$U_n = a + (n-1)b$\n\\nSubstitusikan nilai yang diketahui:\\n$U_{12} = 50 + (12-1)25$\n$U_{12} = 50 + (11)25$\n$U_{12} = 50 + 275$\n$U_{12} = 325$\n\\nJadi, jumlah spanduk yang akan dicetak pada pesanan ke-12 adalah 325 spanduk.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani menyemprotkan pestisida pada tanaman padi. Pada penyemprotan pertama, ia menggunakan 1 liter pestisida. Karena hama semakin banyak, ia menambah dosis pestisida menjadi 2 liter pada penyemprotan kedua, dan 4 liter pada penyemprotan ketiga. Jika pola penambahan dosis ini berlanjut, berapa liter pestisida yang akan digunakan pada penyemprotan ke-6?",
+      "question": "Hitunglah perkiraan volume pestisida yang akan digunakan pada penyemprotan keenam berdasarkan pola peningkatan dosis yang berlipat ganda.",
+      "rubric_points": [
+        "Mengenali barisan geometri dari pola dosis pestisida.",
+        "Menentukan suku pertama (a) dan rasio (r).",
+        "Menghitung suku ke-6 menggunakan rumus barisan geometri."
+      ],
+      "explanation": "**Perhitungan Dosis Pestisida**\\n\\nDiketahui:\\nSuku pertama (a) = 1 liter\\nRasio (r) = 2 (karena berlipat ganda)\\nNomor penyemprotan yang dicari (n) = 6\\n\\nDitanya: Suku ke-6 (U_6)\\n\\nRumus suku ke-n barisan geometri adalah:\\n$U_n = a \\cdot r^{n-1}$\n\\nSubstitusikan nilai yang diketahui:\\n$U_6 = 1 \\cdot 2^{6-1}$\n$U_6 = 1 \\cdot 2^5$\n$U_6 = 1 \\cdot 32$\n$U_6 = 32$\n\\nJadi, perkiraan volume pestisida yang akan digunakan pada penyemprotan keenam adalah 32 liter.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "8adb6973-87dd-4023-8196-98c8ebe62a61",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:17:05Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Barisan",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan suku ke-n pada barisan aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1629,
+      "assistant": 1911,
+      "total": 4213,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

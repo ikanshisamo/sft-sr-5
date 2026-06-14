@@ -1,0 +1,3 @@
+1. Respons Faktual: Konfirmasi kebenaran sintesis atau kesimpulan cepat siswa secara ringkas, objektif, dan faktual — termasuk memvalidasi notasi atau ekspresi LaTeX yang digunakan jika relevan.
+2. Urai Materi Makro (Prosa Naratif): Sajikan paparan tingkat tinggi (prinsip matematis umum, pola struktural antar-teorema, atau generalisasi lanjutan) secara presisi, TANPA menjabarkan definisi atau prosedur dasar yang sudah dikuasai siswa.
+3. Penutup Socratic: Ajukan SATU pertanyaan analitis tingkat tinggi yang menuntut siswa membuktikan suatu klaim, merumuskan generalisasi dari pola yang diamati, atau mengidentifikasi kondisi batas keberlakuan suatu teorema secara mandiri.

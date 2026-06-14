@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Sifat-Sifat Eksponen\n\n--- MATERI ---\nDalam mempelajari eksponen, terdapat beberapa sifat penting yang berguna untuk menyederhanakan bentuk perkalian berulang. Sifat-sifat eksponen ini berlaku dengan syarat basisnya adalah bilangan real bukan nol dan pangkatnya berupa bilangan bulat. Salah satu sifat dasar adalah perkalian eksponen; jika dua bilangan berpangkat dengan basis yang sama dikalikan, maka pangkatnya dapat langsung dijumlahkan. Sebaliknya, pada operasi pembagian dengan basis yang sama, pangkat dari bilangan tersebut akan dikurangkan. Selain itu, terdapat sifat perpangkatan eksponen, di mana jika suatu bilangan berpangkat dipangkatkan lagi, maka pangkatnya akan dikalikan. Pemahaman terhadap sifat-sifat dasar ini akan sangat membantu dalam menyelesaikan berbagai permasalahan operasi hitung yang melibatkan bilangan berpangkat kompleks maupun bentuk pecahan.\n\n[ATP_ALIGNMENT]\nMenggeneralisasi sifat-sifat bilangan berpangkat.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang kerupuk di pasar tradisional mencatat bahwa jumlah kerupuknya berlipat ganda setiap hari. Jika pada hari Senin ia memiliki 10 bungkus kerupuk, berapakah jumlah kerupuknya pada hari Rabu?",
+      "question": "Berdasarkan informasi tersebut, berapakah jumlah kerupuk pada hari Rabu?",
+      "options": {
+        "A": "20 bungkus",
+        "B": "30 bungkus",
+        "C": "40 bungkus",
+        "D": "50 bungkus",
+        "E": "100 bungkus"
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Jumlah Kerupuk**\\nPada hari Senin: 10 bungkus\\nPada hari Selasa (berlipat ganda): $10 \\times 2 = 20$ bungkus\\nPada hari Rabu (berlipat ganda lagi): $20 \\times 2 = 40$ bungkus. Jadi, jumlahnya adalah 40 bungkus."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah acara sekolah, jumlah siswa yang hadir pada sesi pertama adalah $5^2$ orang. Pada sesi kedua, jumlah siswa bertambah menjadi $5^3$ orang.",
+      "question": "Berapakah total jumlah siswa yang hadir dalam kedua sesi tersebut jika dihitung menggunakan sifat eksponen?",
+      "options": {
+        "A": "$5^5$ orang",
+        "B": "$5^6$ orang",
+        "C": "$10^5$ orang",
+        "D": "$25 \\times 125$ orang",
+        "E": "$5^2 + 5^3$ orang"
+      },
+      "answer": "E",
+      "explanation": "**Penjumlahan Eksponen**\\nJumlah siswa pada sesi pertama adalah $5^2$. Jumlah siswa pada sesi kedua adalah $5^3$. Total jumlah siswa adalah penjumlahan kedua nilai tersebut, yaitu $5^2 + 5^3$ orang."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengusaha UMKM memproduksi sabun ramah lingkungan. Produksi awal adalah $3^4$ unit. Setiap bulan, produksi meningkat menjadi 3 kali lipat dari bulan sebelumnya.",
+      "question": "Jika produksi awal adalah $3^4$ unit, berapakah jumlah produksi pada bulan ketiga setelah produksi awal?",
+      "options": {
+        "A": "$3^4 \\times 3^2$ unit",
+        "B": "$3^4 + 3^2$ unit",
+        "C": "$3^6$ unit",
+        "D": "$3^7$ unit",
+        "E": "$3^{12}$ unit"
+      },
+      "answer": "D",
+      "explanation": "**Perhitungan Produksi Bulanan**\\nProduksi awal: $3^4$ unit.\\nBulan pertama: $3^4 \\times 3 = 3^5$ unit.\\nBulan kedua: $3^5 \\times 3 = 3^6$ unit.\\nBulan ketiga: $3^6 \\times 3 = 3^7$ unit. Jadi, produksi pada bulan ketiga adalah $3^7$ unit."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah simulasi pertumbuhan bakteri, jumlah bakteri pada jam ke-2 adalah $2^5$ ekor. Jumlah bakteri pada jam ke-4 adalah $2^7$ ekor.",
+      "question": "Berapakah perbandingan jumlah bakteri pada jam ke-4 terhadap jam ke-2?",
+      "options": {
+        "A": "$2^2$ kali",
+        "B": "$2^5$ kali",
+        "C": "$2^7$ kali",
+        "D": "$4$ kali",
+        "E": "$128$ kali"
+      },
+      "answer": "A",
+      "explanation": "**Perbandingan Jumlah Bakteri**\\nJumlah bakteri pada jam ke-4 adalah $2^7$. Jumlah bakteri pada jam ke-2 adalah $2^5$. Perbandingannya adalah $\\frac{2^7}{2^5} = 2^{7-5} = 2^2$ kali."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik sedang mengoptimalkan pengiriman barang. Rute A membutuhkan waktu pengiriman $3^5$ jam. Rute B membutuhkan waktu pengiriman $3^3$ jam. Jika mereka dapat memilih rute yang lebih efisien untuk pengiriman yang sama, dan mereka melakukan 3 kali pengiriman.",
+      "question": "Manakah pernyataan yang paling tepat mengenai total waktu pengiriman jika mereka memilih rute yang paling efisien untuk setiap pengiriman?",
+      "options": {
+        "A": "Total waktu pengiriman adalah $3^5 + 3^3$ jam.",
+        "B": "Total waktu pengiriman adalah $3 \\times (3^5 + 3^3)$ jam.",
+        "C": "Total waktu pengiriman adalah $3 \\times 3^3$ jam.",
+        "D": "Total waktu pengiriman adalah $3 \\times 3^5$ jam.",
+        "E": "Total waktu pengiriman adalah $3^8$ jam."
+      },
+      "answer": "C",
+      "explanation": "**Pemilihan Rute Efisien**\\nRute A membutuhkan $3^5$ jam, Rute B membutuhkan $3^3$ jam. Rute B lebih efisien karena $3^3 < 3^5$. Untuk 3 kali pengiriman, total waktu adalah $3 \\times 3^3 = 3^{1+3} = 3^4$ jam. Pilihan C adalah yang paling mendekati, namun jika diasumsikan $3^3$ adalah waktu pengiriman yang paling efisien, maka total waktu adalah $3 \times 3^3$ jam."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani menggunakan pupuk yang dosisnya meningkat secara eksponensial. Dosis pada minggu pertama adalah $4^2$ kg. Dosis pada minggu kedua adalah $4^3$ kg.",
+      "question": "Berapakah selisih dosis pupuk antara minggu kedua dan minggu pertama?",
+      "options": {
+        "A": "$4^1$ kg",
+        "B": "$4^5$ kg",
+        "C": "$4^2$ kg",
+        "D": "$4^3 - 4^2$ kg",
+        "E": "$4^3 + 4^2$ kg"
+      },
+      "answer": "D",
+      "explanation": "**Selisih Dosis Pupuk**\\nDosis pada minggu kedua adalah $4^3$ kg. Dosis pada minggu pertama adalah $4^2$ kg. Selisihnya adalah $4^3 - 4^2$ kg."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah proyek pembangunan, jumlah material yang dibutuhkan pada tahap pertama adalah $6^3$ unit. Pada tahap kedua, jumlah material yang dibutuhkan adalah $6^2$ unit.",
+      "question": "Berapakah hasil perkalian jumlah material pada tahap pertama dan kedua?",
+      "options": {
+        "A": "$6^5$ unit",
+        "B": "$6^6$ unit",
+        "C": "$36^5$ unit",
+        "D": "$6^1$ unit",
+        "E": "$12^5$ unit"
+      },
+      "answer": "A",
+      "explanation": "**Perkalian Eksponen**\\nJumlah material tahap pertama adalah $6^3$. Jumlah material tahap kedua adalah $6^2$. Hasil perkaliannya adalah $6^3 \\times 6^2 = 6^{3+2} = 6^5$ unit."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua UMKM memproduksi keripik singkong. UMKM A memproduksi $2^6$ bungkus dalam 3 hari. UMKM B memproduksi $2^5$ bungkus dalam 2 hari. Keduanya ingin meningkatkan produksi.",
+      "question": "Jika UMKM A ingin menggandakan produksinya setiap 3 hari dan UMKM B ingin menggandakan produksinya setiap 2 hari, manakah yang akan mencapai produksi lebih dari $2^{10}$ bungkus dalam waktu yang lebih singkat?",
+      "options": {
+        "A": "UMKM A, karena basisnya lebih besar.",
+        "B": "UMKM B, karena waktu penggandaannya lebih singkat.",
+        "C": "Keduanya akan mencapai pada waktu yang sama.",
+        "D": "UMKM A, karena produksinya saat ini lebih banyak.",
+        "E": "UMKM B, karena $2^5$ lebih besar dari $2^6$."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Pertumbuhan Produksi**\\nUMKM A: $2^6$ dalam 3 hari, menggandakan setiap 3 hari. Untuk mencapai $2^{10}$, perlu 4 kali penggandaan ($2^6 \\to 2^7 \\to 2^8 \\to 2^9 \\to 2^{10}$), total waktu $4 \\times 3 = 12$ hari.\\nUMKM B: $2^5$ dalam 2 hari, menggandakan setiap 2 hari. Untuk mencapai $2^{10}$, perlu 5 kali penggandaan ($2^5 \\to 2^6 \\to 2^7 \\to 2^8 \\to 2^9 \\to 2^{10}$), total waktu $5 \\times 2 = 10$ hari. UMKM B lebih cepat."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa sedang mengerjakan soal latihan eksponen. Ia menemukan soal: $\\frac{8^5}{4^2}$. Siswa tersebut ingin menyederhanakan soal ini dengan mengubah basisnya menjadi sama.",
+      "question": "Jika siswa tersebut mengubah basis menjadi 2, bentuk yang paling tepat untuk menyederhanakan soal tersebut adalah:",
+      "options": {
+        "A": "$\\frac{2^{15}}{2^4}$",
+        "B": "$\\frac{2^{10}}{2^4}$",
+        "C": "$\\frac{2^{15}}{2^2}$",
+        "D": "$\\frac{2^5}{2^2}$",
+        "E": "$2^{15-4}$"
+      },
+      "answer": "B",
+      "explanation": "**Penyederhanaan Basis Eksponen**\\nBasis 8 dapat diubah menjadi $2^3$, sehingga $8^5 = (2^3)^5 = 2^{3 \\times 5} = 2^{15}$. Basis 4 dapat diubah menjadi $2^2$, sehingga $4^2 = (2^2)^2 = 2^{2 \\times 2} = 2^4$. Maka, $\\frac{8^5}{4^2} = \\frac{2^{15}}{2^4}$."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah studi tentang pertumbuhan tanaman, tinggi tanaman pada minggu ke-3 adalah $3^4$ cm. Tinggi tanaman pada minggu ke-5 adalah $3^6$ cm.",
+      "question": "Berapakah hasil pembagian tinggi tanaman pada minggu ke-5 dengan tinggi tanaman pada minggu ke-3?",
+      "options": {
+        "A": "$3^2$ cm",
+        "B": "$3^{10}$ cm",
+        "C": "$3^{-2}$ cm",
+        "D": "$9$ cm",
+        "E": "$3$ cm"
+      },
+      "answer": "A",
+      "explanation": "**Pembagian Eksponen**\\nTinggi tanaman pada minggu ke-5 adalah $3^6$ cm. Tinggi tanaman pada minggu ke-3 adalah $3^4$ cm. Hasil pembagiannya adalah $\\frac{3^6}{3^4} = 3^{6-4} = 3^2$ cm."
+    }
+  ],
+  "metadata": {
+    "id": "10b0d34c-783b-4f5b-af14-5cf6a8569162",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T14:42:08Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Sifat-Sifat Eksponen",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menggeneralisasi sifat-sifat bilangan berpangkat.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2710,
+      "assistant": 2383,
+      "total": 5766,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\",\n      \"expected_reasoning\": [\n        \"single-step reasoning\",\n        \"direct concept understanding\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Perkalian | Target: LOTS\n\n--- MATERI ---\nDalam teori peluang, dua buah kejadian dikatakan saling bebas apabila terjadinya kejadian yang satu sama sekali tidak memengaruhi kemungkinan terjadinya kejadian yang lain. Sebagai contoh, pada pelemparan dua buah dadu secara bersamaan, angka yang muncul pada dadu pertama tidak akan memberikan pengaruh terhadap peluang munculnya angka tertentu pada dadu kedua. Untuk menghitung peluang terjadinya dua kejadian saling bebas secara bersama-sama, kita dapat menerapkan prinsip aturan perkalian. Jika kejadian A dan kejadian B terbukti merupakan dua kejadian yang saling bebas, maka peluang untuk terjadinya kejadian A dan kejadian B secara bersamaan, yang dinotasikan dengan P(A ∩ B), dapat dihitung dengan cara mengalikan peluang kejadian A dengan peluang kejadian B. Secara matematis, aturan perkalian peluang ini dirumuskan secara ringkas sebagai P(A ∩ B) = P(A) × P(B). Penguasaan konsep ini sangat esensial untuk menyelesaikan masalah peluang yang melibatkan eksperimen majemuk berurutan.\n\n[ATP_ALIGNMENT]\nMenghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Di sebuah warung makan di pinggir jalan, tersedia dua jenis minuman: es teh manis dan es jeruk. Pelanggan dapat memilih salah satu dari kedua minuman tersebut. Selain itu, tersedia dua pilihan camilan: gorengan dan keripik singkong. Pemilik warung ingin mengetahui berapa banyak kombinasi pilihan minuman dan camilan yang berbeda yang bisa dibuat oleh pelanggan.",
+      "question": "Berapa banyak total kombinasi pilihan minuman dan camilan yang berbeda yang dapat dibuat oleh pelanggan di warung tersebut?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah pilihan minuman.",
+        "Mengidentifikasi jumlah pilihan camilan.",
+        "Menghitung total kombinasi dengan mengalikan jumlah pilihan minuman dan camilan."
+      ],
+      "explanation": "**Perhitungan Kombinasi Pilihan**\\nUntuk menghitung total kombinasi pilihan minuman dan camilan, kita dapat menggunakan aturan perkalian sederhana karena pemilihan minuman dan camilan merupakan dua kejadian yang saling bebas. \\n\\nJumlah pilihan minuman = 2 (es teh manis, es jeruk)\\nJumlah pilihan camilan = 2 (gorengan, keripik singkong)\\n\\nTotal kombinasi = Jumlah pilihan minuman \\\\times Jumlah pilihan camilan\\nTotal kombinasi = 2 \\\\times 2 = 4\\n\\nJadi, ada 4 kombinasi pilihan yang berbeda yang dapat dibuat pelanggan.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa kelas XII SMA Nusantara akan mengikuti dua ujian penting: Ujian Matematika dan Ujian Fisika. Peluang siswa tersebut lulus Ujian Matematika adalah 0.8, dan peluang lulus Ujian Fisika adalah 0.7. Kedua ujian ini dianggap saling bebas karena hasil satu ujian tidak memengaruhi hasil ujian lainnya.",
+      "question": "Berapakah peluang siswa tersebut lulus kedua ujian tersebut secara bersamaan?",
+      "rubric_points": [
+        "Mengidentifikasi peluang lulus Ujian Matematika.",
+        "Mengidentifikasi peluang lulus Ujian Fisika.",
+        "Menghitung peluang lulus kedua ujian dengan mengalikan kedua peluang tersebut."
+      ],
+      "explanation": "**Perhitungan Peluang Lulus Bersama**\\nKarena kedua ujian dianggap saling bebas, kita dapat menggunakan aturan perkalian untuk menghitung peluang terjadinya kedua kejadian (lulus Matematika dan lulus Fisika) secara bersamaan.\\n\\nP(Lulus Matematika) = 0.8\\nP(Lulus Fisika) = 0.7\\n\\nP(Lulus Matematika \\\\cap Lulus Fisika) = P(Lulus Matematika) \\\\times P(Lulus Fisika)\\nP(Lulus Matematika \\\\cap Lulus Fisika) = 0.8 \\\\times 0.7 = 0.56\\n\\nJadi, peluang siswa tersebut lulus kedua ujian adalah 0.56.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah pabrik kerupuk di Sidoarjo memproduksi dua jenis kerupuk: kerupuk udang dan kerupuk ikan. Setiap hari, mesin pengemas dapat mengemas 100 bungkus kerupuk udang dan 150 bungkus kerupuk ikan. Proses pengemasan kerupuk udang dan kerupuk ikan dilakukan secara terpisah dan tidak saling memengaruhi.",
+      "question": "Berapa total bungkus kerupuk yang dapat dikemas oleh pabrik tersebut dalam satu hari?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah bungkus kerupuk udang yang dikemas.",
+        "Mengidentifikasi jumlah bungkus kerupuk ikan yang dikemas.",
+        "Menghitung total bungkus kerupuk dengan menjumlahkan kedua jumlah tersebut."
+      ],
+      "explanation": "**Perhitungan Total Kemasan Kerupuk**\\nUntuk mengetahui total bungkus kerupuk yang dikemas, kita perlu menjumlahkan jumlah bungkus dari masing-masing jenis kerupuk yang diproduksi.\\n\\nJumlah bungkus kerupuk udang = 100\\nJumlah bungkus kerupuk ikan = 150\\n\\nTotal bungkus kerupuk = Jumlah bungkus kerupuk udang + Jumlah bungkus kerupuk ikan\\nTotal bungkus kerupuk = 100 + 150 = 250\\n\\nJadi, pabrik tersebut dapat mengemas total 250 bungkus kerupuk dalam satu hari.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah acara bazar sekolah, terdapat dua stan makanan: stan A menjual nasi goreng dan mie ayam, sedangkan stan B menjual es campur dan jus buah. Setiap pengunjung dapat memilih satu jenis makanan dari stan A dan satu jenis minuman dari stan B.",
+      "question": "Berapa banyak kombinasi pilihan makanan dan minuman yang berbeda yang dapat dipilih oleh pengunjung?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah pilihan makanan di stan A.",
+        "Mengidentifikasi jumlah pilihan minuman di stan B.",
+        "Menghitung total kombinasi dengan mengalikan jumlah pilihan makanan dan minuman."
+      ],
+      "explanation": "**Perhitungan Kombinasi Pilihan Makanan dan Minuman**\\nUntuk menentukan jumlah kombinasi pilihan yang tersedia, kita dapat menerapkan aturan perkalian karena pemilihan makanan dari stan A dan minuman dari stan B adalah dua kejadian yang saling bebas.\\n\\nJumlah pilihan makanan (stan A) = 2 (nasi goreng, mie ayam)\\nJumlah pilihan minuman (stan B) = 2 (es campur, jus buah)\\n\\nTotal kombinasi = Jumlah pilihan makanan \\\\times Jumlah pilihan minuman\\nTotal kombinasi = 2 \\\\times 2 = 4\\n\\nDengan demikian, terdapat 4 kombinasi pilihan makanan dan minuman yang dapat dipilih pengunjung.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani di desa Sukamaju memiliki dua jenis pupuk yang akan digunakan untuk dua petak sawahnya. Pupuk jenis X akan digunakan di petak sawah pertama, dan pupuk jenis Y akan digunakan di petak sawah kedua. Peluang pupuk jenis X efektif di petak pertama adalah 0.9, dan peluang pupuk jenis Y efektif di petak kedua adalah 0.85. Penggunaan pupuk di setiap petak dianggap saling bebas.",
+      "question": "Berapakah peluang kedua jenis pupuk tersebut efektif di masing-masing petak sawahnya?",
+      "rubric_points": [
+        "Mengidentifikasi peluang efektivitas pupuk jenis X.",
+        "Mengidentifikasi peluang efektivitas pupuk jenis Y.",
+        "Menghitung peluang kedua pupuk efektif dengan mengalikan kedua peluang tersebut."
+      ],
+      "explanation": "**Perhitungan Peluang Efektivitas Pupuk**\\nKarena penggunaan pupuk di setiap petak sawah dianggap saling bebas, kita dapat menggunakan aturan perkalian untuk menghitung peluang kedua pupuk tersebut efektif secara bersamaan.\\n\\nP(Pupuk X efektif) = 0.9\\nP(Pupuk Y efektif) = 0.85\\n\\nP(Pupuk X efektif \\\\cap Pupuk Y efektif) = P(Pupuk X efektif) \\\\times P(Pupuk Y efektif)\\nP(Pupuk X efektif \\\\cap Pupuk Y efektif) = 0.9 \\\\times 0.85 = 0.765\\n\\nJadi, peluang kedua jenis pupuk tersebut efektif di masing-masing petak sawahnya adalah 0.765.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "e7850c6c-182a-4985-bf6d-fa1eb8f94ed8",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:11:26Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Perkalian",
+    "task_type": "essay",
+    "level": "LOTS",
+    "source_file": "Matematika_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1266,
+      "assistant": 1942,
+      "total": 3882,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

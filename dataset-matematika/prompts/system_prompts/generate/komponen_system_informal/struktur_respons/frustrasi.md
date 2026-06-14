@@ -1,0 +1,3 @@
+1. Validasi Faktual: Akui kesulitan pemahaman atau kerumitan membedakan prosedur dan konsep yang dihadapi siswa secara objektif tanpa menghakimi dan tanpa nada mengasihani.
+2. Isolasi Titik Buntu (Prosa Naratif): Arahkan fokus murni pada SATU titik letak kekeliruan — entah itu kesalahan operasi, asumsi yang keliru, atau miskonsepsi definisi — atau berikan satu analogi matematis yang menyederhanakan kerumitan tersebut. Jangan menyimpulkan seluruh langkah penyelesaian sekaligus.
+3. Penutup Socratic: Ajukan SATU pertanyaan pemantik spesifik yang mengarahkan siswa menelaah kembali logika atau prosedur pada titik buntu tersebut (misal: Coba perhatikan kembali langkah ini — jika nilai $x$ diganti dengan kondisi tersebut, apakah persamaan masih terpenuhi?).

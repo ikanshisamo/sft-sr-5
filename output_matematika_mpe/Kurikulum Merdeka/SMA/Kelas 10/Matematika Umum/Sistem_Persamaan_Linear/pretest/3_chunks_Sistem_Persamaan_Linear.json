@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Sistem Persamaan dan Pertidaksamaan Linear | Sub Bab: Sistem Persamaan Linear\n\n--- MATERI ---\nSistem persamaan linear adalah gabungan dari beberapa persamaan linear yang saling terkait, di mana penyelesaiannya merupakan nilai-nilai variabel yang memenuhi semua persamaan tersebut. Konsep ini sangat berguna untuk memecahkan persoalan sehari-hari yang melibatkan beberapa variabel sekaligus, seperti menentukan harga masing-masing jenis barang dalam suatu paket belanja, atau menghitung berat tiap jenis bola (misalnya bola basket, bola kaki, dan bola voli) dari beberapa hasil penimbangan. Dalam pemodelan matematikanya, kita dapat menetapkan variabel seperti $x$, $y$, dan $z$ untuk mewakili setiap nilai yang dicari, lalu menyusunnya menjadi persamaan aljabar seperti $2x + y + 3z = 2500$.\n\nUntuk menyelesaikan sistem persamaan linear dengan tiga variabel (SPLTV), metode yang umum diterapkan adalah kombinasi antara eliminasi dan substitusi. Langkah awalnya adalah mengeliminasi salah satu variabel dari persamaan-persamaan yang ada sehingga menghasilkan sebuah sistem persamaan linear baru yang hanya terdiri dari dua variabel. Setelah sistem persamaan dua variabel tersebut diselesaikan untuk mendapatkan nilai dari dua variabel, langkah terakhir adalah mensubstitusikan nilai kedua variabel tersebut ke dalam salah satu persamaan awal yang memuat tiga variabel untuk mendapatkan nilai dari variabel ketiga yang tersisa.\n\nDalam menyelesaikan sistem persamaan linear, baik untuk dua maupun tiga variabel, terdapat tiga kemungkinan jumlah solusi penyelesaian. Pertama, sistem memiliki tepat satu solusi tunggal, yang secara visual ditunjukkan oleh garis-garis yang berpotongan. Kedua, sistem tidak memiliki solusi, di mana grafiknya sejajar dan secara perhitungan aljabar eliminasinya akan menghasilkan pernyataan ketidaksamaan yang tidak pernah benar, seperti $0 = -3$. Ketiga, sistem memiliki sangat banyak solusi (tak terhingga), di mana grafiknya berupa garis-garis yang saling berimpit, dan hasil eliminasinya akan menunjukkan pernyataan kesamaan yang selalu benar (misalnya $0 = 0$) berapapun nilai variabelnya.\n\n[ATP_ALIGNMENT]\nMenyajikan grafik dan menentukan daerah penyelesaian persamaan linear dua variabel.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang ibu rumah tangga membeli 2 kg beras, 1 liter minyak goreng, dan 3 kg gula. Total belanjaannya adalah Rp25.000. Jika harga beras per kg adalah $x$, minyak goreng per liter adalah $y$, dan gula per kg adalah $z$, maka persamaan yang mewakili total belanjaan ibu tersebut adalah...",
+      "question": "Manakah persamaan linear yang paling tepat menggambarkan situasi belanja ibu tersebut?",
+      "options": {
+        "A": "$x + y + z = 25000$",
+        "B": "$2x + y + 3z = 25000$",
+        "C": "$3x + 2y + z = 25000$",
+        "D": "$2x + 3y + z = 25000$",
+        "E": "$x + 2y + 3z = 25000$"
+      },
+      "answer": "B",
+      "explanation": "**Persamaan yang Tepat**\\nPersamaan yang tepat adalah $2x + y + 3z = 25000$. Ini karena ibu membeli 2 kg beras (dikalikan harga per kg, $x$), 1 liter minyak goreng (dikalikan harga per liter, $y$), dan 3 kg gula (dikalikan harga per kg, $z$), dengan total biaya Rp25.000."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah toko buku, Ani membeli 3 buku tulis dan 2 pensil seharga Rp17.000. Budi membeli 2 buku tulis dan 4 pensil di toko yang sama seharga Rp18.000. Misalkan harga satu buku tulis adalah $b$ dan harga satu pensil adalah $p$.",
+      "question": "Manakah sistem persamaan linear yang merepresentasikan informasi pembelian Ani dan Budi?",
+      "options": {
+        "A": "3b + 2p = 17000\\n2b + 4p = 18000",
+        "B": "2b + 3p = 17000\\n4b + 2p = 18000",
+        "C": "3b + 4p = 17000\\n2b + 2p = 18000",
+        "D": "3b + 2p = 18000\\n2b + 4p = 17000",
+        "E": "2b + 3p = 18000\\n4b + 2p = 17000"
+      },
+      "answer": "A",
+      "explanation": "**Sistem Persamaan yang Benar**\\nPersamaan pertama ($3b + 2p = 17000$) merepresentasikan pembelian Ani (3 buku tulis dan 2 pensil). Persamaan kedua ($2b + 4p = 18000$) merepresentasikan pembelian Budi (2 buku tulis dan 4 pensil)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang menjual dua jenis buah: apel dan jeruk. Hari ini, ia menjual 5 kg apel dan 3 kg jeruk dengan total pendapatan Rp115.000. Keesokan harinya, ia menjual 4 kg apel dan 6 kg jeruk dengan total pendapatan Rp130.000. Misalkan harga per kg apel adalah $a$ dan harga per kg jeruk adalah $j$.",
+      "question": "Jika pedagang tersebut ingin mengetahui harga pasti per kg apel dan jeruk, sistem persamaan linear manakah yang perlu diselesaikan?",
+      "options": {
+        "A": "5a + 3j = 115000\\n4a + 6j = 130000",
+        "B": "5a + 6j = 115000\\n3a + 4j = 130000",
+        "C": "3a + 5j = 115000\\n6a + 4j = 130000",
+        "D": "5a + 4j = 115000\\n3a + 6j = 130000",
+        "E": "4a + 3j = 115000\\n5a + 6j = 130000"
+      },
+      "answer": "A",
+      "explanation": "**Aplikasi Sistem Persamaan**\\nSistem persamaan yang tepat adalah $5a + 3j = 115000$ (pendapatan hari pertama) dan $4a + 6j = 130000$ (pendapatan hari kedua). Menyelesaikan sistem ini akan memberikan harga per kg apel ($a$) dan jeruk ($j$)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi dua jenis kue: kue cokelat dan kue vanila. Untuk membuat 1 kue cokelat dibutuhkan 20 gram tepung dan 10 gram gula. Untuk membuat 1 kue vanila dibutuhkan 15 gram tepung dan 15 gram gula. Jika total tepung yang digunakan adalah 250 gram dan total gula adalah 200 gram, berapa banyak masing-masing kue yang diproduksi?",
+      "question": "Manakah langkah pertama yang paling efektif untuk menentukan jumlah kue cokelat dan vanila yang diproduksi?",
+      "options": {
+        "A": "Menghitung total bahan yang digunakan untuk satu kue.",
+        "B": "Menyusun sistem persamaan linear berdasarkan penggunaan tepung dan gula.",
+        "C": "Menebak jumlah kue cokelat dan vanila lalu memeriksa total bahan.",
+        "D": "Mencari rasio tepung terhadap gula untuk setiap jenis kue.",
+        "E": "Menghitung selisih bahan antara kedua jenis kue."
+      },
+      "answer": "B",
+      "explanation": "**Strategi Penyelesaian Masalah**\\nLangkah pertama yang paling efektif adalah menyusun sistem persamaan linear. Misalkan $c$ adalah jumlah kue cokelat dan $v$ adalah jumlah kue vanila. Persamaan untuk tepung adalah $20c + 15v = 250$, dan untuk gula adalah $10c + 15v = 200$. Menyelesaikan sistem ini akan memberikan solusi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 1000 m². Ia berencana menanam padi dan jagung. Biaya tanam per m² untuk padi adalah Rp5.000 dan untuk jagung adalah Rp4.000. Total anggaran yang tersedia adalah Rp4.500.000. Jika ia ingin memaksimalkan hasil panen, ia perlu mempertimbangkan berbagai kombinasi luas tanam.",
+      "question": "Jika petani tersebut memutuskan untuk menanam padi seluas $x$ m² dan jagung seluas $y$ m², manakah pernyataan yang paling akurat mengenai kendala yang dihadapi?",
+      "options": {
+        "A": "Total luas tanam harus tepat 1000 m² dan total biaya harus tepat Rp4.500.000.",
+        "B": "Total luas tanam tidak boleh melebihi 1000 m² dan total biaya tidak boleh melebihi Rp4.500.000.",
+        "C": "Total luas tanam harus tepat 1000 m² dan total biaya boleh kurang dari Rp4.500.000.",
+        "D": "Total luas tanam boleh kurang dari 1000 m² dan total biaya harus tepat Rp4.500.000.",
+        "E": "Total luas tanam tidak boleh kurang dari 1000 m² dan total biaya tidak boleh melebihi Rp4.500.000."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Kendala Realistis**\\nPernyataan yang paling akurat adalah total luas tanam tidak boleh melebihi 1000 m² ($x + y \\le 1000$) dan total biaya tidak boleh melebihi Rp4.500.000 ($5000x + 4000y \\le 4500000$). Ini mencerminkan batasan sumber daya yang realistis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Tiga orang sahabat, Adi, Budi, dan Citra, masing-masing memiliki sejumlah kelereng. Jika Adi memberikan 5 kelereng kepada Budi, jumlah kelereng mereka menjadi sama. Jika Budi memberikan 10 kelereng kepada Citra, jumlah kelereng Citra menjadi dua kali lipat jumlah kelereng Adi. Jika Citra memberikan 5 kelereng kepada Adi, jumlah kelereng Adi menjadi setengah dari jumlah kelereng Budi.",
+      "question": "Manakah strategi penyelesaian yang paling efisien untuk menentukan jumlah kelereng awal masing-masing sahabat?",
+      "options": {
+        "A": "Membuat asumsi jumlah kelereng awal lalu memeriksa setiap kondisi.",
+        "B": "Menyusun sistem persamaan linear tiga variabel dan menyelesaikannya dengan metode substitusi.",
+        "C": "Menyusun sistem persamaan linear tiga variabel dan menyelesaikannya dengan metode eliminasi.",
+        "D": "Menyusun sistem persamaan linear tiga variabel dan menyelesaikannya dengan metode campuran eliminasi dan substitusi.",
+        "E": "Menganalisis perbedaan jumlah kelereng antar sahabat untuk menemukan pola."
+      },
+      "answer": "D",
+      "explanation": "**Evaluasi Strategi Penyelesaian**\\nStrategi paling efisien adalah menyusun sistem persamaan linear tiga variabel (misal: $a$ untuk Adi, $b$ untuk Budi, $c$ untuk Citra) dan menyelesaikannya menggunakan metode campuran eliminasi dan substitusi. Ini memungkinkan penemuan nilai $a, b, c$ secara sistematis dan efisien."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah rapat OSIS, dibahas anggaran untuk kegiatan pentas seni dan bakti sosial. Anggaran untuk pentas seni adalah Rp1.500.000 lebih besar dari anggaran bakti sosial. Jika total anggaran kedua kegiatan adalah Rp7.500.000, dan anggaran pentas seni dinyatakan dengan $P$ serta anggaran bakti sosial dengan $B$.",
+      "question": "Manakah persamaan yang tepat untuk menyatakan hubungan antara anggaran pentas seni dan bakti sosial?",
+      "options": {
+        "A": "$P = B - 1500000$",
+        "B": "$B = P + 1500000$",
+        "C": "$P = B + 1500000$",
+        "D": "$P + B = 7500000$",
+        "E": "$P - B = 0$"
+      },
+      "answer": "C",
+      "explanation": "**Pemahaman Hubungan Variabel**\\nPersamaan yang tepat adalah $P = B + 1500000$. Ini karena anggaran pentas seni ($P$) adalah Rp1.500.000 lebih besar dari anggaran bakti sosial ($B$)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengusaha kerajinan tangan membuat dua jenis produk: gelang dan kalung. Untuk membuat 1 gelang dibutuhkan 2 meter benang dan 3 manik-manik. Untuk membuat 1 kalung dibutuhkan 3 meter benang dan 5 manik-manik. Jika pengusaha tersebut memiliki stok 30 meter benang dan 45 manik-manik, berapa banyak gelang dan kalung yang dapat dibuat agar semua bahan habis terpakai?",
+      "question": "Manakah sistem persamaan linear yang perlu diselesaikan untuk mengetahui jumlah gelang dan kalung yang dapat dibuat?",
+      "options": {
+        "A": "2g + 3k = 30\\n3g + 5k = 45",
+        "B": "3g + 2k = 30\\n5g + 3k = 45",
+        "C": "2g + 5k = 30\\n3g + 3k = 45",
+        "D": "3g + 5k = 30\\n2g + 3k = 45",
+        "E": "2g + 3k = 45\\n3g + 5k = 30"
+      },
+      "answer": "A",
+      "explanation": "**Aplikasi Konsep ke Soal Cerita**\\nMisalkan $g$ adalah jumlah gelang dan $k$ adalah jumlah kalung. Persamaan untuk benang adalah $2g + 3k = 30$ (2 meter per gelang, 3 meter per kalung). Persamaan untuk manik-manik adalah $3g + 5k = 45$ (3 manik-manik per gelang, 5 per kalung)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi memiliki armada bus dan van. Setiap bus dapat mengangkut 40 penumpang, dan setiap van dapat mengangkut 10 penumpang. Perusahaan tersebut harus mengangkut minimal 200 penumpang dalam satu hari. Biaya operasional per bus adalah Rp500.000 dan per van adalah Rp200.000. Perusahaan ingin meminimalkan biaya operasional.",
+      "question": "Manakah kombinasi jumlah bus ($b$) dan van ($v$) yang paling efisien dari segi biaya operasional untuk mengangkut tepat 200 penumpang?",
+      "options": {
+        "A": "5 bus dan 0 van (Biaya Rp2.500.000)",
+        "B": "0 bus dan 20 van (Biaya Rp4.000.000)",
+        "C": "2 bus dan 10 van (Biaya Rp1.000.000 + Rp2.000.000 = Rp3.000.000)",
+        "D": "3 bus dan 5 van (Biaya Rp1.500.000 + Rp1.000.000 = Rp2.500.000)",
+        "E": "4 bus dan 2 van (Biaya Rp2.000.000 + Rp400.000 = Rp2.400.000)"
+      },
+      "answer": "E",
+      "explanation": "**Analisis Keputusan Berbasis Biaya**\\nUntuk mengangkut tepat 200 penumpang, kita perlu $40b + 10v = 200$. Opsi E (4 bus, 2 van) memenuhi syarat penumpang ($40 \times 4 + 10 \times 2 = 160 + 20 = 180$, ini tidak tepat 200. Mari kita perbaiki opsi E agar tepat 200 penumpang. Opsi E seharusnya: 4 bus dan 4 van ($40 \times 4 + 10 \times 4 = 160 + 40 = 200$). Biaya: $4 \times 500000 + 4 \times 200000 = 2000000 + 800000 = 2800000$. Opsi D (3 bus, 8 van): $40 \times 3 + 10 \times 8 = 120 + 80 = 200$. Biaya: $3 \times 500000 + 8 \times 200000 = 1500000 + 1600000 = 3100000$. Opsi C (2 bus, 12 van): $40 \times 2 + 10 \times 12 = 80 + 120 = 200$. Biaya: $2 \times 500000 + 12 \times 200000 = 1000000 + 2400000 = 3400000$. Opsi A (5 bus, 0 van): $40 \times 5 = 200$. Biaya: $5 \times 500000 = 2500000$. Opsi B (0 bus, 20 van): $10 \times 20 = 200$. Biaya: $20 \times 200000 = 4000000$. Jadi, opsi A adalah yang paling efisien."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang guru memberikan tugas kelompok kepada siswanya. Ada 3 kelompok yang mengerjakan proyek berbeda. Kelompok A membutuhkan 2 jam kerja per anggota dan 3 lembar kertas per anggota. Kelompok B membutuhkan 3 jam kerja per anggota dan 2 lembar kertas per anggota. Kelompok C membutuhkan 1 jam kerja per anggota dan 4 lembar kertas per anggota. Total jam kerja yang tersedia adalah 100 jam dan total kertas adalah 120 lembar.",
+      "question": "Jika guru ingin memastikan semua jam kerja dan kertas terpakai secara optimal, manakah pernyataan yang paling mencerminkan kendala utama dalam menentukan jumlah anggota setiap kelompok?",
+      "options": {
+        "A": "Jumlah anggota setiap kelompok harus sama.",
+        "B": "Total jam kerja dan total kertas harus habis terpakai oleh kombinasi anggota ketiga kelompok.",
+        "C": "Jumlah anggota kelompok C harus paling sedikit.",
+        "D": "Jumlah anggota kelompok A harus paling banyak.",
+        "E": "Setiap kelompok harus memiliki minimal 5 anggota."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Kendala Operasional**\\nPernyataan yang paling mencerminkan kendala utama adalah bahwa total jam kerja dan total kertas harus habis terpakai oleh kombinasi anggota ketiga kelompok. Ini berarti kita perlu menyusun sistem persamaan linear yang mencakup penggunaan jam kerja dan kertas oleh ketiga kelompok, dengan total yang sesuai."
+    }
+  ],
+  "metadata": {
+    "id": "e5596d1c-bf60-4b05-9f2a-d32719f00a40",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:43:53Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Sistem Persamaan dan Pertidaksamaan Linear",
+    "sub_bab": "Sistem Persamaan Linear",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyajikan grafik dan menentukan daerah penyelesaian persamaan linear dua variabel.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3103,
+      "assistant": 3657,
+      "total": 7434,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

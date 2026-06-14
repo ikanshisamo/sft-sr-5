@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang\n\n--- MATERI ---\nDalam mempelajari peluang, kita mengenal istilah ruang sampel, yaitu himpunan semua kemungkinan hasil yang didapatkan dari suatu percobaan atau eksperimen peluang. Setiap anggota dari ruang sampel ini disebut sebagai titik sampel. Jika semua hasil pada ruang sampel tersebut memiliki kemungkinan yang sama besar untuk terjadi, maka peluang dari suatu kejadian dapat dihitung dengan cara membagi jumlah kejadian yang diinginkan dengan jumlah total hasil yang mungkin terjadi. Selain itu, nilai dari suatu peluang selalu berada di rentang angka 0 hingga 1 inklusif, di mana angka 0 berarti sebuah kejadian tidak mungkin terjadi, sedangkan angka 1 menunjukkan bahwa kejadian tersebut pasti terjadi.\n\nDistribusi peluang didefinisikan sebagai sebuah deskripsi yang menyajikan semua kemungkinan hasil dari suatu situasi acak bersamaan dengan nilai peluang terjadinya masing-masing hasil tersebut. Konsep distribusi peluang ini berbeda dengan ruang sampel biasa, karena dalam distribusi peluang semua hasil akhirnya harus berupa angka tunggal dan nilai peluangnya harus sudah ditentukan secara spesifik, baik dalam bentuk pecahan maupun desimal. Pembuatan tabel distribusi peluang sangat membantu untuk memetakan kemungkinan-kemungkinan hasil secara terstruktur, contoh penerapannya dapat dilihat ketika kita mendata probabilitas hasil penjumlahan angka dari percobaan pelemparan dua buah dadu secara bersamaan.\n\n[ATP_ALIGNMENT]\nMenentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah percobaan melempar sebuah koin bersisi dua (gambar dan angka) sebanyak satu kali, hasil yang mungkin muncul adalah gambar atau angka.",
+      "question": "Manakah dari pilihan berikut yang merupakan ruang sampel dari percobaan melempar sebuah koin?",
+      "options": {
+        "A": "{Gambar}",
+        "B": "{Angka}",
+        "C": "{Gambar, Angka}",
+        "D": "{Gambar, Angka, Sisi}",
+        "E": "{1, 2}"
+      },
+      "answer": "C",
+      "explanation": "**Ruang Sampel**\\nRuang sampel adalah himpunan semua kemungkinan hasil dari suatu percobaan. Untuk pelemparan satu koin, hasil yang mungkin adalah 'Gambar' atau 'Angka'. Jadi, ruang sampelnya adalah {Gambar, Angka}."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah kotak berisi 5 bola merah dan 3 bola biru. Jika diambil satu bola secara acak, setiap bola memiliki kesempatan yang sama untuk terambil.",
+      "question": "Berapa jumlah total kemungkinan hasil yang bisa didapatkan dari pengambilan satu bola?",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "8",
+        "D": "15",
+        "E": "24"
+      },
+      "answer": "C",
+      "explanation": "**Jumlah Total Hasil**\\nJumlah total kemungkinan hasil adalah jumlah seluruh bola yang ada di dalam kotak. Terdapat 5 bola merah ditambah 3 bola biru, sehingga totalnya adalah 5 + 3 = 8 bola."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah kantong berisi 4 kelereng hijau dan 6 kelereng kuning. Jika diambil satu kelereng secara acak, berapakah peluang terambilnya kelereng hijau?",
+      "question": "Hitunglah nilai peluang terambilnya kelereng hijau dari kantong tersebut.",
+      "options": {
+        "A": "0.4",
+        "B": "0.5",
+        "C": "0.6",
+        "D": "0.75",
+        "E": "1.0"
+      },
+      "answer": "A",
+      "explanation": "**Peluang Kejadian**\\nPeluang suatu kejadian dihitung dengan membagi jumlah kejadian yang diinginkan dengan jumlah total kemungkinan hasil. Jumlah kelereng hijau adalah 4, dan jumlah total kelereng adalah 4 + 6 = 10. Maka, peluangnya adalah \\\\frac{4}{10} = 0.4."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah tabel distribusi peluang, tercantum kemungkinan hasil pelemparan sebuah dadu bersisi enam dan nilai peluangnya.",
+      "question": "Manakah dari pernyataan berikut yang paling tepat menggambarkan nilai peluang dalam distribusi peluang?",
+      "options": {
+        "A": "Nilai peluang bisa negatif.",
+        "B": "Nilai peluang selalu lebih dari 1.",
+        "C": "Nilai peluang selalu berada di antara 0 dan 1 (inklusif).",
+        "D": "Nilai peluang hanya bisa berupa bilangan bulat.",
+        "E": "Nilai peluang 0 berarti kejadian pasti terjadi."
+      },
+      "answer": "C",
+      "explanation": "**Rentang Nilai Peluang**\\nNilai peluang suatu kejadian selalu berada dalam rentang 0 hingga 1, termasuk 0 dan 1 itu sendiri. Nilai 0 menunjukkan kejadian mustahil, sedangkan nilai 1 menunjukkan kejadian pasti."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional ingin menjual buah mangga. Ia memperkirakan peluang mangga busuk adalah 0.1 dan peluang mangga baik adalah 0.9. Ia memiliki stok 100 buah mangga.",
+      "question": "Jika pedagang tersebut ingin meminimalkan kerugian, strategi manakah yang paling masuk akal untuk diterapkan terkait mangga yang busuk?",
+      "options": {
+        "A": "Menjual semua mangga dengan harga yang sama tanpa memilah.",
+        "B": "Membuang semua mangga karena ada kemungkinan busuk.",
+        "C": "Memisahkan mangga yang dicurigai busuk dan menjualnya dengan harga diskon.",
+        "D": "Menunggu hingga semua mangga terjual untuk melihat berapa yang busuk.",
+        "E": "Menambah stok mangga agar kerugian per buah terasa lebih kecil."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Risiko dan Strategi**\\nDengan peluang mangga busuk 0.1, memisahkan mangga yang dicurigai busuk dan menjualnya dengan harga diskon adalah strategi yang paling realistis. Ini memungkinkan pedagang tetap mendapatkan sebagian keuntungan dari mangga yang baik dan mengurangi kerugian total dari mangga yang busuk."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dalam sebuah percobaan melempar dua buah dadu bersisi enam secara bersamaan, kita ingin mengetahui peluang munculnya jumlah mata dadu 7.",
+      "question": "Berapakah nilai peluang munculnya jumlah mata dadu 7 dari pelemparan dua dadu?",
+      "options": {
+        "A": "\\\\frac{1}{36}",
+        "B": "\\\\frac{5}{36}",
+        "C": "\\\\frac{6}{36}",
+        "D": "\\\\frac{7}{36}",
+        "E": "\\\\frac{1}{6}"
+      },
+      "answer": "C",
+      "explanation": "**Peluang Kejadian Gabungan**\\nRuang sampel pelemparan dua dadu adalah 36. Kejadian muncul jumlah mata dadu 7 adalah {(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)}, yang berjumlah 6. Peluangnya adalah \\\\frac{6}{36}."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik kerupuk ingin meningkatkan kualitas produknya. Mereka mengidentifikasi bahwa dari setiap 1000 kerupuk yang diproduksi, rata-rata 20 kerupuk tidak renyah (cacat).",
+      "question": "Jika pabrik tersebut ingin mengurangi tingkat kerupuk cacat hingga maksimal 1% dari total produksi, tindakan operasional manakah yang paling efektif untuk dipertimbangkan pertama kali?",
+      "options": {
+        "A": "Meningkatkan frekuensi pengemasan kerupuk.",
+        "B": "Mengganti semua mesin produksi dengan yang baru.",
+        "C": "Menganalisis dan memperbaiki proses produksi yang menyebabkan kerupuk tidak renyah.",
+        "D": "Menambah jumlah pekerja di bagian pengemasan.",
+        "E": "Menaikkan harga jual kerupuk untuk menutupi biaya cacat."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Akar Masalah Operasional**\\nDengan tingkat cacat 2% (20 dari 1000), akar masalah kemungkinan besar ada pada proses produksi itu sendiri. Menganalisis dan memperbaiki proses produksi adalah langkah paling efektif untuk mengurangi cacat secara fundamental, bukan hanya mengelola dampaknya."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah percobaan, terdapat 3 hasil yang mungkin terjadi: A, B, dan C. Diketahui bahwa P(A) = 0.5 dan P(B) = 0.3.",
+      "question": "Berapakah nilai peluang untuk hasil C, yaitu P(C)?",
+      "options": {
+        "A": "0.1",
+        "B": "0.2",
+        "C": "0.3",
+        "D": "0.5",
+        "E": "0.8"
+      },
+      "answer": "B",
+      "explanation": "**Sifat Komplementer Peluang**\\nJumlah total peluang dari semua kemungkinan hasil dalam suatu percobaan adalah 1. Jika P(A) = 0.5 dan P(B) = 0.3, maka P(C) = 1 - P(A) - P(B) = 1 - 0.5 - 0.3 = 0.2."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong memiliki 10 jenis barang. Peluang barang A terjual adalah 0.7, peluang barang B terjual adalah 0.6, dan peluang barang C terjual adalah 0.9.",
+      "question": "Jika pemilik toko ingin fokus pada barang yang paling mungkin terjual, barang manakah yang sebaiknya menjadi prioritas utama dalam stok dan promosi?",
+      "options": {
+        "A": "Barang A",
+        "B": "Barang B",
+        "C": "Barang C",
+        "D": "Semua barang memiliki prioritas yang sama.",
+        "E": "Barang yang tidak disebutkan peluangnya."
+      },
+      "answer": "C",
+      "explanation": "**Interpretasi Peluang untuk Keputusan**\\nPeluang barang C terjual adalah 0.9, yang merupakan nilai tertinggi di antara barang A (0.7) dan B (0.6). Ini menunjukkan bahwa barang C memiliki kemungkinan terbesar untuk terjual, sehingga menjadi prioritas utama."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi online sedang mempertimbangkan dua strategi untuk meningkatkan jumlah penumpang di jam sibuk. Strategi 1: Menawarkan diskon 20% untuk setiap perjalanan. Strategi 2: Menambah jumlah armada sebesar 30%.",
+      "question": "Jika perusahaan ingin memaksimalkan jumlah penumpang dengan mempertimbangkan efisiensi biaya, strategi manakah yang lebih berisiko dan memerlukan analisis lebih lanjut mengenai dampaknya?",
+      "options": {
+        "A": "Strategi 1, karena diskon langsung mempengaruhi pendapatan.",
+        "B": "Strategi 2, karena penambahan armada membutuhkan investasi awal yang besar.",
+        "C": "Kedua strategi memiliki risiko yang sama.",
+        "D": "Strategi 1, karena diskon bisa menarik penumpang yang tidak loyal.",
+        "E": "Strategi 2, karena penambahan armada belum tentu menjamin peningkatan penumpang jika permintaan tidak sesuai."
+      },
+      "answer": "E",
+      "explanation": "**Analisis Risiko dan Prediksi Dampak**\\nStrategi 2 (penambahan armada) berisiko lebih tinggi karena tidak ada jaminan bahwa peningkatan jumlah armada akan secara otomatis meningkatkan jumlah penumpang. Permintaan pasar harus dianalisis dengan cermat. Strategi 1, meskipun mempengaruhi pendapatan, lebih langsung terkait dengan peningkatan jumlah penumpang."
+    }
+  ],
+  "metadata": {
+    "id": "a6b43f0d-54de-4d10-8ecd-dbaea13cec5b",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T13:52:30Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2899,
+      "assistant": 2527,
+      "total": 6099,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

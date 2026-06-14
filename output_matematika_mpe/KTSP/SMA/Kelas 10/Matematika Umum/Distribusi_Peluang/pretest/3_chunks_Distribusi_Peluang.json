@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang\n\n--- MATERI ---\nDalam kajian teori peluang, konsep dasar yang pertama kali harus dipahami adalah percobaan, ruang sampel, dan titik sampel. Percobaan atau eksperimen statistika didefinisikan sebagai suatu proses atau tindakan yang menghasilkan observasi atau pengamatan yang hasil akhirnya tidak dapat dipastikan sebelumnya, namun semua kemungkinannya dapat diketahui. Himpunan dari semua hasil yang mungkin terjadi dari suatu percobaan tersebut dinamakan sebagai ruang sampel, yang secara matematis umumnya dinotasikan dengan huruf S kapital. Setiap anggota atau elemen individu yang terdapat di dalam himpunan ruang sampel tersebut diistilahkan sebagai titik sampel. Sebagai contoh dasar, pada pelemparan sebuah dadu bersisi enam yang seimbang, hasil yang mungkin muncul adalah angka 1, 2, 3, 4, 5, atau 6. Keseluruhan angka tersebut membentuk ruang sampel S = {1, 2, 3, 4, 5, 6}, sedangkan angka 1 secara mandiri merupakan salah satu titik sampelnya.\n\nUntuk menentukan banyaknya anggota ruang sampel dari suatu percobaan, khususnya percobaan yang melibatkan lebih dari satu objek atau dilakukan secara berulang, dapat digunakan beberapa pendekatan sistematis seperti diagram pohon dan tabel silang. Pendekatan tabel sangat efektif digunakan untuk mendaftar ruang sampel dari percobaan dua objek secara bersamaan, misalnya pelemparan dua buah dadu, di mana baris mewakili hasil dadu pertama dan kolom mewakili hasil dadu kedua. Sementara itu, diagram pohon lebih aplikatif untuk merinci titik sampel dari percobaan majemuk yang melibatkan tiga objek atau lebih, seperti pelemparan tiga keping uang logam sekaligus. Selain menggunakan pendaftaran langsung, banyaknya titik sampel secara total, yang dinotasikan dengan n(S), juga dapat dihitung secara efisien menggunakan kaidah pencacahan dasar atau aturan perkalian, tanpa harus menuliskan seluruh kemungkinan hasil observasi satu per satu.\n\nSetelah ruang sampel dan titik sampel berhasil diidentifikasi, tahapan selanjutnya adalah menghitung nilai peluang dari suatu kejadian. Kejadian, yang sering disimbolkan dengan huruf kapital seperti A, merupakan himpunan bagian dari ruang sampel. Jika setiap titik sampel pada ruang sampel S memiliki kemungkinan (kesempatan) yang sama untuk muncul, maka peluang teoretis atau probabilitas terjadinya suatu kejadian A dirumuskan sebagai perbandingan antara banyaknya anggota kejadian A dengan banyaknya anggota ruang sampel S. Secara matematis, formulasi ini ditulis sebagai P(A) = n(A) / n(S), di mana P(A) adalah nilai peluang kejadian A, n(A) adalah banyaknya hasil dalam kejadian A, dan n(S) adalah jumlah seluruh kemungkinan dalam ruang sampel. Nilai peluang suatu kejadian senantiasa berada pada interval tertutup dari nol hingga satu, di mana nilai nol menyatakan kemustahilan dan nilai satu merepresentasikan kepastian mutlak.\n\n[ATP_ALIGNMENT]\nMenentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa melempar sebuah koin yang seimbang sebanyak tiga kali. Setiap lemparan dapat menghasilkan sisi Angka (A) atau Gambar (G).",
+      "question": "Manakah dari pilihan berikut yang merupakan ruang sampel dari percobaan melempar tiga keping koin tersebut?",
+      "options": {
+        "A": "{AAA, AAG, AGA, AGG, GAA, GAG, GGA, GGG}",
+        "B": "{A, G}",
+        "C": "{AA, AG, GA, GG}",
+        "D": "{AAA, GGG}",
+        "E": "{A, G, A, G, A, G}"
+      },
+      "answer": "A",
+      "explanation": "**Ruang Sampel Percobaan Koin**\\nRuang sampel adalah himpunan semua hasil yang mungkin terjadi. Untuk tiga lemparan koin, setiap lemparan memiliki 2 kemungkinan hasil (A atau G). Total kemungkinan adalah 2 x 2 x 2 = 8 hasil. Pilihan A mencantumkan semua 8 kombinasi yang mungkin."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kotak terdapat 5 bola merah dan 3 bola biru. Semua bola memiliki ukuran dan tekstur yang sama.",
+      "question": "Berapa banyak titik sampel jika kita mengambil satu bola dari kotak tersebut?",
+      "options": {
+        "A": "5",
+        "B": "3",
+        "C": "8",
+        "D": "15",
+        "E": "2"
+      },
+      "answer": "C",
+      "explanation": "**Jumlah Titik Sampel**\\nTitik sampel adalah setiap hasil yang mungkin terjadi dari suatu percobaan. Dalam percobaan mengambil satu bola dari kotak, setiap bola yang ada di dalam kotak merupakan satu titik sampel. Total bola adalah 5 bola merah + 3 bola biru = 8 bola. Jadi, ada 8 titik sampel."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah dadu bersisi enam yang seimbang dilempar sekali. Hasil yang mungkin adalah angka 1, 2, 3, 4, 5, atau 6.",
+      "question": "Jika kejadian A adalah munculnya mata dadu bilangan genap, berapakah nilai P(A)?",
+      "options": {
+        "A": "1/6",
+        "B": "2/6",
+        "C": "3/6",
+        "D": "4/6",
+        "E": "5/6"
+      },
+      "answer": "C",
+      "explanation": "**Menghitung Peluang Kejadian**\\nRuang sampel (S) adalah {1, 2, 3, 4, 5, 6}, sehingga n(S) = 6. Kejadian A (muncul bilangan genap) adalah {2, 4, 6}, sehingga n(A) = 3. Peluang kejadian A dihitung dengan P(A) = n(A) / n(S) = 3/6."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pedagang UMKM di pasar tradisional ingin mengirimkan 2 jenis barang dagangan (misalnya, sayuran dan buah-buahan) menggunakan 3 rute pengiriman yang berbeda. Ia ingin memastikan setiap rute digunakan setidaknya sekali.",
+      "question": "Manakah strategi yang paling efisien untuk menentukan semua kemungkinan pengiriman agar setiap rute terpakai minimal satu kali?",
+      "options": {
+        "A": "Mendaftar semua kombinasi pengiriman barang ke rute tanpa batasan.",
+        "B": "Menggunakan diagram pohon untuk memvisualisasikan setiap kemungkinan pengiriman.",
+        "C": "Menggunakan tabel silang untuk mencatat hasil pengiriman barang ke rute.",
+        "D": "Menerapkan kaidah pencacahan dengan mengurangkan total kemungkinan dengan kemungkinan rute yang tidak terpakai.",
+        "E": "Memilih rute secara acak untuk setiap jenis barang hingga semua rute terpakai."
+      },
+      "answer": "D",
+      "explanation": "**Strategi Efisien Menentukan Kemungkinan**\\nMenggunakan kaidah pencacahan dengan prinsip inklusi-eksklusi (mengurangkan total kemungkinan dengan kemungkinan rute yang tidak terpakai) adalah cara paling efisien untuk menghitung jumlah cara agar setiap rute terpakai minimal satu kali, terutama jika jumlah barang dan rute bertambah."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kantong terdapat 4 kelereng berwarna biru dan 6 kelereng berwarna merah. Semua kelereng identik.",
+      "question": "Apa yang dimaksud dengan 'titik sampel' dalam konteks pengambilan satu kelereng dari kantong tersebut?",
+      "options": {
+        "A": "Jumlah total kelereng dalam kantong.",
+        "B": "Kemungkinan terambilnya kelereng berwarna biru.",
+        "C": "Setiap kelereng individual yang ada di dalam kantong.",
+        "D": "Perbandingan jumlah kelereng biru dan merah.",
+        "E": "Proses mengambil kelereng dari kantong."
+      },
+      "answer": "C",
+      "explanation": "**Definisi Titik Sampel**\\nTitik sampel adalah setiap hasil tunggal yang mungkin terjadi dalam suatu percobaan. Dalam kasus ini, setiap kelereng (baik biru maupun merah) yang dapat diambil merupakan satu titik sampel dari percobaan tersebut."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong menjual 2 jenis minuman ringan (jus apel dan soda) dan 3 jenis makanan ringan (keripik, biskuit, cokelat). Seorang pelanggan ingin membeli satu minuman dan satu makanan ringan.",
+      "question": "Berapa banyak kombinasi pilihan yang dapat dibuat oleh pelanggan tersebut?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "6",
+        "E": "8"
+      },
+      "answer": "D",
+      "explanation": "**Penerapan Kaidah Pencacahan**\\nUntuk menentukan banyaknya kombinasi, kita dapat menggunakan aturan perkalian. Ada 2 pilihan minuman dan 3 pilihan makanan ringan. Jumlah total kombinasi adalah jumlah pilihan minuman dikalikan jumlah pilihan makanan ringan: 2 \\\\times 3 = 6 kombinasi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani memiliki dua jenis pupuk: Pupuk A (organik) dan Pupuk B (kimia). Ia berencana menggunakan salah satu atau kedua pupuk tersebut untuk lahan pertaniannya. Ia ingin meminimalkan biaya namun tetap memastikan nutrisi tanaman tercukupi.",
+      "question": "Jika Pupuk A memberikan nutrisi yang lebih tahan lama tetapi lebih mahal per unit, sementara Pupuk B lebih murah tetapi cepat habis, strategi mana yang paling mungkin menghasilkan keseimbangan terbaik antara biaya dan nutrisi jangka panjang?",
+      "options": {
+        "A": "Menggunakan Pupuk B saja untuk menekan biaya awal.",
+        "B": "Menggunakan Pupuk A saja untuk nutrisi yang tahan lama.",
+        "C": "Menggunakan kombinasi keduanya, dengan Pupuk A sebagai dasar dan Pupuk B sebagai tambahan sesuai kebutuhan.",
+        "D": "Tidak menggunakan pupuk sama sekali untuk menghemat biaya.",
+        "E": "Menggunakan Pupuk B secara berlebihan untuk memastikan nutrisi maksimal."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Strategi Penggunaan Pupuk**\\nPilihan C menawarkan pendekatan yang paling seimbang. Menggunakan Pupuk A sebagai dasar memberikan nutrisi jangka panjang, sementara penambahan Pupuk B sesuai kebutuhan memungkinkan penyesuaian biaya dan nutrisi secara dinamis, menghindari pemborosan atau kekurangan."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kelompok belajar yang terdiri dari 5 siswa laki-laki dan 7 siswa perempuan, akan dipilih satu siswa untuk menjadi ketua kelas.",
+      "question": "Berapa banyak titik sampel yang mungkin untuk pemilihan ketua kelas tersebut?",
+      "options": {
+        "A": "5",
+        "B": "7",
+        "C": "12",
+        "D": "35",
+        "E": "2"
+      },
+      "answer": "C",
+      "explanation": "**Identifikasi Titik Sampel**\\nSetiap siswa dalam kelompok belajar merupakan satu kemungkinan hasil (titik sampel) untuk terpilih sebagai ketua kelas. Jumlah total siswa adalah 5 siswa laki-laki + 7 siswa perempuan = 12 siswa. Oleh karena itu, ada 12 titik sampel."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan transportasi lokal memiliki 4 jenis bus (bus kota, bus pariwisata, bus karyawan, bus sekolah) dan 3 jenis layanan (reguler, charter, antar-jemput).",
+      "question": "Jika seorang manajer ingin menawarkan paket layanan yang mencakup satu jenis bus dan satu jenis layanan, berapa banyak paket berbeda yang dapat ditawarkan?",
+      "options": {
+        "A": "4",
+        "B": "3",
+        "C": "7",
+        "D": "12",
+        "E": "16"
+      },
+      "answer": "D",
+      "explanation": "**Aplikasi Kaidah Pencacahan**\\nUntuk menemukan jumlah total paket yang berbeda, kita perlu mengalikan jumlah pilihan jenis bus dengan jumlah pilihan jenis layanan. Terdapat 4 jenis bus dan 3 jenis layanan. Jadi, jumlah paket yang dapat ditawarkan adalah 4 \\\\times 3 = 12 paket."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa sedang menabung untuk membeli sepeda baru seharga Rp 2.000.000. Ia memiliki dua pilihan cara menabung: (1) menabung Rp 100.000 setiap bulan, atau (2) menabung Rp 50.000 di bulan pertama, lalu melipatgandakan jumlah tabungan setiap bulan berikutnya.",
+      "question": "Manakah strategi menabung yang lebih cepat mencapai target Rp 2.000.000, dan mengapa?",
+      "options": {
+        "A": "Strategi 1, karena jumlahnya tetap setiap bulan.",
+        "B": "Strategi 2, karena jumlah tabungan bertambah secara eksponensial.",
+        "C": "Keduanya sama cepat karena total uang yang ditabung sama.",
+        "D": "Strategi 1, karena lebih mudah dihitung.",
+        "E": "Strategi 2, karena dimulai dengan jumlah yang lebih kecil."
+      },
+      "answer": "B",
+      "explanation": "**Evaluasi Strategi Menabung**\\nStrategi 2 lebih cepat karena jumlah tabungan bertambah secara eksponensial (melipatganda). Strategi 1 menghasilkan penambahan linear (tetap). Pertumbuhan eksponensial akan melampaui pertumbuhan linear dalam waktu yang relatif singkat untuk mencapai target yang sama."
+    }
+  ],
+  "metadata": {
+    "id": "f4b561fa-dcd1-461e-bd0d-a655e1011d68",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:27:35Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3339,
+      "assistant": 2636,
+      "total": 6648,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

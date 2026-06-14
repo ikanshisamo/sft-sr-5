@@ -1,0 +1,103 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\",\n      \"expected_reasoning\": [\n        \"multi-step reasoning\",\n        \"contextual interpretation\",\n        \"tradeoff analysis\",\n        \"strategic judgment\",\n        \"real-world implication analysis\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Bunga | Target: HOTS\n\n--- MATERI ---\nDalam dunia perbankan dan keuangan, konsep barisan dan deret sangat aplikatif, salah satunya dalam perhitungan suku bunga. Terdapat dua jenis bunga yang umum dipelajari, yaitu bunga tunggal dan bunga majemuk. Bunga tunggal adalah bunga yang dihitung hanya berdasarkan besarnya modal awal yang disetorkan. Karena penambahan nilai bunganya selalu bernilai tetap pada setiap periode, perhitungan bunga tunggal berprinsip pada pola barisan aritmetika. Jika suatu modal awal disimbolkan dengan M dan mendapat persentase bunga tunggal sebesar b per periode, maka besar bunga pada setiap periode selalu konstan. Dengan demikian, total modal pada akhir periode ke-n (dinotasikan dengan Mn) dapat dihitung menggunakan rumus yang ekuivalen dengan suku ke-n barisan aritmetika, yaitu Mn = M(1 + n × b). Konsep ini membantu kita memprediksi pertumbuhan aset secara linear tanpa adanya akumulasi bunga berbunga.\n\nBerbeda dengan bunga tunggal, bunga majemuk merupakan jenis bunga yang perhitungannya tidak hanya didasarkan pada modal awal, melainkan juga memperhitungkan akumulasi bunga yang telah diperoleh pada periode-periode sebelumnya. Karena nilai modal bertambah secara eksponensial di mana bunga turut menghasilkan bunga, perhitungan bunga majemuk menerapkan secara langsung prinsip barisan geometri. Jika modal awal disimbolkan M dan diinvestasikan dengan suku bunga majemuk sebesar i per periode, maka total modal pada akhir periode ke-t (dinotasikan dengan Mt) akan mengalami pelipatgandaan yang konstan. Secara matematis, formulasi untuk menghitung nilai modal akhir ini dirumuskan sebagai Mt = M(1 + i)^t. Pemahaman mengenai perbedaan mendasar antara bunga tunggal dan bunga majemuk ini sangat krusial dalam memecahkan masalah nyata terkait pengambilan keputusan finansial, seperti deposito atau pinjaman.\n\n[ATP_ALIGNMENT]\nMenghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Ibu Ani memiliki Rp10.000.000 untuk diinvestasikan. Ia mempertimbangkan dua pilihan: Bank A menawarkan bunga tunggal 5% per tahun, sedangkan Bank B menawarkan bunga majemuk 4% per tahun. Ibu Ani berencana menginvestasikan uangnya selama 5 tahun dan ingin memaksimalkan keuntungannya.",
+      "question": "Berdasarkan skenario Ibu Ani, bank mana yang sebaiknya dipilih untuk investasi selama 5 tahun agar mendapatkan keuntungan paling besar, dan jelaskan analisis matematis yang mendukung keputusan tersebut?",
+      "rubric_points": [
+        "Menghitung total modal akhir di Bank A menggunakan rumus bunga tunggal.",
+        "Menghitung total modal akhir di Bank B menggunakan rumus bunga majemuk.",
+        "Membandingkan hasil akhir kedua bank dan menentukan pilihan yang paling menguntungkan.",
+        "Menjelaskan alasan pemilihan bank berdasarkan perhitungan matematis."
+      ],
+      "explanation": "**Analisis Keputusan Investasi Ibu Ani**\\nUntuk menentukan pilihan terbaik, kita perlu menghitung total modal akhir di kedua bank:\\n\\n**Bank A (Bunga Tunggal):**\\nModal Awal (M) = Rp10.000.000\\nSuku Bunga (b) = 5% = 0,05\\nPeriode (n) = 5 tahun\\n\\nTotal Modal Akhir (Mn) = M(1 + n × b)\\nMn = 10.000.000(1 + 5 × 0,05)\\nMn = 10.000.000(1 + 0,25)\\nMn = 10.000.000(1,25)\\nMn = Rp12.500.000\\n\\n**Bank B (Bunga Majemuk):**\\nModal Awal (M) = Rp10.000.000\\nSuku Bunga (i) = 4% = 0,04\\nPeriode (t) = 5 tahun\\n\\nTotal Modal Akhir (Mt) = M(1 + i)^t\\nMt = 10.000.000(1 + 0,04)^5\\nMt = 10.000.000(1,04)^5\\nMt = 10.000.000(1,21665)\\nMt = Rp12.166.500\\n\\nDengan membandingkan kedua hasil, Bank A menghasilkan Rp12.500.000, sedangkan Bank B menghasilkan Rp12.166.500. Oleh karena itu, Ibu Ani sebaiknya memilih Bank A karena memberikan keuntungan yang lebih besar setelah 5 tahun.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Pak Budi, seorang pengusaha UMKM keripik singkong, ingin mengembangkan usahanya. Ia memiliki dua opsi pendanaan: Pinjaman 1 dari Koperasi Sejahtera dengan bunga tunggal 10% per tahun selama 3 tahun, atau Pinjaman 2 dari Bank Maju dengan bunga majemuk 8% per tahun selama 3 tahun. Total pinjaman yang dibutuhkan adalah Rp50.000.000.",
+      "question": "Jika Pak Budi ingin mengetahui total pembayaran pinjaman yang paling ringan setelah 3 tahun, opsi pinjaman manakah yang lebih menguntungkan baginya, dan mengapa?",
+      "rubric_points": [
+        "Menghitung total pembayaran pinjaman di Koperasi Sejahtera (bunga tunggal).",
+        "Menghitung total pembayaran pinjaman di Bank Maju (bunga majemuk).",
+        "Membandingkan total pembayaran kedua pinjaman.",
+        "Memberikan justifikasi keputusan berdasarkan perbandingan total pembayaran."
+      ],
+      "explanation": "**Analisis Pilihan Pinjaman Pak Budi**\\nUntuk menentukan pinjaman yang lebih ringan, kita perlu menghitung total pembayaran pokok ditambah bunga untuk kedua opsi:\\n\\n**Pinjaman 1 (Koperasi Sejahtera - Bunga Tunggal):**\\nPokok Pinjaman (M) = Rp50.000.000\\nSuku Bunga (b) = 10% = 0,10\\nTahun (n) = 3\\n\\nTotal Bunga = M × n × b\\nTotal Bunga = 50.000.000 × 3 × 0,10\\nTotal Bunga = Rp15.000.000\\n\\nTotal Pembayaran = Pokok Pinjaman + Total Bunga\\nTotal Pembayaran = 50.000.000 + 15.000.000\\nTotal Pembayaran = Rp65.000.000\\n\\n**Pinjaman 2 (Bank Maju - Bunga Majemuk):**\\nPokok Pinjaman (M) = Rp50.000.000\\nSuku Bunga (i) = 8% = 0,08\\nTahun (t) = 3\\n\\nTotal Modal Akhir (Mt) = M(1 + i)^t\\nMt = 50.000.000(1 + 0,08)^3\\nMt = 50.000.000(1,08)^3\\nMt = 50.000.000(1,259712)\\nMt = Rp62.985.600\\n\\nTotal Pembayaran Pinjaman 2 adalah Rp62.985.600. Dengan membandingkan, Pinjaman 2 (Bank Maju) memiliki total pembayaran yang lebih ringan dibandingkan Pinjaman 1 (Koperasi Sejahtera).\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dua orang sahabat, Rina dan Doni, sama-sama menerima bonus akhir tahun sebesar Rp5.000.000. Rina memutuskan untuk menabung di bank dengan bunga tunggal 6% per tahun, sementara Doni memilih investasi pada produk yang memberikan bunga majemuk 5% per tahun. Keduanya berencana menyimpan uang tersebut selama 10 tahun.",
+      "question": "Setelah 10 tahun, siapakah yang akan memiliki saldo akhir lebih besar, Rina atau Doni, dan bagaimana perbedaan pertumbuhan dana mereka mencerminkan sifat bunga tunggal versus bunga majemuk?",
+      "rubric_points": [
+        "Menghitung saldo akhir Rina setelah 10 tahun (bunga tunggal).",
+        "Menghitung saldo akhir Doni setelah 10 tahun (bunga majemuk).",
+        "Membandingkan saldo akhir Rina dan Doni.",
+        "Menjelaskan implikasi perbedaan bunga tunggal dan majemuk berdasarkan hasil perbandingan."
+      ],
+      "explanation": "**Perbandingan Pertumbuhan Dana Rina dan Doni**\\nMari kita hitung saldo akhir kedua sahabat tersebut setelah 10 tahun:\\n\\n**Rina (Bunga Tunggal):**\\nModal Awal (M) = Rp5.000.000\\nSuku Bunga (b) = 6% = 0,06\\nTahun (n) = 10\\n\\nTotal Modal Akhir (Mn) = M(1 + n × b)\\nMn = 5.000.000(1 + 10 × 0,06)\\nMn = 5.000.000(1 + 0,6)\\nMn = 5.000.000(1,6)\\nMn = Rp8.000.000\\n\\n**Doni (Bunga Majemuk):**\\nModal Awal (M) = Rp5.000.000\\nSuku Bunga (i) = 5% = 0,05\\nTahun (t) = 10\\n\\nTotal Modal Akhir (Mt) = M(1 + i)^t\\nMt = 5.000.000(1 + 0,05)^10\\nMt = 5.000.000(1,05)^10\\nMt = 5.000.000(1,62889)\\nMt = Rp8.144.450\\n\\nSetelah 10 tahun, Doni akan memiliki saldo akhir lebih besar (Rp8.144.450) dibandingkan Rina (Rp8.000.000). Perbedaan ini menunjukkan bahwa meskipun bunga majemuk memiliki suku bunga lebih rendah, efek 'bunga berbunga' membuatnya tumbuh lebih pesat dalam jangka panjang dibandingkan bunga tunggal yang pertumbuhannya linear.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah koperasi simpan pinjam di desa Sukamaju menawarkan dua skema pinjaman kepada anggotanya. Skema A adalah pinjaman dengan bunga tunggal 12% per tahun. Skema B adalah pinjaman dengan bunga majemuk 10% per tahun. Seorang anggota membutuhkan dana sebesar Rp20.000.000 untuk keperluan renovasi rumah.",
+      "question": "Jika anggota tersebut berencana melunasi pinjaman dalam waktu 4 tahun, skema pinjaman manakah yang akan menghasilkan total pengembalian lebih kecil, dan analisis apa yang dapat ditarik mengenai efektivitas kedua skema bunga?",
+      "rubric_points": [
+        "Menghitung total pengembalian pinjaman untuk Skema A (bunga tunggal).",
+        "Menghitung total pengembalian pinjaman untuk Skema B (bunga majemuk).",
+        "Membandingkan total pengembalian kedua skema.",
+        "Menjelaskan kesimpulan mengenai efektivitas skema bunga berdasarkan hasil perhitungan."
+      ],
+      "explanation": "**Analisis Perbandingan Skema Pinjaman Koperasi**\\nUntuk menentukan skema mana yang menghasilkan total pengembalian lebih kecil, kita hitung total pembayaran untuk masing-masing skema:\\n\\n**Skema A (Bunga Tunggal):**\\nPokok Pinjaman (M) = Rp20.000.000\\nSuku Bunga (b) = 12% = 0,12\\nTahun (n) = 4\\n\\nTotal Bunga = M × n × b\\nTotal Bunga = 20.000.000 × 4 × 0,12\\nTotal Bunga = Rp9.600.000\\n\\nTotal Pengembalian = Pokok Pinjaman + Total Bunga\\nTotal Pengembalian = 20.000.000 + 9.600.000\\nTotal Pengembalian = Rp29.600.000\\n\\n**Skema B (Bunga Majemuk):**\\nPokok Pinjaman (M) = Rp20.000.000\\nSuku Bunga (i) = 10% = 0,10\\nTahun (t) = 4\\n\\nTotal Modal Akhir (Mt) = M(1 + i)^t\\nMt = 20.000.000(1 + 0,10)^4\\nMt = 20.000.000(1,10)^4\\nMt = 20.000.000(1,4641)\\nMt = Rp29.282.000\\n\\nTotal pengembalian Skema B (Rp29.282.000) lebih kecil dibandingkan Skema A (Rp29.600.000). Ini menunjukkan bahwa meskipun bunga majemuk memiliki suku bunga nominal lebih rendah, dalam jangka waktu tertentu, ia bisa lebih menguntungkan bagi peminjam karena akumulasi bunganya lebih kecil dibandingkan bunga tunggal dengan suku bunga lebih tinggi.\\nRefleksi Nyata"
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang ibu rumah tangga di pasar tradisional ingin mengelola uang tabungannya sebesar Rp3.000.000. Ia memiliki dua pilihan: menabung di Koperasi Wanita Sejahtera yang memberikan bunga tunggal 7% per tahun, atau menginvestasikan di usaha kerajinan tangan yang diprediksi memberikan keuntungan setara bunga majemuk 6% per tahun. Ibu tersebut berencana mengelola uangnya selama 8 tahun.",
+      "question": "Jika ibu tersebut ingin mengetahui mana yang akan memberikan hasil lebih besar setelah 8 tahun, pilihan manakah yang lebih strategis, dan bagaimana perbedaan kedua skema tersebut memengaruhi pertumbuhan uangnya?",
+      "rubric_points": [
+        "Menghitung total tabungan di Koperasi Wanita Sejahtera (bunga tunggal).",
+        "Menghitung total investasi di usaha kerajinan tangan (bunga majemuk).",
+        "Membandingkan hasil akhir kedua pilihan.",
+        "Menjelaskan dampak perbedaan skema bunga terhadap pertumbuhan dana."
+      ],
+      "explanation": "**Analisis Strategi Pengelolaan Dana Ibu Rumah Tangga**\\nMari kita hitung hasil akhir dari kedua pilihan pengelolaan dana tersebut setelah 8 tahun:\\n\\n**Koperasi Wanita Sejahtera (Bunga Tunggal):**\\nModal Awal (M) = Rp3.000.000\\nSuku Bunga (b) = 7% = 0,07\\nTahun (n) = 8\\n\\nTotal Modal Akhir (Mn) = M(1 + n × b)\\nMn = 3.000.000(1 + 8 × 0,07)\\nMn = 3.000.000(1 + 0,56)\\nMn = 3.000.000(1,56)\\nMn = Rp4.680.000\\n\\n**Usaha Kerajinan Tangan (Bunga Majemuk):**\\nModal Awal (M) = Rp3.000.000\\nSuku Bunga (i) = 6% = 0,06\\nTahun (t) = 8\\n\\nTotal Modal Akhir (Mt) = M(1 + i)^t\\nMt = 3.000.000(1 + 0,06)^8\\nMt = 3.000.000(1,06)^8\\nMt = 3.000.000(1,59385)\\nMt = Rp4.781.550\\n\\nPilihan investasi di usaha kerajinan tangan (bunga majemuk) akan memberikan hasil lebih besar (Rp4.781.550) dibandingkan menabung di koperasi (bunga tunggal) yang menghasilkan Rp4.680.000. Meskipun suku bunga majemuk lebih rendah, efek 'bunga berbunga' membuatnya tumbuh lebih cepat dalam jangka panjang, menunjukkan bahwa investasi yang memberikan bunga majemuk lebih strategis untuk pertumbuhan dana yang signifikan.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "f5967482-0908-452b-858e-ea14c27cf975",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T22:45:17Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Bunga",
+    "task_type": "essay",
+    "level": "HOTS",
+    "source_file": "Matematika_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1641,
+      "assistant": 3005,
+      "total": 5320,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

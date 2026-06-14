@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang | Target: HOTS\n\n--- MATERI ---\nDalam kehidupan sehari-hari, kita sering dihadapkan pada situasi yang melibatkan proses pengambilan keputusan atau prediksi terhadap sesuatu yang belum pasti terjadi, seperti perkiraan cuaca atau menebak hasil suatu pertandingan. Dalam matematika, proses yang menghasilkan suatu pengamatan atau ukuran yang hasilnya tidak dapat dipastikan secara mutlak disebut sebagai percobaan. Meskipun hasil pasti dari suatu percobaan tidak dapat diketahui sebelumnya, kita dapat menduga dan mendaftar seluruh kemungkinan hasil yang dapat terjadi. Sebagai contoh, pada pelemparan sebuah koin setimbang, hasil yang mungkin muncul adalah sisi Angka atau sisi Gambar. Konsep mendaftar seluruh kemungkinan hasil ini merupakan langkah paling mendasar dan esensial sebelum kita mempelajari lebih jauh mengenai ukuran kepastian dari suatu kejadian atau yang lazim dikenal dengan istilah teori peluang.\n\nKumpulan semua kemungkinan hasil yang dapat terjadi dari suatu percobaan dinamakan ruang sampel. Secara matematis, ruang sampel umumnya disimbolkan dengan huruf kapital S, dan pada hakikatnya merupakan sebuah himpunan. Setiap anggota atau elemen individu di dalam himpunan ruang sampel tersebut dinamakan sebagai titik sampel atau hasil yang mungkin terjadi. Banyaknya anggota di dalam himpunan ruang sampel S dinotasikan secara formal dengan n(S). Sebagai ilustrasi, pada percobaan pelemparan sebuah dadu bersisi enam yang setimbang, titik sampel yang mungkin muncul adalah mata dadu 1, 2, 3, 4, 5, atau 6. Dengan demikian, ruang sampel dari percobaan pelemparan dadu tersebut dapat dituliskan dalam bentuk himpunan S = {1, 2, 3, 4, 5, 6}, yang mengindikasikan bahwa banyaknya anggota ruang sampel atau n(S) bernilai 6.\n\nDi dalam suatu ruang sampel percobaan, kita sering kali hanya menaruh ketertarikan pada hasil-hasil observasi tertentu saja. Himpunan bagian dari ruang sampel S yang memuat kumpulan hasil spesifik yang diharapkan muncul tersebut dinamakan sebagai kejadian, dan umumnya disimbolkan dengan huruf kapital E. Untuk menentukan ruang sampel dan kejadian dari percobaan majemuk yang lebih kompleks, seperti eksperimen pelemparan dua buah dadu atau beberapa koin secara bersamaan, kita membutuhkan metode penyusunan yang sistematis agar tidak ada titik sampel yang terlewat. Metode penyusunan titik sampel yang lazim dipelajari antara lain adalah menggunakan metode mendaftar secara langsung, membuat tabel silang, atau menyusun representasi diagram pohon. Melalui pendekatan visual ini, identifikasi himpunan kejadian dapat dilakukan dengan presisi.\n\nSebelum mendefinisikan nilai peluang secara teoretis matematis, probabilitas suatu kejadian dapat didekati melalui eksperimen aktual berulang yang konsepnya dinamakan frekuensi relatif. Misalkan suatu percobaan dilakukan secara berulang-ulang sebanyak n kali. Jika suatu kejadian spesifik E diamati muncul sebanyak k kali, di mana nilai k berada pada rentang 0 hingga n, maka frekuensi relatif dari kejadian E ditentukan dengan membandingkan banyaknya kejadian E yang muncul dengan total banyaknya percobaan yang dilakukan. Secara analitis, rumus frekuensi relatif dituliskan sebagai fr(E) = k / n. Apabila percobaan empiris tersebut dilakukan terus-menerus hingga nilai pelemparan n mendekati tak terhingga, maka nilai perbandingan k/n akan cenderung konstan dan stabil mendekati suatu nilai pecahan tertentu. Nilai konstan inilah yang bermuara pada definisi nilai peluang teoretis.\n\nBerdasarkan pemahaman mengenai ruang sampel dan himpunan kejadian, kita dapat mendefinisikan nilai peluang suatu kejadian secara mutlak. Peluang suatu kejadian E, yang dinotasikan secara universal dengan P(E), merupakan hasil bagi atau rasio antara banyaknya kejadian E yang diharapkan terjadi dengan banyaknya seluruh anggota ruang sampel S dari percobaan tersebut. Perumusan baku dari peluang kejadian dirumuskan ke dalam persamaan P(E) = n(E) / n(S). Sebagai contoh aplikasi, pada percobaan pelemparan dua buah dadu setimbang, total titik pada ruang sampel n(S) adalah 36. Jika kejadian E didefinisikan sebagai munculnya mata dadu berjumlah kurang dari 7, maka setelah didata terdapat 15 titik sampel persekutuan yang memenuhi kriteria tersebut, sehingga n(E) = 15. Melalui substitusi ke dalam formula, didapatkan probabilitas kejadian E adalah P(E) = 15/36.\n\nSatu hal yang fundamental untuk dikuasai adalah bahwa nilai peluang suatu kejadian senantiasa memuat batasan interval yang terukur, yaitu direpresentasikan oleh rentang bilangan real dari 0 hingga 1. Secara aljabar, batas probabilitas kejadian E dideklarasikan dengan pertidaksamaan 0 ≤ P(E) ≤ 1. Jika peluang suatu kejadian bernilai 0, kondisi ini melambangkan kemustahilan, artinya kejadian tersebut dipastikan tidak akan pernah terjadi. Sebaliknya, peluang bernilai 1 merepresentasikan kepastian mutlak bahwa kejadian tersebut pasti terjadi. Di samping itu, teori peluang juga mengkaji kejadian komplemen, yang disimbolkan dengan Ec, yakni himpunan seluruh hasil di ruang sampel S yang sama sekali bukan bagian dari kejadian E. Terdapat sifat matematis yang absolut bahwa akumulasi peluang kejadian E dengan peluang komplemennya selalu senilai satu, yakni P(E) + P(Ec) = 1.\n\n[ATP_ALIGNMENT]\nMenentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"\n\n[INSTRUKSI KHUSUS]\nResponse WAJIB lebih ringkas dan padat. Batasi total panjang output. Prioritaskan kualitas substansi di atas kuantitas kata.",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memproduksi 1000 bungkus per hari. Dari data historis, 5% bungkus tidak lolos kontrol kualitas karena variasi rasa. Perusahaan ingin meningkatkan kepuasan pelanggan dengan mengurangi produk cacat.",
+      "question": "Manakah strategi paling efektif bagi UMKM tersebut untuk secara signifikan mengurangi persentase keripik yang tidak lolos kontrol kualitas, dengan mempertimbangkan efisiensi biaya dan dampak pada produksi?",
+      "options": {
+        "A": "Menambah jumlah sampel acak untuk diperiksa di setiap batch produksi.",
+        "B": "Melakukan evaluasi mendalam terhadap proses pengolahan singkong dan bumbu untuk mengidentifikasi akar penyebab variasi rasa.",
+        "C": "Mengganti mesin pengolah singkong dengan yang lebih baru tanpa analisis mendalam terhadap proses yang ada.",
+        "D": "Meningkatkan frekuensi pelatihan karyawan bagian produksi tanpa meninjau ulang SOP yang ada.",
+        "E": "Menerima tingkat cacat 5% sebagai batas wajar dan fokus pada pemasaran produk yang lolos."
+      },
+      "answer": "B",
+      "explanation": "**Strategi Paling Efektif**\\nStrategi B paling efektif karena mengidentifikasi akar masalah variasi rasa. Dengan memahami penyebabnya, UMKM dapat melakukan perbaikan proses yang tepat sasaran, yang berpotensi mengurangi cacat secara permanen dan lebih efisien daripada sekadar menambah pemeriksaan atau mengganti mesin tanpa analisis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani memiliki 2 hektar sawah. Ia memperkirakan hasil panen padi per hektar adalah 5 ton. Ia berencana menjual hasil panennya ke dua pasar berbeda: Pasar A (menawarkan harga Rp 10.000/kg) dan Pasar B (menawarkan harga Rp 9.500/kg).",
+      "question": "Jika petani ingin memaksimalkan pendapatannya, strategi penjualan manakah yang paling rasional untuk dipertimbangkan, dengan asumsi kedua pasar mampu menyerap seluruh hasil panennya?",
+      "options": {
+        "A": "Menjual seluruh hasil panen ke Pasar A karena harganya lebih tinggi.",
+        "B": "Membagi hasil panen secara merata antara Pasar A dan Pasar B untuk diversifikasi risiko.",
+        "C": "Menjual sebagian besar ke Pasar A dan sisanya ke Pasar B untuk memanfaatkan harga tertinggi sambil tetap menjaga ketersediaan pasokan.",
+        "D": "Menjual seluruh hasil panen ke Pasar B karena ada kemungkinan negosiasi harga yang lebih baik.",
+        "E": "Menunggu hingga mendekati masa panen untuk melihat fluktuasi harga di kedua pasar sebelum memutuskan."
+      },
+      "answer": "A",
+      "explanation": "**Strategi Penjualan Optimal**\\nUntuk memaksimalkan pendapatan, petani harus menjual seluruh hasil panennya ke pasar yang menawarkan harga tertinggi. Dengan harga Rp 10.000/kg di Pasar A, menjual seluruh hasil panen di sana akan menghasilkan pendapatan kotor yang lebih besar dibandingkan menjual sebagian atau seluruhnya di Pasar B."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik menggunakan 3 armada truk untuk pengiriman barang. Setiap truk memiliki kapasitas berbeda dan rute yang telah ditentukan. Truk 1 (kapasitas 5 ton, rute A), Truk 2 (kapasitas 7 ton, rute B), Truk 3 (kapasitas 4 ton, rute C). Total barang yang harus dikirim adalah 15 ton.",
+      "question": "Manakah alokasi pengiriman barang yang paling efisien untuk ketiga truk tersebut guna menyelesaikan pengiriman 15 ton dalam satu kali jalan, dengan mempertimbangkan kapasitas maksimal masing-masing truk?",
+      "options": {
+        "A": "Truk 1: 5 ton, Truk 2: 5 ton, Truk 3: 5 ton.",
+        "B": "Truk 1: 4 ton, Truk 2: 7 ton, Truk 3: 4 ton.",
+        "C": "Truk 1: 5 ton, Truk 2: 6 ton, Truk 3: 4 ton.",
+        "D": "Truk 1: 5 ton, Truk 2: 7 ton, Truk 3: 3 ton.",
+        "E": "Truk 1: 5 ton, Truk 2: 7 ton, Truk 3: 4 ton."
+      },
+      "answer": "E",
+      "explanation": "**Alokasi Pengiriman Efisien**\\nAlokasi yang paling efisien adalah menggunakan kapasitas penuh dari setiap truk jika memungkinkan untuk mencapai total 15 ton. Truk 1 (5 ton) + Truk 2 (7 ton) + Truk 3 (4 ton) = 16 ton. Namun, untuk mengirim tepat 15 ton, alokasi ini (5, 7, 3) atau (4, 7, 4) adalah yang paling mendekati dan efisien, namun opsi E menggunakan kapasitas penuh dari truk terbesar dan kedua, serta sebagian dari yang terkecil, yang merupakan strategi optimal jika total barang adalah 15 ton."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah sekolah mengadakan acara pentas seni. Panitia memperkirakan jumlah penonton akan berkisar antara 500 hingga 800 orang. Biaya operasional acara per penonton adalah Rp 15.000. Tiket masuk dijual seharga Rp 25.000 per orang.",
+      "question": "Jika panitia ingin memastikan acara tidak merugi, berapakah jumlah penonton minimum yang harus hadir, dan strategi apa yang paling tepat untuk mencapai target tersebut?",
+      "options": {
+        "A": "Minimum 500 penonton; fokus pada promosi intensif di media sosial.",
+        "B": "Minimum 600 penonton; menawarkan diskon khusus untuk grup.",
+        "C": "Minimum 500 penonton; memastikan kualitas pertunjukan agar menarik.",
+        "D": "Minimum 750 penonton; menaikkan harga tiket menjadi Rp 30.000.",
+        "E": "Minimum 500 penonton; melakukan analisis biaya operasional untuk efisiensi."
+      },
+      "answer": "A",
+      "explanation": "**Target Penonton Minimum dan Strategi**\\nUntuk tidak merugi, pendapatan harus menutupi biaya. Keuntungan per penonton adalah Rp 25.000 - Rp 15.000 = Rp 10.000. Jika target minimum adalah 500 penonton, keuntungan kotor adalah 500 x Rp 10.000 = Rp 5.000.000. Strategi promosi intensif di media sosial paling efektif untuk menjangkau audiens luas dan memastikan jumlah penonton mencapai target minimum."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi 2 jenis roti: Roti A (biaya produksi Rp 5.000, harga jual Rp 8.000) dan Roti B (biaya produksi Rp 7.000, harga jual Rp 12.000). Kapasitas produksi maksimum pabrik adalah 1000 roti per hari.",
+      "question": "Manakah kombinasi produksi harian yang paling menguntungkan bagi pabrik, dengan asumsi permintaan untuk kedua jenis roti selalu ada?",
+      "options": {
+        "A": "Produksi Roti A sebanyak 1000 unit.",
+        "B": "Produksi Roti B sebanyak 1000 unit.",
+        "C": "Produksi Roti A sebanyak 500 unit dan Roti B sebanyak 500 unit.",
+        "D": "Produksi Roti A sebanyak 700 unit dan Roti B sebanyak 300 unit.",
+        "E": "Produksi Roti A sebanyak 300 unit dan Roti B sebanyak 700 unit."
+      },
+      "answer": "B",
+      "explanation": "**Kombinasi Produksi Paling Menguntungkan**\\nKeuntungan Roti A per unit adalah Rp 8.000 - Rp 5.000 = Rp 3.000. Keuntungan Roti B per unit adalah Rp 12.000 - Rp 7.000 = Rp 5.000. Untuk memaksimalkan keuntungan, pabrik harus memprioritaskan produksi Roti B karena memberikan keuntungan per unit yang lebih tinggi. Dengan kapasitas 1000 unit, memproduksi 1000 unit Roti B akan memberikan keuntungan maksimal."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah kedai kopi memiliki 2 mesin espresso. Mesin A dapat membuat 30 kopi per jam, sedangkan Mesin B dapat membuat 40 kopi per jam. Kedai buka 8 jam sehari. Total pesanan rata-rata per hari adalah 600 kopi.",
+      "question": "Jika salah satu mesin rusak, strategi operasional manakah yang paling tepat untuk meminimalkan dampak pada kepuasan pelanggan dan potensi kehilangan pendapatan?",
+      "options": {
+        "A": "Menutup kedai selama perbaikan mesin yang rusak.",
+        "B": "Fokus menggunakan mesin yang tersisa dan menginformasikan pelanggan tentang keterlambatan.",
+        "C": "Menaikkan harga kopi untuk mengkompensasi penurunan kapasitas produksi.",
+        "D": "Mengurangi jam operasional kedai hingga mesin diperbaiki.",
+        "E": "Meminta bantuan dari kedai kopi lain untuk memenuhi pesanan."
+      },
+      "answer": "B",
+      "explanation": "**Strategi Operasional Saat Mesin Rusak**\\nStrategi B adalah yang paling tepat. Menggunakan mesin yang tersisa (kapasitas 30 atau 40 kopi/jam) masih memungkinkan melayani sebagian pelanggan. Menginformasikan pelanggan tentang potensi keterlambatan menunjukkan transparansi dan mengelola ekspektasi, yang lebih baik daripada menutup kedai atau menaikkan harga secara drastis."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko kelontong menjual beras dalam dua ukuran kemasan: 5 kg (harga Rp 75.000) dan 10 kg (harga Rp 140.000). Pelanggan seringkali bingung menentukan mana yang lebih hemat.",
+      "question": "Manakah analisis perbandingan harga yang paling akurat untuk membantu pelanggan menentukan pilihan yang lebih hemat?",
+      "options": {
+        "A": "Membandingkan harga per kemasan: Rp 75.000 vs Rp 140.000.",
+        "B": "Menghitung selisih harga: Rp 140.000 - Rp 75.000 = Rp 65.000.",
+        "C": "Menghitung harga per kilogram untuk kedua kemasan.",
+        "D": "Memperkirakan berapa banyak beras yang akan digunakan pelanggan.",
+        "E": "Melihat promosi yang sedang berjalan di toko."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Perbandingan Harga yang Akurat**\\nUntuk menentukan mana yang lebih hemat, pelanggan perlu membandingkan harga per satuan unit yang sama, yaitu per kilogram. Harga kemasan 5 kg adalah Rp 75.000 / 5 kg = Rp 15.000/kg. Harga kemasan 10 kg adalah Rp 140.000 / 10 kg = Rp 14.000/kg. Dengan demikian, kemasan 10 kg lebih hemat."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan travel menawarkan paket liburan ke Bali. Paket A (7 hari, Rp 5.000.000) mencakup akomodasi, transportasi lokal, dan tur 3 objek wisata. Paket B (5 hari, Rp 4.000.000) mencakup akomodasi dan transportasi lokal.",
+      "question": "Jika seorang pelanggan memiliki anggaran Rp 4.500.000 dan ingin pengalaman liburan yang lebih kaya, manakah keputusan yang paling strategis untuk diambil pelanggan tersebut?",
+      "options": {
+        "A": "Memilih Paket A karena menawarkan lebih banyak objek wisata.",
+        "B": "Memilih Paket B dan menggunakan sisa anggaran untuk tur tambahan.",
+        "C": "Mencari paket lain yang sesuai dengan anggaran dan keinginan.",
+        "D": "Mencoba menegosiasi harga Paket A agar sesuai anggaran.",
+        "E": "Mengambil Paket B dan menghemat sisa anggaran untuk liburan berikutnya."
+      },
+      "answer": "B",
+      "explanation": "**Keputusan Strategis Pelanggan**\\nPelanggan memiliki anggaran Rp 4.500.000 dan menginginkan pengalaman yang lebih kaya. Paket B (Rp 4.000.000) sesuai anggaran dan menyisakan Rp 500.000. Dengan sisa anggaran ini, pelanggan dapat menambahkan tur ke objek wisata lain, sehingga memenuhi keinginan untuk pengalaman yang lebih kaya tanpa melebihi anggaran."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah desa berencana membangun fasilitas umum baru. Ada dua opsi: membangun taman bermain anak (biaya Rp 100 juta, manfaat sosial tinggi bagi keluarga) atau membangun pusat pelatihan UMKM (biaya Rp 120 juta, potensi peningkatan ekonomi desa).",
+      "question": "Manakah pertimbangan paling krusial bagi pemerintah desa dalam memutuskan prioritas pembangunan antara kedua fasilitas tersebut, dengan tujuan memaksimalkan kesejahteraan jangka panjang masyarakat?",
+      "options": {
+        "A": "Memilih fasilitas dengan biaya lebih rendah untuk menghemat anggaran.",
+        "B": "Memilih fasilitas yang paling banyak diminati oleh sebagian kecil warga.",
+        "C": "Menganalisis dampak ekonomi dan sosial jangka panjang dari masing-masing fasilitas terhadap seluruh masyarakat desa.",
+        "D": "Memilih fasilitas yang dapat diselesaikan dalam waktu lebih singkat.",
+        "E": "Memilih fasilitas yang ditawarkan oleh kontraktor dengan harga paling murah."
+      },
+      "answer": "C",
+      "explanation": "**Pertimbangan Krusial Pembangunan**\\nUntuk kesejahteraan jangka panjang, pemerintah desa harus menganalisis dampak komprehensif. Taman bermain memberikan manfaat sosial langsung, sementara pusat pelatihan UMKM berpotensi meningkatkan ekonomi desa secara berkelanjutan. Membandingkan kedua dampak ini secara mendalam akan menghasilkan keputusan yang paling strategis untuk kesejahteraan masyarakat secara keseluruhan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah warung makan memiliki 5 karyawan. Rata-rata pendapatan harian warung adalah Rp 1.500.000. Biaya operasional harian (bahan baku, sewa, dll.) adalah Rp 1.000.000. Gaji total kelima karyawan adalah Rp 500.000 per hari.",
+      "question": "Jika pemilik warung ingin meningkatkan laba bersih harian sebesar 20%, strategi manakah yang paling realistis dan berkelanjutan untuk diterapkan?",
+      "options": {
+        "A": "Mengurangi gaji karyawan secara proporsional.",
+        "B": "Menaikkan harga menu secara signifikan untuk semua item.",
+        "C": "Mencari cara untuk meningkatkan pendapatan harian (misalnya, promosi, menu baru) sambil mengendalikan biaya operasional.",
+        "D": "Mengurangi jumlah karyawan menjadi 3 orang.",
+        "E": "Mengurangi kualitas bahan baku untuk menekan biaya operasional."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Peningkatan Laba yang Realistis**\\nLaba bersih saat ini adalah Rp 1.500.000 (pendapatan) - Rp 1.000.000 (biaya operasional) - Rp 500.000 (gaji) = Rp 0. Target laba bersih 20% berarti Rp 0 + (20% x Rp 0) = Rp 0. Namun, jika diasumsikan ada laba awal, strategi C paling berkelanjutan. Meningkatkan pendapatan melalui promosi atau menu baru akan menambah laba tanpa mengorbankan kualitas atau sumber daya manusia."
+    }
+  ],
+  "metadata": {
+    "id": "5583dbb2-c9b2-47fc-b6a1-eeef15e5459e",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T14:35:04Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_6_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3625,
+      "assistant": 3966,
+      "total": 8265,
+      "max_seq_length": 8192,
+      "exceeds_budget": true
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

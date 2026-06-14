@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Deret\n\n--- MATERI ---\nKonsep deret berhubungan erat dengan barisan bilangan. Jika suku-suku suatu barisan dijumlahkan, maka penjumlahan berurut tersebut dinamakan sebagai deret. Secara matematis, apabila sn didefinisikan sebagai jumlah n suku pertama dari sebuah barisan bilangan dengan n = 1, 2, 3, dan seterusnya, maka bentuk deret tersebut dapat dituliskan secara eksplisit menjadi sn = u1 + u2 + u3 + ... + un. Dalam kajian matematika, terdapat sebuah relasi fundamental antara nilai deret dan barisan bilangan penyusunnya. Relasi tersebut merumuskan bahwa nilai suku ke-n atau un senantiasa dapat diidentifikasi dengan menghitung selisih antara jumlah n suku pertama (sn) terhadap jumlah n-1 suku pertama (s(n-1)). Prinsip dasar yang diekspresikan sebagai un = sn - s(n-1) ini berlaku secara universal, baik pada sistem barisan aritmetika, barisan geometri, maupun jenis barisan bilangan lainnya.\n\nDeret aritmetika secara spesifik didefinisikan sebagai jumlah dari suku-suku yang menyusun suatu barisan aritmetika. Mengingat bahwa barisan aritmetika memiliki pola penambahan atau pengurangan dengan nilai beda (b) yang konstan pada setiap sukunya, maka deret aritmetika merupakan akumulasi total dari pola pertumbuhan linear tersebut. Sebagai contoh aplikasi nyata, apabila kita menghitung total batu bata yang dibutuhkan untuk menyusun anak tangga di mana setiap tingkatan membutuhkan penambahan batu bata yang tetap, kita pada hakikatnya sedang menghitung nilai deret aritmetika. Karakteristik utama dari deret ini adalah kenaikan jumlah akumulatifnya berbanding lurus secara teratur dengan penambahan jumlah suku yang dilibatkan, menjadikannya sangat esensial dalam pemodelan matematis untuk berbagai kasus perhitungan aritmatika sosial dan teknik sipil dasar.\n\nUntuk menghitung total jumlah n suku pertama (sn) pada suatu deret aritmetika, metode penjumlahan manual satu per satu tentu sangat tidak efisien, terutama jika melibatkan rentang suku yang masif. Oleh karena itu, diaplikasikanlah rumus analitis sn = n/2 (a + un), di mana variabel a melambangkan suku pertama dan un mewakili nilai suku terakhir pada urutan ke-n. Dalam berbagai permasalahan kontekstual di mana nilai pasti dari suku terakhir belum diketahui, perumusan di atas dapat diekspansi dengan menyubstitusikan persamaan umum suku ke-n barisan aritmetika, yaitu un = a + (n - 1)b. Melalui langkah substitusi ini, diturunkanlah sebuah formula ekuivalen yang lebih komprehensif, yakni sn = n/2 (2a + (n - 1)b). Dengan formulasi ini, nilai sn dapat ditentukan murni berdasarkan parameter suku awal, selisih atau beda antar suku, dan banyaknya suku.\n\nSejalan dengan terminologi deret sebelumnya, deret geometri merupakan hasil penjumlahan berurut secara matematis dari suku-suku penyusun suatu barisan geometri. Apabila suku awal suatu deret dinotasikan dengan a dan rasio atau faktor pengalinya dilambangkan dengan r, maka representasi aljabar untuk deret geometri dari n suku pertamanya adalah sn = a + ar + ar^2 + ... + ar^(n-1). Berbeda secara signifikan dengan pola deret aritmetika yang berbasis selisih konstan, laju pertambahan pada deret geometri bersifat eksponensial akibat adanya proses pelipatgandaan secara periodik. Model perhitungan deret geometri sangat aplikatif untuk merepresentasikan permasalahan yang mendeskripsikan proses pertumbuhan dan peluruhan yang terjadi berulang secara proporsional, seperti halnya perhitungan suku bunga perbankan majemuk atau analisis jarak pantulan bola yang kian menurun.\n\nPenerapan rumus jumlah n suku pertama (sn) untuk sistem deret geometri sangat dikondisikan oleh rentang nilai rasio (r) yang dimiliki barisannya. Jika barisan geometri tersebut mempunyai nilai rasio mutlak lebih besar dari satu (r > 1 atau r < -1), formula yang digunakan adalah sn = a(r^n - 1) / (r - 1). Sebaliknya, apabila besaran rasionya memuat batasan interval pecahan di antara negatif satu dan satu (-1 < r < 1), maka bentuk penulisan rumus disesuaikan menjadi sn = a(1 - r^n) / (1 - r). Modifikasi tata letak ini murni ditujukan agar penyebut dari formula tersebut senantiasa menghasilkan nilai positif, sehingga secara sistematis menghindarkan siswa dari potensi kekeliruan perhitungan tanda aljabar. Perlu ditekankan pula prasyarat mutlak eksistensi formula ini, yaitu penyebut tidak boleh bernilai nol, yang berarti rasio tidak boleh ekuivalen dengan bilangan satu.\n\nSebagai tambahan dalam perumusan deret geometri, terdapat satu kasus khusus yang terjadi apabila nilai rasionya secara tepat bernilai satu (r = 1). Pada kondisi spesifik ini, setiap suku lanjutan yang dihasilkan dari operasi perkalian dengan rasio tersebut akan senantiasa identik nilainya dengan suku pertamanya, sehingga membentuk barisan konstan bernilai tetap. Untuk menghitung jumlah n suku pertama dari barisan berkarakteristik konstan ini, pemakaian formula rasio pecahan menjadi tidak valid karena memicu operasi tak terdefinisi pembagian oleh angka nol. Sebagai gantinya, nilai akumulasi deret tersebut langsung diselesaikan secara efisien melalui operasi linier dasar sn = n × a. Penguasaan holistik mengenai prosedur identifikasi rasio dan penentuan rumus deret yang tepat ini menjadi kunci vital bagi siswa dalam memecahkan rangkaian persoalan secara akurat.\n\n[ATP_ALIGNMENT]\nMenghitung jumlah n suku pertama pada deret aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang kerupuk di pasar tradisional mencatat jumlah kerupuk yang ia jual setiap hari. Pada hari pertama ia menjual 50 bungkus, hari kedua 55 bungkus, dan hari ketiga 60 bungkus. Pola penjualan ini terus berlanjut.",
+      "question": "Berapa jumlah total kerupuk yang terjual pada hari ke-4 jika pola penjualan tersebut merupakan deret aritmetika?",
+      "options": {
+        "A": "65 bungkus",
+        "B": "170 bungkus",
+        "C": "220 bungkus",
+        "D": "235 bungkus",
+        "E": "240 bungkus"
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Hari ke-4 adalah suku berikutnya dalam barisan aritmetika. Dengan beda (b) = 5, suku ke-4 adalah suku ke-3 ditambah beda: 60 + 5 = 65 bungkus."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah bakteri berkembang biak dengan cara membelah diri. Populasi awal adalah 100 bakteri. Setelah 1 jam, populasinya menjadi 200, dan setelah 2 jam menjadi 400.",
+      "question": "Jika pertumbuhan ini mengikuti pola deret geometri, berapa populasi bakteri setelah 3 jam?",
+      "options": {
+        "A": "600 bakteri",
+        "B": "700 bakteri",
+        "C": "800 bakteri",
+        "D": "900 bakteri",
+        "E": "1000 bakteri"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Ini adalah deret geometri dengan suku awal (a) = 100 dan rasio (r) = 2. Populasi setelah 3 jam adalah suku ke-4 (dimulai dari n=1 untuk populasi awal). Suku ke-4 = a * r^(4-1) = 100 * 2^3 = 100 * 8 = 800 bakteri."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani menanam padi di sawahnya. Pada panen pertama, ia mendapatkan hasil 2 ton. Pada panen kedua, hasilnya meningkat menjadi 2,5 ton. Pada panen ketiga, hasilnya menjadi 3 ton. Peningkatan hasil panen ini konstan setiap panen.",
+      "question": "Berapa total hasil panen padi petani tersebut selama 5 kali panen pertama?",
+      "options": {
+        "A": "10 ton",
+        "B": "12,5 ton",
+        "C": "15 ton",
+        "D": "17,5 ton",
+        "E": "20 ton"
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan:** Ini adalah deret aritmetika dengan suku pertama (a) = 2 ton dan beda (b) = 0,5 ton. Jumlah 5 suku pertama (s5) dihitung menggunakan rumus sn = n/2 * (2a + (n-1)b). Maka, s5 = 5/2 * (2*2 + (5-1)*0.5) = 2.5 * (4 + 4*0.5) = 2.5 * (4 + 2) = 2.5 * 6 = 15 ton."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan memberikan bonus kepada karyawannya. Karyawan A mendapatkan bonus Rp1.000.000 di bulan pertama. Setiap bulan berikutnya, bonusnya bertambah Rp150.000 dari bulan sebelumnya.",
+      "question": "Berapa total bonus yang diterima Karyawan A selama 6 bulan pertama?",
+      "options": {
+        "A": "6.000.000",
+        "B": "7.500.000",
+        "C": "8.250.000",
+        "D": "9.000.000",
+        "E": "9.750.000"
+      },
+      "answer": "E",
+      "explanation": "**Penjelasan:** Ini adalah deret aritmetika dengan suku pertama (a) = Rp1.000.000 dan beda (b) = Rp150.000. Total bonus selama 6 bulan (s6) dihitung dengan rumus sn = n/2 * (2a + (n-1)b). Maka, s6 = 6/2 * (2*1.000.000 + (6-1)*150.000) = 3 * (2.000.000 + 5*150.000) = 3 * (2.000.000 + 750.000) = 3 * 2.750.000 = Rp8.250.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM kerajinan tangan memproduksi tas. Produksi bulan pertama adalah 100 tas. Produksi bulan kedua adalah 120 tas. Produksi bulan ketiga adalah 144 tas. Peningkatan produksi ini mengikuti pola tertentu.",
+      "question": "Jika UMKM tersebut ingin mencapai target produksi total 1000 tas dalam beberapa bulan, strategi produksi mana yang paling efisien jika diasumsikan pola produksi terus berlanjut?",
+      "options": {
+        "A": "Meningkatkan produksi bulan pertama secara signifikan agar target tercapai lebih cepat.",
+        "B": "Mempertahankan pola produksi saat ini karena sudah menunjukkan pertumbuhan yang stabil.",
+        "C": "Mencari cara untuk meningkatkan rasio pertumbuhan produksi agar target tercapai dalam waktu lebih singkat.",
+        "D": "Fokus pada peningkatan kualitas produk daripada kuantitas produksi.",
+        "E": "Mengurangi produksi di bulan-bulan awal untuk menghemat biaya."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Pola produksi (100, 120, 144) menunjukkan deret geometri dengan rasio (r) = 1.2. Untuk mencapai target 1000 tas lebih cepat, meningkatkan rasio pertumbuhan (r) akan mempercepat akumulasi produksi secara eksponensial, lebih efisien daripada hanya meningkatkan suku awal atau mempertahankan pola yang ada."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Diketahui sebuah barisan bilangan: 3, 7, 11, 15, ...",
+      "question": "Manakah pernyataan yang paling tepat mengenai deret yang dibentuk dari barisan ini?",
+      "options": {
+        "A": "Merupakan deret geometri dengan rasio 4.",
+        "B": "Merupakan deret aritmetika dengan beda 4.",
+        "C": "Merupakan deret geometri dengan rasio 3.",
+        "D": "Merupakan deret aritmetika dengan beda 3.",
+        "E": "Bukan deret aritmetika maupun geometri."
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Selisih antara suku-suku berurutan adalah konstan: 7-3=4, 11-7=4, 15-11=4. Ini menunjukkan barisan aritmetika dengan beda (b) = 4."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa menabung di bank. Pada bulan pertama ia menabung Rp50.000. Pada bulan kedua Rp55.000, dan pada bulan ketiga Rp60.000. Tabungan ini terus bertambah dengan jumlah yang sama setiap bulan.",
+      "question": "Berapa jumlah total tabungan siswa tersebut setelah 10 bulan?",
+      "options": {
+        "A": "500.000",
+        "B": "550.000",
+        "C": "575.000",
+        "D": "600.000",
+        "E": "650.000"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Ini adalah deret aritmetika dengan suku pertama (a) = 50.000 dan beda (b) = 5.000. Total tabungan setelah 10 bulan (s10) dihitung dengan rumus sn = n/2 * (2a + (n-1)b). Maka, s10 = 10/2 * (2*50.000 + (10-1)*5.000) = 5 * (100.000 + 9*5.000) = 5 * (100.000 + 45.000) = 5 * 145.000 = 725.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah desa berencana membangun fasilitas umum. Pembangunan tahap pertama membutuhkan Rp100 juta. Tahap kedua membutuhkan Rp120 juta. Tahap ketiga membutuhkan Rp144 juta. Biaya pembangunan ini mengikuti pola pertumbuhan.",
+      "question": "Jika dana yang tersedia adalah Rp1 miliar, dan pembangunan harus diselesaikan dalam 5 tahap, apakah dana tersebut cukup? Jika tidak, berapa kekurangan dana yang harus dicari?",
+      "options": {
+        "A": "Cukup, sisa Rp200 juta.",
+        "B": "Tidak cukup, kurang Rp100 juta.",
+        "C": "Tidak cukup, kurang Rp150 juta.",
+        "D": "Tidak cukup, kurang Rp200 juta.",
+        "E": "Cukup, sisa Rp150 juta."
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan:** Pola biaya (100, 120, 144) adalah deret geometri dengan a=100 juta dan r=1.2. Total biaya 5 tahap (s5) = a(r^n - 1)/(r-1) = 100(1.2^5 - 1)/(1.2-1) = 100(2.48832 - 1)/0.2 = 100(1.48832)/0.2 = 744.16 juta. Dana yang tersedia Rp1 miliar (1000 juta). Kekurangan = 1000 - 744.16 = 255.84 juta. Pilihan terdekat adalah D."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Diketahui jumlah n suku pertama dari suatu deret adalah Sn = n^2 + 2n.",
+      "question": "Berapakah nilai suku ke-3 (u3) dari deret tersebut?",
+      "options": {
+        "A": "5",
+        "B": "7",
+        "C": "9",
+        "D": "11",
+        "E": "15"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Suku ke-n (un) dapat dicari dengan rumus un = Sn - S(n-1). S3 = 3^2 + 2*3 = 9 + 6 = 15. S2 = 2^2 + 2*2 = 4 + 4 = 8. Maka, u3 = S3 - S2 = 15 - 8 = 7."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko elektronik menjual televisi. Bulan pertama terjual 10 unit. Bulan kedua terjual 15 unit. Bulan ketiga terjual 20 unit. Jika pola ini terus berlanjut, toko tersebut ingin menentukan strategi penjualan terbaik untuk mencapai target 100 unit dalam 6 bulan.",
+      "question": "Manakah strategi yang paling realistis untuk mencapai target tersebut dengan mempertimbangkan pola penjualan yang ada?",
+      "options": {
+        "A": "Mengadakan diskon besar-besaran di bulan-bulan awal untuk menarik pembeli.",
+        "B": "Mempertahankan pola kenaikan penjualan yang ada karena sudah terbukti.",
+        "C": "Meningkatkan upaya promosi dan penambahan varian produk di bulan-bulan berikutnya.",
+        "D": "Menargetkan penjualan 100 unit di bulan keenam saja.",
+        "E": "Mengurangi jumlah stok untuk menghindari penumpukan barang."
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Pola penjualan (10, 15, 20) adalah deret aritmetika dengan beda 5. Untuk mencapai target 100 unit dalam 6 bulan, kenaikan 5 unit per bulan tidak cukup (total 6 bulan = 10+15+20+25+30+35 = 135 unit). Meningkatkan promosi dan varian produk (C) adalah strategi yang paling mungkin untuk mempercepat pertumbuhan penjualan melebihi pola aritmetika dasar."
+    }
+  ],
+  "metadata": {
+    "id": "2a6df777-c96d-42e8-84e9-572443c97c82",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T16:00:54Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Deret",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_6_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung jumlah n suku pertama pada deret aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 4085,
+      "assistant": 2558,
+      "total": 7316,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

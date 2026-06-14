@@ -1,0 +1,112 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate a recursive nested tree mindmap in JSON format.\n\n[OUTPUT_SCHEMA]\n{\n  \"root\": {\n    \"name\": \"\",\n    \"description\": \"\",\n    \"children\": []\n  }\n}\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan\n\n--- MATERI ---\nDalam teori peluang majemuk, aturan penjumlahan merupakan prinsip dasar yang digunakan untuk menghitung probabilitas terjadinya salah satu dari dua kejadian atau lebih. Secara linguistik, gabungan dari dua kejadian ini biasanya dihubungkan dengan kata hubung 'atau', yang secara matematis dinotasikan dengan simbol gabungan (union) yaitu ∪. Misalnya, kita ingin mengetahui peluang kejadian A atau kejadian B yang terjadi dalam sebuah percobaan eksperimen tunggal, maka dinotasikan sebagai P(A ∪ B). Penggunaan formulasi dalam aturan penjumlahan sangat bergantung pada karakteristik dan hubungan antara himpunan kejadian yang diamati. Oleh karena itu, sebelum melakukan perhitungan matematis, langkah krusial pertama adalah mengidentifikasi apakah kedua kejadian tersebut bersifat saling lepas atau tidak saling lepas di dalam ruang sampel percobaan.\n\nDua kejadian diklasifikasikan sebagai kejadian saling lepas (mutually exclusive) apabila kedua kejadian tersebut sama sekali tidak dapat terjadi secara bersamaan dalam satu kali percobaan. Dengan kata lain, himpunan kejadian A dan himpunan kejadian B tidak memiliki irisan atau titik sampel persekutuan, sehingga irisan keduanya adalah himpunan kosong (A ∩ B = ∅). Konsekuensi matematisnya adalah peluang irisan kedua kejadian tersebut bernilai nol atau P(A ∩ B) = 0. Sebagai ilustrasi, pada pelemparan sebuah dadu bersisi enam, kejadian munculnya mata dadu ganjil dan kejadian munculnya mata dadu genap adalah kejadian saling lepas. Untuk menghitung peluang gabungan pada kasus saling lepas, aturan penjumlahannya merumuskan bahwa probabilitas gabungan sama dengan jumlah dari probabilitas masing-masing kejadian tunggalnya, yaitu P(A ∪ B) = P(A) + P(B).\n\nSebaliknya, dua kejadian dinyatakan sebagai kejadian tidak saling lepas (non-mutually exclusive) apabila kedua kejadian tersebut memungkinkan untuk terjadi secara bersamaan dalam satu kali percobaan. Pada situasi ini, terdapat paling sedikit satu titik sampel yang menjadi anggota himpunan kejadian A sekaligus anggota himpunan kejadian B. Hal ini berarti irisan dari kedua himpunan kejadian tersebut bukan merupakan himpunan kosong (A ∩ B ≠ ∅). Contoh nyata dari kejadian tidak saling lepas adalah peluang terambilnya kartu As atau kartu berwarna merah dari satu set kartu remi, di mana terdapat dua kartu As yang kebetulan juga berwarna merah. Keberadaan irisan ini menuntut penyesuaian pada rumus penjumlahan probabilitas agar tidak terjadi perhitungan ganda pada elemen yang saling beririsan tersebut.\n\nUntuk menghitung peluang gabungan dari dua kejadian yang tidak saling lepas, kita menerapkan prinsip inklusi-eksklusi. Aturan penjumlahan memformulasikan bahwa hasil jumlah peluang dari masing-masing kejadian tunggalnya harus dikurangi dengan peluang irisan kedua kejadian tersebut. Secara matematis, rumus lengkap aturan penjumlahan untuk kejadian tidak saling lepas dinyatakan dengan P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Pengurangan P(A ∩ B) sangat esensial untuk mengeliminasi perhitungan ganda dari titik-titik sampel yang bersekutu. Pemahaman yang utuh dan komprehensif mengenai perbedaan kedua karakteristik kejadian ini akan sangat membantu siswa dalam merumuskan penyelesaian yang akurat saat dihadapkan pada masalah probabilitas majemuk, baik dalam konteks pelemparan dadu, pengambilan kartu, maupun permasalahan kontekstual lainnya.\n\n[SOURCE_MATERIAL]\n{chunks}\n\n[MINDMAP_REQUIREMENTS]\n- Generate a minimum tree depth of 3 levels:\n  Root → Child → Grandchild.\n- Leaf nodes must end with:\n  \"children\": []\n\n- Organize concepts hierarchically.\n- Preserve logical relationships between concepts.\n- Keep descriptions concise and information-dense.\n\n[DESCRIPTION_RULES]\n- Maximum 15 words per description.\n- Avoid unnecessary filler words.\n- Do not use second-person language.\n- Avoid rigid numbering or label formatting.\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- Escape newline characters.\n- Escape internal quotes.",
+  "assistant": {
+    "root": {
+      "name": "Aturan Penjumlahan dalam Peluang Majemuk",
+      "description": "Menghitung probabilitas terjadinya salah satu dari dua kejadian atau lebih.",
+      "children": [
+        {
+          "name": "Konsep Dasar",
+          "description": "Menggunakan kata hubung 'atau' (simbol ∪) untuk gabungan kejadian.",
+          "children": [
+            {
+              "name": "Notasi Matematis",
+              "description": "P(A ∪ B) untuk peluang kejadian A atau B.",
+              "children": []
+            },
+            {
+              "name": "Karakteristik Kejadian",
+              "description": "Penting mengidentifikasi kejadian saling lepas atau tidak saling lepas.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Kejadian Saling Lepas",
+          "description": "Tidak dapat terjadi bersamaan dalam satu percobaan (A ∩ B = ∅).",
+          "children": [
+            {
+              "name": "Kondisi Irisan",
+              "description": "Peluang irisan P(A ∩ B) = 0.",
+              "children": []
+            },
+            {
+              "name": "Rumus Penjumlahan",
+              "description": "P(A ∪ B) = P(A) + P(B).",
+              "children": []
+            },
+            {
+              "name": "Contoh",
+              "description": "Mata dadu ganjil dan genap pada pelemparan dadu.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Kejadian Tidak Saling Lepas",
+          "description": "Dapat terjadi bersamaan dalam satu percobaan (A ∩ B ≠ ∅).",
+          "children": [
+            {
+              "name": "Kondisi Irisan",
+              "description": "Terdapat titik sampel persekutuan.",
+              "children": []
+            },
+            {
+              "name": "Rumus Penjumlahan",
+              "description": "P(A ∪ B) = P(A) + P(B) - P(A ∩ B).",
+              "children": []
+            },
+            {
+              "name": "Prinsip",
+              "description": "Prinsip inklusi-eksklusi untuk menghindari perhitungan ganda.",
+              "children": []
+            },
+            {
+              "name": "Contoh",
+              "description": "Kartu As atau kartu merah dari set kartu remi.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "id": "e37038d5-c7af-4f9f-82b1-8a312b57e26a",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T18:57:40Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "mindmap",
+    "level": null,
+    "source_file": "Matematika_4_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1616,
+      "assistant": 469,
+      "total": 2759,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

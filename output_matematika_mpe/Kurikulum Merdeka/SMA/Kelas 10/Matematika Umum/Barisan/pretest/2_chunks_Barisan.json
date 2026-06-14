@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Barisan\n\n--- MATERI ---\nKonsep barisan bilangan berkaitan erat dengan susunan angka yang memiliki pola tertentu, dengan masing-masing angka disebut sebagai suku. Salah satu jenis barisan yang dipelajari adalah barisan aritmetika, yaitu suatu barisan bilangan yang memiliki beda atau selisih yang selalu tetap atau konstan antara dua suku yang saling berurutan. Nilai beda ini dilambangkan dengan huruf b dan dapat dihitung dengan cara mengurangi suku ke-n dengan suku sebelumnya. Untuk menentukan nilai suku ke-n pada barisan aritmetika, kalian dapat menggunakan rumus umum Un = a + (n - 1)b, di mana a merupakan suku pertama, b adalah beda, dan n adalah nomor suku yang ingin dicari.\n\nSelain barisan aritmetika, terdapat pula jenis barisan lain yang dikenal dengan nama barisan geometri. Berbeda dengan barisan aritmetika yang berfokus pada selisih, barisan geometri adalah suatu barisan bilangan di mana rasio atau perbandingan antara dua suku yang berurutan selalu bernilai tetap atau konstan. Nilai rasio ini dilambangkan dengan huruf r dan dapat dihitung dengan cara membagi suatu suku dengan suku yang tepat berada sebelumnya. Untuk menentukan nilai suku ke-n dari sebuah barisan geometri, rumus umum yang digunakan adalah Un = a x r^(n-1), dengan a melambangkan suku pertama dan r merupakan rasio dari barisan tersebut.\n\n[ATP_ALIGNMENT]\nMenentukan suku ke-n pada barisan aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional mencatat jumlah buah mangga yang terjual setiap hari. Pada hari Senin terjual 50 buah, Selasa 55 buah, dan Rabu 60 buah. Pola penjualan ini berlanjut selama seminggu.",
+      "question": "Berapa jumlah mangga yang terjual pada hari Kamis?",
+      "options": {
+        "A": "55 buah",
+        "B": "60 buah",
+        "C": "65 buah",
+        "D": "70 buah",
+        "E": "75 buah"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Barisan ini adalah barisan aritmetika dengan suku pertama (a) = 50 dan beda (b) = 5. Suku ke-4 (Kamis) dihitung dengan rumus Un = a + (n-1)b. Maka, U4 = 50 + (4-1)5 = 50 + 3*5 = 50 + 15 = 65 buah."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memproduksi keripik setiap hari. Produksi hari pertama adalah 100 bungkus, hari kedua 120 bungkus, dan hari ketiga 140 bungkus. Produksi ini mengikuti pola yang teratur.",
+      "question": "Manakah pernyataan yang paling tepat mengenai pola produksi UMKM tersebut?",
+      "options": {
+        "A": "Setiap hari produksi bertambah 20 bungkus.",
+        "B": "Setiap hari produksi bertambah 10 bungkus.",
+        "C": "Setiap hari produksi berlipat ganda.",
+        "D": "Setiap hari produksi berkurang 20 bungkus.",
+        "E": "Setiap hari produksi tetap sama."
+      },
+      "answer": "A",
+      "explanation": "**Penjelasan:** Perbedaan jumlah produksi antara hari pertama dan kedua adalah 120 - 100 = 20 bungkus. Perbedaan antara hari kedua dan ketiga adalah 140 - 120 = 20 bungkus. Ini menunjukkan penambahan yang konstan sebesar 20 bungkus setiap hari."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani menanam bibit padi. Pada panen pertama, ia mendapatkan hasil 2 ton gabah. Pada panen kedua, hasilnya meningkat menjadi 2,5 ton. Jika peningkatan hasil panen ini membentuk barisan aritmetika, berapakah hasil panen pada panen keempat?",
+      "question": "Berapa ton hasil panen yang diharapkan pada panen keempat?",
+      "options": {
+        "A": "3,0 ton",
+        "B": "3,5 ton",
+        "C": "4,0 ton",
+        "D": "4,5 ton",
+        "E": "5,0 ton"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Barisan aritmetika ini memiliki suku pertama (a) = 2 ton dan beda (b) = 2,5 - 2 = 0,5 ton. Untuk mencari hasil panen pada panen keempat (U4), gunakan rumus Un = a + (n-1)b. Maka, U4 = 2 + (4-1)0,5 = 2 + 3*0,5 = 2 + 1,5 = 3,5 ton."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan percetakan memiliki mesin yang mencetak brosur. Pada jam pertama, mesin mencetak 50 brosur. Pada jam kedua, jumlah brosur yang dicetak adalah 75 brosur. Jika pola pencetakan ini adalah barisan aritmetika, tentukan jumlah brosur yang dicetak pada jam kelima.",
+      "question": "Berapa jumlah brosur yang dicetak pada jam kelima?",
+      "options": {
+        "A": "100 brosur",
+        "B": "125 brosur",
+        "C": "150 brosur",
+        "D": "175 brosur",
+        "E": "200 brosur"
+      },
+      "answer": "D",
+      "explanation": "**Penjelasan:** Barisan ini adalah barisan aritmetika dengan suku pertama (a) = 50 dan beda (b) = 75 - 50 = 25. Untuk mencari jumlah brosur pada jam kelima (U5), gunakan rumus Un = a + (n-1)b. Maka, U5 = 50 + (5-1)25 = 50 + 4*25 = 50 + 100 = 150 brosur."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko pakaian memberikan diskon bertahap untuk barang yang tidak laku. Pada minggu pertama, diskon adalah 10%. Minggu kedua, diskon menjadi 20%. Minggu ketiga, diskon menjadi 40%. Jika pola diskon ini berlanjut, tentukan diskon pada minggu kelima.",
+      "question": "Berapa persentase diskon pada minggu kelima?",
+      "options": {
+        "A": "60%",
+        "B": "80%",
+        "C": "100%",
+        "D": "120%",
+        "E": "160%"
+      },
+      "answer": "E",
+      "explanation": "**Penjelasan:** Barisan diskon ini adalah barisan geometri dengan suku pertama (a) = 10% dan rasio (r) = 20%/10% = 2. Untuk mencari diskon pada minggu kelima (U5), gunakan rumus Un = a * r^(n-1). Maka, U5 = 10% * 2^(5-1) = 10% * 2^4 = 10% * 16 = 160%."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kompetisi lari estafet, setiap pelari harus menyelesaikan jarak tertentu. Pelari pertama menyelesaikan 100 meter, pelari kedua 120 meter, dan pelari ketiga 140 meter. Jarak yang ditempuh setiap pelari membentuk sebuah pola.",
+      "question": "Berapa jarak yang harus ditempuh oleh pelari keempat?",
+      "options": {
+        "A": "140 meter",
+        "B": "150 meter",
+        "C": "160 meter",
+        "D": "180 meter",
+        "E": "200 meter"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Barisan ini adalah barisan aritmetika dengan suku pertama (a) = 100 meter dan beda (b) = 120 - 100 = 20 meter. Suku ke-4 (pelari keempat) dihitung dengan rumus Un = a + (n-1)b. Maka, U4 = 100 + (4-1)20 = 100 + 3*20 = 100 + 60 = 160 meter."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa menabung uang di celengan. Pada hari pertama ia menabung Rp1.000. Hari kedua Rp2.000, dan hari ketiga Rp4.000. Jika pola menabung ini berlanjut, tentukan jumlah tabungan pada hari kelima.",
+      "question": "Berapa jumlah uang yang ditabung pada hari kelima?",
+      "options": {
+        "A": "Rp5.000",
+        "B": "Rp8.000",
+        "C": "Rp16.000",
+        "D": "Rp32.000",
+        "E": "Rp64.000"
+      },
+      "answer": "C",
+      "explanation": "**Penjelasan:** Barisan ini adalah barisan geometri dengan suku pertama (a) = Rp1.000 dan rasio (r) = Rp2.000 / Rp1.000 = 2. Untuk mencari jumlah tabungan pada hari kelima (U5), gunakan rumus Un = a * r^(n-1). Maka, U5 = 1.000 * 2^(5-1) = 1.000 * 2^4 = 1.000 * 16 = Rp16.000."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi kue. Produksi hari pertama adalah 50 kue. Produksi hari kedua adalah 75 kue. Produksi hari ketiga adalah 112,5 kue. Jika pola produksi ini berlanjut, pabrik tersebut ingin mencapai target produksi minimal 300 kue pada hari ke-n. Tentukan hari ke berapa target tersebut tercapai.",
+      "question": "Pada hari ke berapa target produksi minimal 300 kue tercapai?",
+      "options": {
+        "A": "Hari ke-4",
+        "B": "Hari ke-5",
+        "C": "Hari ke-6",
+        "D": "Hari ke-7",
+        "E": "Hari ke-8"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Barisan ini adalah barisan geometri dengan suku pertama (a) = 50 dan rasio (r) = 75/50 = 1,5. Kita perlu mencari n sehingga Un \\ge 300. Rumus Un = a * r^(n-1). Maka, 50 * (1,5)^(n-1) \\ge 300. (1,5)^(n-1) \\ge 6. U4 = 50 * (1,5)^3 = 168,75. U5 = 50 * (1,5)^4 = 253,125. U6 = 50 * (1,5)^5 = 379,6875. Jadi, target tercapai pada hari ke-6."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah proyek pembangunan jalan, setiap hari tim pekerja menyelesaikan panjang jalan tertentu. Hari pertama selesai 10 meter, hari kedua 15 meter, dan hari ketiga 20 meter. Pola ini terus berlanjut.",
+      "question": "Berapa panjang jalan yang diselesaikan pada hari keempat?",
+      "options": {
+        "A": "20 meter",
+        "B": "25 meter",
+        "C": "30 meter",
+        "D": "35 meter",
+        "E": "40 meter"
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Barisan ini adalah barisan aritmetika dengan suku pertama (a) = 10 meter dan beda (b) = 15 - 10 = 5 meter. Suku ke-4 (hari keempat) dihitung dengan rumus Un = a + (n-1)b. Maka, U4 = 10 + (4-1)5 = 10 + 3*5 = 10 + 15 = 25 meter."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah organisasi siswa berencana mengumpulkan dana. Pada minggu pertama, mereka mengumpulkan Rp200.000. Minggu kedua, Rp300.000. Minggu ketiga, Rp450.000. Jika pola pengumpulan dana ini berlanjut, manakah strategi pengumpulan dana yang paling efisien untuk mencapai target Rp1.500.000 dalam waktu singkat?",
+      "question": "Strategi pengumpulan dana mana yang paling efisien untuk mencapai target Rp1.500.000 dalam waktu singkat?",
+      "options": {
+        "A": "Melanjutkan pola pengumpulan dana yang ada.",
+        "B": "Menggandakan jumlah pengumpulan dana setiap minggu.",
+        "C": "Menambah jumlah pengumpulan dana sebesar Rp100.000 setiap minggu.",
+        "D": "Mencari donatur tunggal untuk memenuhi sisa target.",
+        "E": "Mengadakan acara penggalangan dana besar di akhir periode."
+      },
+      "answer": "B",
+      "explanation": "**Penjelasan:** Pola pengumpulan dana adalah barisan geometri dengan rasio 1,5. Jika digandakan (rasio 2), pengumpulan dana akan lebih cepat mencapai target. Opsi C (aritmetika dengan beda 100.000) lebih lambat dari rasio 1,5. Opsi D dan E adalah strategi ad-hoc yang tidak berdasarkan pola yang ada dan belum tentu efisien."
+    }
+  ],
+  "metadata": {
+    "id": "f91f5364-a4d0-476b-9f63-340126cd803b",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T13:48:47Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Barisan",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan suku ke-n pada barisan aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2856,
+      "assistant": 2464,
+      "total": 5994,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

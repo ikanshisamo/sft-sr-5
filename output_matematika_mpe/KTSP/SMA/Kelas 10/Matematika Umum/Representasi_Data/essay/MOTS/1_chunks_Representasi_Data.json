@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data | Target: MOTS\n\n--- MATERI ---\nPenyajian data statistik secara visual merupakan tahapan esensial untuk memudahkan pembaca dalam menginterpretasikan informasi numerik. Terdapat beberapa representasi grafik yang lazim digunakan, di antaranya diagram lingkaran, diagram batang, dan histogram. Diagram lingkaran membagi sebuah lingkaran penuh menjadi beberapa juring, di mana luas dan besar sudut setiap juring bersifat proporsional terhadap persentase atau frekuensi dari suatu kategori. Representasi ini sangat efektif untuk memperlihatkan komposisi data relatif terhadap populasi keseluruhan. Sementara itu, diagram batang menggunakan sekumpulan persegi panjang yang saling terpisah untuk menampilkan data kategorik atau diskret, dengan tinggi batang yang merepresentasikan nilai kuantitasnya. Apabila data observasi berupa data kuantitatif kontinu yang telah disusun ke dalam tabel distribusi frekuensi berkelompok, representasi visual yang paling tepat adalah histogram. Berbeda dengan diagram batang, balok-balok pada histogram digambarkan saling berimpit tegak lurus untuk menunjukkan sifat kontinuitas antarkelas interval.\n\n[ATP_ALIGNMENT]\nMenampilkan data secara visual menggunakan diagram lingkaran, batang, dan histogram secara tepat.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong di Desa Sukamaju mencatat hasil penjualan selama satu minggu. Data penjualan per hari adalah sebagai berikut: Senin Rp150.000, Selasa Rp200.000, Rabu Rp180.000, Kamis Rp220.000, Jumat Rp250.000, Sabtu Rp300.000, dan Minggu Rp280.000. Pemilik UMKM ingin membandingkan performa penjualan harian secara visual untuk mengetahui hari mana yang paling efektif dalam menghasilkan pendapatan.",
+      "question": "Berdasarkan data penjualan UMKM keripik singkong tersebut, representasi grafik manakah yang paling tepat untuk membandingkan pendapatan harian dan mengapa?",
+      "rubric_points": [
+        "Menyebutkan diagram batang sebagai representasi yang tepat.",
+        "Menjelaskan bahwa diagram batang cocok untuk membandingkan nilai kuantitas antar kategori (hari).",
+        "Menjelaskan bahwa sumbu horizontal mewakili hari dan sumbu vertikal mewakili pendapatan."
+      ],
+      "explanation": "**Pemilihan Representasi Grafik yang Tepat**\\n\\nRepresentasi grafik yang paling tepat untuk membandingkan pendapatan harian UMKM keripik singkong adalah **diagram batang**. Hal ini dikarenakan data yang disajikan bersifat kuantitatif (pendapatan) yang dikategorikan berdasarkan waktu (hari). Diagram batang sangat efektif untuk membandingkan nilai-nilai diskret antar kategori yang berbeda. Setiap batang akan mewakili satu hari, dan tingginya akan proporsional dengan jumlah pendapatan pada hari tersebut. Ini memudahkan pemilik UMKM untuk secara visual mengidentifikasi hari dengan penjualan tertinggi dan terendah.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah sekolah menengah di kota besar melakukan survei terhadap 100 siswa mengenai jenis transportasi yang mereka gunakan untuk pergi ke sekolah. Hasil survei menunjukkan: 45 siswa menggunakan angkutan umum, 30 siswa menggunakan kendaraan pribadi (sepeda motor/mobil), 15 siswa berjalan kaki, dan 10 siswa menggunakan sepeda. Data ini perlu disajikan agar mudah dipahami komposisi penggunaan transportasi di kalangan siswa.",
+      "question": "Jika sekolah ingin menampilkan proporsi siswa yang menggunakan setiap jenis transportasi terhadap total siswa, diagram visual manakah yang paling sesuai dan bagaimana cara penyajiannya?",
+      "rubric_points": [
+        "Menyebutkan diagram lingkaran sebagai representasi yang tepat.",
+        "Menjelaskan bahwa diagram lingkaran cocok untuk menunjukkan komposisi bagian terhadap keseluruhan.",
+        "Menjelaskan bahwa setiap juring lingkaran akan mewakili persentase penggunaan jenis transportasi tertentu."
+      ],
+      "explanation": "**Visualisasi Komposisi Penggunaan Transportasi**\\n\\nDiagram visual yang paling sesuai untuk menampilkan proporsi siswa yang menggunakan setiap jenis transportasi terhadap total siswa adalah **diagram lingkaran**. Diagram lingkaran sangat efektif dalam memperlihatkan bagaimana setiap bagian (jenis transportasi) berkontribusi terhadap keseluruhan (total siswa). Setiap jenis transportasi akan direpresentasikan oleh sebuah juring dalam lingkaran, di mana luas dan sudut juring tersebut berbanding lurus dengan persentase jumlah siswa yang menggunakannya. Ini memberikan gambaran komposisi yang jelas.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang peneliti lingkungan mencatat jumlah curah hujan bulanan di sebuah daerah selama satu tahun. Data curah hujan dalam milimeter (mm) adalah sebagai berikut: Januari 250, Februari 220, Maret 180, April 150, Mei 120, Juni 80, Juli 60, Agustus 50, September 70, Oktober 100, November 150, Desember 200. Peneliti ingin melihat pola perubahan curah hujan sepanjang tahun.",
+      "question": "Representasi grafik manakah yang paling tepat untuk menunjukkan tren perubahan curah hujan dari bulan ke bulan dan mengapa?",
+      "rubric_points": [
+        "Menyebutkan diagram garis sebagai representasi yang tepat.",
+        "Menjelaskan bahwa diagram garis cocok untuk menunjukkan tren data kontinu dari waktu ke waktu.",
+        "Menjelaskan bahwa sumbu horizontal mewakili waktu (bulan) dan sumbu vertikal mewakili curah hujan."
+      ],
+      "explanation": "**Analisis Tren Curah Hujan Bulanan**\\n\\nRepresentasi grafik yang paling tepat untuk menunjukkan tren perubahan curah hujan dari bulan ke bulan adalah **diagram garis**. Diagram garis sangat ideal untuk menampilkan data yang bersifat kontinu dan berubah seiring waktu. Dalam kasus ini, sumbu horizontal akan mewakili bulan (sebagai variabel waktu), dan sumbu vertikal akan mewakili jumlah curah hujan. Titik-titik data yang dihubungkan oleh garis akan secara jelas menggambarkan pola naik turunnya curah hujan sepanjang tahun, memudahkan identifikasi musim hujan dan kemarau.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi tiga jenis kue: A, B, dan C. Dalam satu hari produksi, jumlah kue yang dihasilkan adalah: Kue A sebanyak 150 buah, Kue B sebanyak 200 buah, dan Kue C sebanyak 100 buah. Pihak manajemen ingin mengetahui kontribusi masing-masing jenis kue terhadap total produksi harian.",
+      "question": "Jika manajemen ingin memvisualisasikan proporsi produksi setiap jenis kue terhadap total produksi, diagram visual manakah yang paling efektif dan mengapa?",
+      "rubric_points": [
+        "Menyebutkan diagram lingkaran sebagai representasi yang tepat.",
+        "Menjelaskan bahwa diagram lingkaran cocok untuk menunjukkan perbandingan bagian terhadap keseluruhan.",
+        "Menjelaskan bahwa setiap irisan mewakili persentase produksi dari masing-masing jenis kue."
+      ],
+      "explanation": "**Visualisasi Kontribusi Produksi Kue**\\n\\nDiagram visual yang paling efektif untuk memvisualisasikan proporsi produksi setiap jenis kue terhadap total produksi adalah **diagram lingkaran**. Diagram ini sangat berguna untuk menunjukkan bagaimana setiap komponen (jenis kue) berkontribusi terhadap total keseluruhan (total produksi harian). Setiap jenis kue akan diwakili oleh sebuah irisan (juring) dalam lingkaran, di mana ukuran irisan tersebut sebanding dengan persentase jumlah kue yang diproduksi dari jenis tersebut dibandingkan dengan total produksi.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong mencatat jumlah penjualan lima jenis barang pokok dalam satu bulan: Beras (Rp5.000.000), Gula (Rp2.000.000), Minyak Goreng (Rp3.500.000), Telur (Rp2.500.000), dan Tepung Terigu (Rp1.500.000). Pemilik toko ingin membandingkan besarnya pendapatan dari masing-masing barang pokok tersebut.",
+      "question": "Representasi grafik manakah yang paling sesuai untuk membandingkan besarnya pendapatan dari setiap jenis barang pokok dan mengapa?",
+      "rubric_points": [
+        "Menyebutkan diagram batang sebagai representasi yang tepat.",
+        "Menjelaskan bahwa diagram batang cocok untuk membandingkan nilai kuantitatif antar kategori.",
+        "Menjelaskan bahwa setiap batang mewakili satu jenis barang pokok dan tingginya menunjukkan jumlah pendapatan."
+      ],
+      "explanation": "**Perbandingan Pendapatan Barang Pokok**\\n\\nRepresentasi grafik yang paling sesuai untuk membandingkan besarnya pendapatan dari setiap jenis barang pokok adalah **diagram batang**. Diagram batang sangat efektif dalam membandingkan nilai-nilai kuantitatif antar kategori yang berbeda. Dalam konteks ini, setiap jenis barang pokok akan menjadi satu kategori pada sumbu horizontal, dan tinggi setiap batang akan merepresentasikan jumlah pendapatan yang dihasilkan oleh barang pokok tersebut. Ini memudahkan pemilik toko untuk melihat barang mana yang paling laris dan mana yang penjualannya perlu ditingkatkan.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "ad8d58a5-2277-47fd-a856-cc9c820f5051",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:00:43Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menampilkan data secara visual menggunakan diagram lingkaran, batang, dan histogram secara tepat.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1342,
+      "assistant": 2314,
+      "total": 4330,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

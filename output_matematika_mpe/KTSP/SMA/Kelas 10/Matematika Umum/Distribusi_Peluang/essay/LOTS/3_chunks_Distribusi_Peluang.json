@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\",\n      \"expected_reasoning\": [\n        \"single-step reasoning\",\n        \"direct concept understanding\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang | Target: LOTS\n\n--- MATERI ---\nDalam kajian teori peluang, konsep dasar yang pertama kali harus dipahami adalah percobaan, ruang sampel, dan titik sampel. Percobaan atau eksperimen statistika didefinisikan sebagai suatu proses atau tindakan yang menghasilkan observasi atau pengamatan yang hasil akhirnya tidak dapat dipastikan sebelumnya, namun semua kemungkinannya dapat diketahui. Himpunan dari semua hasil yang mungkin terjadi dari suatu percobaan tersebut dinamakan sebagai ruang sampel, yang secara matematis umumnya dinotasikan dengan huruf S kapital. Setiap anggota atau elemen individu yang terdapat di dalam himpunan ruang sampel tersebut diistilahkan sebagai titik sampel. Sebagai contoh dasar, pada pelemparan sebuah dadu bersisi enam yang seimbang, hasil yang mungkin muncul adalah angka 1, 2, 3, 4, 5, atau 6. Keseluruhan angka tersebut membentuk ruang sampel S = {1, 2, 3, 4, 5, 6}, sedangkan angka 1 secara mandiri merupakan salah satu titik sampelnya.\n\nUntuk menentukan banyaknya anggota ruang sampel dari suatu percobaan, khususnya percobaan yang melibatkan lebih dari satu objek atau dilakukan secara berulang, dapat digunakan beberapa pendekatan sistematis seperti diagram pohon dan tabel silang. Pendekatan tabel sangat efektif digunakan untuk mendaftar ruang sampel dari percobaan dua objek secara bersamaan, misalnya pelemparan dua buah dadu, di mana baris mewakili hasil dadu pertama dan kolom mewakili hasil dadu kedua. Sementara itu, diagram pohon lebih aplikatif untuk merinci titik sampel dari percobaan majemuk yang melibatkan tiga objek atau lebih, seperti pelemparan tiga keping uang logam sekaligus. Selain menggunakan pendaftaran langsung, banyaknya titik sampel secara total, yang dinotasikan dengan n(S), juga dapat dihitung secara efisien menggunakan kaidah pencacahan dasar atau aturan perkalian, tanpa harus menuliskan seluruh kemungkinan hasil observasi satu per satu.\n\nSetelah ruang sampel dan titik sampel berhasil diidentifikasi, tahapan selanjutnya adalah menghitung nilai peluang dari suatu kejadian. Kejadian, yang sering disimbolkan dengan huruf kapital seperti A, merupakan himpunan bagian dari ruang sampel. Jika setiap titik sampel pada ruang sampel S memiliki kemungkinan (kesempatan) yang sama untuk muncul, maka peluang teoretis atau probabilitas terjadinya suatu kejadian A dirumuskan sebagai perbandingan antara banyaknya anggota kejadian A dengan banyaknya anggota ruang sampel S. Secara matematis, formulasi ini ditulis sebagai P(A) = n(A) / n(S), di mana P(A) adalah nilai peluang kejadian A, n(A) adalah banyaknya hasil dalam kejadian A, dan n(S) adalah jumlah seluruh kemungkinan dalam ruang sampel. Nilai peluang suatu kejadian senantiasa berada pada interval tertutup dari nol hingga satu, di mana nilai nol menyatakan kemustahilan dan nilai satu merepresentasikan kepastian mutlak.\n\n[ATP_ALIGNMENT]\nMenentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Di sebuah pasar tradisional di Yogyakarta, terdapat pedagang buah yang menjual berbagai jenis apel. Ia memiliki 3 keranjang apel merah dan 2 keranjang apel hijau. Setiap keranjang berisi jumlah apel yang sama. Ia ingin mengambil satu keranjang apel secara acak untuk ditawarkan kepada pembeli.",
+      "question": "Sebutkan semua kemungkinan jenis apel yang dapat diambil oleh pedagang tersebut dari keranjangnya.",
+      "rubric_points": [
+        "Identifikasi percobaan yang dilakukan.",
+        "Sebutkan semua hasil yang mungkin dari percobaan tersebut.",
+        "Tuliskan hasil yang mungkin dalam bentuk himpunan (ruang sampel)."
+      ],
+      "explanation": "**Ruang Sampel Percobaan**\\nPercobaan yang dilakukan adalah pedagang mengambil satu keranjang apel secara acak. Terdapat 3 keranjang apel merah dan 2 keranjang apel hijau. Semua keranjang ini merupakan objek yang mungkin diambil. Oleh karena itu, ruang sampelnya adalah himpunan dari semua jenis apel yang ada di keranjang tersebut. \\n\\nS = {apel merah, apel hijau}\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa SMA di Surabaya sedang belajar tentang peluang. Ia melakukan percobaan melempar sebuah koin yang tidak seimbang sebanyak satu kali. Ia tahu bahwa sisi 'Angka' memiliki kemungkinan muncul lebih besar daripada sisi 'Gambar'.",
+      "question": "Apa saja kemungkinan hasil yang bisa muncul dari percobaan melempar koin tersebut?",
+      "rubric_points": [
+        "Identifikasi objek yang dilempar dalam percobaan.",
+        "Sebutkan semua hasil yang mungkin dari pelemparan objek tersebut.",
+        "Tuliskan hasil yang mungkin dalam bentuk himpunan."
+      ],
+      "explanation": "**Titik Sampel Pelemparan Koin**\\nPercobaan yang dilakukan adalah melempar sebuah koin satu kali. Koin memiliki dua sisi, yaitu 'Angka' dan 'Gambar'. Meskipun koin tersebut tidak seimbang, kedua sisi ini tetap merupakan hasil yang mungkin muncul. \\n\\nS = {Angka, Gambar}\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kotak terdapat 5 bola berwarna biru dan 3 bola berwarna merah. Semua bola berukuran sama dan permukaannya halus. Seorang anak ingin mengambil satu bola secara acak dari kotak tersebut.",
+      "question": "Sebutkan semua kemungkinan warna bola yang dapat diambil oleh anak tersebut dari dalam kotak.",
+      "rubric_points": [
+        "Identifikasi objek yang akan diambil dalam percobaan.",
+        "Sebutkan semua kemungkinan warna dari objek tersebut.",
+        "Tuliskan kemungkinan warna dalam bentuk himpunan."
+      ],
+      "explanation": "**Ruang Sampel Pengambilan Bola**\\nPercobaan yang dilakukan adalah mengambil satu bola secara acak dari kotak. Di dalam kotak terdapat bola berwarna biru dan bola berwarna merah. Kedua warna ini adalah semua kemungkinan hasil yang bisa terjadi saat satu bola diambil. \\n\\nS = {biru, merah}\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang guru memberikan tugas kepada siswanya di Bandung untuk mengidentifikasi ruang sampel dari pelemparan dua buah dadu bersisi enam yang seimbang secara bersamaan.",
+      "question": "Sebutkan dua cara yang dapat digunakan untuk mendaftar semua kemungkinan hasil dari pelemparan dua dadu tersebut.",
+      "rubric_points": [
+        "Identifikasi percobaan yang dilakukan.",
+        "Sebutkan salah satu metode untuk mendaftar ruang sampel.",
+        "Sebutkan metode lain yang dapat digunakan untuk mendaftar ruang sampel."
+      ],
+      "explanation": "**Metode Pendataan Ruang Sampel**\\nPercobaan yang dilakukan adalah melempar dua buah dadu bersisi enam secara bersamaan. Untuk mendaftar semua kemungkinan hasil (ruang sampel), ada beberapa metode yang bisa digunakan. Dua metode yang umum dan efektif adalah menggunakan diagram pohon untuk memvisualisasikan setiap kombinasi hasil, dan menggunakan tabel silang untuk menyajikan hasil dari kedua dadu secara sistematis. \\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Di sebuah kantin sekolah di Jakarta, terdapat dua jenis minuman yang dijual: teh kotak dan air mineral. Setiap siswa hanya boleh membeli satu jenis minuman.",
+      "question": "Apa saja kemungkinan pilihan minuman yang dapat dibeli oleh seorang siswa di kantin tersebut?",
+      "rubric_points": [
+        "Identifikasi pilihan yang tersedia dalam konteks.",
+        "Sebutkan semua kemungkinan pilihan yang ada.",
+        "Tuliskan kemungkinan pilihan dalam bentuk himpunan."
+      ],
+      "explanation": "**Ruang Sampel Pilihan Minuman**\\nPercobaan yang dilakukan adalah seorang siswa memilih satu jenis minuman dari kantin. Pilihan yang tersedia di kantin adalah teh kotak dan air mineral. Kedua pilihan ini merupakan semua kemungkinan yang bisa dipilih oleh siswa. \\n\\nS = {teh kotak, air mineral}\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "d7307713-402b-4a0d-b37d-0ad2b2bd42dc",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:17:27Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "essay",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1838,
+      "assistant": 1428,
+      "total": 3940,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

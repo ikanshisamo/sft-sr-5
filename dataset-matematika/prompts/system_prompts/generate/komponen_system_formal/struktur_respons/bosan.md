@@ -1,0 +1,3 @@
+1. Afirmasi Faktual: Konfirmasi penguasaan prosedur atau konsep matematis dasar siswa secara objektif tanpa pujian emosional — jadikan ini landasan untuk melangkah ke tingkat abstraksi atau kompleksitas yang lebih tinggi.
+2. Naikkan Tantangan (Prosa Naratif): Perkenalkan SATU variasi kasus, kondisi batas, atau kaitan konsep tersebut dengan topik matematika lain yang belum disadari siswa. Gunakan prosa untuk membangun konteks, jangan langsung memberikan kesimpulan atau hasil akhir.
+3. Penutup Socratic: Ajukan SATU pertanyaan yang mendorong siswa mengeksplorasi pola baru, kasus khusus, atau generalisasi dari konsep yang sudah mereka kuasai — bukan memverifikasi prosedur dasar yang sudah mereka pahami.

@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Definisi Eksponen\n\n--- MATERI ---\nPangkat bilangan bulat dapat berupa bilangan bulat positif, nol, atau negatif. Penulisan suatu bilangan yang dikalikan berulang dapat disingkat secara matematis menggunakan bilangan berpangkat atau eksponen. Sebagai ilustrasi awal, tahukah Anda berapa jarak rata-rata antara matahari dan bumi? Jarak tersebut diperkirakan sejauh 150.000.000 kilometer. Alih-alih menuliskan angka nol yang sangat panjang dalam setiap perhitungan, penulisan jarak astronomis tersebut dapat disederhanakan menggunakan konsep bilangan pangkat. Dengan notasi ilmiah yang mengandalkan bilangan berpangkat, jarak tersebut ditulis dengan cara yang jauh lebih ringkas dan aplikatif, yaitu 1,5 dikalikan 10 pangkat 8 kilometer.\n\nSecara konseptual, pengertian pangkat bulat positif dibangun atas dasar operasi perkalian yang diulang. Jika a adalah bilangan riil dan n adalah bilangan bulat positif, maka a pangkat n didefinisikan sebagai hasil kali n buah faktor yang masing-masing faktornya adalah bilangan a itu sendiri. Secara umum, konsep pangkat bulat positif ini dapat dinyatakan dalam bentuk persamaan matematis, yaitu a pangkat n sama dengan perkalian a dikali a dikali a dan seterusnya sebanyak n buah faktor. Representasi matematis ini mengonfirmasi bahwa eksponen pada dasarnya hanyalah cara yang efisien untuk menuliskan suatu nilai kuantitatif yang dikalikan dengan nilainya sendiri secara berkesinambungan.\n\nDalam anatomi notasi pemangkatan, terdapat dua komponen utama yang menyusun sebuah bilangan berpangkat. Pada bentuk notasi a pangkat n, bilangan a memiliki kedudukan sebagai bilangan pokok atau basis. Bilangan pokok ini mewakili elemen nilai riil yang akan dikalikan secara berulang. Di sisi lain, huruf n berkedudukan sebagai pangkat atau eksponen, yang mengindikasikan kuantitas seberapa banyak pengulangan faktor bilangan pokok tersebut dikalikan. Adapun keseluruhan ekspresi dari hasil pemangkatan a oleh n tersebut secara utuh dinamakan sebagai bilangan berpangkat. Membedakan secara tegas antara basis dan eksponen sangat esensial agar peserta didik tidak keliru saat melakukan komputasi aljabar.\n\nUntuk memperjelas definisi pangkat bulat positif, mari kita tinjau penerapannya dalam perhitungan nilai eksak. Jika dijumpai bentuk pemangkatan seperti 3 pangkat 4, maka berdasarkan definisi perkalian berulang, ekspresi tersebut harus diuraikan dengan menjadikan angka 3 sebagai bilangan pokok dan mengalikannya sebanyak 4 faktor pengulang. Penjabaran perhitungannya menjadi 3 dikali 3 dikali 3 dikali 3, yang secara komputasi akan memberikan hasil akhir sebesar 81. Aturan perkalian berulang ini bersifat universal dan konsisten untuk setiap bilangan pokok berbentuk bilangan riil yang dipangkatkan dengan suatu eksponen berupa bilangan bulat positif, baik itu bilangan utuh maupun pecahan riil.\n\nKonsep bilangan berpangkat tidak hanya terbatas pada pangkat bulat positif, melainkan juga diperluas untuk pangkat nol. Ekspresi ini tergolong ke dalam kategori bilangan dengan pangkat tak sebenarnya. Aturan matematis menetapkan bahwa untuk setiap bilangan riil a yang tidak sama dengan nol, jika dipangkatkan dengan nol maka hasilnya selalu ekuivalen dengan satu. Secara notasi dituliskan sebagai a pangkat 0 sama dengan 1. Ketentuan mutlak ini berasal dari pembuktian sifat pembagian bilangan berpangkat, di mana sebuah kuantitas dibagi dengan kuantitas yang sama persis akan bernilai satu. Namun, patut dicatat dengan saksama bahwa jika basis a bernilai nol (bentuk nol pangkat nol), maka hasilnya tidak terdefinisi.\n\nPerluasan bentuk eksponen yang terakhir dalam definisi dasar pemangkatan adalah pangkat bulat negatif, yang juga diklasifikasikan sebagai pangkat tak sebenarnya. Apabila kita memiliki sebuah bilangan riil a yang bukan nol, dan n merupakan sebuah bilangan bulat positif, maka bentuk a pangkat negatif n didefinisikan secara eksak sebagai invers atau kebalikan pemangkatan positifnya. Secara aljabar formal, sifat kebalikan ini dirumuskan dengan persamaan a pangkat negatif n sama dengan 1 dibagi dengan a pangkat n. Pemahaman terhadap relasi ini sangat krusial, karena transformasi pangkat negatif menjadi bentuk pecahan berpangkat positif adalah instrumen utama untuk menyederhanakan ekspresi aljabar.\n\n[ATP_ALIGNMENT]\nMenyatakan perkalian bilangan bulat berulang sebagai bilangan berpangkat (eksponen).\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM keripik singkong ingin menghitung total produksi selama 5 hari. Hari pertama memproduksi 100 bungkus, hari kedua 100 bungkus, hari ketiga 100 bungkus, hari keempat 100 bungkus, dan hari kelima 100 bungkus. Produksi ini dapat ditulis sebagai perkalian berulang.",
+      "question": "Bagaimana cara paling ringkas untuk menyatakan total produksi keripik singkong tersebut menggunakan notasi bilangan berpangkat?",
+      "options": {
+        "A": "100 pangkat 5",
+        "B": "5 pangkat 100",
+        "C": "100 + 100 + 100 + 100 + 100",
+        "D": "5 kali 100",
+        "E": "100 dibagi 5"
+      },
+      "answer": "A",
+      "explanation": "**Definisi Pangkat Bilangan Bulat Positif**\\nPerkalian berulang suatu bilangan dapat dinyatakan sebagai bilangan berpangkat. Dalam kasus ini, 100 diproduksi sebanyak 5 kali, sehingga dapat ditulis sebagai 100 pangkat 5 (100^5)."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam notasi bilangan berpangkat \\(a^n\\), terdapat dua komponen utama. \\(a\\) adalah bilangan pokok yang dikalikan berulang, dan \\(n\\) adalah pangkat atau eksponen yang menunjukkan berapa kali perkalian dilakukan.",
+      "question": "Pada ekspresi \\(7^3\\), manakah yang merupakan bilangan pokok?",
+      "options": {
+        "A": "7",
+        "B": "3",
+        "C": "7 pangkat 3",
+        "D": "21",
+        "E": "10"
+      },
+      "answer": "A",
+      "explanation": "**Anatomi Notasi Pemangkatan**\\nDalam notasi \\(a^n\\), bilangan \\(a\\) disebut sebagai bilangan pokok atau basis. Angka \\(n\\) disebut sebagai pangkat atau eksponen. Jadi, pada \\(7^3\\), bilangan pokoknya adalah 7."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa sedang menghitung hasil dari \\(5^3\\). Ia memahami bahwa ini berarti mengalikan angka 5 sebanyak 3 kali.",
+      "question": "Berapakah hasil perhitungan \\(5^3\\) yang benar?",
+      "options": {
+        "A": "15",
+        "B": "25",
+        "C": "125",
+        "D": "53",
+        "E": "150"
+      },
+      "answer": "C",
+      "explanation": "**Aplikasi Pangkat Bilangan Bulat Positif**\\nBerdasarkan definisi, \\(5^3\\) berarti mengalikan bilangan pokok 5 sebanyak 3 kali. Perhitungannya adalah \\(5 \\times 5 \\times 5 = 25 \\times 5 = 125\\)."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam matematika, setiap bilangan riil \\(a\\) yang tidak sama dengan nol, jika dipangkatkan dengan nol, hasilnya selalu satu. Ini adalah aturan dasar dalam eksponen.",
+      "question": "Berapakah hasil dari \\(15^0\\)?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "15",
+        "D": "Tidak terdefinisi",
+        "E": "150"
+      },
+      "answer": "B",
+      "explanation": "**Definisi Pangkat Nol**\\nMenurut aturan pangkat nol, setiap bilangan riil \\(a\\) yang bukan nol, ketika dipangkatkan dengan 0, hasilnya adalah 1. Oleh karena itu, \\(15^0 = 1\\)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang peneliti sedang menganalisis data pertumbuhan populasi bakteri. Ia mencatat bahwa jumlah bakteri berlipat ganda setiap jam. Jika awalnya ada 10 bakteri, maka setelah 1 jam menjadi \\(10 \\times 2^1\\), setelah 2 jam menjadi \\(10 \\times 2^2\\), dan seterusnya.",
+      "question": "Jika peneliti ingin memprediksi jumlah bakteri setelah 5 jam, strategi perhitungan mana yang paling efisien dan akurat?",
+      "options": {
+        "A": "Menjumlahkan 10 sebanyak 5 kali, lalu mengalikannya dengan 2.",
+        "B": "Menghitung \\(10 \\times 2 \\times 2 \\times 2 \\times 2 \\times 2\\) secara manual.",
+        "C": "Menghitung \\(10 \\times 2^5\\) menggunakan kalkulator atau rumus.",
+        "D": "Menghitung \\(10 + 2 + 2 + 2 + 2 + 2\\).",
+        "E": "Memprediksi jumlahnya secara visual tanpa perhitungan."
+      },
+      "answer": "C",
+      "explanation": "**Evaluasi Strategi Perhitungan**\\nModel pertumbuhan \\(10 \\times 2^n\\) menunjukkan pola eksponensial. Menghitung \\(10 \\times 2^5\\) secara langsung lebih efisien daripada perkalian berulang manual atau penjumlahan yang salah. Pilihan C memanfaatkan notasi eksponensial untuk prediksi yang akurat."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko baju menggunakan sistem diskon. Jika harga asli baju adalah Rp 200.000, dan ada diskon 20%, maka harga setelah diskon adalah \\(200.000 \\times (1 - 0.20)\\).",
+      "question": "Jika sebuah barang memiliki harga awal Rp 300.000 dan mendapatkan diskon 10%, berapakah harga barang tersebut setelah diskon?",
+      "options": {
+        "A": "Rp 270.000",
+        "B": "Rp 30.000",
+        "C": "Rp 330.000",
+        "D": "Rp 297.000",
+        "E": "Rp 27.000"
+      },
+      "answer": "A",
+      "explanation": "**Aplikasi Konsep Persentase dan Pengurangan**\\nHarga setelah diskon dihitung dengan mengalikan harga awal dengan \\((1 - persentase diskon)\\). Untuk diskon 10% (atau 0.10), perhitungannya adalah \\(300.000 \\times (1 - 0.10) = 300.000 \\times 0.90 = 270.000\\)."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Pangkat bulat negatif didefinisikan sebagai kebalikan dari pemangkatan positifnya. Jika \\(a \\neq 0\\) dan \\(n\\) adalah bilangan bulat positif, maka \\(a^{-n} = \\frac{1}{a^n}\\).",
+      "question": "Manakah bentuk yang setara dengan \\(2^{-3}\\)?",
+      "options": {
+        "A": "1/2 pangkat 3",
+        "B": "2 pangkat 3",
+        "C": "1/2 pangkat -3",
+        "D": "-2 pangkat 3",
+        "E": "1/6"
+      },
+      "answer": "A",
+      "explanation": "**Definisi Pangkat Bulat Negatif**\\nBerdasarkan definisi, \\(a^{-n} = \\frac{1}{a^n}\\). Dengan \\(a=2\\) dan \\(n=3\\), maka \\(2^{-3} = \\frac{1}{2^3}\\). Ini berarti 1 dibagi dengan 2 pangkat 3."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik menggunakan notasi eksponensial untuk memperkirakan kapasitas pengiriman. Kapasitas pengiriman per hari adalah \\(1000 \\times 3^d\\), di mana \\(d\\) adalah jumlah hari sejak peluncuran layanan baru.",
+      "question": "Perusahaan tersebut ingin membandingkan efisiensi pengiriman pada hari ke-3 dan hari ke-4. Manakah pernyataan yang paling tepat mengenai perbandingan kapasitas pengiriman antara kedua hari tersebut?",
+      "options": {
+        "A": "Kapasitas pada hari ke-4 tiga kali lipat dari hari ke-3.",
+        "B": "Kapasitas pada hari ke-4 sama dengan hari ke-3.",
+        "C": "Kapasitas pada hari ke-4 adalah \\(1000 \\times 3^1\\) lebih banyak dari hari ke-3.",
+        "D": "Kapasitas pada hari ke-4 adalah \\(1000 \\times 3^7\\) kali lipat dari hari ke-3.",
+        "E": "Kapasitas pada hari ke-4 adalah tiga kali lipat dari hari ke-3."
+      },
+      "answer": "E",
+      "explanation": "**Analisis Perbandingan Pertumbuhan Eksponensial**\\nKapasitas hari ke-3 adalah \\(1000 \\times 3^3\\). Kapasitas hari ke-4 adalah \\(1000 \\times 3^4\\). Perbandingan kapasitas hari ke-4 terhadap hari ke-3 adalah \\(\\frac{1000 \\times 3^4}{1000 \\times 3^3} = \\frac{3^4}{3^3} = 3^{4-3} = 3^1 = 3\\). Jadi, kapasitas hari ke-4 adalah 3 kali lipat dari hari ke-3."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani memiliki lahan seluas 1 hektar. Ia berencana untuk meningkatkan hasil panennya setiap tahun. Jika hasil panen awal adalah 5 ton, dan ia menargetkan peningkatan sebesar 2 kali lipat setiap tahunnya.",
+      "question": "Berapa ton target hasil panen petani tersebut pada tahun ke-3, jika dimulai dari tahun pertama?",
+      "options": {
+        "A": "10 ton",
+        "B": "15 ton",
+        "C": "20 ton",
+        "D": "25 ton",
+        "E": "30 ton"
+      },
+      "answer": "C",
+      "explanation": "**Aplikasi Pola Perkalian Berulang**\\nTarget hasil panen pada tahun pertama adalah 5 ton. Pada tahun kedua, targetnya adalah \\(5 \\times 2 = 10\\) ton. Pada tahun ketiga, targetnya adalah \\(10 \\times 2 = 20\\) ton. Ini dapat ditulis sebagai \\(5 \\times 2^{3-1} = 5 \\times 2^2 = 5 \\times 4 = 20\\) ton."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam notasi \\(a^n\\), \\(a\\) adalah bilangan pokok dan \\(n\\) adalah eksponen. \\(a^n\\) berarti \\(a\\) dikalikan dengan dirinya sendiri sebanyak \\(n\\) kali.",
+      "question": "Manakah dari pilihan berikut yang merupakan definisi dari \\(4^3\\)?",
+      "options": {
+        "A": "4 + 4 + 4",
+        "B": "3 + 3 + 3 + 3",
+        "C": "4 \\times 3",
+        "D": "4 \\times 4 \\times 4",
+        "E": "3 \\times 3 \\times 3 \\times 3"
+      },
+      "answer": "D",
+      "explanation": "**Definisi Pangkat Bilangan Bulat Positif**\\nEkspresi \\(4^3\\) berarti bilangan pokok 4 dikalikan dengan dirinya sendiri sebanyak 3 kali. Ini ditulis sebagai \\(4 \\times 4 \\times 4\\)."
+    }
+  ],
+  "metadata": {
+    "id": "2b5d5967-b6a1-4c8b-b27e-386254f365c1",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:22:15Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Definisi Eksponen",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_6_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyatakan perkalian bilangan bulat berulang sebagai bilangan berpangkat (eksponen).",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3776,
+      "assistant": 2432,
+      "total": 6882,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

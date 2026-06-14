@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data\n\n--- MATERI ---\nDalam statistika, representasi data sangat penting untuk menampilkan dan menganalisis informasi secara jelas. Salah satu bentuk grafik yang dipelajari adalah histogram. Walaupun terlihat serupa, histogram berbeda dengan diagram batang. Diagram batang digunakan untuk menampilkan data kategori dengan memberikan spasi atau jarak antarbatang, di mana besarnya frekuensi dilihat dari panjang batang tersebut. Sebaliknya, histogram digunakan untuk menunjukkan distribusi dari suatu kelompok data kuantitatif yang rentangnya dikelompokkan ke dalam interval atau kelas tertentu. Oleh karena itu, pada histogram gambar batangnya saling menempel satu sama lain tanpa spasi, dan besaran frekuensi ditunjukkan berdasarkan luas area pada masing-masing batangnya.\n\nSelain menyajikan banyaknya data aktual, histogram juga dapat menggunakan persentase yang disebut sebagai frekuensi relatif untuk setiap kelas intervalnya. Penggunaan frekuensi relatif ini sangat efektif ketika kita ingin membandingkan dua kelompok data yang memiliki jumlah total (n) yang berbeda. Di samping histogram, terdapat pula jenis representasi data lain seperti diagram lingkaran dan diagram batang ganda yang sangat berguna untuk membandingkan beberapa himpunan data atau kategori secara berdampingan. Secara umum, pemilihan jenis representasi grafik yang tepat akan sangat membantu dan memudahkan kita dalam memahami situasi, membandingkan kelompok data, dan mengambil keputusan yang akurat berdasarkan fakta.\n\n[ATP_ALIGNMENT]\nMenampilkan data secara visual menggunakan diagram lingkaran, batang, dan histogram secara tepat.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang guru ingin menampilkan data hasil ulangan harian Matematika kelas XII. Data tersebut berupa nilai ulangan yang dikelompokkan ke dalam interval kelas. Grafik manakah yang paling tepat digunakan untuk menampilkan distribusi data kuantitatif berkelompok ini?",
+      "question": "Manakah jenis grafik yang paling sesuai untuk menampilkan distribusi data kuantitatif yang dikelompokkan ke dalam interval kelas?",
+      "options": {
+        "A": "Diagram batang",
+        "B": "Diagram lingkaran",
+        "C": "Histogram",
+        "D": "Diagram garis",
+        "E": "Diagram batang ganda"
+      },
+      "answer": "C",
+      "explanation": "**Histogram** adalah grafik yang paling tepat untuk menampilkan distribusi data kuantitatif yang dikelompokkan ke dalam interval kelas. Batangnya saling menempel untuk menunjukkan sifat kontinu dari data."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Ibu Ani memiliki data penjualan buah-buahan di pasar tradisional selama seminggu. Ia ingin membandingkan penjualan mangga, apel, dan jeruk setiap harinya. Grafik manakah yang paling efektif untuk membandingkan data dari beberapa kategori secara berdampingan?",
+      "question": "Untuk membandingkan penjualan tiga jenis buah berbeda setiap harinya, grafik manakah yang paling efektif?",
+      "options": {
+        "A": "Histogram",
+        "B": "Diagram lingkaran",
+        "C": "Diagram batang ganda",
+        "D": "Diagram garis",
+        "E": "Peta sebaran"
+      },
+      "answer": "C",
+      "explanation": "**Diagram batang ganda** sangat efektif untuk membandingkan data dari beberapa kategori (jenis buah) secara berdampingan untuk setiap periode waktu (hari)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong ingin menganalisis komposisi biaya produksi bulanannya. Data biaya terbagi menjadi bahan baku, tenaga kerja, dan biaya operasional. Total biaya produksi bulan ini adalah Rp 15.000.000. Biaya bahan baku Rp 7.500.000, biaya tenaga kerja Rp 4.500.000, dan biaya operasional Rp 3.000.000. Grafik manakah yang paling cocok untuk menunjukkan proporsi masing-masing komponen biaya terhadap total biaya?",
+      "question": "Grafik manakah yang paling tepat untuk menunjukkan proporsi biaya bahan baku, tenaga kerja, dan operasional terhadap total biaya produksi UMKM tersebut?",
+      "options": {
+        "A": "Histogram",
+        "B": "Diagram batang",
+        "C": "Diagram lingkaran",
+        "D": "Diagram garis",
+        "E": "Diagram pencar"
+      },
+      "answer": "C",
+      "explanation": "**Diagram lingkaran** sangat cocok untuk menampilkan proporsi atau persentase setiap bagian (komponen biaya) terhadap keseluruhan (total biaya produksi)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik ingin memvisualisasikan data kecepatan pengiriman paket di tiga kota besar (Jakarta, Surabaya, Bandung) selama satu bulan. Data kecepatan rata-rata per hari disajikan dalam tabel. Perusahaan perlu memutuskan apakah akan menggunakan histogram atau diagram batang ganda untuk analisis awal.",
+      "question": "Jika tujuan utamanya adalah membandingkan distribusi kecepatan pengiriman antar ketiga kota tersebut dan melihat pola harian di setiap kota, manakah pilihan grafik yang lebih strategis dan mengapa?",
+      "options": {
+        "A": "Histogram, karena dapat menunjukkan rentang kecepatan pengiriman di setiap kota secara terpisah.",
+        "B": "Diagram batang ganda, karena memungkinkan perbandingan langsung kecepatan rata-rata harian antar kota.",
+        "C": "Histogram, karena batang yang saling menempel menunjukkan kesinambungan data kecepatan.",
+        "D": "Diagram batang ganda, karena dapat menampilkan frekuensi relatif dari setiap rentang kecepatan di setiap kota.",
+        "E": "Histogram, karena lebih cocok untuk data kuantitatif berkelompok seperti kecepatan."
+      },
+      "answer": "B",
+      "explanation": "**Diagram batang ganda** lebih strategis karena memungkinkan perbandingan langsung kecepatan rata-rata harian antar ketiga kota (Jakarta, Surabaya, Bandung) secara berdampingan, yang merupakan fokus utama analisis perbandingan antar kota."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa sedang mempelajari cara menyajikan data hasil survei preferensi musik di sekolahnya. Data tersebut bersifat kategori, misalnya genre musik (pop, rock, jazz, dangdut). Siswa tersebut ingin menampilkan frekuensi masing-masing genre musik.",
+      "question": "Jenis grafik manakah yang paling sesuai untuk menampilkan frekuensi data kategori seperti genre musik?",
+      "options": {
+        "A": "Histogram",
+        "B": "Diagram lingkaran",
+        "C": "Diagram batang",
+        "D": "Diagram pencar",
+        "E": "Diagram garis"
+      },
+      "answer": "C",
+      "explanation": "**Diagram batang** adalah pilihan yang tepat untuk menampilkan data kategori. Jarak antar batang memisahkan kategori-kategori yang berbeda, dan tinggi batang menunjukkan frekuensinya."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah lembaga penelitian ingin membandingkan tingkat partisipasi pemilih dalam dua pemilihan umum (Pemilu 2019 dan Pemilu 2024) di 10 provinsi di Indonesia. Data yang tersedia adalah persentase partisipasi pemilih di setiap provinsi untuk kedua pemilu tersebut.",
+      "question": "Representasi data manakah yang paling efektif untuk membandingkan tingkat partisipasi pemilih antara Pemilu 2019 dan Pemilu 2024 di setiap provinsi?",
+      "options": {
+        "A": "Histogram",
+        "B": "Diagram lingkaran",
+        "C": "Diagram batang ganda",
+        "D": "Diagram garis",
+        "E": "Diagram pencar"
+      },
+      "answer": "C",
+      "explanation": "**Diagram batang ganda** sangat efektif untuk membandingkan dua set data (partisipasi Pemilu 2019 dan 2024) untuk setiap kategori (provinsi) secara berdampingan, memudahkan identifikasi perbedaan partisipasi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani ingin memantau pertumbuhan tanaman padi di dua lahan berbeda (Lahan A dan Lahan B) selama periode tanam. Data tinggi tanaman diukur setiap minggu. Petani perlu memutuskan representasi grafik yang paling membantu dalam mengevaluasi efektivitas pupuk baru yang digunakan di Lahan B dibandingkan Lahan A.",
+      "question": "Jika petani ingin secara visual mengevaluasi perbedaan laju pertumbuhan mingguan dan membandingkan tren pertumbuhan antara kedua lahan, representasi grafik manakah yang paling informatif?",
+      "options": {
+        "A": "Histogram, untuk melihat distribusi tinggi tanaman di setiap lahan pada satu waktu.",
+        "B": "Diagram lingkaran, untuk melihat proporsi tinggi tanaman terhadap total tinggi di setiap lahan.",
+        "C": "Diagram garis, dengan dua garis terpisah untuk Lahan A dan Lahan B, untuk membandingkan tren pertumbuhan dari waktu ke waktu.",
+        "D": "Diagram batang, untuk membandingkan tinggi tanaman rata-rata di setiap lahan pada akhir periode tanam.",
+        "E": "Diagram batang ganda, untuk membandingkan tinggi tanaman setiap minggu di kedua lahan."
+      },
+      "answer": "C",
+      "explanation": "**Diagram garis** paling informatif karena secara efektif menampilkan tren perubahan data kuantitatif (tinggi tanaman) seiring waktu (mingguan) untuk dua kelompok (Lahan A dan Lahan B), memungkinkan perbandingan laju pertumbuhan."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kelas, guru mencatat jumlah siswa yang mendapatkan nilai di atas 80, antara 60-80, dan di bawah 60 pada mata pelajaran IPA. Data ini bersifat kuantitatif yang dikelompokkan.",
+      "question": "Grafik manakah yang paling tepat untuk menampilkan distribusi frekuensi nilai IPA berdasarkan pengelompokan tersebut?",
+      "options": {
+        "A": "Diagram batang",
+        "B": "Diagram lingkaran",
+        "C": "Histogram",
+        "D": "Diagram garis",
+        "E": "Diagram pencar"
+      },
+      "answer": "C",
+      "explanation": "**Histogram** digunakan untuk menampilkan distribusi data kuantitatif yang telah dikelompokkan ke dalam interval kelas, seperti pengelompokan nilai IPA di atas."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong ingin menganalisis persentase kontribusi setiap jenis barang (beras, minyak goreng, gula, telur) terhadap total pendapatan bulanannya. Data pendapatan per jenis barang sudah tersedia.",
+      "question": "Representasi grafik manakah yang paling efektif untuk menunjukkan proporsi pendapatan dari masing-masing jenis barang terhadap total pendapatan toko?",
+      "options": {
+        "A": "Histogram",
+        "B": "Diagram batang",
+        "C": "Diagram lingkaran",
+        "D": "Diagram garis",
+        "E": "Diagram batang ganda"
+      },
+      "answer": "C",
+      "explanation": "**Diagram lingkaran** sangat cocok untuk menampilkan proporsi atau persentase setiap bagian (jenis barang) terhadap keseluruhan (total pendapatan toko), sehingga mudah dipahami kontribusi masing-masing."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah sekolah sedang mengevaluasi efektivitas dua metode pembelajaran (Metode X dan Metode Y) terhadap hasil belajar siswa dalam mata pelajaran Fisika selama satu semester. Data nilai rata-rata siswa di setiap kelas yang menggunakan metode berbeda disajikan setiap bulan.",
+      "question": "Jika kepala sekolah ingin membandingkan tren peningkatan nilai rata-rata siswa antara kedua metode pembelajaran dari bulan ke bulan, representasi grafik manakah yang paling efektif dan mengapa?",
+      "options": {
+        "A": "Histogram, karena menunjukkan distribusi nilai siswa di setiap kelas.",
+        "B": "Diagram lingkaran, untuk menunjukkan proporsi nilai siswa yang lulus dan tidak lulus.",
+        "C": "Diagram batang ganda, untuk membandingkan nilai rata-rata setiap bulan antar kedua metode.",
+        "D": "Diagram garis, dengan dua garis terpisah untuk Metode X dan Metode Y, untuk membandingkan tren peningkatan nilai dari waktu ke waktu.",
+        "E": "Diagram pencar, untuk melihat hubungan antara nilai siswa dan variabel lain."
+      },
+      "answer": "D",
+      "explanation": "**Diagram garis** paling efektif karena memungkinkan perbandingan tren peningkatan nilai rata-rata siswa dari waktu ke waktu (bulanan) antara dua metode pembelajaran (Metode X dan Metode Y) secara visual."
+    }
+  ],
+  "metadata": {
+    "id": "97da44bd-f814-4377-bf51-d95a02cd5d5e",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T13:51:51Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menampilkan data secara visual menggunakan diagram lingkaran, batang, dan histogram secara tepat.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2930,
+      "assistant": 2971,
+      "total": 6575,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

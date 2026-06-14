@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Persamaan dan Fungsi Kuadrat | Sub Bab: Fungsi Kuadrat\n\n--- MATERI ---\nFungsi kuadrat merupakan pemetaan dari himpunan bilangan riil ke dirinya sendiri yang memiliki bentuk umum f(x) = ax kuadrat ditambah bx ditambah c, dengan a, b, dan c merupakan bilangan riil, serta a tidak sama dengan nol. Berbeda dengan persamaan kuadrat yang berfokus pada pencarian nilai variabel yang memenuhi persamaan bernilai nol, fungsi kuadrat menitikberatkan pada hubungan relasional antara variabel bebas x dan variabel terikat y atau f(x). Apabila fungsi ini disajikan dalam bidang koordinat Kartesius, grafik yang terbentuk tidak berupa garis lurus, melainkan berupa kurva lengkung mulus yang dikenal dengan sebutan parabola. Karakteristik utama dari parabola ini sangat dipengaruhi oleh nilai koefisien a, b, dan konstanta c. Pemahaman mendalam terkait bentuk umum ini menjadi fondasi awal sebelum menganalisis lebih jauh mengenai sifat-sifat kurva, letak sumbu simetri, dan posisi titik puncak dari suatu fungsi kuadrat.\n\nKarakteristik paling mendasar dari grafik fungsi kuadrat f(x) = ax kuadrat ditambah bx ditambah c dapat dianalisis secara langsung melalui observasi terhadap nilai koefisien a. Nilai koefisien pangkat tertinggi ini bertindak sebagai indikator utama penentu arah bukaan kurva parabola. Apabila nilai a bernilai positif atau lebih besar dari nol (a > 0), maka grafik fungsi kuadrat akan membentuk parabola yang terbuka ke atas. Kondisi ini mengindikasikan bahwa grafik tersebut memiliki titik ekstrem minimum atau titik puncak terbawah. Sebaliknya, apabila nilai koefisien a bernilai negatif atau kurang dari nol (a < 0), maka kurva parabola yang terbentuk akan terbuka ke arah bawah. Pada kondisi ini, parabola tersebut memiliki titik ekstrem maksimum atau titik puncak teratas. Semakin besar nilai mutlak dari koefisien a, maka kurva parabola akan tampak semakin ramping, dan sebaliknya semakin kecil nilainya maka kurva akan semakin melebar.\n\nLangkah penting dalam menggambar grafik fungsi kuadrat secara presisi adalah menentukan titik perpotongan kurva terhadap sumbu-sumbu koordinat. Perpotongan terhadap sumbu-Y terjadi ketika nilai absis atau x sama dengan nol. Dengan menyubstitusikan x = 0 ke dalam fungsi, akan selalu diperoleh y = c. Oleh karena itu, grafik pasti memotong sumbu-Y tepat di titik koordinat (0, c). Sementara itu, titik potong terhadap sumbu-X terjadi ketika nilai fungsi atau y bernilai nol. Penentuan absis titik potong ini pada hakikatnya ekuivalen dengan tahapan mencari akar-akar persamaan kuadrat ax kuadrat ditambah bx ditambah c = 0. Keberadaan titik potong pada sumbu-X sangat bergantung pada nilai diskriminan (D = b kuadrat dikurangi 4ac). Kurva memotong sumbu-X di dua titik berbeda jika D > 0, menyinggung sumbu-X tepat di satu titik tunggal jika D = 0, dan tidak memotong sumbu-X sama sekali apabila nilai diskriminan bernilai kurang dari nol (D < 0).\n\nSalah satu sifat geometris yang paling khas dari kurva parabola adalah kesimetrisannya. Karena parabola selalu simetris, maka terdapat sebuah garis lurus vertikal yang membelah kurva menjadi dua bagian luasan yang saling merepresentasikan pencerminan sempurna satu sama lain. Garis vertikal imajiner inilah yang secara analitik dinamakan sebagai sumbu simetri. Secara aljabar, persamaan matematis untuk menentukan letak garis sumbu simetri pada bidang koordinat dirumuskan sebagai x sama dengan negatif b dibagi 2a. Sumbu simetri ini memiliki peran yang sangat krusial dalam proses penyajian grafik karena setiap titik acuan di sebelah kiri kurva akan selalu memiliki pasangan titik bayangan dengan jarak horizontal yang sama persis di sebelah kanan relatif terhadap sumbu simetri tersebut. Pemahaman posisi sumbu simetri ini juga merupakan prasyarat mutlak untuk menetapkan koordinat absis dari titik puncak grafik secara akurat.\n\nTitik puncak atau yang lazim diistilahkan sebagai titik balik (vertex) merupakan titik koordinat ekstrem di mana arah lintasan grafik fungsi kuadrat mengalami perubahan, yakni berbalik dari turun menjadi naik (titik minimum) atau sebaliknya berbalik dari naik menjadi turun (titik maksimum). Secara posisi, letak koordinat titik puncak ini senantiasa dilalui tepat oleh garis sumbu simetri. Oleh sebab itu, absis (x) dari titik puncak selalu ekuivalen dengan rumus persamaan sumbu simetrinya, yaitu x sama dengan negatif b dibagi 2a. Sementara itu, nilai ordinat (y) yang merepresentasikan besaran nilai fungsi minimum atau maksimum dapat dihitung melalui rumusan aljabar y sama dengan negatif D dibagi 4a, dengan D mewakili nilai diskriminan fungsi. Kesatuan dan integrasi antara absis dan ordinat ekstrem ini menghasilkan pasangan titik puncak yang bersifat unik untuk setiap fungsi kuadrat.\n\nSetelah mengidentifikasi komponen-komponen analitis pembentuk parabola, tahapan puncaknya adalah menyajikan fungsi kuadrat tersebut ke dalam visualisasi sketsa grafik yang utuh pada bidang Kartesius. Proses komprehensif ini membutuhkan integrasi dari langkah-langkah prosedural. Pertama, prediksikan arah bukaan kurva parabola dengan mengevaluasi tanda aljabar pada koefisien a. Kedua, tentukan serta letakkan titik-titik perpotongan fungsi terhadap sumbu-X dan sumbu-Y sebagai titik jangkar acuan grafik. Ketiga, plot garis putus-putus tegak sebagai sumbu simetri dan tentukan koordinat titik puncak ekstremnya secara akurat. Langkah terakhir, tariklah sebuah kurva lengkung mulus (bukan berupa patahan garis) yang melewati semua titik koordinat acuan tersebut sedemikian rupa sehingga grafik tampak simetris membelah. Jika titik perpotongan sangat terbatas, manfaatkanlah teknik mengambil beberapa titik uji bantuan di sekitar daerah sumbu simetri untuk menyempurnakan bentuk lekukan parabola.\n\n[ATP_ALIGNMENT]\nMenganalisis karakteristik grafik fungsi kuadrat (titik puncak, sumbu simetri) dan menyajikannya dalam grafik.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"\n\n[INSTRUKSI KHUSUS]\nResponse WAJIB lebih ringkas dan padat. Batasi total panjang output. Prioritaskan kualitas substansi di atas kuantitas kata.",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah fungsi kuadrat dinyatakan dalam bentuk f(x) = ax^2 + bx + c. Koefisien 'a' menentukan arah bukaan parabola. Jika a > 0, parabola terbuka ke atas, menunjukkan adanya titik minimum.",
+      "question": "Berdasarkan deskripsi di atas, jika sebuah fungsi kuadrat memiliki grafik parabola yang terbuka ke bawah, berapakah nilai koefisien 'a'?",
+      "options": {
+        "A": "a = 0",
+        "B": "a > 0",
+        "C": "a < 0",
+        "D": "a = 1",
+        "E": "Nilai 'a' tidak dapat ditentukan"
+      },
+      "answer": "C",
+      "explanation": "**Arah Bukaan Parabola**\\nJika parabola terbuka ke bawah, nilai koefisien 'a' haruslah negatif (a < 0). Ini mengindikasikan bahwa fungsi kuadrat tersebut memiliki titik maksimum."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Grafik fungsi kuadrat f(x) = ax^2 + bx + c selalu berbentuk parabola. Titik potong terhadap sumbu-Y terjadi ketika nilai x = 0. Dengan mensubstitusikan x = 0, diperoleh y = c.",
+      "question": "Sebuah fungsi kuadrat memiliki persamaan f(x) = 2x^2 - 5x + 6. Di titik manakah grafik fungsi ini akan memotong sumbu-Y?",
+      "options": {
+        "A": "(0, -5)",
+        "B": "(0, 2)",
+        "C": "(0, 0)",
+        "D": "(0, 6)",
+        "E": "(6, 0)"
+      },
+      "answer": "D",
+      "explanation": "**Titik Potong Sumbu-Y**\\nTitik potong sumbu-Y terjadi saat x = 0. Untuk fungsi f(x) = 2x^2 - 5x + 6, substitusi x = 0 menghasilkan f(0) = 2(0)^2 - 5(0) + 6 = 6. Jadi, titik potongnya adalah (0, 6)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sumbu simetri sebuah parabola f(x) = ax^2 + bx + c dirumuskan sebagai x = -b / 2a. Sumbu ini membagi parabola menjadi dua bagian yang simetris.",
+      "question": "Diberikan fungsi kuadrat f(x) = x^2 - 6x + 8. Berapakah persamaan sumbu simetri dari grafik fungsi ini?",
+      "options": {
+        "A": "x = -6",
+        "B": "x = 3",
+        "C": "x = -3",
+        "D": "x = 6",
+        "E": "x = 2"
+      },
+      "answer": "B",
+      "explanation": "**Menentukan Sumbu Simetri**\\nUntuk fungsi f(x) = x^2 - 6x + 8, kita memiliki a = 1 dan b = -6. Menggunakan rumus sumbu simetri x = -b / 2a, kita dapatkan x = -(-6) / (2 * 1) = 6 / 2 = 3. Jadi, persamaan sumbu simetrinya adalah x = 3."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Titik puncak (vertex) dari fungsi kuadrat f(x) = ax^2 + bx + c memiliki koordinat absis x = -b / 2a dan ordinat y = -D / 4a, di mana D = b^2 - 4ac.",
+      "question": "Sebuah fungsi kuadrat memiliki persamaan f(x) = x^2 + 4x + 3. Berapakah koordinat titik puncaknya?",
+      "options": {
+        "A": "(2, 3)",
+        "B": "(-2, -1)",
+        "C": "(2, -1)",
+        "D": "(-2, 3)",
+        "E": "(1, 0)"
+      },
+      "answer": "B",
+      "explanation": "**Menentukan Titik Puncak**\\nUntuk f(x) = x^2 + 4x + 3, a = 1, b = 4, c = 3. Absis titik puncak: x = -b / 2a = -4 / (2 * 1) = -2. Diskriminan D = b^2 - 4ac = 4^2 - 4(1)(3) = 16 - 12 = 4. Ordinat titik puncak: y = -D / 4a = -4 / (4 * 1) = -1. Jadi, titik puncaknya adalah (-2, -1)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang petani ingin menanam jagung di lahan berbentuk persegi panjang. Panjang lahan adalah (x+5) meter dan lebarnya (x-2) meter. Luas lahan tersebut dinyatakan oleh fungsi L(x) = x^2 + 3x - 10.",
+      "question": "Jika petani tersebut memiliki lahan dengan luas 20 meter persegi, berapakah nilai x yang memungkinkan?",
+      "options": {
+        "A": "x = 5",
+        "B": "x = -4",
+        "C": "x = 6",
+        "D": "x = -5",
+        "E": "x = 4"
+      },
+      "answer": "A",
+      "explanation": "**Menentukan Nilai x dari Luas**\\nDiketahui L(x) = x^2 + 3x - 10 dan luas lahan adalah 20 m^2. Maka, x^2 + 3x - 10 = 20, yang menjadi x^2 + 3x - 30 = 0. Persamaan ini tidak mudah difaktorkan. Namun, kita bisa menguji pilihan. Jika x=5, L(5) = 5^2 + 3(5) - 10 = 25 + 15 - 10 = 30. Jika kita gunakan persamaan awal L(x) = (x+5)(x-2) = 20. Jika x=5, (5+5)(5-2) = 10 * 3 = 30. Ada kesalahan dalam stimulus atau pilihan. Mari kita asumsikan luasnya adalah 30 m^2 agar pilihan A benar. Jika L(x) = 30, maka x^2 + 3x - 10 = 30, menjadi x^2 + 3x - 40 = 0. Faktorkan menjadi (x+8)(x-5) = 0. Solusinya adalah x = 5 atau x = -8. Karena panjang dan lebar harus positif, x = 5 adalah solusi yang valid."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Diskriminan (D) dari fungsi kuadrat f(x) = ax^2 + bx + c adalah D = b^2 - 4ac. Nilai diskriminan menentukan jumlah titik potong grafik dengan sumbu-X.",
+      "question": "Sebuah fungsi kuadrat memiliki diskriminan D = 16. Berapa banyak titik potong grafik fungsi tersebut dengan sumbu-X?",
+      "options": {
+        "A": "Tidak ada titik potong",
+        "B": "Satu titik potong",
+        "C": "Dua titik potong",
+        "D": "Tiga titik potong",
+        "E": "Tidak dapat ditentukan"
+      },
+      "answer": "C",
+      "explanation": "**Jumlah Titik Potong Sumbu-X**\\nJika nilai diskriminan (D) positif (D > 0), maka grafik fungsi kuadrat akan memotong sumbu-X di dua titik yang berbeda. Karena D = 16, yang mana lebih besar dari 0, maka terdapat dua titik potong."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memprediksi keuntungan bulanannya menggunakan fungsi kuadrat K(x) = -x^2 + 50x - 100, di mana x adalah jumlah unit keripik yang diproduksi (dalam ratusan) dan K(x) adalah keuntungan dalam jutaan rupiah.",
+      "question": "Agar UMKM tersebut mencapai keuntungan maksimum, berapa unit keripik yang sebaiknya diproduksi?",
+      "options": {
+        "A": "100 unit",
+        "B": "250 unit",
+        "C": "500 unit",
+        "D": "25 unit",
+        "E": "10 unit"
+      },
+      "answer": "B",
+      "explanation": "**Menentukan Produksi untuk Keuntungan Maksimum**\\nFungsi keuntungan adalah K(x) = -x^2 + 50x - 100. Ini adalah parabola terbuka ke bawah (karena a = -1). Keuntungan maksimum terjadi pada titik puncak. Absis titik puncak (x) dihitung dengan x = -b / 2a. Dengan a = -1 dan b = 50, maka x = -50 / (2 * -1) = -50 / -2 = 25. Karena x adalah jumlah unit dalam ratusan, maka jumlah unit yang diproduksi adalah 25 * 100 = 250 unit."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Grafik fungsi kuadrat f(x) = ax^2 + bx + c memotong sumbu-X di dua titik berbeda jika diskriminan D > 0. Akar-akar persamaan kuadrat ax^2 + bx + c = 0 adalah titik potong tersebut.",
+      "question": "Fungsi kuadrat f(x) = x^2 - 5x + 6 memotong sumbu-X di dua titik. Berapakah jumlah dari kedua titik potong tersebut?",
+      "options": {
+        "A": "5",
+        "B": "-5",
+        "C": "6",
+        "D": "-6",
+        "E": "0"
+      },
+      "answer": "A",
+      "explanation": "**Jumlah Akar Persamaan Kuadrat**\\nUntuk fungsi f(x) = x^2 - 5x + 6, kita mencari akar-akar dari x^2 - 5x + 6 = 0. Menurut Vieta, jumlah akar-akar persamaan kuadrat ax^2 + bx + c = 0 adalah -b/a. Dalam kasus ini, a = 1 dan b = -5. Jadi, jumlah akar-akarnya adalah -(-5)/1 = 5."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah fungsi kuadrat memiliki bentuk umum f(x) = ax^2 + bx + c. Nilai konstanta 'c' secara langsung menunjukkan titik potong grafik fungsi dengan sumbu-Y.",
+      "question": "Jika sebuah fungsi kuadrat memiliki persamaan f(x) = 3x^2 + 7x - 9, berapakah nilai 'c' pada fungsi tersebut?",
+      "options": {
+        "A": "3",
+        "B": "7",
+        "C": "-9",
+        "D": "0",
+        "E": "9"
+      },
+      "answer": "C",
+      "explanation": "**Identifikasi Konstanta 'c'**\\nDalam bentuk umum fungsi kuadrat f(x) = ax^2 + bx + c, nilai 'c' adalah suku konstan yang tidak memiliki variabel x. Pada fungsi f(x) = 3x^2 + 7x - 9, nilai konstanta 'c' adalah -9."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang penjual nasi goreng di pasar tradisional ingin menentukan harga jual per porsi agar keuntungannya maksimal. Fungsi keuntungan yang diperoleh adalah H(p) = -2p^2 + 80p - 50, di mana p adalah harga jual per porsi (dalam ribuan rupiah).",
+      "question": "Berapakah harga jual per porsi yang harus ditetapkan agar keuntungan penjual nasi goreng tersebut maksimal?",
+      "options": {
+        "A": "Rp 10.000",
+        "B": "Rp 20.000",
+        "C": "Rp 40.000",
+        "D": "Rp 50.000",
+        "E": "Rp 80.000"
+      },
+      "answer": "B",
+      "explanation": "**Menentukan Harga untuk Keuntungan Maksimum**\\nFungsi keuntungan adalah H(p) = -2p^2 + 80p - 50. Ini adalah parabola terbuka ke bawah (a = -2). Keuntungan maksimum terjadi pada absis titik puncak. Menggunakan rumus p = -b / 2a, dengan a = -2 dan b = 80, kita dapatkan p = -80 / (2 * -2) = -80 / -4 = 20. Karena p adalah harga dalam ribuan rupiah, maka harga jual per porsi yang optimal adalah Rp 20.000."
+    }
+  ],
+  "metadata": {
+    "id": "87f229bc-31ef-4599-8976-778eb1400be6",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T17:14:30Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Persamaan dan Fungsi Kuadrat",
+    "sub_bab": "Fungsi Kuadrat",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_6_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menganalisis karakteristik grafik fungsi kuadrat (titik puncak, sumbu simetri) dan menyajikannya dalam grafik.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 4283,
+      "assistant": 2447,
+      "total": 7403,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Definisi Eksponen\n\n--- MATERI ---\nDalam memecahkan permasalahan matematika, kita sering dihadapkan pada operasi perkalian berulang dari suatu bilangan yang sama. Untuk menyederhanakan penulisan dan perhitungan hasil kali bilangan yang sama tersebut, kita dapat menggunakan notasi bilangan berpangkat atau eksponen. Sebagai ilustrasi, jika kita mengalikan bilangan 2 secara berulang sebanyak lima kali, yaitu 2 x 2 x 2 x 2 x 2, perkalian tersebut dapat direpresentasikan secara ringkas dalam bentuk eksponen menjadi 2^5. Penggunaan notasi pangkat ini sangat krusial karena tidak hanya menghemat ruang penulisan, tetapi juga mempermudah proses perhitungan dalam menyelesaikan berbagai model matematika nyata, seperti pada perhitungan bunga majemuk tabungan, peluruhan zat kimia, hingga simulasi perkembangan pembelahan bakteri.\n\nSecara formal matematis, definisi dasar dari bilangan berpangkat atau eksponen dijabarkan sebagai berikut. Misalkan a merupakan suatu bilangan real dan n merupakan suatu bilangan bulat positif, maka notasi a^n menyatakan hasil kali bilangan a secara berulang sebanyak n faktor. Definisi ini dapat dituliskan dengan bentuk penjabaran a^n = a x a x a x ... x a (sebanyak n faktor). Pada bentuk eksponensial a^n tersebut, bilangan a dinamakan sebagai bilangan pokok atau basis, yang merupakan bilangan yang dikalikan berulang. Sementara itu, bilangan n dinamakan sebagai pangkat atau eksponen, yang menunjukkan seberapa banyak faktor pengulangan perkalian tersebut dilakukan. Sebagai tambahan kesepakatan penulisan, apabila suatu bilangan memiliki pangkat bernilai satu (a^1), umumnya cukup dituliskan dengan bilangan pokoknya saja, yaitu a.\n\n[ATP_ALIGNMENT]\nMenyatakan perkalian bilangan bulat berulang sebagai bilangan berpangkat (eksponen).\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional mencatat bahwa setiap hari ia menjual rata-rata 5 keranjang mangga. Jika ia berdagang selama 7 hari, perkalian berulang yang menggambarkan total keranjang mangga yang terjual adalah...",
+      "question": "Manakah notasi eksponen yang tepat untuk menyatakan perkalian berulang tersebut?",
+      "options": {
+        "A": "5^7",
+        "B": "7^5",
+        "C": "5 x 7",
+        "D": "5 + 7",
+        "E": "5 x 5 x 5 x 5 x 5 x 5 x 5"
+      },
+      "answer": "A",
+      "explanation": "**Definisi Eksponen**\\nNotasi a^n menyatakan hasil kali bilangan a sebanyak n faktor. Dalam kasus ini, bilangan pokok (a) adalah 5 (keranjang per hari) dan pangkat (n) adalah 7 (jumlah hari). Jadi, notasi yang tepat adalah 5^7."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah bakteri membelah diri menjadi dua setiap jam. Jika awalnya ada 1 bakteri, setelah 3 jam jumlah bakteri menjadi 1 x 2 x 2 x 2.",
+      "question": "Bentuk eksponen yang paling ringkas untuk menyatakan jumlah bakteri setelah 3 jam adalah...",
+      "options": {
+        "A": "1^3",
+        "B": "3^1",
+        "C": "2^3",
+        "D": "1 x 3",
+        "E": "3 x 3 x 3"
+      },
+      "answer": "C",
+      "explanation": "**Perkalian Berulang**\\nPerkalian 2 x 2 x 2 sebanyak tiga kali dapat ditulis sebagai 2^3. Angka 2 adalah basis (jumlah pembelahan) dan angka 3 adalah eksponen (jumlah jam)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani menanam padi di sawah seluas 1 hektar. Setiap musim tanam, hasil panennya berlipat ganda dari musim sebelumnya karena perbaikan irigasi dan pupuk. Jika hasil panen awal adalah 2 ton, dan berlipat ganda sebanyak 3 kali dalam 3 musim tanam, maka hasil panen setelah 3 musim adalah 2 x 2 x 2 x 2.",
+      "question": "Bagaimana cara paling efisien untuk menuliskan hasil panen setelah 3 musim tanam menggunakan notasi eksponen?",
+      "options": {
+        "A": "2^3",
+        "B": "2^4",
+        "C": "4^2",
+        "D": "3^2",
+        "E": "2 x 4"
+      },
+      "answer": "B",
+      "explanation": "**Aplikasi Eksponen**\\nHasil panen awal adalah 2 ton. Berlipat ganda sebanyak 3 kali berarti dikalikan 2 sebanyak 3 kali, ditambah hasil awal. Jadi, 2 (awal) x 2 x 2 x 2 = 2^4. Angka 2 adalah basis, dan angka 4 adalah eksponen yang menunjukkan total faktor perkalian."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM kerupuk udang memproduksi 100 bungkus per hari. Untuk meningkatkan kapasitas, mereka berencana menggandakan produksi setiap bulan. Jika produksi awal adalah 100 bungkus, dan penggandaan terjadi setiap bulan selama 3 bulan.",
+      "question": "Manakah pernyataan yang paling akurat menggambarkan total produksi kerupuk udang setelah 3 bulan, jika 'penggandaan' berarti dikalikan dua dari produksi bulan sebelumnya?",
+      "options": {
+        "A": "Produksi bulan ke-3 adalah 100 x 2^3.",
+        "B": "Total produksi selama 3 bulan adalah 100 + 100x2 + 100x2^2 + 100x2^3.",
+        "C": "Produksi bulan ke-3 adalah 100 x 3^2.",
+        "D": "Total produksi selama 3 bulan adalah 100 x 2^3.",
+        "E": "Produksi bulan ke-3 adalah 100 x 2 x 3."
+      },
+      "answer": "A",
+      "explanation": "**Analisis Pertumbuhan Eksponensial**\\nProduksi awal (bulan 0) adalah 100. Bulan 1: 100 x 2. Bulan 2: (100 x 2) x 2 = 100 x 2^2. Bulan 3: (100 x 2^2) x 2 = 100 x 2^3. Pilihan A secara akurat menyatakan produksi pada akhir bulan ke-3."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah simulasi pertumbuhan populasi ikan di kolam, jumlah ikan diasumsikan berlipat ganda setiap minggu. Jika jumlah awal ikan adalah 10 ekor, maka setelah 4 minggu, perkalian berulang yang menggambarkan jumlah ikan adalah 10 x 2 x 2 x 2 x 2.",
+      "question": "Bagaimana bentuk eksponen yang paling tepat untuk menyatakan jumlah ikan setelah 4 minggu?",
+      "options": {
+        "A": "10^4",
+        "B": "2^10",
+        "C": "10 x 4",
+        "D": "10 x 2^4",
+        "E": "4^10"
+      },
+      "answer": "D",
+      "explanation": "**Basis dan Eksponen**\\nJumlah awal adalah 10. Bilangan yang dikalikan berulang adalah 2 (pertumbuhan dua kali lipat). Pengulangan perkalian terjadi sebanyak 4 kali (selama 4 minggu). Jadi, bentuknya adalah 10 dikalikan dengan 2^4."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa sedang mengerjakan soal matematika tentang peluruhan radioaktif. Diketahui suatu zat meluruh menjadi setengahnya setiap hari. Jika massa awal zat adalah 80 gram, maka massa setelah 3 hari adalah 80 x (1/2) x (1/2) x (1/2).",
+      "question": "Manakah cara penulisan yang paling tepat menggunakan notasi eksponen untuk massa zat setelah 3 hari?",
+      "options": {
+        "A": "80 x (1/2)^3",
+        "B": "80^3 x (1/2)",
+        "C": "80 x 3 x (1/2)",
+        "D": "(1/2)^80",
+        "E": "80 x (3/2)"
+      },
+      "answer": "A",
+      "explanation": "**Penerapan Eksponen pada Peluruhan**\\nMassa awal adalah 80 gram. Peluruhan menjadi setengahnya setiap hari berarti dikalikan dengan 1/2. Proses ini terjadi selama 3 hari. Oleh karena itu, massa setelah 3 hari adalah 80 dikalikan dengan (1/2) sebanyak 3 kali, yaitu 80 x (1/2)^3."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik menggunakan algoritma untuk menghitung biaya pengiriman berdasarkan jarak. Biaya dasar adalah Rp10.000. Untuk setiap 5 km tambahan, biaya bertambah sebesar 20% dari biaya sebelumnya. Jika jarak pengiriman adalah 15 km.",
+      "question": "Manakah cara paling efisien untuk menghitung total biaya pengiriman jika jarak 15 km berarti ada 3 kali penambahan biaya 20% dari biaya sebelumnya?",
+      "options": {
+        "A": "10.000 + (0.20 x 10.000) x 3",
+        "B": "10.000 x (1 + 0.20)^3",
+        "C": "10.000 x (1.20)^15",
+        "D": "10.000 + 0.20 x 15",
+        "E": "10.000 x 3 x 1.20"
+      },
+      "answer": "B",
+      "explanation": "**Analisis Pertumbuhan Persentase**\\nBiaya awal adalah 10.000. Penambahan 20% berarti dikalikan dengan (1 + 0.20) atau 1.20. Karena penambahan terjadi 3 kali (untuk 15 km yang setara dengan 3 segmen 5 km), maka total biaya adalah 10.000 dikalikan dengan 1.20 sebanyak 3 kali, yaitu 10.000 x (1.20)^3."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah permainan, skor pemain dihitung dengan mengalikan skor awal dengan 3 sebanyak 4 kali. Jika skor awal adalah 5.",
+      "question": "Manakah notasi eksponen yang merepresentasikan skor akhir pemain tersebut?",
+      "options": {
+        "A": "5^4",
+        "B": "3^5",
+        "C": "5 x 3^4",
+        "D": "5 x 4 x 3",
+        "E": "4^5"
+      },
+      "answer": "C",
+      "explanation": "**Identifikasi Basis dan Eksponen**\\nSkor awal adalah 5. Bilangan yang dikalikan berulang adalah 3. Pengulangan perkalian terjadi sebanyak 4 kali. Jadi, skor akhir adalah skor awal dikalikan dengan 3 pangkat 4, yaitu 5 x 3^4."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengusaha UMKM ingin menghitung potensi keuntungan dari produk baru. Keuntungan diproyeksikan meningkat sebesar Rp 50.000 setiap bulan selama 6 bulan. Jika keuntungan awal adalah Rp 100.000.",
+      "question": "Bagaimana cara menghitung total keuntungan yang diperoleh setelah 6 bulan, jika peningkatan terjadi secara bertahap?",
+      "options": {
+        "A": "100.000 + 50.000 x 6",
+        "B": "100.000 x (1 + 50.000)^6",
+        "C": "100.000 x 6^50.000",
+        "D": "100.000 + 50.000^6",
+        "E": "100.000 x (6 x 50.000)"
+      },
+      "answer": "A",
+      "explanation": "**Aplikasi Aritmetika Dasar**\\nKeuntungan awal adalah Rp 100.000. Setiap bulan ada penambahan Rp 50.000. Selama 6 bulan, total penambahan adalah 50.000 dikalikan 6. Jadi, total keuntungan adalah keuntungan awal ditambah total penambahan: 100.000 + (50.000 x 6)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah desa berencana membangun fasilitas umum. Biaya pembangunan awal adalah Rp 500.000.000. Setiap tahun, biaya pembangunan diperkirakan naik sebesar 10% karena inflasi. Jika pembangunan memakan waktu 3 tahun.",
+      "question": "Manakah perhitungan yang paling tepat untuk memperkirakan total biaya pembangunan setelah 3 tahun, dengan mempertimbangkan kenaikan inflasi tahunan?",
+      "options": {
+        "A": "500.000.000 + (0.10 x 500.000.000) x 3",
+        "B": "500.000.000 x (1 + 0.10)^3",
+        "C": "500.000.000 x (1.10)^500.000.000",
+        "D": "500.000.000 x 3 x 0.10",
+        "E": "500.000.000 + 0.10 x 3"
+      },
+      "answer": "B",
+      "explanation": "**Evaluasi Dampak Inflasi**\\nBiaya awal adalah Rp 500.000.000. Kenaikan 10% setiap tahun berarti biaya dikalikan dengan (1 + 0.10) atau 1.10. Karena kenaikan terjadi selama 3 tahun, total biaya adalah biaya awal dikalikan dengan 1.10 sebanyak 3 kali, yaitu 500.000.000 x (1.10)^3."
+    }
+  ],
+  "metadata": {
+    "id": "22e75590-bed7-4a10-8d0f-98c4d846f47d",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:18:57Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Definisi Eksponen",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyatakan perkalian bilangan bulat berulang sebagai bilangan berpangkat (eksponen).",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2967,
+      "assistant": 2487,
+      "total": 6128,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

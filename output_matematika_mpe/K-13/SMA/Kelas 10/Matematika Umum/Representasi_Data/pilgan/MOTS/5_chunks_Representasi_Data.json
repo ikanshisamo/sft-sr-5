@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data | Target: MOTS\n\n--- MATERI ---\nPenyajian data merupakan elemen penting dalam mempelajari statistika. Penyajian data yang baik akan mempermudah pembacaan dan pengolahan informasi dari suatu populasi pengamatan. Salah satu representasi visual dasar yang sering digunakan untuk data tunggal berskala persentase atau proporsi adalah diagram lingkaran. Diagram lingkaran secara spesifik membagi sebuah luasan lingkaran penuh menjadi beberapa juring yang masing-masing merepresentasikan kategori data tertentu. Besaran sudut pusat atau persentase juring sebanding dengan frekuensi kemunculan kategori tersebut dibandingkan dengan keseluruhan total pengamatan. Penyajian visual menggunakan diagram ini sangat efektif untuk mengamati perbandingan proporsi antar kategori secara cepat dan intuitif.\n\nSelain diagram lingkaran, representasi visual lain yang sangat relevan untuk menampilkan kumpulan data tunggal diskret adalah diagram batang. Diagram batang merupakan suatu grafik berbentuk persegi panjang dengan lebar yang sama, yang dapat digambarkan secara vertikal maupun horizontal. Pada grafik ini, tinggi atau panjang dari setiap batang sebanding dengan nilai frekuensi atau kuantitas dari data pengamatan yang diwakilinya. Melalui penyajian diagram batang, proses pembandingan antar kategori data menjadi lebih terstruktur dan mudah diidentifikasi. Kita dapat menganalisis secara visual letak frekuensi tertinggi, frekuensi terendah, maupun mengamati fluktuasi serta perbedaan kuantitas secara langsung komparatif dari setiap variabel.\n\nApabila himpunan data yang diamati memiliki ukuran yang besar dan rentang nilai yang sangat bervariasi, penyajian sebagai data tunggal menjadi tidak efektif dan kurang efisien. Oleh karena itu, data perlu disederhanakan dengan mengelompokkannya ke dalam rentang interval kelas tertentu. Untuk membagi data menjadi beberapa kelas, kita menggunakan formula matematis yang dikenal sebagai aturan Sturgess, yaitu k = 1 + (3,3) × log n, di mana k adalah banyak kelas dan n adalah banyaknya data. Setelah didapatkan banyak kelas dan panjang kelas interval, data tersebut didistribusikan ke dalam tabel distribusi frekuensi. Tabel ini berfungsi merangkum kelompok data agar karakteristik sebaran populasi menjadi lebih sistematis.\n\nData berkelompok yang telah tersusun rapi di dalam tabel distribusi frekuensi selanjutnya dapat direpresentasikan secara visual menggunakan instrumen statistik yang disebut histogram. Secara sekilas, bentuk penyajian histogram terlihat sangat menyerupai diagram batang tegak. Namun, perbedaan mendasar di antara keduanya adalah balok-balok persegi panjang pada histogram selalu digambarkan saling berimpit atau tidak terputus-putus. Kerapatan antar balok ini mendeskripsikan sifat data yang kontinu pada batasan kelas-kelas interval. Pada konstruksi histogram, sumbu horizontal mewakili batas-batas interval kelas pengamatan, sementara sumbu vertikalnya merepresentasikan nilai frekuensi kemunculan tiap rentang kelas interval tersebut.\n\nHistogram merupakan jenis grafik batang yang spesifik digunakan untuk menampilkan distribusi data numerik yang telah disusun dalam rentang interval yang sama panjang. Penyajian data menggunakan histogram memberikan visualisasi yang sangat akurat untuk menganalisis pola sebaran, pemusatan, dan variabilitas dari suatu himpunan data yang berukuran besar. Berbeda dengan diagram batang yang memvisualisasikan kategori diskret secara terpisah, kelangsungan atau kontinuitas garis batas antar balok pada histogram memungkinkan pengamat untuk secara intuitif mendeteksi bentuk kemiringan kurva distribusi maupun keberadaan data pencilan atau anomali dalam tahap analisis data lanjutan.\n\n[ATP_ALIGNMENT]\nMenampilkan data secara visual menggunakan diagram lingkaran, batang, dan histogram secara tepat.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memproduksi 500 bungkus per hari. Data penjualan selama seminggu disajikan dalam diagram lingkaran. Jika 15% dari total penjualan adalah rasa original, berapa bungkus keripik rasa original yang terjual dalam seminggu?",
+      "question": "Berapa jumlah bungkus keripik rasa original yang terjual dalam seminggu?",
+      "options": {
+        "A": "50 bungkus",
+        "B": "75 bungkus",
+        "C": "100 bungkus",
+        "D": "125 bungkus",
+        "E": "150 bungkus"
+      },
+      "answer": "B",
+      "explanation": "**Perhitungan Penjualan Rasa Original**\\nTotal produksi per hari adalah 500 bungkus. Dalam seminggu (7 hari), total produksi adalah 500 \\\\times 7 = 3500 bungkus.\\nJika 15% dari total penjualan adalah rasa original, maka jumlahnya adalah 15% dari 3500 bungkus.\\n0.15 \\\\times 3500 = 525 bungkus.\\nNamun, stimulus menyatakan produksi per hari adalah 500 bungkus, dan diagram lingkaran merepresentasikan penjualan. Diasumsikan seluruh produksi terjual. Maka, 15% dari 500 bungkus per hari adalah 0.15 \\\\times 500 = 75 bungkus per hari. Dalam seminggu, 75 \\\\times 7 = 525 bungkus. Terdapat ambiguitas dalam stimulus. Mengasumsikan diagram lingkaran merepresentasikan proporsi dari total produksi harian yang terjual, maka 15% dari 500 bungkus adalah 75 bungkus."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah sekolah mengadakan survei minat siswa terhadap ekstrakurikuler. Hasilnya disajikan dalam diagram batang. Terdapat 120 siswa memilih basket, 90 siswa memilih pramuka, dan 60 siswa memilih KIR. Berapa persentase siswa yang memilih basket dari total siswa yang disurvei?",
+      "question": "Berapa persentase siswa yang memilih basket dari total siswa yang berpartisipasi dalam survei?",
+      "options": {
+        "A": "30%",
+        "B": "40%",
+        "C": "50%",
+        "D": "60%",
+        "E": "70%"
+      },
+      "answer": "B",
+      "explanation": "**Perhitungan Persentase Siswa Basket**\\nTotal siswa yang disurvei adalah jumlah siswa yang memilih basket, pramuka, dan KIR: 120 + 90 + 60 = 270 siswa.\\nPersentase siswa yang memilih basket dihitung dengan membagi jumlah siswa basket dengan total siswa, lalu dikalikan 100%: (120 / 270) \\\\times 100% = 44.44%."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data tinggi badan siswa kelas XII SMA Negeri 1 adalah sebagai berikut: 150, 155, 160, 165, 170, 155, 160, 165, 170, 150, 155, 160, 165, 170, 150, 155, 160, 165, 170, 150. Data ini akan disajikan dalam histogram.",
+      "question": "Jika data tinggi badan tersebut dikelompokkan menjadi 5 kelas, berapakah panjang interval kelas yang paling sesuai menggunakan aturan Sturgess?",
+      "options": {
+        "A": "3 cm",
+        "B": "4 cm",
+        "C": "5 cm",
+        "D": "6 cm",
+        "E": "7 cm"
+      },
+      "answer": "B",
+      "explanation": "**Perhitungan Panjang Interval Kelas**\\nJumlah data (n) adalah 20. Menggunakan aturan Sturgess, banyak kelas (k) = 1 + (3.3) \\\\times log(n).\\nk = 1 + (3.3) \\\\times log(20) \\\\approx 1 + (3.3) \\\\times 1.301 \\\\approx 1 + 4.293 \\\\approx 5.293. Dibulatkan menjadi 5 kelas.\\nRentang data (R) adalah nilai maksimum dikurangi nilai minimum: 170 - 150 = 20.\\nPanjang interval kelas (p) = R / k = 20 / 5 = 4."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik sepatu mencatat jumlah produksi sepatu selama 5 hari kerja. Data produksi adalah sebagai berikut: Hari Senin 100 pasang, Selasa 120 pasang, Rabu 110 pasang, Kamis 130 pasang, Jumat 140 pasang. Data ini akan disajikan dalam histogram.",
+      "question": "Jika data produksi sepatu ini disajikan dalam histogram, bagaimana interpretasi yang paling tepat mengenai tren produksi?",
+      "options": {
+        "A": "Produksi cenderung menurun setiap hari.",
+        "B": "Produksi stabil di angka 120 pasang per hari.",
+        "C": "Produksi menunjukkan tren peningkatan secara umum.",
+        "D": "Produksi berfluktuasi tanpa pola yang jelas.",
+        "E": "Produksi mencapai puncaknya di hari Rabu."
+      },
+      "answer": "C",
+      "explanation": "**Interpretasi Tren Produksi**\\nData produksi harian adalah 100, 120, 110, 130, 140. Jika divisualisasikan dalam histogram, batang-batang akan menunjukkan peningkatan dari 100 ke 120, sedikit turun ke 110, lalu naik lagi ke 130 dan 140. Secara keseluruhan, nilai-nilai akhir lebih tinggi dari nilai awal, menunjukkan tren peningkatan."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko buku mencatat jumlah penjualan novel selama satu bulan. Data penjualan per minggu adalah: Minggu 1: 80 eksemplar, Minggu 2: 100 eksemplar, Minggu 3: 90 eksemplar, Minggu 4: 110 eksemplar. Data ini akan disajikan dalam diagram batang.",
+      "question": "Manakah pernyataan yang paling akurat menggambarkan perbandingan penjualan antar minggu berdasarkan data tersebut?",
+      "options": {
+        "A": "Penjualan di Minggu 2 dan Minggu 4 sama.",
+        "B": "Penjualan di Minggu 3 lebih tinggi dari Minggu 1.",
+        "C": "Penjualan di Minggu 4 adalah yang tertinggi.",
+        "D": "Penjualan di Minggu 1 adalah yang terendah.",
+        "E": "Semua pernyataan A, C, dan D benar."
+      },
+      "answer": "E",
+      "explanation": "**Analisis Perbandingan Penjualan**\\nMinggu 1: 80, Minggu 2: 100, Minggu 3: 90, Minggu 4: 110.\\nPernyataan A: Penjualan Minggu 2 (100) tidak sama dengan Minggu 4 (110). Pernyataan A salah.\\nPernyataan B: Penjualan Minggu 3 (90) lebih tinggi dari Minggu 1 (80). Pernyataan B benar.\\nPernyataan C: Penjualan Minggu 4 (110) adalah yang tertinggi. Pernyataan C benar.\\nPernyataan D: Penjualan Minggu 1 (80) adalah yang terendah. Pernyataan D benar.\\nKarena B, C, dan D benar, maka E adalah jawaban yang paling akurat."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data hasil panen padi di sebuah desa selama 5 tahun disajikan dalam tabel distribusi frekuensi. Interval kelas pertama adalah 50-60 ton, kelas kedua 61-70 ton, dan seterusnya. Frekuensi untuk setiap kelas adalah 8, 12, 15, 10, 5.",
+      "question": "Jika data panen padi ini disajikan dalam histogram, bagaimana bentuk distribusi frekuensi yang paling mungkin terlihat?",
+      "options": {
+        "A": "Miring ke kanan (positif skew).",
+        "B": "Miring ke kiri (negatif skew).",
+        "C": "Simetris.",
+        "D": "Bimodal (memiliki dua puncak).",
+        "E": "Uniform (datar)."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Bentuk Distribusi Frekuensi**\\nFrekuensi kelas adalah 8, 12, 15, 10, 5. Frekuensi tertinggi (15) berada di kelas kedua dari kiri. Frekuensi menurun ke kanan (10, 5) dan juga menurun ke kiri dari puncak (8). Puncak distribusi berada di sebelah kiri tengah, dengan ekor yang memanjang ke kanan. Ini menunjukkan distribusi miring ke kiri (negatif skew)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan transportasi online menganalisis data jumlah penumpang harian selama satu bulan. Data mentah berjumlah 30 titik data. Perusahaan ingin menyajikan data ini dalam histogram untuk melihat pola sebaran.",
+      "question": "Sebelum membuat histogram, data mentah tersebut perlu dikelompokkan. Berapa banyak kelas yang disarankan menggunakan aturan Sturgess untuk 30 titik data?",
+      "options": {
+        "A": "3 kelas",
+        "B": "4 kelas",
+        "C": "5 kelas",
+        "D": "6 kelas",
+        "E": "7 kelas"
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Banyak Kelas (Aturan Sturgess)**\\nJumlah data (n) adalah 30.\\nRumus aturan Sturgess: k = 1 + (3.3) \\\\times log(n).\\nk = 1 + (3.3) \\\\times log(30) \\\\approx 1 + (3.3) \\\\times 1.477 \\\\approx 1 + 4.874 \\\\approx 5.874.\\nDibulatkan menjadi 6 kelas. Namun, pilihan yang paling mendekati dan sering digunakan dalam praktik adalah 5 atau 6. Jika kita memilih 5 kelas, itu juga merupakan pilihan yang masuk akal untuk 30 data."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data penjualan buku di sebuah toko selama seminggu disajikan dalam diagram lingkaran. Kategori buku meliputi Fiksi (40%), Non-Fiksi (35%), Anak-anak (15%), dan Referensi (10%). Total penjualan adalah 200 buku.",
+      "question": "Berapa jumlah buku kategori Referensi yang terjual dalam seminggu?",
+      "options": {
+        "A": "10 buku",
+        "B": "15 buku",
+        "C": "20 buku",
+        "D": "25 buku",
+        "E": "30 buku"
+      },
+      "answer": "C",
+      "explanation": "**Perhitungan Penjualan Buku Referensi**\\nPersentase penjualan buku Referensi adalah 10%.\\nTotal penjualan buku adalah 200 eksemplar.\\nJumlah buku Referensi yang terjual = 10% dari 200.\\n0.10 \\\\times 200 = 20 buku."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah survei dilakukan terhadap 100 responden mengenai preferensi warna. Hasilnya adalah Merah: 30, Biru: 25, Hijau: 20, Kuning: 15, Ungu: 10. Data ini akan disajikan dalam diagram batang.",
+      "question": "Jika diagram batang dibuat secara vertikal, manakah pernyataan yang paling tepat mengenai perbandingan frekuensi?",
+      "options": {
+        "A": "Frekuensi warna Merah sama dengan Biru.",
+        "B": "Frekuensi warna Hijau lebih rendah dari Kuning.",
+        "C": "Frekuensi warna Biru adalah yang tertinggi kedua.",
+        "D": "Frekuensi warna Ungu adalah yang terendah.",
+        "E": "Semua pernyataan C dan D benar."
+      },
+      "answer": "E",
+      "explanation": "**Analisis Perbandingan Frekuensi Warna**\\nFrekuensi: Merah (30), Biru (25), Hijau (20), Kuning (15), Ungu (10).\\nPernyataan A: Merah (30) tidak sama dengan Biru (25). Salah.\\nPernyataan B: Hijau (20) lebih tinggi dari Kuning (15). Salah.\\nPernyataan C: Biru (25) adalah yang tertinggi kedua setelah Merah (30). Benar.\\nPernyataan D: Ungu (10) adalah yang terendah. Benar.\\nKarena C dan D benar, maka E adalah jawaban yang paling tepat."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data tinggi badan 25 siswa kelas XI disajikan dalam tabel distribusi frekuensi dengan 5 kelas interval. Kelas-kelas tersebut adalah 150-153, 154-157, 158-161, 162-165, 166-169. Frekuensi masing-masing kelas adalah 3, 7, 8, 5, 2.",
+      "question": "Jika data tinggi badan ini divisualisasikan menggunakan histogram, bagaimana interpretasi yang paling mungkin mengenai sebaran tinggi badan siswa?",
+      "options": {
+        "A": "Sebagian besar siswa memiliki tinggi badan di bawah rata-rata.",
+        "B": "Sebagian besar siswa memiliki tinggi badan di atas rata-rata.",
+        "C": "Tinggi badan siswa terdistribusi merata di semua rentang.",
+        "D": "Terdapat dua kelompok siswa dengan tinggi badan yang berbeda secara signifikan.",
+        "E": "Tinggi badan siswa cenderung terkonsentrasi di rentang tengah."
+      },
+      "answer": "E",
+      "explanation": "**Interpretasi Sebaran Tinggi Badan**\\nFrekuensi kelas adalah 3, 7, 8, 5, 2. Frekuensi tertinggi (8) berada di kelas ketiga (158-161 cm), yang merupakan rentang tengah dari data. Frekuensi menurun di kelas-kelas sebelum dan sesudah kelas tengah. Ini menunjukkan bahwa tinggi badan siswa paling banyak terkonsentrasi di rentang tengah."
+    }
+  ],
+  "metadata": {
+    "id": "bf200c25-9ed7-402a-ae17-ad521f2bd521",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:03:31Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data",
+    "task_type": "pilgan",
+    "level": "MOTS",
+    "source_file": "Matematika_5_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menampilkan data secara visual menggunakan diagram lingkaran, batang, dan histogram secara tepat.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3040,
+      "assistant": 3204,
+      "total": 6917,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

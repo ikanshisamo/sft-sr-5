@@ -1,0 +1,103 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\",\n      \"expected_reasoning\": [\n        \"single-step reasoning\",\n        \"direct concept understanding\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: LOTS\n\n--- MATERI ---\nDalam teori peluang, aturan penjumlahan secara khusus digunakan untuk menentukan peluang gabungan dari dua kejadian atau lebih, yang di dalam persoalan lazim ditandai dengan penggunaan kata hubung 'atau'. Konsep konseptual yang pertama dipelajari adalah kejadian saling lepas. Dua buah kejadian, misalnya kejadian A dan kejadian B, dikatakan saling lepas secara mutlak apabila kedua kejadian tersebut tidak mungkin terjadi secara bersamaan pada satu kali percobaan. Dipandang dari sudut pandang teori himpunan, irisan antara kejadian A dan kejadian B adalah himpunan kosong. Oleh karena itu, untuk menghitung peluang gabungan dua kejadian yang saling lepas, langkah penyelesaiannya hanyalah menjumlahkan peluang dari masing-masing kejadian tersebut. Secara matematis, aturan penjumlahan peluang untuk kejadian saling lepas diformulasikan secara ringkas sebagai P(A ∪ B) = P(A) + P(B).\n\nBerbeda halnya dengan prinsip kejadian saling lepas, adakalanya dua buah kejadian sangat mungkin terjadi secara bersamaan atau beririsan di dalam satu ruang sampel. Kondisi probabilitas seperti ini diklasifikasikan sebagai kejadian tidak saling lepas. Pada kejadian tidak saling lepas, terdapat irisan nyata antara kejadian A dan kejadian B, yang mengindikasikan keberadaan elemen-elemen yang menjadi anggota himpunan dari kedua kejadian tersebut secara sekaligus. Apabila kita menghitung peluang gabungannya hanya dengan menjumlahkan P(A) dan P(B), maka elemen yang berada pada area irisan tersebut akan mengalami penghitungan ganda (terhitung dua kali). Oleh sebab itu, perhitungan yang presisi menuntut agar jumlah peluang kejadian A dan kejadian B dikurangi dengan besaran peluang irisan kedua kejadian tersebut. Aturan penjumlahan yang ekuivalen untuk keadaan ini dituliskan melalui persamaan P(A ∪ B) = P(A) + P(B) - P(A ∩ B).\n\nKeberhasilan dalam mengaplikasikan rumusan aturan penjumlahan probabilitas bertumpu pada ketajaman analisis dalam mengidentifikasi ada atau tidaknya irisan antarkejadian. Sebagai ilustrasi kontekstual, dalam eksperimen pengambilan satu kartu secara acak dari satu set kartu bridge standar, peluang terambilnya kartu As atau kartu King murni merepresentasikan kejadian saling lepas; hal ini dikarenakan mustahil terdapat kartu yang berwujud As sekaligus King. Sebaliknya, probabilitas terambilnya kartu bergambar Hati atau kartu bernilai As tergolong ke dalam kejadian tidak saling lepas. Kondisi ini terjadi karena di dalam ruang sampel tersebut secara faktual terdapat irisan kejadian, yaitu keberadaan selembar kartu As Hati. Pemahaman komprehensif dalam membedakan kedua karakteristik kejadian ini merupakan pilar esensial untuk meminimalisasi kesalahan logika perhitungan probabilitas pada kasus majemuk.\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Di sebuah kantin sekolah, terdapat 20 siswa yang menyukai nasi goreng dan 15 siswa yang menyukai mie ayam. Sebanyak 7 siswa menyukai keduanya. Jika seorang siswa dipilih secara acak, tentukan peluang siswa tersebut menyukai nasi goreng atau mie ayam.",
+      "question": "Berdasarkan informasi kantin sekolah, berapakah peluang seorang siswa yang dipilih secara acak menyukai nasi goreng atau mie ayam?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah siswa yang menyukai nasi goreng.",
+        "Mengidentifikasi jumlah siswa yang menyukai mie ayam.",
+        "Mengidentifikasi jumlah siswa yang menyukai keduanya.",
+        "Menghitung peluang gabungan dengan benar."
+      ],
+      "explanation": "**Perhitungan Peluang Gabungan**\\nUntuk menghitung peluang siswa menyukai nasi goreng atau mie ayam, kita menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena ada siswa yang menyukai keduanya.\\n\\nDiketahui:\\nJumlah siswa menyukai nasi goreng (A) = 20\\nJumlah siswa menyukai mie ayam (B) = 15\\nJumlah siswa menyukai keduanya (A ∩ B) = 7\\nTotal siswa = 20 + 15 - 7 = 28 (Ini adalah jumlah siswa yang menyukai salah satu atau keduanya, bukan total siswa di kantin jika ada yang tidak menyukai keduanya)\\n\\nJika diasumsikan total siswa yang disurvei adalah 20 + 15 = 35 (dengan asumsi ada duplikasi), maka:\\nP(A ∪ B) = P(A) + P(B) - P(A ∩ B)\\nP(A ∪ B) = \\\\frac{20}{35} + \\\\frac{15}{35} - \\\\frac{7}{35}\\\\nP(A ∪ B) = \\\\frac{20 + 15 - 7}{35}\\\\nP(A ∪ B) = \\\\frac{28}{35}\\\\nP(A ∪ B) = \\\\frac{4}{5}\\\\n\\nJika total siswa di kantin adalah 20 + 15 - 7 = 28 (yaitu hanya mereka yang menyukai salah satu atau keduanya), maka:\\nP(A ∪ B) = \\\\frac{20}{28} + \\\\frac{15}{28} - \\\\frac{7}{28}\\\\nP(A ∪ B) = \\\\frac{20 + 15 - 7}{28}\\\\nP(A ∪ B) = \\\\frac{28}{28}\\\\nP(A ∪ B) = 1\\\\n\\nAsumsi yang paling masuk akal adalah total siswa yang disurvei adalah 35 (jumlah total pilihan makanan).\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kotak terdapat 10 bola merah dan 5 bola biru. Jika diambil satu bola secara acak, tentukan peluang terambilnya bola merah atau bola biru.",
+      "question": "Berapakah peluang terambilnya bola merah atau bola biru jika diambil satu bola secara acak dari kotak tersebut?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah bola merah.",
+        "Mengidentifikasi jumlah bola biru.",
+        "Menentukan apakah kejadian saling lepas atau tidak.",
+        "Menghitung peluang gabungan dengan benar."
+      ],
+      "explanation": "**Perhitungan Peluang Gabungan**\\nKejadian terambilnya bola merah dan terambilnya bola biru dalam satu kali pengambilan adalah kejadian saling lepas, karena satu bola tidak mungkin berwarna merah sekaligus biru.\\n\\nDiketahui:\\nJumlah bola merah (A) = 10\\nJumlah bola biru (B) = 5\\nTotal bola = 10 + 5 = 15\\n\\nP(A ∪ B) = P(A) + P(B)\\\\nP(A ∪ B) = \\\\frac{10}{15} + \\\\frac{5}{15}\\\\nP(A ∪ B) = \\\\frac{10 + 5}{15}\\\\nP(A ∪ B) = \\\\frac{15}{15}\\\\nP(A ∪ B) = 1\\\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah dadu bersisi enam dilempar satu kali. Tentukan peluang munculnya mata dadu ganjil atau mata dadu lebih dari 4.",
+      "question": "Berapakah peluang munculnya mata dadu ganjil atau mata dadu lebih dari 4 pada pelemparan satu dadu?",
+      "rubric_points": [
+        "Mengidentifikasi mata dadu ganjil.",
+        "Mengidentifikasi mata dadu lebih dari 4.",
+        "Menentukan irisan antara kedua kejadian.",
+        "Menghitung peluang gabungan dengan benar."
+      ],
+      "explanation": "**Perhitungan Peluang Gabungan**\\nKejadian muncul mata dadu ganjil dan kejadian muncul mata dadu lebih dari 4 adalah kejadian tidak saling lepas karena ada mata dadu yang memenuhi kedua kondisi tersebut.\\n\\nDiketahui:\\nRuang sampel (S) = {1, 2, 3, 4, 5, 6}\\nKejadian mata dadu ganjil (A) = {1, 3, 5}\\nP(A) = \\\\frac{3}{6}\\\\nKejadian mata dadu lebih dari 4 (B) = {5, 6}\\nP(B) = \\\\frac{2}{6}\\\\nIrisan kejadian A dan B (A ∩ B) = {5}\\nP(A ∩ B) = \\\\frac{1}{6}\\\\n\\nP(A ∪ B) = P(A) + P(B) - P(A ∩ B)\\\\nP(A ∪ B) = \\\\frac{3}{6} + \\\\frac{2}{6} - \\\\frac{1}{6}\\\\nP(A ∪ B) = \\\\frac{3 + 2 - 1}{6}\\\\nP(A ∪ B) = \\\\frac{4}{6}\\\\nP(A ∪ B) = \\\\frac{2}{3}\\\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dari 30 siswa di kelas XI IPA 2, terdapat 12 siswa yang mengikuti ekstrakurikuler basket dan 10 siswa yang mengikuti ekstrakurikuler voli. Sebanyak 5 siswa mengikuti kedua ekstrakurikuler tersebut. Jika seorang siswa dipilih secara acak, tentukan peluang siswa tersebut mengikuti basket atau voli.",
+      "question": "Berapakah peluang seorang siswa yang dipilih secara acak dari kelas XI IPA 2 mengikuti basket atau voli?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah siswa yang mengikuti basket.",
+        "Mengidentifikasi jumlah siswa yang mengikuti voli.",
+        "Mengidentifikasi jumlah siswa yang mengikuti keduanya.",
+        "Menghitung peluang gabungan dengan benar."
+      ],
+      "explanation": "**Perhitungan Peluang Gabungan**\\nKejadian siswa mengikuti basket dan siswa mengikuti voli adalah kejadian tidak saling lepas karena ada siswa yang mengikuti keduanya.\\n\\nDiketahui:\\nJumlah siswa mengikuti basket (A) = 12\\nJumlah siswa mengikuti voli (B) = 10\\nJumlah siswa mengikuti keduanya (A ∩ B) = 5\\nTotal siswa di kelas = 30\\n\\nP(A ∪ B) = P(A) + P(B) - P(A ∩ B)\\\\nP(A ∪ B) = \\\\frac{12}{30} + \\\\frac{10}{30} - \\\\frac{5}{30}\\\\nP(A ∪ B) = \\\\frac{12 + 10 - 5}{30}\\\\nP(A ∪ B) = \\\\frac{17}{30}\\\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kelompok arisan yang terdiri dari 50 ibu-ibu, 25 ibu memilih nomor undian ganjil dan 20 ibu memilih nomor undian genap. Jika seorang ibu dipilih secara acak, tentukan peluang ibu tersebut memilih nomor ganjil atau nomor genap.",
+      "question": "Berapakah peluang seorang ibu yang dipilih secara acak dari kelompok arisan memilih nomor ganjil atau nomor genap?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah ibu yang memilih nomor ganjil.",
+        "Mengidentifikasi jumlah ibu yang memilih nomor genap.",
+        "Menentukan apakah kejadian saling lepas atau tidak.",
+        "Menghitung peluang gabungan dengan benar."
+      ],
+      "explanation": "**Perhitungan Peluang Gabungan**\\nKejadian seorang ibu memilih nomor ganjil dan memilih nomor genap dalam satu kali pemilihan nomor undian adalah kejadian saling lepas, karena satu nomor undian tidak mungkin ganjil sekaligus genap.\\n\\nDiketahui:\\nJumlah ibu memilih nomor ganjil (A) = 25\\nJumlah ibu memilih nomor genap (B) = 20\\nTotal ibu dalam kelompok = 50\\n\\nP(A ∪ B) = P(A) + P(B)\\\\nP(A ∪ B) = \\\\frac{25}{50} + \\\\frac{20}{50}\\\\nP(A ∪ B) = \\\\frac{25 + 20}{50}\\\\nP(A ∪ B) = \\\\frac{45}{50}\\\\nP(A ∪ B) = \\\\frac{9}{10}\\\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "b1ce00d6-0bd1-4a09-b317-46c13a2d14ff",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:17:38Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "essay",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1813,
+      "assistant": 2061,
+      "total": 4547,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

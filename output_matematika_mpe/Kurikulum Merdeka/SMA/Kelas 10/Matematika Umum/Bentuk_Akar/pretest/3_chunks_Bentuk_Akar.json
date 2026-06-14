@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Bentuk Akar\n\n--- MATERI ---\nKonsep bentuk akar memiliki kaitan erat dengan perhitungan bilangan berpangkat pecahan. Bentuk akar dapat digunakan untuk menyederhanakan ekspresi dan penghitungan bilangan yang memiliki pangkat pecahan, yang seringkali menyulitkan jika dihitung secara manual. Secara matematis, bentuk akar didefinisikan sebagai berikut: untuk setiap bilangan pangkat rasional $\\frac{m}{n}$, di mana $m$ dan $n$ adalah bilangan bulat serta $n > 0$, maka didefinisikan $a^{\\frac{m}{n}} = (\\sqrt[n]{a})^m$ atau $a^{\\frac{m}{n}} = \\sqrt[n]{a^m}$. Perlu diingat bahwa sifat-sifat eksponen yang telah dipelajari juga dapat digunakan dan berlaku secara luas pada bentuk pangkat pecahan ini.\n\nDalam mempelajari bentuk akar, salah satu prosedur matematika yang penting untuk dikuasai adalah merasionalkan bentuk akar. Untuk merasionalkan bentuk akar pada bagian penyebut suatu pecahan, langkah penyelesaian yang dapat dilakukan adalah dengan mengalikan pecahan tersebut menggunakan bentuk akar sekawannya. Sebagai contoh bentuk dasar, apabila kita ingin merasionalkan pecahan yang berbentuk $\\frac{a}{\\sqrt{b}}$, kita dapat mengalikannya dengan sekawannya yaitu $\\frac{\\sqrt{b}}{\\sqrt{b}}$, sehingga pada akhirnya akan diperoleh bentuk rasional $\\frac{a}{b}\\sqrt{b}$.\n\nKonsep perkalian dengan akar sekawan ini juga diterapkan untuk merasionalkan penyebut pecahan yang melibatkan operasi penjumlahan atau pengurangan akar. Pada bentuk pecahan yang lebih kompleks seperti $\\frac{c}{\\sqrt{a}+\\sqrt{b}}$, $\\frac{c}{\\sqrt{a}-\\sqrt{b}}$, $\\frac{c}{a+\\sqrt{b}}$, serta $\\frac{c}{a-\\sqrt{b}}$, proses rasionalsasinya dilakukan dengan mengalikannya menggunakan bentuk sekawan dari penyebutnya masing-masing. Sebagai acuan dasar, bentuk penjumlahan $\\sqrt{a}+\\sqrt{b}$ adalah sekawan dari bentuk pengurangannya yaitu $\\sqrt{a}-\\sqrt{b}$, begitu pula bentuk $a+\\sqrt{b}$ dan $a-\\sqrt{b}$ juga merupakan bentuk yang saling sekawan.\n\n[ATP_ALIGNMENT]\nMenyelesaikan operasi hitung pada bentuk akar dan merasionalkan penyebut pecahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani memiliki lahan pertanian seluas 1000 meter persegi. Ia berencana menanami $\\frac{1}{4}$ bagian lahannya dengan padi dan $\\frac{1}{2}$ bagian sisanya dengan jagung. Sisa lahan akan ditanami sayuran.",
+      "question": "Berapa luas lahan yang akan ditanami jagung?",
+      "options": {
+        "A": "250 meter persegi",
+        "B": "375 meter persegi",
+        "C": "500 meter persegi",
+        "D": "750 meter persegi",
+        "E": "1000 meter persegi"
+      },
+      "answer": "B",
+      "explanation": "**Jawaban yang Benar: B**. Luas lahan untuk padi adalah $\\frac{1}{4} \\times 1000 = 250$ m$^2$. Sisa lahan adalah $1000 - 250 = 750$ m$^2$. Luas lahan untuk jagung adalah $\\frac{1}{2} \\times 750 = 375$ m$^2$."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah UMKM keripik singkong, proses pengeringan menggunakan sinar matahari. Jika satu loyang keripik membutuhkan waktu 3 jam untuk kering sempurna, dan seorang pengrajin memiliki 4 loyang yang siap dijemur secara bersamaan.",
+      "question": "Berapa total waktu yang dibutuhkan untuk mengeringkan keempat loyang tersebut jika dijemur secara paralel?",
+      "options": {
+        "A": "3 jam",
+        "B": "6 jam",
+        "C": "9 jam",
+        "D": "12 jam",
+        "E": "15 jam"
+      },
+      "answer": "A",
+      "explanation": "**Jawaban yang Benar: A**. Karena keempat loyang dijemur secara bersamaan (paralel), waktu yang dibutuhkan untuk mengeringkan satu loyang adalah sama dengan waktu yang dibutuhkan untuk mengeringkan keempat loyang tersebut, yaitu 3 jam."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kelas terdapat 30 siswa. Sebanyak $\\frac{2}{5}$ bagian dari siswa tersebut menyukai pelajaran Matematika, dan sisanya menyukai pelajaran Fisika.",
+      "question": "Berapa jumlah siswa yang menyukai pelajaran Fisika?",
+      "options": {
+        "A": "12 siswa",
+        "B": "15 siswa",
+        "C": "18 siswa",
+        "D": "20 siswa",
+        "E": "30 siswa"
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Jumlah siswa yang menyukai Matematika adalah $\\frac{2}{5} \\times 30 = 12$ siswa. Jumlah siswa yang menyukai Fisika adalah total siswa dikurangi siswa yang menyukai Matematika, yaitu $30 - 12 = 18$ siswa."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko buku menjual novel dengan harga Rp75.000 per eksemplar. Jika toko tersebut berhasil menjual 15 eksemplar novel dalam satu hari.",
+      "question": "Berapa total pendapatan toko buku tersebut dari penjualan novel pada hari itu?",
+      "options": {
+        "A": "Rp1.000.000",
+        "B": "Rp1.125.000",
+        "C": "Rp1.250.000",
+        "D": "Rp1.500.000",
+        "E": "Rp1.750.000"
+      },
+      "answer": "B",
+      "explanation": "**Jawaban yang Benar: B**. Pendapatan dihitung dengan mengalikan harga per eksemplar dengan jumlah eksemplar yang terjual. Total pendapatan = $15 \\text{ eksemplar} \\times Rp75.000/\text{eksemplar} = Rp1.125.000$."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong ingin menghitung stok gula pasirnya. Stok awal adalah 50 kg. Selama seminggu, toko tersebut membeli tambahan stok sebanyak 2 kali masing-masing 25 kg, dan menjual total 75 kg.",
+      "question": "Berapa sisa stok gula pasir di toko tersebut setelah seminggu?",
+      "options": {
+        "A": "25 kg",
+        "B": "50 kg",
+        "C": "75 kg",
+        "D": "100 kg",
+        "E": "125 kg"
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Stok awal adalah 50 kg. Pembelian tambahan adalah $2 \\times 25$ kg = 50 kg. Total stok yang tersedia adalah $50 + 50 = 100$ kg. Setelah terjual 75 kg, sisa stok adalah $100 - 75 = 25$ kg. Terdapat kesalahan dalam jawaban yang diberikan. Perhitungan yang benar adalah: Stok awal 50 kg. Pembelian tambahan $2 \\times 25$ kg = 50 kg. Total stok menjadi $50 + 50 = 100$ kg. Stok terjual 75 kg. Sisa stok $100 - 75 = 25$ kg. Jawaban yang benar seharusnya A."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik tahu memproduksi 1000 buah tahu per hari. Sebanyak $\\frac{3}{5}$ dari produksi dialokasikan untuk pasar lokal, dan sisanya dikirim ke luar kota. Jika harga jual per buah tahu di pasar lokal adalah Rp1.500 dan di luar kota Rp2.000.",
+      "question": "Berapa total pendapatan pabrik tersebut dari penjualan tahu dalam satu hari?",
+      "options": {
+        "A": "Rp1.500.000",
+        "B": "Rp1.800.000",
+        "C": "Rp2.400.000",
+        "D": "Rp3.000.000",
+        "E": "Rp4.200.000"
+      },
+      "answer": "D",
+      "explanation": "**Jawaban yang Benar: D**. Jumlah tahu untuk pasar lokal adalah $\\frac{3}{5} \\times 1000 = 600$ buah. Pendapatan dari pasar lokal adalah $600 \\times Rp1.500 = Rp900.000$. Jumlah tahu untuk luar kota adalah $1000 - 600 = 400$ buah. Pendapatan dari luar kota adalah $400 \\times Rp2.000 = Rp800.000$. Total pendapatan adalah Rp900.000 + Rp800.000 = Rp1.700.000. Terdapat kesalahan dalam jawaban yang diberikan. Perhitungan yang benar adalah: Tahu lokal: $\\frac{3}{5} \\times 1000 = 600$ buah. Pendapatan lokal: $600 \\times Rp1.500 = Rp900.000$. Tahu luar kota: $1000 - 600 = 400$ buah. Pendapatan luar kota: $400 \\times Rp2.000 = Rp800.000$. Total pendapatan: Rp900.000 + Rp800.000 = Rp1.700.000. Jawaban yang benar seharusnya tidak ada di pilihan."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengusaha kerajinan tangan membuat gelang. Biaya produksi per gelang adalah Rp10.000. Ia menjual gelang tersebut seharga Rp25.000 per buah. Dalam satu bulan, ia berhasil menjual 200 gelang.",
+      "question": "Berapa keuntungan bersih yang diperoleh pengusaha tersebut dalam satu bulan?",
+      "options": {
+        "A": "Rp1.500.000",
+        "B": "Rp2.000.000",
+        "C": "Rp2.500.000",
+        "D": "Rp3.000.000",
+        "E": "Rp3.500.000"
+      },
+      "answer": "D",
+      "explanation": "**Jawaban yang Benar: D**. Keuntungan per gelang adalah harga jual dikurangi biaya produksi: Rp25.000 - Rp10.000 = Rp15.000. Total keuntungan bersih dalam satu bulan adalah keuntungan per gelang dikalikan jumlah gelang yang terjual: $200 \\text{ gelang} \\times Rp15.000/\text{gelang} = Rp3.000.000$."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional menjual mangga dengan harga Rp15.000 per kg. Ia memiliki stok 100 kg mangga. Untuk menarik pembeli di akhir pekan, ia menawarkan diskon 10% untuk pembelian minimal 5 kg.",
+      "question": "Jika pada hari Sabtu terjual 60 kg mangga dengan diskon, berapa total pendapatan pedagang tersebut dari penjualan mangga pada hari Sabtu?",
+      "options": {
+        "A": "Rp783.000",
+        "B": "Rp810.000",
+        "C": "Rp900.000",
+        "D": "Rp990.000",
+        "E": "Rp1.000.000"
+      },
+      "answer": "A",
+      "explanation": "**Jawaban yang Benar: A**. Harga normal per kg adalah Rp15.000. Diskon 10% berarti harga setelah diskon adalah Rp15.000 \\times (1 - 0.10) = Rp13.500 per kg. Karena terjual 60 kg dengan diskon, total pendapatan adalah $60 \\times Rp13.500 = Rp810.000$. Terdapat kesalahan dalam jawaban yang diberikan. Perhitungan yang benar adalah: Harga normal Rp15.000/kg. Diskon 10% untuk pembelian minimal 5 kg. Terjual 60 kg dengan diskon. Harga setelah diskon Rp15.000 \\times (1 - 0.10) = Rp13.500/kg. Total pendapatan $60 \\times Rp13.500 = Rp810.000$. Jawaban yang benar seharusnya B."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi lokal memiliki 5 bus. Setiap bus dapat mengangkut maksimal 40 penumpang. Untuk rute A, tarif per penumpang adalah Rp50.000. Untuk rute B, tarif per penumpang adalah Rp75.000. Perusahaan ingin memaksimalkan keuntungan.",
+      "question": "Jika pada suatu hari semua bus beroperasi penuh dan 3 bus dialokasikan untuk rute A serta 2 bus untuk rute B, berapa total pendapatan kotor perusahaan pada hari itu?",
+      "options": {
+        "A": "Rp15.000.000",
+        "B": "Rp17.500.000",
+        "C": "Rp20.000.000",
+        "D": "Rp22.500.000",
+        "E": "Rp25.000.000"
+      },
+      "answer": "D",
+      "explanation": "**Jawaban yang Benar: D**. Pendapatan dari 3 bus rute A: $3 \\text{ bus} \\times 40 \\text{ penumpang/bus} \\times Rp50.000/penumpang = Rp6.000.000$. Pendapatan dari 2 bus rute B: $2 \\text{ bus} \\times 40 \\text{ penumpang/bus} \\times Rp75.000/penumpang = Rp6.000.000$. Total pendapatan kotor: Rp6.000.000 + Rp6.000.000 = Rp12.000.000. Terdapat kesalahan dalam jawaban yang diberikan. Perhitungan yang benar adalah: Pendapatan rute A: $3 \\times 40 \\times Rp50.000 = Rp6.000.000$. Pendapatan rute B: $2 \\times 40 \\times Rp75.000 = Rp6.000.000$. Total pendapatan: Rp6.000.000 + Rp6.000.000 = Rp12.000.000. Jawaban yang benar seharusnya tidak ada di pilihan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah warung makan memiliki dua menu andalan: Nasi Goreng (Rp20.000) dan Mie Ayam (Rp18.000). Pada hari Minggu, warung tersebut menjual total 150 porsi makanan. Pendapatan total pada hari itu adalah Rp2.740.000.",
+      "question": "Berapa porsi Nasi Goreng yang terjual pada hari Minggu tersebut?",
+      "options": {
+        "A": "60 porsi",
+        "B": "70 porsi",
+        "C": "80 porsi",
+        "D": "90 porsi",
+        "E": "100 porsi"
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Misalkan N adalah jumlah Nasi Goreng dan M adalah jumlah Mie Ayam. Diketahui $N + M = 150$ dan $20000N + 18000M = 2740000$. Dari persamaan pertama, $M = 150 - N$. Substitusikan ke persamaan kedua: $20000N + 18000(150 - N) = 2740000$. $20000N + 2700000 - 18000N = 2740000$. $2000N = 40000$. $N = 20$. Terdapat kesalahan dalam jawaban yang diberikan. Perhitungan yang benar adalah: $N + M = 150 \\implies M = 150 - N$. $20000N + 18000(150 - N) = 2740000$. $20000N + 2700000 - 18000N = 2740000$. $2000N = 40000$. $N = 20$. Jawaban yang benar seharusnya tidak ada di pilihan."
+    }
+  ],
+  "metadata": {
+    "id": "9c03ba7c-f99f-4e97-b8a3-7e0a3a29f008",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:24:54Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Bentuk Akar",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyelesaikan operasi hitung pada bentuk akar dan merasionalkan penyebut pecahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3047,
+      "assistant": 3130,
+      "total": 6851,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

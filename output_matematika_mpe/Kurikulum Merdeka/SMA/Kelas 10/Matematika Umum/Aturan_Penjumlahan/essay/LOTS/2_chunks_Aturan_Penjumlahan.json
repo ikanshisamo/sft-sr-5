@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\",\n      \"expected_reasoning\": [\n        \"single-step reasoning\",\n        \"direct concept understanding\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: LOTS\n\n--- MATERI ---\nDalam matematika peluang, kata \"atau\" berarti \"salah satu atau kedua-duanya\". Hal ini sangat berkaitan dengan aturan penjumlahan peluang untuk berbagai kejadian. Dua kejadian dikatakan saling lepas (atau disjoint) jika tidak mungkin bagi keduanya untuk terjadi pada hasil yang sama. Secara simbolis, aturan penjumlahan untuk menghitung peluang bahwa kejadian A terjadi atau kejadian B terjadi pada dua kejadian yang saling lepas dirumuskan dengan P(A ∪ B) = P(A) + P(B).\n\nSelain kejadian saling lepas, terdapat pula dua kejadian A dan B yang tidak saling lepas, yaitu ketika kejadian A dan kejadian B dapat terjadi bersamaan pada hasil yang sama yang dilambangkan dengan P(A ∩ B). Untuk menghitung peluang bahwa A terjadi atau B terjadi pada dua kejadian yang tidak saling lepas ini, aturan penjumlahannya perlu dimodifikasi. Secara simbolis, aturan penjumlahan untuk dua kejadian tidak saling lepas dirumuskan dengan P(A ∪ B) = P(A) + P(B) - P(A ∩ B).\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Di sebuah kantin sekolah, terdapat 10 jenis minuman dingin dan 15 jenis makanan ringan. Siswa dapat memilih satu minuman dingin atau satu makanan ringan untuk dibeli. Jika ada 3 jenis minuman dingin yang juga tersedia dalam kemasan botol yang sama dengan beberapa makanan ringan, tentukan bagaimana peluang memilih minuman atau makanan ringan dihitung.",
+      "question": "Jelaskan bagaimana aturan penjumlahan peluang digunakan untuk menghitung kemungkinan seorang siswa memilih satu minuman dingin atau satu makanan ringan di kantin sekolah tersebut, dengan mempertimbangkan adanya pilihan yang tumpang tindih.",
+      "rubric_points": [
+        "Mengidentifikasi bahwa kejadian memilih minuman dan makanan ringan mungkin tidak saling lepas.",
+        "Menyebutkan rumus aturan penjumlahan peluang untuk kejadian tidak saling lepas.",
+        "Menjelaskan arti dari setiap komponen dalam rumus P(A ∪ B) = P(A) + P(B) - P(A ∩ B) dalam konteks kantin."
+      ],
+      "explanation": "**Penjelasan Aturan Penjumlahan Peluang**\\nDalam kasus ini, memilih minuman dingin dan memilih makanan ringan adalah dua kejadian yang mungkin tidak saling lepas karena ada 3 jenis minuman dingin yang juga tersedia dalam kemasan yang sama dengan makanan ringan. Oleh karena itu, kita menggunakan aturan penjumlahan untuk kejadian tidak saling lepas.\\n\\nRumusnya adalah: P(A ∪ B) = P(A) + P(B) - P(A ∩ B)\\n\\nDi mana:\\nP(A) adalah peluang memilih minuman dingin.\\nP(B) adalah peluang memilih makanan ringan.\\nP(A ∩ B) adalah peluang memilih minuman dingin yang juga merupakan makanan ringan (tumpang tindih).\\nP(A ∪ B) adalah peluang memilih minuman dingin ATAU makanan ringan.\\n\\nDengan memahami konsep ini, kita dapat menghitung peluang total dengan benar tanpa menghitung ganda pilihan yang tumpang tindih.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah kotak berisi 5 bola merah dan 7 bola biru. Peluang mengambil satu bola merah adalah 5/12, dan peluang mengambil satu bola biru adalah 7/12. Kedua kejadian ini saling lepas karena sebuah bola tidak bisa berwarna merah dan biru sekaligus.",
+      "question": "Bagaimana aturan penjumlahan peluang digunakan untuk menghitung peluang mengambil satu bola merah ATAU satu bola biru dari kotak tersebut?",
+      "rubric_points": [
+        "Mengidentifikasi bahwa kejadian mengambil bola merah dan bola biru adalah saling lepas.",
+        "Menyebutkan rumus aturan penjumlahan peluang untuk kejadian saling lepas.",
+        "Menjelaskan penerapan rumus P(A ∪ B) = P(A) + P(B) dalam konteks pengambilan bola."
+      ],
+      "explanation": "**Penjelasan Aturan Penjumlahan Peluang untuk Kejadian Saling Lepas**\\nKarena sebuah bola hanya bisa berwarna merah atau biru, tidak keduanya, maka kejadian mengambil bola merah dan kejadian mengambil bola biru adalah kejadian yang saling lepas (disjoint).\\n\\nUntuk kejadian saling lepas, aturan penjumlahannya adalah: P(A ∪ B) = P(A) + P(B)\\n\\nDalam konteks ini:\\nP(A) adalah peluang mengambil bola merah = 5/12.\\nP(B) adalah peluang mengambil bola biru = 7/12.\\nP(A ∪ B) adalah peluang mengambil bola merah ATAU bola biru.\\n\\nDengan menjumlahkan kedua peluang tersebut, kita mendapatkan peluang total untuk salah satu dari dua kejadian tersebut terjadi.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Di sebuah desa, terdapat 20 petani yang menanam padi dan 15 petani yang menanam jagung. Sebanyak 5 petani menanam kedua jenis tanaman tersebut. Peluang seorang petani dipilih secara acak untuk mewakili desa dalam sebuah seminar.",
+      "question": "Jelaskan bagaimana aturan penjumlahan peluang diterapkan untuk menentukan peluang seorang petani yang dipilih secara acak menanam padi ATAU jagung.",
+      "rubric_points": [
+        "Mengidentifikasi bahwa kejadian menanam padi dan menanam jagung tidak saling lepas karena ada petani yang menanam keduanya.",
+        "Menyebutkan rumus aturan penjumlahan peluang yang sesuai untuk kejadian tidak saling lepas.",
+        "Menjelaskan bagaimana menghitung P(A), P(B), dan P(A ∩ B) dari informasi yang diberikan."
+      ],
+      "explanation": "**Penjelasan Aturan Penjumlahan Peluang untuk Kejadian Tidak Saling Lepas**\\nKarena ada 5 petani yang menanam padi dan jagung, maka kejadian menanam padi dan menanam jagung tidak saling lepas. Kita perlu menggunakan aturan penjumlahan untuk kejadian tidak saling lepas.\\n\\nRumusnya adalah: P(A ∪ B) = P(A) + P(B) - P(A ∩ B)\\n\\nDi mana:\\nP(A) = Peluang petani menanam padi = 20/35 (total petani = 20+15-5 = 30, namun jika dipilih dari total petani yang menanam salah satu, maka totalnya adalah 20+15-5=30. Jika dipilih dari seluruh petani di desa, kita perlu jumlah total petani. Asumsikan total petani yang menanam padi atau jagung adalah 30).\\nP(B) = Peluang petani menanam jagung = 15/30.\\nP(A ∩ B) = Peluang petani menanam padi DAN jagung = 5/30.\\nP(A ∪ B) = Peluang petani menanam padi ATAU jagung.\\n\\nPerhitungan ini memastikan bahwa petani yang menanam kedua tanaman tidak dihitung dua kali.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah kelompok siswa kelas XII SMA terdiri dari 18 siswa yang gemar Fisika dan 12 siswa yang gemar Biologi. Terdapat 6 siswa yang gemar kedua mata pelajaran tersebut. Jika seorang siswa dipilih secara acak dari kelompok ini.",
+      "question": "Bagaimana aturan penjumlahan peluang digunakan untuk menghitung peluang seorang siswa yang dipilih menyukai Fisika ATAU Biologi?",
+      "rubric_points": [
+        "Menentukan bahwa kejadian menyukai Fisika dan menyukai Biologi tidak saling lepas.",
+        "Menyatakan rumus aturan penjumlahan peluang yang tepat untuk kejadian tidak saling lepas.",
+        "Menjelaskan bagaimana P(A), P(B), dan P(A ∩ B) dihitung dari data siswa."
+      ],
+      "explanation": "**Penjelasan Aturan Penjumlahan Peluang**\\nKarena ada siswa yang menyukai kedua mata pelajaran (Fisika dan Biologi), maka kejadian ini tidak saling lepas. Kita menggunakan aturan penjumlahan untuk kejadian tidak saling lepas.\\n\\nRumusnya adalah: P(A ∪ B) = P(A) + P(B) - P(A ∩ B)\\n\\nDi mana:\\nP(A) adalah peluang siswa menyukai Fisika. Total siswa adalah 18 + 12 - 6 = 24. Jadi, P(A) = 18/24.\\nP(B) adalah peluang siswa menyukai Biologi. P(B) = 12/24.\\nP(A ∩ B) adalah peluang siswa menyukai Fisika DAN Biologi. P(A ∩ B) = 6/24.\\nP(A ∪ B) adalah peluang siswa menyukai Fisika ATAU Biologi.\\n\\nRumus ini membantu kita menghitung peluang gabungan tanpa menghitung ganda siswa yang menyukai kedua mata pelajaran.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah acara pengundian kupon di pasar tradisional, terdapat 50 kupon berhadiah alat tulis dan 30 kupon berhadiah makanan ringan. Sebanyak 10 kupon memberikan kedua jenis hadiah tersebut. Jika satu kupon diambil secara acak.",
+      "question": "Jelaskan penerapan aturan penjumlahan peluang untuk menghitung kemungkinan kupon yang diambil berhadiah alat tulis ATAU makanan ringan.",
+      "rubric_points": [
+        "Mengidentifikasi bahwa kejadian mendapatkan alat tulis dan makanan ringan tidak saling lepas.",
+        "Menyebutkan rumus aturan penjumlahan peluang yang sesuai untuk kejadian tidak saling lepas.",
+        "Menjelaskan cara menghitung P(A), P(B), dan P(A ∩ B) berdasarkan informasi kupon."
+      ],
+      "explanation": "**Penjelasan Aturan Penjumlahan Peluang**\\nKarena ada 10 kupon yang memberikan kedua hadiah, maka kejadian mendapatkan alat tulis dan mendapatkan makanan ringan tidak saling lepas. Kita menggunakan aturan penjumlahan untuk kejadian tidak saling lepas.\\n\\nRumusnya adalah: P(A ∪ B) = P(A) + P(B) - P(A ∩ B)\\n\\nDi mana:\\nP(A) adalah peluang kupon berhadiah alat tulis. Total kupon yang relevan adalah 50 + 30 - 10 = 70. Jadi, P(A) = 50/70.\\nP(B) adalah peluang kupon berhadiah makanan ringan. P(B) = 30/70.\\nP(A ∩ B) adalah peluang kupon berhadiah alat tulis DAN makanan ringan. P(A ∩ B) = 10/70.\\nP(A ∪ B) adalah peluang kupon berhadiah alat tulis ATAU makanan ringan.\\n\\nDengan rumus ini, kita dapat menghitung peluang total hadiah tanpa menghitung ganda kupon yang memberikan kedua jenis hadiah.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "93dde0a6-6763-47bc-bd15-d29652c053cf",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T14:10:35Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "essay",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1258,
+      "assistant": 2469,
+      "total": 4400,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

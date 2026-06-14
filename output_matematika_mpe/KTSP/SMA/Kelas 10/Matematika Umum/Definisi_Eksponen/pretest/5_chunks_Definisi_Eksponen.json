@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Definisi Eksponen\n\n--- MATERI ---\nKonsep bilangan berpangkat atau eksponen berawal dari penyederhanaan bentuk perkalian berulang. Dalam matematika, sering kali kita menjumpai perkalian suatu bilangan riil dengan dirinya sendiri yang diulang hingga beberapa kali. Proses mengalikan suatu bilangan secara berulang dengan bilangan itu sendiri ini dapat direpresentasikan menggunakan notasi eksponensial. Sebagai ilustrasi, apabila sebuah bilangan riil a dikalikan secara berulang sebanyak n kali, di mana n adalah bilangan bulat positif, maka bentuk penjabaran tersebut dapat disingkat menjadi a pangkat n. Notasi ini sangat esensial dan efisien, terutama ketika kita berhadapan dengan perhitungan aljabar atau sains yang melibatkan kuantitas numerik dengan penjabaran faktor perkalian yang sangat panjang.\n\nSecara lebih formal, pengertian pangkat bulat positif dapat dirumuskan melalui definisi berikut: Jika a adalah bilangan riil dan n adalah bilangan bulat positif, maka a pangkat n didefinisikan sebagai hasil kali n buah faktor yang masing-masing faktornya adalah bilangan a itu sendiri. Secara matematis, persamaan ini dapat dituliskan secara umum sebagai perkalian berulang a × a × a × ... × a sebanyak n faktor. Dalam penulisan notasi eksponen tersebut, terdapat beberapa istilah spesifik yang perlu dipahami secara konseptual. Bilangan a dinamakan sebagai bilangan pokok atau basis, yakni elemen riil yang dikalikan berulang. Sementara itu, bilangan n dinamakan sebagai pangkat atau eksponen, yang berfungsi menunjukkan kuantitas pengulangan bilangan pokok tersebut. Adapun bentuk keseluruhan pemangkatan itu sendiri lazim disebut sebagai bilangan berpangkat.\n\nUntuk memperkuat pemahaman mengenai definisi pangkat bulat positif, kita dapat mengaplikasikan aturan dasar tersebut pada contoh perhitungan riil. Misalkan terdapat notasi pemangkatan yang dibaca sebagai tiga pangkat empat. Berdasarkan kaidah perkalian berulang, bentuk ini ekuivalen dengan bilangan pokok 3 yang dikalikan dengan dirinya sendiri sebanyak 4 faktor. Secara matematis, penjabarannya ditulis sebagai 3 × 3 × 3 × 3, yang akan memberikan hasil komputasi akhir sebesar 81. Prinsip perkalian yang identik juga berlaku secara konsisten dan tanpa pengecualian apabila bilangan pokok tersebut berupa pecahan maupun bilangan bulat negatif. Contohnya, jika basisnya adalah pecahan yang dipangkatkan tiga, maka bentuk eksponensialnya dijabarkan dengan mengalikan pecahan tersebut sebanyak tiga kali.\n\nPenerapan konsep definisi eksponen memiliki manfaat praktis yang sangat tinggi dalam berbagai disiplin ilmu pengetahuan, khususnya dalam penulisan notasi ilmiah atau bentuk baku. Para ilmuwan sering berhadapan dengan data berkuantitas ekstrem, baik itu nilai yang sangat besar maupun sangat kecil. Sebagai contoh empiris, jarak rata-rata antara matahari dan bumi diperkirakan sejauh 150.000.000 km. Alih-alih menuliskan rentetan angka nol yang panjang, penulisan jarak tersebut dapat disederhanakan dengan mengandalkan kaidah bilangan berpangkat berbasis sepuluh. Jarak astronomis tersebut dapat diubah menjadi wujud yang jauh lebih ringkas dan komunikatif, yakni 1,5 dikalikan 10 pangkat 8 kilometer.\n\nMeskipun eksponen pada mulanya dipahami secara ketat melalui konsep perkalian berulang untuk pangkat bulat positif, definisi bilangan berpangkat pada perkembangannya juga diperluas untuk mencakup bilangan pangkat nol dan pangkat bulat negatif. Bentuk perluasan ini sering diistilahkan sebagai bilangan dengan pangkat tak sebenarnya. Sifat khusus yang pertama menetapkan bahwa untuk sebarang bilangan riil a yang tidak sama dengan nol, maka bilangan tersebut apabila dipangkatkan nol akan senantiasa bernilai satu. Selanjutnya, untuk suatu bilangan dengan pangkat bulat negatif, nilainya didefinisikan sebagai invers atau kebalikan perkalian dari bilangan berpangkat positifnya. Pemahaman menyeluruh mengenai ragam perluasan definisi dasar eksponen ini sangat fundamental sebelum peserta didik melangkah lebih jauh ke dalam operasi hitung sifat-sifat eksponen yang lebih kompleks.\n\n[ATP_ALIGNMENT]\nMenyatakan perkalian bilangan bulat berulang sebagai bilangan berpangkat (eksponen).\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional ingin menyederhanakan penulisan jumlah stok barang yang sangat banyak. Ia memiliki 10 kotak, dan setiap kotak berisi 10 kantong plastik, di mana setiap kantong plastik berisi 10 buah apel.",
+      "question": "Bagaimana cara paling efisien untuk menyatakan jumlah total apel yang dimiliki pedagang tersebut menggunakan notasi eksponen?",
+      "options": {
+        "A": "10 pangkat 3",
+        "B": "10 pangkat 2",
+        "C": "3 pangkat 10",
+        "D": "10 + 10 + 10",
+        "E": "10 × 3"
+      },
+      "answer": "A",
+      "explanation": "**Definisi Eksponen**\\nJumlah total apel adalah hasil perkalian berulang: 10 kotak × 10 kantong/kotak × 10 apel/kantong. Ini dapat ditulis sebagai 10 × 10 × 10, yang setara dengan 10 pangkat 3."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah proyek sains, siswa diminta menghitung pertumbuhan bakteri. Diketahui bahwa jumlah bakteri berlipat ganda setiap jam. Jika pada awal pengamatan terdapat 2 bakteri, dan pengamatan dilakukan selama 3 jam.",
+      "question": "Manakah dari notasi berikut yang paling tepat menggambarkan jumlah bakteri setelah 3 jam, jika diasumsikan pertumbuhan dimulai dari 2 bakteri?",
+      "options": {
+        "A": "2 + 2 + 2",
+        "B": "2 × 3",
+        "C": "2 pangkat 3",
+        "D": "3 pangkat 2",
+        "E": "2 × 2 × 2"
+      },
+      "answer": "C",
+      "explanation": "**Konsep Pangkat Bulat Positif**\\nJumlah bakteri berlipat ganda setiap jam selama 3 jam. Jika dimulai dari 2 bakteri, maka setelah 1 jam menjadi 2 × 2, setelah 2 jam menjadi 2 × 2 × 2, dan setelah 3 jam menjadi 2 × 2 × 2. Ini dapat ditulis sebagai 2 pangkat 3."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong mencatat hasil produksinya. Pada hari pertama, mereka memproduksi 50 bungkus. Pada hari kedua, produksi meningkat menjadi 5 kali lipat dari hari pertama. Pada hari ketiga, produksi meningkat lagi menjadi 5 kali lipat dari hari kedua.",
+      "question": "Jika produksi hari pertama adalah 50 bungkus, bagaimana cara menyatakan jumlah produksi pada hari ketiga menggunakan notasi eksponen?",
+      "options": {
+        "A": "50 × 5",
+        "B": "50 × 5 × 5",
+        "C": "50 pangkat 3",
+        "D": "50 × 2",
+        "E": "5 pangkat 3"
+      },
+      "answer": "B",
+      "explanation": "**Aplikasi Pangkat dalam Konteks**\\nProduksi hari kedua adalah 50 × 5. Produksi hari ketiga adalah 5 kali lipat dari hari kedua, yaitu (50 × 5) × 5. Bentuk ini setara dengan 50 × 5 × 5."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam pelajaran matematika, siswa diperkenalkan pada konsep bilangan berpangkat. Diberikan notasi 7 pangkat 4.",
+      "question": "Apa arti dari notasi 7 pangkat 4 dalam konteks perkalian berulang?",
+      "options": {
+        "A": "7 + 7 + 7 + 7",
+        "B": "7 × 4",
+        "C": "4 × 4 × 4 × 4 × 4 × 4 × 4",
+        "D": "7 × 7 × 7 × 7",
+        "E": "7 dibagi 4"
+      },
+      "answer": "D",
+      "explanation": "**Definisi Pangkat Bulat Positif**\\nNotasi 'a pangkat n' berarti bilangan pokok 'a' dikalikan dengan dirinya sendiri sebanyak 'n' kali. Jadi, 7 pangkat 4 berarti 7 dikalikan sebanyak 4 kali."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang peneliti sedang mengamati penyebaran virus di sebuah laboratorium. Pada awal pengamatan (jam ke-0), terdapat 10 sel virus. Setiap jam, jumlah sel virus menjadi 3 kali lipat dari jumlah sebelumnya. Peneliti ingin mengetahui perkiraan jumlah sel virus setelah 4 jam.",
+      "question": "Strategi manakah yang paling tepat untuk memprediksi jumlah sel virus setelah 4 jam, dan mengapa?",
+      "options": {
+        "A": "Menjumlahkan 10 sel dengan 3 sel sebanyak 4 kali, karena virus bertambah 3 setiap jam.",
+        "B": "Mengalikan jumlah awal (10) dengan 4, karena pengamatan berlangsung selama 4 jam.",
+        "C": "Menghitung 10 × 3 × 3 × 3 × 3, karena jumlahnya berlipat ganda sebanyak 3 kali setiap jam selama 4 jam.",
+        "D": "Menghitung 10 + (3×1) + (3×2) + (3×3), karena penambahan terjadi secara bertahap.",
+        "E": "Menghitung 10 × 3 pangkat 4, karena jumlahnya berlipat ganda menjadi 3 kali lipat setiap jam selama 4 jam."
+      },
+      "answer": "E",
+      "explanation": "**Analisis Pertumbuhan Eksponensial**\\nPertumbuhan virus bersifat eksponensial (berlipat ganda). Jumlah awal adalah 10. Setiap jam, jumlahnya menjadi 3 kali lipat. Setelah 1 jam: 10 × 3. Setelah 2 jam: (10 × 3) × 3 = 10 × 3². Setelah 4 jam: 10 × 3⁴. Pilihan E secara akurat merepresentasikan pola ini."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani menggunakan pupuk cair yang konsentrasinya meningkat setiap minggu. Pada minggu pertama, konsentrasi pupuk adalah 2%. Pada minggu kedua, konsentrasi menjadi 2% × 2. Pada minggu ketiga, konsentrasi menjadi 2% × 2 × 2.",
+      "question": "Jika pola ini berlanjut, bagaimana cara menyatakan konsentrasi pupuk pada minggu kelima menggunakan notasi eksponen?",
+      "options": {
+        "A": "2 × 5",
+        "B": "2 pangkat 5",
+        "C": "5 pangkat 2",
+        "D": "2 + 2 + 2 + 2 + 2",
+        "E": "2 × 2 × 2 × 2 × 2"
+      },
+      "answer": "B",
+      "explanation": "**Aplikasi Pangkat dalam Konteks Pertumbuhan**\\nKonsentrasi pada minggu ke-n adalah 2 dikalikan dengan 2 sebanyak (n-1) kali. Jadi, pada minggu kelima, konsentrasi adalah 2 × 2 × 2 × 2 × 2, yang dapat ditulis sebagai 2 pangkat 5."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah simulasi komputer, sebuah objek bergerak dengan pola tertentu. Jarak yang ditempuh objek pada detik ke-1 adalah 5 meter. Pada detik ke-2, jaraknya menjadi 5 × 5 meter. Pada detik ke-3, jaraknya menjadi 5 × 5 × 5 meter.",
+      "question": "Bagaimana cara paling ringkas untuk menyatakan jarak yang ditempuh objek pada detik ke-3 menggunakan notasi eksponen?",
+      "options": {
+        "A": "5 + 5 + 5",
+        "B": "5 × 3",
+        "C": "3 pangkat 5",
+        "D": "5 pangkat 3",
+        "E": "5 / 3"
+      },
+      "answer": "D",
+      "explanation": "**Definisi Eksponen**\\nJarak yang ditempuh pada detik ke-3 adalah hasil perkalian berulang 5 × 5 × 5. Notasi eksponensial yang paling ringkas untuk ini adalah 5 pangkat 3."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik ingin mengoptimalkan pengiriman barang. Mereka memiliki dua opsi pengiriman: Opsi A menggunakan 10 truk, masing-masing mengangkut 100 paket. Opsi B menggunakan 100 mobil, masing-masing mengangkut 10 paket.",
+      "question": "Jika total paket yang harus dikirim adalah 1000 paket, strategi pengiriman manakah yang lebih efisien dalam hal jumlah unit transportasi yang digunakan, dan bagaimana cara menyatakannya menggunakan konsep eksponen?",
+      "options": {
+        "A": "Opsi A lebih efisien karena menggunakan 10 truk, yang dapat dinyatakan sebagai 10 pangkat 1.",
+        "B": "Opsi B lebih efisien karena menggunakan 100 mobil, yang dapat dinyatakan sebagai 10 pangkat 2.",
+        "C": "Opsi A lebih efisien karena 1000 paket dapat diangkut oleh 10 truk (10 pangkat 1), sementara Opsi B membutuhkan 100 mobil (10 pangkat 2).",
+        "D": "Opsi B lebih efisien karena 1000 paket dapat diangkut oleh 100 mobil (10 pangkat 2), sementara Opsi A membutuhkan 10 truk (10 pangkat 1).",
+        "E": "Kedua opsi sama efisien karena total paket yang diangkut sama."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Efisiensi dan Notasi Eksponen**\\nOpsi A: 10 truk × 100 paket/truk = 1000 paket. Jumlah unit transportasi = 10 (10 pangkat 1). Opsi B: 100 mobil × 10 paket/mobil = 1000 paket. Jumlah unit transportasi = 100 (10 pangkat 2). Opsi A lebih efisien karena menggunakan lebih sedikit unit transportasi (10 vs 100)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dalam sebuah permainan video, karakter mendapatkan poin berdasarkan level yang dicapai. Pada level 1, karakter mendapat 3 poin. Pada level 2, poinnya menjadi 3 × 3. Pada level 3, poinnya menjadi 3 × 3 × 3.",
+      "question": "Bagaimana cara menyatakan jumlah poin yang didapat karakter pada level 4 menggunakan notasi eksponen?",
+      "options": {
+        "A": "3 + 4",
+        "B": "3 × 4",
+        "C": "4 pangkat 3",
+        "D": "3 pangkat 4",
+        "E": "3 × 3 × 3 × 3"
+      },
+      "answer": "D",
+      "explanation": "**Aplikasi Pangkat dalam Konteks Permainan**\\nJumlah poin pada level 'n' adalah 3 dipangkatkan 'n'. Jadi, pada level 4, jumlah poin adalah 3 × 3 × 3 × 3, yang dapat ditulis sebagai 3 pangkat 4."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pengusaha ingin mengembangkan usahanya. Ia memiliki dua rencana investasi: Rencana X, di mana modalnya berlipat ganda setiap tahun. Rencana Y, di mana modalnya bertambah sebesar Rp 10.000.000 setiap tahun. Modal awal untuk kedua rencana adalah Rp 100.000.000.",
+      "question": "Jika pengusaha tersebut berinvestasi selama 5 tahun, strategi manakah yang akan menghasilkan keuntungan lebih besar, dan bagaimana konsep eksponen berperan dalam salah satu rencana tersebut?",
+      "options": {
+        "A": "Rencana Y, karena penambahan tetap lebih mudah diprediksi daripada perkalian berulang.",
+        "B": "Rencana X, karena modalnya akan berlipat ganda, yang dapat dihitung dengan 100.000.000 × 2 pangkat 5.",
+        "C": "Rencana Y, karena penambahan Rp 10.000.000 setiap tahun akan lebih besar dari perkalian modal awal.",
+        "D": "Rencana X, karena perkalian berulang (eksponensial) selalu menghasilkan pertumbuhan yang lebih cepat daripada penambahan linear.",
+        "E": "Kedua rencana akan menghasilkan keuntungan yang sama setelah 5 tahun."
+      },
+      "answer": "D",
+      "explanation": "**Analisis Perbandingan Pertumbuhan Eksponensial vs Linear**\\nRencana X (eksponensial): Modal akhir = 100.000.000 × 2⁵. Rencana Y (linear): Modal akhir = 100.000.000 + (5 × 10.000.000). Pertumbuhan eksponensial (Rencana X) secara inheren lebih cepat daripada pertumbuhan linear (Rencana Y) dalam jangka panjang, karena basis perkaliannya tetap sama sementara jumlahnya terus meningkat."
+    }
+  ],
+  "metadata": {
+    "id": "f205ea4f-a11e-426e-848f-496cb2a5e59e",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T09:35:47Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Definisi Eksponen",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_5_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyatakan perkalian bilangan bulat berulang sebagai bilangan berpangkat (eksponen).",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3714,
+      "assistant": 2885,
+      "total": 7273,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

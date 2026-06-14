@@ -1,0 +1,100 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\",\n      \"expected_reasoning\": [\n        \"single-step reasoning\",\n        \"direct concept understanding\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data Lanjutan | Target: LOTS\n\n--- MATERI ---\nDalam materi representasi data lanjutan, terdapat dua metode visualisasi yang dipelajari, yaitu Diagram Box-and-Whisker (box plot) dan Diagram Pencar (scatter plot). Box plot merupakan cara efektif untuk memvisualisasikan distribusi data dalam satu diagram yang menampilkan lima ukuran utama: nilai minimum, kuartil pertama (Q1), median (Q2), kuartil ketiga (Q3), dan nilai maksimum. Selain itu, box plot juga dapat memperlihatkan Jangkauan Interkuartil (IQR) serta secara jelas mengidentifikasi keberadaan nilai pencilan, sehingga sangat berguna untuk menganalisis dan membandingkan sebaran dua kelompok data atau lebih. Di sisi lain, diagram pencar atau scatter plot merepresentasikan dua set data sebagai titik-titik pada sebuah bidang dengan koordinat Kartesius, di mana sumbu horizontal dan vertikalnya masing-masing mewakili satu variabel. Tujuan utama dari diagram pencar adalah memvisualisasikan pola hubungan atau korelasi antara dua himpunan data, yang nantinya dapat dikategorikan menjadi korelasi positif, korelasi negatif, atau tidak ada korelasi sama sekali.\n\n[ATP_ALIGNMENT]\nMerepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang guru Matematika ingin menunjukkan perbedaan sebaran nilai ulangan harian Matematika dan IPA di kelas XI SMA Harapan Bangsa. Guru tersebut menyajikan data nilai ulangan harian kedua mata pelajaran dalam bentuk diagram box-and-whisker. Diagram ini menampilkan nilai minimum, Q1, median, Q3, dan nilai maksimum untuk masing-masing mata pelajaran.",
+      "question": "Berdasarkan deskripsi stimulus, sebutkan lima ukuran utama data yang divisualisasikan dalam diagram box-and-whisker.",
+      "rubric_points": [
+        "Menyebutkan nilai minimum.",
+        "Menyebutkan kuartil pertama (Q1).",
+        "Menyebutkan median (Q2).",
+        "Menyebutkan kuartil ketiga (Q3).",
+        "Menyebutkan nilai maksimum."
+      ],
+      "explanation": "**Lima Ukuran Utama Data dalam Box Plot**\\nDiagram box-and-whisker, atau box plot, secara efektif memvisualisasikan distribusi data dengan menampilkan lima nilai statistik kunci. Kelima ukuran ini adalah: nilai terendah dalam kumpulan data (minimum), kuartil pertama (Q1) yang menandai 25% data terendah, median (Q2) yang merupakan nilai tengah data, kuartil ketiga (Q3) yang menandai 75% data terendah, dan nilai tertinggi dalam kumpulan data (maksimum).\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang peneliti ingin mengetahui hubungan antara jumlah jam belajar per minggu dengan nilai ujian akhir mata pelajaran Fisika pada siswa SMA Cendekia. Peneliti mengumpulkan data dari 30 siswa, mencatat jam belajar mereka dan nilai ujian Fisika. Data ini kemudian divisualisasikan menggunakan diagram pencar, di mana sumbu horizontal menunjukkan jam belajar dan sumbu vertikal menunjukkan nilai ujian.",
+      "question": "Apa tujuan utama dari penggunaan diagram pencar dalam penelitian tersebut terkait dengan jam belajar dan nilai ujian Fisika?",
+      "rubric_points": [
+        "Menyatakan tujuan untuk memvisualisasikan pola hubungan.",
+        "Menyebutkan variabel yang dihubungkan (jam belajar dan nilai ujian Fisika).",
+        "Menyebutkan kemungkinan adanya korelasi (positif, negatif, atau tidak ada)."
+      ],
+      "explanation": "**Tujuan Diagram Pencar**\\nDiagram pencar (scatter plot) digunakan untuk memvisualisasikan hubungan antara dua variabel kuantitatif. Dalam konteks penelitian ini, tujuannya adalah untuk melihat apakah ada pola atau tren yang muncul ketika membandingkan jumlah jam belajar siswa dengan nilai ujian Fisika mereka. Pola ini bisa berupa korelasi positif (semakin banyak belajar, semakin tinggi nilai), korelasi negatif (semakin banyak belajar, semakin rendah nilai, yang jarang terjadi), atau tidak ada korelasi sama sekali.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM keripik singkong ingin menganalisis hubungan antara biaya promosi di media sosial dengan jumlah penjualan bulanan selama satu tahun terakhir. Data biaya promosi (dalam jutaan rupiah) dan jumlah penjualan (dalam ratusan unit) disajikan dalam tabel. Data ini kemudian akan divisualisasikan menggunakan diagram pencar.",
+      "question": "Dalam diagram pencar yang akan dibuat, variabel apa yang akan ditempatkan pada sumbu horizontal dan sumbu vertikal?",
+      "rubric_points": [
+        "Menyebutkan biaya promosi sebagai variabel sumbu horizontal.",
+        "Menyebutkan jumlah penjualan sebagai variabel sumbu vertikal.",
+        "Menjelaskan bahwa sumbu horizontal biasanya mewakili variabel independen (penyebab) dan sumbu vertikal mewakili variabel dependen (akibat)."
+      ],
+      "explanation": "**Penempatan Variabel pada Diagram Pencar**\\nPada diagram pencar, sumbu horizontal (sumbu X) umumnya digunakan untuk merepresentasikan variabel independen, yaitu variabel yang dianggap sebagai penyebab atau faktor yang memengaruhi. Sumbu vertikal (sumbu Y) digunakan untuk merepresentasikan variabel dependen, yaitu variabel yang nilainya dipengaruhi oleh variabel independen. Dalam kasus UMKM keripik singkong, biaya promosi dianggap sebagai faktor yang memengaruhi jumlah penjualan, sehingga biaya promosi ditempatkan pada sumbu horizontal dan jumlah penjualan pada sumbu vertikal.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Data tinggi badan (dalam cm) dan berat badan (dalam kg) siswa kelas XII SMA Pelita Bangsa dikumpulkan. Terdapat 40 pasang data. Untuk melihat apakah ada hubungan antara tinggi badan dan berat badan, data tersebut divisualisasikan menggunakan diagram pencar. Sumbu horizontal menunjukkan tinggi badan dan sumbu vertikal menunjukkan berat badan.",
+      "question": "Jika titik-titik pada diagram pencar cenderung membentuk pola naik dari kiri ke kanan, jenis hubungan apa yang dapat diidentifikasi antara tinggi badan dan berat badan siswa?",
+      "rubric_points": [
+        "Menyatakan bahwa pola naik dari kiri ke kanan menunjukkan korelasi positif.",
+        "Menjelaskan arti korelasi positif dalam konteks ini (tinggi badan bertambah, berat badan bertambah).",
+        "Mengidentifikasi variabel yang terkait (tinggi badan dan berat badan)."
+      ],
+      "explanation": "**Interpretasi Korelasi Positif pada Diagram Pencar**\\nPola titik-titik yang naik dari kiri ke kanan pada diagram pencar mengindikasikan adanya korelasi positif antara kedua variabel yang divisualisasikan. Dalam konteks data tinggi badan dan berat badan siswa, ini berarti bahwa secara umum, semakin tinggi badan seorang siswa, cenderung semakin berat pula badan siswa tersebut. Hubungan ini menunjukkan bahwa kedua variabel bergerak ke arah yang sama.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa sedang mempelajari cara membandingkan sebaran nilai ujian Matematika dan Bahasa Inggris menggunakan diagram box-and-whisker. Siswa tersebut melihat bahwa box plot untuk Matematika memiliki 'kumis' (whisker) yang lebih panjang ke kanan dibandingkan dengan Bahasa Inggris, dan Q3 Matematika lebih tinggi dari Q3 Bahasa Inggris, namun median Bahasa Inggris lebih tinggi dari median Matematika.",
+      "question": "Berdasarkan deskripsi box plot tersebut, ukuran sebaran data apa yang dapat langsung diidentifikasi dari panjang 'kumis' pada diagram box-and-whisker?",
+      "rubric_points": [
+        "Menyebutkan bahwa panjang 'kumis' merepresentasikan jangkauan data.",
+        "Menjelaskan bahwa 'kumis' terpanjang ke kanan menunjukkan sebaran data yang lebih luas pada bagian atas distribusi.",
+        "Mengaitkan panjang 'kumis' dengan nilai minimum dan maksimum data."
+      ],
+      "explanation": "**Ukuran Sebaran dari 'Kumis' Box Plot**\\nPada diagram box-and-whisker, 'kumis' atau whisker yang memanjang dari kotak utama merepresentasikan jangkauan data di luar kuartil. Panjang kumis ke satu arah menunjukkan sebaran data pada rentang tersebut. Kumis yang lebih panjang mengindikasikan bahwa data tersebar lebih luas pada rentang tersebut, mulai dari nilai minimum hingga Q1, atau dari Q3 hingga nilai maksimum. Dalam kasus ini, kumis yang lebih panjang ke kanan menunjukkan sebaran data yang lebih besar pada nilai-nilai yang lebih tinggi.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "a786bacb-c92a-4ea1-8e37-e8a85e00ac24",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T14:05:23Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data Lanjutan",
+    "task_type": "essay",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Merepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1309,
+      "assistant": 2118,
+      "total": 4100,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

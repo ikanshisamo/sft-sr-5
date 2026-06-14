@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Perkalian | Target: HOTS\n\n--- MATERI ---\nDalam kajian teori peluang, kita sering dihadapkan pada percobaan majemuk yang melibatkan dua kejadian atau lebih secara bersamaan atau berurutan. Salah satu konsep penting dalam peluang majemuk adalah kejadian saling bebas (independent events). Dua buah kejadian, misalnya kejadian A dan kejadian B, diklasifikasikan sebagai kejadian saling bebas apabila terjadinya atau tidak terjadinya kejadian A sama sekali tidak memengaruhi kemungkinan terjadinya kejadian B, dan begitu pula sebaliknya. Artinya, hasil dari percobaan pertama tidak memberikan dampak atau mengubah ruang sampel maupun peluang pada percobaan kedua. Pemahaman mengenai independensi antarkejadian ini merupakan fondasi utama sebelum kita melakukan perhitungan probabilitas menggunakan operasi matematika yang lebih kompleks, yaitu aturan perkalian peluang.\n\nSebagai contoh representatif dari kejadian saling bebas, mari kita tinjau sebuah eksperimen melempar sekeping uang logam dan sebuah dadu bersisi enam secara bersamaan. Kemungkinan munculnya sisi gambar pada uang logam murni bergantung pada karakteristik koin tersebut dan tidak memiliki keterkaitan sama sekali dengan kemungkinan munculnya angka genap pada pelemparan dadu. Kejadian munculnya gambar pada koin dan kejadian munculnya angka genap pada dadu adalah dua kejadian yang saling terpisah secara kausalitas. Oleh karena itu, kedua kejadian ini secara matematis dijamin sebagai kejadian saling bebas. Identifikasi karakteristik semacam ini sangat esensial agar peserta didik tidak keliru dalam menerapkan rumusan peluang yang tepat pada saat menyelesaikan pemodelan masalah yang memuat lebih dari satu kejadian.\n\nUntuk menghitung besaran peluang terjadinya dua kejadian saling bebas secara simultan, kita menerapkan prinsip dasar yang dikenal sebagai aturan perkalian peluang. Secara linguistik, gabungan dua kejadian yang diamati secara bersamaan ini umumnya dihubungkan dengan kata hubung 'dan', yang dalam himpunan dilambangkan dengan simbol irisan. Berdasarkan teorema peluang, jika kejadian A dan kejadian B telah teridentifikasi secara pasti sebagai dua kejadian saling bebas, maka peluang munculnya kejadian A dan kejadian B dirumuskan dengan mengalikan nilai peluang dari masing-masing kejadian tunggalnya. Secara matematis, formula aturan perkalian ini dituliskan secara baku sebagai P(A ∩ B) = P(A) × P(B). Rumus ini sangat mempermudah proses komputasi probabilitas ruang sampel majemuk.\n\nPenerapan nyata dari aturan perkalian peluang dapat diamati pada kasus pengambilan benda secara acak dengan pengembalian. Misalkan terdapat sebuah kotak yang berisi tiga bola merah dan dua bola putih. Jika kita melakukan dua kali pengambilan bola satu per satu, di mana bola yang terambil pada pengambilan pertama dikembalikan lagi ke dalam kotak sebelum pengambilan kedua, maka ruang sampel pada pengambilan kedua tetap utuh. Hal ini menjamin bahwa kejadian terambilnya bola pada pengambilan pertama dan kedua bersifat saling bebas. Jika kita ingin menghitung peluang terambilnya bola merah pada pengambilan pertama dan bola putih pada pengambilan kedua, kita cukup menghitung peluang masing-masing kejadian tunggalnya, lalu mengalikannya secara langsung dengan prinsip aturan perkalian P(A ∩ B) = P(A) × P(B).\n\nAturan perkalian peluang tidak hanya berlaku untuk dua kejadian saja, melainkan memiliki sifat yang fleksibel untuk digeneralisasikan pada tiga atau lebih kejadian yang saling bebas. Apabila terdapat serangkaian kejadian majemuk, misalnya kejadian A, B, dan C yang ketiganya saling bebas secara keseluruhan, maka peluang terjadinya ketiga kejadian tersebut secara simultan dapat dihitung dengan memperluas perumusan sebelumnya. Secara analitis matematis, perluasan rumus tersebut dinyatakan sebagai P(A ∩ B ∩ C) = P(A) × P(B) × P(C). Konsep generalisasi ini terbukti sangat bermanfaat dalam memecahkan pemodelan peluang yang lebih kompleks, seperti eksperimen pelemparan beberapa dadu sekaligus atau pengambilan sampel berulang secara konstan dalam suatu pengujian terapan.\n\nHal krusial yang perlu mendapat perhatian khusus dalam mengaplikasikan aturan perkalian adalah kecermatan untuk memastikan bahwa kejadian-kejadian tersebut benar-benar saling bebas. Apabila kemunculan kejadian pertama memengaruhi atau mengubah ruang sampel kejadian kedua, maka kedua kejadian tersebut diklasifikasikan sebagai kejadian tidak saling bebas atau bersyarat. Ilustrasi utamanya adalah eksperimen pengambilan objek tanpa pengembalian. Jika sebuah kelereng diambil dari kantong dan tidak dikembalikan, total kelereng pada pengambilan kedua akan menyusut, sehingga probabilitas kejadian kedua otomatis berubah bergantung pada hasil pertama. Pada kondisi dependen ini, aturan perkalian murni P(A ∩ B) = P(A) × P(B) menjadi tidak sah dan harus disesuaikan dengan konsep peluang bersyarat.\n\n[ATP_ALIGNMENT]\nMenghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"\n\n[INSTRUKSI KHUSUS]\nResponse WAJIB lebih ringkas dan padat. Batasi total panjang output. Prioritaskan kualitas substansi di atas kuantitas kata.",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memproduksi dua varian rasa: balado dan keju. Setiap varian dikemas dalam dua jenis ukuran: sedang dan besar. Produksi harian untuk setiap kombinasi rasa dan ukuran adalah 100 bungkus.",
+      "question": "Manajer produksi ingin meningkatkan efisiensi dengan memastikan bahwa setiap hari, jumlah produksi keripik rasa balado ukuran sedang sama dengan jumlah produksi keripik rasa keju ukuran besar. Jika total produksi harian tetap sama, strategi produksi manakah yang paling realistis untuk diterapkan tanpa mengubah jumlah total produksi?",
+      "options": {
+        "A": "Mengurangi produksi rasa balado ukuran besar dan menambah rasa keju ukuran sedang.",
+        "B": "Menyesuaikan proporsi produksi rasa balado ukuran sedang dan rasa keju ukuran besar agar sama, sambil menjaga total produksi harian.",
+        "C": "Mengganti seluruh mesin produksi untuk rasa balado ukuran sedang dengan mesin baru.",
+        "D": "Meningkatkan jumlah total produksi harian untuk menyeimbangkan kedua varian.",
+        "E": "Fokus hanya pada satu varian rasa dan ukuran untuk memaksimalkan efisiensi."
+      },
+      "answer": "B",
+      "explanation": "**Strategi Produksi yang Tepat**\\nUntuk mencapai kesamaan jumlah produksi antara rasa balado ukuran sedang dan rasa keju ukuran besar tanpa mengubah total produksi harian, manajer harus menyesuaikan proporsi produksi kedua kombinasi tersebut. Ini berarti mengurangi produksi kombinasi lain jika perlu, atau mendistribusikan ulang kuota produksi yang ada."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko kelontong memiliki dua jenis promosi mingguan: diskon 10% untuk pembelian gula dan bonus gratis minyak goreng untuk pembelian beras. Kedua promosi ini berlaku independen.",
+      "question": "Jika seorang pelanggan berencana membeli gula dan beras minggu ini, manakah analisis risiko yang paling tepat terkait dengan kedua promosi tersebut?",
+      "options": {
+        "A": "Pelanggan harus memilih salah satu promosi karena keduanya akan mengurangi keuntungan toko secara signifikan.",
+        "B": "Pelanggan akan mendapatkan keuntungan ganda karena kedua promosi dirancang untuk saling melengkapi.",
+        "C": "Keuntungan dari diskon gula tidak akan memengaruhi peluang mendapatkan bonus minyak goreng, sehingga pelanggan dapat memanfaatkan keduanya.",
+        "D": "Jika pelanggan membeli gula, kemungkinan mendapatkan bonus minyak goreng akan berkurang.",
+        "E": "Promosi ini hanya efektif jika pelanggan membeli kedua barang dalam jumlah besar."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Risiko Promosi Independen**\\nKarena promosi diskon gula dan bonus minyak goreng adalah kejadian saling bebas, terjadinya satu promosi tidak memengaruhi peluang terjadinya promosi lainnya. Pelanggan dapat memanfaatkan diskon gula dan tetap berhak atas bonus minyak goreng jika memenuhi syarat pembelian beras."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik roti memproduksi dua jenis kue: cokelat dan vanila. Setiap kue memiliki dua pilihan topping: meses dan keju. Peluang kue cokelat dipilih adalah 0.6, dan peluang kue vanila dipilih adalah 0.4. Peluang topping meses adalah 0.5, dan peluang topping keju adalah 0.5.",
+      "question": "Jika seorang pelanggan memilih kue secara acak, manakah skenario yang paling mungkin terjadi jika pabrik ingin memaksimalkan variasi produk yang terjual dalam satu jam dengan asumsi setiap pilihan independen?",
+      "options": {
+        "A": "Pelanggan akan cenderung memilih kue cokelat dengan topping meses secara berulang.",
+        "B": "Distribusi penjualan akan merata di antara keempat kombinasi rasa dan topping.",
+        "C": "Peluang penjualan kue cokelat dengan topping meses (0.6 * 0.5 = 0.3) dan kue vanila dengan topping keju (0.4 * 0.5 = 0.2) akan mendominasi.",
+        "D": "Kombinasi kue cokelat dan vanila akan lebih sering terjual daripada kombinasi topping.",
+        "E": "Pelanggan akan memilih kombinasi yang paling jarang terjadi untuk mendapatkan keunikan."
+      },
+      "answer": "C",
+      "explanation": "**Prediksi Skenario Penjualan**\\nDengan mengalikan peluang independen, kita dapat memprediksi kombinasi yang paling mungkin terjual. Peluang kue cokelat dengan meses adalah 0.6 \\\\times 0.5 = 0.3. Peluang kue vanila dengan keju adalah 0.4 \\\\times 0.5 = 0.2. Kombinasi lain memiliki peluang lebih rendah, sehingga skenario C paling mungkin terjadi."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah sekolah mengadakan dua kegiatan ekstrakurikuler: klub sains dan klub debat. 60% siswa kelas XII mengikuti klub sains, dan 40% mengikuti klub debat. Kedua kegiatan ini dianggap saling bebas.",
+      "question": "Jika seorang siswa kelas XII dipilih secara acak, manakah kesimpulan yang paling akurat mengenai partisipasi siswa dalam kedua kegiatan tersebut?",
+      "options": {
+        "A": "Siswa yang mengikuti klub sains pasti tidak mengikuti klub debat.",
+        "B": "Ada kemungkinan siswa mengikuti kedua klub, dan peluangnya dapat dihitung dengan mengalikan persentase partisipasi masing-masing.",
+        "C": "Jumlah siswa yang mengikuti kedua klub sama dengan jumlah siswa yang hanya mengikuti salah satu klub.",
+        "D": "Siswa yang tidak mengikuti klub sains pasti mengikuti klub debat.",
+        "E": "Partisipasi dalam klub sains dan debat tidak dapat diprediksi karena bersifat acak."
+      },
+      "answer": "B",
+      "explanation": "**Kesimpulan Partisipasi Siswa**\\nKarena kegiatan klub sains dan debat bersifat saling bebas, peluang seorang siswa mengikuti keduanya adalah hasil perkalian peluang partisipasi masing-masing. Peluang siswa mengikuti keduanya adalah 0.6 \\\\times 0.4 = 0.24 atau 24%. Ini menunjukkan adanya kemungkinan siswa mengikuti kedua kegiatan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan transportasi online memiliki dua jenis layanan: mobil dan motor. Peluang pesanan mobil diterima adalah 0.7, dan peluang pesanan motor diterima adalah 0.3. Setiap pesanan dianggap independen.",
+      "question": "Seorang manajer operasional ingin mengevaluasi strategi untuk memaksimalkan pendapatan harian. Jika pendapatan rata-rata per pesanan mobil adalah Rp 50.000 dan per pesanan motor adalah Rp 20.000, manakah strategi yang paling masuk akal untuk meningkatkan pendapatan, dengan asumsi jumlah driver tetap?",
+      "options": {
+        "A": "Fokus hanya pada pesanan motor karena lebih banyak.",
+        "B": "Meningkatkan jumlah driver motor untuk mengejar pesanan motor.",
+        "C": "Memprioritaskan pengiriman pesanan mobil karena potensi pendapatan per pesanan lebih tinggi.",
+        "D": "Mengurangi jumlah pesanan mobil agar lebih banyak driver bisa mengambil pesanan motor.",
+        "E": "Menetapkan tarif yang sama untuk mobil dan motor."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Peningkatan Pendapatan**\\nMeskipun peluang pesanan mobil lebih tinggi, pendapatan per pesanan mobil (Rp 50.000) jauh lebih besar daripada motor (Rp 20.000). Untuk memaksimalkan pendapatan harian dengan jumlah driver tetap, strategi yang paling masuk akal adalah memprioritaskan pengiriman pesanan mobil karena kontribusinya terhadap pendapatan lebih signifikan."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah survei di pasar tradisional, 70% pedagang menjual sayuran dan 50% pedagang menjual buah-buahan. Kedua jenis dagangan ini dianggap independen.",
+      "question": "Seorang analis pasar ingin memprediksi kemungkinan seorang pedagang menjual kedua jenis barang tersebut. Jika pedagang tersebut dipilih secara acak, manakah analisis yang paling tepat mengenai peluangnya?",
+      "options": {
+        "A": "Pedagang yang menjual sayuran pasti tidak menjual buah-buahan.",
+        "B": "Peluang pedagang menjual sayuran dan buah-buahan adalah 0.7 + 0.5 = 1.2, yang tidak mungkin.",
+        "C": "Peluang pedagang menjual sayuran dan buah-buahan adalah 0.7 \\\\times 0.5 = 0.35.",
+        "D": "Pedagang yang tidak menjual sayuran pasti menjual buah-buahan.",
+        "E": "Peluang pedagang menjual salah satu atau kedua barang adalah 0.7 \\\\times 0.5 = 0.35."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Peluang Gabungan**\\nKarena kedua jenis dagangan dianggap independen, peluang seorang pedagang menjual sayuran DAN buah-buahan dihitung dengan mengalikan peluang masing-masing. Jadi, P(Sayuran dan Buah) = P(Sayuran) \\\\times P(Buah) = 0.7 \\\\times 0.5 = 0.35."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah bank syariah menawarkan dua produk investasi: deposito syariah dan reksa dana syariah. Peluang nasabah memilih deposito adalah 0.8, dan peluang memilih reksa dana adalah 0.6. Kedua pilihan ini dianggap saling bebas.",
+      "question": "Manajer pemasaran ingin memahami perilaku nasabah. Jika seorang nasabah baru dipilih secara acak, manakah pernyataan yang paling akurat mengenai kemungkinan pilihan nasabah tersebut?",
+      "options": {
+        "A": "Nasabah yang memilih deposito pasti tidak memilih reksa dana.",
+        "B": "Peluang nasabah memilih deposito DAN reksa dana adalah 0.8 + 0.6 = 1.4, yang tidak mungkin.",
+        "C": "Peluang nasabah memilih deposito DAN reksa dana adalah 0.8 \\\\times 0.6 = 0.48.",
+        "D": "Nasabah yang tidak memilih deposito pasti memilih reksa dana.",
+        "E": "Peluang nasabah memilih deposito ATAU reksa dana adalah 0.8 \\\\times 0.6 = 0.48."
+      },
+      "answer": "C",
+      "explanation": "**Pernyataan Akurat Pilihan Nasabah**\\nKarena pilihan deposito dan reksa dana bersifat saling bebas, peluang seorang nasabah memilih kedua produk tersebut adalah hasil perkalian peluang masing-masing. Peluang memilih deposito DAN reksa dana adalah 0.8 \\\\times 0.6 = 0.48."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik memiliki dua jenis armada pengiriman: truk dan van. Peluang sebuah truk tersedia untuk pengiriman adalah 0.9, dan peluang sebuah van tersedia adalah 0.8. Ketersediaan kedua armada ini independen.",
+      "question": "Manajer operasional ingin memastikan pengiriman barang tepat waktu. Jika sebuah pengiriman membutuhkan salah satu armada, manakah strategi yang paling efektif untuk meminimalkan risiko keterlambatan?",
+      "options": {
+        "A": "Mengandalkan hanya pada ketersediaan truk karena peluangnya lebih tinggi.",
+        "B": "Menggunakan van saja karena lebih fleksibel.",
+        "C": "Memastikan ketersediaan kedua armada secara bersamaan untuk meningkatkan peluang pengiriman.",
+        "D": "Mengurangi jumlah pengiriman jika salah satu armada tidak tersedia.",
+        "E": "Menambah jumlah truk dan van secara proporsional."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Efektif Minimalkan Risiko**\\nUntuk meminimalkan risiko keterlambatan, perusahaan perlu memastikan ketersediaan armada. Karena ketersediaan truk dan van independen, peluang kedua armada tersedia adalah 0.9 \\\\times 0.8 = 0.72. Memastikan ketersediaan keduanya secara bersamaan memberikan peluang tertinggi untuk pengiriman yang sukses."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko buku online menawarkan dua program loyalitas: diskon 15% untuk pembelian buku fiksi dan poin ganda untuk pembelian buku non-fiksi. Kedua program ini berlaku independen.",
+      "question": "Seorang pelanggan setia berencana membeli buku fiksi dan non-fiksi. Manakah analisis yang paling tepat mengenai manfaat yang akan diterima pelanggan?",
+      "options": {
+        "A": "Pelanggan hanya bisa memilih salah satu program, tidak keduanya.",
+        "B": "Diskon buku fiksi akan mengurangi jumlah poin ganda yang didapat.",
+        "C": "Pelanggan akan mendapatkan diskon 15% untuk buku fiksi DAN poin ganda untuk buku non-fiksi, karena programnya independen.",
+        "D": "Program ini hanya menguntungkan jika pelanggan membeli dalam jumlah sangat besar.",
+        "E": "Peluang mendapatkan diskon dan poin ganda tidak dapat dihitung karena bersifat acak."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Manfaat Program Loyalitas**\\nKarena kedua program loyalitas bersifat independen, pelanggan dapat memanfaatkan diskon 15% untuk buku fiksi dan secara bersamaan mendapatkan poin ganda untuk buku non-fiksi. Kejadian satu program tidak memengaruhi peluang terjadinya program lainnya."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan agrikultur menanam dua jenis tanaman: padi dan jagung. Peluang panen padi berhasil adalah 0.85, dan peluang panen jagung berhasil adalah 0.75. Kedua jenis panen ini dianggap saling bebas.",
+      "question": "Manajer perusahaan ingin mengevaluasi strategi untuk memaksimalkan hasil panen keseluruhan. Manakah kesimpulan yang paling tepat mengenai peluang kedua panen berhasil?",
+      "options": {
+        "A": "Jika panen padi gagal, panen jagung pasti berhasil.",
+        "B": "Peluang kedua panen berhasil adalah 0.85 + 0.75 = 1.6, yang tidak mungkin.",
+        "C": "Peluang kedua panen berhasil adalah 0.85 \\\\times 0.75 = 0.6375.",
+        "D": "Peluang salah satu panen berhasil adalah 0.85 \\\\times 0.75 = 0.6375.",
+        "E": "Panen jagung lebih berisiko daripada panen padi."
+      },
+      "answer": "C",
+      "explanation": "**Kesimpulan Peluang Panen Berhasil**\\nKarena panen padi dan jagung dianggap saling bebas, peluang kedua panen berhasil secara bersamaan dihitung dengan mengalikan peluang masing-masing. P(Padi Berhasil dan Jagung Berhasil) = P(Padi Berhasil) \\\\times P(Jagung Berhasil) = 0.85 \\\\times 0.75 = 0.6375."
+    }
+  ],
+  "metadata": {
+    "id": "514cf29b-aa20-4293-91fb-d1fb37e4a8fa",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T02:26:27Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Perkalian",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_6_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3510,
+      "assistant": 3990,
+      "total": 8175,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

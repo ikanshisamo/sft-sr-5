@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: HOTS\n\n--- MATERI ---\nDalam kajian peluang, dua kejadian dikatakan saling lepas (mutually exclusive) apabila kedua kejadian tersebut tidak dapat terjadi secara bersamaan dalam satu kali percobaan. Secara himpunan, kejadian A dan kejadian B saling lepas jika irisan keduanya merupakan himpunan kosong, dinotasikan dengan A ∩ B = ∅. Untuk menghitung peluang gabungan dua kejadian saling lepas, yaitu munculnya kejadian A atau kejadian B, kita menggunakan aturan penjumlahan khusus kejadian saling lepas. Peluang gabungan ini dirumuskan secara matematis dengan P(A ∪ B) = P(A) + P(B). Sebagai contoh sederhana, pada percobaan pelemparan sebuah dadu setimbang bersisi enam, kejadian munculnya mata dadu ganjil dan kejadian munculnya mata dadu genap adalah dua kejadian saling lepas karena tidak mungkin sebuah mata dadu bernilai ganjil dan genap secara bersamaan.\n\nSebaliknya, dua kejadian dalam suatu ruang sampel dikatakan tidak saling lepas apabila kedua kejadian tersebut memiliki kemungkinan untuk terjadi secara bersamaan. Dalam tinjauan himpunan, hal ini berarti terdapat elemen yang menjadi anggota kejadian A sekaligus kejadian B, sehingga irisannya bukan himpunan kosong (A ∩ B ≠ ∅). Aturan penjumlahan untuk dua kejadian tidak saling lepas dirumuskan dengan P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Pengurangan dengan probabilitas irisan kejadian P(A ∩ B) dilakukan untuk menghindari perhitungan ganda. Misalnya, dalam pengambilan satu lembar kartu secara acak dari satu set kartu bridge, peluang terambilnya kartu As atau kartu berwarna merah harus memperhitungkan adanya kartu As merah sebagai irisan dari kedua kejadian tersebut, sehingga nilai probabilitas irisan tersebut harus dikurangkan.\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah kotak berisi 5 bola merah dan 7 bola biru. Dua bola diambil secara acak tanpa pengembalian. Jika bola pertama yang terambil adalah merah, berapa peluang bola kedua yang terambil juga merah?",
+      "question": "Manakah strategi terbaik untuk mengevaluasi peluang bola kedua terambil merah, mengingat bola pertama sudah terambil merah dan tidak dikembalikan?",
+      "options": {
+        "A": "Menghitung peluang bola merah dari total bola awal, karena pengambilan pertama tidak mempengaruhi pengambilan kedua.",
+        "B": "Menggunakan aturan penjumlahan untuk kejadian tidak saling lepas karena kedua pengambilan adalah bagian dari satu proses.",
+        "C": "Mengurangi jumlah bola merah dan total bola sebanyak satu, lalu menghitung peluang bola merah dari kondisi sisa.",
+        "D": "Menghitung peluang bola merah dari total bola awal, lalu mengalikannya dengan peluang bola merah dari sisa bola.",
+        "E": "Mengabaikan informasi bola pertama terambil merah karena fokus pada peluang bola kedua."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Pengambilan Bola Tanpa Pengembalian**\\nKarena bola pertama tidak dikembalikan, ruang sampel dan jumlah bola merah berkurang. Strategi yang tepat adalah menyesuaikan jumlah bola merah menjadi 4 dan total bola menjadi 11, lalu menghitung peluang bola merah dari kondisi sisa tersebut."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah kantong berisi 10 kelereng identik: 6 berwarna hijau dan 4 berwarna kuning. Dua kelereng diambil secara acak satu per satu tanpa pengembalian. Jika kelereng pertama yang terambil berwarna hijau, manakah pernyataan yang paling akurat mengenai peluang kelereng kedua?",
+      "question": "Manakah analisis risiko yang paling tepat terkait peluang kelereng kedua terambil kuning, setelah kelereng pertama terambil hijau dan tidak dikembalikan?",
+      "options": {
+        "A": "Peluang kelereng kedua kuning tetap sama dengan peluang awal karena pengambilan pertama tidak mempengaruhi hasil kedua.",
+        "B": "Peluang kelereng kedua kuning meningkat karena satu kelereng hijau telah diambil.",
+        "C": "Peluang kelereng kedua kuning berkurang karena satu kelereng hijau telah diambil, mengurangi total kelereng.",
+        "D": "Peluang kelereng kedua kuning menjadi 1, karena semua kelereng hijau sudah habis.",
+        "E": "Peluang kelereng kedua kuning tetap 4/10, karena kita hanya fokus pada kejadian kedua."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Risiko Pengambilan Tanpa Pengembalian**\\nPengambilan pertama tanpa pengembalian mengubah kondisi. Jika kelereng hijau terambil, jumlah kelereng kuning tetap 4, namun total kelereng berkurang menjadi 9. Peluangnya menjadi 4/9, yang lebih kecil dari peluang awal 4/10."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Di sebuah pasar tradisional, terdapat dua pedagang buah: Pak Budi menjual mangga dan jeruk, sementara Bu Ani menjual apel dan pisang. Pak Budi memiliki 30 buah mangga dan 20 buah jeruk. Bu Ani memiliki 25 buah apel dan 35 buah pisang. Seorang pembeli ingin membeli satu buah dari salah satu pedagang tersebut.",
+      "question": "Jika pembeli ingin membeli buah yang bukan mangga dari Pak Budi atau bukan apel dari Bu Ani, manakah strategi pembelian yang paling efisien untuk memaksimalkan pilihan buah?",
+      "options": {
+        "A": "Membeli dari Pak Budi karena jumlah buahnya lebih sedikit, sehingga lebih cepat memilih.",
+        "B": "Membeli dari Bu Ani karena buah yang diinginkan (pisang) lebih banyak jumlahnya.",
+        "C": "Membandingkan jumlah buah yang bukan mangga dari Pak Budi dengan jumlah buah yang bukan apel dari Bu Ani, lalu memilih pedagang dengan jumlah lebih banyak.",
+        "D": "Membeli dari pedagang mana saja karena kedua pedagang menawarkan pilihan buah yang sama.",
+        "E": "Membeli dari Pak Budi karena buah mangga dan jeruk lebih umum."
+      },
+      "answer": "C",
+      "explanation": "**Evaluasi Efisiensi Pilihan Pembelian**\\nBuah yang bukan mangga dari Pak Budi adalah jeruk (20 buah). Buah yang bukan apel dari Bu Ani adalah pisang (35 buah). Memilih pedagang dengan jumlah buah yang diinginkan lebih banyak (Bu Ani) akan memaksimalkan pilihan buah yang tersedia."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah UMKM keripik singkong memproduksi dua varian rasa: balado dan keju. Dalam satu hari produksi, terdapat 150 bungkus rasa balado dan 100 bungkus rasa keju. Sebanyak 10% dari rasa balado dan 20% dari rasa keju mengalami cacat kemasan.",
+      "question": "Manakah analisis risiko yang paling tepat mengenai peluang terambilnya keripik rasa balado yang cacat atau keripik rasa keju yang cacat jika diambil satu bungkus secara acak?",
+      "options": {
+        "A": "Peluang gabungan adalah jumlah peluang masing-masing karena kedua varian rasa adalah kejadian saling lepas.",
+        "B": "Peluang gabungan adalah jumlah peluang masing-masing dikurangi peluang keduanya cacat, karena varian rasa tidak mungkin cacat bersamaan.",
+        "C": "Peluang gabungan adalah jumlah peluang masing-masing karena varian rasa yang berbeda tidak bisa terjadi bersamaan dalam satu bungkus.",
+        "D": "Peluang gabungan adalah jumlah peluang masing-masing dikurangi peluang keduanya cacat, karena ada kemungkinan satu bungkus memiliki dua rasa.",
+        "E": "Peluang gabungan adalah jumlah peluang masing-masing karena varian rasa yang cacat adalah kejadian saling lepas."
+      },
+      "answer": "E",
+      "explanation": "**Analisis Risiko Kejadian Saling Lepas**\\nKejadian 'keripik rasa balado cacat' dan 'keripik rasa keju cacat' adalah saling lepas karena satu bungkus hanya memiliki satu rasa. Oleh karena itu, peluang gabungannya dihitung dengan menjumlahkan peluang masing-masing kejadian: P(Balado Cacat ∪ Keju Cacat) = P(Balado Cacat) + P(Keju Cacat)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah sekolah mengadakan pemilihan ketua OSIS. Kandidat A mendapat 150 suara, Kandidat B mendapat 120 suara, dan Kandidat C mendapat 80 suara. Terdapat 50 siswa yang memilih Kandidat A dan Kandidat B (memilih keduanya karena salah pilih, namun hanya satu suara yang sah).",
+      "question": "Jika hanya satu suara yang dihitung per siswa, manakah kesimpulan yang paling akurat mengenai strategi penghitungan suara yang adil?",
+      "options": {
+        "A": "Menjumlahkan semua suara kandidat, karena suara ganda tidak mempengaruhi total.",
+        "B": "Mengurangi suara Kandidat A dan B masing-masing sebanyak 50, karena mereka memilih keduanya.",
+        "C": "Menghitung suara sah per kandidat, dengan mengurangi jumlah suara yang memilih lebih dari satu kandidat dari total suara mereka.",
+        "D": "Mengabaikan suara yang memilih lebih dari satu kandidat, karena suara tersebut tidak valid.",
+        "E": "Memberikan suara ganda kepada kandidat yang paling banyak dipilih."
+      },
+      "answer": "C",
+      "explanation": "**Strategi Penghitungan Suara yang Adil**\\nDalam pemilihan, setiap siswa hanya berhak memberikan satu suara sah. Jika ada suara yang memilih lebih dari satu kandidat (seperti pada kasus A dan B), suara tersebut harus dikoreksi. Strategi yang adil adalah mengurangi jumlah suara yang memilih keduanya dari total suara masing-masing kandidat."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah toko buku menjual novel dan komik. Stok novel ada 80 eksemplar dan komik ada 120 eksemplar. Sebanyak 15% novel dan 10% komik adalah edisi kolektor. Seorang pelanggan ingin membeli satu buku yang merupakan novel edisi kolektor atau komik edisi kolektor.",
+      "question": "Manakah analisis risiko yang paling tepat terkait peluang pelanggan mendapatkan novel edisi kolektor atau komik edisi kolektor?",
+      "options": {
+        "A": "Peluang gabungan adalah jumlah peluang masing-masing karena novel dan komik adalah jenis buku yang berbeda.",
+        "B": "Peluang gabungan adalah jumlah peluang masing-masing dikurangi peluang keduanya terambil, karena satu pelanggan hanya membeli satu buku.",
+        "C": "Peluang gabungan adalah jumlah peluang masing-masing karena edisi kolektor pada novel dan komik adalah kejadian saling lepas.",
+        "D": "Peluang gabungan adalah jumlah peluang masing-masing dikurangi peluang keduanya terambil, karena ada kemungkinan satu buku adalah novel dan komik sekaligus.",
+        "E": "Peluang gabungan adalah jumlah peluang masing-masing karena pelanggan hanya bisa memilih salah satu jenis buku."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Risiko Kejadian Saling Lepas**\\nKejadian 'mendapatkan novel edisi kolektor' dan 'mendapatkan komik edisi kolektor' adalah saling lepas karena satu buku tidak mungkin sekaligus novel dan komik. Oleh karena itu, peluang gabungannya adalah jumlah peluang masing-masing: P(Novel Kolektor ∪ Komik Kolektor) = P(Novel Kolektor) + P(Komik Kolektor)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah acara pentas seni sekolah, terdapat dua jenis stan: stan makanan dan stan kerajinan tangan. Stan makanan menjual 50 jenis makanan, dan stan kerajinan tangan menjual 70 jenis kerajinan. Terdapat 10 jenis makanan yang juga merupakan kerajinan tangan (misalnya, kue kering yang dijual sebagai makanan dan juga kerajinan).",
+      "question": "Jika seorang pengunjung ingin memilih satu jenis barang yang merupakan makanan atau kerajinan tangan, manakah strategi evaluasi yang paling tepat untuk menentukan peluangnya?",
+      "options": {
+        "A": "Menjumlahkan total jenis makanan dan kerajinan, karena keduanya adalah kategori yang berbeda.",
+        "B": "Menjumlahkan total jenis makanan dan kerajinan, lalu mengurangi 10 jenis yang tumpang tindih.",
+        "C": "Menjumlahkan total jenis makanan dan kerajinan, lalu mengurangi 10 jenis karena keduanya tidak bisa dipilih bersamaan.",
+        "D": "Mengambil peluang makanan ditambah peluang kerajinan, karena keduanya adalah kejadian saling lepas.",
+        "E": "Mengambil peluang makanan ditambah peluang kerajinan, lalu mengurangi peluang keduanya terambil."
+      },
+      "answer": "B",
+      "explanation": "**Evaluasi Peluang Gabungan Kejadian Tidak Saling Lepas**\\nKarena ada 10 jenis barang yang termasuk dalam kategori makanan dan kerajinan tangan (irisan), kedua kejadian ini tidak saling lepas. Peluang gabungannya dihitung dengan P(Makanan ∪ Kerajinan) = P(Makanan) + P(Kerajinan) - P(Makanan ∩ Kerajinan). Ini setara dengan menjumlahkan total jenis lalu mengurangi irisannya."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah perusahaan logistik memiliki dua armada pengiriman: truk dan van. Armada truk terdiri dari 20 unit, dan armada van terdiri dari 30 unit. Sebanyak 5 unit truk mengalami kerusakan mesin, dan 7 unit van mengalami masalah rem.",
+      "question": "Manakah analisis risiko yang paling tepat mengenai peluang sebuah unit yang dipilih secara acak adalah truk yang rusak mesin atau van yang bermasalah rem?",
+      "options": {
+        "A": "Peluang gabungan adalah jumlah peluang masing-masing karena truk dan van adalah jenis kendaraan yang berbeda.",
+        "B": "Peluang gabungan adalah jumlah peluang masing-masing dikurangi peluang keduanya terambil, karena satu unit tidak bisa menjadi truk dan van sekaligus.",
+        "C": "Peluang gabungan adalah jumlah peluang masing-masing karena kerusakan mesin pada truk dan masalah rem pada van adalah kejadian saling lepas.",
+        "D": "Peluang gabungan adalah jumlah peluang masing-masing dikurangi peluang keduanya terambil, karena ada kemungkinan satu unit mengalami kedua masalah.",
+        "E": "Peluang gabungan adalah jumlah peluang masing-masing karena pelanggan hanya bisa memilih salah satu jenis kendaraan."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Risiko Kejadian Saling Lepas**\\nKejadian 'truk rusak mesin' dan 'van bermasalah rem' adalah saling lepas karena sebuah unit kendaraan tidak mungkin sekaligus truk dan van. Oleh karena itu, peluang gabungannya adalah jumlah peluang masing-masing kejadian: P(Truk Rusak ∪ Van Bermasalah) = P(Truk Rusak) + P(Van Bermasalah)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Dalam sebuah survei kepuasan pelanggan di sebuah restoran, 100 responden menyatakan puas dengan makanan, dan 80 responden menyatakan puas dengan pelayanan. Terdapat 30 responden yang menyatakan puas dengan makanan dan pelayanan.",
+      "question": "Jika seorang responden dipilih secara acak, manakah strategi evaluasi yang paling tepat untuk menentukan peluang responden tersebut puas dengan makanan atau pelayanan?",
+      "options": {
+        "A": "Menjumlahkan total responden yang puas dengan makanan dan pelayanan, karena keduanya adalah kategori yang berbeda.",
+        "B": "Menjumlahkan total responden yang puas dengan makanan dan pelayanan, lalu mengurangi 30 responden yang puas keduanya.",
+        "C": "Menjumlahkan total responden yang puas dengan makanan dan pelayanan, lalu mengurangi 30 responden karena keduanya tidak bisa dipilih bersamaan.",
+        "D": "Mengambil peluang kepuasan makanan ditambah peluang kepuasan pelayanan, karena keduanya adalah kejadian saling lepas.",
+        "E": "Mengambil peluang kepuasan makanan ditambah peluang kepuasan pelayanan, lalu mengurangi peluang keduanya terambil."
+      },
+      "answer": "B",
+      "explanation": "**Evaluasi Peluang Gabungan Kejadian Tidak Saling Lepas**\\nKarena ada 30 responden yang puas dengan makanan dan pelayanan (irisan), kedua kejadian ini tidak saling lepas. Peluang gabungannya dihitung dengan P(Puas Makanan ∪ Puas Pelayanan) = P(Puas Makanan) + P(Puas Pelayanan) - P(Puas Makanan ∩ Puas Pelayanan). Ini setara dengan menjumlahkan total responden yang puas lalu mengurangi irisannya."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Sebuah pabrik tas memproduksi dua jenis tas: ransel dan selempang. Produksi ransel sebanyak 200 buah dan selempang sebanyak 150 buah. Sebanyak 10% ransel memiliki cacat jahitan, dan 15% selempang memiliki cacat resleting.",
+      "question": "Manakah analisis risiko yang paling tepat mengenai peluang sebuah tas yang dipilih secara acak adalah ransel dengan cacat jahitan atau selempang dengan cacat resleting?",
+      "options": {
+        "A": "Peluang gabungan adalah jumlah peluang masing-masing karena ransel dan selempang adalah jenis tas yang berbeda.",
+        "B": "Peluang gabungan adalah jumlah peluang masing-masing dikurangi peluang keduanya terambil, karena satu tas tidak bisa menjadi ransel dan selempang sekaligus.",
+        "C": "Peluang gabungan adalah jumlah peluang masing-masing karena cacat jahitan pada ransel dan cacat resleting pada selempang adalah kejadian saling lepas.",
+        "D": "Peluang gabungan adalah jumlah peluang masing-masing dikurangi peluang keduanya terambil, karena ada kemungkinan satu tas mengalami kedua cacat.",
+        "E": "Peluang gabungan adalah jumlah peluang masing-masing karena pelanggan hanya bisa memilih salah satu jenis tas."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Risiko Kejadian Saling Lepas**\\nKejadian 'ransel cacat jahitan' dan 'selempang cacat resleting' adalah saling lepas karena sebuah tas tidak mungkin sekaligus ransel dan selempang. Oleh karena itu, peluang gabungannya adalah jumlah peluang masing-masing kejadian: P(Ransel Cacat ∪ Selempang Cacat) = P(Ransel Cacat) + P(Selempang Cacat)."
+    }
+  ],
+  "metadata": {
+    "id": "98b54fe6-454a-4348-8c73-c6087b513a77",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:59:01Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "pilgan",
+    "level": "HOTS",
+    "source_file": "Matematika_Umum_2_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2488,
+      "assistant": 4546,
+      "total": 7707,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

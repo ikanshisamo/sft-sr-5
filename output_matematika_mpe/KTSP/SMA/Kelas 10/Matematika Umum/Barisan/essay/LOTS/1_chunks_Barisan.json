@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\",\n      \"expected_reasoning\": [\n        \"single-step reasoning\",\n        \"direct concept understanding\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Barisan | Target: LOTS\n\n--- MATERI ---\nDalam matematika, barisan bilangan adalah susunan bilangan yang diurutkan menurut aturan atau pola tertentu. Dua jenis barisan yang paling fundamental untuk dipelajari di tingkat SMA adalah barisan aritmetika dan barisan geometri. Barisan aritmetika memiliki karakteristik berupa selisih atau beda (b) yang senantiasa tetap antara dua suku yang saling berurutan. Rumus umum untuk menentukan nilai suku ke-n pada barisan aritmetika adalah Un = a + (n - 1)b, di mana variabel 'a' mewakili suku pertama. Di sisi lain, barisan geometri dikonstruksi berlandaskan perbandingan atau rasio (r) yang bernilai konstan antara dua suku yang saling berurutan. Untuk menentukan nilai suku ke-n pada barisan geometri, diaplikasikan formulasi umum Un = a.r^(n - 1). Penguasaan konsep perumusan suku ke-n pada kedua jenis barisan ini sangat esensial karena menjadi landasan analitis dalam memodelkan permasalahan nyata, seperti perhitungan bunga perbankan maupun dinamika pertumbuhan populasi.\n\n[ATP_ALIGNMENT]\nMenentukan suku ke-n pada barisan aritmetika dan geometri.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang pedagang di Pasar Beringharjo Yogyakarta mencatat jumlah pembeli yang datang setiap jam. Pada jam pertama, ada 15 pembeli. Pada jam kedua, ada 19 pembeli. Pada jam ketiga, ada 23 pembeli. Pola ini terus berlanjut sepanjang hari.",
+      "question": "Berdasarkan data tersebut, tentukan jumlah pembeli pada jam ke-5 jika pola kedatangan pembeli merupakan barisan aritmetika.",
+      "rubric_points": [
+        "Mengidentifikasi suku pertama (a) dari data.",
+        "Menentukan beda (b) antar suku yang berurutan.",
+        "Menghitung suku ke-5 menggunakan rumus barisan aritmetika."
+      ],
+      "explanation": "**Perhitungan Suku ke-5**\\nDiketahui:\\nSuku pertama (a) = 15\\nBeda (b) = 19 - 15 = 4\\n\\nDitanya: Suku ke-5 (U5)\\n\\nRumus suku ke-n barisan aritmetika: Un = a + (n - 1)b\\n\\nMaka, U5 = 15 + (5 - 1) \\times 4\\nU5 = 15 + 4 \\times 4\\nU5 = 15 + 16\\nU5 = 31\\n\\nJadi, jumlah pembeli pada jam ke-5 adalah 31 orang.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM kerupuk udang di Sidoarjo memproduksi kerupuk dengan jumlah yang terus meningkat setiap minggunya. Pada minggu pertama, produksi adalah 100 bungkus. Pada minggu kedua, produksi menjadi 150 bungkus. Pada minggu ketiga, produksi mencapai 225 bungkus. Peningkatan ini mengikuti pola tertentu.",
+      "question": "Jika produksi kerupuk tersebut mengikuti pola barisan geometri, berapa bungkus kerupuk yang akan diproduksi pada minggu ke-4?",
+      "rubric_points": [
+        "Mengidentifikasi suku pertama (a) dari data produksi.",
+        "Menentukan rasio (r) antar suku yang berurutan.",
+        "Menghitung suku ke-4 menggunakan rumus barisan geometri."
+      ],
+      "explanation": "**Perhitungan Produksi Minggu ke-4**\\nDiketahui:\\nSuku pertama (a) = 100\\nRasio (r) = 150 / 100 = 1.5\\n\\nDitanya: Suku ke-4 (U4)\\n\\nRumus suku ke-n barisan geometri: Un = a \\times r^(n-1)\\n\\nMaka, U4 = 100 \\times (1.5)^(4-1)\\nU4 = 100 \\times (1.5)^3\\nU4 = 100 \\times 3.375\\nU4 = 337.5\\n\\nKarena jumlah bungkus harus bilangan bulat, maka produksi pada minggu ke-4 adalah 337 atau 338 bungkus.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang petani di lereng Gunung Merapi menanam bibit pohon jati. Pada tahun pertama, ia menanam 50 bibit. Pada tahun kedua, ia menanam 55 bibit. Pada tahun ketiga, ia menanam 60 bibit. Jumlah bibit yang ditanam setiap tahun bertambah secara konstan.",
+      "question": "Berapa jumlah bibit pohon jati yang akan ditanam petani tersebut pada tahun ke-7, jika pola penanaman mengikuti barisan aritmetika?",
+      "rubric_points": [
+        "Menentukan suku pertama (a) dari jumlah bibit.",
+        "Menghitung beda (b) antar tahun penanaman.",
+        "Menggunakan rumus barisan aritmetika untuk mencari suku ke-7."
+      ],
+      "explanation": "**Perhitungan Bibit Tahun ke-7**\\nDiketahui:\\nSuku pertama (a) = 50\\nBeda (b) = 55 - 50 = 5\\n\\nDitanya: Suku ke-7 (U7)\\n\\nRumus suku ke-n barisan aritmetika: Un = a + (n - 1)b\\n\\nMaka, U7 = 50 + (7 - 1) \\times 5\\nU7 = 50 + 6 \\times 5\\nU7 = 50 + 30\\nU7 = 80\\n\\nJadi, petani tersebut akan menanam 80 bibit pohon jati pada tahun ke-7.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah perusahaan transportasi lokal di Surabaya memiliki armada bus yang terus bertambah. Pada tahun 2020, mereka memiliki 10 bus. Pada tahun 2021, jumlah bus menjadi 20. Pada tahun 2022, jumlah bus menjadi 40. Pertumbuhan jumlah armada mengikuti pola tertentu.",
+      "question": "Jika pertumbuhan jumlah armada bus mengikuti barisan geometri, berapa jumlah bus yang dimiliki perusahaan tersebut pada tahun 2024?",
+      "rubric_points": [
+        "Mengidentifikasi suku pertama (a) dari jumlah armada.",
+        "Menentukan rasio (r) pertumbuhan armada.",
+        "Menghitung suku ke-5 (tahun 2024) menggunakan rumus barisan geometri."
+      ],
+      "explanation": "**Perhitungan Jumlah Bus Tahun 2024**\\nDiketahui:\\nSuku pertama (a) = 10 (tahun 2020)\\nRasio (r) = 20 / 10 = 2\\n\\nDitanya: Suku ke-5 (U5) yang merepresentasikan tahun 2024\\n\\nRumus suku ke-n barisan geometri: Un = a \\times r^(n-1)\\n\\nMaka, U5 = 10 \\times (2)^(5-1)\\nU5 = 10 \\times (2)^4\\nU5 = 10 \\times 16\\nU5 = 160\\n\\nJadi, perusahaan tersebut akan memiliki 160 bus pada tahun 2024.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Seorang siswa kelas X SMA Negeri 1 Yogyakarta sedang menabung untuk membeli seragam baru. Pada minggu pertama, ia menabung Rp5.000. Pada minggu kedua, ia menabung Rp7.000. Pada minggu ketiga, ia menabung Rp9.000. Jumlah tabungan mingguan bertambah secara teratur.",
+      "question": "Berapa jumlah tabungan siswa tersebut pada minggu ke-6 jika pola menabungnya mengikuti barisan aritmetika?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah tabungan awal (suku pertama).",
+        "Menentukan selisih (beda) tabungan antar minggu.",
+        "Menghitung jumlah tabungan pada minggu ke-6 menggunakan rumus barisan aritmetika."
+      ],
+      "explanation": "**Perhitungan Tabungan Minggu ke-6**\\nDiketahui:\\nSuku pertama (a) = Rp5.000\\nBeda (b) = Rp7.000 - Rp5.000 = Rp2.000\\n\\nDitanya: Suku ke-6 (U6)\\n\\nRumus suku ke-n barisan aritmetika: Un = a + (n - 1)b\\n\\nMaka, U6 = 5.000 + (6 - 1) \\times 2.000\\nU6 = 5.000 + 5 \\times 2.000\\nU6 = 5.000 + 10.000\\nU6 = 15.000\\n\\nJadi, jumlah tabungan siswa tersebut pada minggu ke-6 adalah Rp15.000.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "61867966-7f59-432c-b4e9-3b1a29f17a26",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:56:32Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Barisan",
+    "task_type": "essay",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan suku ke-n pada barisan aritmetika dan geometri.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1253,
+      "assistant": 1625,
+      "total": 3552,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

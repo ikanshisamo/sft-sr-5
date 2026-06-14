@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_DISTRIBUTION]\n- LOTS: 40%\n- MOTS: 30%\n- HOTS: 30%\n\nGenerate questions proportionally based on this distribution.\n\n[LEVELING_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"question_behavior\": [\n        \"evaluate consequences\",\n        \"compare strategies\",\n        \"select the most effective decision\",\n        \"analyze operational impact\",\n        \"predict realistic outcomes\",\n        \"analyze tradeoffs\"\n      ],\n      \"preferred_question_patterns\": [\n        \"strategic decision-making\",\n        \"contextual evaluation\",\n        \"real-world judgment\",\n        \"constraint-based reasoning\",\n        \"operational analysis\",\n        \"risk evaluation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure formula substitution\",\n        \"single-step arithmetic\",\n        \"direct symbolic matching\",\n        \"mechanical calculation\",\n        \"simple recall\",\n        \"formula-only questions\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang\n\n--- MATERI ---\nDalam mempelajari teori peluang, pemahaman mengenai konsep percobaan atau eksperimen statistik merupakan fondasi yang sangat penting. Percobaan statistik didefinisikan sebagai suatu tindakan atau proses pengamatan yang menghasilkan serangkaian kemungkinan hasil yang pasti, meskipun hasil spesifiknya tidak dapat diprediksi secara mutlak sebelum percobaan dilakukan. Kumpulan atau himpunan dari semua hasil yang mungkin terjadi dari suatu percobaan ini secara matematis disebut sebagai ruang sampel, dan lazimnya dinotasikan dengan huruf kapital S. Setiap anggota atau elemen individu yang terdapat di dalam sebuah ruang sampel dinamakan titik sampel. Sebagai contoh dasar, pada percobaan pelemparan sebuah dadu bersisi enam yang homogen, hasil yang mungkin muncul adalah salah satu dari mata dadu 1, 2, 3, 4, 5, atau 6. Oleh karena itu, ruang sampel untuk percobaan tersebut dapat dituliskan dalam notasi himpunan sebagai S = {1, 2, 3, 4, 5, 6}.\n\nUntuk mempermudah perhitungan peluang, peserta didik harus mampu menentukan banyaknya titik sampel di dalam ruang sampel, yang umumnya dinotasikan dengan lambang n(S). Pada contoh pelemparan satu buah dadu, nilai n(S) adalah 6. Namun, untuk percobaan majemuk yang melibatkan lebih dari satu objek atau dilakukan secara berulang, proses identifikasi titik sampel menjadi lebih kompleks. Oleh sebab itu, diperlukan metode sistematis untuk mendaftar seluruh kemungkinan hasil agar tidak ada titik sampel yang terlewat. Terdapat tiga metode utama yang sering digunakan dalam mendaftar ruang sampel, yaitu pendaftaran langsung (mendaftar anggota himpunan), tabel silang, dan diagram pohon. Tabel silang sangat efektif diterapkan untuk percobaan yang melibatkan tepat dua objek, sedangkan diagram pohon lebih fleksibel dan direkomendasikan untuk eksperimen bertahap yang melibatkan tiga objek atau lebih, seperti pelemparan tiga keping uang logam sekaligus.\n\nSetelah berhasil memetakan keseluruhan ruang sampel S, tahapan analitis berikutnya adalah mengkaji konsep kejadian. Kejadian atau peristiwa, yang dalam literatur probabilitas sering disimbolkan dengan huruf kapital seperti A, B, atau C, didefinisikan secara formal sebagai himpunan bagian dari suatu ruang sampel S. Dengan kata lain, kejadian adalah sekumpulan hasil spesifik yang memiliki karakteristik atau syarat tertentu sesuai dengan yang diamati. Banyaknya anggota atau hasil yang memenuhi syarat dalam suatu kejadian A dinotasikan secara matematis dengan n(A). Sebagai ilustrasi, jika kita meninjau kembali eksperimen pelemparan sebuah dadu bersisi enam, dan kita mendefinisikan kejadian A sebagai peristiwa munculnya mata dadu bernilai genap, maka himpunan kejadian A dapat dituliskan sebagai A = {2, 4, 6}. Dari himpunan tersebut, dapat diidentifikasi secara langsung bahwa banyaknya titik sampel untuk kejadian munculnya mata dadu genap adalah tiga, atau n(A) = 3.\n\nPerhitungan probabilitas didasarkan pada perbandingan matematis antara kejadian spesifik dengan ruang sampelnya. Jika dalam suatu eksperimen setiap titik sampel pada ruang sampel S diasumsikan memiliki peluang atau kemungkinan yang sama besar untuk muncul, maka peluang teoretis terjadinya suatu kejadian A dapat dirumuskan secara eksak. Peluang kejadian A, yang dinotasikan dengan P(A), merupakan hasil bagi antara banyaknya anggota dalam himpunan kejadian A dengan total banyaknya anggota dalam ruang sampel S. Secara aljabar, formulasi probabilitas ini dituliskan sebagai persamaan P(A) = n(A) / n(S). Mengacu pada ilustrasi kejadian munculnya mata dadu genap sebelumnya, di mana diketahui nilai n(A) = 3 dan n(S) = 6, maka peluang teoretis terjadinya kejadian tersebut adalah 3 dibagi 6, yang jika disederhanakan ke dalam bentuk pecahan paling sederhana akan bernilai 1/2.\n\nKonsep esensial terakhir dalam dasar probabilitas adalah memahami rentang nilai peluang dan kejadian komplemen. Berdasarkan rumusan matematisnya, nilai peluang suatu kejadian akan selalu berada pada rentang tertutup berupa interval bilangan riil dari nol hingga satu, yang secara matematis diekspresikan sebagai 0 ≤ P(A) ≤ 1. Jika suatu kejadian memiliki probabilitas bernilai tepat 0, hal tersebut merepresentasikan sebuah kemustahilan, artinya kejadian itu tidak mungkin terjadi dalam eksperimen. Sebaliknya, probabilitas yang bernilai tepat 1 menunjukkan suatu kepastian mutlak. Selain itu, terdapat pula konsep peluang komplemen kejadian A, yang dinotasikan dengan A' atau A^c. Komplemen memuat semua titik sampel di S yang bukan anggota A. Aturan probabilitas menetapkan bahwa jumlah peluang kejadian A dengan peluang kejadian komplemennya selalu sama dengan satu, yang diformulasikan sebagai P(A) + P(A') = 1.\n\n[ATP_ALIGNMENT]\nMenentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah percobaan melempar sebuah koin yang seimbang sebanyak dua kali, hasil yang mungkin muncul adalah Angka (A) atau Gambar (G).",
+      "question": "Manakah dari pilihan berikut yang merupakan ruang sampel dari percobaan tersebut?",
+      "options": {
+        "A": "{A, G}",
+        "B": "{AA, AG, GA, GG}",
+        "C": "{A, G, AA, AG, GA, GG}",
+        "D": "{AA, GG}",
+        "E": "{AG, GA}"
+      },
+      "answer": "B",
+      "explanation": "**Ruang Sampel**\\nRuang sampel adalah himpunan semua hasil yang mungkin terjadi. Untuk dua kali pelemparan koin, setiap lemparan bisa menghasilkan A atau G. Kombinasi semua hasil yang mungkin adalah AA, AG, GA, dan GG. Jadi, ruang sampelnya adalah {AA, AG, GA, GG}."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah kantong berisi 5 kelereng merah (M) dan 3 kelereng biru (B). Akan diambil satu kelereng secara acak.",
+      "question": "Berapa banyak titik sampel yang ada pada percobaan pengambilan satu kelereng dari kantong tersebut?",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "8",
+        "D": "15",
+        "E": "24"
+      },
+      "answer": "C",
+      "explanation": "**Banyaknya Titik Sampel**\\nTitik sampel adalah setiap hasil yang mungkin terjadi. Dalam percobaan ini, setiap kelereng yang diambil adalah satu hasil yang mungkin. Karena ada 5 kelereng merah dan 3 kelereng biru, total ada 5 + 3 = 8 kelereng. Oleh karena itu, banyaknya titik sampel adalah 8."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah dadu bersisi enam dilempar sekali. Kejadian A adalah munculnya mata dadu yang habis dibagi 3.",
+      "question": "Berapakah peluang kejadian A?",
+      "options": {
+        "A": "1/6",
+        "B": "2/6",
+        "C": "3/6",
+        "D": "4/6",
+        "E": "5/6"
+      },
+      "answer": "B",
+      "explanation": "**Peluang Kejadian**\\nRuang sampel (S) dari pelemparan dadu adalah {1, 2, 3, 4, 5, 6}, sehingga n(S) = 6. Kejadian A adalah munculnya mata dadu yang habis dibagi 3, yaitu {3, 6}. Jadi, n(A) = 2. Peluang kejadian A adalah P(A) = n(A) / n(S) = 2/6."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang pedagang di pasar tradisional memiliki 3 jenis buah: apel, jeruk, dan mangga. Ia berencana membuat paket buah yang terdiri dari 2 jenis buah berbeda untuk dijual.",
+      "question": "Jika pedagang tersebut ingin menawarkan paket buah yang paling beragam, strategi manakah yang paling efektif untuk mendaftar semua kemungkinan paket yang bisa dibuat?",
+      "options": {
+        "A": "Mendaftar langsung semua kombinasi yang mungkin.",
+        "B": "Menggunakan tabel silang untuk membandingkan setiap jenis buah.",
+        "C": "Membuat diagram pohon untuk setiap pilihan buah.",
+        "D": "Menghitung jumlah buah yang ada lalu membaginya dua.",
+        "E": "Memilih dua jenis buah secara acak dan menganggap itu semua kombinasinya."
+      },
+      "answer": "A",
+      "explanation": "**Strategi Pemilihan Paket Buah**\\nUntuk mendaftar semua kemungkinan paket yang terdiri dari 2 jenis buah berbeda dari 3 jenis buah, metode pendaftaran langsung adalah yang paling efisien dan jelas. Tabel silang atau diagram pohon lebih cocok untuk percobaan dengan lebih banyak elemen atau tahapan. Menghitung atau memilih acak tidak menjamin kelengkapan semua kombinasi."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah percobaan pelemparan dua keping uang logam yang seimbang, ruang sampelnya adalah S = {AA, AG, GA, GG}.",
+      "question": "Berapakah banyaknya titik sampel pada percobaan tersebut?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "6"
+      },
+      "answer": "D",
+      "explanation": "**Banyaknya Titik Sampel**\\nTitik sampel adalah setiap elemen dalam ruang sampel. Ruang sampel yang diberikan adalah S = {AA, AG, GA, GG}. Dengan menghitung setiap elemen dalam himpunan tersebut, kita menemukan ada 4 titik sampel."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah kotak berisi 4 bola merah (M) dan 6 bola putih (P). Dua bola diambil satu per satu tanpa pengembalian.",
+      "question": "Manakah metode yang paling tepat untuk mendaftar semua kemungkinan hasil dari pengambilan dua bola tersebut?",
+      "options": {
+        "A": "Pendaftaran langsung semua pasangan bola.",
+        "B": "Menggunakan tabel silang.",
+        "C": "Membuat diagram pohon.",
+        "D": "Menghitung total bola lalu membaginya dua.",
+        "E": "Menggunakan rumus kombinasi tanpa mendaftar."
+      },
+      "answer": "C",
+      "explanation": "**Metode Pendaftaran Ruang Sampel**\\nKarena pengambilan bola dilakukan satu per satu (bertahap) dan tanpa pengembalian, diagram pohon adalah metode yang paling efektif untuk memvisualisasikan dan mendaftar semua kemungkinan urutan hasil (misalnya, M1P1, M1P2, ..., P4M4)."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang siswa sedang mempelajari peluang dan menemukan bahwa peluang kejadian A adalah P(A) = 0.75. Ia kemudian menghitung peluang komplemen kejadian A, yaitu P(A').",
+      "question": "Jika siswa tersebut salah menghitung P(A') menjadi 0.15, apa yang dapat disimpulkan mengenai perhitungannya?",
+      "options": {
+        "A": "Perhitungan P(A') sudah benar karena 0.75 + 0.15 = 0.90.",
+        "B": "Perhitungan P(A') salah karena seharusnya P(A) + P(A') = 1.",
+        "C": "Perhitungan P(A') salah karena P(A') harus lebih besar dari P(A).",
+        "D": "Perhitungan P(A') sudah benar karena nilai peluang selalu positif.",
+        "E": "Perhitungan P(A') salah karena P(A') harus sama dengan P(A)."
+      },
+      "answer": "B",
+      "explanation": "**Konsep Peluang Komplemen**\\nPeluang suatu kejadian dan peluang komplemennya selalu berjumlah 1 (P(A) + P(A') = 1). Jika P(A) = 0.75, maka P(A') seharusnya adalah 1 - 0.75 = 0.25. Perhitungan siswa yang menghasilkan 0.15 adalah salah karena tidak memenuhi aturan ini."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam percobaan pelemparan sebuah dadu bersisi enam, kejadian B adalah munculnya mata dadu kurang dari 4.",
+      "question": "Manakah dari pilihan berikut yang merupakan himpunan kejadian B?",
+      "options": {
+        "A": "{1, 2, 3, 4}",
+        "B": "{1, 2, 3}",
+        "C": "{4, 5, 6}",
+        "D": "{1, 2, 3, 4, 5, 6}",
+        "E": "{4}"
+      },
+      "answer": "B",
+      "explanation": "**Himpunan Kejadian**\\nKejadian B adalah munculnya mata dadu yang nilainya kurang dari 4. Dari ruang sampel {1, 2, 3, 4, 5, 6}, angka-angka yang kurang dari 4 adalah 1, 2, dan 3. Oleh karena itu, himpunan kejadian B adalah {1, 2, 3}."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong menjual 5 jenis minuman ringan: A, B, C, D, dan E. Pelanggan dapat memilih 2 jenis minuman berbeda untuk dibeli.",
+      "question": "Berapa banyak kombinasi paket 2 jenis minuman yang berbeda yang dapat dibuat oleh toko tersebut?",
+      "options": {
+        "A": "5",
+        "B": "10",
+        "C": "15",
+        "D": "20",
+        "E": "25"
+      },
+      "answer": "B",
+      "explanation": "**Kombinasi Pilihan**\\nIni adalah masalah kombinasi karena urutan pemilihan minuman tidak penting (paket A dan B sama dengan paket B dan A). Kita perlu mencari kombinasi 2 dari 5 jenis minuman. Menggunakan rumus kombinasi C(n, k) = n! / (k!(n-k)!), kita hitung C(5, 2) = 5! / (2!(5-2)!) = 5! / (2!3!) = (5 \\times 4) / (2 \\times 1) = 10."
+    },
+    {
+      "level": "HOTS",
+      "stimulus": "Seorang guru memberikan tugas kepada siswanya untuk menghitung peluang munculnya mata dadu genap atau mata dadu lebih dari 4 saat melempar sebuah dadu bersisi enam.",
+      "question": "Jika seorang siswa menghitung peluangnya dengan menjumlahkan peluang mata dadu genap dan peluang mata dadu lebih dari 4 secara langsung, mengapa pendekatan ini bisa menghasilkan jawaban yang salah?",
+      "options": {
+        "A": "Karena peluang mata dadu genap lebih besar dari peluang mata dadu lebih dari 4.",
+        "B": "Karena ada mata dadu yang termasuk dalam kedua kejadian tersebut (irisan).",
+        "C": "Karena peluang setiap mata dadu tidak sama.",
+        "D": "Karena penjumlahan peluang tidak boleh melebihi 1.",
+        "E": "Karena dadu hanya memiliki 6 sisi, sehingga ruang sampelnya terbatas."
+      },
+      "answer": "B",
+      "explanation": "**Peluang Gabungan Dua Kejadian**\\nMenjumlahkan peluang dua kejadian secara langsung hanya berlaku jika kedua kejadian tersebut saling lepas (tidak memiliki irisan). Dalam kasus ini, mata dadu '6' termasuk dalam kejadian 'mata dadu genap' dan juga 'mata dadu lebih dari 4'. Menjumlahkan peluangnya tanpa mengurangkan irisan akan menghitung mata dadu '6' dua kali."
+    }
+  ],
+  "metadata": {
+    "id": "7ddb5283-5e85-4e09-b1d2-92b08134edc8",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T10:20:31Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "pretest",
+    "level": null,
+    "source_file": "Matematika_Umum_5_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3920,
+      "assistant": 2454,
+      "total": 7047,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

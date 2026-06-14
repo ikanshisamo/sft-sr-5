@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\",\n      \"expected_reasoning\": [\n        \"single-step reasoning\",\n        \"direct concept understanding\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Barisan dan Deret | Sub Bab: Bunga | Target: LOTS\n\n--- MATERI ---\nDalam kehidupan sehari-hari, konsep barisan dan deret sangat erat kaitannya dengan transaksi keuangan, salah satunya adalah perhitungan bunga di bank. Bunga simpanan merupakan balas jasa dari bank kepada nasabah atas uang yang disimpannya, sedangkan bunga pinjaman adalah balas jasa yang ditetapkan bank kepada peminjam. Secara umum, sistem perhitungan bunga terbagi menjadi dua jenis utama, yaitu bunga tunggal dan bunga majemuk. Bunga tunggal adalah sistem perhitungan bunga yang besarnya hanya ditentukan oleh modal atau pokok uang awal saja. Berapa lama pun uang tersebut disimpan di bank, nilai nominal bunganya akan selalu tetap setiap periode karena hanya dihitung dari nilai pokok uangnya.\n\nPenerapan perhitungan bunga tunggal pada dasarnya mengikuti prinsip barisan aritmetika. Sebagai contoh, jika seseorang menabung di bank sebesar Rp1.000.000,00 dengan sistem bunga tunggal 5% per tahun, maka setiap tahun ia akan mendapatkan tambahan bunga tetap sebesar Rp50.000,00. Pada tahun pertama, saldo tabungannya menjadi Rp1.050.000,00. Pada tahun kedua bertambah lagi menjadi Rp1.100.000,00, pada tahun ketiga menjadi Rp1.150.000,00, dan seterusnya. Penambahan nominal uang yang selalu konstan sebesar Rp50.000,00 di setiap tahunnya ini bertindak sebagai beda atau selisih yang selalu tetap dalam konsep barisan aritmetika.\n\nBerbeda dengan bunga tunggal, jenis bunga yang kedua adalah bunga majemuk. Dalam perhitungan bunga majemuk, nominal bunga yang didapatkan pada periode sebelumnya tidak dibiarkan terpisah, melainkan akan diakumulasikan atau dimasukkan ke dalam pokok tabungan. Akibatnya, perhitungan bunga pada periode berikutnya akan dihitung berdasarkan nilai pokok tabungan yang baru (pokok awal ditambah akumulasi bunga sebelumnya). Sistem ini sering kali disebut oleh masyarakat awam sebagai 'bunga berbunga', di mana seiring berjalannya waktu, nominal bunga yang diperoleh akan semakin membesar di tiap periodenya karena dihitung dari pokok uang yang terus bertumbuh.\n\nKonsep pertumbuhan saldo pada sistem bunga majemuk merupakan bentuk penerapan matematis dari barisan geometri. Sebagai contoh, dengan modal awal Rp1.000.000,00 dan bunga majemuk 5% per tahun, saldo pada akhir tahun pertama adalah Rp1.050.000,00. Memasuki tahun kedua, bunga 5% tidak lagi dihitung dari Rp1.000.000,00, melainkan dihitung dari pokok baru yaitu Rp1.050.000,00, sehingga bunganya menjadi Rp52.500,00 dan total saldo menjadi Rp1.102.500,00. Peningkatan saldo yang memiliki rasio pengali tetap di setiap periodenya inilah yang membuat perhitungan bunga majemuk sangat erat kaitannya dengan prinsip dasar suku ke-n pada barisan geometri.\n\n[ATP_ALIGNMENT]\nMenghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Ibu Siti menabung di Bank Sejahtera sebesar Rp5.000.000,00 dengan suku bunga tunggal 4% per tahun. Setiap tahun, bank akan menambahkan sejumlah uang ke rekening Ibu Siti berdasarkan persentase dari modal awal. Penambahan ini akan terus terjadi setiap tahun dengan jumlah yang sama.",
+      "question": "Berdasarkan stimulus di atas, berapakah jumlah bunga yang akan diterima Ibu Siti setiap tahunnya?",
+      "rubric_points": [
+        "Mengidentifikasi modal awal tabungan Ibu Siti.",
+        "Mengidentifikasi persentase suku bunga tunggal per tahun.",
+        "Menghitung jumlah bunga tunggal tahunan yang diterima."
+      ],
+      "explanation": "**Perhitungan Bunga Tunggal Tahunan**\\nBunga tunggal dihitung hanya berdasarkan modal awal.\\nModal Awal = Rp5.000.000,00\\nSuku Bunga Tunggal = 4% per tahun\\n\\nBunga per Tahun = Modal Awal \\times Suku Bunga\\nBunga per Tahun = Rp5.000.000,00 \\times 4\\%\\nBunga per Tahun = Rp5.000.000,00 \\times \\frac{4}{100}\\nBunga per Tahun = Rp200.000,00\\n\\nJadi, Ibu Siti akan menerima bunga sebesar Rp200.000,00 setiap tahunnya.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Pak Budi meminjam uang di koperasi sebesar Rp10.000.000,00 dengan bunga majemuk 3% per tahun. Sistem bunga majemuk berarti bunga yang diperoleh pada periode sebelumnya akan ditambahkan ke pokok pinjaman untuk perhitungan bunga periode berikutnya.",
+      "question": "Dalam konteks bunga majemuk, apa yang membedakan perhitungan bunga pada tahun kedua dibandingkan dengan tahun pertama?",
+      "rubric_points": [
+        "Menjelaskan bahwa bunga tahun pertama dihitung dari pokok awal.",
+        "Menjelaskan bahwa bunga tahun kedua dihitung dari pokok awal ditambah bunga tahun pertama.",
+        "Menyatakan bahwa pokok perhitungan bunga bertambah pada tahun kedua."
+      ],
+      "explanation": "**Perbedaan Perhitungan Bunga Majemuk**\\nPada bunga majemuk, bunga dihitung berdasarkan pokok yang terus bertambah.\\nTahun Pertama: Bunga dihitung dari pokok pinjaman awal.\\n\\nBunga Tahun 1 = Pokok Awal \\times Suku Bunga\\n\\nTahun Kedua: Bunga dihitung dari pokok pinjaman awal ditambah bunga yang sudah diakumulasikan pada tahun pertama.\\n\\nBunga Tahun 2 = (Pokok Awal + Bunga Tahun 1) \\times Suku Bunga\\n\\nPerbedaan utamanya adalah dasar perhitungan bunga yang semakin besar pada tahun-tahun berikutnya karena adanya akumulasi bunga sebelumnya.\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah UMKM keripik singkong mendapatkan pinjaman modal sebesar Rp2.000.000,00 dengan bunga tunggal 6% per tahun. Uang ini akan digunakan untuk membeli bahan baku dan peralatan tambahan.",
+      "question": "Berapakah total bunga yang harus dibayar UMKM tersebut setelah menabung selama 3 tahun dengan sistem bunga tunggal?",
+      "rubric_points": [
+        "Mengidentifikasi modal awal pinjaman.",
+        "Mengidentifikasi suku bunga tunggal per tahun.",
+        "Menghitung total bunga selama 3 tahun."
+      ],
+      "explanation": "**Perhitungan Total Bunga Tunggal 3 Tahun**\\nBunga tunggal dihitung berdasarkan modal awal saja.\\nModal Awal = Rp2.000.000,00\\nSuku Bunga Tunggal = 6% per tahun\\nJangka Waktu = 3 tahun\\n\\nBunga per Tahun = Modal Awal \\times Suku Bunga\\nBunga per Tahun = Rp2.000.000,00 \\times 6\\%\\nBunga per Tahun = Rp2.000.000,00 \\times \\frac{6}{100}\\nBunga per Tahun = Rp120.000,00\\n\\nTotal Bunga = Bunga per Tahun \\times Jangka Waktu\\nTotal Bunga = Rp120.000,00 \\times 3\\nTotal Bunga = Rp360.000,00\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Andi menabung uang jajan di celengan. Pada bulan pertama, ia menabung Rp10.000,00. Setiap bulan berikutnya, ia menambah tabungannya sebesar Rp2.000,00 lebih banyak dari bulan sebelumnya.",
+      "question": "Berapakah jumlah uang yang ditabung Andi pada bulan kelima?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah tabungan awal.",
+        "Mengidentifikasi penambahan tabungan setiap bulan.",
+        "Menghitung jumlah tabungan pada bulan kelima."
+      ],
+      "explanation": "**Perhitungan Tabungan Bulanan (Barisan Aritmetika)**\\nIni adalah contoh penerapan barisan aritmetika.\\nSuku pertama (a) = Rp10.000,00\\nDiferensi (b) = Rp2.000,00\\nDitanya suku ke-5 (U5).\\n\\nRumus suku ke-n barisan aritmetika: Un = a + (n-1)b\\n\\nU5 = Rp10.000,00 + (5-1) \\times Rp2.000,00\\nU5 = Rp10.000,00 + (4) \\times Rp2.000,00\\nU5 = Rp10.000,00 + Rp8.000,00\\nU5 = Rp18.000,00\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah toko kelontong mencatat penjualan harian. Pada hari pertama, penjualan adalah Rp500.000,00. Setiap hari berikutnya, penjualan meningkat sebesar 10% dari hari sebelumnya.",
+      "question": "Berapakah jumlah penjualan pada hari ketiga jika menggunakan sistem bunga majemuk?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah penjualan awal.",
+        "Mengidentifikasi persentase peningkatan penjualan harian.",
+        "Menghitung jumlah penjualan pada hari ketiga."
+      ],
+      "explanation": "**Perhitungan Penjualan Harian (Bunga Majemuk)**\\nIni adalah contoh penerapan bunga majemuk.\\nPokok Awal (P) = Rp500.000,00\\nSuku Bunga (r) = 10% = 0,10\\nPeriode (n) = 3 hari.\\n\\nRumus nilai akhir bunga majemuk: An = P(1+r)^(n-1)\\n\\nPenjualan Hari ke-1 = Rp500.000,00\\nPenjualan Hari ke-2 = Rp500.000,00 \\times (1 + 0,10) = Rp500.000,00 \\times 1,10 = Rp550.000,00\\nPenjualan Hari ke-3 = Rp550.000,00 \\times (1 + 0,10) = Rp550.000,00 \\times 1,10 = Rp605.000,00\\n\\nAtau menggunakan rumus langsung untuk hari ke-3 (n=3):\\nA3 = Rp500.000,00 \\times (1 + 0,10)^(3-1)\\nA3 = Rp500.000,00 \\times (1,10)^2\\nA3 = Rp500.000,00 \\times 1,21\\nA3 = Rp605.000,00\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "ab868355-1c43-4b26-ba62-56222ebd5cbd",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T12:12:29Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Barisan dan Deret",
+    "sub_bab": "Bunga",
+    "task_type": "essay",
+    "level": "LOTS",
+    "source_file": "Matematika_Umum_4_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1779,
+      "assistant": 1708,
+      "total": 4160,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

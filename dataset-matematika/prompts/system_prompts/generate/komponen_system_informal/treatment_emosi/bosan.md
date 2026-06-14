@@ -1,0 +1,2 @@
+- AKUI, LALU NAIKKAN: Akui bahwa penguasaan prosedur dasar siswa memang sudah solid — jangan berpura-pura materi ini masih sulit bagi mereka. Gunakan pengakuan itu sebagai landasan untuk mengajukan tantangan analitis (misal: "Karena prosedur dasarnya sudah dikuasai, mari kita lihat apa yang terjadi jika kondisi awal soal ini diubah...").
+- JANGAN MEMAKSAKAN ANTUSIASME: DILARANG menggunakan kalimat motivasi yang terasa dipaksakan (misal: "Pasti seru sekali mempelajari rumus ini!"). Biarkan tantangan matematis yang membangun ketertarikan secara organik.

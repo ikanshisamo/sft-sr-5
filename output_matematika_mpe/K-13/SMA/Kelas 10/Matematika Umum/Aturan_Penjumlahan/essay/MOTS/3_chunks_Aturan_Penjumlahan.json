@@ -1,0 +1,102 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: MOTS\n\n--- MATERI ---\nDalam teori peluang, aturan penjumlahan digunakan untuk menentukan peluang gabungan dua kejadian atau lebih, yang lazimnya dihubungkan dengan kata hubung 'atau'. Penggunaan rumus pada aturan penjumlahan sangat bergantung pada karakteristik himpunan kedua kejadian tersebut, apakah saling lepas atau tidak saling lepas. Dua buah kejadian dikatakan saling lepas apabila kedua kejadian tersebut sama sekali tidak dapat terjadi secara bersamaan pada satu kali percobaan. Secara matematis, hal ini berarti irisan dari himpunan kejadian A dan kejadian B adalah himpunan kosong, yang dinotasikan dengan A ∩ B = ∅, sehingga nilai peluang irisannya bernilai nol. Sebagai contoh ilustrasi pada pelemparan sebuah dadu bersisi enam, kejadian munculnya mata dadu ganjil dan kejadian munculnya mata dadu genap merupakan dua kejadian yang saling lepas karena tidak ada satu pun angka yang ganjil sekaligus genap pada mata dadu tersebut.\n\nUntuk menghitung peluang gabungan dari dua kejadian yang saling lepas, kita menerapkan prinsip dasar aturan penjumlahan. Karena kedua kejadian tersebut tidak memiliki irisan atau titik sampel yang bersekutu, kita dapat secara langsung menjumlahkan nilai peluang dari masing-masing kejadian tunggalnya. Secara matematis, rumus aturan penjumlahan untuk kejadian A dan B yang saling lepas dituliskan sebagai P(A ∪ B) = P(A) + P(B). Notasi ∪ menyatakan gabungan (union) yang bermakna kejadian A atau kejadian B. Pemahaman konsep ini sangat penting karena memfasilitasi perhitungan peluang kejadian majemuk secara lebih efisien tanpa harus mendaftar ulang seluruh titik sampel yang merupakan gabungan dari kedua kejadian tersebut. Rumus ini juga dapat diperluas untuk tiga atau lebih kejadian yang semuanya saling lepas satu sama lain.\n\nBerbeda dengan kondisi sebelumnya, dua kejadian dikatakan tidak saling lepas apabila kedua kejadian tersebut memungkinkan untuk terjadi secara bersamaan dalam satu kali percobaan. Pada situasi ini, terdapat setidaknya satu titik sampel yang menjadi anggota himpunan kejadian A sekaligus anggota himpunan kejadian B, sehingga irisan kedua himpunan tersebut bukan merupakan himpunan kosong (A ∩ B ≠ ∅). Saat menghitung peluang gabungan untuk kejadian tidak saling lepas, aturan penjumlahannya mensyaratkan kita untuk mengurangkan hasil jumlah peluang masing-masing kejadian dengan peluang irisannya. Pengurangan ini mutlak diperlukan guna menghindari perhitungan ganda pada titik sampel yang beririsan. Oleh karena itu, rumus aturan penjumlahan untuk kejadian tidak saling lepas dinyatakan secara lengkap sebagai P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Contoh aplikatifnya adalah peluang terambilnya kartu As atau kartu berwarna merah dari satu set kartu remi.\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Di sebuah pasar tradisional di Surabaya, terdapat dua lapak penjual buah. Lapak A menjual 10 jenis buah tropis, dan Lapak B menjual 8 jenis buah impor. Terdapat 3 jenis buah yang dijual di kedua lapak tersebut. Seorang pembeli ingin membeli satu jenis buah yang berbeda dari kedua lapak tersebut.",
+      "question": "Jika pembeli memilih satu jenis buah secara acak dari gabungan buah yang tersedia di kedua lapak, berapakah peluang pembeli tersebut mendapatkan buah yang hanya ada di Lapak A atau hanya ada di Lapak B?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah buah unik di Lapak A.",
+        "Menghitung jumlah buah unik di Lapak B.",
+        "Menentukan peluang gabungan kejadian tidak saling lepas."
+      ],
+      "explanation": "**Perhitungan Peluang Kejadian Tidak Saling Lepas**\\nDiketahui:\\nJumlah jenis buah di Lapak A = 10\\nJumlah jenis buah di Lapak B = 8\\nJumlah jenis buah yang sama di kedua lapak = 3\\n\\nBuah unik di Lapak A = 10 - 3 = 7\\nBuah unik di Lapak B = 8 - 3 = 5\\nTotal buah unik (kejadian A atau B) = 7 + 5 = 12\\nTotal jenis buah yang tersedia = (10 - 3) + (8 - 3) + 3 = 7 + 5 + 3 = 15\\n\\nPeluang memilih buah unik dari Lapak A, P(A) = \\\\frac{7}{15}\\\\nPeluan memilih buah unik dari Lapak B, P(B) = \\\\frac{5}{15}\\\\nKarena buah yang dipilih hanya boleh unik dari salah satu lapak, maka kedua kejadian ini saling lepas.\\n\\nP(A \\\\cup B) = P(A) + P(B) = \\\\frac{7}{15} + \\\\frac{5}{15} = \\\\frac{12}{15} = \\\\frac{4}{5}\\\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah kotak berisi 5 bola merah dan 7 bola biru. Dua bola diambil secara acak dari kotak tersebut tanpa pengembalian. Kejadian A adalah terambilnya bola merah pada pengambilan pertama, dan Kejadian B adalah terambilnya bola biru pada pengambilan kedua.",
+      "question": "Berapakah peluang kejadian A atau kejadian B terjadi, jika diketahui bahwa kedua kejadian tersebut tidak saling lepas?",
+      "rubric_points": [
+        "Menghitung peluang Kejadian A.",
+        "Menghitung peluang Kejadian B.",
+        "Menghitung peluang irisan Kejadian A dan B.",
+        "Menerapkan aturan penjumlahan untuk kejadian tidak saling lepas."
+      ],
+      "explanation": "**Perhitungan Peluang Kejadian Tidak Saling Lepas**\\nTotal bola = 5 merah + 7 biru = 12 bola.\\n\\nPeluang Kejadian A (bola merah pada pengambilan pertama):\\nP(A) = \\\\frac{5}{12}\\\\n\\nPeluang Kejadian B (bola biru pada pengambilan kedua):\\nIni bisa terjadi jika pengambilan pertama merah (M) atau biru (B).\\nP(B) = P(B|A)P(A) + P(B|A^c)P(A^c)\\\\nP(B) = \\\\frac{7}{11} \\\\times \\\\frac{5}{12} + \\\\frac{6}{11} \\\\times \\\\frac{7}{12} = \\\\frac{35}{132} + \\\\frac{42}{132} = \\\\frac{77}{132} = \\\\frac{7}{12}\\\\n\\nPeluang irisan A dan B (bola merah pertama, bola biru kedua):\\nP(A \\\\cap B) = P(B|A)P(A) = \\\\frac{7}{11} \\\\times \\\\frac{5}{12} = \\\\frac{35}{132}\\\\n\\nPeluang A atau B (tidak saling lepas):\\nP(A \\\\cup B) = P(A) + P(B) - P(A \\\\cap B)\\\\nP(A \\\\cup B) = \\\\frac{5}{12} + \\\\frac{7}{12} - \\\\frac{35}{132} = \\\\frac{60}{132} + \\\\frac{77}{132} - \\\\frac{35}{132} = \\\\frac{102}{132} = \\\\frac{17}{22}\\\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Dalam sebuah kelas yang terdiri dari 30 siswa, terdapat 15 siswa yang gemar sepak bola dan 12 siswa yang gemar bulu tangkis. Sebanyak 5 siswa gemar kedua olahraga tersebut. Seorang siswa dipilih secara acak dari kelas tersebut.",
+      "question": "Berapakah peluang siswa yang terpilih gemar sepak bola atau gemar bulu tangkis?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah siswa yang gemar sepak bola.",
+        "Mengidentifikasi jumlah siswa yang gemar bulu tangkis.",
+        "Menghitung jumlah siswa yang gemar kedua olahraga.",
+        "Menerapkan aturan penjumlahan untuk kejadian tidak saling lepas."
+      ],
+      "explanation": "**Perhitungan Peluang Kejadian Tidak Saling Lepas**\\nJumlah siswa = 30\\nJumlah siswa gemar sepak bola, P(S) = 15\\nJumlah siswa gemar bulu tangkis, P(B) = 12\\nJumlah siswa gemar keduanya, P(S \\\\cap B) = 5\\n\\nPeluang siswa gemar sepak bola atau bulu tangkis adalah P(S \\\\cup B).\\nKarena ada siswa yang gemar kedua olahraga, kejadian ini tidak saling lepas.\\n\\nP(S \\\\cup B) = P(S) + P(B) - P(S \\\\cap B)\\\\nP(S \\\\cup B) = \\\\frac{15}{30} + \\\\frac{12}{30} - \\\\frac{5}{30}\\\\nP(S \\\\cup B) = \\\\frac{15 + 12 - 5}{30}\\\\nP(S \\\\cup B) = \\\\frac{22}{30} = \\\\frac{11}{15}\\\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah kantong berisi 4 kelereng merah, 3 kelereng biru, dan 5 kelereng hijau. Dua kelereng diambil secara acak dari kantong tersebut tanpa pengembalian. Kejadian A adalah terambilnya kelereng merah pada pengambilan pertama, dan Kejadian B adalah terambilnya kelereng biru pada pengambilan kedua.",
+      "question": "Hitunglah peluang kejadian A atau kejadian B terjadi, dengan asumsi kedua kejadian tersebut tidak saling lepas.",
+      "rubric_points": [
+        "Menghitung peluang Kejadian A.",
+        "Menghitung peluang Kejadian B.",
+        "Menghitung peluang irisan Kejadian A dan B.",
+        "Menerapkan aturan penjumlahan untuk kejadian tidak saling lepas."
+      ],
+      "explanation": "**Perhitungan Peluang Kejadian Tidak Saling Lepas**\\nTotal kelereng = 4 merah + 3 biru + 5 hijau = 12 kelereng.\\n\\nPeluang Kejadian A (kelereng merah pada pengambilan pertama):\\nP(A) = \\\\frac{4}{12}\\\\n\\nPeluang Kejadian B (kelereng biru pada pengambilan kedua):\\nIni bisa terjadi jika pengambilan pertama merah (M), biru (B), atau hijau (H).\\nP(B) = P(B|A)P(A) + P(B|A^c)P(A^c)\\\\nP(B) = \\\\frac{3}{11} \\\\times \\\\frac{4}{12} + \\\\frac{2}{11} \\\\times \\\\frac{3}{12} + \\\\frac{3}{11} \\\\times \\\\frac{5}{12}\\\\nP(B) = \\\\frac{12}{132} + \\\\frac{6}{132} + \\\\frac{15}{132} = \\\\frac{33}{132} = \\\\frac{1}{4}\\\\n\\nPeluang irisan A dan B (kelereng merah pertama, kelereng biru kedua):\\nP(A \\\\cap B) = P(B|A)P(A) = \\\\frac{3}{11} \\\\times \\\\frac{4}{12} = \\\\frac{12}{132} = \\\\frac{1}{11}\\\\n\\nPeluang A atau B (tidak saling lepas):\\nP(A \\\\cup B) = P(A) + P(B) - P(A \\\\cap B)\\\\nP(A \\\\cup B) = \\\\frac{4}{12} + \\\\frac{1}{4} - \\\\frac{1}{11}\\\\nP(A \\\\cup B) = \\\\frac{1}{3} + \\\\frac{1}{4} - \\\\frac{1}{11}\\\\nP(A \\\\cup B) = \\\\frac{44}{132} + \\\\frac{33}{132} - \\\\frac{12}{132} = \\\\frac{65}{132}\\\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Di sebuah desa, terdapat 50 rumah. Sebanyak 20 rumah memiliki panel surya dan 15 rumah memiliki turbin angin. Terdapat 7 rumah yang memiliki kedua teknologi tersebut. Jika satu rumah dipilih secara acak dari desa tersebut.",
+      "question": "Berapakah peluang rumah yang dipilih memiliki panel surya atau turbin angin?",
+      "rubric_points": [
+        "Mengidentifikasi jumlah rumah dengan panel surya.",
+        "Mengidentifikasi jumlah rumah dengan turbin angin.",
+        "Menghitung jumlah rumah dengan kedua teknologi.",
+        "Menerapkan aturan penjumlahan untuk kejadian tidak saling lepas."
+      ],
+      "explanation": "**Perhitungan Peluang Kejadian Tidak Saling Lepas**\\nJumlah total rumah = 50\\nJumlah rumah dengan panel surya, P(P) = 20\\nJumlah rumah dengan turbin angin, P(T) = 15\\nJumlah rumah dengan keduanya, P(P \\\\cap T) = 7\\n\\nPeluang rumah memiliki panel surya atau turbin angin adalah P(P \\\\cup T).\\nKarena ada rumah yang memiliki kedua teknologi, kejadian ini tidak saling lepas.\\n\\nP(P \\\\cup T) = P(P) + P(T) - P(P \\\\cap T)\\\\nP(P \\\\cup T) = \\\\frac{20}{50} + \\\\frac{15}{50} - \\\\frac{7}{50}\\\\nP(P \\\\cup T) = \\\\frac{20 + 15 - 7}{50}\\\\nP(P \\\\cup T) = \\\\frac{28}{50} = \\\\frac{14}{25}\\\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "8c13c37f-f6ef-4843-a116-85a7dce2b2ce",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:14:08Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_3_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1837,
+      "assistant": 2329,
+      "total": 4840,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

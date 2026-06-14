@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"question_behavior\": [\n        \"identify information\",\n        \"recognize basic patterns\",\n        \"understand direct relationships\"\n      ],\n      \"preferred_question_patterns\": [\n        \"basic interpretation\",\n        \"simple contextual understanding\",\n        \"direct concept recognition\"\n      ],\n      \"avoid_patterns\": [\n        \"multi-step reasoning\",\n        \"strategic evaluation\",\n        \"complex tradeoff analysis\",\n        \"abstract judgment\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Penjumlahan | Target: LOTS\n\n--- MATERI ---\nDalam teori peluang, aturan penjumlahan digunakan untuk menentukan peluang gabungan dua kejadian, yaitu peluang terjadinya kejadian A atau kejadian B yang dinotasikan dengan P(A ∪ B). Penggunaan rumus pada aturan penjumlahan bergantung pada karakteristik himpunan kedua kejadian tersebut, apakah bersifat saling lepas atau tidak saling lepas. Dua kejadian dikatakan saling lepas apabila kedua kejadian tersebut sama sekali tidak dapat terjadi secara bersamaan pada satu kali percobaan. Dengan kata lain, irisan dari himpunan kejadian A dan kejadian B adalah himpunan kosong (A ∩ B = ∅), sehingga nilai peluang irisannya adalah nol. Sebagai contoh, pada pelemparan sebuah dadu, kejadian munculnya mata dadu ganjil dan kejadian munculnya mata dadu genap adalah dua kejadian saling lepas. Untuk menghitung peluang gabungan dua kejadian saling lepas, kita dapat langsung menjumlahkan nilai peluang dari masing-masing kejadian tersebut, yang secara matematis dirumuskan dengan P(A ∪ B) = P(A) + P(B).\n\nBerbeda dengan kejadian saling lepas, dua kejadian dikatakan tidak saling lepas apabila kedua kejadian tersebut dapat terjadi secara bersamaan dalam satu kali percobaan. Pada kondisi ini, terdapat titik sampel yang menjadi anggota kejadian A sekaligus anggota kejadian B, sehingga irisan kedua himpunan kejadian tersebut bukan merupakan himpunan kosong (A ∩ B ≠ ∅). Misalnya, pada pengambilan sebuah kartu dari satu set kartu remi, kejadian terambilnya kartu As dan kejadian terambilnya kartu berwarna merah adalah kejadian tidak saling lepas, karena terdapat kartu As yang juga berwarna merah (beririsan). Saat menghitung peluang kejadian tidak saling lepas menggunakan aturan penjumlahan, kita harus mengurangkan hasil jumlah peluang masing-masing kejadian dengan peluang irisannya. Pengurangan ini diwajibkan untuk menghindari perhitungan ganda pada titik sampel yang beririsan. Secara matematis, rumus aturan penjumlahannya dituliskan secara lengkap sebagai P(A ∪ B) = P(A) + P(B) - P(A ∩ B).\n\n[ATP_ALIGNMENT]\nMenghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "LOTS",
+      "stimulus": "Di sebuah kelas terdapat 30 siswa. Sebanyak 15 siswa menyukai pelajaran Matematika dan 12 siswa menyukai pelajaran Fisika. Terdapat 5 siswa yang menyukai kedua pelajaran tersebut.",
+      "question": "Berapa peluang seorang siswa menyukai Matematika atau Fisika?",
+      "options": {
+        "A": "15/30",
+        "B": "12/30",
+        "C": "22/30",
+        "D": "27/30",
+        "E": "5/30"
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Kejadian menyukai Matematika (A) dan menyukai Fisika (B) tidak saling lepas karena ada irisan (5 siswa). Rumus yang digunakan adalah P(A ∪ B) = P(A) + P(B) - P(A ∩ B). P(A) = 15/30, P(B) = 12/30, P(A ∩ B) = 5/30. Maka, P(A ∪ B) = 15/30 + 12/30 - 5/30 = 22/30."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kantong terdapat 5 bola merah dan 3 bola biru. Dua bola diambil satu per satu tanpa pengembalian.",
+      "question": "Berapa peluang bola pertama merah dan bola kedua biru?",
+      "options": {
+        "A": "15/64",
+        "B": "15/56",
+        "C": "8/56",
+        "D": "5/8",
+        "E": "3/8"
+      },
+      "answer": "B",
+      "explanation": "**Jawaban yang Benar: B**. Peluang bola pertama merah adalah 5/8. Setelah bola merah diambil, tersisa 7 bola dengan 3 bola biru. Peluang bola kedua biru adalah 3/7. Peluang kejadian berurutan adalah hasil perkalian peluang masing-masing kejadian: (5/8) \\times (3/7) = 15/56."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah dadu bersisi enam dilempar sekali. Kejadian A adalah muncul mata dadu ganjil, dan kejadian B adalah muncul mata dadu genap.",
+      "question": "Apakah kejadian A dan B saling lepas?",
+      "options": {
+        "A": "Ya, karena keduanya bisa terjadi bersamaan.",
+        "B": "Tidak, karena keduanya bisa terjadi bersamaan.",
+        "C": "Ya, karena keduanya tidak bisa terjadi bersamaan.",
+        "D": "Tidak, karena ada irisan.",
+        "E": "Tergantung hasil lemparan."
+      },
+      "answer": "C",
+      "explanation": "**Jawaban yang Benar: C**. Kejadian A (mata dadu ganjil: 1, 3, 5) dan kejadian B (mata dadu genap: 2, 4, 6) pada pelemparan satu dadu tidak memiliki anggota yang sama. Oleh karena itu, kedua kejadian tersebut saling lepas dan tidak dapat terjadi secara bersamaan dalam satu kali percobaan."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dari 40 siswa di kelas, 25 siswa aktif dalam ekstrakurikuler Pramuka dan 18 siswa aktif dalam ekstrakurikuler Palang Merah Remaja (PMR). Terdapat 10 siswa yang aktif di kedua kegiatan tersebut.",
+      "question": "Berapa peluang seorang siswa aktif di Pramuka atau PMR?",
+      "options": {
+        "A": "43/40",
+        "B": "33/40",
+        "C": "25/40",
+        "D": "18/40",
+        "E": "10/40"
+      },
+      "answer": "B",
+      "explanation": "**Jawaban yang Benar: B**. Kejadian aktif Pramuka (A) dan aktif PMR (B) tidak saling lepas karena ada irisan (10 siswa). Rumus: P(A ∪ B) = P(A) + P(B) - P(A ∩ B). P(A) = 25/40, P(B) = 18/40, P(A ∩ B) = 10/40. Maka, P(A ∪ B) = 25/40 + 18/40 - 10/40 = 33/40."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah kotak berisi 7 kelereng merah dan 5 kelereng biru. Dua kelereng diambil secara acak tanpa pengembalian.",
+      "question": "Berapa peluang terambilnya kelereng pertama biru dan kelereng kedua merah?",
+      "options": {
+        "A": "35/132",
+        "B": "35/144",
+        "C": "7/132",
+        "D": "5/12",
+        "E": "7/12"
+      },
+      "answer": "A",
+      "explanation": "**Jawaban yang Benar: A**. Peluang kelereng pertama biru adalah 5/12. Setelah satu bola biru diambil, tersisa 11 bola dengan 7 kelereng merah. Peluang kelereng kedua merah adalah 7/11. Peluang kejadian berurutan adalah hasil perkalian: (5/12) \\times (7/11) = 35/132."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah kelompok terdapat 20 orang. 12 orang gemar membaca buku, dan 10 orang gemar menonton film. Terdapat 5 orang yang gemar keduanya.",
+      "question": "Berapa peluang seseorang gemar membaca buku atau menonton film?",
+      "options": {
+        "A": "22/20",
+        "B": "17/20",
+        "C": "12/20",
+        "D": "10/20",
+        "E": "5/20"
+      },
+      "answer": "B",
+      "explanation": "**Jawaban yang Benar: B**. Kejadian gemar membaca (A) dan gemar menonton film (B) tidak saling lepas karena ada irisan (5 orang). Rumus: P(A ∪ B) = P(A) + P(B) - P(A ∩ B). P(A) = 12/20, P(B) = 10/20, P(A ∩ B) = 5/20. Maka, P(A ∪ B) = 12/20 + 10/20 - 5/20 = 17/20."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah kartu diambil secara acak dari satu set kartu remi standar (52 kartu).",
+      "question": "Berapa peluang kartu yang terambil adalah kartu King atau kartu hati?",
+      "options": {
+        "A": "17/52",
+        "B": "13/52",
+        "C": "4/52",
+        "D": "1/52",
+        "E": "16/52"
+      },
+      "answer": "A",
+      "explanation": "**Jawaban yang Benar: A**. Kejadian terambil kartu King (A) dan kartu hati (B) tidak saling lepas karena ada irisan (King hati). P(A) = 4/52, P(B) = 13/52, P(A ∩ B) = 1/52. Rumus: P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 4/52 + 13/52 - 1/52 = 16/52. Terdapat kesalahan pada pilihan jawaban, jawaban yang benar adalah 16/52."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Dalam sebuah keranjang terdapat 6 apel dan 4 jeruk. Tiga buah diambil secara acak tanpa pengembalian.",
+      "question": "Berapa peluang terambilnya ketiga buah tersebut adalah apel?",
+      "options": {
+        "A": "120/720",
+        "B": "20/120",
+        "C": "6/10",
+        "D": "20/10",
+        "E": "1/10"
+      },
+      "answer": "B",
+      "explanation": "**Jawaban yang Benar: B**. Peluang apel pertama adalah 6/10. Peluang apel kedua (setelah 1 apel diambil) adalah 5/9. Peluang apel ketiga (setelah 2 apel diambil) adalah 4/8. Peluang ketiga apel terambil adalah (6/10) \\times (5/9) \\times (4/8) = 120/720 = 20/120."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Di sebuah perpustakaan terdapat 50 buku fiksi dan 30 buku non-fiksi. Jika dipilih satu buku secara acak.",
+      "question": "Berapa peluang buku yang terpilih adalah buku fiksi atau buku non-fiksi?",
+      "options": {
+        "A": "50/80",
+        "B": "30/80",
+        "C": "1",
+        "D": "0",
+        "E": "80/80"
+      },
+      "answer": "E",
+      "explanation": "**Jawaban yang Benar: E**. Kejadian terpilih buku fiksi (A) dan terpilih buku non-fiksi (B) adalah dua kejadian yang saling lepas karena satu buku tidak mungkin fiksi sekaligus non-fiksi. P(A) = 50/80, P(B) = 30/80. Rumus: P(A ∪ B) = P(A) + P(B) = 50/80 + 30/80 = 80/80 = 1."
+    },
+    {
+      "level": "LOTS",
+      "stimulus": "Sebuah kantong berisi 4 kelereng merah, 3 kelereng hijau, dan 2 kelereng kuning. Dua kelereng diambil satu per satu tanpa pengembalian.",
+      "question": "Berapa peluang kelereng pertama merah dan kelereng kedua hijau?",
+      "options": {
+        "A": "12/81",
+        "B": "12/72",
+        "C": "7/9",
+        "D": "4/9",
+        "E": "3/9"
+      },
+      "answer": "B",
+      "explanation": "**Jawaban yang Benar: B**. Peluang kelereng pertama merah adalah 4/9. Setelah satu kelereng merah diambil, tersisa 8 kelereng dengan 3 kelereng hijau. Peluang kelereng kedua hijau adalah 3/8. Peluang kejadian berurutan adalah hasil perkalian: (4/9) \\times (3/8) = 12/72."
+    }
+  ],
+  "metadata": {
+    "id": "7e1a3a71-17e2-4205-b9e5-794e9a20d3ac",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T18:57:50Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Penjumlahan",
+    "task_type": "pilgan",
+    "level": "LOTS",
+    "source_file": "Matematika_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang kejadian saling lepas dan tidak saling lepas menggunakan aturan penjumlahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2496,
+      "assistant": 2022,
+      "total": 5192,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

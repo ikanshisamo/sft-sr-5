@@ -1,0 +1,119 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate a recursive nested tree mindmap in JSON format.\n\n[OUTPUT_SCHEMA]\n{\n  \"root\": {\n    \"name\": \"\",\n    \"description\": \"\",\n    \"children\": []\n  }\n}\n\n[LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"label\": \"Memahami\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"identification\",\n        \"recognition\",\n        \"basic comprehension\",\n        \"simple relationship mapping\"\n      ],\n      \"reasoning_priority\": \"clarity_over_complexity\"\n    }\n  },\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  },\n  \"HOTS\": {\n    \"label\": \"Merefleksi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"evaluation\",\n        \"decision-making\",\n        \"strategic reasoning\",\n        \"prediction\",\n        \"comparison\",\n        \"risk analysis\"\n      ],\n      \"reasoning_priority\": \"reasoning_over_computation\"\n    }\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Perkalian\n\n--- MATERI ---\nDalam teori peluang majemuk, salah satu konsep penting yang harus dipahami adalah kejadian saling bebas. Dua buah kejadian diklasifikasikan sebagai kejadian saling bebas apabila terjadinya kejadian pertama sama sekali tidak memengaruhi kemungkinan terjadinya kejadian kedua, dan begitu pula sebaliknya. Dengan kata lain, hasil dari suatu percobaan bersifat independen dan tidak memiliki keterkaitan dengan hasil percobaan lainnya. Sebagai ilustrasi matematis, misalkan kita melakukan percobaan melempar sekeping uang logam dan sebuah dadu bersisi enam secara bersamaan. Kejadian munculnya sisi gambar pada uang logam dipastikan tidak akan memengaruhi peluang munculnya mata dadu genap pada pelemparan dadu tersebut. Karena kedua kejadian ini berdiri sendiri tanpa adanya syarat yang mengikat, maka keduanya disebut kejadian saling bebas. Pemahaman mengenai karakteristik independensi ini sangat krusial sebelum menerapkan perhitungan probabilitas tingkat lanjut.\n\nUntuk menghitung besaran peluang terjadinya dua kejadian saling bebas secara bersamaan atau berurutan, kita menerapkan prinsip matematis yang dikenal sebagai aturan perkalian peluang. Hubungan kedua kejadian ini umumnya ditandai dengan kata hubung 'dan', yang secara himpunan dinotasikan dengan simbol irisan (∩). Jika kejadian A dan kejadian B telah diidentifikasi sebagai dua kejadian yang saling bebas, maka peluang munculnya kejadian A dan kejadian B secara simultan dirumuskan dengan mengalikan nilai peluang dari masing-masing kejadian tunggalnya. Secara formal, rumus aturan perkalian untuk kejadian A dan B yang saling bebas dituliskan sebagai P(A ∩ B) = P(A) × P(B). Penggunaan formula perkalian ini memberikan tingkat efisiensi komputasi yang tinggi, karena kita tidak diwajibkan lagi untuk mendaftar seluruh titik sampel di dalam ruang sampel majemuk yang ukurannya sangat besar.\n\nPenerapan rumusan aturan perkalian pada kejadian saling bebas dapat diilustrasikan secara langsung melalui penyelesaian pemodelan peluang. Mengacu pada contoh pelemparan sebuah dadu dan sekeping uang logam secara bersamaan, kita dapat mendefinisikan kejadian A sebagai munculnya sisi gambar pada koin. Karena ruang sampel koin adalah dua, maka peluangnya adalah P(A) = 1/2. Selanjutnya, kejadian B didefinisikan sebagai munculnya mata dadu genap, yaitu himpunan titik sampel {2, 4, 6} dari total 6 ruang sampel dadu, sehingga P(B) = 3/6 atau 1/2. Mengingat kejadian A dan kejadian B saling bebas, maka peluang munculnya sisi gambar pada koin 'dan' mata dadu genap secara bersamaan dapat dihitung secara akurat dengan mengalikan kedua probabilitas tersebut. Nilai peluang irisannya adalah P(A ∩ B) = 1/2 × 1/2 = 1/4. Pendekatan analitis ini merepresentasikan penalaran yang sistematis dalam membedah peluang majemuk.\n\nAturan perkalian peluang ini sifatnya sangat fleksibel dan tidak hanya terbatas pada dua kejadian saja, melainkan dapat digeneralisasi untuk tiga atau lebih kejadian yang semuanya saling bebas satu sama lain. Sebagai contoh, jika terdapat kejadian A, B, dan C yang memenuhi syarat saling bebas, maka rumusnya meluas menjadi P(A ∩ B ∩ C) = P(A) × P(B) × P(C). Sangat penting bagi siswa untuk selalu menganalisis narasi permasalahan secara cermat agar tidak tertukar dengan konsep kejadian tidak saling bebas atau peluang bersyarat. Pada kejadian bersyarat, seperti kasus pengambilan bola dari dalam kotak secara berurutan tanpa pengembalian, ruang sampel pada pengambilan kedua akan menyusut sehingga kejadian pertama jelas memengaruhi peluang kejadian kedua. Oleh karena itu, memverifikasi independensi antar kejadian merupakan prasyarat mutlak sebelum memberlakukan aturan perkalian ini.\n\n[SOURCE_MATERIAL]\n{chunks}\n\n[MINDMAP_REQUIREMENTS]\n- Generate a minimum tree depth of 3 levels:\n  Root → Child → Grandchild.\n- Leaf nodes must end with:\n  \"children\": []\n\n- Organize concepts hierarchically.\n- Preserve logical relationships between concepts.\n- Keep descriptions concise and information-dense.\n\n[DESCRIPTION_RULES]\n- Maximum 15 words per description.\n- Avoid unnecessary filler words.\n- Do not use second-person language.\n- Avoid rigid numbering or label formatting.\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- Escape newline characters.\n- Escape internal quotes.",
+  "assistant": {
+    "root": {
+      "name": "Aturan Perkalian Peluang Kejadian Saling Bebas",
+      "description": "Menghitung peluang dua atau lebih kejadian independen yang terjadi bersamaan.",
+      "children": [
+        {
+          "name": "Definisi Kejadian Saling Bebas",
+          "description": "Terjadinya satu kejadian tidak mempengaruhi kemungkinan terjadinya kejadian lain.",
+          "children": [
+            {
+              "name": "Karakteristik Independensi",
+              "description": "Hasil percobaan bersifat independen, tidak terkait dengan hasil percobaan lain.",
+              "children": []
+            },
+            {
+              "name": "Ilustrasi Sederhana",
+              "description": "Melempar koin dan dadu bersamaan; hasil koin tidak mempengaruhi hasil dadu.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Rumus Aturan Perkalian",
+          "description": "Peluang dua kejadian saling bebas A dan B terjadi bersamaan.",
+          "children": [
+            {
+              "name": "Notasi Matematis",
+              "description": "Ditandai dengan kata 'dan', dinotasikan dengan irisan (∩).",
+              "children": []
+            },
+            {
+              "name": "Formula",
+              "description": "P(A ∩ B) = P(A) × P(B).",
+              "children": []
+            },
+            {
+              "name": "Keuntungan",
+              "description": "Efisiensi komputasi, tidak perlu mendaftar semua titik sampel.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Penerapan dan Contoh",
+          "description": "Menghitung peluang gabungan kejadian saling bebas.",
+          "children": [
+            {
+              "name": "Contoh Koin dan Dadu",
+              "description": "Peluang gambar pada koin (1/2) dan mata dadu genap (1/2).",
+              "children": [
+                {
+                  "name": "Perhitungan Gabungan",
+                  "description": "P(Gambar dan Genap) = 1/2 × 1/2 = 1/4.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Generalisasi",
+          "description": "Aturan dapat diperluas untuk tiga atau lebih kejadian saling bebas.",
+          "children": [
+            {
+              "name": "Formula Tiga Kejadian",
+              "description": "P(A ∩ B ∩ C) = P(A) × P(B) × P(C).",
+              "children": []
+            },
+            {
+              "name": "Pentingnya Verifikasi",
+              "description": "Pastikan independensi kejadian sebelum menerapkan aturan perkalian.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "id": "28f3bad1-cac1-4a40-93d0-62bba28c0185",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T18:57:44Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Perkalian",
+    "task_type": "mindmap",
+    "level": null,
+    "source_file": "Matematika_4_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1711,
+      "assistant": 562,
+      "total": 2946,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

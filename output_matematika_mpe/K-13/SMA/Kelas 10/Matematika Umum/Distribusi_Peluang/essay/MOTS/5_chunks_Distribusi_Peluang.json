@@ -1,0 +1,101 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Distribusi Peluang | Target: MOTS\n\n--- MATERI ---\nKonsep dasar peluang erat kaitannya dengan proses pengamatan atau eksperimen yang dinamakan percobaan. Dalam melakukan suatu percobaan sederhana, seperti melempar uang logam atau dadu setimbang, kita dapat menduga atau mendaftar semua hasil yang mungkin terjadi, meskipun kita tidak dapat memastikan hasil pasti mana yang akan keluar pada satu kali pelemparan. Seluruh kemungkinan hasil yang dapat terjadi dari suatu percobaan ini memegang peranan penting dalam menentukan nilai peluang. Sebagai contoh, pada pelemparan sebuah dadu bersisi enam, kemungkinan hasil yang akan muncul adalah salah satu dari angka 1, 2, 3, 4, 5, atau 6. Setiap hasil individual yang mungkin muncul dari percobaan ini secara matematis dikenal dengan istilah titik sampel.\n\nBerdasarkan pemahaman mengenai titik sampel, kita dapat mendefinisikan konsep ruang sampel. Ruang sampel, yang lazim disimbolkan dengan huruf kapital S, adalah himpunan dari semua hasil yang mungkin terjadi dari suatu percobaan. Banyaknya anggota atau elemen di dalam ruang sampel S dinotasikan dengan n(S). Sementara itu, himpunan bagian dari ruang sampel yang memuat hasil-hasil spesifik yang diharapkan muncul dinamakan sebagai kejadian, dan umumnya disimbolkan dengan huruf kapital E. Banyaknya anggota kejadian E dinotasikan dengan n(E). Sebagai ilustrasi, pada pelemparan sebuah dadu, ruang sampel S memuat enam anggota. Jika kejadian E didefinisikan sebagai munculnya mata dadu genap, maka himpunan E memuat anggota 2, 4, dan 6, sehingga nilai n(E) sama dengan 3.\n\nDalam percobaan majemuk yang melibatkan lebih dari satu objek, penentuan ruang sampel menuntut ketelitian yang lebih tinggi. Misalnya, pada percobaan pelemparan tiga buah uang logam secara bersamaan, setiap uang logam memiliki dua kemungkinan sisi, yaitu Angka (A) atau Gambar (G). Untuk menyusun ruang sampelnya secara terstruktur agar tidak ada yang terlewat, kita dapat menggunakan bantuan diagram pohon atau tabel silang. Seluruh kemungkinan yang akan muncul memuat 8 titik sampel, yaitu (A,A,A), (A,A,G), (A,G,A), (G,A,A), (G,G,A), (G,A,G), (A,G,G), dan (G,G,G). Melalui penyusunan ruang sampel yang sistematis ini, kita dapat dengan mudah mengidentifikasi himpunan kejadian spesifik, seperti kejadian munculnya dua sisi angka, yang beranggotakan tiga titik sampel.\n\nSetelah ruang sampel S dan kejadian E berhasil diidentifikasi beserta masing-masing kuantitas anggotanya, nilai peluang suatu kejadian dapat dihitung secara analitis. Peluang suatu kejadian E, yang secara universal dituliskan sebagai P(E), didefinisikan sebagai hasil bagi antara banyaknya kejadian E yang muncul dengan banyaknya seluruh anggota ruang sampel S dari percobaan tersebut. Secara formal, rumusan ini dituliskan dengan persamaan matematis P(E) = n(E) / n(S). Penggunaan rumus ini diimplementasikan secara luas untuk menyelesaikan berbagai pemodelan probabilistik. Sebagai contoh, dari seperangkat kartu remi lengkap berjumlah 52 buah, peluang terambilnya sebuah kartu As Sekop secara acak dapat dihitung presisi menjadi 1/52, karena hanya terdapat tepat satu kartu As Sekop pada ruang sampel tersebut.\n\nPemahaman terhadap batasan nilai peluang sangat krusial dalam menganalisis dan menafsirkan suatu kejadian. Peluang sebuah kejadian E selalu direpresentasikan oleh bilangan real yang berada pada rentang interval tertutup dari 0 hingga 1, yang secara aljabar diekspresikan dengan ketidaksamaan 0 ≤ P(E) ≤ 1. Jika peluang suatu kejadian bernilai 0, hal ini menunjukkan suatu kemustahilan, artinya kejadian tersebut dipastikan tidak akan pernah terjadi. Sebaliknya, nilai peluang 1 bermakna kepastian mutlak bahwa kejadian itu pasti terjadi pada setiap percobaan. Selain itu, dikenal pula konsep kejadian komplemen (Ec), yaitu himpunan seluruh hasil di ruang sampel yang bukan termasuk kejadian E. Secara sistematis, jumlah probabilitas suatu kejadian dengan probabilitas kejadian komplemennya senantiasa bernilai konstan, yaitu P(E) + P(Ec) = 1.\n\n[ATP_ALIGNMENT]\nMenentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pedagang di Pasar Beringharjo Yogyakarta memiliki tiga jenis buah: apel, jeruk, dan mangga. Setiap hari, ia mengemas buah-buah tersebut ke dalam tiga keranjang berbeda. Untuk memastikan variasi, ia tidak pernah menempatkan jenis buah yang sama di keranjang yang sama dalam satu hari. Ia ingin mengetahui kemungkinan kombinasi buah dalam ketiga keranjang tersebut.",
+      "question": "Jika pedagang tersebut ingin mengetahui peluang bahwa keranjang pertama berisi apel, keranjang kedua berisi jeruk, dan keranjang ketiga berisi mangga, bagaimana ia dapat menghitung probabilitas kejadian tersebut berdasarkan ruang sampel yang mungkin?",
+      "rubric_points": [
+        "Mengidentifikasi ruang sampel dari penempatan tiga jenis buah dalam tiga keranjang.",
+        "Menentukan jumlah kejadian spesifik (apel di keranjang 1, jeruk di keranjang 2, mangga di keranjang 3).",
+        "Menghitung peluang kejadian menggunakan rumus P(E) = n(E) / n(S)."
+      ],
+      "explanation": "**Perhitungan Peluang Kejadian**\\nUntuk menghitung peluang kejadian ini, pertama kita perlu menentukan ruang sampel (S) dari penempatan tiga jenis buah (A, J, M) ke dalam tiga keranjang (K1, K2, K3) tanpa pengulangan jenis buah dalam satu keranjang. Jumlah total susunan yang mungkin adalah permutasi 3 objek, yaitu 3! = 3 \\times 2 \\times 1 = 6. Ruang sampelnya adalah {(A,J,M), (A,M,J), (J,A,M), (J,M,A), (M,A,J), (M,J,A)}, sehingga n(S) = 6.\\n\\nKejadian E adalah keranjang pertama berisi apel, keranjang kedua berisi jeruk, dan keranjang ketiga berisi mangga. Hanya ada satu susunan yang memenuhi kriteria ini, yaitu (A,J,M). Jadi, n(E) = 1.\\n\\nDengan menggunakan rumus peluang P(E) = n(E) / n(S), maka peluang kejadian tersebut adalah:\\n\\nP(E) = \\\\frac{1}{6}\\\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM kerupuk di Sidoarjo memproduksi kerupuk udang dan kerupuk ikan. Dalam satu hari produksi, mereka menghasilkan total 500 bungkus kerupuk. Dari jumlah tersebut, 300 bungkus adalah kerupuk udang dan sisanya adalah kerupuk ikan. Setiap bungkus diberi nomor urut produksi dari 1 hingga 500.",
+      "question": "Jika seorang distributor mengambil satu bungkus kerupuk secara acak dari total produksi hari itu, berapakah peluang ia mendapatkan kerupuk udang?",
+      "rubric_points": [
+        "Menentukan jumlah total hasil yang mungkin (ruang sampel).",
+        "Menentukan jumlah hasil yang diinginkan (kejadian kerupuk udang).",
+        "Menghitung nilai peluang kejadian tersebut."
+      ],
+      "explanation": "**Menghitung Peluang Kerupuk Udang**\\nDalam kasus ini, ruang sampel (S) adalah seluruh bungkus kerupuk yang diproduksi pada hari itu. Jumlah total bungkus adalah 500, sehingga n(S) = 500.\\n\\nKejadian yang diinginkan (E) adalah terambilnya bungkus kerupuk udang. Diketahui ada 300 bungkus kerupuk udang, sehingga n(E) = 300.\\n\\nUntuk menghitung peluang terambilnya kerupuk udang, kita gunakan rumus P(E) = n(E) / n(S):\\n\\nP(E) = \\\\frac{300}{500}\\\\n\\nP(E) = \\\\frac{3}{5}\\\\n\\nJadi, peluang distributor mendapatkan kerupuk udang adalah 3/5.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Di sebuah sekolah di Jakarta, terdapat dua kegiatan ekstrakurikuler yang diminati siswa: Palang Merah Remaja (PMR) dan Pramuka. Sebanyak 40% siswa kelas XII memilih PMR, 50% memilih Pramuka, dan 20% memilih keduanya. Siswa hanya dapat memilih maksimal dua kegiatan.",
+      "question": "Jika seorang siswa kelas XII dipilih secara acak, berapakah peluang siswa tersebut hanya memilih PMR atau hanya memilih Pramuka?",
+      "rubric_points": [
+        "Menghitung peluang siswa memilih PMR saja.",
+        "Menghitung peluang siswa memilih Pramuka saja.",
+        "Menjumlahkan kedua peluang tersebut untuk mendapatkan hasil akhir."
+      ],
+      "explanation": "**Menghitung Peluang Pemilihan Ekstrakurikuler**\\nDiketahui:\\nP(PMR) = 40% = 0.40\\nP(Pramuka) = 50% = 0.50\\nP(PMR dan Pramuka) = 20% = 0.20\\n\\nUntuk mencari peluang siswa hanya memilih PMR (P(PMR saja)), kita kurangi peluang memilih PMR dengan peluang memilih keduanya:\\nP(PMR saja) = P(PMR) - P(PMR dan Pramuka)\\nP(PMR saja) = 0.40 - 0.20 = 0.20\\n\\nUntuk mencari peluang siswa hanya memilih Pramuka (P(Pramuka saja)), kita kurangi peluang memilih Pramuka dengan peluang memilih keduanya:\\nP(Pramuka saja) = P(Pramuka) - P(PMR dan Pramuka)\\nP(Pramuka saja) = 0.50 - 0.20 = 0.30\\n\\nPeluang siswa hanya memilih PMR atau hanya memilih Pramuka adalah jumlah dari kedua peluang tersebut:\\nP(PMR saja atau Pramuka saja) = P(PMR saja) + P(Pramuka saja)\\nP(PMR saja atau Pramuka saja) = 0.20 + 0.30 = 0.50\\n\\nJadi, peluangnya adalah 0.50 atau 50%.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani di Jawa Tengah memiliki dua jenis pupuk cair: Pupuk A dan Pupuk B. Ia berencana menyemprotkan pupuk tersebut pada tanaman padi miliknya. Ia memiliki 10 botol Pupuk A dan 15 botol Pupuk B. Ia akan mengambil satu botol pupuk secara acak untuk digunakan.",
+      "question": "Berapakah peluang petani tersebut mengambil botol Pupuk A atau botol Pupuk B?",
+      "rubric_points": [
+        "Menentukan jumlah total botol pupuk yang tersedia.",
+        "Menentukan jumlah botol untuk masing-masing jenis pupuk.",
+        "Menghitung peluang terambilnya Pupuk A dan peluang terambilnya Pupuk B.",
+        "Menjumlahkan kedua peluang tersebut."
+      ],
+      "explanation": "**Menghitung Peluang Pengambilan Pupuk**\\nJumlah total botol pupuk yang tersedia adalah jumlah botol Pupuk A ditambah jumlah botol Pupuk B.\\nTotal botol = 10 (Pupuk A) + 15 (Pupuk B) = 25 botol.\\n\\nRuang sampel (S) adalah seluruh botol pupuk, sehingga n(S) = 25.\\n\\nKejadian E1 adalah terambilnya botol Pupuk A. Jumlah botol Pupuk A adalah 10, sehingga n(E1) = 10.\\nPeluang terambilnya Pupuk A adalah P(E1) = n(E1) / n(S) = 10/25.\\n\\nKejadian E2 adalah terambilnya botol Pupuk B. Jumlah botol Pupuk B adalah 15, sehingga n(E2) = 15.\\nPeluang terambilnya Pupuk B adalah P(E2) = n(E2) / n(S) = 15/25.\\n\\nPeluang petani mengambil botol Pupuk A atau botol Pupuk B adalah jumlah dari kedua peluang tersebut karena kedua kejadian ini saling lepas (tidak mungkin terjadi bersamaan):\\nP(E1 atau E2) = P(E1) + P(E2)\\nP(E1 atau E2) = \\\\frac{10}{25} + \\\\frac{15}{25}\\\\n\\nP(E1 atau E2) = \\\\frac{25}{25}\\\\n\\nP(E1 atau E2) = 1\\\\n\\nIni berarti kejadian tersebut pasti terjadi.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah toko kelontong di Surabaya menjual dua jenis minuman kemasan: teh botol dan air mineral. Stok teh botol adalah 60 botol, sedangkan stok air mineral adalah 90 botol. Pemilik toko ingin mengetahui peluang seorang pelanggan membeli salah satu dari kedua jenis minuman tersebut jika ia mengambil satu botol secara acak dari stok yang ada.",
+      "question": "Berapakah peluang pelanggan tersebut membeli teh botol atau air mineral?",
+      "rubric_points": [
+        "Menghitung total stok minuman kemasan.",
+        "Menentukan jumlah stok untuk teh botol dan air mineral.",
+        "Menghitung peluang terambilnya teh botol.",
+        "Menghitung peluang terambilnya air mineral.",
+        "Menjumlahkan kedua peluang tersebut."
+      ],
+      "explanation": "**Menghitung Peluang Pembelian Minuman**\\nTotal stok minuman kemasan di toko adalah jumlah teh botol ditambah jumlah air mineral.\\nTotal stok = 60 (teh botol) + 90 (air mineral) = 150 botol.\\n\\nRuang sampel (S) adalah seluruh botol minuman yang tersedia, sehingga n(S) = 150.\\n\\nKejadian E1 adalah pelanggan membeli teh botol. Jumlah stok teh botol adalah 60, sehingga n(E1) = 60.\\nPeluang membeli teh botol adalah P(E1) = n(E1) / n(S) = 60/150.\\n\\nKejadian E2 adalah pelanggan membeli air mineral. Jumlah stok air mineral adalah 90, sehingga n(E2) = 90.\\nPeluang membeli air mineral adalah P(E2) = n(E2) / n(S) = 90/150.\\n\\nPeluang pelanggan membeli teh botol atau air mineral adalah jumlah dari kedua peluang tersebut, karena kedua kejadian ini saling lepas:\\nP(E1 atau E2) = P(E1) + P(E2)\\nP(E1 atau E2) = \\\\frac{60}{150} + \\\\frac{90}{150}\\\\n\\nP(E1 atau E2) = \\\\frac{150}{150}\\\\n\\nP(E1 atau E2) = 1\\\\n\\nIni menunjukkan bahwa pelanggan pasti akan membeli salah satu dari kedua jenis minuman tersebut.\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "64f23703-68f1-4c9d-853a-9d47ee5594bb",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:14:52Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Distribusi Peluang",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_5_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan semua kemungkinan hasil percobaan (ruang sampel) dan menghitung nilai peluangnya.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2225,
+      "assistant": 2509,
+      "total": 5408,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

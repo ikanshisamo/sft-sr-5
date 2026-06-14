@@ -1,0 +1,68 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate exactly 5 flashcards in JSON array format.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"front\": \"\",\n    \"back\": \"\"\n  }\n]\n\n[FLASHCARD_LEVEL_CONFIGURATION]\n{\n  \"LOTS\": {\n    \"focus\": [\n      \"definisi\",\n      \"rumus\",\n      \"fakta dasar\",\n      \"konsep inti\"\n    ],\n    \"style\": \"direct recall\"\n  },\n\n  \"MOTS\": {\n    \"focus\": [\n      \"hubungan konsep\",\n      \"aplikasi sederhana\",\n      \"contoh penggunaan\"\n    ],\n    \"style\": \"applied recall\"\n  },\n\n  \"HOTS\": {\n    \"focus\": [\n      \"kesimpulan\",\n      \"strategi\",\n      \"dampak\",\n      \"evaluasi singkat\"\n    ],\n    \"style\": \"evaluative takeaway\"\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Persamaan dan Fungsi Kuadrat | Sub Bab: Persamaan Kuadrat | Target: HOTS\n\n--- MATERI ---\nBentuk umum persamaan kuadrat adalah ax^2 + bx + c = 0, dengan a, b, dan c bilangan real serta a tidak sama dengan nol. Terdapat beberapa metode untuk menentukan akar-akar atau penyelesaian dari persamaan kuadrat, antara lain cara pemfaktoran, melengkapkan kuadrat sempurna, dan menggunakan rumus kuadrat atau yang sering disebut rumus abc. Rumus dasar penyelesaian persamaan kuadrat dinyatakan sebagai x1,2 = (-b ± √(b^2 - 4ac)) / 2a. Bentuk b^2 - 4ac yang terdapat di dalam tanda akar dinamakan diskriminan dan dilambangkan dengan huruf D. Nilai diskriminan ini berfungsi penting untuk menganalisis dan membedakan jenis akar-akar dari suatu persamaan kuadrat. Jika nilai D > 0, persamaan akan memiliki dua akar real yang saling berbeda; jika D = 0, persamaannya memiliki dua akar real yang sama (kembar); dan jika D < 0, maka persamaan tersebut tidak memiliki akar real.\n\nKarakteristik akar-akar persamaan kuadrat tidak hanya dilihat dari jenisnya, tetapi juga dapat dianalisis melalui rumus jumlah dan hasil kali akar. Jika x1 dan x2 merupakan akar-akar dari suatu persamaan kuadrat ax^2 + bx + c = 0, maka jumlah dari kedua akar tersebut dirumuskan dengan x1 + x2 = -b/a. Sementara itu, hasil kali kedua akarnya dirumuskan secara matematis dengan x1 × x2 = c/a. Penguasaan terhadap sifat penjumlahan dan perkalian akar ini sangat aplikatif dan menjadi landasan utama ketika kita diminta untuk menyusun sebuah persamaan kuadrat baru. Apabila telah diketahui dua nilai yang merupakan akar-akar dari suatu persamaan, yaitu x1 dan x2, kita dapat mengonstruksi persamaan kuadratnya melalui bentuk perkalian faktor (x - x1)(x - x2) = 0. Bentuk perkalian tersebut selanjutnya dapat dijabarkan dengan rapi menjadi x^2 - (x1 + x2)x + (x1 × x2) = 0.\n\n[FLASHCARD_REQUIREMENTS]\n- Generate flashcards aligned with the configured flashcard level.\n- Keep answers concise, useful, and easy to recall.\n- Focus on essential knowledge compression.\n- Avoid long analytical explanations.\n- Use natural Indonesian educational language.\n\n[LEVEL_ALIGNMENT]\n\n- LOTS:\n  Focus on direct recall of concepts, formulas, definitions, or basic facts.\n- MOTS:\n  Focus on simple application, conceptual relationships, or practical usage.\n- HOTS:\n  Focus on concise evaluative conclusions, impacts, strategies, or insights.\n\n[FRONT_RULES]\n- Maximum 20 characters including spaces.\n- Use concise prompts, terms, formulas, or key ideas.\n- Avoid ambiguous wording.\n- Avoid full sentence questions when unnecessary.\n\n[BACK_RULES]\n- Maximum 50 characters including spaces.\n- Must contain definitive answers, formulas, concepts, impacts, or conclusions.\n- Avoid rhetorical or open-ended responses.\n- Avoid filler words.\n- STEM subjects:\n  - may include concise LaTeX formulas\n  - prioritize formulas or technical meaning\n- Theory subjects:\n  - prioritize impacts, relationships, or concise takeaways\n\n[CONTENT_GUIDELINES]\nAllowed content:\n- formulas\n- definitions\n- key concepts\n- practical applications\n- impacts\n- relationships\n- concise strategies\n- evaluative takeaways\n\n[VARIATION_RULES]\nDistribute flashcards naturally across:\n- conceptual recall\n- applied understanding\n- evaluative takeaway\n\nAvoid generating cards with repetitive wording patterns.\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- Escape newline characters.\n- Escape internal quotes.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "HOTS",
+      "front": "Dampak D < 0",
+      "back": "Tidak ada akar real"
+    },
+    {
+      "level": "HOTS",
+      "front": "Dampak D = 0",
+      "back": "Dua akar real sama (kembar)"
+    },
+    {
+      "level": "HOTS",
+      "front": "Dampak D > 0",
+      "back": "Dua akar real berbeda"
+    },
+    {
+      "level": "MOTS",
+      "front": "Rumus jumlah akar",
+      "back": "x1 + x2 = -b/a"
+    },
+    {
+      "level": "MOTS",
+      "front": "Rumus hasil kali akar",
+      "back": "x1 \\times x2 = c/a"
+    }
+  ],
+  "metadata": {
+    "id": "b33996bf-7690-4368-a374-4c3e4d6d42bd",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T18:53:15Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Persamaan dan Fungsi Kuadrat",
+    "sub_bab": "Persamaan Kuadrat",
+    "task_type": "flashcard",
+    "level": "HOTS",
+    "source_file": "Matematika_2_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menentukan akar-akar, menganalisis diskriminan, serta menyusun persamaan kuadrat baru.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1379,
+      "assistant": 123,
+      "total": 2175,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

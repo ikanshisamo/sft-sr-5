@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Eksponen | Sub Bab: Bentuk Akar | Target: MOTS\n\n--- MATERI ---\nBentuk akar memiliki hubungan yang sangat erat dengan bilangan berpangkat pecahan. Secara matematis, bentuk akar didefinisikan sebagai berikut: untuk setiap bilangan dengan pangkat rasional m/n, di mana m dan n adalah bilangan bulat dan n lebih dari 0, maka a pangkat m/n dapat dinyatakan sebagai akar pangkat n dari a pangkat m. Sifat-sifat eksponen yang telah dipelajari sebelumnya juga berlaku dan dapat dikaitkan langsung untuk menyelesaikan operasi hitung pada bentuk akar berpangkat pecahan ini. Selain itu, dalam pengoperasian bentuk akar, sering kali kita perlu melakukan proses merasionalkan bentuk akar, khususnya apabila bentuk akar tersebut berada sebagai penyebut dalam suatu pecahan. Langkah utama untuk merasionalkan penyebut bentuk akar ini adalah dengan mengalikannya menggunakan bentuk akar sekawannya.\n\n[ATP_ALIGNMENT]\nMenyelesaikan operasi hitung pada bentuk akar dan merasionalkan penyebut pecahan.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang pengrajin keramik di Bali akan membuat motif baru pada sebuah ubin berbentuk persegi. Ia memiliki sisa glasir berwarna biru sebanyak \\\\(125 \\\\sqrt{3}\\\\) mililiter dan glasir berwarna putih sebanyak \\\\(81 \\\\sqrt{2}\\\\) mililiter. Untuk satu ubin, ia membutuhkan \\\\(\\sqrt{3}\\\\) mililiter glasir biru dan \\\\(\\sqrt{2}\\\\) mililiter glasir putih. Ia ingin mengetahui berapa banyak ubin yang dapat ia buat dengan sisa glasir yang ada.",
+      "question": "Berapa jumlah ubin keramik yang dapat dibuat oleh pengrajin tersebut jika ia menggunakan kedua jenis glasir secara proporsional?",
+      "rubric_points": [
+        "Menghitung jumlah ubin maksimal dari glasir biru.",
+        "Menghitung jumlah ubin maksimal dari glasir putih.",
+        "Menentukan jumlah ubin yang dapat dibuat berdasarkan pembatas glasir yang lebih sedikit."
+      ],
+      "explanation": "**Perhitungan Jumlah Ubin**\\nUntuk menentukan jumlah ubin yang dapat dibuat, kita perlu menghitung berapa ubin yang bisa dibuat dari masing-masing glasir.\\n\\nJumlah ubin dari glasir biru: \\\\(\\frac{125 \\\\sqrt{3}}{\\\\sqrt{3}} = 125\\\\) ubin.\\nJumlah ubin dari glasir putih: \\\\(\\frac{81 \\\\sqrt{2}}{\\\\sqrt{2}} = 81\\\\) ubin.\\nKarena jumlah ubin dibatasi oleh jumlah glasir yang paling sedikit, maka pengrajin tersebut hanya dapat membuat 81 ubin.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM yang memproduksi keripik singkong ingin memperluas jangkauan pasarnya. Mereka memiliki resep rahasia yang menggunakan perbandingan bumbu tertentu. Jika total berat bumbu yang digunakan untuk satu kilogram keripik adalah \\\\(\\sqrt{50}\\\\) gram, dan komposisi bumbu utamanya adalah garam dan gula dengan perbandingan \\\\(\\sqrt{2} : \\\\sqrt{3}\\\\) , berapa berat masing-masing bumbu tersebut?",
+      "question": "Tentukan berat garam dan gula yang dibutuhkan untuk satu kilogram keripik singkong berdasarkan perbandingan bumbu yang diberikan.",
+      "rubric_points": [
+        "Menyederhanakan bentuk akar total berat bumbu.",
+        "Menghitung berat garam menggunakan perbandingan.",
+        "Menghitung berat gula menggunakan perbandingan."
+      ],
+      "explanation": "**Perhitungan Berat Bumbu**\\nTotal berat bumbu adalah \\\\(\\sqrt{50}\\\\) gram, yang dapat disederhanakan menjadi \\\\(5 \\\\sqrt{2}\\\\) gram.\\nPerbandingan garam dan gula adalah \\\\(\\sqrt{2} : \\\\sqrt{3}\\\\, sehingga total bagian perbandingan adalah \\\\(\\sqrt{2} + \\\\sqrt{3}\\\\,\\n\\nBerat garam = \\\\(\\frac{\\\\sqrt{2}}{\\\\sqrt{2} + \\\\sqrt{3}} \\\\times 5 \\\\sqrt{2}\\\\) gram.\\nBerat gula = \\\\(\\frac{\\\\sqrt{3}}{\\\\sqrt{2} + \\\\sqrt{3}} \\\\times 5 \\\\sqrt{2}\\\\) gram.\\n\\nUntuk mendapatkan nilai numerik yang lebih pasti, diperlukan rasionalisasi penyebut atau pendekatan desimal.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang petani memiliki dua petak sawah berbentuk persegi. Petak pertama memiliki luas \\\\(100 \\\\sqrt{2}\\\\) meter persegi, dan petak kedua memiliki luas \\\\(50 \\\\sqrt{3}\\\\) meter persegi. Ia berencana menanam padi jenis A di petak pertama dan padi jenis B di petak kedua. Kebutuhan pupuk untuk padi jenis A adalah \\\\(\\sqrt{2}\\\\) kg per meter persegi, sedangkan untuk padi jenis B adalah \\\\(\\sqrt{3}\\\\) kg per meter persegi.",
+      "question": "Berapa total pupuk yang dibutuhkan petani untuk kedua petak sawahnya?",
+      "rubric_points": [
+        "Menghitung kebutuhan pupuk untuk petak pertama.",
+        "Menghitung kebutuhan pupuk untuk petak kedua.",
+        "Menjumlahkan total kebutuhan pupuk kedua petak."
+      ],
+      "explanation": "**Perhitungan Total Pupuk**\\nKebutuhan pupuk untuk petak pertama adalah luas petak dikalikan kebutuhan pupuk per meter persegi:\\nPupuk petak 1 = \\\\(100 \\\\sqrt{2} \\\\times \\\\sqrt{2}\\\\) kg = \\\\(100 \\\\times 2\\)\\\\ kg = 200 kg.\\n\\nKebutuhan pupuk untuk petak kedua adalah luas petak dikalikan kebutuhan pupuk per meter persegi:\\nPupuk petak 2 = \\\\(50 \\\\sqrt{3} \\\\times \\\\sqrt{3}\\\\) kg = \\\\(50 \\\\times 3\\)\\\\ kg = 150 kg.\\n\\nTotal pupuk yang dibutuhkan adalah jumlah pupuk untuk kedua petak:\\nTotal Pupuk = 200 kg + 150 kg = 350 kg.\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan logistik menggunakan dua jenis truk untuk mengangkut barang. Truk jenis X memiliki kapasitas angkut \\\\(\\sqrt{72}\\\\) ton, sedangkan truk jenis Y memiliki kapasitas angkut \\\\(\\sqrt{50}\\\\) ton. Jika perusahaan tersebut memiliki total muatan sebanyak \\\\(10 \\\\sqrt{2} + 15 \\\\sqrt{3}\\\\) ton yang harus diangkut, dan mereka ingin menggunakan kombinasi kedua truk tersebut secara efisien.",
+      "question": "Bagaimana cara menentukan kombinasi jumlah truk jenis X dan Y yang paling mendekati total muatan yang harus diangkut?",
+      "rubric_points": [
+        "Menyederhanakan kapasitas angkut kedua jenis truk.",
+        "Membuat persamaan atau model matematis untuk kombinasi truk.",
+        "Menganalisis berbagai kombinasi untuk mendekati total muatan."
+      ],
+      "explanation": "**Analisis Kombinasi Truk**\\nKapasitas truk X = \\\\(\\sqrt{72}\\\\) ton = \\\\(6 \\\\sqrt{2}\\\\) ton.\\nKapasitas truk Y = \\\\(\\sqrt{50}\\\\) ton = \\\\(5 \\\\sqrt{2}\\\\) ton.\\nTotal muatan = \\\\(10 \\\\sqrt{2} + 15 \\\\sqrt{3}\\\\) ton.\\n\\nMisalkan jumlah truk X adalah 'a' dan jumlah truk Y adalah 'b'. Maka, persamaan yang perlu didekati adalah:\\n\\\\(a \\\\times 6 \\\\sqrt{2} + b \\\\times 5 \\\\sqrt{2} \\\\approx 10 \\\\sqrt{2} + 15 \\\\sqrt{3}\\\\,\\n\\\\((6a + 5b) \\\\sqrt{2} \\\\approx 10 \\\\sqrt{2} + 15 \\\\sqrt{3}\\\\,\\n\\nKarena \\\\(\\sqrt{3}\\\\) tidak dapat disederhanakan dengan \\\\(\\sqrt{2}\\\\, pendekatan yang paling efisien adalah mencari nilai 'a' dan 'b' yang memaksimalkan penggunaan \\\\(\\sqrt{2}\\\\) dari truk X dan Y untuk mengangkut bagian \\\\(10 \\\\sqrt{2}\\\\) ton, dan mempertimbangkan bagaimana \\\\(15 \\\\sqrt{3}\\\\) ton dapat diangkut (kemungkinan memerlukan truk tambahan atau truk dengan kapasitas berbeda jika hanya mengandalkan truk X dan Y).\\n\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa SMA sedang mengerjakan soal fisika tentang energi potensial gravitasi. Ia perlu menghitung perubahan energi potensial sebuah bola bermassa \\\\(\\sqrt{2}\\\\) kg yang jatuh dari ketinggian \\\\(h_1 = 10 \\\\sqrt{3}\\\\) meter ke ketinggian \\\\(h_2 = 5 \\\\sqrt{3}\\\\) meter. Percepatan gravitasi di lokasi tersebut adalah \\\\(g = 9.8 \\\\text{ m/s}^2\\\\).",
+      "question": "Hitunglah perubahan energi potensial bola tersebut menggunakan konsep bentuk akar dalam perhitungan fisika.",
+      "rubric_points": [
+        "Mengidentifikasi rumus perubahan energi potensial.",
+        "Menghitung selisih ketinggian dalam bentuk akar.",
+        "Melakukan perhitungan akhir energi potensial dengan bentuk akar."
+      ],
+      "explanation": "**Perhitungan Perubahan Energi Potensial**\\nRumus perubahan energi potensial adalah \\\\(\\Delta EP = m \\\\times g \\\\times \\\\Delta h\\\\), di mana \\\\(\\Delta h = h_1 - h_2\\\\).\\n\\nSelisih ketinggian: \\\\(\\Delta h = 10 \\\\sqrt{3} \\\\text{ m} - 5 \\\\sqrt{3} \\\\text{ m} = (10-5) \\\\sqrt{3} \\\\text{ m} = 5 \\\\sqrt{3} \\\\text{ m}\\\\,\\n\\nPerubahan energi potensial: \\\\(\\Delta EP = \\\\sqrt{2} \\\\text{ kg} \\\\times 9.8 \\\\text{ m/s}^2 \\\\times 5 \\\\sqrt{3} \\\\text{ m}\\\\,\\n\\\\(\\Delta EP = 9.8 \\\\times 5 \\\\times \\\\sqrt{2} \\\\times \\\\sqrt{3} \\\\text{ Joule}\\\\,\\n\\\\(\\Delta EP = 49 \\\\sqrt{6} \\\\text{ Joule}\\\\,\\n\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "8b892fb7-94bb-427b-9abd-72f4d6bafc40",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T13:43:19Z",
+    "kurikulum": "Kurikulum Merdeka",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Eksponen",
+    "sub_bab": "Bentuk Akar",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_1_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menyelesaikan operasi hitung pada bentuk akar dan merasionalkan penyebut pecahan.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 1241,
+      "assistant": 2299,
+      "total": 4213,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

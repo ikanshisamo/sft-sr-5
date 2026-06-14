@@ -1,0 +1,98 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 5 essay questions in JSON array format.\nNever generate more or fewer.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"rubric_points\": [],\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\",\n      \"expected_reasoning\": [\n        \"multi-step application\",\n        \"cause-effect interpretation\",\n        \"moderate contextual reasoning\"\n      ]\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Peluang | Sub Bab: Aturan Perkalian | Target: MOTS\n\n--- MATERI ---\nDalam teori peluang majemuk, salah satu konsep penting yang harus dipahami adalah kejadian saling bebas. Dua buah kejadian diklasifikasikan sebagai kejadian saling bebas apabila terjadinya kejadian pertama sama sekali tidak memengaruhi kemungkinan terjadinya kejadian kedua, dan begitu pula sebaliknya. Dengan kata lain, hasil dari suatu percobaan bersifat independen dan tidak memiliki keterkaitan dengan hasil percobaan lainnya. Sebagai ilustrasi matematis, misalkan kita melakukan percobaan melempar sekeping uang logam dan sebuah dadu bersisi enam secara bersamaan. Kejadian munculnya sisi gambar pada uang logam dipastikan tidak akan memengaruhi peluang munculnya mata dadu genap pada pelemparan dadu tersebut. Karena kedua kejadian ini berdiri sendiri tanpa adanya syarat yang mengikat, maka keduanya disebut kejadian saling bebas. Pemahaman mengenai karakteristik independensi ini sangat krusial sebelum menerapkan perhitungan probabilitas tingkat lanjut.\n\nUntuk menghitung besaran peluang terjadinya dua kejadian saling bebas secara bersamaan atau berurutan, kita menerapkan prinsip matematis yang dikenal sebagai aturan perkalian peluang. Hubungan kedua kejadian ini umumnya ditandai dengan kata hubung 'dan', yang secara himpunan dinotasikan dengan simbol irisan (∩). Jika kejadian A dan kejadian B telah diidentifikasi sebagai dua kejadian yang saling bebas, maka peluang munculnya kejadian A dan kejadian B secara simultan dirumuskan dengan mengalikan nilai peluang dari masing-masing kejadian tunggalnya. Secara formal, rumus aturan perkalian untuk kejadian A dan B yang saling bebas dituliskan sebagai P(A ∩ B) = P(A) × P(B). Penggunaan formula perkalian ini memberikan tingkat efisiensi komputasi yang tinggi, karena kita tidak diwajibkan lagi untuk mendaftar seluruh titik sampel di dalam ruang sampel majemuk yang ukurannya sangat besar.\n\nPenerapan rumusan aturan perkalian pada kejadian saling bebas dapat diilustrasikan secara langsung melalui penyelesaian pemodelan peluang. Mengacu pada contoh pelemparan sebuah dadu dan sekeping uang logam secara bersamaan, kita dapat mendefinisikan kejadian A sebagai munculnya sisi gambar pada koin. Karena ruang sampel koin adalah dua, maka peluangnya adalah P(A) = 1/2. Selanjutnya, kejadian B didefinisikan sebagai munculnya mata dadu genap, yaitu himpunan titik sampel {2, 4, 6} dari total 6 ruang sampel dadu, sehingga P(B) = 3/6 atau 1/2. Mengingat kejadian A dan kejadian B saling bebas, maka peluang munculnya sisi gambar pada koin 'dan' mata dadu genap secara bersamaan dapat dihitung secara akurat dengan mengalikan kedua probabilitas tersebut. Nilai peluang irisannya adalah P(A ∩ B) = 1/2 × 1/2 = 1/4. Pendekatan analitis ini merepresentasikan penalaran yang sistematis dalam membedah peluang majemuk.\n\nAturan perkalian peluang ini sifatnya sangat fleksibel dan tidak hanya terbatas pada dua kejadian saja, melainkan dapat digeneralisasi untuk tiga atau lebih kejadian yang semuanya saling bebas satu sama lain. Sebagai contoh, jika terdapat kejadian A, B, dan C yang memenuhi syarat saling bebas, maka rumusnya meluas menjadi P(A ∩ B ∩ C) = P(A) × P(B) × P(C). Sangat penting bagi siswa untuk selalu menganalisis narasi permasalahan secara cermat agar tidak tertukar dengan konsep kejadian tidak saling bebas atau peluang bersyarat. Pada kejadian bersyarat, seperti kasus pengambilan bola dari dalam kotak secara berurutan tanpa pengembalian, ruang sampel pada pengambilan kedua akan menyusut sehingga kejadian pertama jelas memengaruhi peluang kejadian kedua. Oleh karena itu, memverifikasi independensi antar kejadian merupakan prasyarat mutlak sebelum memberlakukan aturan perkalian ini.\n\n[ATP_ALIGNMENT]\nMenghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Use one complete sentence only.\n- Length: 20-50 words.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 50-150 words.\n- Use realistic Indonesian contexts relevant to the subject domain.\n- Include sufficient contextual information to support reasoning.\n- Allowed formats:\n  - narrative\n  - bullet list\n  - markdown table\n  - mixed format\n\n[RUBRIC_REQUIREMENTS]\n- Minimum 3 rubric points.\n- Use operational assessment indicators.\n- Keep each rubric concise and measurable.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 50-150 words.\n- Start with a short bold title.\n- Mathematics/science:\n  - show calculations vertically using LaTeX\n- Theory subjects:\n  - explain core cause-effect reasoning\n  - explain key analytical points\n\n- End with:\n  \"Refleksi Nyata\"\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly the key name (\"LOTS\", \"MOTS\", or \"HOTS\"), NOT the label name (like \"Memahami\", \"Mengaplikasi\", or \"Merefleksi\").",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah warung makan di pinggir jalan memiliki dua jenis minuman yang paling laris: es teh manis dan es jeruk. Pelanggan dapat memilih salah satu atau keduanya. Berdasarkan data penjualan, 60% pelanggan memesan es teh manis dan 40% pelanggan memesan es jeruk. Diasumsikan pilihan minuman pelanggan bersifat independen.",
+      "question": "Berapakah peluang seorang pelanggan memesan es teh manis DAN es jeruk secara bersamaan?",
+      "rubric_points": [
+        "Mengidentifikasi P(A) sebagai peluang memesan es teh manis.",
+        "Mengidentifikasi P(B) sebagai peluang memesan es jeruk.",
+        "Menerapkan aturan perkalian P(A ∩ B) = P(A) × P(B) untuk kejadian saling bebas."
+      ],
+      "explanation": "**Perhitungan Peluang Kejadian Saling Bebas**\\n\\nMisalkan kejadian A adalah pelanggan memesan es teh manis, dan kejadian B adalah pelanggan memesan es jeruk.\\nDiketahui:\\nP(A) = 60% = 0,60\\nP(B) = 40% = 0,40\\n\\nKarena kedua kejadian ini saling bebas, peluang keduanya terjadi bersamaan dihitung dengan mengalikan probabilitas masing-masing:\\nP(A ∩ B) = P(A) \\times P(B)\\nP(A ∩ B) = 0,60 \\times 0,40\\nP(A ∩ B) = 0,24\\n\\nJadi, peluang seorang pelanggan memesan es teh manis dan es jeruk secara bersamaan adalah 0,24 atau 24%.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang siswa kelas XII SMA Nusantara akan mengikuti dua ujian penting di hari yang sama: Ujian Matematika dan Ujian Fisika. Peluang siswa tersebut lulus Ujian Matematika adalah 0,85, dan peluang lulus Ujian Fisika adalah 0,70. Diasumsikan hasil kedua ujian tersebut tidak saling memengaruhi.",
+      "question": "Berapakah peluang siswa tersebut lulus kedua ujian tersebut?",
+      "rubric_points": [
+        "Menentukan probabilitas kelulusan Ujian Matematika.",
+        "Menentukan probabilitas kelulusan Ujian Fisika.",
+        "Mengalikan kedua probabilitas untuk mendapatkan peluang kelulusan bersama."
+      ],
+      "explanation": "**Perhitungan Peluang Kelulusan Bersama**\\n\\nMisalkan kejadian A adalah siswa lulus Ujian Matematika, dan kejadian B adalah siswa lulus Ujian Fisika.\\nDiketahui:\\nP(A) = 0,85\\nP(B) = 0,70\\n\\nKarena hasil kedua ujian diasumsikan saling bebas, peluang kelulusan keduanya dihitung dengan mengalikan probabilitas masing-masing:\\nP(A ∩ B) = P(A) \\times P(B)\\nP(A ∩ B) = 0,85 \\times 0,70\\nP(A ∩ B) = 0,595\\n\\nJadi, peluang siswa tersebut lulus kedua ujian adalah 0,595 atau 59,5%.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik kerupuk udang memproduksi dua jenis kerupuk: rasa original dan rasa pedas. Mesin pengemas pertama mengemas kerupuk rasa original dengan peluang 0,95, dan mesin pengemas kedua mengemas kerupuk rasa pedas dengan peluang 0,98. Kedua mesin beroperasi secara independen.",
+      "question": "Berapakah peluang kedua mesin berhasil mengemas kerupuk sesuai jenisnya?",
+      "rubric_points": [
+        "Menentukan peluang mesin pertama berhasil mengemas kerupuk original.",
+        "Menentukan peluang mesin kedua berhasil mengemas kerupuk pedas.",
+        "Mengalikan kedua peluang untuk mendapatkan peluang keberhasilan bersama."
+      ],
+      "explanation": "**Perhitungan Peluang Keberhasilan Mesin Bersama**\\n\\nMisalkan kejadian A adalah mesin pertama berhasil mengemas kerupuk original, dan kejadian B adalah mesin kedua berhasil mengemas kerupuk pedas.\\nDiketahui:\\nP(A) = 0,95\\nP(B) = 0,98\\n\\nKarena kedua mesin beroperasi secara independen, peluang keduanya berhasil bersamaan dihitung dengan mengalikan probabilitas masing-masing:\\nP(A ∩ B) = P(A) \\times P(B)\\nP(A ∩ B) = 0,95 \\times 0,98\\nP(A ∩ B) = 0,931\\n\\nJadi, peluang kedua mesin berhasil mengemas kerupuk sesuai jenisnya adalah 0,931 atau 93,1%.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Di sebuah pasar tradisional, seorang pedagang buah menjual dua jenis buah yang populer: mangga dan jeruk. Peluang mangga terjual habis pada hari tertentu adalah 0,7, dan peluang jeruk terjual habis adalah 0,8. Diasumsikan penjualan kedua jenis buah ini tidak saling memengaruhi.",
+      "question": "Berapakah peluang kedua jenis buah tersebut terjual habis pada hari yang sama?",
+      "rubric_points": [
+        "Mengidentifikasi peluang mangga terjual habis.",
+        "Mengidentifikasi peluang jeruk terjual habis.",
+        "Mengalikan kedua peluang untuk mendapatkan peluang terjual habis bersama."
+      ],
+      "explanation": "**Perhitungan Peluang Terjual Habis Bersama**\\n\\nMisalkan kejadian A adalah mangga terjual habis, dan kejadian B adalah jeruk terjual habis.\\nDiketahui:\\nP(A) = 0,7\\nP(B) = 0,8\\n\\nKarena penjualan kedua jenis buah ini diasumsikan saling memengaruhi, peluang keduanya terjual habis bersamaan dihitung dengan mengalikan probabilitas masing-masing:\\nP(A ∩ B) = P(A) \\times P(B)\\nP(A ∩ B) = 0,7 \\times 0,8\\nP(A ∩ B) = 0,56\\n\\nJadi, peluang kedua jenis buah tersebut terjual habis pada hari yang sama adalah 0,56 atau 56%.\\nRefleksi Nyata"
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan transportasi online memiliki dua layanan utama: pengantaran makanan dan pengantaran barang. Peluang pesanan pengantaran makanan masuk pada jam sibuk adalah 0,8, dan peluang pesanan pengantaran barang masuk pada jam yang sama adalah 0,6. Diasumsikan kedua jenis pesanan ini independen.",
+      "question": "Berapakah peluang pesanan pengantaran makanan DAN pengantaran barang masuk secara bersamaan pada jam sibuk?",
+      "rubric_points": [
+        "Menentukan peluang pesanan makanan masuk pada jam sibuk.",
+        "Menentukan peluang pesanan barang masuk pada jam sibuk.",
+        "Mengalikan kedua peluang untuk mendapatkan peluang pesanan bersamaan."
+      ],
+      "explanation": "**Perhitungan Peluang Pesanan Bersamaan**\\n\\nMisalkan kejadian A adalah pesanan pengantaran makanan masuk pada jam sibuk, dan kejadian B adalah pesanan pengantaran barang masuk pada jam sibuk.\\nDiketahui:\\nP(A) = 0,8\\nP(B) = 0,6\\n\\nKarena kedua jenis pesanan ini independen, peluang keduanya masuk bersamaan dihitung dengan mengalikan probabilitas masing-masing:\\nP(A ∩ B) = P(A) \\times P(B)\\nP(A ∩ B) = 0,8 \\times 0,6\\nP(A ∩ B) = 0,48\\n\\nJadi, peluang pesanan pengantaran makanan dan pengantaran barang masuk secara bersamaan pada jam sibuk adalah 0,48 atau 48%.\\nRefleksi Nyata"
+    }
+  ],
+  "metadata": {
+    "id": "d66ba6f9-0560-4a27-9b81-68fdff368687",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-27T19:16:41Z",
+    "kurikulum": "K-13",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Peluang",
+    "sub_bab": "Aturan Perkalian",
+    "task_type": "essay",
+    "level": "MOTS",
+    "source_file": "Matematika_4_chunk.json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Menghitung peluang terjadinya dua kejadian saling bebas menggunakan aturan perkalian.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 2131,
+      "assistant": 1897,
+      "total": 4702,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}

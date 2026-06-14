@@ -1,0 +1,183 @@
+{
+  "system": "[ROLE]\nYou are a structured educational content generation engine for Sekolah Rakyat Indonesia.\n\nYour task is to transform learning context and source material into pedagogically aligned educational outputs in strict JSON format following Pembelajaran Mendalam principles.\n\n[PRIMARY_OBJECTIVE]\nGenerate outputs that are:\n- contextually grounded\n- cognitively aligned\n- structurally valid\n- readable for Indonesian SMA students\n- faithful to provided source material\n\n[OUTPUT_PRIORITY]\nPriority order:\n1. Valid JSON\n2. Schema completeness\n3. Cognitive alignment\n4. Context relevance\n5. Writing quality\n\nNever sacrifice JSON validity for creativity.\n\n[PEDAGOGICAL_PRINCIPLES]\n- Build learning using real Indonesian situations and daily realities.\n- Use clear cause-effect reasoning.\n- Prioritize practical understanding before abstraction.\n- Match foundational literacy abilities of Indonesian high school students.\n- Avoid logical leaps and unnecessarily complex sentences.\n\n[STYLE_RULES]\n- Tone: direct, analytical, supportive.\n- Use natural Indonesian language.\n- Use grounded local contexts such as UMKM, pasar, transportasi, pertanian, lingkungan sekolah, atau kehidupan keluarga.\n- Avoid motivational filler and exaggerated enthusiasm.\n- Avoid greetings or rhetorical openings.\n\n[BLACKLIST]\nDo not use:\n- “Hai”\n- “Halo”\n- “Sobat”\n- “Hebat”\n- “Luar biasa”\n- “Pernahkah kamu berpikir”\n- “Mari kita bahas”\n- “Tahukah kamu”\n\n[STRUCTURE_RULES]\n- Output raw JSON only.\n- No markdown code blocks.\n- No explanations outside JSON.\n- Escape newline characters as \\\\n.\n- Escape internal quotes as \\\\\\\".\n- Do not mention internal framework labels inside student-facing content.\n\n[LaTeX_RULES]\nAll LaTeX commands must use escaped backslashes:\n- \\\\\\\\frac\n- \\\\\\\\times\n- \\\\\\\\sqrt\n\n[SOURCE_RULE]\nProvided context and source material are the primary factual anchor.\nDo not invent unsupported facts or concepts.\n\n[LEVEL_ALIGNMENT_RULE]\nCognitive depth and reasoning style are controlled dynamically by external LEVELING_REGISTRY.\n\n[DOMAIN_ALIGNMENT_RULE]\nStimulus style, domain behavior, and contextual patterns are controlled dynamically by external STIMULUS_REGISTRY.",
+  "user": "[TASK]\nGenerate EXACTLY 10 multiple choice questions in JSON array format.\nNever generate more or fewer.\n\nPrioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.\n\n[OUTPUT_SCHEMA]\n[\n  {\n    \"level\": \"Must be exactly 'LOTS', 'MOTS', or 'HOTS'. Do not use label names like 'Memahami', 'Mengaplikasi', or 'Merefleksi'.\",\n    \"stimulus\": \"\",\n    \"question\": \"\",\n    \"options\": {\n      \"A\": \"\",\n      \"B\": \"\",\n      \"C\": \"\",\n      \"D\": \"\",\n      \"E\": \"\"\n    },\n    \"answer\": \"\",\n    \"explanation\": \"\"\n  }\n]\n\n[LEVEL_CONFIGURATION]\n{\n  \"MOTS\": {\n    \"label\": \"Mengaplikasi\",\n    \"generation_behavior\": {\n      \"dominant_operations\": [\n        \"application\",\n        \"interpretation\",\n        \"comparison\",\n        \"contextual analysis\"\n      ],\n      \"question_behavior\": [\n        \"apply concepts to new situations\",\n        \"analyze relationships\",\n        \"compare contextual outcomes\",\n        \"determine reasonable solutions\"\n      ],\n      \"preferred_question_patterns\": [\n        \"contextual problem solving\",\n        \"relationship analysis\",\n        \"applied reasoning\",\n        \"scenario interpretation\"\n      ],\n      \"avoid_patterns\": [\n        \"pure recall\",\n        \"direct memorization\",\n        \"advanced strategic evaluation\",\n        \"high abstraction judgment\"\n      ],\n      \"reasoning_priority\": \"application_over_recall\"\n    }\n  }\n}\n\n[SUBJECT_CONFIGURATION]\n{\n  \"matematika\": {\n    \"required_elements\": [\n      \"angka\",\n      \"pola numerik\",\n      \"perubahan kuantitatif\",\n      \"hubungan matematis\"\n    ],\n    \"reasoning_space\": [\n      \"komputasi\",\n      \"identifikasi pola\",\n      \"hubungan variabel\",\n      \"interpretasi numerik\"\n    ],\n    \"writing_rules\": [\n      \"gunakan data realistis\",\n      \"hindari angka absurd\",\n      \"gunakan konteks Indonesia\",\n      \"hindari cerita fiktif berlebihan\"\n    ]\n  }\n}\n\n[LEARNING_CONTEXT]\nMapel: Matematika Umum | Bab: Representasi dan Interpretasi Data | Sub Bab: Representasi Data Lanjutan | Target: MOTS\n\n--- MATERI ---\nDalam menganalisis distribusi sekumpulan data secara lebih mendalam, statistika menyediakan instrumen visual yang komprehensif yang disebut diagram kotak garis atau boxplot. Representasi visual ini dibangun berdasarkan ringkasan lima ukuran statistik fundamental yang dikenal dengan istilah five-number summary. Kelima ukuran statistik pengamatan tersebut meliputi nilai datum minimum, kuartil bawah (Q1), kuartil tengah atau median (Q2), kuartil atas (Q3), serta nilai datum maksimum. Secara struktural, sebuah boxplot menampilkan sebuah kotak utama yang membentang dari nilai Q1 hingga Q3. Kotak ini merepresentasikan jangkauan interkuartil atau hamparan, yang secara empiris memuat lima puluh persen data pengamatan yang terkonsentrasi tepat di bagian tengah distribusi. Melalui kerangka visual ini, peneliti dapat dengan cepat menangkap gambaran ringkas mengenai pemusatan dan sebaran data tanpa harus mengevaluasi keseluruhan deretan nilai data mentah.\n\nKeunggulan analitis yang paling menonjol dari penggunaan boxplot terletak pada kemampuannya dalam mendeteksi tingkat kesimetrisan sebaran data sekaligus mengidentifikasi keberadaan pencilan atau outlier. Analisis kesimetrisan ini dapat diobservasi melalui letak garis median di dalam kotak serta perbandingan panjang garis hubung (whisker) yang menjulur ke arah nilai minimum dan maksimum. Apabila median tidak berada persis di tengah kotak, atau salah satu whisker tampak jauh lebih panjang dibandingkan yang lain, hal tersebut secara kuat mengindikasikan bahwa distribusi data mengalami kemencengan (skewness). Selain itu, boxplot secara eksplisit menampilkan anomali data. Nilai pengamatan ekstrem atau pencilan umumnya diplot secara individual menggunakan simbol titik (noktah) atau tanda bintang di luar batas juluran whisker, sehingga memudahkan proses pembersihan data observasi.\n\nAnalisis statistika sering kali tidak hanya berfokus pada satu variabel tunggal, melainkan menuntut eksplorasi relasi antara dua variabel kuantitatif yang berbeda. Eksplorasi hubungan bivariat ini dapat diwujudkan secara visual dan efektif melalui penggunaan diagram pencar atau scatter plot. Pada rancang bangun diagram pencar, setiap unit observasi atau individu data dipetakan sebagai sebuah titik koordinat yang unik pada bidang geometri Kartesius. Sumbu horizontal atau sumbu-X didedikasikan secara khusus untuk merepresentasikan variabel penjelas, prediktor, atau variabel independen. Di sisi lain, sumbu vertikal atau sumbu-Y senantiasa merepresentasikan variabel respons atau variabel dependen, yang fluktuasi nilainya secara hipotesis diasumsikan sangat dipengaruhi atau bergantung pada perubahan kuantitas yang terjadi pada variabel independennya.\n\nTahap esensial dalam interpretasi diagram pencar adalah mengevaluasi arah kecenderungan pola sebaran himpunan titik-titik observasi tersebut. Apabila sebaran titik secara konsisten memperlihatkan tren pergerakan yang naik dari sudut kiri bawah menuju ke sudut kanan atas, kondisi geometri ini mengindikasikan eksistensi korelasi linier positif. Makna fisis dari korelasi positif adalah setiap peningkatan pada variabel independen X akan diikuti secara proporsional oleh peningkatan variabel dependen Y. Sebaliknya, apabila pola sebaran titik tampak memanjang dan menurun dari sudut kiri atas mengarah ke sudut kanan bawah, fenomena ini menegaskan adanya korelasi linier negatif. Pada korelasi negatif yang terjadi adalah kebalikannya, di mana setiap penambahan kuantitas pada variabel independen justru akan memicu peluruhan atau penurunan besaran nilai pada variabel dependen.\n\nSelain menganalisis arah hubungan linier positif maupun negatif, kekuatan relasi bivariat antar variabel juga dapat ditinjau secara visual melalui evaluasi derajat kerapatan titik-titik observasi pada diagram pencar. Semakin rapat titik-titik koordinat tersebut mengelompok dan menyerupai atau menghimpit sebuah garis lurus imajiner, maka semakin kuat pula derajat korelasi linier yang mengikat kedua variabel pengamatan tersebut. Sebaliknya, apabila titik-titik observasi tampak menyebar secara acak, meluas memenuhi berbagai kuadran pada bidang Kartesius, dan secara visual gagal membentuk suatu pola lintasan lengkung maupun lurus yang teratur, kondisi tersebut secara kuat mengindikasikan ketiadaan korelasi yang bermakna sama sekali secara statistik di antara kedua variabel bersangkutan.\n\nPenguasaan komprehensif dalam menyajikan data menggunakan boxplot dan diagram pencar merupakan fondasi vital bagi peserta didik dalam melakukan interpretasi data tingkat lanjut. Boxplot memberikan landasan yang kuat dalam memahami karakteristik internal dari masing-masing variabel secara independen, terutama untuk memvalidasi pemusatan sebaran dan mendeteksi nilai-nilai yang menyimpang dari tren umum. Sementara itu, diagram pencar menyajikan instrumen analitik untuk menguji dugaan asosiasi sebab-akibat antar dua parameter kuantitatif yang berbeda. Sinergi dari analisis kedua representasi visual ini memampukan peserta didik untuk merumuskan simpulan yang faktual berdasarkan observasi, sekaligus menjadi prasyarat sebelum mereka melangkah pada tahap pemodelan komputasi matematis yang jauh lebih kompleks, yaitu formulasi persamaan garis regresi linier.\n\n[ATP_ALIGNMENT]\nMerepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.\n\nPrioritize ATP objectives as curriculum constraints.\n\n[DISTRACTOR_QUALITY_RULES]\n- Incorrect options must remain strategically plausible.\n- Avoid obviously irrational, careless, or extreme distractors.\n- Avoid answer choices that can be eliminated without understanding the underlying concept.\n- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.\n- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.\n- Prefer distractors from the same reasoning family as the correct answer.\n- Avoid structurally obvious distractors.\n\n[OPTION_BALANCING_RULES]\n- Keep option specificity and tone relatively balanced.\n- Avoid one option sounding significantly more complete or professional than others.\n- All options should appear potentially reasonable at first glance.\n- Keep all options within similar reasoning complexity.\n- Avoid one option being noticeably more detailed than others.\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question patterns.\n- Do not repeatedly ask:\n  - \"formula mana yang tepat\"\n  - \"manakah persamaan yang benar\"\n  - direct symbolic matching questions\n- Vary cognitive operations across questions.\n- Use diverse reasoning behaviors such as:\n  - evaluating strategies\n  - identifying flawed assumptions\n  - predicting consequences\n  - comparing growth scenarios\n  - interpreting quantitative changes\n  - selecting the most realistic decision\n  - analyzing operational risks\n  - identifying the most efficient approach\n- Prioritize applied reasoning over formula recognition.\n\n[QUESTION_PRECISION_RULES]\n- Questions must support only one mathematically valid interpretation.\n- Explicitly distinguish between:\n  - cumulative totals\n  - current phase values\n  - accumulated growth\n  - newly added quantities\n- Avoid ambiguous wording such as:\n  - \"total setelah\"\n  - \"jumlah keseluruhan\"\nunless clearly defined.\n\n[STIMULUS_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Use contextual numerical, social, or literacy-based situations depending on subject domain.\n- Use realistic Indonesian contexts.\n- Avoid repetitive scenarios across questions.\n- Stimuli should naturally support reasoning and decision-making.\n- Avoid overly artificial storytelling.\n- Allowed formats:\n  - narrative\n  - narrative with bullet list\n  - narrative with markdown table\n\n[QUESTION_DIVERSITY_RULES]\n- Avoid repetitive question structures.\n- Follow the active level generation behavior.\n\n[QUESTION_REQUIREMENTS]\n- Questions must remain contextually grounded.\n- Encourage application of concepts to realistic situations.\n- Avoid pure memorization.\n\n[DISTRACTOR_REASONING_RULES]\n- Distractors should represent realistic reasoning alternatives, not only formula variations.\n- Prefer:\n  - flawed strategies\n  - incomplete analysis\n  - inefficient decisions\n  - incorrect assumptions\n  - weak operational planning\nover purely symbolic mistakes.\n- Keep distractors within the same contextual reasoning space as the correct answer.\n\n[EXPLANATION_REQUIREMENTS]\n- Length: 30-60 words (keep extremely concise to avoid output truncation).\n- Start with a short bold title.\n- Explanations must be concise and decisive.\n- Focus only on reasoning supporting the correct answer.\n- Avoid self-correction or interpretation debates.\n- Avoid chain-of-thought style deliberation.\n- Avoid repetitive restatement of the stimulus.\n- Mathematics/science:\n  - explain calculations vertically\n  - use LaTeX formatting when needed\n  - explain reasoning clearly but efficiently\n- Theory subjects:\n  - explain cause-effect reasoning\n  - explain why distractors are weaker\n\n[STRICT_OUTPUT_RULES]\n- Return raw JSON only.\n- No markdown code block.\n- No additional commentary.\n- The \"level\" field in the output JSON MUST be exactly:\n  - \"LOTS\"\n  - \"MOTS\"\n  - \"HOTS\"\n- Never use label names such as:\n  - \"Memahami\"\n  - \"Mengaplikasi\"\n  - \"Merefleksi\"",
+  "assistant": [
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang guru mencatat nilai ulangan harian Matematika dari 25 siswa. Data tersebut disajikan dalam boxplot. Nilai minimum adalah 50, Q1 adalah 65, median adalah 75, Q3 adalah 85, dan nilai maksimum adalah 100. Terdapat dua pencilan pada nilai 30 dan 110.",
+      "question": "Berdasarkan boxplot tersebut, bagaimana interpretasi yang paling tepat mengenai distribusi nilai ulangan harian siswa?",
+      "options": {
+        "A": "Distribusi nilai cenderung simetris karena median berada di tengah kotak.",
+        "B": "Terdapat kemencengan positif karena nilai maksimum lebih jauh dari Q3 dibandingkan nilai minimum dari Q1.",
+        "C": "Terdapat kemencengan negatif karena nilai minimum lebih jauh dari Q1 dibandingkan nilai maksimum dari Q3.",
+        "D": "Distribusi nilai sangat bervariasi karena adanya dua pencilan yang signifikan.",
+        "E": "Sebagian besar siswa mendapatkan nilai di atas rata-rata karena median tinggi."
+      },
+      "answer": "D",
+      "explanation": "**Interpretasi Pencilan Data**\\nKeberadaan dua pencilan pada nilai 30 dan 110 menunjukkan adanya nilai ekstrem yang jauh dari mayoritas data. Hal ini secara langsung mengindikasikan variasi data yang signifikan dan perlu diperhatikan dalam analisis lebih lanjut."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah UMKM keripik singkong ingin menganalisis hubungan antara jumlah jam promosi di media sosial (X) dengan jumlah penjualan per hari (Y). Data selama 10 hari disajikan dalam scatter plot. Titik-titik data cenderung mengumpul dan membentuk pola naik dari kiri bawah ke kanan atas.",
+      "question": "Apa kesimpulan yang dapat ditarik dari pola sebaran titik pada scatter plot tersebut mengenai hubungan antara jam promosi dan penjualan?",
+      "options": {
+        "A": "Tidak ada hubungan yang jelas antara jam promosi dan jumlah penjualan.",
+        "B": "Semakin banyak jam promosi, semakin sedikit penjualan yang terjadi.",
+        "C": "Semakin banyak jam promosi, semakin banyak penjualan yang terjadi.",
+        "D": "Hubungan antara promosi dan penjualan bersifat negatif dan kuat.",
+        "E": "Penjualan sangat dipengaruhi oleh faktor lain selain jam promosi."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Korelasi Positif**\\nPola titik yang naik dari kiri bawah ke kanan atas pada scatter plot mengindikasikan adanya korelasi linier positif. Ini berarti peningkatan pada variabel independen (jam promosi) berkorelasi dengan peningkatan pada variabel dependen (jumlah penjualan)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data tinggi badan (cm) dan berat badan (kg) siswa kelas XII SMA Harapan Bangsa disajikan dalam scatter plot. Sumbu X menunjukkan tinggi badan dan sumbu Y menunjukkan berat badan. Titik-titik data tampak menyebar luas tanpa membentuk pola yang jelas.",
+      "question": "Bagaimana interpretasi yang paling tepat mengenai hubungan antara tinggi badan dan berat badan siswa berdasarkan scatter plot tersebut?",
+      "options": {
+        "A": "Terdapat korelasi negatif yang kuat antara tinggi badan dan berat badan.",
+        "B": "Tinggi badan siswa sangat memengaruhi berat badan mereka.",
+        "C": "Semakin tinggi siswa, semakin berat badannya secara proporsional.",
+        "D": "Tidak ada korelasi linier yang signifikan antara tinggi badan dan berat badan.",
+        "E": "Distribusi berat badan siswa sangat bervariasi terlepas dari tinggi badan."
+      },
+      "answer": "D",
+      "explanation": "**Interpretasi Ketiadaan Korelasi**\\nPenyebaran titik yang acak dan tidak membentuk pola tertentu pada scatter plot menunjukkan bahwa tidak ada hubungan linier yang kuat atau konsisten antara tinggi badan dan berat badan siswa dalam konteks data ini."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah perusahaan logistik memantau waktu tempuh pengiriman paket (dalam jam) dari gudang ke pelanggan. Data 30 pengiriman disajikan dalam boxplot. Kotak utama membentang dari 2 jam hingga 5 jam, dengan median pada 3.5 jam. Whisker kiri mencapai 1 jam, dan whisker kanan mencapai 8 jam.",
+      "question": "Manakah pernyataan berikut yang paling akurat menggambarkan distribusi waktu tempuh pengiriman paket?",
+      "options": {
+        "A": "Sebagian besar pengiriman selesai dalam 1 hingga 8 jam.",
+        "B": "Distribusi waktu tempuh sangat simetris.",
+        "C": "Terdapat pencilan pada waktu tempuh di bawah 1 jam.",
+        "D": "Waktu tempuh pengiriman cenderung lebih cepat daripada lebih lambat.",
+        "E": "Terdapat kemencengan negatif karena whisker kanan lebih panjang."
+      },
+      "answer": "E",
+      "explanation": "**Analisis Kemencengan Boxplot**\\nPanjang whisker kanan (8 jam) yang lebih jauh dari Q3 (5 jam) dibandingkan panjang whisker kiri (1 jam) dari Q1 (2 jam) mengindikasikan adanya kemencengan negatif. Ini berarti ada beberapa pengiriman yang memakan waktu sangat lama."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang peneliti menganalisis data hasil panen padi (ton per hektar) dan jumlah pupuk yang digunakan (kg per hektar) selama 5 tahun. Scatter plot menunjukkan titik-titik yang mengarah menurun dari kiri atas ke kanan bawah.",
+      "question": "Apa yang dapat disimpulkan mengenai hubungan antara jumlah pupuk dan hasil panen padi berdasarkan scatter plot tersebut?",
+      "options": {
+        "A": "Semakin banyak pupuk digunakan, semakin tinggi hasil panen.",
+        "B": "Tidak ada hubungan antara jumlah pupuk dan hasil panen.",
+        "C": "Semakin banyak pupuk digunakan, semakin rendah hasil panen.",
+        "D": "Hubungan bersifat positif dan kuat.",
+        "E": "Hasil panen sangat bervariasi terlepas dari penggunaan pupuk."
+      },
+      "answer": "C",
+      "explanation": "**Interpretasi Korelasi Negatif**\\nPola sebaran titik yang menurun dari kiri atas ke kanan bawah pada scatter plot menunjukkan adanya korelasi linier negatif. Ini berarti peningkatan pada variabel independen (jumlah pupuk) berkorelasi dengan penurunan pada variabel dependen (hasil panen)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data suhu rata-rata harian (derajat Celsius) dan jumlah penjualan es krim di sebuah toko selama sebulan disajikan dalam scatter plot. Sumbu X adalah suhu, dan sumbu Y adalah penjualan. Titik-titik data membentuk pola yang jelas naik dari kiri ke kanan.",
+      "question": "Bagaimana interpretasi yang paling tepat mengenai hubungan antara suhu dan penjualan es krim?",
+      "options": {
+        "A": "Suhu tidak memengaruhi penjualan es krim.",
+        "B": "Semakin dingin suhu, semakin banyak es krim terjual.",
+        "C": "Semakin panas suhu, semakin banyak es krim terjual.",
+        "D": "Terdapat korelasi negatif yang kuat antara suhu dan penjualan.",
+        "E": "Penjualan es krim sangat dipengaruhi oleh faktor lain selain suhu."
+      },
+      "answer": "C",
+      "explanation": "**Analisis Hubungan Positif**\\nPola titik yang naik dari kiri ke kanan pada scatter plot mengindikasikan korelasi positif. Ini berarti peningkatan suhu (variabel independen) berkorelasi dengan peningkatan penjualan es krim (variabel dependen)."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah sekolah mengadakan survei kepuasan siswa terhadap fasilitas kantin. Data disajikan dalam boxplot. Nilai minimum kepuasan adalah 2, Q1 adalah 4, median adalah 6, Q3 adalah 8, dan nilai maksimum adalah 9. Tidak ada pencilan yang terdeteksi.",
+      "question": "Berdasarkan boxplot tersebut, bagaimana gambaran umum tingkat kepuasan siswa terhadap fasilitas kantin?",
+      "options": {
+        "A": "Tingkat kepuasan sangat rendah karena nilai minimum hanya 2.",
+        "B": "Tingkat kepuasan cenderung moderat hingga tinggi dan distribusinya cukup simetris.",
+        "C": "Tingkat kepuasan sangat bervariasi dengan banyak nilai ekstrem.",
+        "D": "Sebagian besar siswa sangat tidak puas dengan fasilitas kantin.",
+        "E": "Terdapat kemencengan positif yang kuat dalam tingkat kepuasan."
+      },
+      "answer": "B",
+      "explanation": "**Interpretasi Boxplot Simetris**\\nMedian (6) berada di tengah kotak (antara 4 dan 8), dan tidak ada pencilan, menunjukkan distribusi yang relatif simetris. Rentang Q1-Q3 (4 jam) dan rentang data keseluruhan (2-9) menunjukkan tingkat kepuasan yang moderat hingga tinggi."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Seorang analis data membandingkan kinerja dua tim penjualan, Tim A dan Tim B, berdasarkan jumlah transaksi per minggu. Data disajikan dalam dua boxplot berdampingan. Boxplot Tim A memiliki median lebih tinggi dan rentang interkuartil lebih sempit dibandingkan Tim B.",
+      "question": "Apa kesimpulan yang dapat ditarik mengenai kinerja kedua tim penjualan?",
+      "options": {
+        "A": "Tim B secara konsisten lebih unggul daripada Tim A.",
+        "B": "Tim A memiliki kinerja rata-rata yang lebih baik dan lebih konsisten daripada Tim B.",
+        "C": "Kedua tim memiliki kinerja yang identik.",
+        "D": "Tim B memiliki variabilitas transaksi yang lebih rendah daripada Tim A.",
+        "E": "Tim A memiliki lebih banyak pencilan transaksi daripada Tim B."
+      },
+      "answer": "B",
+      "explanation": "**Perbandingan Boxplot**\\nMedian yang lebih tinggi pada Tim A menunjukkan kinerja rata-rata yang lebih baik. Rentang interkuartil (Q3-Q1) yang lebih sempit pada Tim A mengindikasikan variabilitas yang lebih rendah atau konsistensi yang lebih tinggi dalam jumlah transaksi per minggu dibandingkan Tim B."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Sebuah pabrik tekstil menganalisis hubungan antara suhu ruang produksi (X) dan jumlah cacat pada kain (Y). Data selama 15 hari disajikan dalam scatter plot. Titik-titik data menunjukkan tren menurun dari kiri atas ke kanan bawah, dengan beberapa titik tersebar agak jauh.",
+      "question": "Bagaimana interpretasi yang paling tepat mengenai hubungan antara suhu ruang produksi dan jumlah cacat kain?",
+      "options": {
+        "A": "Suhu ruang produksi tidak memengaruhi jumlah cacat kain.",
+        "B": "Semakin tinggi suhu, semakin sedikit cacat kain yang dihasilkan.",
+        "C": "Semakin rendah suhu, semakin banyak cacat kain yang dihasilkan.",
+        "D": "Terdapat korelasi positif yang kuat antara suhu dan cacat kain.",
+        "E": "Jumlah cacat kain sangat bervariasi terlepas dari suhu."
+      },
+      "answer": "B",
+      "explanation": "**Analisis Korelasi Negatif dengan Variasi**\\nPola menurun dari kiri atas ke kanan bawah mengindikasikan korelasi negatif. Ini berarti peningkatan suhu (variabel independen) cenderung diikuti oleh penurunan jumlah cacat kain (variabel dependen). Adanya beberapa titik yang tersebar menunjukkan adanya variasi dalam hubungan tersebut."
+    },
+    {
+      "level": "MOTS",
+      "stimulus": "Data jumlah pengunjung harian sebuah museum selama 30 hari disajikan dalam boxplot. Kotak utama membentang dari 150 hingga 300 pengunjung. Median adalah 220 pengunjung. Whisker kiri mencapai 50 pengunjung, dan whisker kanan mencapai 500 pengunjung. Terdapat satu pencilan pada 700 pengunjung.",
+      "question": "Manakah pernyataan yang paling akurat menggambarkan distribusi jumlah pengunjung harian museum?",
+      "options": {
+        "A": "Jumlah pengunjung sangat konsisten setiap hari.",
+        "B": "Terdapat kemencengan negatif karena whisker kanan lebih panjang dan ada pencilan.",
+        "C": "Sebagian besar pengunjung datang pada akhir pekan.",
+        "D": "Distribusi jumlah pengunjung simetris di sekitar median.",
+        "E": "Terdapat pencilan pada jumlah pengunjung di bawah 50."
+      },
+      "answer": "B",
+      "explanation": "**Interpretasi Kemencengan dan Pencilan**\\nWhisker kanan yang lebih panjang (500 dari 300) dibandingkan whisker kiri (50 dari 150), ditambah adanya pencilan pada 700 pengunjung, mengindikasikan kemencengan negatif. Ini berarti ada beberapa hari dengan jumlah pengunjung yang sangat tinggi, yang menarik distribusi ke arah kanan."
+    }
+  ],
+  "metadata": {
+    "id": "172d0c62-260f-4952-8dfb-e14d71bf2c22",
+    "provider": "openrouter",
+    "model": "google/gemini-2.5-flash-lite",
+    "created_at": "2026-05-28T08:03:22Z",
+    "kurikulum": "KTSP",
+    "jenjang": "SMA",
+    "kelas": "Kelas 10",
+    "mata_pelajaran": "Matematika Umum",
+    "bab_judul": "Representasi dan Interpretasi Data",
+    "sub_bab": "Representasi Data Lanjutan",
+    "task_type": "pilgan",
+    "level": "MOTS",
+    "source_file": "Matematika_Umum_6_chunk .json",
+    "prompt_version": "v3",
+    "system_prompt_version": "v2",
+    "atp_available": true,
+    "atp_reference": "Merepresentasikan data dalam bentuk boxplot dan scatter plot untuk menganalisis hubungan antar variabel.",
+    "generation_config": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 16000
+    },
+    "est_tokens": {
+      "system": 673,
+      "user": 3542,
+      "assistant": 3477,
+      "total": 7693,
+      "max_seq_length": 8192,
+      "exceeds_budget": false
+    },
+    "quality_flags": {
+      "valid_json": true,
+      "schema_valid": true,
+      "contains_markdown_leak": false
+    }
+  }
+}
