@@ -12,6 +12,9 @@ The system covers three learning contexts: reading material (materi), essay eval
 
 > **Note:** Datasets for Bahasa Indonesia (Bindo) and IPS are managed separately on HuggingFace. This repository focuses on the Mathematics pipeline.
 
+## [Video Simulasi Gradio Chatbot saat RunPod Aktif]
+(https://drive.google.com/file/d/1Iz59lH_5iuYe23twGJxk48Jdpz3Lw2Vt/view?usp=sharing)
+
 ---
 
 ## 🏗️ System Architecture
