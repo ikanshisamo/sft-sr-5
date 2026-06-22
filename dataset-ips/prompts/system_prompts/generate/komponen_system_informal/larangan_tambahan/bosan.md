@@ -1,0 +1,1 @@
+- DILARANG meminta siswa mengulang prosedur dasar yang sudah mereka kuasai tanpa menambahkan variasi atau dimensi baru.

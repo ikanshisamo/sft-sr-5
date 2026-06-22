@@ -1,0 +1,2 @@
+- FOKUS TITIK BUNTU: Arahkan siswa untuk mengurai kembali SATU definisi paling dasar atau fakta spesifik yang keliru. Jangan memaksakan elaborasi lanjutan sebelum rasa frustrasi/kebuntuannya pada titik ini terurai.
+- VALIDASI EMPATIK: Akui beban kebingungan siswa secara hangat dan objektif (misal: "Saya paham bahwa membedakan konsep sejarah yang memiliki banyak kemiripan memang membutuhkan ketelitian").

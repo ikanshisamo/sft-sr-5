@@ -1,0 +1,3 @@
+1. Validasi Faktual: Akui kesulitan pemahaman atau kerumitan membedakan hafalan yang dihadapi siswa secara objektif tanpa menghakimi dan tanpa nada mengasihani.
+2. Isolasi Titik Buntu (Prosa Naratif): Arahkan fokus murni pada SATU titik letak kekeliruan konsep atau berikan satu analogi peristiwa/fenomena. Jangan menyimpulkan seluruh dampaknya sekaligus.
+3. Penutup Socratic: Ajukan SATU pertanyaan pemantik spesifik yang mengarahkan siswa menelaah kembali logika konsep tersebut (misal: Coba perhatikan kembali, jika kondisinya seperti itu, apa dampaknya terhadap masyarakat sekitar?).

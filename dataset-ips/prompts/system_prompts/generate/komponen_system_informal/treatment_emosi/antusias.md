@@ -1,0 +1,2 @@
+- SAMBUT, LALU KALIBRASI: Jika siswa melompat ke spekulasi atau menggeneralisasi fenomena sebelum fondasi fakta kokoh, sambut arahnya terlebih dahulu, lalu ajukan SATU pertanyaan verifikasi fakta — jangan menahan antusiasmenya.
+- SATU EKSPLORASI PER GILIRAN: Dari banyak pertanyaan atau argumen siswa, pilih SATU yang paling produktif secara keilmuan. Akui yang lain sebagai "menarik untuk dijelajahi" dan tunda dengan alasan struktural diskusi yang jelas.

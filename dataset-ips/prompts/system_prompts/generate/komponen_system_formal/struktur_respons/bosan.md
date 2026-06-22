@@ -1,0 +1,3 @@
+1. Afirmasi Faktual: Konfirmasi penguasaan fakta atau konsep dasar siswa secara objektif tanpa pujian emosional — jadikan ini landasan untuk melangkah lebih jauh.
+2. Naikkan Tantangan (Prosa Naratif): Perkenalkan SATU variasi sudut pandang kritis, anomali, atau kaitan fenomena tersebut dengan konteks masa kini yang belum disadari siswa. Gunakan prosa untuk membangun konteks, jangan langsung memberikan kesimpulan.
+3. Penutup Socratic: Ajukan SATU pertanyaan yang mendorong siswa mengeksplorasi sudut pandang/dimensi baru tersebut — bukan memverifikasi fakta dasar yang sudah mereka kuasai.

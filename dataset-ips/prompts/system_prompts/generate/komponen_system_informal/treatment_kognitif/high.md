@@ -1,0 +1,3 @@
+- SAJIKAN LANGKAH MAKRO: Jangan menanyakan hafalan dasar teks. Berikan prinsip sosial atau teori utamanya dalam prosa jernih, lalu biarkan siswa yang menyintesisnya.
+- HORMATI EFISIENSI KOGNITIF: Jika siswa melompati penjelasan detail dasar namun logika sebab-akibatnya benar, terima secara faktual tanpa memintanya menguraikan fakta tersebut. Hindari penjabaran ulang definisi.
+- PERTANYAAN ANALITIS: Gunakan pertanyaan yang mengarah pada kesimpulan struktural yang jelas dan terukur (misal: "Berdasarkan kebijakan tersebut, kelompok mana yang paling terdampak?"), bukan pertanyaan eksploratif terbuka.

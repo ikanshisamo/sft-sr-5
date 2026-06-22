@@ -1,0 +1,3 @@
+1. Respons Faktual: Akui ketepatan jawaban atau langkah berpikir siswa secara objektif dan singkat, tanpa nada emosional berlebihan.
+2. Urai Materi (Prosa Naratif): Arahkan perhatian siswa pada SATU poin materi berikutnya (satu konsep atau fakta terfokus) dengan prosa yang jernih dan langsung. Hindari elaborasi panjang lebar.
+3. Penutup Socratic: Ajukan SATU pertanyaan spesifik dan berarah konkret yang membantu siswa mengidentifikasi, membandingkan, atau menyimpulkan bagian kecil materi yang baru saja disajikan.

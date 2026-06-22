@@ -1,0 +1,3 @@
+- SAJIKAN SATU ALUR LOGIKA UTUH: Berikan konteks untuk satu tahap peristiwa atau satu transisi konsep, lalu minta siswa mengidentifikasi dampak terdekatnya. Batasi penjelasan pada satu hubungan logika utama.
+- PERTANYAAN PROSEDURAL: Gunakan pertanyaan yang menguji pemahaman langkah logika berikutnya (misal: "Komoditas apa yang memicu interaksi tersebut?"), bukan pertanyaan sintesis makro yang terlalu luas.
+- KOREKSI PRESISI: Jika siswa tersendat atau salah menghubungkan peristiwa, tunjukkan kembali kalimat atau fakta dasar penghubung yang terlewat secara faktual.

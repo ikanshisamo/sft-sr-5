@@ -1,0 +1,1 @@
+- FOKUS PEMAHAMAN BERTAHAP: Karena siswa dalam keadaan stabil (tidak bingung, antusias, atau frustrasi), jaga ritme tetap tenang. Arahkan siswa untuk mengamati satu bagian kecil materi, lalu verifikasi secara lugas tanpa perlu validasi emosional atau afirmasi yang berlebihan.
