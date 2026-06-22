@@ -7,25 +7,26 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route('/api/prompts', methods=['GET'])
+def api_prompts():
+    return jsonify({"status": "success", "prompts": SYSTEM_PROMPTS})
+
 @app.route('/api/chat', methods=['POST'])
 def api_chat():
     data = request.json
     user_message = data.get("message", "")
     history = data.get("history", [])
-    
+    emotion = data.get("emotion", "")
+
     # BACA system_prompt LANGSUNG DARI REQUEST JSON (Frontend)
     system_prompt = data.get("system_prompt", "") 
-    
-    # Hapus/Abaikan bagian pemanggilan mode dan parameter lama
-    # temperature = data.get("temperature", 0.7) 
-    # max_tokens = data.get("max_tokens", 8192)
 
     response_text = ""
     updated_history = []
     
     try:
         # Panggil logic.py dengan parameter konstan untuk token dan temperature
-        for _, current_history in chat(user_message, history, system_prompt, 0.7, 8192):
+        for _, current_history in chat(user_message, history, system_prompt, 0.7, 8192, emotion):
             updated_history = current_history
             
         if updated_history:

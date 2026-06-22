@@ -52,20 +52,8 @@
         .chat-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .chat-scrollbar::-webkit-scrollbar-thumb { background: #dbcbc8; border-radius: 10px; }
         .chat-scrollbar::-webkit-scrollbar-thumb:hover { background: #c4c7cc; }
-        
-        .tab-active {
-            color: #003441;
-            border-bottom: 2px solid #003441;
-            font-weight: 600;
-        }
-        .tab-inactive {
-            color: #43474e;
-            border-bottom: 2px solid transparent;
-        }
-        .tab-inactive:hover {
-            color: #003441;
-        }
 
+        /* Bubble user tetap pakai style lama */
         .msg-user-tail {
             position: absolute;
             width: 0;
@@ -77,43 +65,51 @@
             right: 0px;
             transform: translateX(30%);
         }
-        .msg-ai-tail {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 6px 10px 0 0;
-            border-color: transparent #E9E9EB transparent transparent;
-            bottom: 0px;
-            left: 0px;
-            transform: translateX(-30%);
-        }
 
-        /* Styling tambahan agar output Markdown (Tebal, List) terlihat rapi */
-        .markdown-body p { margin-bottom: 0.5rem; }
+        /* Markdown & LaTeX output AI */
+        .markdown-body { line-height: 1.75; color: #1e293b; }
+        .markdown-body p { margin-bottom: 0.75rem; }
         .markdown-body p:last-child { margin-bottom: 0; }
         .markdown-body strong { font-weight: 700; color: #003441; }
-        .markdown-body ul { list-style-type: disc; margin-left: 1.5rem; margin-top: 0.5rem; }
-        .markdown-body ol { list-style-type: decimal; margin-left: 1.5rem; margin-top: 0.5rem; }
+        .markdown-body em { font-style: italic; }
+        .markdown-body ul { list-style-type: disc; margin-left: 1.5rem; margin-top: 0.4rem; margin-bottom: 0.4rem; }
+        .markdown-body ol { list-style-type: decimal; margin-left: 1.5rem; margin-top: 0.4rem; margin-bottom: 0.4rem; }
+        .markdown-body li { margin-bottom: 0.25rem; }
+        .markdown-body blockquote {
+            border-left: 3px solid #003441;
+            padding: 0.4rem 0.9rem;
+            margin: 0.75rem 0;
+            color: #003441;
+            background: #f0f7f8;
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+        }
+        .markdown-body code {
+            background: #f1f5f9;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-family: monospace;
+        }
+        .markdown-body pre {
+            background: #f1f5f9;
+            padding: 0.9rem 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 0.75rem 0;
+        }
+        .markdown-body pre code { background: none; padding: 0; }
     </style>
 </head>
 <body class="text-slate-900 flex flex-col min-h-screen">
     
     <header class="border-b border-outline-variant flex items-center w-full px-8 h-16 max-w-[1440px] mx-auto sticky top-0 z-50" style="background-color: #FEFEFE;">
-        <div class="flex items-center gap-3 w-1/3">
+        <div class="flex items-center gap-3">
             <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
                 <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
             </div>
             <span class="text-lg font-bold text-primary tracking-tight">Sekolah Rakyat</span>
         </div>
-        
-        <nav class="hidden md:flex justify-center items-center gap-8 h-full text-sm font-medium w-1/3">
-            <button id="tab-materi" class="nav-tab tab-active h-full flex items-center transition-colors" onclick="switchMode('Materi')">Materi</button>
-            <button id="tab-essay" class="nav-tab tab-inactive h-full flex items-center transition-colors" onclick="switchMode('Essay')">Essay</button>
-            <button id="tab-pilgan" class="nav-tab tab-inactive h-full flex items-center transition-colors" onclick="switchMode('Pilihan Ganda')">Pilihan Ganda</button>
-        </nav>
-
-        <div class="w-1/3"></div>
     </header>
 
     <main class="flex-grow flex w-full max-w-[1440px] mx-auto overflow-hidden h-[calc(100vh-64px)]" style="background-color: #FEFEFE;">
@@ -129,7 +125,7 @@
                     <p class="text-sm md:text-base text-on-surface-variant">Mulailah diskusi dengan AI Mentor untuk mendalami topik materi hari ini.</p>
                 </div>
                 
-                <div id="chat-container" class="max-w-2xl mx-auto space-y-5 flex flex-col"></div>
+            <div id="chat-container" class="max-w-2xl mx-auto flex flex-col space-y-4"></div>
                 
                 <div class="h-32"></div> 
             </div>
@@ -157,7 +153,32 @@
             <div class="flex items-center justify-between px-1">
                 <h2 class="text-xs font-bold uppercase tracking-wider text-primary">Konfigurasi Model</h2>
             </div>
-            
+
+            <div class="bg-white border border-outline-variant rounded-xl p-4 shadow-sm shrink-0">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-sm font-semibold text-slate-800">Mode</span>
+                </div>
+                <select id="mode-select" class="w-full bg-slate-50 border border-outline-variant rounded-lg p-2.5 text-sm text-slate-700 focus:ring-1 focus:ring-[#007AFF] focus:bg-white outline-none">
+                    <option value="Materi">Materi</option>
+                    <option value="Essay">Essay</option>
+                    <option value="Pilihan Ganda">Pilihan Ganda</option>
+                </select>
+            </div>
+
+            <div class="bg-white border border-outline-variant rounded-xl p-4 shadow-sm shrink-0">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-sm font-semibold text-slate-800">Label Emosi</span>
+                </div>
+                <select id="emotion-select" class="w-full bg-slate-50 border border-outline-variant rounded-lg p-2.5 text-sm text-slate-700 focus:ring-1 focus:ring-[#007AFF] focus:bg-white outline-none">
+                    <option value="netral">Netral</option>
+                    <option value="antusias">Antusias</option>
+                    <option value="bingung">Bingung</option>
+                    <option value="bosan">Bosan</option>
+                    <option value="frustrasi">Frustrasi</option>
+                </select>
+                <p class="text-xs text-on-surface-variant/70 mt-2">Simulasi label dari face emotion recognition.</p>
+            </div>
+
             <div class="bg-white border border-outline-variant rounded-xl p-4 shadow-sm flex-grow flex flex-col max-h-[85vh]">
                 <div class="flex items-center justify-between mb-3">
                     <span class="text-sm font-semibold text-slate-800">System Prompt</span>
@@ -173,18 +194,16 @@
     </main>
 
     <script>
-        const PREDEFINED_PROMPTS = {
-            "Materi": "[IDENTITAS]\nKamu adalah AI Mentor untuk siswa Sekolah Rakyat Menengah Atas. Tugasmu adalah menuntun pemahaman siswa secara bertahap dengan pendekatan Sokratik, bukan memberi jawaban akhir secara langsung.\n\n[PRINSIP_UTAMA]\n1. Jangan menyuapi jawaban akhir.\n2. Berikan afirmasi faktual.\n3. Akhiri dengan satu pertanyaan Sokratik.\n4. Fokus pada materi bacaan aktif.",
-            "Essay": "[IDENTITAS]\nKamu adalah AI Mentor untuk evaluasi Essay. Tugasmu menuntun pemahaman siswa secara Sokratik.\n\n[FOKUS_TUGAS]\nSaat ini siswa sedang membahas hasil evaluasi esai. Fokus pada struktur argumen, ketepatan fakta, dan kejelasan antaride. Jika jawaban lemah, tunjukkan bagian yang perlu diperbaiki. Tutup respons dengan satu pertanyaan pancingan.",
-            "Pilihan Ganda": "[IDENTITAS]\nKamu adalah AI Mentor untuk evaluasi Pilihan Ganda.\n\n[ATURAN_KHUSUS]\n1. Jangan langsung menyatakan kunci jawaban.\n2. Jika salah, bedah miskonsepsi utama.\n3. Jika benar, uji pemahaman alasannya.\n4. Tutup dengan satu pertanyaan Sokratik."
-        };
+        let PREDEFINED_PROMPTS = {};
 
         let currentMode = "Materi";
         let chatHistory = [];
-        let activeSystemPrompt = PREDEFINED_PROMPTS[currentMode];
+        let activeSystemPrompt = "";
 
         const textarea = document.getElementById('message-input');
         const sysPromptInput = document.getElementById('system-prompt-input');
+        const modeSelect = document.getElementById('mode-select');
+        const emotionSelect = document.getElementById('emotion-select');
         const chatContainer = document.getElementById('chat-container');
         const sendBtn = document.getElementById('send-btn');
         const clearBtn = document.getElementById('clear-btn');
@@ -192,7 +211,23 @@
         const saveBtnText = document.getElementById('save-btn-text');
         const welcomeScreen = document.getElementById('welcome-screen');
 
-        sysPromptInput.value = activeSystemPrompt;
+        async function loadPrompts() {
+            try {
+                const res = await fetch('/api/prompts');
+                const data = await res.json();
+                if (data.status === "success") {
+                    PREDEFINED_PROMPTS = data.prompts;
+                    activeSystemPrompt = PREDEFINED_PROMPTS[currentMode];
+                    sysPromptInput.value = activeSystemPrompt;
+                } else {
+                    sysPromptInput.value = "Gagal memuat system prompt dari server.";
+                }
+            } catch (error) {
+                sysPromptInput.value = "Gagal memuat system prompt dari server.";
+            }
+        }
+
+        loadPrompts();
 
         // FITUR BARU: Auto-save setiap kali ada ketikan di kotak System Prompt
         sysPromptInput.addEventListener('input', function() {
@@ -202,21 +237,13 @@
 
         function switchMode(mode) {
             currentMode = mode;
-            
-            document.querySelectorAll('.nav-tab').forEach(tab => {
-                tab.classList.remove('tab-active');
-                tab.classList.add('tab-inactive');
-            });
-            
-            if(mode === 'Materi') document.getElementById('tab-materi').classList.add('tab-active');
-            if(mode === 'Essay') document.getElementById('tab-essay').classList.add('tab-active');
-            if(mode === 'Pilihan Ganda') document.getElementById('tab-pilgan').classList.add('tab-active');
-
-            document.querySelector('.tab-active').classList.remove('tab-inactive');
-
             sysPromptInput.value = PREDEFINED_PROMPTS[mode];
             activeSystemPrompt = PREDEFINED_PROMPTS[mode];
         }
+
+        modeSelect.addEventListener('change', function() {
+            switchMode(this.value);
+        });
 
         savePromptBtn.addEventListener('click', () => {
             const currentInputValue = sysPromptInput.value.trim();
@@ -242,7 +269,7 @@
 
         function appendUserMessage(text) {
             const msgHTML = `
-            <div class="flex flex-col items-end w-full">
+            <div class="user-message flex flex-col items-end w-full py-2">
                 <div class="relative bg-[#007AFF] text-white py-2.5 px-4 rounded-[20px] rounded-br-[4px] max-w-[78%] shadow-sm">
                     <p class="text-[15px] leading-relaxed whitespace-pre-wrap">${text}</p>
                     <div class="msg-user-tail"></div>
@@ -252,28 +279,29 @@
             scrollToBottom();
         }
 
-        // FITUR BARU: Rendering Markdown dan LaTeX untuk respons AI
+        // Render Markdown + LaTeX — tampilan terbuka tanpa bubble
         function appendAIMessage(text) {
             const parsedHTML = marked.parse(text);
 
             const msgHTML = `
-            <div class="flex items-end w-full gap-2.5">
-                <div class="w-8 h-8 rounded-full bg-[#E9E9EB] flex items-center justify-center border border-outline-variant shrink-0 mb-0.5">
-                    <span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+            <div class="ai-message w-full py-2">
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-[15px] text-white" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+                    </div>
+                    <span class="text-xs font-semibold text-primary uppercase tracking-wide">AI Mentor</span>
                 </div>
-                <div class="relative bg-[#E9E9EB] text-slate-900 py-2.5 px-4 rounded-[20px] rounded-bl-[4px] max-w-[78%] shadow-sm">
-                    <div class="text-[15px] leading-relaxed markdown-body flex flex-col gap-2">${parsedHTML}</div>
-                    <div class="msg-ai-tail"></div>
-                </div>
+                <div class="pl-9 text-[15px] leading-relaxed markdown-body">${parsedHTML}</div>
             </div>`;
-            
+
             chatContainer.insertAdjacentHTML('beforeend', msgHTML);
-            
-            // Panggil MathJax untuk merender rumus matematika jika ada
+
+            // Render LaTeX setelah elemen masuk ke DOM
             if (window.MathJax) {
-                MathJax.typesetPromise([chatContainer.lastElementChild]).catch((err) => console.log(err));
+                MathJax.typesetPromise([chatContainer.lastElementChild])
+                    .catch((err) => console.warn('MathJax error:', err));
             }
-            
+
             scrollToBottom();
         }
 
@@ -302,7 +330,8 @@
                     body: JSON.stringify({ 
                         message: message,
                         history: chatHistory,
-                        system_prompt: activeSystemPrompt 
+                        system_prompt: activeSystemPrompt,
+                        emotion: emotionSelect.value
                     })
                 });
                 
