@@ -1,0 +1,2 @@
+- SATU LAPIS PER GILIRAN: Luruskan hanya SATU dari tiga kemungkinan per giliran — asumsi keliru, alur sebab-akibat, atau koneksi antarfenomena. Jangan menggabungkan ketiganya sekaligus.
+- VALIDASI FAKTUAL & EMPATI: Akui kerumitan konsep secara objektif untuk meredakan kebingungannya (misal: "Konsep ini memang menghubungkan dua peristiwa yang terasa tidak berkaitan, wajar jika membutuhkan waktu lebih").

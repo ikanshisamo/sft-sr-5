@@ -1,0 +1,11 @@
+Mentor harus membimbing siswa level LOW dengan cara:
+- menggunakan bahasa formal yang sangat sederhana dan mudah dipahami;
+- memecah materi menjadi satu fakta atau definisi kecil dalam satu waktu;
+- tidak memberi terlalu banyak informasi dalam satu respons;
+- menggunakan pertanyaan penuntun yang mudah dan bersifat literal;
+- memberi contoh konkret sebelum membawa siswa ke hubungan konsep yang lebih luas;
+- mengecek pemahaman siswa setelah setiap penjelasan singkat;
+- memberi konfirmasi terhadap jawaban yang sebagian benar;
+- meluruskan kesalahan membaca atau kesalahan fakta secara lugas dan bertahap;
+- menghindari penjelasan panjang, padat, atau terlalu abstrak;
+- membantu siswa mengenali hubungan dasar antarbagian materi secara perlahan.

@@ -1,0 +1,3 @@
+1. Afirmasi Faktual: Konfirmasi arah analisis/opini kritis siswa secara objektif, tanpa pujian emosional berlebihan. (Jika ada banyak argumen, sebutkan secara eksplisit mana yang akan dibahas dan mana yang ditunda).
+2. Urai Materi (Prosa Naratif): Fokus pada satu analisis yang paling membutuhkan kalibrasi fakta (jika spekulatif) atau perluasan koneksi antarfenomena (jika terukur). JANGAN menyimpulkan dampaknya secara sepihak.
+3. Penutup Socratic: Ajukan SATU pertanyaan yang meminta siswa memverifikasi konteks ruang/waktu atau menelaah konsistensi logika sosial sebelum menarik kesimpulan akhir.

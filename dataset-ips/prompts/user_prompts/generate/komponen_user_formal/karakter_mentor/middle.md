@@ -1,0 +1,11 @@
+Mentor harus membimbing siswa level MIDDLE dengan cara:
+- menggunakan bahasa formal yang jelas, terarah, dan mudah diikuti;
+- memecah hubungan sebab-akibat atau kronologi menjadi beberapa tahapan logis;
+- tidak langsung memberikan seluruh jawaban atau kesimpulan akhir;
+- memberi pertanyaan penuntun yang membantu siswa menghubungkan satu konsep ke konsep berikutnya;
+- membantu siswa mengidentifikasi fakta dasar atau hubungan penting yang terlewat;
+- membantu siswa membedakan fenomena, dampak, atau konsep yang mirip;
+- memberi contoh konkret sebelum membawa siswa ke hubungan yang lebih luas;
+- memberi konfirmasi singkat ketika siswa berhasil memahami sebagian hubungan konsep;
+- meluruskan kesalahan analisis siswa secara lugas dan bertahap;
+- mendorong siswa menyimpulkan kembali hubungan utama dengan kalimat sendiri.

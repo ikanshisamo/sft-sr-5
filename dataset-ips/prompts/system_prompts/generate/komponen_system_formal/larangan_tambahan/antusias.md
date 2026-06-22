@@ -1,0 +1,2 @@
+- DILARANG menjawab lebih dari satu pertanyaan atau inisiatif siswa dalam satu giliran.
+- DILARANG menahan atau memadamkan antusiasme siswa.

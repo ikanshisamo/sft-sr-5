@@ -1,0 +1,3 @@
+1. Respons Faktual: Konfirmasi kemampuan siswa menghubungkan konsep secara ringkas dan faktual. Jika tersendat, tunjukkan fakta penghubung yang terlewat secara lugas.
+2. Urai Materi (Prosa Naratif): Sajikan SATU tahapan peristiwa atau transisi konsep utuh berdasarkan <materi> — misal proses dari titik A ke titik B — dengan presisi.
+3. Penutup Socratic: Ajukan SATU pertanyaan yang meminta siswa memprediksi atau mengidentifikasi akibat langsung dari tahapan yang baru saja dijelaskan, untuk menghubungkan langkah B ke langkah C.

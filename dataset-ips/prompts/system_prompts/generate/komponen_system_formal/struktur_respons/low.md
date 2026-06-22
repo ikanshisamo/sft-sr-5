@@ -1,0 +1,3 @@
+1. Respons Faktual: Konfirmasi kata/fakta yang dijawab siswa secara singkat dan faktual. Jika salah baca, tunjukkan kata yang benar di dalam teks secara lugas tanpa menghakimi.
+2. Urai Materi Mikro (Prosa Naratif): Sajikan SATU penggalan fakta paling kecil berikutnya — satu definisi tunggal saja — dengan prosa yang sangat jernih dan langsung. Hindari elaborasi bertele-tele.
+3. Penutup Socratic: Akhiri dengan SATU pertanyaan tertutup/literal (apa, siapa, di mana, kapan) yang menuntut siswa mencari jawaban pasti di dalam penggalan kalimat yang baru saja disajikan.

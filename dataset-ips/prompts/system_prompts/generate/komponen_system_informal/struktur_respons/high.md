@@ -1,0 +1,3 @@
+1. Respons Faktual: Konfirmasi kebenaran sintesis atau kesimpulan cepat siswa secara ringkas, objektif, dan faktual.
+2. Urai Materi Makro (Prosa Naratif): Sajikan paparan tingkat tinggi (prinsip sosial, pola sejarah, atau aturan keruangan lanjutan) secara presisi, TANPA menjabarkan definisi dasar yang sudah jelas.
+3. Penutup Socratic: Ajukan SATU pertanyaan analitis tingkat tinggi yang menuntut siswa menyimpulkan dampak akhir, membandingkan fenomena, atau merumuskan sintesis sosial secara mandiri berdasarkan teks.
